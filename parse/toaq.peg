@@ -1,0 +1,436 @@
+{
+	// FreeSans has all the glyphs used in this file.
+	// For Acme users:
+	// Font /mnt/font/FreeSans/11a/font
+
+	package parse
+	import "github.com/eaburns/peggy/peg"
+}
+
+full_text <- text EOF
+text <- spaces? freemod* spaces? discourse? spaces? EOF?
+
+#
+# Discourse
+#
+
+discourse <- ( sentence / fragment )+
+
+#
+# Sentence and statement
+#
+
+sentence <- coP_sentence / sentence_1
+sentence_1 <- forethought_coP_sentence / sentence_2
+sentence_2 <- spaces? sentence_prefix? sentence_3
+sentence_3 <- spaces? statement spaces? illocutionary?
+fragment <- spaces? coP_rel / spaces? relative_clause / spaces? prenex / spaces? terms
+coP_sentence <- sentence_1 spaces? co_bar_sentence
+co_bar_sentence <- connective spaces? sentence_1
+forethought_coP_sentence <- forethought_connective spaces? forethought_coP_sentence_1
+forethought_coP_sentence_1 <- sentence spaces? forethought_co_bar_sentence
+forethought_co_bar_sentence <- gik spaces? sentence
+sentence_prefix <- k e o &boundary / j e &boundary
+statement <- coP_statement / statement_1
+statement_1 <- forethought_coP_statement / statement_2
+statement_2 <- statement_3 end_statement?
+statement_3 <- prenex? spaces? predication
+end_statement <- NA freemod?
+prenex <- terms spaces? end_prenex
+predication <- predicate spaces? terms?
+coP_statement <- statement_1 spaces? co_bar_statement
+co_bar_statement <- connective spaces? statement_1
+forethought_coP_statement <- forethought_connective spaces? forethought_coP_statement_1
+forethought_coP_statement_1 <- statement spaces? forethought_co_bar_statement
+forethought_co_bar_statement <- gik spaces? statement
+
+#
+# Predicates
+#
+
+predicate <- serial_predicate
+predicate_1 <- coP_pred / predicate_2
+predicate_2 <- forethought_coP_pred / LU_predicate / MI_predicate / PO_predicate / quotation_predicate / prefix spaces? predicate_2 / predicate_3
+predicate_3 <- predicate_4 spaces? freemod?
+predicate_4 <- verb_syllable compound_syllable+ / !function_word verb_syllable
+serial_predicate <- serial_predicate_2 / predicate_1
+serial_predicate_2 <- predicate_1 spaces? serial_predicate
+coP_pred <- predicate_2 spaces? co_bar_pred
+co_bar_pred <- connective spaces? predicate_1
+forethought_coP_pred <- forethought_connective spaces? forethought_coP_pred_1
+forethought_coP_pred_1 <- predicate spaces? forethought_co_bar_pred
+forethought_co_bar_pred <- gik spaces? predicate
+LU_predicate <- LU_predicate_tone spaces? statement
+LU_predicate_tone <- &LU verb_syllable
+MI_predicate <- MI_predicate_1 spaces? GA?
+MI_predicate_1 <- MI_predicate_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
+MI_predicate_tone <- &MI verb_syllable
+PO_predicate <- PO_predicate_1 spaces? GA?
+PO_predicate_1 <- PO_predicate_tone spaces? argument
+PO_predicate_tone <- &PO verb_syllable
+quotation_predicate <- MO_predicate spaces? TEO
+MO_predicate <- MO_predicate_tone spaces? discourse
+MO_predicate_tone <- &MO verb_syllable
+
+
+#
+# Terms
+#
+
+terms <- terms_2 / term
+terms_2 <- term spaces? terms
+term <- ( linking_word? spaces? argument ) / adverb / termset / prepositional_phrase
+
+#
+# Arguments
+#
+
+argument <- coP_arg / arg_1
+arg_1 <- forethought_coP_arg / arg_2
+arg_2 <- focus? spaces? arg_3
+arg_3 <- quantifier? spaces? arg_4
+arg_4 <- arg_5 spaces? ( relative_clause / freemod )?
+arg_5 <- serial_argument / arg_6
+arg_6 <- content_clause / coP_pred_arg / forethought_coP_pred_arg / LU_arg / MI_arg / PO_arg / quotation_argument / arg_7
+arg_7 <- arg_syllable compound_syllable+ / !function_word arg_syllable
+serial_argument <- arg_6 spaces? serial_predicate
+coP_arg <- arg_1 spaces? co_bar_arg
+co_bar_arg <- connective spaces? arg_1
+forethought_coP_arg <- forethought_connective spaces? forethought_coP_arg_1
+forethought_coP_arg_1 <- argument spaces? forethought_co_bar_arg
+forethought_co_bar_arg <- gik spaces? argument
+coP_pred_arg <- arg_7 spaces? co_bar_pred
+forethought_coP_pred_arg <- forethought_connective spaces? forethought_coP_pred_arg_1
+forethought_coP_pred_arg_1 <- argument spaces? forethought_co_bar_pred
+LU_arg <- LU_arg_tone spaces? statement
+LU_arg_tone <- &LU arg_syllable
+MI_arg <- MI_arg_1 spaces? GA?
+MI_arg_1 <- MI_arg_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
+MI_arg_tone <- &MI arg_syllable
+PO_arg <- PO_arg_1 spaces? GA?
+PO_arg_1 <- PO_arg_tone spaces? argument
+PO_arg_tone <- &PO arg_syllable
+quotation_argument <- MO_argument spaces? TEO
+MO_argument <- MO_argument_tone spaces? discourse
+MO_argument_tone <- &MO arg_syllable
+
+#
+# Relative clauses
+#
+
+relative_clause <- coP_rel / LU_relative / relative_clause_1
+relative_clause_1 <- forethought_coP_rel / relative_clause_2
+relative_clause_2 <- coP_rel_statement / relative_clause_3
+relative_clause_3 <- relative_predication spaces? end_statement?
+relative_predication <- relative_predicate spaces? terms?
+coP_rel_statement <- relative_clause_3 spaces? co_bar_statement
+coP_rel <- relative_clause_1 spaces? co_bar_rel
+co_bar_rel <- connective spaces? relative_clause_1
+forethought_coP_rel <- forethought_connective spaces? forethought_coP_rel_1
+forethought_coP_rel_1 <- relative_clause spaces? forethought_co_bar_rel
+forethought_co_bar_rel <- gik spaces? relative_clause
+relative_predicate <- serial_relative_predicate / relative_predicate_1
+relative_predicate_1 <- coP_pred_relative_predicate / forethought_coP_pred_relative_predicate / relative_predicate_2
+relative_predicate_2 <- MI_relative_predicate / PO_relative_predicate / quotation_relative_predicate / relative_predicate_3
+relative_predicate_3 <- relative_syllable compound_syllable+ / !function_word relative_syllable
+serial_relative_predicate <- relative_predicate_1 spaces? serial_predicate
+coP_pred_relative_predicate <- relative_predicate_2 spaces? co_bar_pred
+forethought_coP_pred_relative_predicate <- forethought_connective spaces? forethought_coP_pred_relative_predicate_1
+forethought_coP_pred_relative_predicate_1 <- relative_predicate spaces? forethought_co_bar_pred
+LU_relative <- LU_relative_tone spaces? statement
+LU_relative_tone <- &LU relative_syllable
+MI_relative_predicate <- MI_relative_predicate_1 spaces? GA?
+MI_relative_predicate_1 <- MI_relative_predicate_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
+MI_relative_predicate_tone <- &MI relative_syllable
+PO_relative_predicate <- PO_relative_predicate_1 spaces? GA?
+PO_relative_predicate_1 <- PO_relative_predicate_tone spaces? argument
+PO_relative_predicate_tone <- &PO relative_syllable
+quotation_relative_predicate <- MO_relative_predicate spaces? TEO
+MO_relative_predicate <- MO_relative_predicate_tone spaces? discourse
+MO_relative_predicate_tone <- &MO relative_syllable
+
+#
+# Termsets
+#
+
+termset <- termset_V / termset_IV / termset_III / termset_II
+termset_II <- forethought_connective spaces? forethought_coP_term_II
+forethought_coP_term_II <- terms_II spaces? forethought_co_bar_term_II
+forethought_co_bar_term_II <- gik spaces? terms_II
+termset_III <- forethought_connective spaces? forethought_coP_term_III
+forethought_coP_term_III <- terms_III spaces? forethought_co_bar_term_III
+forethought_co_bar_term_III <- gik spaces? terms_III
+termset_IV <- forethought_connective spaces? forethought_coP_term_IV
+forethought_coP_term_IV <- terms_IV spaces? forethought_co_bar_term_IV
+forethought_co_bar_term_IV <- gik spaces? terms_IV
+termset_V <- forethought_connective spaces? forethought_coP_term_V
+forethought_coP_term_V <- terms_V spaces? forethought_co_bar_term_V
+forethought_co_bar_term_V <- gik spaces? terms_V
+forethought_connective <- spaces? forethought_marker spaces? connective
+forethought_marker <- t o &boundary
+gik <- t o &boundary
+terms_II <- term spaces? term
+terms_III <- term spaces? terms_II
+terms_IV <- term spaces? terms_III
+terms_V <- term spaces? terms_IV
+
+#
+# Adverbs
+#
+
+adverb <- coP_adverb / adverb_1
+adverb_1 <- forethought_coP_adverb / adverb_2
+adverb_2 <- serial_adverb / adverb_3
+adverb_3 <- coP_pred_adverb / forethought_coP_pred_adverb / LU_adverb / MI_adverb / PO_adverb / quotation_adverb / adverb_4
+adverb_4 <- adverb_syllable compound_syllable+ / !function_word adverb_syllable
+coP_adverb <- adverb_1 spaces? co_bar_adverb
+co_bar_adverb <- connective spaces? adverb
+forethought_coP_adverb <- forethought_connective spaces? forethought_coP_adverb_1
+forethought_coP_adverb_1 <- adverb spaces? forethought_co_bar_adverb
+forethought_co_bar_adverb <- gik spaces? adverb
+serial_adverb <- adverb_3 spaces? serial_predicate
+coP_pred_adverb <- adverb_4 spaces? co_bar_pred
+forethought_coP_pred_adverb <- forethought_connective spaces? forethought_coP_pred_adverb_1
+forethought_coP_pred_adverb_1 <- adverb spaces? forethought_co_bar_pred
+LU_adverb <- LU_adverb_tone spaces? statement
+LU_adverb_tone <- &LU adverb_syllable
+MI_adverb <- MI_adverb_1 spaces? GA?
+MI_adverb_1 <- MI_adverb_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
+MI_adverb_tone <- &MI adverb_syllable
+PO_adverb <- PO_adverb_1 spaces? GA?
+PO_adverb_1 <- PO_adverb_tone spaces? argument
+PO_adverb_tone <- &PO adverb_syllable
+quotation_adverb <- MO_adverb spaces? TEO
+MO_adverb <- MO_adverb_tone spaces? discourse
+MO_adverb_tone <- &MO adverb_syllable
+
+#
+# Prepositional phrases
+#
+
+prepositional_phrase <- coP_prepositional_phrase / prepositional_phrase_1
+prepositional_phrase_1 <- forethought_coP_prepositional_phrase / prepositional_phrase_2
+prepositional_phrase_2 <- preposition spaces? argument
+coP_prepositional_phrase <- prepositional_phrase_1 spaces? co_bar_prepositional_phrase
+co_bar_prepositional_phrase <- connective spaces? prepositional_phrase_1
+forethought_coP_prepositional_phrase <- forethought_connective spaces? forethought_coP_prepositional_phrase_1
+forethought_coP_prepositional_phrase_1 <- prepositional_phrase spaces? forethought_co_bar_prepositional_phrase
+forethought_co_bar_prepositional_phrase <- gik spaces? prepositional_phrase
+preposition <- coP_preposition / preposition_1
+preposition_1 <- forethought_coP_preposition / preposition_2
+preposition_2 <- serial_preposition / preposition_3
+preposition_3 <- coP_pred_preposition / forethought_coP_pred_preposition / LU_preposition / MI_preposition / PO_preposition / quotation_preposition / preposition_4
+preposition_4 <- preposition_syllable compound_syllable+ / !function_word preposition_syllable
+coP_preposition <- preposition_1 spaces? co_bar_preposition
+co_bar_preposition <- connective spaces? preposition
+forethought_coP_preposition <- forethought_connective spaces? forethought_coP_preposition_1
+forethought_coP_preposition_1 <- preposition spaces? forethought_co_bar_preposition
+forethought_co_bar_preposition <- gik spaces? preposition
+serial_preposition <- preposition_3 spaces? serial_predicate
+coP_pred_preposition <- preposition_4 spaces? co_bar_pred
+forethought_coP_pred_preposition <- forethought_connective spaces? forethought_coP_pred_preposition_1
+forethought_coP_pred_preposition_1 <- preposition spaces? forethought_co_bar_pred
+LU_preposition <- LU_preposition_tone spaces? statement
+LU_preposition_tone <- &LU preposition_syllable
+MI_preposition <- MI_preposition_1 spaces? GA?
+MI_preposition_1 <- MI_preposition_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
+MI_preposition_tone <- &MI preposition_syllable
+PO_preposition <- PO_preposition_1 spaces? GA?
+PO_preposition_1 <- PO_preposition_tone spaces? argument
+PO_preposition_tone <- &PO preposition_syllable
+quotation_preposition <- MO_preposition spaces? TEO
+MO_preposition <- MO_preposition_tone spaces? discourse
+MO_preposition_tone <- &MO preposition_syllable
+
+#
+# Content clauses
+#
+
+content_clause <- coP_content_statement / content_clause_1
+content_clause_1 <- content_predication spaces? end_statement? / LU_content
+content_predication <- content_predicate spaces? terms?
+coP_content_statement <- content_clause_1 spaces? co_bar_statement
+content_predicate <- serial_content_predicate / content_predicate_1
+content_predicate_1 <- coP_pred_content_predicate / forethought_coP_pred_content_predicate / content_predicate_2
+content_predicate_2 <- MI_content_predicate / PO_content_predicate / quotation_content_predicate / content_predicate_3
+content_predicate_3 <- content_syllable compound_syllable+ / !function_word content_syllable
+serial_content_predicate <- content_predicate_1 spaces? serial_predicate
+coP_pred_content_predicate <- content_predicate_2 spaces? co_bar_pred
+forethought_coP_pred_content_predicate <- forethought_connective spaces? forethought_coP_pred_content_predicate_1
+forethought_coP_pred_content_predicate_1 <- content_predicate spaces? forethought_co_bar_pred
+LU_content <- LU_content_tone statement
+LU_content_tone <- &LU content_syllable
+MI_content_predicate <- MI_content_predicate_1 spaces? GA?
+MI_content_predicate_1 <- MI_content_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
+MI_content_tone <- &MI content_syllable
+PO_content_predicate <- PO_content_predicate_1 spaces? GA?
+PO_content_predicate_1 <- PO_content_tone spaces? argument
+PO_content_tone <- &PO content_syllable
+quotation_content_predicate <- MO_content_predicate spaces? TEO
+MO_content_predicate <- MO_content_predicate_tone spaces? discourse
+MO_content_predicate_tone <- &MO content_syllable
+
+#
+# Free modifiers and interjections
+#
+
+freemod <- spaces? ( interjection / parenthetical / incidental / vocative ) spaces?
+parenthetical <- parenthetical_1 spaces? end_parenthetical
+parenthetical_1 <- start_parenthetical spaces? discourse
+incidental <- spaces? start_incidental freemod? statement
+vocative <- vocative_marker spaces? argument
+
+#
+# Prefix modifiers
+#
+
+prefix <- MU freemod?
+focus <- KU
+
+#
+# Morphology
+#
+
+function_word <- sentence_prefix / connective / start_incidental / start_parenthetical / end_parenthetical / quantifier / illocutionary / end_statement / end_prenex / LU / MI / PO / MO / TEO / GA / linking_word / vocative
+LU <- ( l U / l I / l O / m A / t I o ) &( tone / boundary )
+MI <- ( m I / s h U ) &( tone / boundary )
+PO <- ( p O / p E ) &( tone / boundary )
+MO <- m O &( tone / boundary )
+TEO <- t e o &boundary
+GA <- g a &boundary
+NA <- n a &boundary
+MU <- m u &boundary
+KU <- k u &boundary
+end_prenex <- ( b i / p a ) &boundary
+start_incidental <- j u &boundary
+start_parenthetical <- k i o &boundary
+end_parenthetical <- k i &boundary
+vocative_marker <- h u &boundary
+linking_word <- ( f i / g o / c u / k e ) &boundary
+connective <- ( r a / r u / r i / r o i / r o / r e ) &boundary
+illocutionary <- ( m o q / d a / k a / s o / b a ) &boundary
+quantifier <- ( t u / s i a / s a / h i / j a ) &boundary
+interjection <- ( h a / h u e / h i a / m ) &boundary
+
+syllable<desinence, tone> <- initial (desinence / neutral_desinence tone) &boundary
+neutral_syllable <- initial neutral_desinence spaces?
+compound_syllable <- syllable<compound_desinence, compound_tone>
+arg_syllable <- syllable<arg_desinence, arg_tone>
+relative_syllable <- syllable<relative_desinence, relative_tone>
+verb_syllable <- syllable<verb_desinence, verb_tone>
+content_syllable <- syllable<content_desinence, content_tone>
+preposition_syllable <- syllable<preposition_desinence, preposition_tone>
+adverb_syllable <- syllable<adverb_desinence, adverb_tone>
+
+boundary <- initial / spaces / EOF
+
+initial <- b / c h / c / d / f / g / h / j / k / l / m / n / p / r / s h / s / t
+
+desinence<ā,ū,ī,ō,ē> <-
+	ā o / ā i / ā q / ā /
+	ū a o / ū a i / ū e q / ū e / ū o q / ū o / ū i / ū a q / ū a / ū q / ū /
+	ī a o / ī a i / ī e q / ī e / ī o q / ī o / ī u / ī a q / ī a / ī q / ī /
+	ō e q / ō e / ō i / ō a q / ō a / ō q / ō /
+	ē o q / ē o / ē i / ē a q / ē a / ē q / ē
+neutral_desinence <- desinence<a,u,i,o,e>
+compound_desinence <- desinence<ā,ū,ī,ō,ē>
+arg_desinence <- desinence<á,ú,í,ó,é>
+relative_desinence <- desinence<ǎ,ǔ,ǐ,ǒ,ě>
+verb_desinence <- desinence<ả,ủ,ỉ,ỏ,ẻ>
+content_desinence <- desinence<â,û,î,ô,ê>
+preposition_desinence <- desinence<à,ù,ì,ò,è>
+adverb_desinence <- desinence<ã,ũ,ĩ,õ,ẽ>
+
+tone <- compound_tone / arg_tone / verb_tone / relative_tone / adverb_tone / preposition_tone / content_tone
+
+A <- a / ā / á / ǎ / ả / â / à / ã
+U <- u / ū / ú / ǔ / ủ / û / ù / ũ
+I <- i / ī / í / ǐ / ỉ / î / ì / ĩ
+O <- o / ō / ó / ǒ / ỏ / ô / ò / õ
+E <- e / ē / é / ě / ẻ / ê / è / ẽ
+
+ā <- [āĀ] / [aA] ( macron_combiner / compound_tone )
+ū <- [ūŪ] / [uU] ( macron_combiner / compound_tone )
+ī <- [īĪ] / [iI] ( macron_combiner / compound_tone )
+ō <- [ōŌ] / [oO] ( macron_combiner / compound_tone )
+ē <- [ēĒ] / [eE] ( macron_combiner / compound_tone )
+macron_combiner "\u25CC\u0304" <- "\u0304"
+compound_tone <- [\-1]
+
+á <- [áÁ] / [aA] ( acute_combiner / arg_tone )
+ú <- [úÚ] / [uU] ( acute_combiner / arg_tone )
+í <- [íÍ] / [iI] ( acute_combiner / arg_tone )
+ó <- [óÓ] / [oO] ( acute_combiner / arg_tone )
+é <- [éÉ] / [eE] ( acute_combiner / arg_tone )
+acute_combiner "\u25CC\u0301" <- "\u0301"
+arg_tone <- [/2]
+
+# This also includes the combining breve forms ( \u0306 ),
+# because la jelca is too lazy to fix his keyboard.
+ǎ <- [ǎǍ] / [aA] ( caron_combiner / breve_combiner / relative_tone )
+ǔ <- [ǔǓ] / [uU] ( caron_combiner / breve_combiner / relative_tone )
+ǐ <- [ǐǏ] / [iI] ( caron_combiner / breve_combiner / relative_tone )
+ǒ <- [ǒǑ] / [oO] ( caron_combiner / breve_combiner / relative_tone )
+ě <- [ěĚ] / [eE] ( caron_combiner / breve_combiner / relative_tone )
+caron_combiner "\u25CC\u030C" <- "\u030C"
+breve_combiner "\u25CC\u0306" <- "\u0306"
+relative_tone <- [V3]
+
+ả <- [ảẢ] / [aA] ( hook_combiner / verb_tone )
+ủ <- [ủỦ] / [uU] ( hook_combiner / verb_tone )
+ỉ <- [ỉỈ] / [iI] ( hook_combiner / verb_tone )
+ỏ <- [ỏỎ] / [oO] ( hook_combiner / verb_tone )
+ẻ <- [ẻẺ] / [eE] ( hook_combiner / verb_tone )
+hook_combiner "\u25CC\u0309" <- "\u0309"
+verb_tone <- [?4]
+
+â <- [âÂ] / [aA] ( circumflex_combiner / content_tone )
+û <- [ûÛ] / [uU] ( circumflex_combiner / content_tone )
+î <- [îÎ] / [iI] ( circumflex_combiner / content_tone )
+ô <- [ôÔ] / [oO] ( circumflex_combiner / content_tone )
+ê <- [êÊ] / [eE] ( circumflex_combiner / content_tone )
+circumflex_combiner "\u25CC\u0302" <- "\u0302"
+content_tone <- [5\^]
+
+à <- [àÀ] / [aA] ( grave_combiner / preposition_tone )
+ù <- [ùÙ] / [uU] ( grave_combiner / preposition_tone )
+ì <- [ìÌ] / [iI] ( grave_combiner / preposition_tone )
+ò <- [òÒ] / [oO] ( grave_combiner / preposition_tone )
+è <- [èÈ] / [eE] ( grave_combiner / preposition_tone )
+grave_combiner "\u25CC\u0300" <- "\u0300"
+preposition_tone <- [\\6]
+
+ã <- [ãÃ] / [aA] ( tilde_combiner / adverb_tone )
+ũ <- [ũŨ] / [uU] ( tilde_combiner / adverb_tone )
+ĩ <- [ĩĨ] / [iI] ( tilde_combiner / adverb_tone )
+õ <- [õÕ] / [oO] ( tilde_combiner / adverb_tone )
+ẽ <- [ẽẼ] / [eE] ( tilde_combiner / adverb_tone )
+tilde_combiner "\u25CC\u0303" <- "\u0303"
+adverb_tone <- [~7]
+
+a <- [aA]
+b <- [bB]
+c <- [cC]
+d <- [dD]
+e <- [eE]
+f <- [fF]
+g <- [gG]
+h <- [hH]
+i <- [ıiI]
+j <- [jJ]
+k <- [kK]
+l <- [lL]
+m <- [mM]
+n <- [nN]
+o <- [oO]
+p <- [pP]
+q <- [qQ]
+r <- [rR]
+s <- [sS]
+t <- [tT]
+u <- [uU]
+w <- [wW]
+y <- [yY]
+
+spaces "space" <- [\t\n\r!\u0020.,:]+
+EOF "EOF" <- !.

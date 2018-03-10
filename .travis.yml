@@ -1,0 +1,16 @@
+language: go
+
+go: "1.10"
+
+notifications:
+    email: false
+
+env:
+    - PATH=$HOME/gopath/bin:$PATH
+
+install:
+    - go get github.com/golang/lint/golint
+    - go get -t -v ./... && go build -v ./...
+
+script:
+    - ./gok.sh

@@ -12933,7 +12933,7 @@ func _co_bar_argAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// connective spaces? arg_1
+	// connective spaces? argument
 	// connective
 	if !_accept(parser, _connectiveAccepts, &pos, &perr) {
 		goto fail
@@ -12950,8 +12950,8 @@ func _co_bar_argAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos2
 	ok4:
 	}
-	// arg_1
-	if !_accept(parser, _arg_1Accepts, &pos, &perr) {
+	// argument
+	if !_accept(parser, _argumentAccepts, &pos, &perr) {
 		goto fail
 	}
 	return _memoize(parser, _co_bar_arg, start, pos, perr)
@@ -12971,7 +12971,7 @@ func _co_bar_argNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "co_bar_arg"}
-	// connective spaces? arg_1
+	// connective spaces? argument
 	// connective
 	if !_node(parser, _connectiveNode, node, &pos) {
 		goto fail
@@ -12990,8 +12990,8 @@ func _co_bar_argNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// arg_1
-	if !_node(parser, _arg_1Node, node, &pos) {
+	// argument
+	if !_node(parser, _argumentNode, node, &pos) {
 		goto fail
 	}
 	node.Text = parser.text[start:pos]
@@ -13011,7 +13011,7 @@ func _co_bar_argFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _co_bar_arg}
-	// connective spaces? arg_1
+	// connective spaces? argument
 	// connective
 	if !_fail(parser, _connectiveFail, errPos, failure, &pos) {
 		goto fail
@@ -13028,8 +13028,8 @@ func _co_bar_argFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		pos = pos2
 	ok4:
 	}
-	// arg_1
-	if !_fail(parser, _arg_1Fail, errPos, failure, &pos) {
+	// argument
+	if !_fail(parser, _argumentFail, errPos, failure, &pos) {
 		goto fail
 	}
 	parser.fail[key] = failure
@@ -13052,7 +13052,7 @@ func _co_bar_argAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// connective spaces? arg_1
+	// connective spaces? argument
 	{
 		var node0 string
 		// connective
@@ -13080,8 +13080,8 @@ func _co_bar_argAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// arg_1
-		if p, n := _arg_1Action(parser, pos); n == nil {
+		// argument
+		if p, n := _argumentAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -89524,9 +89524,9 @@ func _spacesAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [\t\n\r! .,:]+
-	// [\t\n\r! .,:]
-	if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != '!' && r != ' ' && r != '.' && r != ',' && r != ':' {
+	// [\t\n\r .,:!]+
+	// [\t\n\r .,:!]
+	if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
 		perr = _max(perr, pos)
 		goto fail
 	} else {
@@ -89534,8 +89534,8 @@ func _spacesAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	}
 	for {
 		pos1 := pos
-		// [\t\n\r! .,:]
-		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != '!' && r != ' ' && r != '.' && r != ',' && r != ':' {
+		// [\t\n\r .,:!]
+		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
 			perr = _max(perr, pos)
 			goto fail3
 		} else {
@@ -89564,9 +89564,9 @@ func _spacesNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "spaces"}
-	// [\t\n\r! .,:]+
-	// [\t\n\r! .,:]
-	if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != '!' && r != ' ' && r != '.' && r != ',' && r != ':' {
+	// [\t\n\r .,:!]+
+	// [\t\n\r .,:!]
+	if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
 		goto fail
 	} else {
 		node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
@@ -89575,8 +89575,8 @@ func _spacesNode(parser *_Parser, start int) (int, *peg.Node) {
 	for {
 		nkids0 := len(node.Kids)
 		pos1 := pos
-		// [\t\n\r! .,:]
-		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != '!' && r != ' ' && r != '.' && r != ',' && r != ':' {
+		// [\t\n\r .,:!]
+		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
 			goto fail3
 		} else {
 			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
@@ -89605,13 +89605,13 @@ func _spacesFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _spaces}
-	// [\t\n\r! .,:]+
-	// [\t\n\r! .,:]
-	if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != '!' && r != ' ' && r != '.' && r != ',' && r != ':' {
+	// [\t\n\r .,:!]+
+	// [\t\n\r .,:!]
+	if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "[\\t\\n\\r! .,:]",
+				Want: "[\\t\\n\\r .,:!]",
 			})
 		}
 		goto fail
@@ -89620,12 +89620,12 @@ func _spacesFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 	}
 	for {
 		pos1 := pos
-		// [\t\n\r! .,:]
-		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != '!' && r != ' ' && r != '.' && r != ',' && r != ':' {
+		// [\t\n\r .,:!]
+		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
 			if pos >= errPos {
 				failure.Kids = append(failure.Kids, &peg.Fail{
 					Pos:  int(pos),
-					Want: "[\\t\\n\\r! .,:]",
+					Want: "[\\t\\n\\r .,:!]",
 				})
 			}
 			goto fail3
@@ -89660,11 +89660,11 @@ func _spacesAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [\t\n\r! .,:]+
+	// [\t\n\r .,:!]+
 	{
 		var node2 string
-		// [\t\n\r! .,:]
-		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != '!' && r != ' ' && r != '.' && r != ',' && r != ':' {
+		// [\t\n\r .,:!]
+		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
 			goto fail
 		} else {
 			node2 = parser.text[pos : pos+w]
@@ -89675,8 +89675,8 @@ func _spacesAction(parser *_Parser, start int) (int, *string) {
 	for {
 		pos1 := pos
 		var node2 string
-		// [\t\n\r! .,:]
-		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != '!' && r != ' ' && r != '.' && r != ',' && r != ':' {
+		// [\t\n\r .,:!]
+		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
 			goto fail3
 		} else {
 			node2 = parser.text[pos : pos+w]

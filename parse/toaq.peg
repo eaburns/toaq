@@ -95,7 +95,7 @@ arg_6 <- content_clause / coP_pred_arg / forethought_coP_pred_arg / LU_arg / MI_
 arg_7 <- arg_syllable compound_syllable+ / !function_word arg_syllable
 serial_argument <- arg_6 spaces? serial_predicate
 coP_arg <- arg_1 spaces? co_bar_arg
-co_bar_arg <- connective spaces? arg_1
+co_bar_arg <- connective spaces? argument
 forethought_coP_arg <- forethought_connective spaces? forethought_coP_arg_1
 forethought_coP_arg_1 <- argument spaces? forethought_co_bar_arg
 forethought_co_bar_arg <- gik spaces? argument
@@ -432,5 +432,5 @@ u <- [uU]
 w <- [wW]
 y <- [yY]
 
-spaces "space" <- [\t\n\r!\u0020.,:]+
+spaces "space" <- [\t\n\r\u0020.,:!]+
 EOF "EOF" <- !.

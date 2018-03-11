@@ -60,7 +60,7 @@ arg_6 <- ( content_clause / coP_pred_arg / forethought_coP_pred_arg / LU_arg / M
 arg_7 <- ( syllable arg_tone ( syllable compound_tone )+ / predicate_word arg_tone )
 serial_argument <- ( arg_6 spaces? serial_predicate )
 coP_arg <- ( arg_1 spaces? co_bar_arg )
-co_bar_arg <- ( connective spaces? arg_1 )
+co_bar_arg <- ( connective spaces? argument )
 forethought_coP_arg <- ( forethought_connective spaces? forethought_coP_arg_1 )
 forethought_coP_arg_1 <- ( argument spaces? forethought_co_bar_arg )
 forethought_co_bar_arg <- ( gik spaces? argument )

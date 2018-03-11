@@ -8,7 +8,7 @@
 }
 
 full_text <- text EOF
-text <- spaces? freemod* spaces? discourse? spaces? EOF?
+text <- spaces? freemod? spaces? discourse? spaces? EOF?
 
 #
 # Discourse
@@ -274,7 +274,7 @@ MO_content_predicate_tone <- &MO content_syllable
 # Free modifiers and interjections
 #
 
-freemod <- spaces? ( interjection / parenthetical / incidental / vocative ) spaces?
+freemod <- spaces? ( interjection / parenthetical / incidental / vocative ) spaces? freemod?
 parenthetical <- parenthetical_1 spaces? end_parenthetical
 parenthetical_1 <- start_parenthetical spaces? discourse
 incidental <- spaces? start_incidental freemod? statement

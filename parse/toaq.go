@@ -611,7 +611,7 @@ func _textAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// spaces? freemod* spaces? discourse? spaces? EOF?
+	// spaces? freemod? spaces? discourse? spaces? EOF?
 	// spaces?
 	{
 		pos2 := pos
@@ -624,17 +624,17 @@ func _textAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos2
 	ok4:
 	}
-	// freemod*
-	for {
+	// freemod?
+	{
 		pos6 := pos
 		// freemod
 		if !_accept(parser, _freemodAccepts, &pos, &perr) {
-			goto fail8
+			goto fail7
 		}
-		continue
-	fail8:
+		goto ok8
+	fail7:
 		pos = pos6
-		break
+	ok8:
 	}
 	// spaces?
 	{
@@ -699,7 +699,7 @@ func _textNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "text"}
-	// spaces? freemod* spaces? discourse? spaces? EOF?
+	// spaces? freemod? spaces? discourse? spaces? EOF?
 	// spaces?
 	{
 		nkids1 := len(node.Kids)
@@ -714,19 +714,19 @@ func _textNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// freemod*
-	for {
+	// freemod?
+	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
 		// freemod
 		if !_node(parser, _freemodNode, node, &pos) {
-			goto fail8
+			goto fail7
 		}
-		continue
-	fail8:
+		goto ok8
+	fail7:
 		node.Kids = node.Kids[:nkids5]
 		pos = pos6
-		break
+	ok8:
 	}
 	// spaces?
 	{
@@ -799,7 +799,7 @@ func _textFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _text}
-	// spaces? freemod* spaces? discourse? spaces? EOF?
+	// spaces? freemod? spaces? discourse? spaces? EOF?
 	// spaces?
 	{
 		pos2 := pos
@@ -812,17 +812,17 @@ func _textFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		pos = pos2
 	ok4:
 	}
-	// freemod*
-	for {
+	// freemod?
+	{
 		pos6 := pos
 		// freemod
 		if !_fail(parser, _freemodFail, errPos, failure, &pos) {
-			goto fail8
+			goto fail7
 		}
-		continue
-	fail8:
+		goto ok8
+	fail7:
 		pos = pos6
-		break
+	ok8:
 	}
 	// spaces?
 	{
@@ -889,7 +889,7 @@ func _textAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// spaces? freemod* spaces? discourse? spaces? EOF?
+	// spaces? freemod? spaces? discourse? spaces? EOF?
 	{
 		var node0 string
 		// spaces?
@@ -909,22 +909,21 @@ func _textAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// freemod*
-		for {
+		// freemod?
+		{
 			pos6 := pos
-			var node7 string
 			// freemod
 			if p, n := _freemodAction(parser, pos); n == nil {
-				goto fail8
+				goto fail7
 			} else {
-				node7 = *n
+				node0 = *n
 				pos = p
 			}
-			node0 += node7
-			continue
-		fail8:
+			goto ok8
+		fail7:
+			node0 = ""
 			pos = pos6
-			break
+		ok8:
 		}
 		node += node0
 		// spaces?
@@ -40045,7 +40044,7 @@ func _freemodAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// spaces? (interjection/parenthetical/incidental/vocative) spaces?
+	// spaces? (interjection/parenthetical/incidental/vocative) spaces? freemod?
 	// spaces?
 	{
 		pos2 := pos
@@ -40105,6 +40104,18 @@ func _freemodAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos13
 	ok15:
 	}
+	// freemod?
+	{
+		pos17 := pos
+		// freemod
+		if !_accept(parser, _freemodAccepts, &pos, &perr) {
+			goto fail18
+		}
+		goto ok19
+	fail18:
+		pos = pos17
+	ok19:
+	}
 	return _memoize(parser, _freemod, start, pos, perr)
 fail:
 	return _memoize(parser, _freemod, start, -1, perr)
@@ -40122,7 +40133,7 @@ func _freemodNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "freemod"}
-	// spaces? (interjection/parenthetical/incidental/vocative) spaces?
+	// spaces? (interjection/parenthetical/incidental/vocative) spaces? freemod?
 	// spaces?
 	{
 		nkids1 := len(node.Kids)
@@ -40197,6 +40208,20 @@ func _freemodNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos15
 	ok17:
 	}
+	// freemod?
+	{
+		nkids18 := len(node.Kids)
+		pos19 := pos
+		// freemod
+		if !_node(parser, _freemodNode, node, &pos) {
+			goto fail20
+		}
+		goto ok21
+	fail20:
+		node.Kids = node.Kids[:nkids18]
+		pos = pos19
+	ok21:
+	}
 	node.Text = parser.text[start:pos]
 	parser.node[key] = node
 	return pos, node
@@ -40214,7 +40239,7 @@ func _freemodFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _freemod}
-	// spaces? (interjection/parenthetical/incidental/vocative) spaces?
+	// spaces? (interjection/parenthetical/incidental/vocative) spaces? freemod?
 	// spaces?
 	{
 		pos2 := pos
@@ -40274,6 +40299,18 @@ func _freemodFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		pos = pos13
 	ok15:
 	}
+	// freemod?
+	{
+		pos17 := pos
+		// freemod
+		if !_fail(parser, _freemodFail, errPos, failure, &pos) {
+			goto fail18
+		}
+		goto ok19
+	fail18:
+		pos = pos17
+	ok19:
+	}
 	parser.fail[key] = failure
 	return pos, failure
 fail:
@@ -40294,7 +40331,7 @@ func _freemodAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// spaces? (interjection/parenthetical/incidental/vocative) spaces?
+	// spaces? (interjection/parenthetical/incidental/vocative) spaces? freemod?
 	{
 		var node0 string
 		// spaces?
@@ -40377,6 +40414,23 @@ func _freemodAction(parser *_Parser, start int) (int, *string) {
 			node0 = ""
 			pos = pos13
 		ok15:
+		}
+		node += node0
+		// freemod?
+		{
+			pos17 := pos
+			// freemod
+			if p, n := _freemodAction(parser, pos); n == nil {
+				goto fail18
+			} else {
+				node0 = *n
+				pos = p
+			}
+			goto ok19
+		fail18:
+			node0 = ""
+			pos = pos17
+		ok19:
 		}
 		node += node0
 	}

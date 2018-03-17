@@ -30,12 +30,10 @@ co_bar_sentence <- connective spaces? sentence_1
 forethought_coP_sentence <- forethought_connective spaces? forethought_coP_sentence_1
 forethought_coP_sentence_1 <- sentence spaces? forethought_co_bar_sentence
 forethought_co_bar_sentence <- gik spaces? sentence
-sentence_prefix <- k e o &boundary / j e &boundary
 statement <- coP_statement / statement_1
 statement_1 <- forethought_coP_statement / statement_2
 statement_2 <- statement_3 end_statement?
 statement_3 <- prenex? spaces? predication
-end_statement <- NA freemod?
 prenex <- terms spaces? end_prenex
 predication <- predicate spaces? terms?
 coP_statement <- statement_1 spaces? co_bar_statement
@@ -62,13 +60,13 @@ forethought_coP_pred_1 <- predicate spaces? forethought_co_bar_pred
 forethought_co_bar_pred <- gik spaces? predicate
 LU_predicate <- LU_predicate_tone spaces? statement
 LU_predicate_tone <- &LU verb_syllable
-MI_predicate <- MI_predicate_1 spaces? GA?
+MI_predicate <- MI_predicate_1 spaces? end_predicatizer?
 MI_predicate_1 <- MI_predicate_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
 MI_predicate_tone <- &MI verb_syllable
-PO_predicate <- PO_predicate_1 spaces? GA?
+PO_predicate <- PO_predicate_1 spaces? end_predicatizer?
 PO_predicate_1 <- PO_predicate_tone spaces? argument
 PO_predicate_tone <- &PO verb_syllable
-quotation_predicate <- MO_predicate spaces? TEO
+quotation_predicate <- MO_predicate spaces? end_quote
 MO_predicate <- MO_predicate_tone spaces? discourse
 MO_predicate_tone <- &MO verb_syllable
 
@@ -104,13 +102,13 @@ forethought_coP_pred_arg <- forethought_connective spaces? forethought_coP_pred_
 forethought_coP_pred_arg_1 <- argument spaces? forethought_co_bar_pred
 LU_arg <- LU_arg_tone spaces? statement
 LU_arg_tone <- &LU arg_syllable
-MI_arg <- MI_arg_1 spaces? GA?
+MI_arg <- MI_arg_1 spaces? end_predicatizer?
 MI_arg_1 <- MI_arg_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
 MI_arg_tone <- &MI arg_syllable
-PO_arg <- PO_arg_1 spaces? GA?
+PO_arg <- PO_arg_1 spaces? end_predicatizer?
 PO_arg_1 <- PO_arg_tone spaces? argument
 PO_arg_tone <- &PO arg_syllable
-quotation_argument <- MO_argument spaces? TEO
+quotation_argument <- MO_argument spaces? end_quote
 MO_argument <- MO_argument_tone spaces? discourse
 MO_argument_tone <- &MO arg_syllable
 
@@ -139,13 +137,13 @@ forethought_coP_pred_relative_predicate <- forethought_connective spaces? foreth
 forethought_coP_pred_relative_predicate_1 <- relative_predicate spaces? forethought_co_bar_pred
 LU_relative <- LU_relative_tone spaces? statement
 LU_relative_tone <- &LU relative_syllable
-MI_relative_predicate <- MI_relative_predicate_1 spaces? GA?
+MI_relative_predicate <- MI_relative_predicate_1 spaces? end_predicatizer?
 MI_relative_predicate_1 <- MI_relative_predicate_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
 MI_relative_predicate_tone <- &MI relative_syllable
-PO_relative_predicate <- PO_relative_predicate_1 spaces? GA?
+PO_relative_predicate <- PO_relative_predicate_1 spaces? end_predicatizer?
 PO_relative_predicate_1 <- PO_relative_predicate_tone spaces? argument
 PO_relative_predicate_tone <- &PO relative_syllable
-quotation_relative_predicate <- MO_relative_predicate spaces? TEO
+quotation_relative_predicate <- MO_relative_predicate spaces? end_quote
 MO_relative_predicate <- MO_relative_predicate_tone spaces? discourse
 MO_relative_predicate_tone <- &MO relative_syllable
 
@@ -194,13 +192,13 @@ forethought_coP_pred_adverb <- forethought_connective spaces? forethought_coP_pr
 forethought_coP_pred_adverb_1 <- adverb spaces? forethought_co_bar_pred
 LU_adverb <- LU_adverb_tone spaces? statement
 LU_adverb_tone <- &LU adverb_syllable
-MI_adverb <- MI_adverb_1 spaces? GA?
+MI_adverb <- MI_adverb_1 spaces? end_predicatizer?
 MI_adverb_1 <- MI_adverb_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
 MI_adverb_tone <- &MI adverb_syllable
-PO_adverb <- PO_adverb_1 spaces? GA?
+PO_adverb <- PO_adverb_1 spaces? end_predicatizer?
 PO_adverb_1 <- PO_adverb_tone spaces? argument
 PO_adverb_tone <- &PO adverb_syllable
-quotation_adverb <- MO_adverb spaces? TEO
+quotation_adverb <- MO_adverb spaces? end_quote
 MO_adverb <- MO_adverb_tone spaces? discourse
 MO_adverb_tone <- &MO adverb_syllable
 
@@ -232,13 +230,13 @@ forethought_coP_pred_preposition <- forethought_connective spaces? forethought_c
 forethought_coP_pred_preposition_1 <- preposition spaces? forethought_co_bar_pred
 LU_preposition <- LU_preposition_tone spaces? statement
 LU_preposition_tone <- &LU preposition_syllable
-MI_preposition <- MI_preposition_1 spaces? GA?
+MI_preposition <- MI_preposition_1 spaces? end_predicatizer?
 MI_preposition_1 <- MI_preposition_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
 MI_preposition_tone <- &MI preposition_syllable
-PO_preposition <- PO_preposition_1 spaces? GA?
+PO_preposition <- PO_preposition_1 spaces? end_predicatizer?
 PO_preposition_1 <- PO_preposition_tone spaces? argument
 PO_preposition_tone <- &PO preposition_syllable
-quotation_preposition <- MO_preposition spaces? TEO
+quotation_preposition <- MO_preposition spaces? end_quote
 MO_preposition <- MO_preposition_tone spaces? discourse
 MO_preposition_tone <- &MO preposition_syllable
 
@@ -260,13 +258,13 @@ forethought_coP_pred_content_predicate <- forethought_connective spaces? foretho
 forethought_coP_pred_content_predicate_1 <- content_predicate spaces? forethought_co_bar_pred
 LU_content <- LU_content_tone statement
 LU_content_tone <- &LU content_syllable
-MI_content_predicate <- MI_content_predicate_1 spaces? GA?
+MI_content_predicate <- MI_content_predicate_1 spaces? end_predicatizer?
 MI_content_predicate_1 <- MI_content_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
 MI_content_tone <- &MI content_syllable
-PO_content_predicate <- PO_content_predicate_1 spaces? GA?
+PO_content_predicate <- PO_content_predicate_1 spaces? end_predicatizer?
 PO_content_predicate_1 <- PO_content_tone spaces? argument
 PO_content_tone <- &PO content_syllable
-quotation_content_predicate <- MO_content_predicate spaces? TEO
+quotation_content_predicate <- MO_content_predicate spaces? end_quote
 MO_content_predicate <- MO_content_predicate_tone spaces? discourse
 MO_content_predicate_tone <- &MO content_syllable
 
@@ -281,36 +279,50 @@ incidental <- spaces? start_incidental freemod? statement
 vocative <- vocative_marker spaces? argument
 
 #
-# Prefix modifiers
-#
-
-prefix <- MU freemod?
-focus <- KU
-
-#
 # Morphology
 #
 
-function_word <- sentence_prefix / connective / start_incidental / start_parenthetical / end_parenthetical / quantifier / illocutionary / end_statement / end_prenex / LU / MI / PO / MO / TEO / GA / linking_word / vocative
-LU <- ( l U / l I / l O / m A / t I o ) &( tone / boundary )
-MI <- ( m I / s h U ) &( tone / boundary )
-PO <- ( p O / p E ) &( tone / boundary )
-MO <- m O &( tone / boundary )
-TEO <- t e o &boundary
-GA <- g a &boundary
-NA <- n a &boundary
-MU <- m u &boundary
-KU <- k u &boundary
-end_prenex <- ( b i / p a ) &boundary
-start_incidental <- j u &boundary
-start_parenthetical <- k i o &boundary
-end_parenthetical <- k i &boundary
-vocative_marker <- h u &boundary
-linking_word <- ( f i / g o / c u / k e ) &boundary
-connective <- ( r a / r u / r i / r o i / r o / r e ) &boundary
-illocutionary <- ( m o q / d a / k a / s o / b a ) &boundary
-quantifier <- ( t u / s i a / s a / h i / j a ) &boundary
-interjection <- ( h a / h u e / h i a / m ) &boundary
+prefix <- &MU neutral_syllable freemod?
+focus <- &KU neutral_syllable
+end_quote <- &TEO neutral_syllable
+end_predicatizer <- &GA neutral_syllable
+end_statement <- &NA neutral_syllable freemod?
+sentence_prefix <- &KEO neutral_syllable
+end_prenex <- &BI neutral_syllable
+start_incidental <- &JU neutral_syllable
+start_parenthetical <- &KIO neutral_syllable
+end_parenthetical <- &KI neutral_syllable
+vocative_marker <- &HU neutral_syllable
+linking_word <- &GO neutral_syllable
+connective <- &RA neutral_syllable
+illocutionary <- &DA neutral_syllable
+quantifier <- &TU neutral_syllable
+interjection <- &HA neutral_syllable
+
+# The following function word rules match any tone.
+# The intended use is as the subexpression of a ! or &,
+# followed by the desired syllable tone.
+function_word <- KEO / RA / JU / KIO / KI / TU / DA / BI / NA / LU / MI / PO / MO / TEO / GA / GO / HU
+LU <- ( l U / l I / l O / m A / t I o ) &( tone? boundary )
+MI <- ( m I / s h U ) &( tone? boundary )
+PO <- ( p O / p E ) &( tone? boundary )
+MO <- m O &( tone? boundary )
+TEO <- t E o &( tone? boundary )
+GA <- g A &( tone? boundary )
+NA <- n A &( tone? boundary )
+MU <- m U &( tone? boundary )
+KU <- k U &( tone? boundary )
+KEO <- ( k E o / j E ) &( tone? boundary )
+BI <- ( b I / p A ) &( tone? boundary )
+JU <- j U &( tone? boundary )
+KIO <- k I o &( tone? boundary )
+KI <- k I &( tone? boundary )
+HU <- h U &( tone? boundary )
+GO <- ( g O / f I / c U / k E ) &( tone? boundary )
+RA <- ( r A / r U / r I / r O i / r O / r E ) &( tone? boundary )
+DA <- ( d A / m O q / k A / s O / b A ) &( tone? boundary )
+TU <- ( t U / s I a / s A / h I / j A ) &( tone? boundary )
+HA <- ( h A / h U e / h I a / m ) &( tone? boundary )
 
 syllable<desinence, tone> <- initial (desinence / neutral_desinence tone) &boundary
 neutral_syllable <- initial neutral_desinence spaces?

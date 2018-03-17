@@ -20,347 +20,360 @@ const (
 	_forethought_coP_sentence                          int = 10
 	_forethought_coP_sentence_1                        int = 11
 	_forethought_co_bar_sentence                       int = 12
-	_sentence_prefix                                   int = 13
-	_statement                                         int = 14
-	_statement_1                                       int = 15
-	_statement_2                                       int = 16
-	_statement_3                                       int = 17
-	_end_statement                                     int = 18
-	_prenex                                            int = 19
-	_predication                                       int = 20
-	_coP_statement                                     int = 21
-	_co_bar_statement                                  int = 22
-	_forethought_coP_statement                         int = 23
-	_forethought_coP_statement_1                       int = 24
-	_forethought_co_bar_statement                      int = 25
-	_predicate                                         int = 26
-	_predicate_1                                       int = 27
-	_predicate_2                                       int = 28
-	_predicate_3                                       int = 29
-	_predicate_4                                       int = 30
-	_serial_predicate                                  int = 31
-	_serial_predicate_2                                int = 32
-	_coP_pred                                          int = 33
-	_co_bar_pred                                       int = 34
-	_forethought_coP_pred                              int = 35
-	_forethought_coP_pred_1                            int = 36
-	_forethought_co_bar_pred                           int = 37
-	_LU_predicate                                      int = 38
-	_LU_predicate_tone                                 int = 39
-	_MI_predicate                                      int = 40
-	_MI_predicate_1                                    int = 41
-	_MI_predicate_tone                                 int = 42
-	_PO_predicate                                      int = 43
-	_PO_predicate_1                                    int = 44
-	_PO_predicate_tone                                 int = 45
-	_quotation_predicate                               int = 46
-	_MO_predicate                                      int = 47
-	_MO_predicate_tone                                 int = 48
-	_terms                                             int = 49
-	_terms_2                                           int = 50
-	_term                                              int = 51
-	_argument                                          int = 52
-	_arg_1                                             int = 53
-	_arg_2                                             int = 54
-	_arg_3                                             int = 55
-	_arg_4                                             int = 56
-	_arg_5                                             int = 57
-	_arg_6                                             int = 58
-	_arg_7                                             int = 59
-	_serial_argument                                   int = 60
-	_coP_arg                                           int = 61
-	_co_bar_arg                                        int = 62
-	_forethought_coP_arg                               int = 63
-	_forethought_coP_arg_1                             int = 64
-	_forethought_co_bar_arg                            int = 65
-	_coP_pred_arg                                      int = 66
-	_forethought_coP_pred_arg                          int = 67
-	_forethought_coP_pred_arg_1                        int = 68
-	_LU_arg                                            int = 69
-	_LU_arg_tone                                       int = 70
-	_MI_arg                                            int = 71
-	_MI_arg_1                                          int = 72
-	_MI_arg_tone                                       int = 73
-	_PO_arg                                            int = 74
-	_PO_arg_1                                          int = 75
-	_PO_arg_tone                                       int = 76
-	_quotation_argument                                int = 77
-	_MO_argument                                       int = 78
-	_MO_argument_tone                                  int = 79
-	_relative_clause                                   int = 80
-	_relative_clause_1                                 int = 81
-	_relative_clause_2                                 int = 82
-	_relative_clause_3                                 int = 83
-	_relative_predication                              int = 84
-	_coP_rel_statement                                 int = 85
-	_coP_rel                                           int = 86
-	_co_bar_rel                                        int = 87
-	_forethought_coP_rel                               int = 88
-	_forethought_coP_rel_1                             int = 89
-	_forethought_co_bar_rel                            int = 90
-	_relative_predicate                                int = 91
-	_relative_predicate_1                              int = 92
-	_relative_predicate_2                              int = 93
-	_relative_predicate_3                              int = 94
-	_serial_relative_predicate                         int = 95
-	_coP_pred_relative_predicate                       int = 96
-	_forethought_coP_pred_relative_predicate           int = 97
-	_forethought_coP_pred_relative_predicate_1         int = 98
-	_LU_relative                                       int = 99
-	_LU_relative_tone                                  int = 100
-	_MI_relative_predicate                             int = 101
-	_MI_relative_predicate_1                           int = 102
-	_MI_relative_predicate_tone                        int = 103
-	_PO_relative_predicate                             int = 104
-	_PO_relative_predicate_1                           int = 105
-	_PO_relative_predicate_tone                        int = 106
-	_quotation_relative_predicate                      int = 107
-	_MO_relative_predicate                             int = 108
-	_MO_relative_predicate_tone                        int = 109
-	_termset                                           int = 110
-	_termset_II                                        int = 111
-	_forethought_coP_term_II                           int = 112
-	_forethought_co_bar_term_II                        int = 113
-	_termset_III                                       int = 114
-	_forethought_coP_term_III                          int = 115
-	_forethought_co_bar_term_III                       int = 116
-	_termset_IV                                        int = 117
-	_forethought_coP_term_IV                           int = 118
-	_forethought_co_bar_term_IV                        int = 119
-	_termset_V                                         int = 120
-	_forethought_coP_term_V                            int = 121
-	_forethought_co_bar_term_V                         int = 122
-	_forethought_connective                            int = 123
-	_forethought_marker                                int = 124
-	_gik                                               int = 125
-	_terms_II                                          int = 126
-	_terms_III                                         int = 127
-	_terms_IV                                          int = 128
-	_terms_V                                           int = 129
-	_adverb                                            int = 130
-	_adverb_1                                          int = 131
-	_adverb_2                                          int = 132
-	_adverb_3                                          int = 133
-	_adverb_4                                          int = 134
-	_coP_adverb                                        int = 135
-	_co_bar_adverb                                     int = 136
-	_forethought_coP_adverb                            int = 137
-	_forethought_coP_adverb_1                          int = 138
-	_forethought_co_bar_adverb                         int = 139
-	_serial_adverb                                     int = 140
-	_coP_pred_adverb                                   int = 141
-	_forethought_coP_pred_adverb                       int = 142
-	_forethought_coP_pred_adverb_1                     int = 143
-	_LU_adverb                                         int = 144
-	_LU_adverb_tone                                    int = 145
-	_MI_adverb                                         int = 146
-	_MI_adverb_1                                       int = 147
-	_MI_adverb_tone                                    int = 148
-	_PO_adverb                                         int = 149
-	_PO_adverb_1                                       int = 150
-	_PO_adverb_tone                                    int = 151
-	_quotation_adverb                                  int = 152
-	_MO_adverb                                         int = 153
-	_MO_adverb_tone                                    int = 154
-	_prepositional_phrase                              int = 155
-	_prepositional_phrase_1                            int = 156
-	_prepositional_phrase_2                            int = 157
-	_coP_prepositional_phrase                          int = 158
-	_co_bar_prepositional_phrase                       int = 159
-	_forethought_coP_prepositional_phrase              int = 160
-	_forethought_coP_prepositional_phrase_1            int = 161
-	_forethought_co_bar_prepositional_phrase           int = 162
-	_preposition                                       int = 163
-	_preposition_1                                     int = 164
-	_preposition_2                                     int = 165
-	_preposition_3                                     int = 166
-	_preposition_4                                     int = 167
-	_coP_preposition                                   int = 168
-	_co_bar_preposition                                int = 169
-	_forethought_coP_preposition                       int = 170
-	_forethought_coP_preposition_1                     int = 171
-	_forethought_co_bar_preposition                    int = 172
-	_serial_preposition                                int = 173
-	_coP_pred_preposition                              int = 174
-	_forethought_coP_pred_preposition                  int = 175
-	_forethought_coP_pred_preposition_1                int = 176
-	_LU_preposition                                    int = 177
-	_LU_preposition_tone                               int = 178
-	_MI_preposition                                    int = 179
-	_MI_preposition_1                                  int = 180
-	_MI_preposition_tone                               int = 181
-	_PO_preposition                                    int = 182
-	_PO_preposition_1                                  int = 183
-	_PO_preposition_tone                               int = 184
-	_quotation_preposition                             int = 185
-	_MO_preposition                                    int = 186
-	_MO_preposition_tone                               int = 187
-	_content_clause                                    int = 188
-	_content_clause_1                                  int = 189
-	_content_predication                               int = 190
-	_coP_content_statement                             int = 191
-	_content_predicate                                 int = 192
-	_content_predicate_1                               int = 193
-	_content_predicate_2                               int = 194
-	_content_predicate_3                               int = 195
-	_serial_content_predicate                          int = 196
-	_coP_pred_content_predicate                        int = 197
-	_forethought_coP_pred_content_predicate            int = 198
-	_forethought_coP_pred_content_predicate_1          int = 199
-	_LU_content                                        int = 200
-	_LU_content_tone                                   int = 201
-	_MI_content_predicate                              int = 202
-	_MI_content_predicate_1                            int = 203
-	_MI_content_tone                                   int = 204
-	_PO_content_predicate                              int = 205
-	_PO_content_predicate_1                            int = 206
-	_PO_content_tone                                   int = 207
-	_quotation_content_predicate                       int = 208
-	_MO_content_predicate                              int = 209
-	_MO_content_predicate_tone                         int = 210
-	_freemod                                           int = 211
-	_parenthetical                                     int = 212
-	_parenthetical_1                                   int = 213
-	_incidental                                        int = 214
-	_vocative                                          int = 215
-	_prefix                                            int = 216
-	_focus                                             int = 217
-	_function_word                                     int = 218
-	_LU                                                int = 219
-	_MI                                                int = 220
-	_PO                                                int = 221
-	_MO                                                int = 222
-	_TEO                                               int = 223
-	_GA                                                int = 224
-	_NA                                                int = 225
-	_MU                                                int = 226
-	_KU                                                int = 227
-	_end_prenex                                        int = 228
-	_start_incidental                                  int = 229
-	_start_parenthetical                               int = 230
-	_end_parenthetical                                 int = 231
-	_vocative_marker                                   int = 232
-	_linking_word                                      int = 233
-	_connective                                        int = 234
-	_illocutionary                                     int = 235
-	_quantifier                                        int = 236
-	_interjection                                      int = 237
-	_syllable__compound_desinence__compound_tone       int = 238
-	_syllable__arg_desinence__arg_tone                 int = 239
-	_syllable__relative_desinence__relative_tone       int = 240
-	_syllable__verb_desinence__verb_tone               int = 241
-	_syllable__content_desinence__content_tone         int = 242
-	_syllable__preposition_desinence__preposition_tone int = 243
-	_syllable__adverb_desinence__adverb_tone           int = 244
-	_neutral_syllable                                  int = 245
-	_compound_syllable                                 int = 246
-	_arg_syllable                                      int = 247
-	_relative_syllable                                 int = 248
-	_verb_syllable                                     int = 249
-	_content_syllable                                  int = 250
-	_preposition_syllable                              int = 251
-	_adverb_syllable                                   int = 252
-	_boundary                                          int = 253
-	_initial                                           int = 254
-	_desinence__a__u__i__o__e                          int = 255
-	_desinence__ā__ū__ī__ō__ē                          int = 256
-	_desinence__á__ú__í__ó__é                          int = 257
-	_desinence__ǎ__ǔ__ǐ__ǒ__ě                          int = 258
-	_desinence__ả__ủ__ỉ__ỏ__ẻ                          int = 259
-	_desinence__â__û__î__ô__ê                          int = 260
-	_desinence__à__ù__ì__ò__è                          int = 261
-	_desinence__ã__ũ__ĩ__õ__ẽ                          int = 262
-	_neutral_desinence                                 int = 263
-	_compound_desinence                                int = 264
-	_arg_desinence                                     int = 265
-	_relative_desinence                                int = 266
-	_verb_desinence                                    int = 267
-	_content_desinence                                 int = 268
-	_preposition_desinence                             int = 269
-	_adverb_desinence                                  int = 270
-	_tone                                              int = 271
-	_A                                                 int = 272
-	_U                                                 int = 273
-	_I                                                 int = 274
-	_O                                                 int = 275
-	_E                                                 int = 276
-	_ā                                                 int = 277
-	_ū                                                 int = 278
-	_ī                                                 int = 279
-	_ō                                                 int = 280
-	_ē                                                 int = 281
-	_macron_combiner                                   int = 282
-	_compound_tone                                     int = 283
-	_á                                                 int = 284
-	_ú                                                 int = 285
-	_í                                                 int = 286
-	_ó                                                 int = 287
-	_é                                                 int = 288
-	_acute_combiner                                    int = 289
-	_arg_tone                                          int = 290
-	_ǎ                                                 int = 291
-	_ǔ                                                 int = 292
-	_ǐ                                                 int = 293
-	_ǒ                                                 int = 294
-	_ě                                                 int = 295
-	_caron_combiner                                    int = 296
-	_breve_combiner                                    int = 297
-	_relative_tone                                     int = 298
-	_ả                                                 int = 299
-	_ủ                                                 int = 300
-	_ỉ                                                 int = 301
-	_ỏ                                                 int = 302
-	_ẻ                                                 int = 303
-	_hook_combiner                                     int = 304
-	_verb_tone                                         int = 305
-	_â                                                 int = 306
-	_û                                                 int = 307
-	_î                                                 int = 308
-	_ô                                                 int = 309
-	_ê                                                 int = 310
-	_circumflex_combiner                               int = 311
-	_content_tone                                      int = 312
-	_à                                                 int = 313
-	_ù                                                 int = 314
-	_ì                                                 int = 315
-	_ò                                                 int = 316
-	_è                                                 int = 317
-	_grave_combiner                                    int = 318
-	_preposition_tone                                  int = 319
-	_ã                                                 int = 320
-	_ũ                                                 int = 321
-	_ĩ                                                 int = 322
-	_õ                                                 int = 323
-	_ẽ                                                 int = 324
-	_tilde_combiner                                    int = 325
-	_adverb_tone                                       int = 326
-	_a                                                 int = 327
-	_b                                                 int = 328
-	_c                                                 int = 329
-	_d                                                 int = 330
-	_e                                                 int = 331
-	_f                                                 int = 332
-	_g                                                 int = 333
-	_h                                                 int = 334
-	_i                                                 int = 335
-	_j                                                 int = 336
-	_k                                                 int = 337
-	_l                                                 int = 338
-	_m                                                 int = 339
-	_n                                                 int = 340
-	_o                                                 int = 341
-	_p                                                 int = 342
-	_q                                                 int = 343
-	_r                                                 int = 344
-	_s                                                 int = 345
-	_t                                                 int = 346
-	_u                                                 int = 347
-	_w                                                 int = 348
-	_y                                                 int = 349
-	_spaces                                            int = 350
-	_EOF                                               int = 351
+	_statement                                         int = 13
+	_statement_1                                       int = 14
+	_statement_2                                       int = 15
+	_statement_3                                       int = 16
+	_prenex                                            int = 17
+	_predication                                       int = 18
+	_coP_statement                                     int = 19
+	_co_bar_statement                                  int = 20
+	_forethought_coP_statement                         int = 21
+	_forethought_coP_statement_1                       int = 22
+	_forethought_co_bar_statement                      int = 23
+	_predicate                                         int = 24
+	_predicate_1                                       int = 25
+	_predicate_2                                       int = 26
+	_predicate_3                                       int = 27
+	_predicate_4                                       int = 28
+	_serial_predicate                                  int = 29
+	_serial_predicate_2                                int = 30
+	_coP_pred                                          int = 31
+	_co_bar_pred                                       int = 32
+	_forethought_coP_pred                              int = 33
+	_forethought_coP_pred_1                            int = 34
+	_forethought_co_bar_pred                           int = 35
+	_LU_predicate                                      int = 36
+	_LU_predicate_tone                                 int = 37
+	_MI_predicate                                      int = 38
+	_MI_predicate_1                                    int = 39
+	_MI_predicate_tone                                 int = 40
+	_PO_predicate                                      int = 41
+	_PO_predicate_1                                    int = 42
+	_PO_predicate_tone                                 int = 43
+	_quotation_predicate                               int = 44
+	_MO_predicate                                      int = 45
+	_MO_predicate_tone                                 int = 46
+	_terms                                             int = 47
+	_terms_2                                           int = 48
+	_term                                              int = 49
+	_argument                                          int = 50
+	_arg_1                                             int = 51
+	_arg_2                                             int = 52
+	_arg_3                                             int = 53
+	_arg_4                                             int = 54
+	_arg_5                                             int = 55
+	_arg_6                                             int = 56
+	_arg_7                                             int = 57
+	_serial_argument                                   int = 58
+	_coP_arg                                           int = 59
+	_co_bar_arg                                        int = 60
+	_forethought_coP_arg                               int = 61
+	_forethought_coP_arg_1                             int = 62
+	_forethought_co_bar_arg                            int = 63
+	_coP_pred_arg                                      int = 64
+	_forethought_coP_pred_arg                          int = 65
+	_forethought_coP_pred_arg_1                        int = 66
+	_LU_arg                                            int = 67
+	_LU_arg_tone                                       int = 68
+	_MI_arg                                            int = 69
+	_MI_arg_1                                          int = 70
+	_MI_arg_tone                                       int = 71
+	_PO_arg                                            int = 72
+	_PO_arg_1                                          int = 73
+	_PO_arg_tone                                       int = 74
+	_quotation_argument                                int = 75
+	_MO_argument                                       int = 76
+	_MO_argument_tone                                  int = 77
+	_relative_clause                                   int = 78
+	_relative_clause_1                                 int = 79
+	_relative_clause_2                                 int = 80
+	_relative_clause_3                                 int = 81
+	_relative_predication                              int = 82
+	_coP_rel_statement                                 int = 83
+	_coP_rel                                           int = 84
+	_co_bar_rel                                        int = 85
+	_forethought_coP_rel                               int = 86
+	_forethought_coP_rel_1                             int = 87
+	_forethought_co_bar_rel                            int = 88
+	_relative_predicate                                int = 89
+	_relative_predicate_1                              int = 90
+	_relative_predicate_2                              int = 91
+	_relative_predicate_3                              int = 92
+	_serial_relative_predicate                         int = 93
+	_coP_pred_relative_predicate                       int = 94
+	_forethought_coP_pred_relative_predicate           int = 95
+	_forethought_coP_pred_relative_predicate_1         int = 96
+	_LU_relative                                       int = 97
+	_LU_relative_tone                                  int = 98
+	_MI_relative_predicate                             int = 99
+	_MI_relative_predicate_1                           int = 100
+	_MI_relative_predicate_tone                        int = 101
+	_PO_relative_predicate                             int = 102
+	_PO_relative_predicate_1                           int = 103
+	_PO_relative_predicate_tone                        int = 104
+	_quotation_relative_predicate                      int = 105
+	_MO_relative_predicate                             int = 106
+	_MO_relative_predicate_tone                        int = 107
+	_termset                                           int = 108
+	_termset_II                                        int = 109
+	_forethought_coP_term_II                           int = 110
+	_forethought_co_bar_term_II                        int = 111
+	_termset_III                                       int = 112
+	_forethought_coP_term_III                          int = 113
+	_forethought_co_bar_term_III                       int = 114
+	_termset_IV                                        int = 115
+	_forethought_coP_term_IV                           int = 116
+	_forethought_co_bar_term_IV                        int = 117
+	_termset_V                                         int = 118
+	_forethought_coP_term_V                            int = 119
+	_forethought_co_bar_term_V                         int = 120
+	_forethought_connective                            int = 121
+	_forethought_marker                                int = 122
+	_gik                                               int = 123
+	_terms_II                                          int = 124
+	_terms_III                                         int = 125
+	_terms_IV                                          int = 126
+	_terms_V                                           int = 127
+	_adverb                                            int = 128
+	_adverb_1                                          int = 129
+	_adverb_2                                          int = 130
+	_adverb_3                                          int = 131
+	_adverb_4                                          int = 132
+	_coP_adverb                                        int = 133
+	_co_bar_adverb                                     int = 134
+	_forethought_coP_adverb                            int = 135
+	_forethought_coP_adverb_1                          int = 136
+	_forethought_co_bar_adverb                         int = 137
+	_serial_adverb                                     int = 138
+	_coP_pred_adverb                                   int = 139
+	_forethought_coP_pred_adverb                       int = 140
+	_forethought_coP_pred_adverb_1                     int = 141
+	_LU_adverb                                         int = 142
+	_LU_adverb_tone                                    int = 143
+	_MI_adverb                                         int = 144
+	_MI_adverb_1                                       int = 145
+	_MI_adverb_tone                                    int = 146
+	_PO_adverb                                         int = 147
+	_PO_adverb_1                                       int = 148
+	_PO_adverb_tone                                    int = 149
+	_quotation_adverb                                  int = 150
+	_MO_adverb                                         int = 151
+	_MO_adverb_tone                                    int = 152
+	_prepositional_phrase                              int = 153
+	_prepositional_phrase_1                            int = 154
+	_prepositional_phrase_2                            int = 155
+	_coP_prepositional_phrase                          int = 156
+	_co_bar_prepositional_phrase                       int = 157
+	_forethought_coP_prepositional_phrase              int = 158
+	_forethought_coP_prepositional_phrase_1            int = 159
+	_forethought_co_bar_prepositional_phrase           int = 160
+	_preposition                                       int = 161
+	_preposition_1                                     int = 162
+	_preposition_2                                     int = 163
+	_preposition_3                                     int = 164
+	_preposition_4                                     int = 165
+	_coP_preposition                                   int = 166
+	_co_bar_preposition                                int = 167
+	_forethought_coP_preposition                       int = 168
+	_forethought_coP_preposition_1                     int = 169
+	_forethought_co_bar_preposition                    int = 170
+	_serial_preposition                                int = 171
+	_coP_pred_preposition                              int = 172
+	_forethought_coP_pred_preposition                  int = 173
+	_forethought_coP_pred_preposition_1                int = 174
+	_LU_preposition                                    int = 175
+	_LU_preposition_tone                               int = 176
+	_MI_preposition                                    int = 177
+	_MI_preposition_1                                  int = 178
+	_MI_preposition_tone                               int = 179
+	_PO_preposition                                    int = 180
+	_PO_preposition_1                                  int = 181
+	_PO_preposition_tone                               int = 182
+	_quotation_preposition                             int = 183
+	_MO_preposition                                    int = 184
+	_MO_preposition_tone                               int = 185
+	_content_clause                                    int = 186
+	_content_clause_1                                  int = 187
+	_content_predication                               int = 188
+	_coP_content_statement                             int = 189
+	_content_predicate                                 int = 190
+	_content_predicate_1                               int = 191
+	_content_predicate_2                               int = 192
+	_content_predicate_3                               int = 193
+	_serial_content_predicate                          int = 194
+	_coP_pred_content_predicate                        int = 195
+	_forethought_coP_pred_content_predicate            int = 196
+	_forethought_coP_pred_content_predicate_1          int = 197
+	_LU_content                                        int = 198
+	_LU_content_tone                                   int = 199
+	_MI_content_predicate                              int = 200
+	_MI_content_predicate_1                            int = 201
+	_MI_content_tone                                   int = 202
+	_PO_content_predicate                              int = 203
+	_PO_content_predicate_1                            int = 204
+	_PO_content_tone                                   int = 205
+	_quotation_content_predicate                       int = 206
+	_MO_content_predicate                              int = 207
+	_MO_content_predicate_tone                         int = 208
+	_freemod                                           int = 209
+	_parenthetical                                     int = 210
+	_parenthetical_1                                   int = 211
+	_incidental                                        int = 212
+	_vocative                                          int = 213
+	_prefix                                            int = 214
+	_focus                                             int = 215
+	_end_quote                                         int = 216
+	_end_predicatizer                                  int = 217
+	_end_statement                                     int = 218
+	_sentence_prefix                                   int = 219
+	_end_prenex                                        int = 220
+	_start_incidental                                  int = 221
+	_start_parenthetical                               int = 222
+	_end_parenthetical                                 int = 223
+	_vocative_marker                                   int = 224
+	_linking_word                                      int = 225
+	_connective                                        int = 226
+	_illocutionary                                     int = 227
+	_quantifier                                        int = 228
+	_interjection                                      int = 229
+	_function_word                                     int = 230
+	_LU                                                int = 231
+	_MI                                                int = 232
+	_PO                                                int = 233
+	_MO                                                int = 234
+	_TEO                                               int = 235
+	_GA                                                int = 236
+	_NA                                                int = 237
+	_MU                                                int = 238
+	_KU                                                int = 239
+	_KEO                                               int = 240
+	_BI                                                int = 241
+	_JU                                                int = 242
+	_KIO                                               int = 243
+	_KI                                                int = 244
+	_HU                                                int = 245
+	_GO                                                int = 246
+	_RA                                                int = 247
+	_DA                                                int = 248
+	_TU                                                int = 249
+	_HA                                                int = 250
+	_syllable__compound_desinence__compound_tone       int = 251
+	_syllable__arg_desinence__arg_tone                 int = 252
+	_syllable__relative_desinence__relative_tone       int = 253
+	_syllable__verb_desinence__verb_tone               int = 254
+	_syllable__content_desinence__content_tone         int = 255
+	_syllable__preposition_desinence__preposition_tone int = 256
+	_syllable__adverb_desinence__adverb_tone           int = 257
+	_neutral_syllable                                  int = 258
+	_compound_syllable                                 int = 259
+	_arg_syllable                                      int = 260
+	_relative_syllable                                 int = 261
+	_verb_syllable                                     int = 262
+	_content_syllable                                  int = 263
+	_preposition_syllable                              int = 264
+	_adverb_syllable                                   int = 265
+	_boundary                                          int = 266
+	_initial                                           int = 267
+	_desinence__a__u__i__o__e                          int = 268
+	_desinence__ā__ū__ī__ō__ē                          int = 269
+	_desinence__á__ú__í__ó__é                          int = 270
+	_desinence__ǎ__ǔ__ǐ__ǒ__ě                          int = 271
+	_desinence__ả__ủ__ỉ__ỏ__ẻ                          int = 272
+	_desinence__â__û__î__ô__ê                          int = 273
+	_desinence__à__ù__ì__ò__è                          int = 274
+	_desinence__ã__ũ__ĩ__õ__ẽ                          int = 275
+	_neutral_desinence                                 int = 276
+	_compound_desinence                                int = 277
+	_arg_desinence                                     int = 278
+	_relative_desinence                                int = 279
+	_verb_desinence                                    int = 280
+	_content_desinence                                 int = 281
+	_preposition_desinence                             int = 282
+	_adverb_desinence                                  int = 283
+	_tone                                              int = 284
+	_A                                                 int = 285
+	_U                                                 int = 286
+	_I                                                 int = 287
+	_O                                                 int = 288
+	_E                                                 int = 289
+	_ā                                                 int = 290
+	_ū                                                 int = 291
+	_ī                                                 int = 292
+	_ō                                                 int = 293
+	_ē                                                 int = 294
+	_macron_combiner                                   int = 295
+	_compound_tone                                     int = 296
+	_á                                                 int = 297
+	_ú                                                 int = 298
+	_í                                                 int = 299
+	_ó                                                 int = 300
+	_é                                                 int = 301
+	_acute_combiner                                    int = 302
+	_arg_tone                                          int = 303
+	_ǎ                                                 int = 304
+	_ǔ                                                 int = 305
+	_ǐ                                                 int = 306
+	_ǒ                                                 int = 307
+	_ě                                                 int = 308
+	_caron_combiner                                    int = 309
+	_breve_combiner                                    int = 310
+	_relative_tone                                     int = 311
+	_ả                                                 int = 312
+	_ủ                                                 int = 313
+	_ỉ                                                 int = 314
+	_ỏ                                                 int = 315
+	_ẻ                                                 int = 316
+	_hook_combiner                                     int = 317
+	_verb_tone                                         int = 318
+	_â                                                 int = 319
+	_û                                                 int = 320
+	_î                                                 int = 321
+	_ô                                                 int = 322
+	_ê                                                 int = 323
+	_circumflex_combiner                               int = 324
+	_content_tone                                      int = 325
+	_à                                                 int = 326
+	_ù                                                 int = 327
+	_ì                                                 int = 328
+	_ò                                                 int = 329
+	_è                                                 int = 330
+	_grave_combiner                                    int = 331
+	_preposition_tone                                  int = 332
+	_ã                                                 int = 333
+	_ũ                                                 int = 334
+	_ĩ                                                 int = 335
+	_õ                                                 int = 336
+	_ẽ                                                 int = 337
+	_tilde_combiner                                    int = 338
+	_adverb_tone                                       int = 339
+	_a                                                 int = 340
+	_b                                                 int = 341
+	_c                                                 int = 342
+	_d                                                 int = 343
+	_e                                                 int = 344
+	_f                                                 int = 345
+	_g                                                 int = 346
+	_h                                                 int = 347
+	_i                                                 int = 348
+	_j                                                 int = 349
+	_k                                                 int = 350
+	_l                                                 int = 351
+	_m                                                 int = 352
+	_n                                                 int = 353
+	_o                                                 int = 354
+	_p                                                 int = 355
+	_q                                                 int = 356
+	_r                                                 int = 357
+	_s                                                 int = 358
+	_t                                                 int = 359
+	_u                                                 int = 360
+	_w                                                 int = 361
+	_y                                                 int = 362
+	_spaces                                            int = 363
+	_EOF                                               int = 364
 
-	_N int = 352
+	_N int = 365
 )
 
 type _Parser struct {
@@ -3374,384 +3387,6 @@ fail:
 	return -1, nil
 }
 
-func _sentence_prefixAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _sentence_prefix, start); ok {
-		return dp, de
-	}
-	pos, perr := start, -1
-	// k e o &boundary/j e &boundary
-	{
-		pos2 := pos
-		// k e o &boundary
-		// k
-		if !_accept(parser, _kAccepts, &pos, &perr) {
-			goto fail3
-		}
-		// e
-		if !_accept(parser, _eAccepts, &pos, &perr) {
-			goto fail3
-		}
-		// o
-		if !_accept(parser, _oAccepts, &pos, &perr) {
-			goto fail3
-		}
-		// &boundary
-		{
-			pos6 := pos
-			perr8 := perr
-			// boundary
-			if !_accept(parser, _boundaryAccepts, &pos, &perr) {
-				goto fail9
-			}
-			goto ok5
-		fail9:
-			pos = pos6
-			perr = _max(perr8, pos)
-			goto fail3
-		ok5:
-			pos = pos6
-			perr = perr8
-		}
-		goto ok0
-	fail3:
-		pos = pos2
-		// j e &boundary
-		// j
-		if !_accept(parser, _jAccepts, &pos, &perr) {
-			goto fail10
-		}
-		// e
-		if !_accept(parser, _eAccepts, &pos, &perr) {
-			goto fail10
-		}
-		// &boundary
-		{
-			pos13 := pos
-			perr15 := perr
-			// boundary
-			if !_accept(parser, _boundaryAccepts, &pos, &perr) {
-				goto fail16
-			}
-			goto ok12
-		fail16:
-			pos = pos13
-			perr = _max(perr15, pos)
-			goto fail10
-		ok12:
-			pos = pos13
-			perr = perr15
-		}
-		goto ok0
-	fail10:
-		pos = pos2
-		goto fail
-	ok0:
-	}
-	return _memoize(parser, _sentence_prefix, start, pos, perr)
-fail:
-	return _memoize(parser, _sentence_prefix, start, -1, perr)
-}
-
-func _sentence_prefixNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_sentence_prefix]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _sentence_prefix}
-	node := parser.node[key]
-	if node != nil {
-		return start + int(dp-1), node
-	}
-	pos := start
-	node = &peg.Node{Name: "sentence_prefix"}
-	// k e o &boundary/j e &boundary
-	{
-		pos2 := pos
-		nkids1 := len(node.Kids)
-		// k e o &boundary
-		// k
-		if !_node(parser, _kNode, node, &pos) {
-			goto fail3
-		}
-		// e
-		if !_node(parser, _eNode, node, &pos) {
-			goto fail3
-		}
-		// o
-		if !_node(parser, _oNode, node, &pos) {
-			goto fail3
-		}
-		// &boundary
-		{
-			pos6 := pos
-			nkids7 := len(node.Kids)
-			// boundary
-			if !_node(parser, _boundaryNode, node, &pos) {
-				goto fail9
-			}
-			goto ok5
-		fail9:
-			pos = pos6
-			goto fail3
-		ok5:
-			pos = pos6
-			node.Kids = node.Kids[:nkids7]
-		}
-		goto ok0
-	fail3:
-		node.Kids = node.Kids[:nkids1]
-		pos = pos2
-		// j e &boundary
-		// j
-		if !_node(parser, _jNode, node, &pos) {
-			goto fail10
-		}
-		// e
-		if !_node(parser, _eNode, node, &pos) {
-			goto fail10
-		}
-		// &boundary
-		{
-			pos13 := pos
-			nkids14 := len(node.Kids)
-			// boundary
-			if !_node(parser, _boundaryNode, node, &pos) {
-				goto fail16
-			}
-			goto ok12
-		fail16:
-			pos = pos13
-			goto fail10
-		ok12:
-			pos = pos13
-			node.Kids = node.Kids[:nkids14]
-		}
-		goto ok0
-	fail10:
-		node.Kids = node.Kids[:nkids1]
-		pos = pos2
-		goto fail
-	ok0:
-	}
-	node.Text = parser.text[start:pos]
-	parser.node[key] = node
-	return pos, node
-fail:
-	return -1, nil
-}
-
-func _sentence_prefixFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _sentence_prefix, start, errPos)
-	if failure != nil {
-		return pos, failure
-	}
-	failure = &peg.Fail{
-		Name: "sentence_prefix",
-		Pos:  int(start),
-	}
-	key := _key{start: start, rule: _sentence_prefix}
-	// k e o &boundary/j e &boundary
-	{
-		pos2 := pos
-		// k e o &boundary
-		// k
-		if !_fail(parser, _kFail, errPos, failure, &pos) {
-			goto fail3
-		}
-		// e
-		if !_fail(parser, _eFail, errPos, failure, &pos) {
-			goto fail3
-		}
-		// o
-		if !_fail(parser, _oFail, errPos, failure, &pos) {
-			goto fail3
-		}
-		// &boundary
-		{
-			pos6 := pos
-			nkids7 := len(failure.Kids)
-			// boundary
-			if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
-				goto fail9
-			}
-			goto ok5
-		fail9:
-			pos = pos6
-			failure.Kids = failure.Kids[:nkids7]
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "&boundary",
-				})
-			}
-			goto fail3
-		ok5:
-			pos = pos6
-			failure.Kids = failure.Kids[:nkids7]
-		}
-		goto ok0
-	fail3:
-		pos = pos2
-		// j e &boundary
-		// j
-		if !_fail(parser, _jFail, errPos, failure, &pos) {
-			goto fail10
-		}
-		// e
-		if !_fail(parser, _eFail, errPos, failure, &pos) {
-			goto fail10
-		}
-		// &boundary
-		{
-			pos13 := pos
-			nkids14 := len(failure.Kids)
-			// boundary
-			if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
-				goto fail16
-			}
-			goto ok12
-		fail16:
-			pos = pos13
-			failure.Kids = failure.Kids[:nkids14]
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "&boundary",
-				})
-			}
-			goto fail10
-		ok12:
-			pos = pos13
-			failure.Kids = failure.Kids[:nkids14]
-		}
-		goto ok0
-	fail10:
-		pos = pos2
-		goto fail
-	ok0:
-	}
-	parser.fail[key] = failure
-	return pos, failure
-fail:
-	parser.fail[key] = failure
-	return -1, failure
-}
-
-func _sentence_prefixAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_sentence_prefix]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _sentence_prefix}
-	n := parser.act[key]
-	if n != nil {
-		n := n.(string)
-		return start + int(dp-1), &n
-	}
-	var node string
-	pos := start
-	// k e o &boundary/j e &boundary
-	{
-		pos2 := pos
-		// k e o &boundary
-		{
-			var node4 string
-			// k
-			if p, n := _kAction(parser, pos); n == nil {
-				goto fail3
-			} else {
-				node4 = *n
-				pos = p
-			}
-			node += node4
-			// e
-			if p, n := _eAction(parser, pos); n == nil {
-				goto fail3
-			} else {
-				node4 = *n
-				pos = p
-			}
-			node += node4
-			// o
-			if p, n := _oAction(parser, pos); n == nil {
-				goto fail3
-			} else {
-				node4 = *n
-				pos = p
-			}
-			node += node4
-			// &boundary
-			{
-				pos6 := pos
-				// boundary
-				if p, n := _boundaryAction(parser, pos); n == nil {
-					goto fail9
-				} else {
-					pos = p
-				}
-				goto ok5
-			fail9:
-				pos = pos6
-				goto fail3
-			ok5:
-				pos = pos6
-				node = ""
-			}
-			node += node4
-		}
-		goto ok0
-	fail3:
-		pos = pos2
-		// j e &boundary
-		{
-			var node11 string
-			// j
-			if p, n := _jAction(parser, pos); n == nil {
-				goto fail10
-			} else {
-				node11 = *n
-				pos = p
-			}
-			node += node11
-			// e
-			if p, n := _eAction(parser, pos); n == nil {
-				goto fail10
-			} else {
-				node11 = *n
-				pos = p
-			}
-			node += node11
-			// &boundary
-			{
-				pos13 := pos
-				// boundary
-				if p, n := _boundaryAction(parser, pos); n == nil {
-					goto fail16
-				} else {
-					pos = p
-				}
-				goto ok12
-			fail16:
-				pos = pos13
-				goto fail10
-			ok12:
-				pos = pos13
-				node = ""
-			}
-			node += node11
-		}
-		goto ok0
-	fail10:
-		pos = pos2
-		goto fail
-	ok0:
-	}
-	parser.act[key] = node
-	return pos, &node
-fail:
-	return -1, nil
-}
-
 func _statementAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	if dp, de, ok := _memo(parser, _statement, start); ok {
 		return dp, de
@@ -4400,153 +4035,6 @@ func _statement_3Action(parser *_Parser, start int) (int, *string) {
 		} else {
 			node0 = *n
 			pos = p
-		}
-		node += node0
-	}
-	parser.act[key] = node
-	return pos, &node
-fail:
-	return -1, nil
-}
-
-func _end_statementAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _end_statement, start); ok {
-		return dp, de
-	}
-	pos, perr := start, -1
-	// NA freemod?
-	// NA
-	if !_accept(parser, _NAAccepts, &pos, &perr) {
-		goto fail
-	}
-	// freemod?
-	{
-		pos2 := pos
-		// freemod
-		if !_accept(parser, _freemodAccepts, &pos, &perr) {
-			goto fail3
-		}
-		goto ok4
-	fail3:
-		pos = pos2
-	ok4:
-	}
-	return _memoize(parser, _end_statement, start, pos, perr)
-fail:
-	return _memoize(parser, _end_statement, start, -1, perr)
-}
-
-func _end_statementNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_end_statement]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _end_statement}
-	node := parser.node[key]
-	if node != nil {
-		return start + int(dp-1), node
-	}
-	pos := start
-	node = &peg.Node{Name: "end_statement"}
-	// NA freemod?
-	// NA
-	if !_node(parser, _NANode, node, &pos) {
-		goto fail
-	}
-	// freemod?
-	{
-		nkids1 := len(node.Kids)
-		pos2 := pos
-		// freemod
-		if !_node(parser, _freemodNode, node, &pos) {
-			goto fail3
-		}
-		goto ok4
-	fail3:
-		node.Kids = node.Kids[:nkids1]
-		pos = pos2
-	ok4:
-	}
-	node.Text = parser.text[start:pos]
-	parser.node[key] = node
-	return pos, node
-fail:
-	return -1, nil
-}
-
-func _end_statementFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _end_statement, start, errPos)
-	if failure != nil {
-		return pos, failure
-	}
-	failure = &peg.Fail{
-		Name: "end_statement",
-		Pos:  int(start),
-	}
-	key := _key{start: start, rule: _end_statement}
-	// NA freemod?
-	// NA
-	if !_fail(parser, _NAFail, errPos, failure, &pos) {
-		goto fail
-	}
-	// freemod?
-	{
-		pos2 := pos
-		// freemod
-		if !_fail(parser, _freemodFail, errPos, failure, &pos) {
-			goto fail3
-		}
-		goto ok4
-	fail3:
-		pos = pos2
-	ok4:
-	}
-	parser.fail[key] = failure
-	return pos, failure
-fail:
-	parser.fail[key] = failure
-	return -1, failure
-}
-
-func _end_statementAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_end_statement]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _end_statement}
-	n := parser.act[key]
-	if n != nil {
-		n := n.(string)
-		return start + int(dp-1), &n
-	}
-	var node string
-	pos := start
-	// NA freemod?
-	{
-		var node0 string
-		// NA
-		if p, n := _NAAction(parser, pos); n == nil {
-			goto fail
-		} else {
-			node0 = *n
-			pos = p
-		}
-		node += node0
-		// freemod?
-		{
-			pos2 := pos
-			// freemod
-			if p, n := _freemodAction(parser, pos); n == nil {
-				goto fail3
-			} else {
-				node0 = *n
-				pos = p
-			}
-			goto ok4
-		fail3:
-			node0 = ""
-			pos = pos2
-		ok4:
 		}
 		node += node0
 	}
@@ -8407,7 +7895,7 @@ func _MI_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// MI_predicate_1 spaces? GA?
+	// MI_predicate_1 spaces? end_predicatizer?
 	// MI_predicate_1
 	if !_accept(parser, _MI_predicate_1Accepts, &pos, &perr) {
 		goto fail
@@ -8424,11 +7912,11 @@ func _MI_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_accept(parser, _GAAccepts, &pos, &perr) {
+		// end_predicatizer
+		if !_accept(parser, _end_predicatizerAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok8
@@ -8453,7 +7941,7 @@ func _MI_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "MI_predicate"}
-	// MI_predicate_1 spaces? GA?
+	// MI_predicate_1 spaces? end_predicatizer?
 	// MI_predicate_1
 	if !_node(parser, _MI_predicate_1Node, node, &pos) {
 		goto fail
@@ -8472,12 +7960,12 @@ func _MI_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
-		// GA
-		if !_node(parser, _GANode, node, &pos) {
+		// end_predicatizer
+		if !_node(parser, _end_predicatizerNode, node, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -8503,7 +7991,7 @@ func _MI_predicateFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _MI_predicate}
-	// MI_predicate_1 spaces? GA?
+	// MI_predicate_1 spaces? end_predicatizer?
 	// MI_predicate_1
 	if !_fail(parser, _MI_predicate_1Fail, errPos, failure, &pos) {
 		goto fail
@@ -8520,11 +8008,11 @@ func _MI_predicateFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_fail(parser, _GAFail, errPos, failure, &pos) {
+		// end_predicatizer
+		if !_fail(parser, _end_predicatizerFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -8552,7 +8040,7 @@ func _MI_predicateAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// MI_predicate_1 spaces? GA?
+	// MI_predicate_1 spaces? end_predicatizer?
 	{
 		var node0 string
 		// MI_predicate_1
@@ -8580,11 +8068,11 @@ func _MI_predicateAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// GA?
+		// end_predicatizer?
 		{
 			pos6 := pos
-			// GA
-			if p, n := _GAAction(parser, pos); n == nil {
+			// end_predicatizer
+			if p, n := _end_predicatizerAction(parser, pos); n == nil {
 				goto fail7
 			} else {
 				node0 = *n
@@ -9086,7 +8574,7 @@ func _PO_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// PO_predicate_1 spaces? GA?
+	// PO_predicate_1 spaces? end_predicatizer?
 	// PO_predicate_1
 	if !_accept(parser, _PO_predicate_1Accepts, &pos, &perr) {
 		goto fail
@@ -9103,11 +8591,11 @@ func _PO_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_accept(parser, _GAAccepts, &pos, &perr) {
+		// end_predicatizer
+		if !_accept(parser, _end_predicatizerAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok8
@@ -9132,7 +8620,7 @@ func _PO_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "PO_predicate"}
-	// PO_predicate_1 spaces? GA?
+	// PO_predicate_1 spaces? end_predicatizer?
 	// PO_predicate_1
 	if !_node(parser, _PO_predicate_1Node, node, &pos) {
 		goto fail
@@ -9151,12 +8639,12 @@ func _PO_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
-		// GA
-		if !_node(parser, _GANode, node, &pos) {
+		// end_predicatizer
+		if !_node(parser, _end_predicatizerNode, node, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -9182,7 +8670,7 @@ func _PO_predicateFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _PO_predicate}
-	// PO_predicate_1 spaces? GA?
+	// PO_predicate_1 spaces? end_predicatizer?
 	// PO_predicate_1
 	if !_fail(parser, _PO_predicate_1Fail, errPos, failure, &pos) {
 		goto fail
@@ -9199,11 +8687,11 @@ func _PO_predicateFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_fail(parser, _GAFail, errPos, failure, &pos) {
+		// end_predicatizer
+		if !_fail(parser, _end_predicatizerFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -9231,7 +8719,7 @@ func _PO_predicateAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// PO_predicate_1 spaces? GA?
+	// PO_predicate_1 spaces? end_predicatizer?
 	{
 		var node0 string
 		// PO_predicate_1
@@ -9259,11 +8747,11 @@ func _PO_predicateAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// GA?
+		// end_predicatizer?
 		{
 			pos6 := pos
-			// GA
-			if p, n := _GAAction(parser, pos); n == nil {
+			// end_predicatizer
+			if p, n := _end_predicatizerAction(parser, pos); n == nil {
 				goto fail7
 			} else {
 				node0 = *n
@@ -9621,7 +9109,7 @@ func _quotation_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaErr
 		return dp, de
 	}
 	pos, perr := start, -1
-	// MO_predicate spaces? TEO
+	// MO_predicate spaces? end_quote
 	// MO_predicate
 	if !_accept(parser, _MO_predicateAccepts, &pos, &perr) {
 		goto fail
@@ -9638,8 +9126,8 @@ func _quotation_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaErr
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_accept(parser, _TEOAccepts, &pos, &perr) {
+	// end_quote
+	if !_accept(parser, _end_quoteAccepts, &pos, &perr) {
 		goto fail
 	}
 	return _memoize(parser, _quotation_predicate, start, pos, perr)
@@ -9659,7 +9147,7 @@ func _quotation_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "quotation_predicate"}
-	// MO_predicate spaces? TEO
+	// MO_predicate spaces? end_quote
 	// MO_predicate
 	if !_node(parser, _MO_predicateNode, node, &pos) {
 		goto fail
@@ -9678,8 +9166,8 @@ func _quotation_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_node(parser, _TEONode, node, &pos) {
+	// end_quote
+	if !_node(parser, _end_quoteNode, node, &pos) {
 		goto fail
 	}
 	node.Text = parser.text[start:pos]
@@ -9699,7 +9187,7 @@ func _quotation_predicateFail(parser *_Parser, start, errPos int) (int, *peg.Fai
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _quotation_predicate}
-	// MO_predicate spaces? TEO
+	// MO_predicate spaces? end_quote
 	// MO_predicate
 	if !_fail(parser, _MO_predicateFail, errPos, failure, &pos) {
 		goto fail
@@ -9716,8 +9204,8 @@ func _quotation_predicateFail(parser *_Parser, start, errPos int) (int, *peg.Fai
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_fail(parser, _TEOFail, errPos, failure, &pos) {
+	// end_quote
+	if !_fail(parser, _end_quoteFail, errPos, failure, &pos) {
 		goto fail
 	}
 	parser.fail[key] = failure
@@ -9740,7 +9228,7 @@ func _quotation_predicateAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// MO_predicate spaces? TEO
+	// MO_predicate spaces? end_quote
 	{
 		var node0 string
 		// MO_predicate
@@ -9768,8 +9256,8 @@ func _quotation_predicateAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// TEO
-		if p, n := _TEOAction(parser, pos); n == nil {
+		// end_quote
+		if p, n := _end_quoteAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -14434,7 +13922,7 @@ func _MI_argAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// MI_arg_1 spaces? GA?
+	// MI_arg_1 spaces? end_predicatizer?
 	// MI_arg_1
 	if !_accept(parser, _MI_arg_1Accepts, &pos, &perr) {
 		goto fail
@@ -14451,11 +13939,11 @@ func _MI_argAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_accept(parser, _GAAccepts, &pos, &perr) {
+		// end_predicatizer
+		if !_accept(parser, _end_predicatizerAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok8
@@ -14480,7 +13968,7 @@ func _MI_argNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "MI_arg"}
-	// MI_arg_1 spaces? GA?
+	// MI_arg_1 spaces? end_predicatizer?
 	// MI_arg_1
 	if !_node(parser, _MI_arg_1Node, node, &pos) {
 		goto fail
@@ -14499,12 +13987,12 @@ func _MI_argNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
-		// GA
-		if !_node(parser, _GANode, node, &pos) {
+		// end_predicatizer
+		if !_node(parser, _end_predicatizerNode, node, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -14530,7 +14018,7 @@ func _MI_argFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _MI_arg}
-	// MI_arg_1 spaces? GA?
+	// MI_arg_1 spaces? end_predicatizer?
 	// MI_arg_1
 	if !_fail(parser, _MI_arg_1Fail, errPos, failure, &pos) {
 		goto fail
@@ -14547,11 +14035,11 @@ func _MI_argFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_fail(parser, _GAFail, errPos, failure, &pos) {
+		// end_predicatizer
+		if !_fail(parser, _end_predicatizerFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -14579,7 +14067,7 @@ func _MI_argAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// MI_arg_1 spaces? GA?
+	// MI_arg_1 spaces? end_predicatizer?
 	{
 		var node0 string
 		// MI_arg_1
@@ -14607,11 +14095,11 @@ func _MI_argAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// GA?
+		// end_predicatizer?
 		{
 			pos6 := pos
-			// GA
-			if p, n := _GAAction(parser, pos); n == nil {
+			// end_predicatizer
+			if p, n := _end_predicatizerAction(parser, pos); n == nil {
 				goto fail7
 			} else {
 				node0 = *n
@@ -15113,7 +14601,7 @@ func _PO_argAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// PO_arg_1 spaces? GA?
+	// PO_arg_1 spaces? end_predicatizer?
 	// PO_arg_1
 	if !_accept(parser, _PO_arg_1Accepts, &pos, &perr) {
 		goto fail
@@ -15130,11 +14618,11 @@ func _PO_argAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_accept(parser, _GAAccepts, &pos, &perr) {
+		// end_predicatizer
+		if !_accept(parser, _end_predicatizerAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok8
@@ -15159,7 +14647,7 @@ func _PO_argNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "PO_arg"}
-	// PO_arg_1 spaces? GA?
+	// PO_arg_1 spaces? end_predicatizer?
 	// PO_arg_1
 	if !_node(parser, _PO_arg_1Node, node, &pos) {
 		goto fail
@@ -15178,12 +14666,12 @@ func _PO_argNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
-		// GA
-		if !_node(parser, _GANode, node, &pos) {
+		// end_predicatizer
+		if !_node(parser, _end_predicatizerNode, node, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -15209,7 +14697,7 @@ func _PO_argFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _PO_arg}
-	// PO_arg_1 spaces? GA?
+	// PO_arg_1 spaces? end_predicatizer?
 	// PO_arg_1
 	if !_fail(parser, _PO_arg_1Fail, errPos, failure, &pos) {
 		goto fail
@@ -15226,11 +14714,11 @@ func _PO_argFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_fail(parser, _GAFail, errPos, failure, &pos) {
+		// end_predicatizer
+		if !_fail(parser, _end_predicatizerFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -15258,7 +14746,7 @@ func _PO_argAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// PO_arg_1 spaces? GA?
+	// PO_arg_1 spaces? end_predicatizer?
 	{
 		var node0 string
 		// PO_arg_1
@@ -15286,11 +14774,11 @@ func _PO_argAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// GA?
+		// end_predicatizer?
 		{
 			pos6 := pos
-			// GA
-			if p, n := _GAAction(parser, pos); n == nil {
+			// end_predicatizer
+			if p, n := _end_predicatizerAction(parser, pos); n == nil {
 				goto fail7
 			} else {
 				node0 = *n
@@ -15648,7 +15136,7 @@ func _quotation_argumentAccepts(parser *_Parser, start int) (deltaPos, deltaErr 
 		return dp, de
 	}
 	pos, perr := start, -1
-	// MO_argument spaces? TEO
+	// MO_argument spaces? end_quote
 	// MO_argument
 	if !_accept(parser, _MO_argumentAccepts, &pos, &perr) {
 		goto fail
@@ -15665,8 +15153,8 @@ func _quotation_argumentAccepts(parser *_Parser, start int) (deltaPos, deltaErr 
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_accept(parser, _TEOAccepts, &pos, &perr) {
+	// end_quote
+	if !_accept(parser, _end_quoteAccepts, &pos, &perr) {
 		goto fail
 	}
 	return _memoize(parser, _quotation_argument, start, pos, perr)
@@ -15686,7 +15174,7 @@ func _quotation_argumentNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "quotation_argument"}
-	// MO_argument spaces? TEO
+	// MO_argument spaces? end_quote
 	// MO_argument
 	if !_node(parser, _MO_argumentNode, node, &pos) {
 		goto fail
@@ -15705,8 +15193,8 @@ func _quotation_argumentNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_node(parser, _TEONode, node, &pos) {
+	// end_quote
+	if !_node(parser, _end_quoteNode, node, &pos) {
 		goto fail
 	}
 	node.Text = parser.text[start:pos]
@@ -15726,7 +15214,7 @@ func _quotation_argumentFail(parser *_Parser, start, errPos int) (int, *peg.Fail
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _quotation_argument}
-	// MO_argument spaces? TEO
+	// MO_argument spaces? end_quote
 	// MO_argument
 	if !_fail(parser, _MO_argumentFail, errPos, failure, &pos) {
 		goto fail
@@ -15743,8 +15231,8 @@ func _quotation_argumentFail(parser *_Parser, start, errPos int) (int, *peg.Fail
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_fail(parser, _TEOFail, errPos, failure, &pos) {
+	// end_quote
+	if !_fail(parser, _end_quoteFail, errPos, failure, &pos) {
 		goto fail
 	}
 	parser.fail[key] = failure
@@ -15767,7 +15255,7 @@ func _quotation_argumentAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// MO_argument spaces? TEO
+	// MO_argument spaces? end_quote
 	{
 		var node0 string
 		// MO_argument
@@ -15795,8 +15283,8 @@ func _quotation_argumentAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// TEO
-		if p, n := _TEOAction(parser, pos); n == nil {
+		// end_quote
+		if p, n := _end_quoteAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -19923,7 +19411,7 @@ func _MI_relative_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaE
 		return dp, de
 	}
 	pos, perr := start, -1
-	// MI_relative_predicate_1 spaces? GA?
+	// MI_relative_predicate_1 spaces? end_predicatizer?
 	// MI_relative_predicate_1
 	if !_accept(parser, _MI_relative_predicate_1Accepts, &pos, &perr) {
 		goto fail
@@ -19940,11 +19428,11 @@ func _MI_relative_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaE
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_accept(parser, _GAAccepts, &pos, &perr) {
+		// end_predicatizer
+		if !_accept(parser, _end_predicatizerAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok8
@@ -19969,7 +19457,7 @@ func _MI_relative_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "MI_relative_predicate"}
-	// MI_relative_predicate_1 spaces? GA?
+	// MI_relative_predicate_1 spaces? end_predicatizer?
 	// MI_relative_predicate_1
 	if !_node(parser, _MI_relative_predicate_1Node, node, &pos) {
 		goto fail
@@ -19988,12 +19476,12 @@ func _MI_relative_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
-		// GA
-		if !_node(parser, _GANode, node, &pos) {
+		// end_predicatizer
+		if !_node(parser, _end_predicatizerNode, node, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -20019,7 +19507,7 @@ func _MI_relative_predicateFail(parser *_Parser, start, errPos int) (int, *peg.F
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _MI_relative_predicate}
-	// MI_relative_predicate_1 spaces? GA?
+	// MI_relative_predicate_1 spaces? end_predicatizer?
 	// MI_relative_predicate_1
 	if !_fail(parser, _MI_relative_predicate_1Fail, errPos, failure, &pos) {
 		goto fail
@@ -20036,11 +19524,11 @@ func _MI_relative_predicateFail(parser *_Parser, start, errPos int) (int, *peg.F
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_fail(parser, _GAFail, errPos, failure, &pos) {
+		// end_predicatizer
+		if !_fail(parser, _end_predicatizerFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -20068,7 +19556,7 @@ func _MI_relative_predicateAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// MI_relative_predicate_1 spaces? GA?
+	// MI_relative_predicate_1 spaces? end_predicatizer?
 	{
 		var node0 string
 		// MI_relative_predicate_1
@@ -20096,11 +19584,11 @@ func _MI_relative_predicateAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// GA?
+		// end_predicatizer?
 		{
 			pos6 := pos
-			// GA
-			if p, n := _GAAction(parser, pos); n == nil {
+			// end_predicatizer
+			if p, n := _end_predicatizerAction(parser, pos); n == nil {
 				goto fail7
 			} else {
 				node0 = *n
@@ -20602,7 +20090,7 @@ func _PO_relative_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaE
 		return dp, de
 	}
 	pos, perr := start, -1
-	// PO_relative_predicate_1 spaces? GA?
+	// PO_relative_predicate_1 spaces? end_predicatizer?
 	// PO_relative_predicate_1
 	if !_accept(parser, _PO_relative_predicate_1Accepts, &pos, &perr) {
 		goto fail
@@ -20619,11 +20107,11 @@ func _PO_relative_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaE
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_accept(parser, _GAAccepts, &pos, &perr) {
+		// end_predicatizer
+		if !_accept(parser, _end_predicatizerAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok8
@@ -20648,7 +20136,7 @@ func _PO_relative_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "PO_relative_predicate"}
-	// PO_relative_predicate_1 spaces? GA?
+	// PO_relative_predicate_1 spaces? end_predicatizer?
 	// PO_relative_predicate_1
 	if !_node(parser, _PO_relative_predicate_1Node, node, &pos) {
 		goto fail
@@ -20667,12 +20155,12 @@ func _PO_relative_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
-		// GA
-		if !_node(parser, _GANode, node, &pos) {
+		// end_predicatizer
+		if !_node(parser, _end_predicatizerNode, node, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -20698,7 +20186,7 @@ func _PO_relative_predicateFail(parser *_Parser, start, errPos int) (int, *peg.F
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _PO_relative_predicate}
-	// PO_relative_predicate_1 spaces? GA?
+	// PO_relative_predicate_1 spaces? end_predicatizer?
 	// PO_relative_predicate_1
 	if !_fail(parser, _PO_relative_predicate_1Fail, errPos, failure, &pos) {
 		goto fail
@@ -20715,11 +20203,11 @@ func _PO_relative_predicateFail(parser *_Parser, start, errPos int) (int, *peg.F
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_fail(parser, _GAFail, errPos, failure, &pos) {
+		// end_predicatizer
+		if !_fail(parser, _end_predicatizerFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -20747,7 +20235,7 @@ func _PO_relative_predicateAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// PO_relative_predicate_1 spaces? GA?
+	// PO_relative_predicate_1 spaces? end_predicatizer?
 	{
 		var node0 string
 		// PO_relative_predicate_1
@@ -20775,11 +20263,11 @@ func _PO_relative_predicateAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// GA?
+		// end_predicatizer?
 		{
 			pos6 := pos
-			// GA
-			if p, n := _GAAction(parser, pos); n == nil {
+			// end_predicatizer
+			if p, n := _end_predicatizerAction(parser, pos); n == nil {
 				goto fail7
 			} else {
 				node0 = *n
@@ -21137,7 +20625,7 @@ func _quotation_relative_predicateAccepts(parser *_Parser, start int) (deltaPos,
 		return dp, de
 	}
 	pos, perr := start, -1
-	// MO_relative_predicate spaces? TEO
+	// MO_relative_predicate spaces? end_quote
 	// MO_relative_predicate
 	if !_accept(parser, _MO_relative_predicateAccepts, &pos, &perr) {
 		goto fail
@@ -21154,8 +20642,8 @@ func _quotation_relative_predicateAccepts(parser *_Parser, start int) (deltaPos,
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_accept(parser, _TEOAccepts, &pos, &perr) {
+	// end_quote
+	if !_accept(parser, _end_quoteAccepts, &pos, &perr) {
 		goto fail
 	}
 	return _memoize(parser, _quotation_relative_predicate, start, pos, perr)
@@ -21175,7 +20663,7 @@ func _quotation_relative_predicateNode(parser *_Parser, start int) (int, *peg.No
 	}
 	pos := start
 	node = &peg.Node{Name: "quotation_relative_predicate"}
-	// MO_relative_predicate spaces? TEO
+	// MO_relative_predicate spaces? end_quote
 	// MO_relative_predicate
 	if !_node(parser, _MO_relative_predicateNode, node, &pos) {
 		goto fail
@@ -21194,8 +20682,8 @@ func _quotation_relative_predicateNode(parser *_Parser, start int) (int, *peg.No
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_node(parser, _TEONode, node, &pos) {
+	// end_quote
+	if !_node(parser, _end_quoteNode, node, &pos) {
 		goto fail
 	}
 	node.Text = parser.text[start:pos]
@@ -21215,7 +20703,7 @@ func _quotation_relative_predicateFail(parser *_Parser, start, errPos int) (int,
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _quotation_relative_predicate}
-	// MO_relative_predicate spaces? TEO
+	// MO_relative_predicate spaces? end_quote
 	// MO_relative_predicate
 	if !_fail(parser, _MO_relative_predicateFail, errPos, failure, &pos) {
 		goto fail
@@ -21232,8 +20720,8 @@ func _quotation_relative_predicateFail(parser *_Parser, start, errPos int) (int,
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_fail(parser, _TEOFail, errPos, failure, &pos) {
+	// end_quote
+	if !_fail(parser, _end_quoteFail, errPos, failure, &pos) {
 		goto fail
 	}
 	parser.fail[key] = failure
@@ -21256,7 +20744,7 @@ func _quotation_relative_predicateAction(parser *_Parser, start int) (int, *stri
 	}
 	var node string
 	pos := start
-	// MO_relative_predicate spaces? TEO
+	// MO_relative_predicate spaces? end_quote
 	{
 		var node0 string
 		// MO_relative_predicate
@@ -21284,8 +20772,8 @@ func _quotation_relative_predicateAction(parser *_Parser, start int) (int, *stri
 		ok4:
 		}
 		node += node0
-		// TEO
-		if p, n := _TEOAction(parser, pos); n == nil {
+		// end_quote
+		if p, n := _end_quoteAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -28049,7 +27537,7 @@ func _MI_adverbAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// MI_adverb_1 spaces? GA?
+	// MI_adverb_1 spaces? end_predicatizer?
 	// MI_adverb_1
 	if !_accept(parser, _MI_adverb_1Accepts, &pos, &perr) {
 		goto fail
@@ -28066,11 +27554,11 @@ func _MI_adverbAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_accept(parser, _GAAccepts, &pos, &perr) {
+		// end_predicatizer
+		if !_accept(parser, _end_predicatizerAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok8
@@ -28095,7 +27583,7 @@ func _MI_adverbNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "MI_adverb"}
-	// MI_adverb_1 spaces? GA?
+	// MI_adverb_1 spaces? end_predicatizer?
 	// MI_adverb_1
 	if !_node(parser, _MI_adverb_1Node, node, &pos) {
 		goto fail
@@ -28114,12 +27602,12 @@ func _MI_adverbNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
-		// GA
-		if !_node(parser, _GANode, node, &pos) {
+		// end_predicatizer
+		if !_node(parser, _end_predicatizerNode, node, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -28145,7 +27633,7 @@ func _MI_adverbFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _MI_adverb}
-	// MI_adverb_1 spaces? GA?
+	// MI_adverb_1 spaces? end_predicatizer?
 	// MI_adverb_1
 	if !_fail(parser, _MI_adverb_1Fail, errPos, failure, &pos) {
 		goto fail
@@ -28162,11 +27650,11 @@ func _MI_adverbFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_fail(parser, _GAFail, errPos, failure, &pos) {
+		// end_predicatizer
+		if !_fail(parser, _end_predicatizerFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -28194,7 +27682,7 @@ func _MI_adverbAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// MI_adverb_1 spaces? GA?
+	// MI_adverb_1 spaces? end_predicatizer?
 	{
 		var node0 string
 		// MI_adverb_1
@@ -28222,11 +27710,11 @@ func _MI_adverbAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// GA?
+		// end_predicatizer?
 		{
 			pos6 := pos
-			// GA
-			if p, n := _GAAction(parser, pos); n == nil {
+			// end_predicatizer
+			if p, n := _end_predicatizerAction(parser, pos); n == nil {
 				goto fail7
 			} else {
 				node0 = *n
@@ -28728,7 +28216,7 @@ func _PO_adverbAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// PO_adverb_1 spaces? GA?
+	// PO_adverb_1 spaces? end_predicatizer?
 	// PO_adverb_1
 	if !_accept(parser, _PO_adverb_1Accepts, &pos, &perr) {
 		goto fail
@@ -28745,11 +28233,11 @@ func _PO_adverbAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_accept(parser, _GAAccepts, &pos, &perr) {
+		// end_predicatizer
+		if !_accept(parser, _end_predicatizerAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok8
@@ -28774,7 +28262,7 @@ func _PO_adverbNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "PO_adverb"}
-	// PO_adverb_1 spaces? GA?
+	// PO_adverb_1 spaces? end_predicatizer?
 	// PO_adverb_1
 	if !_node(parser, _PO_adverb_1Node, node, &pos) {
 		goto fail
@@ -28793,12 +28281,12 @@ func _PO_adverbNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
-		// GA
-		if !_node(parser, _GANode, node, &pos) {
+		// end_predicatizer
+		if !_node(parser, _end_predicatizerNode, node, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -28824,7 +28312,7 @@ func _PO_adverbFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _PO_adverb}
-	// PO_adverb_1 spaces? GA?
+	// PO_adverb_1 spaces? end_predicatizer?
 	// PO_adverb_1
 	if !_fail(parser, _PO_adverb_1Fail, errPos, failure, &pos) {
 		goto fail
@@ -28841,11 +28329,11 @@ func _PO_adverbFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_fail(parser, _GAFail, errPos, failure, &pos) {
+		// end_predicatizer
+		if !_fail(parser, _end_predicatizerFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -28873,7 +28361,7 @@ func _PO_adverbAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// PO_adverb_1 spaces? GA?
+	// PO_adverb_1 spaces? end_predicatizer?
 	{
 		var node0 string
 		// PO_adverb_1
@@ -28901,11 +28389,11 @@ func _PO_adverbAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// GA?
+		// end_predicatizer?
 		{
 			pos6 := pos
-			// GA
-			if p, n := _GAAction(parser, pos); n == nil {
+			// end_predicatizer
+			if p, n := _end_predicatizerAction(parser, pos); n == nil {
 				goto fail7
 			} else {
 				node0 = *n
@@ -29263,7 +28751,7 @@ func _quotation_adverbAccepts(parser *_Parser, start int) (deltaPos, deltaErr in
 		return dp, de
 	}
 	pos, perr := start, -1
-	// MO_adverb spaces? TEO
+	// MO_adverb spaces? end_quote
 	// MO_adverb
 	if !_accept(parser, _MO_adverbAccepts, &pos, &perr) {
 		goto fail
@@ -29280,8 +28768,8 @@ func _quotation_adverbAccepts(parser *_Parser, start int) (deltaPos, deltaErr in
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_accept(parser, _TEOAccepts, &pos, &perr) {
+	// end_quote
+	if !_accept(parser, _end_quoteAccepts, &pos, &perr) {
 		goto fail
 	}
 	return _memoize(parser, _quotation_adverb, start, pos, perr)
@@ -29301,7 +28789,7 @@ func _quotation_adverbNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "quotation_adverb"}
-	// MO_adverb spaces? TEO
+	// MO_adverb spaces? end_quote
 	// MO_adverb
 	if !_node(parser, _MO_adverbNode, node, &pos) {
 		goto fail
@@ -29320,8 +28808,8 @@ func _quotation_adverbNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_node(parser, _TEONode, node, &pos) {
+	// end_quote
+	if !_node(parser, _end_quoteNode, node, &pos) {
 		goto fail
 	}
 	node.Text = parser.text[start:pos]
@@ -29341,7 +28829,7 @@ func _quotation_adverbFail(parser *_Parser, start, errPos int) (int, *peg.Fail) 
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _quotation_adverb}
-	// MO_adverb spaces? TEO
+	// MO_adverb spaces? end_quote
 	// MO_adverb
 	if !_fail(parser, _MO_adverbFail, errPos, failure, &pos) {
 		goto fail
@@ -29358,8 +28846,8 @@ func _quotation_adverbFail(parser *_Parser, start, errPos int) (int, *peg.Fail) 
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_fail(parser, _TEOFail, errPos, failure, &pos) {
+	// end_quote
+	if !_fail(parser, _end_quoteFail, errPos, failure, &pos) {
 		goto fail
 	}
 	parser.fail[key] = failure
@@ -29382,7 +28870,7 @@ func _quotation_adverbAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// MO_adverb spaces? TEO
+	// MO_adverb spaces? end_quote
 	{
 		var node0 string
 		// MO_adverb
@@ -29410,8 +28898,8 @@ func _quotation_adverbAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// TEO
-		if p, n := _TEOAction(parser, pos); n == nil {
+		// end_quote
+		if p, n := _end_quoteAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -34001,7 +33489,7 @@ func _MI_prepositionAccepts(parser *_Parser, start int) (deltaPos, deltaErr int)
 		return dp, de
 	}
 	pos, perr := start, -1
-	// MI_preposition_1 spaces? GA?
+	// MI_preposition_1 spaces? end_predicatizer?
 	// MI_preposition_1
 	if !_accept(parser, _MI_preposition_1Accepts, &pos, &perr) {
 		goto fail
@@ -34018,11 +33506,11 @@ func _MI_prepositionAccepts(parser *_Parser, start int) (deltaPos, deltaErr int)
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_accept(parser, _GAAccepts, &pos, &perr) {
+		// end_predicatizer
+		if !_accept(parser, _end_predicatizerAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok8
@@ -34047,7 +33535,7 @@ func _MI_prepositionNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "MI_preposition"}
-	// MI_preposition_1 spaces? GA?
+	// MI_preposition_1 spaces? end_predicatizer?
 	// MI_preposition_1
 	if !_node(parser, _MI_preposition_1Node, node, &pos) {
 		goto fail
@@ -34066,12 +33554,12 @@ func _MI_prepositionNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
-		// GA
-		if !_node(parser, _GANode, node, &pos) {
+		// end_predicatizer
+		if !_node(parser, _end_predicatizerNode, node, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -34097,7 +33585,7 @@ func _MI_prepositionFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _MI_preposition}
-	// MI_preposition_1 spaces? GA?
+	// MI_preposition_1 spaces? end_predicatizer?
 	// MI_preposition_1
 	if !_fail(parser, _MI_preposition_1Fail, errPos, failure, &pos) {
 		goto fail
@@ -34114,11 +33602,11 @@ func _MI_prepositionFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_fail(parser, _GAFail, errPos, failure, &pos) {
+		// end_predicatizer
+		if !_fail(parser, _end_predicatizerFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -34146,7 +33634,7 @@ func _MI_prepositionAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// MI_preposition_1 spaces? GA?
+	// MI_preposition_1 spaces? end_predicatizer?
 	{
 		var node0 string
 		// MI_preposition_1
@@ -34174,11 +33662,11 @@ func _MI_prepositionAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// GA?
+		// end_predicatizer?
 		{
 			pos6 := pos
-			// GA
-			if p, n := _GAAction(parser, pos); n == nil {
+			// end_predicatizer
+			if p, n := _end_predicatizerAction(parser, pos); n == nil {
 				goto fail7
 			} else {
 				node0 = *n
@@ -34680,7 +34168,7 @@ func _PO_prepositionAccepts(parser *_Parser, start int) (deltaPos, deltaErr int)
 		return dp, de
 	}
 	pos, perr := start, -1
-	// PO_preposition_1 spaces? GA?
+	// PO_preposition_1 spaces? end_predicatizer?
 	// PO_preposition_1
 	if !_accept(parser, _PO_preposition_1Accepts, &pos, &perr) {
 		goto fail
@@ -34697,11 +34185,11 @@ func _PO_prepositionAccepts(parser *_Parser, start int) (deltaPos, deltaErr int)
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_accept(parser, _GAAccepts, &pos, &perr) {
+		// end_predicatizer
+		if !_accept(parser, _end_predicatizerAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok8
@@ -34726,7 +34214,7 @@ func _PO_prepositionNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "PO_preposition"}
-	// PO_preposition_1 spaces? GA?
+	// PO_preposition_1 spaces? end_predicatizer?
 	// PO_preposition_1
 	if !_node(parser, _PO_preposition_1Node, node, &pos) {
 		goto fail
@@ -34745,12 +34233,12 @@ func _PO_prepositionNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
-		// GA
-		if !_node(parser, _GANode, node, &pos) {
+		// end_predicatizer
+		if !_node(parser, _end_predicatizerNode, node, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -34776,7 +34264,7 @@ func _PO_prepositionFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _PO_preposition}
-	// PO_preposition_1 spaces? GA?
+	// PO_preposition_1 spaces? end_predicatizer?
 	// PO_preposition_1
 	if !_fail(parser, _PO_preposition_1Fail, errPos, failure, &pos) {
 		goto fail
@@ -34793,11 +34281,11 @@ func _PO_prepositionFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_fail(parser, _GAFail, errPos, failure, &pos) {
+		// end_predicatizer
+		if !_fail(parser, _end_predicatizerFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -34825,7 +34313,7 @@ func _PO_prepositionAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// PO_preposition_1 spaces? GA?
+	// PO_preposition_1 spaces? end_predicatizer?
 	{
 		var node0 string
 		// PO_preposition_1
@@ -34853,11 +34341,11 @@ func _PO_prepositionAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// GA?
+		// end_predicatizer?
 		{
 			pos6 := pos
-			// GA
-			if p, n := _GAAction(parser, pos); n == nil {
+			// end_predicatizer
+			if p, n := _end_predicatizerAction(parser, pos); n == nil {
 				goto fail7
 			} else {
 				node0 = *n
@@ -35215,7 +34703,7 @@ func _quotation_prepositionAccepts(parser *_Parser, start int) (deltaPos, deltaE
 		return dp, de
 	}
 	pos, perr := start, -1
-	// MO_preposition spaces? TEO
+	// MO_preposition spaces? end_quote
 	// MO_preposition
 	if !_accept(parser, _MO_prepositionAccepts, &pos, &perr) {
 		goto fail
@@ -35232,8 +34720,8 @@ func _quotation_prepositionAccepts(parser *_Parser, start int) (deltaPos, deltaE
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_accept(parser, _TEOAccepts, &pos, &perr) {
+	// end_quote
+	if !_accept(parser, _end_quoteAccepts, &pos, &perr) {
 		goto fail
 	}
 	return _memoize(parser, _quotation_preposition, start, pos, perr)
@@ -35253,7 +34741,7 @@ func _quotation_prepositionNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "quotation_preposition"}
-	// MO_preposition spaces? TEO
+	// MO_preposition spaces? end_quote
 	// MO_preposition
 	if !_node(parser, _MO_prepositionNode, node, &pos) {
 		goto fail
@@ -35272,8 +34760,8 @@ func _quotation_prepositionNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_node(parser, _TEONode, node, &pos) {
+	// end_quote
+	if !_node(parser, _end_quoteNode, node, &pos) {
 		goto fail
 	}
 	node.Text = parser.text[start:pos]
@@ -35293,7 +34781,7 @@ func _quotation_prepositionFail(parser *_Parser, start, errPos int) (int, *peg.F
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _quotation_preposition}
-	// MO_preposition spaces? TEO
+	// MO_preposition spaces? end_quote
 	// MO_preposition
 	if !_fail(parser, _MO_prepositionFail, errPos, failure, &pos) {
 		goto fail
@@ -35310,8 +34798,8 @@ func _quotation_prepositionFail(parser *_Parser, start, errPos int) (int, *peg.F
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_fail(parser, _TEOFail, errPos, failure, &pos) {
+	// end_quote
+	if !_fail(parser, _end_quoteFail, errPos, failure, &pos) {
 		goto fail
 	}
 	parser.fail[key] = failure
@@ -35334,7 +34822,7 @@ func _quotation_prepositionAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// MO_preposition spaces? TEO
+	// MO_preposition spaces? end_quote
 	{
 		var node0 string
 		// MO_preposition
@@ -35362,8 +34850,8 @@ func _quotation_prepositionAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// TEO
-		if p, n := _TEOAction(parser, pos); n == nil {
+		// end_quote
+		if p, n := _end_quoteAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -38330,7 +37818,7 @@ func _MI_content_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaEr
 		return dp, de
 	}
 	pos, perr := start, -1
-	// MI_content_predicate_1 spaces? GA?
+	// MI_content_predicate_1 spaces? end_predicatizer?
 	// MI_content_predicate_1
 	if !_accept(parser, _MI_content_predicate_1Accepts, &pos, &perr) {
 		goto fail
@@ -38347,11 +37835,11 @@ func _MI_content_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaEr
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_accept(parser, _GAAccepts, &pos, &perr) {
+		// end_predicatizer
+		if !_accept(parser, _end_predicatizerAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok8
@@ -38376,7 +37864,7 @@ func _MI_content_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "MI_content_predicate"}
-	// MI_content_predicate_1 spaces? GA?
+	// MI_content_predicate_1 spaces? end_predicatizer?
 	// MI_content_predicate_1
 	if !_node(parser, _MI_content_predicate_1Node, node, &pos) {
 		goto fail
@@ -38395,12 +37883,12 @@ func _MI_content_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
-		// GA
-		if !_node(parser, _GANode, node, &pos) {
+		// end_predicatizer
+		if !_node(parser, _end_predicatizerNode, node, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -38426,7 +37914,7 @@ func _MI_content_predicateFail(parser *_Parser, start, errPos int) (int, *peg.Fa
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _MI_content_predicate}
-	// MI_content_predicate_1 spaces? GA?
+	// MI_content_predicate_1 spaces? end_predicatizer?
 	// MI_content_predicate_1
 	if !_fail(parser, _MI_content_predicate_1Fail, errPos, failure, &pos) {
 		goto fail
@@ -38443,11 +37931,11 @@ func _MI_content_predicateFail(parser *_Parser, start, errPos int) (int, *peg.Fa
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_fail(parser, _GAFail, errPos, failure, &pos) {
+		// end_predicatizer
+		if !_fail(parser, _end_predicatizerFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -38475,7 +37963,7 @@ func _MI_content_predicateAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// MI_content_predicate_1 spaces? GA?
+	// MI_content_predicate_1 spaces? end_predicatizer?
 	{
 		var node0 string
 		// MI_content_predicate_1
@@ -38503,11 +37991,11 @@ func _MI_content_predicateAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// GA?
+		// end_predicatizer?
 		{
 			pos6 := pos
-			// GA
-			if p, n := _GAAction(parser, pos); n == nil {
+			// end_predicatizer
+			if p, n := _end_predicatizerAction(parser, pos); n == nil {
 				goto fail7
 			} else {
 				node0 = *n
@@ -39009,7 +38497,7 @@ func _PO_content_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaEr
 		return dp, de
 	}
 	pos, perr := start, -1
-	// PO_content_predicate_1 spaces? GA?
+	// PO_content_predicate_1 spaces? end_predicatizer?
 	// PO_content_predicate_1
 	if !_accept(parser, _PO_content_predicate_1Accepts, &pos, &perr) {
 		goto fail
@@ -39026,11 +38514,11 @@ func _PO_content_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaEr
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_accept(parser, _GAAccepts, &pos, &perr) {
+		// end_predicatizer
+		if !_accept(parser, _end_predicatizerAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok8
@@ -39055,7 +38543,7 @@ func _PO_content_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "PO_content_predicate"}
-	// PO_content_predicate_1 spaces? GA?
+	// PO_content_predicate_1 spaces? end_predicatizer?
 	// PO_content_predicate_1
 	if !_node(parser, _PO_content_predicate_1Node, node, &pos) {
 		goto fail
@@ -39074,12 +38562,12 @@ func _PO_content_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
-		// GA
-		if !_node(parser, _GANode, node, &pos) {
+		// end_predicatizer
+		if !_node(parser, _end_predicatizerNode, node, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -39105,7 +38593,7 @@ func _PO_content_predicateFail(parser *_Parser, start, errPos int) (int, *peg.Fa
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _PO_content_predicate}
-	// PO_content_predicate_1 spaces? GA?
+	// PO_content_predicate_1 spaces? end_predicatizer?
 	// PO_content_predicate_1
 	if !_fail(parser, _PO_content_predicate_1Fail, errPos, failure, &pos) {
 		goto fail
@@ -39122,11 +38610,11 @@ func _PO_content_predicateFail(parser *_Parser, start, errPos int) (int, *peg.Fa
 		pos = pos2
 	ok4:
 	}
-	// GA?
+	// end_predicatizer?
 	{
 		pos6 := pos
-		// GA
-		if !_fail(parser, _GAFail, errPos, failure, &pos) {
+		// end_predicatizer
+		if !_fail(parser, _end_predicatizerFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -39154,7 +38642,7 @@ func _PO_content_predicateAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// PO_content_predicate_1 spaces? GA?
+	// PO_content_predicate_1 spaces? end_predicatizer?
 	{
 		var node0 string
 		// PO_content_predicate_1
@@ -39182,11 +38670,11 @@ func _PO_content_predicateAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node += node0
-		// GA?
+		// end_predicatizer?
 		{
 			pos6 := pos
-			// GA
-			if p, n := _GAAction(parser, pos); n == nil {
+			// end_predicatizer
+			if p, n := _end_predicatizerAction(parser, pos); n == nil {
 				goto fail7
 			} else {
 				node0 = *n
@@ -39544,7 +39032,7 @@ func _quotation_content_predicateAccepts(parser *_Parser, start int) (deltaPos, 
 		return dp, de
 	}
 	pos, perr := start, -1
-	// MO_content_predicate spaces? TEO
+	// MO_content_predicate spaces? end_quote
 	// MO_content_predicate
 	if !_accept(parser, _MO_content_predicateAccepts, &pos, &perr) {
 		goto fail
@@ -39561,8 +39049,8 @@ func _quotation_content_predicateAccepts(parser *_Parser, start int) (deltaPos, 
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_accept(parser, _TEOAccepts, &pos, &perr) {
+	// end_quote
+	if !_accept(parser, _end_quoteAccepts, &pos, &perr) {
 		goto fail
 	}
 	return _memoize(parser, _quotation_content_predicate, start, pos, perr)
@@ -39582,7 +39070,7 @@ func _quotation_content_predicateNode(parser *_Parser, start int) (int, *peg.Nod
 	}
 	pos := start
 	node = &peg.Node{Name: "quotation_content_predicate"}
-	// MO_content_predicate spaces? TEO
+	// MO_content_predicate spaces? end_quote
 	// MO_content_predicate
 	if !_node(parser, _MO_content_predicateNode, node, &pos) {
 		goto fail
@@ -39601,8 +39089,8 @@ func _quotation_content_predicateNode(parser *_Parser, start int) (int, *peg.Nod
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_node(parser, _TEONode, node, &pos) {
+	// end_quote
+	if !_node(parser, _end_quoteNode, node, &pos) {
 		goto fail
 	}
 	node.Text = parser.text[start:pos]
@@ -39622,7 +39110,7 @@ func _quotation_content_predicateFail(parser *_Parser, start, errPos int) (int, 
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _quotation_content_predicate}
-	// MO_content_predicate spaces? TEO
+	// MO_content_predicate spaces? end_quote
 	// MO_content_predicate
 	if !_fail(parser, _MO_content_predicateFail, errPos, failure, &pos) {
 		goto fail
@@ -39639,8 +39127,8 @@ func _quotation_content_predicateFail(parser *_Parser, start, errPos int) (int, 
 		pos = pos2
 	ok4:
 	}
-	// TEO
-	if !_fail(parser, _TEOFail, errPos, failure, &pos) {
+	// end_quote
+	if !_fail(parser, _end_quoteFail, errPos, failure, &pos) {
 		goto fail
 	}
 	parser.fail[key] = failure
@@ -39663,7 +39151,7 @@ func _quotation_content_predicateAction(parser *_Parser, start int) (int, *strin
 	}
 	var node string
 	pos := start
-	// MO_content_predicate spaces? TEO
+	// MO_content_predicate spaces? end_quote
 	{
 		var node0 string
 		// MO_content_predicate
@@ -39691,8 +39179,8 @@ func _quotation_content_predicateAction(parser *_Parser, start int) (int, *strin
 		ok4:
 		}
 		node += node0
-		// TEO
-		if p, n := _TEOAction(parser, pos); n == nil {
+		// end_quote
+		if p, n := _end_quoteAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -41168,22 +40656,39 @@ func _prefixAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// MU freemod?
-	// MU
-	if !_accept(parser, _MUAccepts, &pos, &perr) {
+	// &MU neutral_syllable freemod?
+	// &MU
+	{
+		pos2 := pos
+		perr4 := perr
+		// MU
+		if !_accept(parser, _MUAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
 		goto fail
 	}
 	// freemod?
 	{
-		pos2 := pos
+		pos7 := pos
 		// freemod
 		if !_accept(parser, _freemodAccepts, &pos, &perr) {
-			goto fail3
+			goto fail8
 		}
-		goto ok4
-	fail3:
-		pos = pos2
-	ok4:
+		goto ok9
+	fail8:
+		pos = pos7
+	ok9:
 	}
 	return _memoize(parser, _prefix, start, pos, perr)
 fail:
@@ -41202,24 +40707,40 @@ func _prefixNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "prefix"}
-	// MU freemod?
-	// MU
-	if !_node(parser, _MUNode, node, &pos) {
+	// &MU neutral_syllable freemod?
+	// &MU
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// MU
+		if !_node(parser, _MUNode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
 		goto fail
 	}
 	// freemod?
 	{
-		nkids1 := len(node.Kids)
-		pos2 := pos
+		nkids6 := len(node.Kids)
+		pos7 := pos
 		// freemod
 		if !_node(parser, _freemodNode, node, &pos) {
-			goto fail3
+			goto fail8
 		}
-		goto ok4
-	fail3:
-		node.Kids = node.Kids[:nkids1]
-		pos = pos2
-	ok4:
+		goto ok9
+	fail8:
+		node.Kids = node.Kids[:nkids6]
+		pos = pos7
+	ok9:
 	}
 	node.Text = parser.text[start:pos]
 	parser.node[key] = node
@@ -41238,22 +40759,45 @@ func _prefixFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _prefix}
-	// MU freemod?
-	// MU
-	if !_fail(parser, _MUFail, errPos, failure, &pos) {
+	// &MU neutral_syllable freemod?
+	// &MU
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// MU
+		if !_fail(parser, _MUFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&MU",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// freemod?
 	{
-		pos2 := pos
+		pos7 := pos
 		// freemod
 		if !_fail(parser, _freemodFail, errPos, failure, &pos) {
-			goto fail3
+			goto fail8
 		}
-		goto ok4
-	fail3:
-		pos = pos2
-	ok4:
+		goto ok9
+	fail8:
+		pos = pos7
+	ok9:
 	}
 	parser.fail[key] = failure
 	return pos, failure
@@ -41275,11 +40819,29 @@ func _prefixAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// MU freemod?
+	// &MU neutral_syllable freemod?
 	{
 		var node0 string
-		// MU
-		if p, n := _MUAction(parser, pos); n == nil {
+		// &MU
+		{
+			pos2 := pos
+			// MU
+			if p, n := _MUAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -41288,19 +40850,19 @@ func _prefixAction(parser *_Parser, start int) (int, *string) {
 		node += node0
 		// freemod?
 		{
-			pos2 := pos
+			pos7 := pos
 			// freemod
 			if p, n := _freemodAction(parser, pos); n == nil {
-				goto fail3
+				goto fail8
 			} else {
 				node0 = *n
 				pos = p
 			}
-			goto ok4
-		fail3:
+			goto ok9
+		fail8:
 			node0 = ""
-			pos = pos2
-		ok4:
+			pos = pos7
+		ok9:
 		}
 		node += node0
 	}
@@ -41315,8 +40877,26 @@ func _focusAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// KU
-	if !_accept(parser, _KUAccepts, &pos, &perr) {
+	// &KU neutral_syllable
+	// &KU
+	{
+		pos2 := pos
+		perr4 := perr
+		// KU
+		if !_accept(parser, _KUAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
 		goto fail
 	}
 	return _memoize(parser, _focus, start, pos, perr)
@@ -41336,8 +40916,25 @@ func _focusNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "focus"}
-	// KU
-	if !_node(parser, _KUNode, node, &pos) {
+	// &KU neutral_syllable
+	// &KU
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// KU
+		if !_node(parser, _KUNode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
 		goto fail
 	}
 	node.Text = parser.text[start:pos]
@@ -41357,8 +40954,32 @@ func _focusFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _focus}
-	// KU
-	if !_fail(parser, _KUFail, errPos, failure, &pos) {
+	// &KU neutral_syllable
+	// &KU
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// KU
+		if !_fail(parser, _KUFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&KU",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
 		goto fail
 	}
 	parser.fail[key] = failure
@@ -41381,12 +41002,2414 @@ func _focusAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// KU
-	if p, n := _KUAction(parser, pos); n == nil {
+	// &KU neutral_syllable
+	{
+		var node0 string
+		// &KU
+		{
+			pos2 := pos
+			// KU
+			if p, n := _KUAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _end_quoteAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _end_quote, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &TEO neutral_syllable
+	// &TEO
+	{
+		pos2 := pos
+		perr4 := perr
+		// TEO
+		if !_accept(parser, _TEOAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
 		goto fail
-	} else {
-		node = *n
-		pos = p
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	return _memoize(parser, _end_quote, start, pos, perr)
+fail:
+	return _memoize(parser, _end_quote, start, -1, perr)
+}
+
+func _end_quoteNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_end_quote]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _end_quote}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "end_quote"}
+	// &TEO neutral_syllable
+	// &TEO
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// TEO
+		if !_node(parser, _TEONode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _end_quoteFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _end_quote, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "end_quote",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _end_quote}
+	// &TEO neutral_syllable
+	// &TEO
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// TEO
+		if !_fail(parser, _TEOFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&TEO",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _end_quoteAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_end_quote]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _end_quote}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &TEO neutral_syllable
+	{
+		var node0 string
+		// &TEO
+		{
+			pos2 := pos
+			// TEO
+			if p, n := _TEOAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _end_predicatizerAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _end_predicatizer, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &GA neutral_syllable
+	// &GA
+	{
+		pos2 := pos
+		perr4 := perr
+		// GA
+		if !_accept(parser, _GAAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	return _memoize(parser, _end_predicatizer, start, pos, perr)
+fail:
+	return _memoize(parser, _end_predicatizer, start, -1, perr)
+}
+
+func _end_predicatizerNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_end_predicatizer]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _end_predicatizer}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "end_predicatizer"}
+	// &GA neutral_syllable
+	// &GA
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// GA
+		if !_node(parser, _GANode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _end_predicatizerFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _end_predicatizer, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "end_predicatizer",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _end_predicatizer}
+	// &GA neutral_syllable
+	// &GA
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// GA
+		if !_fail(parser, _GAFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&GA",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _end_predicatizerAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_end_predicatizer]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _end_predicatizer}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &GA neutral_syllable
+	{
+		var node0 string
+		// &GA
+		{
+			pos2 := pos
+			// GA
+			if p, n := _GAAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _end_statementAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _end_statement, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &NA neutral_syllable freemod?
+	// &NA
+	{
+		pos2 := pos
+		perr4 := perr
+		// NA
+		if !_accept(parser, _NAAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	// freemod?
+	{
+		pos7 := pos
+		// freemod
+		if !_accept(parser, _freemodAccepts, &pos, &perr) {
+			goto fail8
+		}
+		goto ok9
+	fail8:
+		pos = pos7
+	ok9:
+	}
+	return _memoize(parser, _end_statement, start, pos, perr)
+fail:
+	return _memoize(parser, _end_statement, start, -1, perr)
+}
+
+func _end_statementNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_end_statement]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _end_statement}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "end_statement"}
+	// &NA neutral_syllable freemod?
+	// &NA
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// NA
+		if !_node(parser, _NANode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	// freemod?
+	{
+		nkids6 := len(node.Kids)
+		pos7 := pos
+		// freemod
+		if !_node(parser, _freemodNode, node, &pos) {
+			goto fail8
+		}
+		goto ok9
+	fail8:
+		node.Kids = node.Kids[:nkids6]
+		pos = pos7
+	ok9:
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _end_statementFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _end_statement, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "end_statement",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _end_statement}
+	// &NA neutral_syllable freemod?
+	// &NA
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// NA
+		if !_fail(parser, _NAFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&NA",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	// freemod?
+	{
+		pos7 := pos
+		// freemod
+		if !_fail(parser, _freemodFail, errPos, failure, &pos) {
+			goto fail8
+		}
+		goto ok9
+	fail8:
+		pos = pos7
+	ok9:
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _end_statementAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_end_statement]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _end_statement}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &NA neutral_syllable freemod?
+	{
+		var node0 string
+		// &NA
+		{
+			pos2 := pos
+			// NA
+			if p, n := _NAAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
+		// freemod?
+		{
+			pos7 := pos
+			// freemod
+			if p, n := _freemodAction(parser, pos); n == nil {
+				goto fail8
+			} else {
+				node0 = *n
+				pos = p
+			}
+			goto ok9
+		fail8:
+			node0 = ""
+			pos = pos7
+		ok9:
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _sentence_prefixAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _sentence_prefix, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &KEO neutral_syllable
+	// &KEO
+	{
+		pos2 := pos
+		perr4 := perr
+		// KEO
+		if !_accept(parser, _KEOAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	return _memoize(parser, _sentence_prefix, start, pos, perr)
+fail:
+	return _memoize(parser, _sentence_prefix, start, -1, perr)
+}
+
+func _sentence_prefixNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_sentence_prefix]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _sentence_prefix}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "sentence_prefix"}
+	// &KEO neutral_syllable
+	// &KEO
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// KEO
+		if !_node(parser, _KEONode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _sentence_prefixFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _sentence_prefix, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "sentence_prefix",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _sentence_prefix}
+	// &KEO neutral_syllable
+	// &KEO
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// KEO
+		if !_fail(parser, _KEOFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&KEO",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _sentence_prefixAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_sentence_prefix]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _sentence_prefix}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &KEO neutral_syllable
+	{
+		var node0 string
+		// &KEO
+		{
+			pos2 := pos
+			// KEO
+			if p, n := _KEOAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _end_prenexAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _end_prenex, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &BI neutral_syllable
+	// &BI
+	{
+		pos2 := pos
+		perr4 := perr
+		// BI
+		if !_accept(parser, _BIAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	return _memoize(parser, _end_prenex, start, pos, perr)
+fail:
+	return _memoize(parser, _end_prenex, start, -1, perr)
+}
+
+func _end_prenexNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_end_prenex]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _end_prenex}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "end_prenex"}
+	// &BI neutral_syllable
+	// &BI
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// BI
+		if !_node(parser, _BINode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _end_prenexFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _end_prenex, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "end_prenex",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _end_prenex}
+	// &BI neutral_syllable
+	// &BI
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// BI
+		if !_fail(parser, _BIFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&BI",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _end_prenexAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_end_prenex]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _end_prenex}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &BI neutral_syllable
+	{
+		var node0 string
+		// &BI
+		{
+			pos2 := pos
+			// BI
+			if p, n := _BIAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _start_incidentalAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _start_incidental, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &JU neutral_syllable
+	// &JU
+	{
+		pos2 := pos
+		perr4 := perr
+		// JU
+		if !_accept(parser, _JUAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	return _memoize(parser, _start_incidental, start, pos, perr)
+fail:
+	return _memoize(parser, _start_incidental, start, -1, perr)
+}
+
+func _start_incidentalNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_start_incidental]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _start_incidental}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "start_incidental"}
+	// &JU neutral_syllable
+	// &JU
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// JU
+		if !_node(parser, _JUNode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _start_incidentalFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _start_incidental, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "start_incidental",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _start_incidental}
+	// &JU neutral_syllable
+	// &JU
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// JU
+		if !_fail(parser, _JUFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&JU",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _start_incidentalAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_start_incidental]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _start_incidental}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &JU neutral_syllable
+	{
+		var node0 string
+		// &JU
+		{
+			pos2 := pos
+			// JU
+			if p, n := _JUAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _start_parentheticalAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _start_parenthetical, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &KIO neutral_syllable
+	// &KIO
+	{
+		pos2 := pos
+		perr4 := perr
+		// KIO
+		if !_accept(parser, _KIOAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	return _memoize(parser, _start_parenthetical, start, pos, perr)
+fail:
+	return _memoize(parser, _start_parenthetical, start, -1, perr)
+}
+
+func _start_parentheticalNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_start_parenthetical]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _start_parenthetical}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "start_parenthetical"}
+	// &KIO neutral_syllable
+	// &KIO
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// KIO
+		if !_node(parser, _KIONode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _start_parentheticalFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _start_parenthetical, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "start_parenthetical",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _start_parenthetical}
+	// &KIO neutral_syllable
+	// &KIO
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// KIO
+		if !_fail(parser, _KIOFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&KIO",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _start_parentheticalAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_start_parenthetical]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _start_parenthetical}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &KIO neutral_syllable
+	{
+		var node0 string
+		// &KIO
+		{
+			pos2 := pos
+			// KIO
+			if p, n := _KIOAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _end_parentheticalAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _end_parenthetical, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &KI neutral_syllable
+	// &KI
+	{
+		pos2 := pos
+		perr4 := perr
+		// KI
+		if !_accept(parser, _KIAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	return _memoize(parser, _end_parenthetical, start, pos, perr)
+fail:
+	return _memoize(parser, _end_parenthetical, start, -1, perr)
+}
+
+func _end_parentheticalNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_end_parenthetical]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _end_parenthetical}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "end_parenthetical"}
+	// &KI neutral_syllable
+	// &KI
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// KI
+		if !_node(parser, _KINode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _end_parentheticalFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _end_parenthetical, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "end_parenthetical",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _end_parenthetical}
+	// &KI neutral_syllable
+	// &KI
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// KI
+		if !_fail(parser, _KIFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&KI",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _end_parentheticalAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_end_parenthetical]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _end_parenthetical}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &KI neutral_syllable
+	{
+		var node0 string
+		// &KI
+		{
+			pos2 := pos
+			// KI
+			if p, n := _KIAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _vocative_markerAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _vocative_marker, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &HU neutral_syllable
+	// &HU
+	{
+		pos2 := pos
+		perr4 := perr
+		// HU
+		if !_accept(parser, _HUAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	return _memoize(parser, _vocative_marker, start, pos, perr)
+fail:
+	return _memoize(parser, _vocative_marker, start, -1, perr)
+}
+
+func _vocative_markerNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_vocative_marker]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _vocative_marker}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "vocative_marker"}
+	// &HU neutral_syllable
+	// &HU
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// HU
+		if !_node(parser, _HUNode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _vocative_markerFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _vocative_marker, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "vocative_marker",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _vocative_marker}
+	// &HU neutral_syllable
+	// &HU
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// HU
+		if !_fail(parser, _HUFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&HU",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _vocative_markerAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_vocative_marker]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _vocative_marker}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &HU neutral_syllable
+	{
+		var node0 string
+		// &HU
+		{
+			pos2 := pos
+			// HU
+			if p, n := _HUAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _linking_wordAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _linking_word, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &GO neutral_syllable
+	// &GO
+	{
+		pos2 := pos
+		perr4 := perr
+		// GO
+		if !_accept(parser, _GOAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	return _memoize(parser, _linking_word, start, pos, perr)
+fail:
+	return _memoize(parser, _linking_word, start, -1, perr)
+}
+
+func _linking_wordNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_linking_word]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _linking_word}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "linking_word"}
+	// &GO neutral_syllable
+	// &GO
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// GO
+		if !_node(parser, _GONode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _linking_wordFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _linking_word, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "linking_word",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _linking_word}
+	// &GO neutral_syllable
+	// &GO
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// GO
+		if !_fail(parser, _GOFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&GO",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _linking_wordAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_linking_word]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _linking_word}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &GO neutral_syllable
+	{
+		var node0 string
+		// &GO
+		{
+			pos2 := pos
+			// GO
+			if p, n := _GOAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _connectiveAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _connective, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &RA neutral_syllable
+	// &RA
+	{
+		pos2 := pos
+		perr4 := perr
+		// RA
+		if !_accept(parser, _RAAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	return _memoize(parser, _connective, start, pos, perr)
+fail:
+	return _memoize(parser, _connective, start, -1, perr)
+}
+
+func _connectiveNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_connective]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _connective}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "connective"}
+	// &RA neutral_syllable
+	// &RA
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// RA
+		if !_node(parser, _RANode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _connectiveFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _connective, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "connective",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _connective}
+	// &RA neutral_syllable
+	// &RA
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// RA
+		if !_fail(parser, _RAFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&RA",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _connectiveAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_connective]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _connective}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &RA neutral_syllable
+	{
+		var node0 string
+		// &RA
+		{
+			pos2 := pos
+			// RA
+			if p, n := _RAAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _illocutionaryAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _illocutionary, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &DA neutral_syllable
+	// &DA
+	{
+		pos2 := pos
+		perr4 := perr
+		// DA
+		if !_accept(parser, _DAAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	return _memoize(parser, _illocutionary, start, pos, perr)
+fail:
+	return _memoize(parser, _illocutionary, start, -1, perr)
+}
+
+func _illocutionaryNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_illocutionary]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _illocutionary}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "illocutionary"}
+	// &DA neutral_syllable
+	// &DA
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// DA
+		if !_node(parser, _DANode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _illocutionaryFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _illocutionary, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "illocutionary",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _illocutionary}
+	// &DA neutral_syllable
+	// &DA
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// DA
+		if !_fail(parser, _DAFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&DA",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _illocutionaryAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_illocutionary]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _illocutionary}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &DA neutral_syllable
+	{
+		var node0 string
+		// &DA
+		{
+			pos2 := pos
+			// DA
+			if p, n := _DAAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _quantifierAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _quantifier, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &TU neutral_syllable
+	// &TU
+	{
+		pos2 := pos
+		perr4 := perr
+		// TU
+		if !_accept(parser, _TUAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	return _memoize(parser, _quantifier, start, pos, perr)
+fail:
+	return _memoize(parser, _quantifier, start, -1, perr)
+}
+
+func _quantifierNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_quantifier]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _quantifier}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "quantifier"}
+	// &TU neutral_syllable
+	// &TU
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// TU
+		if !_node(parser, _TUNode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _quantifierFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _quantifier, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "quantifier",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _quantifier}
+	// &TU neutral_syllable
+	// &TU
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// TU
+		if !_fail(parser, _TUFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&TU",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _quantifierAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_quantifier]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _quantifier}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &TU neutral_syllable
+	{
+		var node0 string
+		// &TU
+		{
+			pos2 := pos
+			// TU
+			if p, n := _TUAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _interjectionAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _interjection, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &HA neutral_syllable
+	// &HA
+	{
+		pos2 := pos
+		perr4 := perr
+		// HA
+		if !_accept(parser, _HAAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	return _memoize(parser, _interjection, start, pos, perr)
+fail:
+	return _memoize(parser, _interjection, start, -1, perr)
+}
+
+func _interjectionNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_interjection]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _interjection}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "interjection"}
+	// &HA neutral_syllable
+	// &HA
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// HA
+		if !_node(parser, _HANode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _interjectionFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _interjection, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "interjection",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _interjection}
+	// &HA neutral_syllable
+	// &HA
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// HA
+		if !_fail(parser, _HAFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&HA",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _interjectionAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_interjection]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _interjection}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &HA neutral_syllable
+	{
+		var node0 string
+		// &HA
+		{
+			pos2 := pos
+			// HA
+			if p, n := _HAAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node = ""
+		}
+		node += node0
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node += node0
 	}
 	parser.act[key] = node
 	return pos, &node
@@ -41399,67 +43422,67 @@ func _function_wordAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) 
 		return dp, de
 	}
 	pos, perr := start, -1
-	// sentence_prefix/connective/start_incidental/start_parenthetical/end_parenthetical/quantifier/illocutionary/end_statement/end_prenex/LU/MI/PO/MO/TEO/GA/linking_word/vocative
+	// KEO/RA/JU/KIO/KI/TU/DA/BI/NA/LU/MI/PO/MO/TEO/GA/GO/HU
 	{
 		pos2 := pos
-		// sentence_prefix
-		if !_accept(parser, _sentence_prefixAccepts, &pos, &perr) {
+		// KEO
+		if !_accept(parser, _KEOAccepts, &pos, &perr) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		pos = pos2
-		// connective
-		if !_accept(parser, _connectiveAccepts, &pos, &perr) {
+		// RA
+		if !_accept(parser, _RAAccepts, &pos, &perr) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		pos = pos2
-		// start_incidental
-		if !_accept(parser, _start_incidentalAccepts, &pos, &perr) {
+		// JU
+		if !_accept(parser, _JUAccepts, &pos, &perr) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		pos = pos2
-		// start_parenthetical
-		if !_accept(parser, _start_parentheticalAccepts, &pos, &perr) {
+		// KIO
+		if !_accept(parser, _KIOAccepts, &pos, &perr) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		pos = pos2
-		// end_parenthetical
-		if !_accept(parser, _end_parentheticalAccepts, &pos, &perr) {
+		// KI
+		if !_accept(parser, _KIAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		pos = pos2
-		// quantifier
-		if !_accept(parser, _quantifierAccepts, &pos, &perr) {
+		// TU
+		if !_accept(parser, _TUAccepts, &pos, &perr) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		pos = pos2
-		// illocutionary
-		if !_accept(parser, _illocutionaryAccepts, &pos, &perr) {
+		// DA
+		if !_accept(parser, _DAAccepts, &pos, &perr) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		pos = pos2
-		// end_statement
-		if !_accept(parser, _end_statementAccepts, &pos, &perr) {
+		// BI
+		if !_accept(parser, _BIAccepts, &pos, &perr) {
 			goto fail10
 		}
 		goto ok0
 	fail10:
 		pos = pos2
-		// end_prenex
-		if !_accept(parser, _end_prenexAccepts, &pos, &perr) {
+		// NA
+		if !_accept(parser, _NAAccepts, &pos, &perr) {
 			goto fail11
 		}
 		goto ok0
@@ -41507,15 +43530,15 @@ func _function_wordAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) 
 		goto ok0
 	fail17:
 		pos = pos2
-		// linking_word
-		if !_accept(parser, _linking_wordAccepts, &pos, &perr) {
+		// GO
+		if !_accept(parser, _GOAccepts, &pos, &perr) {
 			goto fail18
 		}
 		goto ok0
 	fail18:
 		pos = pos2
-		// vocative
-		if !_accept(parser, _vocativeAccepts, &pos, &perr) {
+		// HU
+		if !_accept(parser, _HUAccepts, &pos, &perr) {
 			goto fail19
 		}
 		goto ok0
@@ -41541,76 +43564,76 @@ func _function_wordNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "function_word"}
-	// sentence_prefix/connective/start_incidental/start_parenthetical/end_parenthetical/quantifier/illocutionary/end_statement/end_prenex/LU/MI/PO/MO/TEO/GA/linking_word/vocative
+	// KEO/RA/JU/KIO/KI/TU/DA/BI/NA/LU/MI/PO/MO/TEO/GA/GO/HU
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
-		// sentence_prefix
-		if !_node(parser, _sentence_prefixNode, node, &pos) {
+		// KEO
+		if !_node(parser, _KEONode, node, &pos) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// connective
-		if !_node(parser, _connectiveNode, node, &pos) {
+		// RA
+		if !_node(parser, _RANode, node, &pos) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// start_incidental
-		if !_node(parser, _start_incidentalNode, node, &pos) {
+		// JU
+		if !_node(parser, _JUNode, node, &pos) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// start_parenthetical
-		if !_node(parser, _start_parentheticalNode, node, &pos) {
+		// KIO
+		if !_node(parser, _KIONode, node, &pos) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// end_parenthetical
-		if !_node(parser, _end_parentheticalNode, node, &pos) {
+		// KI
+		if !_node(parser, _KINode, node, &pos) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// quantifier
-		if !_node(parser, _quantifierNode, node, &pos) {
+		// TU
+		if !_node(parser, _TUNode, node, &pos) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// illocutionary
-		if !_node(parser, _illocutionaryNode, node, &pos) {
+		// DA
+		if !_node(parser, _DANode, node, &pos) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// end_statement
-		if !_node(parser, _end_statementNode, node, &pos) {
+		// BI
+		if !_node(parser, _BINode, node, &pos) {
 			goto fail10
 		}
 		goto ok0
 	fail10:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// end_prenex
-		if !_node(parser, _end_prenexNode, node, &pos) {
+		// NA
+		if !_node(parser, _NANode, node, &pos) {
 			goto fail11
 		}
 		goto ok0
@@ -41665,16 +43688,16 @@ func _function_wordNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail17:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// linking_word
-		if !_node(parser, _linking_wordNode, node, &pos) {
+		// GO
+		if !_node(parser, _GONode, node, &pos) {
 			goto fail18
 		}
 		goto ok0
 	fail18:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// vocative
-		if !_node(parser, _vocativeNode, node, &pos) {
+		// HU
+		if !_node(parser, _HUNode, node, &pos) {
 			goto fail19
 		}
 		goto ok0
@@ -41701,67 +43724,67 @@ func _function_wordFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _function_word}
-	// sentence_prefix/connective/start_incidental/start_parenthetical/end_parenthetical/quantifier/illocutionary/end_statement/end_prenex/LU/MI/PO/MO/TEO/GA/linking_word/vocative
+	// KEO/RA/JU/KIO/KI/TU/DA/BI/NA/LU/MI/PO/MO/TEO/GA/GO/HU
 	{
 		pos2 := pos
-		// sentence_prefix
-		if !_fail(parser, _sentence_prefixFail, errPos, failure, &pos) {
+		// KEO
+		if !_fail(parser, _KEOFail, errPos, failure, &pos) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		pos = pos2
-		// connective
-		if !_fail(parser, _connectiveFail, errPos, failure, &pos) {
+		// RA
+		if !_fail(parser, _RAFail, errPos, failure, &pos) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		pos = pos2
-		// start_incidental
-		if !_fail(parser, _start_incidentalFail, errPos, failure, &pos) {
+		// JU
+		if !_fail(parser, _JUFail, errPos, failure, &pos) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		pos = pos2
-		// start_parenthetical
-		if !_fail(parser, _start_parentheticalFail, errPos, failure, &pos) {
+		// KIO
+		if !_fail(parser, _KIOFail, errPos, failure, &pos) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		pos = pos2
-		// end_parenthetical
-		if !_fail(parser, _end_parentheticalFail, errPos, failure, &pos) {
+		// KI
+		if !_fail(parser, _KIFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		pos = pos2
-		// quantifier
-		if !_fail(parser, _quantifierFail, errPos, failure, &pos) {
+		// TU
+		if !_fail(parser, _TUFail, errPos, failure, &pos) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		pos = pos2
-		// illocutionary
-		if !_fail(parser, _illocutionaryFail, errPos, failure, &pos) {
+		// DA
+		if !_fail(parser, _DAFail, errPos, failure, &pos) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		pos = pos2
-		// end_statement
-		if !_fail(parser, _end_statementFail, errPos, failure, &pos) {
+		// BI
+		if !_fail(parser, _BIFail, errPos, failure, &pos) {
 			goto fail10
 		}
 		goto ok0
 	fail10:
 		pos = pos2
-		// end_prenex
-		if !_fail(parser, _end_prenexFail, errPos, failure, &pos) {
+		// NA
+		if !_fail(parser, _NAFail, errPos, failure, &pos) {
 			goto fail11
 		}
 		goto ok0
@@ -41809,15 +43832,15 @@ func _function_wordFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail17:
 		pos = pos2
-		// linking_word
-		if !_fail(parser, _linking_wordFail, errPos, failure, &pos) {
+		// GO
+		if !_fail(parser, _GOFail, errPos, failure, &pos) {
 			goto fail18
 		}
 		goto ok0
 	fail18:
 		pos = pos2
-		// vocative
-		if !_fail(parser, _vocativeFail, errPos, failure, &pos) {
+		// HU
+		if !_fail(parser, _HUFail, errPos, failure, &pos) {
 			goto fail19
 		}
 		goto ok0
@@ -41846,11 +43869,11 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// sentence_prefix/connective/start_incidental/start_parenthetical/end_parenthetical/quantifier/illocutionary/end_statement/end_prenex/LU/MI/PO/MO/TEO/GA/linking_word/vocative
+	// KEO/RA/JU/KIO/KI/TU/DA/BI/NA/LU/MI/PO/MO/TEO/GA/GO/HU
 	{
 		pos2 := pos
-		// sentence_prefix
-		if p, n := _sentence_prefixAction(parser, pos); n == nil {
+		// KEO
+		if p, n := _KEOAction(parser, pos); n == nil {
 			goto fail3
 		} else {
 			node = *n
@@ -41859,8 +43882,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// connective
-		if p, n := _connectiveAction(parser, pos); n == nil {
+		// RA
+		if p, n := _RAAction(parser, pos); n == nil {
 			goto fail4
 		} else {
 			node = *n
@@ -41869,8 +43892,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail4:
 		pos = pos2
-		// start_incidental
-		if p, n := _start_incidentalAction(parser, pos); n == nil {
+		// JU
+		if p, n := _JUAction(parser, pos); n == nil {
 			goto fail5
 		} else {
 			node = *n
@@ -41879,8 +43902,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail5:
 		pos = pos2
-		// start_parenthetical
-		if p, n := _start_parentheticalAction(parser, pos); n == nil {
+		// KIO
+		if p, n := _KIOAction(parser, pos); n == nil {
 			goto fail6
 		} else {
 			node = *n
@@ -41889,8 +43912,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail6:
 		pos = pos2
-		// end_parenthetical
-		if p, n := _end_parentheticalAction(parser, pos); n == nil {
+		// KI
+		if p, n := _KIAction(parser, pos); n == nil {
 			goto fail7
 		} else {
 			node = *n
@@ -41899,8 +43922,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail7:
 		pos = pos2
-		// quantifier
-		if p, n := _quantifierAction(parser, pos); n == nil {
+		// TU
+		if p, n := _TUAction(parser, pos); n == nil {
 			goto fail8
 		} else {
 			node = *n
@@ -41909,8 +43932,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail8:
 		pos = pos2
-		// illocutionary
-		if p, n := _illocutionaryAction(parser, pos); n == nil {
+		// DA
+		if p, n := _DAAction(parser, pos); n == nil {
 			goto fail9
 		} else {
 			node = *n
@@ -41919,8 +43942,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail9:
 		pos = pos2
-		// end_statement
-		if p, n := _end_statementAction(parser, pos); n == nil {
+		// BI
+		if p, n := _BIAction(parser, pos); n == nil {
 			goto fail10
 		} else {
 			node = *n
@@ -41929,8 +43952,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail10:
 		pos = pos2
-		// end_prenex
-		if p, n := _end_prenexAction(parser, pos); n == nil {
+		// NA
+		if p, n := _NAAction(parser, pos); n == nil {
 			goto fail11
 		} else {
 			node = *n
@@ -41999,8 +44022,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail17:
 		pos = pos2
-		// linking_word
-		if p, n := _linking_wordAction(parser, pos); n == nil {
+		// GO
+		if p, n := _GOAction(parser, pos); n == nil {
 			goto fail18
 		} else {
 			node = *n
@@ -42009,8 +44032,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail18:
 		pos = pos2
-		// vocative
-		if p, n := _vocativeAction(parser, pos); n == nil {
+		// HU
+		if p, n := _HUAction(parser, pos); n == nil {
 			goto fail19
 		} else {
 			node = *n
@@ -42033,7 +44056,7 @@ func _LUAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// (l U/l I/l O/m A/t I o) &(tone/boundary)
+	// (l U/l I/l O/m A/t I o) &(tone? boundary)
 	// (l U/l I/l O/m A/t I o)
 	// l U/l I/l O/m A/t I o
 	{
@@ -42105,30 +44128,27 @@ func _LUAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto fail
 	ok1:
 	}
-	// &(tone/boundary)
+	// &(tone? boundary)
 	{
 		pos15 := pos
 		perr17 := perr
-		// (tone/boundary)
-		// tone/boundary
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
 		{
 			pos21 := pos
 			// tone
 			if !_accept(parser, _toneAccepts, &pos, &perr) {
 				goto fail22
 			}
-			goto ok19
+			goto ok23
 		fail22:
 			pos = pos21
-			// boundary
-			if !_accept(parser, _boundaryAccepts, &pos, &perr) {
-				goto fail23
-			}
-			goto ok19
-		fail23:
-			pos = pos21
+		ok23:
+		}
+		// boundary
+		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail18
-		ok19:
 		}
 		goto ok14
 	fail18:
@@ -42156,7 +44176,7 @@ func _LUNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "LU"}
-	// (l U/l I/l O/m A/t I o) &(tone/boundary)
+	// (l U/l I/l O/m A/t I o) &(tone? boundary)
 	// (l U/l I/l O/m A/t I o)
 	{
 		nkids1 := len(node.Kids)
@@ -42240,36 +44260,32 @@ func _LUNode(parser *_Parser, start int) (int, *peg.Node) {
 		sub := _sub(parser, pos02, pos, node.Kids[nkids1:])
 		node.Kids = append(node.Kids[:nkids1], sub)
 	}
-	// &(tone/boundary)
+	// &(tone? boundary)
 	{
 		pos17 := pos
 		nkids18 := len(node.Kids)
-		// (tone/boundary)
+		// (tone? boundary)
 		{
 			nkids21 := len(node.Kids)
 			pos022 := pos
-			// tone/boundary
+			// tone? boundary
+			// tone?
 			{
-				pos25 := pos
 				nkids24 := len(node.Kids)
+				pos25 := pos
 				// tone
 				if !_node(parser, _toneNode, node, &pos) {
 					goto fail26
 				}
-				goto ok23
+				goto ok27
 			fail26:
 				node.Kids = node.Kids[:nkids24]
 				pos = pos25
-				// boundary
-				if !_node(parser, _boundaryNode, node, &pos) {
-					goto fail27
-				}
-				goto ok23
-			fail27:
-				node.Kids = node.Kids[:nkids24]
-				pos = pos25
+			ok27:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
 				goto fail20
-			ok23:
 			}
 			sub := _sub(parser, pos022, pos, node.Kids[nkids21:])
 			node.Kids = append(node.Kids[:nkids21], sub)
@@ -42299,7 +44315,7 @@ func _LUFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _LU}
-	// (l U/l I/l O/m A/t I o) &(tone/boundary)
+	// (l U/l I/l O/m A/t I o) &(tone? boundary)
 	// (l U/l I/l O/m A/t I o)
 	// l U/l I/l O/m A/t I o
 	{
@@ -42371,30 +44387,27 @@ func _LUFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto fail
 	ok1:
 	}
-	// &(tone/boundary)
+	// &(tone? boundary)
 	{
 		pos15 := pos
 		nkids16 := len(failure.Kids)
-		// (tone/boundary)
-		// tone/boundary
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
 		{
 			pos21 := pos
 			// tone
 			if !_fail(parser, _toneFail, errPos, failure, &pos) {
 				goto fail22
 			}
-			goto ok19
+			goto ok23
 		fail22:
 			pos = pos21
-			// boundary
-			if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
-				goto fail23
-			}
-			goto ok19
-		fail23:
-			pos = pos21
+		ok23:
+		}
+		// boundary
+		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail18
-		ok19:
 		}
 		goto ok14
 	fail18:
@@ -42403,7 +44416,7 @@ func _LUFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&(tone/boundary)",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -42431,7 +44444,7 @@ func _LUAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// (l U/l I/l O/m A/t I o) &(tone/boundary)
+	// (l U/l I/l O/m A/t I o) &(tone? boundary)
 	{
 		var node0 string
 		// (l U/l I/l O/m A/t I o)
@@ -42565,11 +44578,12 @@ func _LUAction(parser *_Parser, start int) (int, *string) {
 		ok1:
 		}
 		node += node0
-		// &(tone/boundary)
+		// &(tone? boundary)
 		{
 			pos15 := pos
-			// (tone/boundary)
-			// tone/boundary
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
 			{
 				pos21 := pos
 				// tone
@@ -42578,20 +44592,16 @@ func _LUAction(parser *_Parser, start int) (int, *string) {
 				} else {
 					pos = p
 				}
-				goto ok19
+				goto ok23
 			fail22:
 				pos = pos21
-				// boundary
-				if p, n := _boundaryAction(parser, pos); n == nil {
-					goto fail23
-				} else {
-					pos = p
-				}
-				goto ok19
-			fail23:
-				pos = pos21
+			ok23:
+			}
+			// boundary
+			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail18
-			ok19:
+			} else {
+				pos = p
 			}
 			goto ok14
 		fail18:
@@ -42614,7 +44624,7 @@ func _MIAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// (m I/s h U) &(tone/boundary)
+	// (m I/s h U) &(tone? boundary)
 	// (m I/s h U)
 	// m I/s h U
 	{
@@ -42650,30 +44660,27 @@ func _MIAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto fail
 	ok1:
 	}
-	// &(tone/boundary)
+	// &(tone? boundary)
 	{
 		pos9 := pos
 		perr11 := perr
-		// (tone/boundary)
-		// tone/boundary
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
 		{
 			pos15 := pos
 			// tone
 			if !_accept(parser, _toneAccepts, &pos, &perr) {
 				goto fail16
 			}
-			goto ok13
+			goto ok17
 		fail16:
 			pos = pos15
-			// boundary
-			if !_accept(parser, _boundaryAccepts, &pos, &perr) {
-				goto fail17
-			}
-			goto ok13
-		fail17:
-			pos = pos15
+		ok17:
+		}
+		// boundary
+		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail12
-		ok13:
 		}
 		goto ok8
 	fail12:
@@ -42701,7 +44708,7 @@ func _MINode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "MI"}
-	// (m I/s h U) &(tone/boundary)
+	// (m I/s h U) &(tone? boundary)
 	// (m I/s h U)
 	{
 		nkids1 := len(node.Kids)
@@ -42746,36 +44753,32 @@ func _MINode(parser *_Parser, start int) (int, *peg.Node) {
 		sub := _sub(parser, pos02, pos, node.Kids[nkids1:])
 		node.Kids = append(node.Kids[:nkids1], sub)
 	}
-	// &(tone/boundary)
+	// &(tone? boundary)
 	{
 		pos11 := pos
 		nkids12 := len(node.Kids)
-		// (tone/boundary)
+		// (tone? boundary)
 		{
 			nkids15 := len(node.Kids)
 			pos016 := pos
-			// tone/boundary
+			// tone? boundary
+			// tone?
 			{
-				pos19 := pos
 				nkids18 := len(node.Kids)
+				pos19 := pos
 				// tone
 				if !_node(parser, _toneNode, node, &pos) {
 					goto fail20
 				}
-				goto ok17
+				goto ok21
 			fail20:
 				node.Kids = node.Kids[:nkids18]
 				pos = pos19
-				// boundary
-				if !_node(parser, _boundaryNode, node, &pos) {
-					goto fail21
-				}
-				goto ok17
-			fail21:
-				node.Kids = node.Kids[:nkids18]
-				pos = pos19
+			ok21:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
 				goto fail14
-			ok17:
 			}
 			sub := _sub(parser, pos016, pos, node.Kids[nkids15:])
 			node.Kids = append(node.Kids[:nkids15], sub)
@@ -42805,7 +44808,7 @@ func _MIFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _MI}
-	// (m I/s h U) &(tone/boundary)
+	// (m I/s h U) &(tone? boundary)
 	// (m I/s h U)
 	// m I/s h U
 	{
@@ -42841,30 +44844,27 @@ func _MIFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto fail
 	ok1:
 	}
-	// &(tone/boundary)
+	// &(tone? boundary)
 	{
 		pos9 := pos
 		nkids10 := len(failure.Kids)
-		// (tone/boundary)
-		// tone/boundary
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
 		{
 			pos15 := pos
 			// tone
 			if !_fail(parser, _toneFail, errPos, failure, &pos) {
 				goto fail16
 			}
-			goto ok13
+			goto ok17
 		fail16:
 			pos = pos15
-			// boundary
-			if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
-				goto fail17
-			}
-			goto ok13
-		fail17:
-			pos = pos15
+		ok17:
+		}
+		// boundary
+		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail12
-		ok13:
 		}
 		goto ok8
 	fail12:
@@ -42873,7 +44873,7 @@ func _MIFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&(tone/boundary)",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -42901,7 +44901,7 @@ func _MIAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// (m I/s h U) &(tone/boundary)
+	// (m I/s h U) &(tone? boundary)
 	{
 		var node0 string
 		// (m I/s h U)
@@ -42966,11 +44966,12 @@ func _MIAction(parser *_Parser, start int) (int, *string) {
 		ok1:
 		}
 		node += node0
-		// &(tone/boundary)
+		// &(tone? boundary)
 		{
 			pos9 := pos
-			// (tone/boundary)
-			// tone/boundary
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
 			{
 				pos15 := pos
 				// tone
@@ -42979,20 +44980,16 @@ func _MIAction(parser *_Parser, start int) (int, *string) {
 				} else {
 					pos = p
 				}
-				goto ok13
+				goto ok17
 			fail16:
 				pos = pos15
-				// boundary
-				if p, n := _boundaryAction(parser, pos); n == nil {
-					goto fail17
-				} else {
-					pos = p
-				}
-				goto ok13
-			fail17:
-				pos = pos15
+			ok17:
+			}
+			// boundary
+			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail12
-			ok13:
+			} else {
+				pos = p
 			}
 			goto ok8
 		fail12:
@@ -43015,7 +45012,7 @@ func _POAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// (p O/p E) &(tone/boundary)
+	// (p O/p E) &(tone? boundary)
 	// (p O/p E)
 	// p O/p E
 	{
@@ -43047,30 +45044,27 @@ func _POAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto fail
 	ok1:
 	}
-	// &(tone/boundary)
+	// &(tone? boundary)
 	{
 		pos9 := pos
 		perr11 := perr
-		// (tone/boundary)
-		// tone/boundary
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
 		{
 			pos15 := pos
 			// tone
 			if !_accept(parser, _toneAccepts, &pos, &perr) {
 				goto fail16
 			}
-			goto ok13
+			goto ok17
 		fail16:
 			pos = pos15
-			// boundary
-			if !_accept(parser, _boundaryAccepts, &pos, &perr) {
-				goto fail17
-			}
-			goto ok13
-		fail17:
-			pos = pos15
+		ok17:
+		}
+		// boundary
+		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail12
-		ok13:
 		}
 		goto ok8
 	fail12:
@@ -43098,7 +45092,7 @@ func _PONode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "PO"}
-	// (p O/p E) &(tone/boundary)
+	// (p O/p E) &(tone? boundary)
 	// (p O/p E)
 	{
 		nkids1 := len(node.Kids)
@@ -43139,36 +45133,32 @@ func _PONode(parser *_Parser, start int) (int, *peg.Node) {
 		sub := _sub(parser, pos02, pos, node.Kids[nkids1:])
 		node.Kids = append(node.Kids[:nkids1], sub)
 	}
-	// &(tone/boundary)
+	// &(tone? boundary)
 	{
 		pos11 := pos
 		nkids12 := len(node.Kids)
-		// (tone/boundary)
+		// (tone? boundary)
 		{
 			nkids15 := len(node.Kids)
 			pos016 := pos
-			// tone/boundary
+			// tone? boundary
+			// tone?
 			{
-				pos19 := pos
 				nkids18 := len(node.Kids)
+				pos19 := pos
 				// tone
 				if !_node(parser, _toneNode, node, &pos) {
 					goto fail20
 				}
-				goto ok17
+				goto ok21
 			fail20:
 				node.Kids = node.Kids[:nkids18]
 				pos = pos19
-				// boundary
-				if !_node(parser, _boundaryNode, node, &pos) {
-					goto fail21
-				}
-				goto ok17
-			fail21:
-				node.Kids = node.Kids[:nkids18]
-				pos = pos19
+			ok21:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
 				goto fail14
-			ok17:
 			}
 			sub := _sub(parser, pos016, pos, node.Kids[nkids15:])
 			node.Kids = append(node.Kids[:nkids15], sub)
@@ -43198,7 +45188,7 @@ func _POFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _PO}
-	// (p O/p E) &(tone/boundary)
+	// (p O/p E) &(tone? boundary)
 	// (p O/p E)
 	// p O/p E
 	{
@@ -43230,30 +45220,27 @@ func _POFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto fail
 	ok1:
 	}
-	// &(tone/boundary)
+	// &(tone? boundary)
 	{
 		pos9 := pos
 		nkids10 := len(failure.Kids)
-		// (tone/boundary)
-		// tone/boundary
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
 		{
 			pos15 := pos
 			// tone
 			if !_fail(parser, _toneFail, errPos, failure, &pos) {
 				goto fail16
 			}
-			goto ok13
+			goto ok17
 		fail16:
 			pos = pos15
-			// boundary
-			if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
-				goto fail17
-			}
-			goto ok13
-		fail17:
-			pos = pos15
+		ok17:
+		}
+		// boundary
+		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail12
-		ok13:
 		}
 		goto ok8
 	fail12:
@@ -43262,7 +45249,7 @@ func _POFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&(tone/boundary)",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -43290,7 +45277,7 @@ func _POAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// (p O/p E) &(tone/boundary)
+	// (p O/p E) &(tone? boundary)
 	{
 		var node0 string
 		// (p O/p E)
@@ -43347,11 +45334,12 @@ func _POAction(parser *_Parser, start int) (int, *string) {
 		ok1:
 		}
 		node += node0
-		// &(tone/boundary)
+		// &(tone? boundary)
 		{
 			pos9 := pos
-			// (tone/boundary)
-			// tone/boundary
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
 			{
 				pos15 := pos
 				// tone
@@ -43360,20 +45348,16 @@ func _POAction(parser *_Parser, start int) (int, *string) {
 				} else {
 					pos = p
 				}
-				goto ok13
+				goto ok17
 			fail16:
 				pos = pos15
-				// boundary
-				if p, n := _boundaryAction(parser, pos); n == nil {
-					goto fail17
-				} else {
-					pos = p
-				}
-				goto ok13
-			fail17:
-				pos = pos15
+			ok17:
+			}
+			// boundary
+			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail12
-			ok13:
+			} else {
+				pos = p
 			}
 			goto ok8
 		fail12:
@@ -43396,7 +45380,7 @@ func _MOAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// m O &(tone/boundary)
+	// m O &(tone? boundary)
 	// m
 	if !_accept(parser, _mAccepts, &pos, &perr) {
 		goto fail
@@ -43405,30 +45389,27 @@ func _MOAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	if !_accept(parser, _OAccepts, &pos, &perr) {
 		goto fail
 	}
-	// &(tone/boundary)
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		perr4 := perr
-		// (tone/boundary)
-		// tone/boundary
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
 		{
 			pos8 := pos
 			// tone
 			if !_accept(parser, _toneAccepts, &pos, &perr) {
 				goto fail9
 			}
-			goto ok6
+			goto ok10
 		fail9:
 			pos = pos8
-			// boundary
-			if !_accept(parser, _boundaryAccepts, &pos, &perr) {
-				goto fail10
-			}
-			goto ok6
-		fail10:
-			pos = pos8
+		ok10:
+		}
+		// boundary
+		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail5
-		ok6:
 		}
 		goto ok1
 	fail5:
@@ -43456,7 +45437,7 @@ func _MONode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "MO"}
-	// m O &(tone/boundary)
+	// m O &(tone? boundary)
 	// m
 	if !_node(parser, _mNode, node, &pos) {
 		goto fail
@@ -43465,36 +45446,32 @@ func _MONode(parser *_Parser, start int) (int, *peg.Node) {
 	if !_node(parser, _ONode, node, &pos) {
 		goto fail
 	}
-	// &(tone/boundary)
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(node.Kids)
-		// (tone/boundary)
+		// (tone? boundary)
 		{
 			nkids6 := len(node.Kids)
 			pos07 := pos
-			// tone/boundary
+			// tone? boundary
+			// tone?
 			{
-				pos10 := pos
 				nkids9 := len(node.Kids)
+				pos10 := pos
 				// tone
 				if !_node(parser, _toneNode, node, &pos) {
 					goto fail11
 				}
-				goto ok8
+				goto ok12
 			fail11:
 				node.Kids = node.Kids[:nkids9]
 				pos = pos10
-				// boundary
-				if !_node(parser, _boundaryNode, node, &pos) {
-					goto fail12
-				}
-				goto ok8
-			fail12:
-				node.Kids = node.Kids[:nkids9]
-				pos = pos10
+			ok12:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
 				goto fail5
-			ok8:
 			}
 			sub := _sub(parser, pos07, pos, node.Kids[nkids6:])
 			node.Kids = append(node.Kids[:nkids6], sub)
@@ -43524,7 +45501,7 @@ func _MOFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _MO}
-	// m O &(tone/boundary)
+	// m O &(tone? boundary)
 	// m
 	if !_fail(parser, _mFail, errPos, failure, &pos) {
 		goto fail
@@ -43533,30 +45510,27 @@ func _MOFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 	if !_fail(parser, _OFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// &(tone/boundary)
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(failure.Kids)
-		// (tone/boundary)
-		// tone/boundary
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
 		{
 			pos8 := pos
 			// tone
 			if !_fail(parser, _toneFail, errPos, failure, &pos) {
 				goto fail9
 			}
-			goto ok6
+			goto ok10
 		fail9:
 			pos = pos8
-			// boundary
-			if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
-				goto fail10
-			}
-			goto ok6
-		fail10:
-			pos = pos8
+		ok10:
+		}
+		// boundary
+		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail5
-		ok6:
 		}
 		goto ok1
 	fail5:
@@ -43565,7 +45539,7 @@ func _MOFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&(tone/boundary)",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -43593,7 +45567,7 @@ func _MOAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// m O &(tone/boundary)
+	// m O &(tone? boundary)
 	{
 		var node0 string
 		// m
@@ -43612,11 +45586,12 @@ func _MOAction(parser *_Parser, start int) (int, *string) {
 			pos = p
 		}
 		node += node0
-		// &(tone/boundary)
+		// &(tone? boundary)
 		{
 			pos2 := pos
-			// (tone/boundary)
-			// tone/boundary
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
 			{
 				pos8 := pos
 				// tone
@@ -43625,20 +45600,16 @@ func _MOAction(parser *_Parser, start int) (int, *string) {
 				} else {
 					pos = p
 				}
-				goto ok6
+				goto ok10
 			fail9:
 				pos = pos8
-				// boundary
-				if p, n := _boundaryAction(parser, pos); n == nil {
-					goto fail10
-				} else {
-					pos = p
-				}
-				goto ok6
-			fail10:
-				pos = pos8
+			ok10:
+			}
+			// boundary
+			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail5
-			ok6:
+			} else {
+				pos = p
 			}
 			goto ok1
 		fail5:
@@ -43661,23 +45632,37 @@ func _TEOAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// t e o &boundary
+	// t E o &(tone? boundary)
 	// t
 	if !_accept(parser, _tAccepts, &pos, &perr) {
 		goto fail
 	}
-	// e
-	if !_accept(parser, _eAccepts, &pos, &perr) {
+	// E
+	if !_accept(parser, _EAccepts, &pos, &perr) {
 		goto fail
 	}
 	// o
 	if !_accept(parser, _oAccepts, &pos, &perr) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		perr4 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail5
@@ -43708,26 +45693,48 @@ func _TEONode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "TEO"}
-	// t e o &boundary
+	// t E o &(tone? boundary)
 	// t
 	if !_node(parser, _tNode, node, &pos) {
 		goto fail
 	}
-	// e
-	if !_node(parser, _eNode, node, &pos) {
+	// E
+	if !_node(parser, _ENode, node, &pos) {
 		goto fail
 	}
 	// o
 	if !_node(parser, _oNode, node, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail5
+		// (tone? boundary)
+		{
+			nkids6 := len(node.Kids)
+			pos07 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids9 := len(node.Kids)
+				pos10 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail11
+				}
+				goto ok12
+			fail11:
+				node.Kids = node.Kids[:nkids9]
+				pos = pos10
+			ok12:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail5
+			}
+			sub := _sub(parser, pos07, pos, node.Kids[nkids6:])
+			node.Kids = append(node.Kids[:nkids6], sub)
 		}
 		goto ok1
 	fail5:
@@ -43754,23 +45761,37 @@ func _TEOFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _TEO}
-	// t e o &boundary
+	// t E o &(tone? boundary)
 	// t
 	if !_fail(parser, _tFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// e
-	if !_fail(parser, _eFail, errPos, failure, &pos) {
+	// E
+	if !_fail(parser, _EFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// o
 	if !_fail(parser, _oFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail5
@@ -43782,7 +45803,7 @@ func _TEOFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -43810,7 +45831,7 @@ func _TEOAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// t e o &boundary
+	// t E o &(tone? boundary)
 	{
 		var node0 string
 		// t
@@ -43821,8 +45842,8 @@ func _TEOAction(parser *_Parser, start int) (int, *string) {
 			pos = p
 		}
 		node += node0
-		// e
-		if p, n := _eAction(parser, pos); n == nil {
+		// E
+		if p, n := _EAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -43837,9 +45858,25 @@ func _TEOAction(parser *_Parser, start int) (int, *string) {
 			pos = p
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos2 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos8 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail9
+				} else {
+					pos = p
+				}
+				goto ok10
+			fail9:
+				pos = pos8
+			ok10:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail5
@@ -43867,19 +45904,33 @@ func _GAAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// g a &boundary
+	// g A &(tone? boundary)
 	// g
 	if !_accept(parser, _gAccepts, &pos, &perr) {
 		goto fail
 	}
-	// a
-	if !_accept(parser, _aAccepts, &pos, &perr) {
+	// A
+	if !_accept(parser, _AAccepts, &pos, &perr) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		perr4 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail5
@@ -43910,22 +45961,44 @@ func _GANode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "GA"}
-	// g a &boundary
+	// g A &(tone? boundary)
 	// g
 	if !_node(parser, _gNode, node, &pos) {
 		goto fail
 	}
-	// a
-	if !_node(parser, _aNode, node, &pos) {
+	// A
+	if !_node(parser, _ANode, node, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail5
+		// (tone? boundary)
+		{
+			nkids6 := len(node.Kids)
+			pos07 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids9 := len(node.Kids)
+				pos10 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail11
+				}
+				goto ok12
+			fail11:
+				node.Kids = node.Kids[:nkids9]
+				pos = pos10
+			ok12:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail5
+			}
+			sub := _sub(parser, pos07, pos, node.Kids[nkids6:])
+			node.Kids = append(node.Kids[:nkids6], sub)
 		}
 		goto ok1
 	fail5:
@@ -43952,19 +46025,33 @@ func _GAFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _GA}
-	// g a &boundary
+	// g A &(tone? boundary)
 	// g
 	if !_fail(parser, _gFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// a
-	if !_fail(parser, _aFail, errPos, failure, &pos) {
+	// A
+	if !_fail(parser, _AFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail5
@@ -43976,7 +46063,7 @@ func _GAFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -44004,7 +46091,7 @@ func _GAAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// g a &boundary
+	// g A &(tone? boundary)
 	{
 		var node0 string
 		// g
@@ -44015,17 +46102,33 @@ func _GAAction(parser *_Parser, start int) (int, *string) {
 			pos = p
 		}
 		node += node0
-		// a
-		if p, n := _aAction(parser, pos); n == nil {
+		// A
+		if p, n := _AAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
 			pos = p
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos2 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos8 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail9
+				} else {
+					pos = p
+				}
+				goto ok10
+			fail9:
+				pos = pos8
+			ok10:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail5
@@ -44053,19 +46156,33 @@ func _NAAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// n a &boundary
+	// n A &(tone? boundary)
 	// n
 	if !_accept(parser, _nAccepts, &pos, &perr) {
 		goto fail
 	}
-	// a
-	if !_accept(parser, _aAccepts, &pos, &perr) {
+	// A
+	if !_accept(parser, _AAccepts, &pos, &perr) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		perr4 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail5
@@ -44096,22 +46213,44 @@ func _NANode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "NA"}
-	// n a &boundary
+	// n A &(tone? boundary)
 	// n
 	if !_node(parser, _nNode, node, &pos) {
 		goto fail
 	}
-	// a
-	if !_node(parser, _aNode, node, &pos) {
+	// A
+	if !_node(parser, _ANode, node, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail5
+		// (tone? boundary)
+		{
+			nkids6 := len(node.Kids)
+			pos07 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids9 := len(node.Kids)
+				pos10 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail11
+				}
+				goto ok12
+			fail11:
+				node.Kids = node.Kids[:nkids9]
+				pos = pos10
+			ok12:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail5
+			}
+			sub := _sub(parser, pos07, pos, node.Kids[nkids6:])
+			node.Kids = append(node.Kids[:nkids6], sub)
 		}
 		goto ok1
 	fail5:
@@ -44138,19 +46277,33 @@ func _NAFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _NA}
-	// n a &boundary
+	// n A &(tone? boundary)
 	// n
 	if !_fail(parser, _nFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// a
-	if !_fail(parser, _aFail, errPos, failure, &pos) {
+	// A
+	if !_fail(parser, _AFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail5
@@ -44162,7 +46315,7 @@ func _NAFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -44190,7 +46343,7 @@ func _NAAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// n a &boundary
+	// n A &(tone? boundary)
 	{
 		var node0 string
 		// n
@@ -44201,17 +46354,33 @@ func _NAAction(parser *_Parser, start int) (int, *string) {
 			pos = p
 		}
 		node += node0
-		// a
-		if p, n := _aAction(parser, pos); n == nil {
+		// A
+		if p, n := _AAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
 			pos = p
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos2 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos8 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail9
+				} else {
+					pos = p
+				}
+				goto ok10
+			fail9:
+				pos = pos8
+			ok10:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail5
@@ -44239,19 +46408,33 @@ func _MUAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// m u &boundary
+	// m U &(tone? boundary)
 	// m
 	if !_accept(parser, _mAccepts, &pos, &perr) {
 		goto fail
 	}
-	// u
-	if !_accept(parser, _uAccepts, &pos, &perr) {
+	// U
+	if !_accept(parser, _UAccepts, &pos, &perr) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		perr4 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail5
@@ -44282,22 +46465,44 @@ func _MUNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "MU"}
-	// m u &boundary
+	// m U &(tone? boundary)
 	// m
 	if !_node(parser, _mNode, node, &pos) {
 		goto fail
 	}
-	// u
-	if !_node(parser, _uNode, node, &pos) {
+	// U
+	if !_node(parser, _UNode, node, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail5
+		// (tone? boundary)
+		{
+			nkids6 := len(node.Kids)
+			pos07 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids9 := len(node.Kids)
+				pos10 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail11
+				}
+				goto ok12
+			fail11:
+				node.Kids = node.Kids[:nkids9]
+				pos = pos10
+			ok12:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail5
+			}
+			sub := _sub(parser, pos07, pos, node.Kids[nkids6:])
+			node.Kids = append(node.Kids[:nkids6], sub)
 		}
 		goto ok1
 	fail5:
@@ -44324,19 +46529,33 @@ func _MUFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _MU}
-	// m u &boundary
+	// m U &(tone? boundary)
 	// m
 	if !_fail(parser, _mFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// u
-	if !_fail(parser, _uFail, errPos, failure, &pos) {
+	// U
+	if !_fail(parser, _UFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail5
@@ -44348,7 +46567,7 @@ func _MUFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -44376,7 +46595,7 @@ func _MUAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// m u &boundary
+	// m U &(tone? boundary)
 	{
 		var node0 string
 		// m
@@ -44387,17 +46606,33 @@ func _MUAction(parser *_Parser, start int) (int, *string) {
 			pos = p
 		}
 		node += node0
-		// u
-		if p, n := _uAction(parser, pos); n == nil {
+		// U
+		if p, n := _UAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
 			pos = p
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos2 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos8 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail9
+				} else {
+					pos = p
+				}
+				goto ok10
+			fail9:
+				pos = pos8
+			ok10:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail5
@@ -44425,19 +46660,33 @@ func _KUAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// k u &boundary
+	// k U &(tone? boundary)
 	// k
 	if !_accept(parser, _kAccepts, &pos, &perr) {
 		goto fail
 	}
-	// u
-	if !_accept(parser, _uAccepts, &pos, &perr) {
+	// U
+	if !_accept(parser, _UAccepts, &pos, &perr) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		perr4 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail5
@@ -44468,22 +46717,44 @@ func _KUNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "KU"}
-	// k u &boundary
+	// k U &(tone? boundary)
 	// k
 	if !_node(parser, _kNode, node, &pos) {
 		goto fail
 	}
-	// u
-	if !_node(parser, _uNode, node, &pos) {
+	// U
+	if !_node(parser, _UNode, node, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail5
+		// (tone? boundary)
+		{
+			nkids6 := len(node.Kids)
+			pos07 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids9 := len(node.Kids)
+				pos10 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail11
+				}
+				goto ok12
+			fail11:
+				node.Kids = node.Kids[:nkids9]
+				pos = pos10
+			ok12:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail5
+			}
+			sub := _sub(parser, pos07, pos, node.Kids[nkids6:])
+			node.Kids = append(node.Kids[:nkids6], sub)
 		}
 		goto ok1
 	fail5:
@@ -44510,19 +46781,33 @@ func _KUFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _KU}
-	// k u &boundary
+	// k U &(tone? boundary)
 	// k
 	if !_fail(parser, _kFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// u
-	if !_fail(parser, _uFail, errPos, failure, &pos) {
+	// U
+	if !_fail(parser, _UFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail5
@@ -44534,7 +46819,7 @@ func _KUFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -44562,7 +46847,7 @@ func _KUAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// k u &boundary
+	// k U &(tone? boundary)
 	{
 		var node0 string
 		// k
@@ -44573,17 +46858,33 @@ func _KUAction(parser *_Parser, start int) (int, *string) {
 			pos = p
 		}
 		node += node0
-		// u
-		if p, n := _uAction(parser, pos); n == nil {
+		// U
+		if p, n := _UAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
 			pos = p
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos2 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos8 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail9
+				} else {
+					pos = p
+				}
+				goto ok10
+			fail9:
+				pos = pos8
+			ok10:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail5
@@ -44606,35 +46907,39 @@ fail:
 	return -1, nil
 }
 
-func _end_prenexAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _end_prenex, start); ok {
+func _KEOAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _KEO, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// (b i/p a) &boundary
-	// (b i/p a)
-	// b i/p a
+	// (k E o/j E) &(tone? boundary)
+	// (k E o/j E)
+	// k E o/j E
 	{
 		pos3 := pos
-		// b i
-		// b
-		if !_accept(parser, _bAccepts, &pos, &perr) {
+		// k E o
+		// k
+		if !_accept(parser, _kAccepts, &pos, &perr) {
 			goto fail4
 		}
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// E
+		if !_accept(parser, _EAccepts, &pos, &perr) {
+			goto fail4
+		}
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail4
 		}
 		goto ok1
 	fail4:
 		pos = pos3
-		// p a
-		// p
-		if !_accept(parser, _pAccepts, &pos, &perr) {
+		// j E
+		// j
+		if !_accept(parser, _jAccepts, &pos, &perr) {
 			goto fail6
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
+		// E
+		if !_accept(parser, _EAccepts, &pos, &perr) {
 			goto fail6
 		}
 		goto ok1
@@ -44643,10 +46948,24 @@ func _end_prenexAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto fail
 	ok1:
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos9 := pos
 		perr11 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos15 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail16
+			}
+			goto ok17
+		fail16:
+			pos = pos15
+		ok17:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail12
@@ -44660,52 +46979,56 @@ func _end_prenexAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos9
 		perr = perr11
 	}
-	return _memoize(parser, _end_prenex, start, pos, perr)
+	return _memoize(parser, _KEO, start, pos, perr)
 fail:
-	return _memoize(parser, _end_prenex, start, -1, perr)
+	return _memoize(parser, _KEO, start, -1, perr)
 }
 
-func _end_prenexNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_end_prenex]
+func _KEONode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_KEO]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _end_prenex}
+	key := _key{start: start, rule: _KEO}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "end_prenex"}
-	// (b i/p a) &boundary
-	// (b i/p a)
+	node = &peg.Node{Name: "KEO"}
+	// (k E o/j E) &(tone? boundary)
+	// (k E o/j E)
 	{
 		nkids1 := len(node.Kids)
 		pos02 := pos
-		// b i/p a
+		// k E o/j E
 		{
 			pos5 := pos
 			nkids4 := len(node.Kids)
-			// b i
-			// b
-			if !_node(parser, _bNode, node, &pos) {
+			// k E o
+			// k
+			if !_node(parser, _kNode, node, &pos) {
 				goto fail6
 			}
-			// i
-			if !_node(parser, _iNode, node, &pos) {
+			// E
+			if !_node(parser, _ENode, node, &pos) {
+				goto fail6
+			}
+			// o
+			if !_node(parser, _oNode, node, &pos) {
 				goto fail6
 			}
 			goto ok3
 		fail6:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// p a
-			// p
-			if !_node(parser, _pNode, node, &pos) {
+			// j E
+			// j
+			if !_node(parser, _jNode, node, &pos) {
 				goto fail8
 			}
-			// a
-			if !_node(parser, _aNode, node, &pos) {
+			// E
+			if !_node(parser, _ENode, node, &pos) {
 				goto fail8
 			}
 			goto ok3
@@ -44718,13 +47041,35 @@ func _end_prenexNode(parser *_Parser, start int) (int, *peg.Node) {
 		sub := _sub(parser, pos02, pos, node.Kids[nkids1:])
 		node.Kids = append(node.Kids[:nkids1], sub)
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos11 := pos
 		nkids12 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail14
+		// (tone? boundary)
+		{
+			nkids15 := len(node.Kids)
+			pos016 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids18 := len(node.Kids)
+				pos19 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail20
+				}
+				goto ok21
+			fail20:
+				node.Kids = node.Kids[:nkids18]
+				pos = pos19
+			ok21:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail14
+			}
+			sub := _sub(parser, pos016, pos, node.Kids[nkids15:])
+			node.Kids = append(node.Kids[:nkids15], sub)
 		}
 		goto ok10
 	fail14:
@@ -44741,40 +47086,44 @@ fail:
 	return -1, nil
 }
 
-func _end_prenexFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _end_prenex, start, errPos)
+func _KEOFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _KEO, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "end_prenex",
+		Name: "KEO",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _end_prenex}
-	// (b i/p a) &boundary
-	// (b i/p a)
-	// b i/p a
+	key := _key{start: start, rule: _KEO}
+	// (k E o/j E) &(tone? boundary)
+	// (k E o/j E)
+	// k E o/j E
 	{
 		pos3 := pos
-		// b i
-		// b
-		if !_fail(parser, _bFail, errPos, failure, &pos) {
+		// k E o
+		// k
+		if !_fail(parser, _kFail, errPos, failure, &pos) {
 			goto fail4
 		}
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// E
+		if !_fail(parser, _EFail, errPos, failure, &pos) {
+			goto fail4
+		}
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail4
 		}
 		goto ok1
 	fail4:
 		pos = pos3
-		// p a
-		// p
-		if !_fail(parser, _pFail, errPos, failure, &pos) {
+		// j E
+		// j
+		if !_fail(parser, _jFail, errPos, failure, &pos) {
 			goto fail6
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
+		// E
+		if !_fail(parser, _EFail, errPos, failure, &pos) {
 			goto fail6
 		}
 		goto ok1
@@ -44783,10 +47132,24 @@ func _end_prenexFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto fail
 	ok1:
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos9 := pos
 		nkids10 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos15 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail16
+			}
+			goto ok17
+		fail16:
+			pos = pos15
+		ok17:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail12
@@ -44798,7 +47161,7 @@ func _end_prenexFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -44813,12 +47176,12 @@ fail:
 	return -1, failure
 }
 
-func _end_prenexAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_end_prenex]
+func _KEOAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_KEO]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _end_prenex}
+	key := _key{start: start, rule: _KEO}
 	n := parser.act[key]
 	if n != nil {
 		n := n.(string)
@@ -44826,26 +47189,34 @@ func _end_prenexAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// (b i/p a) &boundary
+	// (k E o/j E) &(tone? boundary)
 	{
 		var node0 string
-		// (b i/p a)
-		// b i/p a
+		// (k E o/j E)
+		// k E o/j E
 		{
 			pos3 := pos
-			// b i
+			// k E o
 			{
 				var node5 string
-				// b
-				if p, n := _bAction(parser, pos); n == nil {
+				// k
+				if p, n := _kAction(parser, pos); n == nil {
 					goto fail4
 				} else {
 					node5 = *n
 					pos = p
 				}
 				node0 += node5
-				// i
-				if p, n := _iAction(parser, pos); n == nil {
+				// E
+				if p, n := _EAction(parser, pos); n == nil {
+					goto fail4
+				} else {
+					node5 = *n
+					pos = p
+				}
+				node0 += node5
+				// o
+				if p, n := _oAction(parser, pos); n == nil {
 					goto fail4
 				} else {
 					node5 = *n
@@ -44856,19 +47227,19 @@ func _end_prenexAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail4:
 			pos = pos3
-			// p a
+			// j E
 			{
 				var node7 string
-				// p
-				if p, n := _pAction(parser, pos); n == nil {
+				// j
+				if p, n := _jAction(parser, pos); n == nil {
 					goto fail6
 				} else {
 					node7 = *n
 					pos = p
 				}
 				node0 += node7
-				// a
-				if p, n := _aAction(parser, pos); n == nil {
+				// E
+				if p, n := _EAction(parser, pos); n == nil {
 					goto fail6
 				} else {
 					node7 = *n
@@ -44883,9 +47254,25 @@ func _end_prenexAction(parser *_Parser, start int) (int, *string) {
 		ok1:
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos9 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos15 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail16
+				} else {
+					pos = p
+				}
+				goto ok17
+			fail16:
+				pos = pos15
+			ok17:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail12
@@ -44908,24 +47295,406 @@ fail:
 	return -1, nil
 }
 
-func _start_incidentalAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _start_incidental, start); ok {
+func _BIAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _BI, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// j u &boundary
+	// (b I/p A) &(tone? boundary)
+	// (b I/p A)
+	// b I/p A
+	{
+		pos3 := pos
+		// b I
+		// b
+		if !_accept(parser, _bAccepts, &pos, &perr) {
+			goto fail4
+		}
+		// I
+		if !_accept(parser, _IAccepts, &pos, &perr) {
+			goto fail4
+		}
+		goto ok1
+	fail4:
+		pos = pos3
+		// p A
+		// p
+		if !_accept(parser, _pAccepts, &pos, &perr) {
+			goto fail6
+		}
+		// A
+		if !_accept(parser, _AAccepts, &pos, &perr) {
+			goto fail6
+		}
+		goto ok1
+	fail6:
+		pos = pos3
+		goto fail
+	ok1:
+	}
+	// &(tone? boundary)
+	{
+		pos9 := pos
+		perr11 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos15 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail16
+			}
+			goto ok17
+		fail16:
+			pos = pos15
+		ok17:
+		}
+		// boundary
+		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
+			goto fail12
+		}
+		goto ok8
+	fail12:
+		pos = pos9
+		perr = _max(perr11, pos)
+		goto fail
+	ok8:
+		pos = pos9
+		perr = perr11
+	}
+	return _memoize(parser, _BI, start, pos, perr)
+fail:
+	return _memoize(parser, _BI, start, -1, perr)
+}
+
+func _BINode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_BI]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _BI}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "BI"}
+	// (b I/p A) &(tone? boundary)
+	// (b I/p A)
+	{
+		nkids1 := len(node.Kids)
+		pos02 := pos
+		// b I/p A
+		{
+			pos5 := pos
+			nkids4 := len(node.Kids)
+			// b I
+			// b
+			if !_node(parser, _bNode, node, &pos) {
+				goto fail6
+			}
+			// I
+			if !_node(parser, _INode, node, &pos) {
+				goto fail6
+			}
+			goto ok3
+		fail6:
+			node.Kids = node.Kids[:nkids4]
+			pos = pos5
+			// p A
+			// p
+			if !_node(parser, _pNode, node, &pos) {
+				goto fail8
+			}
+			// A
+			if !_node(parser, _ANode, node, &pos) {
+				goto fail8
+			}
+			goto ok3
+		fail8:
+			node.Kids = node.Kids[:nkids4]
+			pos = pos5
+			goto fail
+		ok3:
+		}
+		sub := _sub(parser, pos02, pos, node.Kids[nkids1:])
+		node.Kids = append(node.Kids[:nkids1], sub)
+	}
+	// &(tone? boundary)
+	{
+		pos11 := pos
+		nkids12 := len(node.Kids)
+		// (tone? boundary)
+		{
+			nkids15 := len(node.Kids)
+			pos016 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids18 := len(node.Kids)
+				pos19 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail20
+				}
+				goto ok21
+			fail20:
+				node.Kids = node.Kids[:nkids18]
+				pos = pos19
+			ok21:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail14
+			}
+			sub := _sub(parser, pos016, pos, node.Kids[nkids15:])
+			node.Kids = append(node.Kids[:nkids15], sub)
+		}
+		goto ok10
+	fail14:
+		pos = pos11
+		goto fail
+	ok10:
+		pos = pos11
+		node.Kids = node.Kids[:nkids12]
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _BIFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _BI, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "BI",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _BI}
+	// (b I/p A) &(tone? boundary)
+	// (b I/p A)
+	// b I/p A
+	{
+		pos3 := pos
+		// b I
+		// b
+		if !_fail(parser, _bFail, errPos, failure, &pos) {
+			goto fail4
+		}
+		// I
+		if !_fail(parser, _IFail, errPos, failure, &pos) {
+			goto fail4
+		}
+		goto ok1
+	fail4:
+		pos = pos3
+		// p A
+		// p
+		if !_fail(parser, _pFail, errPos, failure, &pos) {
+			goto fail6
+		}
+		// A
+		if !_fail(parser, _AFail, errPos, failure, &pos) {
+			goto fail6
+		}
+		goto ok1
+	fail6:
+		pos = pos3
+		goto fail
+	ok1:
+	}
+	// &(tone? boundary)
+	{
+		pos9 := pos
+		nkids10 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos15 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail16
+			}
+			goto ok17
+		fail16:
+			pos = pos15
+		ok17:
+		}
+		// boundary
+		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
+			goto fail12
+		}
+		goto ok8
+	fail12:
+		pos = pos9
+		failure.Kids = failure.Kids[:nkids10]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&(tone? boundary)",
+			})
+		}
+		goto fail
+	ok8:
+		pos = pos9
+		failure.Kids = failure.Kids[:nkids10]
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _BIAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_BI]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _BI}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// (b I/p A) &(tone? boundary)
+	{
+		var node0 string
+		// (b I/p A)
+		// b I/p A
+		{
+			pos3 := pos
+			// b I
+			{
+				var node5 string
+				// b
+				if p, n := _bAction(parser, pos); n == nil {
+					goto fail4
+				} else {
+					node5 = *n
+					pos = p
+				}
+				node0 += node5
+				// I
+				if p, n := _IAction(parser, pos); n == nil {
+					goto fail4
+				} else {
+					node5 = *n
+					pos = p
+				}
+				node0 += node5
+			}
+			goto ok1
+		fail4:
+			pos = pos3
+			// p A
+			{
+				var node7 string
+				// p
+				if p, n := _pAction(parser, pos); n == nil {
+					goto fail6
+				} else {
+					node7 = *n
+					pos = p
+				}
+				node0 += node7
+				// A
+				if p, n := _AAction(parser, pos); n == nil {
+					goto fail6
+				} else {
+					node7 = *n
+					pos = p
+				}
+				node0 += node7
+			}
+			goto ok1
+		fail6:
+			pos = pos3
+			goto fail
+		ok1:
+		}
+		node += node0
+		// &(tone? boundary)
+		{
+			pos9 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos15 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail16
+				} else {
+					pos = p
+				}
+				goto ok17
+			fail16:
+				pos = pos15
+			ok17:
+			}
+			// boundary
+			if p, n := _boundaryAction(parser, pos); n == nil {
+				goto fail12
+			} else {
+				pos = p
+			}
+			goto ok8
+		fail12:
+			pos = pos9
+			goto fail
+		ok8:
+			pos = pos9
+			node = ""
+		}
+		node += node0
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _JUAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _JU, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// j U &(tone? boundary)
 	// j
 	if !_accept(parser, _jAccepts, &pos, &perr) {
 		goto fail
 	}
-	// u
-	if !_accept(parser, _uAccepts, &pos, &perr) {
+	// U
+	if !_accept(parser, _UAccepts, &pos, &perr) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		perr4 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail5
@@ -44939,39 +47708,61 @@ func _start_incidentalAccepts(parser *_Parser, start int) (deltaPos, deltaErr in
 		pos = pos2
 		perr = perr4
 	}
-	return _memoize(parser, _start_incidental, start, pos, perr)
+	return _memoize(parser, _JU, start, pos, perr)
 fail:
-	return _memoize(parser, _start_incidental, start, -1, perr)
+	return _memoize(parser, _JU, start, -1, perr)
 }
 
-func _start_incidentalNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_start_incidental]
+func _JUNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_JU]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _start_incidental}
+	key := _key{start: start, rule: _JU}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "start_incidental"}
-	// j u &boundary
+	node = &peg.Node{Name: "JU"}
+	// j U &(tone? boundary)
 	// j
 	if !_node(parser, _jNode, node, &pos) {
 		goto fail
 	}
-	// u
-	if !_node(parser, _uNode, node, &pos) {
+	// U
+	if !_node(parser, _UNode, node, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail5
+		// (tone? boundary)
+		{
+			nkids6 := len(node.Kids)
+			pos07 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids9 := len(node.Kids)
+				pos10 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail11
+				}
+				goto ok12
+			fail11:
+				node.Kids = node.Kids[:nkids9]
+				pos = pos10
+			ok12:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail5
+			}
+			sub := _sub(parser, pos07, pos, node.Kids[nkids6:])
+			node.Kids = append(node.Kids[:nkids6], sub)
 		}
 		goto ok1
 	fail5:
@@ -44988,29 +47779,43 @@ fail:
 	return -1, nil
 }
 
-func _start_incidentalFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _start_incidental, start, errPos)
+func _JUFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _JU, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "start_incidental",
+		Name: "JU",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _start_incidental}
-	// j u &boundary
+	key := _key{start: start, rule: _JU}
+	// j U &(tone? boundary)
 	// j
 	if !_fail(parser, _jFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// u
-	if !_fail(parser, _uFail, errPos, failure, &pos) {
+	// U
+	if !_fail(parser, _UFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail5
@@ -45022,7 +47827,7 @@ func _start_incidentalFail(parser *_Parser, start, errPos int) (int, *peg.Fail) 
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -45037,12 +47842,12 @@ fail:
 	return -1, failure
 }
 
-func _start_incidentalAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_start_incidental]
+func _JUAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_JU]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _start_incidental}
+	key := _key{start: start, rule: _JU}
 	n := parser.act[key]
 	if n != nil {
 		n := n.(string)
@@ -45050,7 +47855,7 @@ func _start_incidentalAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// j u &boundary
+	// j U &(tone? boundary)
 	{
 		var node0 string
 		// j
@@ -45061,17 +47866,33 @@ func _start_incidentalAction(parser *_Parser, start int) (int, *string) {
 			pos = p
 		}
 		node += node0
-		// u
-		if p, n := _uAction(parser, pos); n == nil {
+		// U
+		if p, n := _UAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
 			pos = p
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos2 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos8 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail9
+				} else {
+					pos = p
+				}
+				goto ok10
+			fail9:
+				pos = pos8
+			ok10:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail5
@@ -45094,28 +47915,42 @@ fail:
 	return -1, nil
 }
 
-func _start_parentheticalAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _start_parenthetical, start); ok {
+func _KIOAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _KIO, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// k i o &boundary
+	// k I o &(tone? boundary)
 	// k
 	if !_accept(parser, _kAccepts, &pos, &perr) {
 		goto fail
 	}
-	// i
-	if !_accept(parser, _iAccepts, &pos, &perr) {
+	// I
+	if !_accept(parser, _IAccepts, &pos, &perr) {
 		goto fail
 	}
 	// o
 	if !_accept(parser, _oAccepts, &pos, &perr) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		perr4 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail5
@@ -45129,43 +47964,65 @@ func _start_parentheticalAccepts(parser *_Parser, start int) (deltaPos, deltaErr
 		pos = pos2
 		perr = perr4
 	}
-	return _memoize(parser, _start_parenthetical, start, pos, perr)
+	return _memoize(parser, _KIO, start, pos, perr)
 fail:
-	return _memoize(parser, _start_parenthetical, start, -1, perr)
+	return _memoize(parser, _KIO, start, -1, perr)
 }
 
-func _start_parentheticalNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_start_parenthetical]
+func _KIONode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_KIO]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _start_parenthetical}
+	key := _key{start: start, rule: _KIO}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "start_parenthetical"}
-	// k i o &boundary
+	node = &peg.Node{Name: "KIO"}
+	// k I o &(tone? boundary)
 	// k
 	if !_node(parser, _kNode, node, &pos) {
 		goto fail
 	}
-	// i
-	if !_node(parser, _iNode, node, &pos) {
+	// I
+	if !_node(parser, _INode, node, &pos) {
 		goto fail
 	}
 	// o
 	if !_node(parser, _oNode, node, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail5
+		// (tone? boundary)
+		{
+			nkids6 := len(node.Kids)
+			pos07 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids9 := len(node.Kids)
+				pos10 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail11
+				}
+				goto ok12
+			fail11:
+				node.Kids = node.Kids[:nkids9]
+				pos = pos10
+			ok12:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail5
+			}
+			sub := _sub(parser, pos07, pos, node.Kids[nkids6:])
+			node.Kids = append(node.Kids[:nkids6], sub)
 		}
 		goto ok1
 	fail5:
@@ -45182,33 +48039,47 @@ fail:
 	return -1, nil
 }
 
-func _start_parentheticalFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _start_parenthetical, start, errPos)
+func _KIOFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _KIO, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "start_parenthetical",
+		Name: "KIO",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _start_parenthetical}
-	// k i o &boundary
+	key := _key{start: start, rule: _KIO}
+	// k I o &(tone? boundary)
 	// k
 	if !_fail(parser, _kFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// i
-	if !_fail(parser, _iFail, errPos, failure, &pos) {
+	// I
+	if !_fail(parser, _IFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// o
 	if !_fail(parser, _oFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail5
@@ -45220,7 +48091,7 @@ func _start_parentheticalFail(parser *_Parser, start, errPos int) (int, *peg.Fai
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -45235,12 +48106,12 @@ fail:
 	return -1, failure
 }
 
-func _start_parentheticalAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_start_parenthetical]
+func _KIOAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_KIO]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _start_parenthetical}
+	key := _key{start: start, rule: _KIO}
 	n := parser.act[key]
 	if n != nil {
 		n := n.(string)
@@ -45248,7 +48119,7 @@ func _start_parentheticalAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// k i o &boundary
+	// k I o &(tone? boundary)
 	{
 		var node0 string
 		// k
@@ -45259,8 +48130,8 @@ func _start_parentheticalAction(parser *_Parser, start int) (int, *string) {
 			pos = p
 		}
 		node += node0
-		// i
-		if p, n := _iAction(parser, pos); n == nil {
+		// I
+		if p, n := _IAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -45275,9 +48146,25 @@ func _start_parentheticalAction(parser *_Parser, start int) (int, *string) {
 			pos = p
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos2 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos8 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail9
+				} else {
+					pos = p
+				}
+				goto ok10
+			fail9:
+				pos = pos8
+			ok10:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail5
@@ -45300,24 +48187,38 @@ fail:
 	return -1, nil
 }
 
-func _end_parentheticalAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _end_parenthetical, start); ok {
+func _KIAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _KI, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// k i &boundary
+	// k I &(tone? boundary)
 	// k
 	if !_accept(parser, _kAccepts, &pos, &perr) {
 		goto fail
 	}
-	// i
-	if !_accept(parser, _iAccepts, &pos, &perr) {
+	// I
+	if !_accept(parser, _IAccepts, &pos, &perr) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		perr4 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail5
@@ -45331,39 +48232,61 @@ func _end_parentheticalAccepts(parser *_Parser, start int) (deltaPos, deltaErr i
 		pos = pos2
 		perr = perr4
 	}
-	return _memoize(parser, _end_parenthetical, start, pos, perr)
+	return _memoize(parser, _KI, start, pos, perr)
 fail:
-	return _memoize(parser, _end_parenthetical, start, -1, perr)
+	return _memoize(parser, _KI, start, -1, perr)
 }
 
-func _end_parentheticalNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_end_parenthetical]
+func _KINode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_KI]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _end_parenthetical}
+	key := _key{start: start, rule: _KI}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "end_parenthetical"}
-	// k i &boundary
+	node = &peg.Node{Name: "KI"}
+	// k I &(tone? boundary)
 	// k
 	if !_node(parser, _kNode, node, &pos) {
 		goto fail
 	}
-	// i
-	if !_node(parser, _iNode, node, &pos) {
+	// I
+	if !_node(parser, _INode, node, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail5
+		// (tone? boundary)
+		{
+			nkids6 := len(node.Kids)
+			pos07 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids9 := len(node.Kids)
+				pos10 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail11
+				}
+				goto ok12
+			fail11:
+				node.Kids = node.Kids[:nkids9]
+				pos = pos10
+			ok12:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail5
+			}
+			sub := _sub(parser, pos07, pos, node.Kids[nkids6:])
+			node.Kids = append(node.Kids[:nkids6], sub)
 		}
 		goto ok1
 	fail5:
@@ -45380,29 +48303,43 @@ fail:
 	return -1, nil
 }
 
-func _end_parentheticalFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _end_parenthetical, start, errPos)
+func _KIFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _KI, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "end_parenthetical",
+		Name: "KI",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _end_parenthetical}
-	// k i &boundary
+	key := _key{start: start, rule: _KI}
+	// k I &(tone? boundary)
 	// k
 	if !_fail(parser, _kFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// i
-	if !_fail(parser, _iFail, errPos, failure, &pos) {
+	// I
+	if !_fail(parser, _IFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail5
@@ -45414,7 +48351,7 @@ func _end_parentheticalFail(parser *_Parser, start, errPos int) (int, *peg.Fail)
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -45429,12 +48366,12 @@ fail:
 	return -1, failure
 }
 
-func _end_parentheticalAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_end_parenthetical]
+func _KIAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_KI]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _end_parenthetical}
+	key := _key{start: start, rule: _KI}
 	n := parser.act[key]
 	if n != nil {
 		n := n.(string)
@@ -45442,7 +48379,7 @@ func _end_parentheticalAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// k i &boundary
+	// k I &(tone? boundary)
 	{
 		var node0 string
 		// k
@@ -45453,17 +48390,33 @@ func _end_parentheticalAction(parser *_Parser, start int) (int, *string) {
 			pos = p
 		}
 		node += node0
-		// i
-		if p, n := _iAction(parser, pos); n == nil {
+		// I
+		if p, n := _IAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
 			pos = p
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos2 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos8 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail9
+				} else {
+					pos = p
+				}
+				goto ok10
+			fail9:
+				pos = pos8
+			ok10:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail5
@@ -45486,24 +48439,38 @@ fail:
 	return -1, nil
 }
 
-func _vocative_markerAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _vocative_marker, start); ok {
+func _HUAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _HU, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// h u &boundary
+	// h U &(tone? boundary)
 	// h
 	if !_accept(parser, _hAccepts, &pos, &perr) {
 		goto fail
 	}
-	// u
-	if !_accept(parser, _uAccepts, &pos, &perr) {
+	// U
+	if !_accept(parser, _UAccepts, &pos, &perr) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		perr4 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail5
@@ -45517,39 +48484,61 @@ func _vocative_markerAccepts(parser *_Parser, start int) (deltaPos, deltaErr int
 		pos = pos2
 		perr = perr4
 	}
-	return _memoize(parser, _vocative_marker, start, pos, perr)
+	return _memoize(parser, _HU, start, pos, perr)
 fail:
-	return _memoize(parser, _vocative_marker, start, -1, perr)
+	return _memoize(parser, _HU, start, -1, perr)
 }
 
-func _vocative_markerNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_vocative_marker]
+func _HUNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_HU]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _vocative_marker}
+	key := _key{start: start, rule: _HU}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "vocative_marker"}
-	// h u &boundary
+	node = &peg.Node{Name: "HU"}
+	// h U &(tone? boundary)
 	// h
 	if !_node(parser, _hNode, node, &pos) {
 		goto fail
 	}
-	// u
-	if !_node(parser, _uNode, node, &pos) {
+	// U
+	if !_node(parser, _UNode, node, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail5
+		// (tone? boundary)
+		{
+			nkids6 := len(node.Kids)
+			pos07 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids9 := len(node.Kids)
+				pos10 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail11
+				}
+				goto ok12
+			fail11:
+				node.Kids = node.Kids[:nkids9]
+				pos = pos10
+			ok12:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail5
+			}
+			sub := _sub(parser, pos07, pos, node.Kids[nkids6:])
+			node.Kids = append(node.Kids[:nkids6], sub)
 		}
 		goto ok1
 	fail5:
@@ -45566,29 +48555,43 @@ fail:
 	return -1, nil
 }
 
-func _vocative_markerFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _vocative_marker, start, errPos)
+func _HUFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _HU, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "vocative_marker",
+		Name: "HU",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _vocative_marker}
-	// h u &boundary
+	key := _key{start: start, rule: _HU}
+	// h U &(tone? boundary)
 	// h
 	if !_fail(parser, _hFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// u
-	if !_fail(parser, _uFail, errPos, failure, &pos) {
+	// U
+	if !_fail(parser, _UFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos2 := pos
 		nkids3 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail5
@@ -45600,7 +48603,7 @@ func _vocative_markerFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -45615,12 +48618,12 @@ fail:
 	return -1, failure
 }
 
-func _vocative_markerAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_vocative_marker]
+func _HUAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_HU]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _vocative_marker}
+	key := _key{start: start, rule: _HU}
 	n := parser.act[key]
 	if n != nil {
 		n := n.(string)
@@ -45628,7 +48631,7 @@ func _vocative_markerAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// h u &boundary
+	// h U &(tone? boundary)
 	{
 		var node0 string
 		// h
@@ -45639,17 +48642,33 @@ func _vocative_markerAction(parser *_Parser, start int) (int, *string) {
 			pos = p
 		}
 		node += node0
-		// u
-		if p, n := _uAction(parser, pos); n == nil {
+		// U
+		if p, n := _UAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
 			pos = p
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos2 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos8 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail9
+				} else {
+					pos = p
+				}
+				goto ok10
+			fail9:
+				pos = pos8
+			ok10:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail5
@@ -45672,59 +48691,59 @@ fail:
 	return -1, nil
 }
 
-func _linking_wordAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _linking_word, start); ok {
+func _GOAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _GO, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// (f i/g o/c u/k e) &boundary
-	// (f i/g o/c u/k e)
-	// f i/g o/c u/k e
+	// (g O/f I/c U/k E) &(tone? boundary)
+	// (g O/f I/c U/k E)
+	// g O/f I/c U/k E
 	{
 		pos3 := pos
-		// f i
-		// f
-		if !_accept(parser, _fAccepts, &pos, &perr) {
+		// g O
+		// g
+		if !_accept(parser, _gAccepts, &pos, &perr) {
 			goto fail4
 		}
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// O
+		if !_accept(parser, _OAccepts, &pos, &perr) {
 			goto fail4
 		}
 		goto ok1
 	fail4:
 		pos = pos3
-		// g o
-		// g
-		if !_accept(parser, _gAccepts, &pos, &perr) {
+		// f I
+		// f
+		if !_accept(parser, _fAccepts, &pos, &perr) {
 			goto fail6
 		}
-		// o
-		if !_accept(parser, _oAccepts, &pos, &perr) {
+		// I
+		if !_accept(parser, _IAccepts, &pos, &perr) {
 			goto fail6
 		}
 		goto ok1
 	fail6:
 		pos = pos3
-		// c u
+		// c U
 		// c
 		if !_accept(parser, _cAccepts, &pos, &perr) {
 			goto fail8
 		}
-		// u
-		if !_accept(parser, _uAccepts, &pos, &perr) {
+		// U
+		if !_accept(parser, _UAccepts, &pos, &perr) {
 			goto fail8
 		}
 		goto ok1
 	fail8:
 		pos = pos3
-		// k e
+		// k E
 		// k
 		if !_accept(parser, _kAccepts, &pos, &perr) {
 			goto fail10
 		}
-		// e
-		if !_accept(parser, _eAccepts, &pos, &perr) {
+		// E
+		if !_accept(parser, _EAccepts, &pos, &perr) {
 			goto fail10
 		}
 		goto ok1
@@ -45733,10 +48752,24 @@ func _linking_wordAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto fail
 	ok1:
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos13 := pos
 		perr15 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos19 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail20
+			}
+			goto ok21
+		fail20:
+			pos = pos19
+		ok21:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail16
@@ -45750,78 +48783,78 @@ func _linking_wordAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos13
 		perr = perr15
 	}
-	return _memoize(parser, _linking_word, start, pos, perr)
+	return _memoize(parser, _GO, start, pos, perr)
 fail:
-	return _memoize(parser, _linking_word, start, -1, perr)
+	return _memoize(parser, _GO, start, -1, perr)
 }
 
-func _linking_wordNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_linking_word]
+func _GONode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_GO]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _linking_word}
+	key := _key{start: start, rule: _GO}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "linking_word"}
-	// (f i/g o/c u/k e) &boundary
-	// (f i/g o/c u/k e)
+	node = &peg.Node{Name: "GO"}
+	// (g O/f I/c U/k E) &(tone? boundary)
+	// (g O/f I/c U/k E)
 	{
 		nkids1 := len(node.Kids)
 		pos02 := pos
-		// f i/g o/c u/k e
+		// g O/f I/c U/k E
 		{
 			pos5 := pos
 			nkids4 := len(node.Kids)
-			// f i
-			// f
-			if !_node(parser, _fNode, node, &pos) {
+			// g O
+			// g
+			if !_node(parser, _gNode, node, &pos) {
 				goto fail6
 			}
-			// i
-			if !_node(parser, _iNode, node, &pos) {
+			// O
+			if !_node(parser, _ONode, node, &pos) {
 				goto fail6
 			}
 			goto ok3
 		fail6:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// g o
-			// g
-			if !_node(parser, _gNode, node, &pos) {
+			// f I
+			// f
+			if !_node(parser, _fNode, node, &pos) {
 				goto fail8
 			}
-			// o
-			if !_node(parser, _oNode, node, &pos) {
+			// I
+			if !_node(parser, _INode, node, &pos) {
 				goto fail8
 			}
 			goto ok3
 		fail8:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// c u
+			// c U
 			// c
 			if !_node(parser, _cNode, node, &pos) {
 				goto fail10
 			}
-			// u
-			if !_node(parser, _uNode, node, &pos) {
+			// U
+			if !_node(parser, _UNode, node, &pos) {
 				goto fail10
 			}
 			goto ok3
 		fail10:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// k e
+			// k E
 			// k
 			if !_node(parser, _kNode, node, &pos) {
 				goto fail12
 			}
-			// e
-			if !_node(parser, _eNode, node, &pos) {
+			// E
+			if !_node(parser, _ENode, node, &pos) {
 				goto fail12
 			}
 			goto ok3
@@ -45834,13 +48867,35 @@ func _linking_wordNode(parser *_Parser, start int) (int, *peg.Node) {
 		sub := _sub(parser, pos02, pos, node.Kids[nkids1:])
 		node.Kids = append(node.Kids[:nkids1], sub)
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos15 := pos
 		nkids16 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail18
+		// (tone? boundary)
+		{
+			nkids19 := len(node.Kids)
+			pos020 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids22 := len(node.Kids)
+				pos23 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail24
+				}
+				goto ok25
+			fail24:
+				node.Kids = node.Kids[:nkids22]
+				pos = pos23
+			ok25:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail18
+			}
+			sub := _sub(parser, pos020, pos, node.Kids[nkids19:])
+			node.Kids = append(node.Kids[:nkids19], sub)
 		}
 		goto ok14
 	fail18:
@@ -45857,64 +48912,64 @@ fail:
 	return -1, nil
 }
 
-func _linking_wordFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _linking_word, start, errPos)
+func _GOFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _GO, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "linking_word",
+		Name: "GO",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _linking_word}
-	// (f i/g o/c u/k e) &boundary
-	// (f i/g o/c u/k e)
-	// f i/g o/c u/k e
+	key := _key{start: start, rule: _GO}
+	// (g O/f I/c U/k E) &(tone? boundary)
+	// (g O/f I/c U/k E)
+	// g O/f I/c U/k E
 	{
 		pos3 := pos
-		// f i
-		// f
-		if !_fail(parser, _fFail, errPos, failure, &pos) {
+		// g O
+		// g
+		if !_fail(parser, _gFail, errPos, failure, &pos) {
 			goto fail4
 		}
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// O
+		if !_fail(parser, _OFail, errPos, failure, &pos) {
 			goto fail4
 		}
 		goto ok1
 	fail4:
 		pos = pos3
-		// g o
-		// g
-		if !_fail(parser, _gFail, errPos, failure, &pos) {
+		// f I
+		// f
+		if !_fail(parser, _fFail, errPos, failure, &pos) {
 			goto fail6
 		}
-		// o
-		if !_fail(parser, _oFail, errPos, failure, &pos) {
+		// I
+		if !_fail(parser, _IFail, errPos, failure, &pos) {
 			goto fail6
 		}
 		goto ok1
 	fail6:
 		pos = pos3
-		// c u
+		// c U
 		// c
 		if !_fail(parser, _cFail, errPos, failure, &pos) {
 			goto fail8
 		}
-		// u
-		if !_fail(parser, _uFail, errPos, failure, &pos) {
+		// U
+		if !_fail(parser, _UFail, errPos, failure, &pos) {
 			goto fail8
 		}
 		goto ok1
 	fail8:
 		pos = pos3
-		// k e
+		// k E
 		// k
 		if !_fail(parser, _kFail, errPos, failure, &pos) {
 			goto fail10
 		}
-		// e
-		if !_fail(parser, _eFail, errPos, failure, &pos) {
+		// E
+		if !_fail(parser, _EFail, errPos, failure, &pos) {
 			goto fail10
 		}
 		goto ok1
@@ -45923,10 +48978,24 @@ func _linking_wordFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto fail
 	ok1:
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos13 := pos
 		nkids14 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos19 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail20
+			}
+			goto ok21
+		fail20:
+			pos = pos19
+		ok21:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail16
@@ -45938,7 +49007,7 @@ func _linking_wordFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -45953,12 +49022,12 @@ fail:
 	return -1, failure
 }
 
-func _linking_wordAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_linking_word]
+func _GOAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_GO]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _linking_word}
+	key := _key{start: start, rule: _GO}
 	n := parser.act[key]
 	if n != nil {
 		n := n.(string)
@@ -45966,26 +49035,26 @@ func _linking_wordAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// (f i/g o/c u/k e) &boundary
+	// (g O/f I/c U/k E) &(tone? boundary)
 	{
 		var node0 string
-		// (f i/g o/c u/k e)
-		// f i/g o/c u/k e
+		// (g O/f I/c U/k E)
+		// g O/f I/c U/k E
 		{
 			pos3 := pos
-			// f i
+			// g O
 			{
 				var node5 string
-				// f
-				if p, n := _fAction(parser, pos); n == nil {
+				// g
+				if p, n := _gAction(parser, pos); n == nil {
 					goto fail4
 				} else {
 					node5 = *n
 					pos = p
 				}
 				node0 += node5
-				// i
-				if p, n := _iAction(parser, pos); n == nil {
+				// O
+				if p, n := _OAction(parser, pos); n == nil {
 					goto fail4
 				} else {
 					node5 = *n
@@ -45996,19 +49065,19 @@ func _linking_wordAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail4:
 			pos = pos3
-			// g o
+			// f I
 			{
 				var node7 string
-				// g
-				if p, n := _gAction(parser, pos); n == nil {
+				// f
+				if p, n := _fAction(parser, pos); n == nil {
 					goto fail6
 				} else {
 					node7 = *n
 					pos = p
 				}
 				node0 += node7
-				// o
-				if p, n := _oAction(parser, pos); n == nil {
+				// I
+				if p, n := _IAction(parser, pos); n == nil {
 					goto fail6
 				} else {
 					node7 = *n
@@ -46019,7 +49088,7 @@ func _linking_wordAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail6:
 			pos = pos3
-			// c u
+			// c U
 			{
 				var node9 string
 				// c
@@ -46030,8 +49099,8 @@ func _linking_wordAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node9
-				// u
-				if p, n := _uAction(parser, pos); n == nil {
+				// U
+				if p, n := _UAction(parser, pos); n == nil {
 					goto fail8
 				} else {
 					node9 = *n
@@ -46042,7 +49111,7 @@ func _linking_wordAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail8:
 			pos = pos3
-			// k e
+			// k E
 			{
 				var node11 string
 				// k
@@ -46053,8 +49122,8 @@ func _linking_wordAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node11
-				// e
-				if p, n := _eAction(parser, pos); n == nil {
+				// E
+				if p, n := _EAction(parser, pos); n == nil {
 					goto fail10
 				} else {
 					node11 = *n
@@ -46069,9 +49138,25 @@ func _linking_wordAction(parser *_Parser, start int) (int, *string) {
 		ok1:
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos13 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos19 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail20
+				} else {
+					pos = p
+				}
+				goto ok21
+			fail20:
+				pos = pos19
+			ok21:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail16
@@ -46094,59 +49179,59 @@ fail:
 	return -1, nil
 }
 
-func _connectiveAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _connective, start); ok {
+func _RAAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _RA, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// (r a/r u/r i/r o i/r o/r e) &boundary
-	// (r a/r u/r i/r o i/r o/r e)
-	// r a/r u/r i/r o i/r o/r e
+	// (r A/r U/r I/r O i/r O/r E) &(tone? boundary)
+	// (r A/r U/r I/r O i/r O/r E)
+	// r A/r U/r I/r O i/r O/r E
 	{
 		pos3 := pos
-		// r a
+		// r A
 		// r
 		if !_accept(parser, _rAccepts, &pos, &perr) {
 			goto fail4
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
+		// A
+		if !_accept(parser, _AAccepts, &pos, &perr) {
 			goto fail4
 		}
 		goto ok1
 	fail4:
 		pos = pos3
-		// r u
+		// r U
 		// r
 		if !_accept(parser, _rAccepts, &pos, &perr) {
 			goto fail6
 		}
-		// u
-		if !_accept(parser, _uAccepts, &pos, &perr) {
+		// U
+		if !_accept(parser, _UAccepts, &pos, &perr) {
 			goto fail6
 		}
 		goto ok1
 	fail6:
 		pos = pos3
-		// r i
+		// r I
 		// r
 		if !_accept(parser, _rAccepts, &pos, &perr) {
 			goto fail8
 		}
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// I
+		if !_accept(parser, _IAccepts, &pos, &perr) {
 			goto fail8
 		}
 		goto ok1
 	fail8:
 		pos = pos3
-		// r o i
+		// r O i
 		// r
 		if !_accept(parser, _rAccepts, &pos, &perr) {
 			goto fail10
 		}
-		// o
-		if !_accept(parser, _oAccepts, &pos, &perr) {
+		// O
+		if !_accept(parser, _OAccepts, &pos, &perr) {
 			goto fail10
 		}
 		// i
@@ -46156,25 +49241,25 @@ func _connectiveAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok1
 	fail10:
 		pos = pos3
-		// r o
+		// r O
 		// r
 		if !_accept(parser, _rAccepts, &pos, &perr) {
 			goto fail12
 		}
-		// o
-		if !_accept(parser, _oAccepts, &pos, &perr) {
+		// O
+		if !_accept(parser, _OAccepts, &pos, &perr) {
 			goto fail12
 		}
 		goto ok1
 	fail12:
 		pos = pos3
-		// r e
+		// r E
 		// r
 		if !_accept(parser, _rAccepts, &pos, &perr) {
 			goto fail14
 		}
-		// e
-		if !_accept(parser, _eAccepts, &pos, &perr) {
+		// E
+		if !_accept(parser, _EAccepts, &pos, &perr) {
 			goto fail14
 		}
 		goto ok1
@@ -46183,10 +49268,24 @@ func _connectiveAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto fail
 	ok1:
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos17 := pos
 		perr19 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos23 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail24
+			}
+			goto ok25
+		fail24:
+			pos = pos23
+		ok25:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail20
@@ -46200,78 +49299,78 @@ func _connectiveAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos17
 		perr = perr19
 	}
-	return _memoize(parser, _connective, start, pos, perr)
+	return _memoize(parser, _RA, start, pos, perr)
 fail:
-	return _memoize(parser, _connective, start, -1, perr)
+	return _memoize(parser, _RA, start, -1, perr)
 }
 
-func _connectiveNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_connective]
+func _RANode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_RA]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _connective}
+	key := _key{start: start, rule: _RA}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "connective"}
-	// (r a/r u/r i/r o i/r o/r e) &boundary
-	// (r a/r u/r i/r o i/r o/r e)
+	node = &peg.Node{Name: "RA"}
+	// (r A/r U/r I/r O i/r O/r E) &(tone? boundary)
+	// (r A/r U/r I/r O i/r O/r E)
 	{
 		nkids1 := len(node.Kids)
 		pos02 := pos
-		// r a/r u/r i/r o i/r o/r e
+		// r A/r U/r I/r O i/r O/r E
 		{
 			pos5 := pos
 			nkids4 := len(node.Kids)
-			// r a
+			// r A
 			// r
 			if !_node(parser, _rNode, node, &pos) {
 				goto fail6
 			}
-			// a
-			if !_node(parser, _aNode, node, &pos) {
+			// A
+			if !_node(parser, _ANode, node, &pos) {
 				goto fail6
 			}
 			goto ok3
 		fail6:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// r u
+			// r U
 			// r
 			if !_node(parser, _rNode, node, &pos) {
 				goto fail8
 			}
-			// u
-			if !_node(parser, _uNode, node, &pos) {
+			// U
+			if !_node(parser, _UNode, node, &pos) {
 				goto fail8
 			}
 			goto ok3
 		fail8:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// r i
+			// r I
 			// r
 			if !_node(parser, _rNode, node, &pos) {
 				goto fail10
 			}
-			// i
-			if !_node(parser, _iNode, node, &pos) {
+			// I
+			if !_node(parser, _INode, node, &pos) {
 				goto fail10
 			}
 			goto ok3
 		fail10:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// r o i
+			// r O i
 			// r
 			if !_node(parser, _rNode, node, &pos) {
 				goto fail12
 			}
-			// o
-			if !_node(parser, _oNode, node, &pos) {
+			// O
+			if !_node(parser, _ONode, node, &pos) {
 				goto fail12
 			}
 			// i
@@ -46282,26 +49381,26 @@ func _connectiveNode(parser *_Parser, start int) (int, *peg.Node) {
 		fail12:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// r o
+			// r O
 			// r
 			if !_node(parser, _rNode, node, &pos) {
 				goto fail14
 			}
-			// o
-			if !_node(parser, _oNode, node, &pos) {
+			// O
+			if !_node(parser, _ONode, node, &pos) {
 				goto fail14
 			}
 			goto ok3
 		fail14:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// r e
+			// r E
 			// r
 			if !_node(parser, _rNode, node, &pos) {
 				goto fail16
 			}
-			// e
-			if !_node(parser, _eNode, node, &pos) {
+			// E
+			if !_node(parser, _ENode, node, &pos) {
 				goto fail16
 			}
 			goto ok3
@@ -46314,13 +49413,35 @@ func _connectiveNode(parser *_Parser, start int) (int, *peg.Node) {
 		sub := _sub(parser, pos02, pos, node.Kids[nkids1:])
 		node.Kids = append(node.Kids[:nkids1], sub)
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos19 := pos
 		nkids20 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail22
+		// (tone? boundary)
+		{
+			nkids23 := len(node.Kids)
+			pos024 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids26 := len(node.Kids)
+				pos27 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail28
+				}
+				goto ok29
+			fail28:
+				node.Kids = node.Kids[:nkids26]
+				pos = pos27
+			ok29:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail22
+			}
+			sub := _sub(parser, pos024, pos, node.Kids[nkids23:])
+			node.Kids = append(node.Kids[:nkids23], sub)
 		}
 		goto ok18
 	fail22:
@@ -46337,64 +49458,64 @@ fail:
 	return -1, nil
 }
 
-func _connectiveFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _connective, start, errPos)
+func _RAFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _RA, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "connective",
+		Name: "RA",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _connective}
-	// (r a/r u/r i/r o i/r o/r e) &boundary
-	// (r a/r u/r i/r o i/r o/r e)
-	// r a/r u/r i/r o i/r o/r e
+	key := _key{start: start, rule: _RA}
+	// (r A/r U/r I/r O i/r O/r E) &(tone? boundary)
+	// (r A/r U/r I/r O i/r O/r E)
+	// r A/r U/r I/r O i/r O/r E
 	{
 		pos3 := pos
-		// r a
+		// r A
 		// r
 		if !_fail(parser, _rFail, errPos, failure, &pos) {
 			goto fail4
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
+		// A
+		if !_fail(parser, _AFail, errPos, failure, &pos) {
 			goto fail4
 		}
 		goto ok1
 	fail4:
 		pos = pos3
-		// r u
+		// r U
 		// r
 		if !_fail(parser, _rFail, errPos, failure, &pos) {
 			goto fail6
 		}
-		// u
-		if !_fail(parser, _uFail, errPos, failure, &pos) {
+		// U
+		if !_fail(parser, _UFail, errPos, failure, &pos) {
 			goto fail6
 		}
 		goto ok1
 	fail6:
 		pos = pos3
-		// r i
+		// r I
 		// r
 		if !_fail(parser, _rFail, errPos, failure, &pos) {
 			goto fail8
 		}
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// I
+		if !_fail(parser, _IFail, errPos, failure, &pos) {
 			goto fail8
 		}
 		goto ok1
 	fail8:
 		pos = pos3
-		// r o i
+		// r O i
 		// r
 		if !_fail(parser, _rFail, errPos, failure, &pos) {
 			goto fail10
 		}
-		// o
-		if !_fail(parser, _oFail, errPos, failure, &pos) {
+		// O
+		if !_fail(parser, _OFail, errPos, failure, &pos) {
 			goto fail10
 		}
 		// i
@@ -46404,25 +49525,25 @@ func _connectiveFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok1
 	fail10:
 		pos = pos3
-		// r o
+		// r O
 		// r
 		if !_fail(parser, _rFail, errPos, failure, &pos) {
 			goto fail12
 		}
-		// o
-		if !_fail(parser, _oFail, errPos, failure, &pos) {
+		// O
+		if !_fail(parser, _OFail, errPos, failure, &pos) {
 			goto fail12
 		}
 		goto ok1
 	fail12:
 		pos = pos3
-		// r e
+		// r E
 		// r
 		if !_fail(parser, _rFail, errPos, failure, &pos) {
 			goto fail14
 		}
-		// e
-		if !_fail(parser, _eFail, errPos, failure, &pos) {
+		// E
+		if !_fail(parser, _EFail, errPos, failure, &pos) {
 			goto fail14
 		}
 		goto ok1
@@ -46431,10 +49552,24 @@ func _connectiveFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto fail
 	ok1:
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos17 := pos
 		nkids18 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos23 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail24
+			}
+			goto ok25
+		fail24:
+			pos = pos23
+		ok25:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail20
@@ -46446,7 +49581,7 @@ func _connectiveFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -46461,12 +49596,12 @@ fail:
 	return -1, failure
 }
 
-func _connectiveAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_connective]
+func _RAAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_RA]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _connective}
+	key := _key{start: start, rule: _RA}
 	n := parser.act[key]
 	if n != nil {
 		n := n.(string)
@@ -46474,14 +49609,14 @@ func _connectiveAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// (r a/r u/r i/r o i/r o/r e) &boundary
+	// (r A/r U/r I/r O i/r O/r E) &(tone? boundary)
 	{
 		var node0 string
-		// (r a/r u/r i/r o i/r o/r e)
-		// r a/r u/r i/r o i/r o/r e
+		// (r A/r U/r I/r O i/r O/r E)
+		// r A/r U/r I/r O i/r O/r E
 		{
 			pos3 := pos
-			// r a
+			// r A
 			{
 				var node5 string
 				// r
@@ -46492,8 +49627,8 @@ func _connectiveAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node5
-				// a
-				if p, n := _aAction(parser, pos); n == nil {
+				// A
+				if p, n := _AAction(parser, pos); n == nil {
 					goto fail4
 				} else {
 					node5 = *n
@@ -46504,7 +49639,7 @@ func _connectiveAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail4:
 			pos = pos3
-			// r u
+			// r U
 			{
 				var node7 string
 				// r
@@ -46515,8 +49650,8 @@ func _connectiveAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node7
-				// u
-				if p, n := _uAction(parser, pos); n == nil {
+				// U
+				if p, n := _UAction(parser, pos); n == nil {
 					goto fail6
 				} else {
 					node7 = *n
@@ -46527,7 +49662,7 @@ func _connectiveAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail6:
 			pos = pos3
-			// r i
+			// r I
 			{
 				var node9 string
 				// r
@@ -46538,8 +49673,8 @@ func _connectiveAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node9
-				// i
-				if p, n := _iAction(parser, pos); n == nil {
+				// I
+				if p, n := _IAction(parser, pos); n == nil {
 					goto fail8
 				} else {
 					node9 = *n
@@ -46550,7 +49685,7 @@ func _connectiveAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail8:
 			pos = pos3
-			// r o i
+			// r O i
 			{
 				var node11 string
 				// r
@@ -46561,8 +49696,8 @@ func _connectiveAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node11
-				// o
-				if p, n := _oAction(parser, pos); n == nil {
+				// O
+				if p, n := _OAction(parser, pos); n == nil {
 					goto fail10
 				} else {
 					node11 = *n
@@ -46581,7 +49716,7 @@ func _connectiveAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail10:
 			pos = pos3
-			// r o
+			// r O
 			{
 				var node13 string
 				// r
@@ -46592,8 +49727,8 @@ func _connectiveAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node13
-				// o
-				if p, n := _oAction(parser, pos); n == nil {
+				// O
+				if p, n := _OAction(parser, pos); n == nil {
 					goto fail12
 				} else {
 					node13 = *n
@@ -46604,7 +49739,7 @@ func _connectiveAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail12:
 			pos = pos3
-			// r e
+			// r E
 			{
 				var node15 string
 				// r
@@ -46615,8 +49750,8 @@ func _connectiveAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node15
-				// e
-				if p, n := _eAction(parser, pos); n == nil {
+				// E
+				if p, n := _EAction(parser, pos); n == nil {
 					goto fail14
 				} else {
 					node15 = *n
@@ -46631,9 +49766,25 @@ func _connectiveAction(parser *_Parser, start int) (int, *string) {
 		ok1:
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos17 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos23 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail24
+				} else {
+					pos = p
+				}
+				goto ok25
+			fail24:
+				pos = pos23
+			ok25:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail20
@@ -46656,75 +49807,75 @@ fail:
 	return -1, nil
 }
 
-func _illocutionaryAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _illocutionary, start); ok {
+func _DAAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _DA, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// (m o q/d a/k a/s o/b a) &boundary
-	// (m o q/d a/k a/s o/b a)
-	// m o q/d a/k a/s o/b a
+	// (d A/m O q/k A/s O/b A) &(tone? boundary)
+	// (d A/m O q/k A/s O/b A)
+	// d A/m O q/k A/s O/b A
 	{
 		pos3 := pos
-		// m o q
-		// m
-		if !_accept(parser, _mAccepts, &pos, &perr) {
+		// d A
+		// d
+		if !_accept(parser, _dAccepts, &pos, &perr) {
 			goto fail4
 		}
-		// o
-		if !_accept(parser, _oAccepts, &pos, &perr) {
-			goto fail4
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// A
+		if !_accept(parser, _AAccepts, &pos, &perr) {
 			goto fail4
 		}
 		goto ok1
 	fail4:
 		pos = pos3
-		// d a
-		// d
-		if !_accept(parser, _dAccepts, &pos, &perr) {
+		// m O q
+		// m
+		if !_accept(parser, _mAccepts, &pos, &perr) {
 			goto fail6
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
+		// O
+		if !_accept(parser, _OAccepts, &pos, &perr) {
+			goto fail6
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail6
 		}
 		goto ok1
 	fail6:
 		pos = pos3
-		// k a
+		// k A
 		// k
 		if !_accept(parser, _kAccepts, &pos, &perr) {
 			goto fail8
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
+		// A
+		if !_accept(parser, _AAccepts, &pos, &perr) {
 			goto fail8
 		}
 		goto ok1
 	fail8:
 		pos = pos3
-		// s o
+		// s O
 		// s
 		if !_accept(parser, _sAccepts, &pos, &perr) {
 			goto fail10
 		}
-		// o
-		if !_accept(parser, _oAccepts, &pos, &perr) {
+		// O
+		if !_accept(parser, _OAccepts, &pos, &perr) {
 			goto fail10
 		}
 		goto ok1
 	fail10:
 		pos = pos3
-		// b a
+		// b A
 		// b
 		if !_accept(parser, _bAccepts, &pos, &perr) {
 			goto fail12
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
+		// A
+		if !_accept(parser, _AAccepts, &pos, &perr) {
 			goto fail12
 		}
 		goto ok1
@@ -46733,10 +49884,24 @@ func _illocutionaryAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) 
 		goto fail
 	ok1:
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos15 := pos
 		perr17 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos21 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail22
+			}
+			goto ok23
+		fail22:
+			pos = pos21
+		ok23:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail18
@@ -46750,95 +49915,95 @@ func _illocutionaryAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) 
 		pos = pos15
 		perr = perr17
 	}
-	return _memoize(parser, _illocutionary, start, pos, perr)
+	return _memoize(parser, _DA, start, pos, perr)
 fail:
-	return _memoize(parser, _illocutionary, start, -1, perr)
+	return _memoize(parser, _DA, start, -1, perr)
 }
 
-func _illocutionaryNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_illocutionary]
+func _DANode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_DA]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _illocutionary}
+	key := _key{start: start, rule: _DA}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "illocutionary"}
-	// (m o q/d a/k a/s o/b a) &boundary
-	// (m o q/d a/k a/s o/b a)
+	node = &peg.Node{Name: "DA"}
+	// (d A/m O q/k A/s O/b A) &(tone? boundary)
+	// (d A/m O q/k A/s O/b A)
 	{
 		nkids1 := len(node.Kids)
 		pos02 := pos
-		// m o q/d a/k a/s o/b a
+		// d A/m O q/k A/s O/b A
 		{
 			pos5 := pos
 			nkids4 := len(node.Kids)
-			// m o q
-			// m
-			if !_node(parser, _mNode, node, &pos) {
+			// d A
+			// d
+			if !_node(parser, _dNode, node, &pos) {
 				goto fail6
 			}
-			// o
-			if !_node(parser, _oNode, node, &pos) {
-				goto fail6
-			}
-			// q
-			if !_node(parser, _qNode, node, &pos) {
+			// A
+			if !_node(parser, _ANode, node, &pos) {
 				goto fail6
 			}
 			goto ok3
 		fail6:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// d a
-			// d
-			if !_node(parser, _dNode, node, &pos) {
+			// m O q
+			// m
+			if !_node(parser, _mNode, node, &pos) {
 				goto fail8
 			}
-			// a
-			if !_node(parser, _aNode, node, &pos) {
+			// O
+			if !_node(parser, _ONode, node, &pos) {
+				goto fail8
+			}
+			// q
+			if !_node(parser, _qNode, node, &pos) {
 				goto fail8
 			}
 			goto ok3
 		fail8:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// k a
+			// k A
 			// k
 			if !_node(parser, _kNode, node, &pos) {
 				goto fail10
 			}
-			// a
-			if !_node(parser, _aNode, node, &pos) {
+			// A
+			if !_node(parser, _ANode, node, &pos) {
 				goto fail10
 			}
 			goto ok3
 		fail10:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// s o
+			// s O
 			// s
 			if !_node(parser, _sNode, node, &pos) {
 				goto fail12
 			}
-			// o
-			if !_node(parser, _oNode, node, &pos) {
+			// O
+			if !_node(parser, _ONode, node, &pos) {
 				goto fail12
 			}
 			goto ok3
 		fail12:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// b a
+			// b A
 			// b
 			if !_node(parser, _bNode, node, &pos) {
 				goto fail14
 			}
-			// a
-			if !_node(parser, _aNode, node, &pos) {
+			// A
+			if !_node(parser, _ANode, node, &pos) {
 				goto fail14
 			}
 			goto ok3
@@ -46851,13 +50016,35 @@ func _illocutionaryNode(parser *_Parser, start int) (int, *peg.Node) {
 		sub := _sub(parser, pos02, pos, node.Kids[nkids1:])
 		node.Kids = append(node.Kids[:nkids1], sub)
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos17 := pos
 		nkids18 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail20
+		// (tone? boundary)
+		{
+			nkids21 := len(node.Kids)
+			pos022 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids24 := len(node.Kids)
+				pos25 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail26
+				}
+				goto ok27
+			fail26:
+				node.Kids = node.Kids[:nkids24]
+				pos = pos25
+			ok27:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail20
+			}
+			sub := _sub(parser, pos022, pos, node.Kids[nkids21:])
+			node.Kids = append(node.Kids[:nkids21], sub)
 		}
 		goto ok16
 	fail20:
@@ -46874,80 +50061,80 @@ fail:
 	return -1, nil
 }
 
-func _illocutionaryFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _illocutionary, start, errPos)
+func _DAFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _DA, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "illocutionary",
+		Name: "DA",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _illocutionary}
-	// (m o q/d a/k a/s o/b a) &boundary
-	// (m o q/d a/k a/s o/b a)
-	// m o q/d a/k a/s o/b a
+	key := _key{start: start, rule: _DA}
+	// (d A/m O q/k A/s O/b A) &(tone? boundary)
+	// (d A/m O q/k A/s O/b A)
+	// d A/m O q/k A/s O/b A
 	{
 		pos3 := pos
-		// m o q
-		// m
-		if !_fail(parser, _mFail, errPos, failure, &pos) {
+		// d A
+		// d
+		if !_fail(parser, _dFail, errPos, failure, &pos) {
 			goto fail4
 		}
-		// o
-		if !_fail(parser, _oFail, errPos, failure, &pos) {
-			goto fail4
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// A
+		if !_fail(parser, _AFail, errPos, failure, &pos) {
 			goto fail4
 		}
 		goto ok1
 	fail4:
 		pos = pos3
-		// d a
-		// d
-		if !_fail(parser, _dFail, errPos, failure, &pos) {
+		// m O q
+		// m
+		if !_fail(parser, _mFail, errPos, failure, &pos) {
 			goto fail6
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
+		// O
+		if !_fail(parser, _OFail, errPos, failure, &pos) {
+			goto fail6
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail6
 		}
 		goto ok1
 	fail6:
 		pos = pos3
-		// k a
+		// k A
 		// k
 		if !_fail(parser, _kFail, errPos, failure, &pos) {
 			goto fail8
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
+		// A
+		if !_fail(parser, _AFail, errPos, failure, &pos) {
 			goto fail8
 		}
 		goto ok1
 	fail8:
 		pos = pos3
-		// s o
+		// s O
 		// s
 		if !_fail(parser, _sFail, errPos, failure, &pos) {
 			goto fail10
 		}
-		// o
-		if !_fail(parser, _oFail, errPos, failure, &pos) {
+		// O
+		if !_fail(parser, _OFail, errPos, failure, &pos) {
 			goto fail10
 		}
 		goto ok1
 	fail10:
 		pos = pos3
-		// b a
+		// b A
 		// b
 		if !_fail(parser, _bFail, errPos, failure, &pos) {
 			goto fail12
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
+		// A
+		if !_fail(parser, _AFail, errPos, failure, &pos) {
 			goto fail12
 		}
 		goto ok1
@@ -46956,10 +50143,24 @@ func _illocutionaryFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto fail
 	ok1:
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos15 := pos
 		nkids16 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos21 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail22
+			}
+			goto ok23
+		fail22:
+			pos = pos21
+		ok23:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail18
@@ -46971,7 +50172,7 @@ func _illocutionaryFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -46986,12 +50187,12 @@ fail:
 	return -1, failure
 }
 
-func _illocutionaryAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_illocutionary]
+func _DAAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_DA]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _illocutionary}
+	key := _key{start: start, rule: _DA}
 	n := parser.act[key]
 	if n != nil {
 		n := n.(string)
@@ -46999,34 +50200,26 @@ func _illocutionaryAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// (m o q/d a/k a/s o/b a) &boundary
+	// (d A/m O q/k A/s O/b A) &(tone? boundary)
 	{
 		var node0 string
-		// (m o q/d a/k a/s o/b a)
-		// m o q/d a/k a/s o/b a
+		// (d A/m O q/k A/s O/b A)
+		// d A/m O q/k A/s O/b A
 		{
 			pos3 := pos
-			// m o q
+			// d A
 			{
 				var node5 string
-				// m
-				if p, n := _mAction(parser, pos); n == nil {
+				// d
+				if p, n := _dAction(parser, pos); n == nil {
 					goto fail4
 				} else {
 					node5 = *n
 					pos = p
 				}
 				node0 += node5
-				// o
-				if p, n := _oAction(parser, pos); n == nil {
-					goto fail4
-				} else {
-					node5 = *n
-					pos = p
-				}
-				node0 += node5
-				// q
-				if p, n := _qAction(parser, pos); n == nil {
+				// A
+				if p, n := _AAction(parser, pos); n == nil {
 					goto fail4
 				} else {
 					node5 = *n
@@ -47037,19 +50230,27 @@ func _illocutionaryAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail4:
 			pos = pos3
-			// d a
+			// m O q
 			{
 				var node7 string
-				// d
-				if p, n := _dAction(parser, pos); n == nil {
+				// m
+				if p, n := _mAction(parser, pos); n == nil {
 					goto fail6
 				} else {
 					node7 = *n
 					pos = p
 				}
 				node0 += node7
-				// a
-				if p, n := _aAction(parser, pos); n == nil {
+				// O
+				if p, n := _OAction(parser, pos); n == nil {
+					goto fail6
+				} else {
+					node7 = *n
+					pos = p
+				}
+				node0 += node7
+				// q
+				if p, n := _qAction(parser, pos); n == nil {
 					goto fail6
 				} else {
 					node7 = *n
@@ -47060,7 +50261,7 @@ func _illocutionaryAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail6:
 			pos = pos3
-			// k a
+			// k A
 			{
 				var node9 string
 				// k
@@ -47071,8 +50272,8 @@ func _illocutionaryAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node9
-				// a
-				if p, n := _aAction(parser, pos); n == nil {
+				// A
+				if p, n := _AAction(parser, pos); n == nil {
 					goto fail8
 				} else {
 					node9 = *n
@@ -47083,7 +50284,7 @@ func _illocutionaryAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail8:
 			pos = pos3
-			// s o
+			// s O
 			{
 				var node11 string
 				// s
@@ -47094,8 +50295,8 @@ func _illocutionaryAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node11
-				// o
-				if p, n := _oAction(parser, pos); n == nil {
+				// O
+				if p, n := _OAction(parser, pos); n == nil {
 					goto fail10
 				} else {
 					node11 = *n
@@ -47106,7 +50307,7 @@ func _illocutionaryAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail10:
 			pos = pos3
-			// b a
+			// b A
 			{
 				var node13 string
 				// b
@@ -47117,8 +50318,8 @@ func _illocutionaryAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node13
-				// a
-				if p, n := _aAction(parser, pos); n == nil {
+				// A
+				if p, n := _AAction(parser, pos); n == nil {
 					goto fail12
 				} else {
 					node13 = *n
@@ -47133,9 +50334,25 @@ func _illocutionaryAction(parser *_Parser, start int) (int, *string) {
 		ok1:
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos15 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos21 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail22
+				} else {
+					pos = p
+				}
+				goto ok23
+			fail22:
+				pos = pos21
+			ok23:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail18
@@ -47158,35 +50375,35 @@ fail:
 	return -1, nil
 }
 
-func _quantifierAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _quantifier, start); ok {
+func _TUAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _TU, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// (t u/s i a/s a/h i/j a) &boundary
-	// (t u/s i a/s a/h i/j a)
-	// t u/s i a/s a/h i/j a
+	// (t U/s I a/s A/h I/j A) &(tone? boundary)
+	// (t U/s I a/s A/h I/j A)
+	// t U/s I a/s A/h I/j A
 	{
 		pos3 := pos
-		// t u
+		// t U
 		// t
 		if !_accept(parser, _tAccepts, &pos, &perr) {
 			goto fail4
 		}
-		// u
-		if !_accept(parser, _uAccepts, &pos, &perr) {
+		// U
+		if !_accept(parser, _UAccepts, &pos, &perr) {
 			goto fail4
 		}
 		goto ok1
 	fail4:
 		pos = pos3
-		// s i a
+		// s I a
 		// s
 		if !_accept(parser, _sAccepts, &pos, &perr) {
 			goto fail6
 		}
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// I
+		if !_accept(parser, _IAccepts, &pos, &perr) {
 			goto fail6
 		}
 		// a
@@ -47196,37 +50413,37 @@ func _quantifierAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok1
 	fail6:
 		pos = pos3
-		// s a
+		// s A
 		// s
 		if !_accept(parser, _sAccepts, &pos, &perr) {
 			goto fail8
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
+		// A
+		if !_accept(parser, _AAccepts, &pos, &perr) {
 			goto fail8
 		}
 		goto ok1
 	fail8:
 		pos = pos3
-		// h i
+		// h I
 		// h
 		if !_accept(parser, _hAccepts, &pos, &perr) {
 			goto fail10
 		}
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// I
+		if !_accept(parser, _IAccepts, &pos, &perr) {
 			goto fail10
 		}
 		goto ok1
 	fail10:
 		pos = pos3
-		// j a
+		// j A
 		// j
 		if !_accept(parser, _jAccepts, &pos, &perr) {
 			goto fail12
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
+		// A
+		if !_accept(parser, _AAccepts, &pos, &perr) {
 			goto fail12
 		}
 		goto ok1
@@ -47235,10 +50452,24 @@ func _quantifierAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto fail
 	ok1:
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos15 := pos
 		perr17 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos21 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail22
+			}
+			goto ok23
+		fail22:
+			pos = pos21
+		ok23:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail18
@@ -47252,52 +50483,52 @@ func _quantifierAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos15
 		perr = perr17
 	}
-	return _memoize(parser, _quantifier, start, pos, perr)
+	return _memoize(parser, _TU, start, pos, perr)
 fail:
-	return _memoize(parser, _quantifier, start, -1, perr)
+	return _memoize(parser, _TU, start, -1, perr)
 }
 
-func _quantifierNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_quantifier]
+func _TUNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_TU]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _quantifier}
+	key := _key{start: start, rule: _TU}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "quantifier"}
-	// (t u/s i a/s a/h i/j a) &boundary
-	// (t u/s i a/s a/h i/j a)
+	node = &peg.Node{Name: "TU"}
+	// (t U/s I a/s A/h I/j A) &(tone? boundary)
+	// (t U/s I a/s A/h I/j A)
 	{
 		nkids1 := len(node.Kids)
 		pos02 := pos
-		// t u/s i a/s a/h i/j a
+		// t U/s I a/s A/h I/j A
 		{
 			pos5 := pos
 			nkids4 := len(node.Kids)
-			// t u
+			// t U
 			// t
 			if !_node(parser, _tNode, node, &pos) {
 				goto fail6
 			}
-			// u
-			if !_node(parser, _uNode, node, &pos) {
+			// U
+			if !_node(parser, _UNode, node, &pos) {
 				goto fail6
 			}
 			goto ok3
 		fail6:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// s i a
+			// s I a
 			// s
 			if !_node(parser, _sNode, node, &pos) {
 				goto fail8
 			}
-			// i
-			if !_node(parser, _iNode, node, &pos) {
+			// I
+			if !_node(parser, _INode, node, &pos) {
 				goto fail8
 			}
 			// a
@@ -47308,39 +50539,39 @@ func _quantifierNode(parser *_Parser, start int) (int, *peg.Node) {
 		fail8:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// s a
+			// s A
 			// s
 			if !_node(parser, _sNode, node, &pos) {
 				goto fail10
 			}
-			// a
-			if !_node(parser, _aNode, node, &pos) {
+			// A
+			if !_node(parser, _ANode, node, &pos) {
 				goto fail10
 			}
 			goto ok3
 		fail10:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// h i
+			// h I
 			// h
 			if !_node(parser, _hNode, node, &pos) {
 				goto fail12
 			}
-			// i
-			if !_node(parser, _iNode, node, &pos) {
+			// I
+			if !_node(parser, _INode, node, &pos) {
 				goto fail12
 			}
 			goto ok3
 		fail12:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// j a
+			// j A
 			// j
 			if !_node(parser, _jNode, node, &pos) {
 				goto fail14
 			}
-			// a
-			if !_node(parser, _aNode, node, &pos) {
+			// A
+			if !_node(parser, _ANode, node, &pos) {
 				goto fail14
 			}
 			goto ok3
@@ -47353,13 +50584,35 @@ func _quantifierNode(parser *_Parser, start int) (int, *peg.Node) {
 		sub := _sub(parser, pos02, pos, node.Kids[nkids1:])
 		node.Kids = append(node.Kids[:nkids1], sub)
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos17 := pos
 		nkids18 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail20
+		// (tone? boundary)
+		{
+			nkids21 := len(node.Kids)
+			pos022 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids24 := len(node.Kids)
+				pos25 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail26
+				}
+				goto ok27
+			fail26:
+				node.Kids = node.Kids[:nkids24]
+				pos = pos25
+			ok27:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail20
+			}
+			sub := _sub(parser, pos022, pos, node.Kids[nkids21:])
+			node.Kids = append(node.Kids[:nkids21], sub)
 		}
 		goto ok16
 	fail20:
@@ -47376,40 +50629,40 @@ fail:
 	return -1, nil
 }
 
-func _quantifierFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _quantifier, start, errPos)
+func _TUFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _TU, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "quantifier",
+		Name: "TU",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _quantifier}
-	// (t u/s i a/s a/h i/j a) &boundary
-	// (t u/s i a/s a/h i/j a)
-	// t u/s i a/s a/h i/j a
+	key := _key{start: start, rule: _TU}
+	// (t U/s I a/s A/h I/j A) &(tone? boundary)
+	// (t U/s I a/s A/h I/j A)
+	// t U/s I a/s A/h I/j A
 	{
 		pos3 := pos
-		// t u
+		// t U
 		// t
 		if !_fail(parser, _tFail, errPos, failure, &pos) {
 			goto fail4
 		}
-		// u
-		if !_fail(parser, _uFail, errPos, failure, &pos) {
+		// U
+		if !_fail(parser, _UFail, errPos, failure, &pos) {
 			goto fail4
 		}
 		goto ok1
 	fail4:
 		pos = pos3
-		// s i a
+		// s I a
 		// s
 		if !_fail(parser, _sFail, errPos, failure, &pos) {
 			goto fail6
 		}
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// I
+		if !_fail(parser, _IFail, errPos, failure, &pos) {
 			goto fail6
 		}
 		// a
@@ -47419,37 +50672,37 @@ func _quantifierFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok1
 	fail6:
 		pos = pos3
-		// s a
+		// s A
 		// s
 		if !_fail(parser, _sFail, errPos, failure, &pos) {
 			goto fail8
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
+		// A
+		if !_fail(parser, _AFail, errPos, failure, &pos) {
 			goto fail8
 		}
 		goto ok1
 	fail8:
 		pos = pos3
-		// h i
+		// h I
 		// h
 		if !_fail(parser, _hFail, errPos, failure, &pos) {
 			goto fail10
 		}
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// I
+		if !_fail(parser, _IFail, errPos, failure, &pos) {
 			goto fail10
 		}
 		goto ok1
 	fail10:
 		pos = pos3
-		// j a
+		// j A
 		// j
 		if !_fail(parser, _jFail, errPos, failure, &pos) {
 			goto fail12
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
+		// A
+		if !_fail(parser, _AFail, errPos, failure, &pos) {
 			goto fail12
 		}
 		goto ok1
@@ -47458,10 +50711,24 @@ func _quantifierFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto fail
 	ok1:
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos15 := pos
 		nkids16 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos21 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail22
+			}
+			goto ok23
+		fail22:
+			pos = pos21
+		ok23:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail18
@@ -47473,7 +50740,7 @@ func _quantifierFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -47488,12 +50755,12 @@ fail:
 	return -1, failure
 }
 
-func _quantifierAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_quantifier]
+func _TUAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_TU]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _quantifier}
+	key := _key{start: start, rule: _TU}
 	n := parser.act[key]
 	if n != nil {
 		n := n.(string)
@@ -47501,14 +50768,14 @@ func _quantifierAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// (t u/s i a/s a/h i/j a) &boundary
+	// (t U/s I a/s A/h I/j A) &(tone? boundary)
 	{
 		var node0 string
-		// (t u/s i a/s a/h i/j a)
-		// t u/s i a/s a/h i/j a
+		// (t U/s I a/s A/h I/j A)
+		// t U/s I a/s A/h I/j A
 		{
 			pos3 := pos
-			// t u
+			// t U
 			{
 				var node5 string
 				// t
@@ -47519,8 +50786,8 @@ func _quantifierAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node5
-				// u
-				if p, n := _uAction(parser, pos); n == nil {
+				// U
+				if p, n := _UAction(parser, pos); n == nil {
 					goto fail4
 				} else {
 					node5 = *n
@@ -47531,7 +50798,7 @@ func _quantifierAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail4:
 			pos = pos3
-			// s i a
+			// s I a
 			{
 				var node7 string
 				// s
@@ -47542,8 +50809,8 @@ func _quantifierAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node7
-				// i
-				if p, n := _iAction(parser, pos); n == nil {
+				// I
+				if p, n := _IAction(parser, pos); n == nil {
 					goto fail6
 				} else {
 					node7 = *n
@@ -47562,7 +50829,7 @@ func _quantifierAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail6:
 			pos = pos3
-			// s a
+			// s A
 			{
 				var node9 string
 				// s
@@ -47573,8 +50840,8 @@ func _quantifierAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node9
-				// a
-				if p, n := _aAction(parser, pos); n == nil {
+				// A
+				if p, n := _AAction(parser, pos); n == nil {
 					goto fail8
 				} else {
 					node9 = *n
@@ -47585,7 +50852,7 @@ func _quantifierAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail8:
 			pos = pos3
-			// h i
+			// h I
 			{
 				var node11 string
 				// h
@@ -47596,8 +50863,8 @@ func _quantifierAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node11
-				// i
-				if p, n := _iAction(parser, pos); n == nil {
+				// I
+				if p, n := _IAction(parser, pos); n == nil {
 					goto fail10
 				} else {
 					node11 = *n
@@ -47608,7 +50875,7 @@ func _quantifierAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail10:
 			pos = pos3
-			// j a
+			// j A
 			{
 				var node13 string
 				// j
@@ -47619,8 +50886,8 @@ func _quantifierAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node13
-				// a
-				if p, n := _aAction(parser, pos); n == nil {
+				// A
+				if p, n := _AAction(parser, pos); n == nil {
 					goto fail12
 				} else {
 					node13 = *n
@@ -47635,9 +50902,25 @@ func _quantifierAction(parser *_Parser, start int) (int, *string) {
 		ok1:
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos15 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos21 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail22
+				} else {
+					pos = p
+				}
+				goto ok23
+			fail22:
+				pos = pos21
+			ok23:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail18
@@ -47660,35 +50943,35 @@ fail:
 	return -1, nil
 }
 
-func _interjectionAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _interjection, start); ok {
+func _HAAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _HA, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// (h a/h u e/h i a/m) &boundary
-	// (h a/h u e/h i a/m)
-	// h a/h u e/h i a/m
+	// (h A/h U e/h I a/m) &(tone? boundary)
+	// (h A/h U e/h I a/m)
+	// h A/h U e/h I a/m
 	{
 		pos3 := pos
-		// h a
+		// h A
 		// h
 		if !_accept(parser, _hAccepts, &pos, &perr) {
 			goto fail4
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
+		// A
+		if !_accept(parser, _AAccepts, &pos, &perr) {
 			goto fail4
 		}
 		goto ok1
 	fail4:
 		pos = pos3
-		// h u e
+		// h U e
 		// h
 		if !_accept(parser, _hAccepts, &pos, &perr) {
 			goto fail6
 		}
-		// u
-		if !_accept(parser, _uAccepts, &pos, &perr) {
+		// U
+		if !_accept(parser, _UAccepts, &pos, &perr) {
 			goto fail6
 		}
 		// e
@@ -47698,13 +50981,13 @@ func _interjectionAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok1
 	fail6:
 		pos = pos3
-		// h i a
+		// h I a
 		// h
 		if !_accept(parser, _hAccepts, &pos, &perr) {
 			goto fail8
 		}
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// I
+		if !_accept(parser, _IAccepts, &pos, &perr) {
 			goto fail8
 		}
 		// a
@@ -47724,10 +51007,24 @@ func _interjectionAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto fail
 	ok1:
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos12 := pos
 		perr14 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos18 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail19
+			}
+			goto ok20
+		fail19:
+			pos = pos18
+		ok20:
+		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
 			goto fail15
@@ -47741,52 +51038,52 @@ func _interjectionAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos12
 		perr = perr14
 	}
-	return _memoize(parser, _interjection, start, pos, perr)
+	return _memoize(parser, _HA, start, pos, perr)
 fail:
-	return _memoize(parser, _interjection, start, -1, perr)
+	return _memoize(parser, _HA, start, -1, perr)
 }
 
-func _interjectionNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_interjection]
+func _HANode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_HA]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _interjection}
+	key := _key{start: start, rule: _HA}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "interjection"}
-	// (h a/h u e/h i a/m) &boundary
-	// (h a/h u e/h i a/m)
+	node = &peg.Node{Name: "HA"}
+	// (h A/h U e/h I a/m) &(tone? boundary)
+	// (h A/h U e/h I a/m)
 	{
 		nkids1 := len(node.Kids)
 		pos02 := pos
-		// h a/h u e/h i a/m
+		// h A/h U e/h I a/m
 		{
 			pos5 := pos
 			nkids4 := len(node.Kids)
-			// h a
+			// h A
 			// h
 			if !_node(parser, _hNode, node, &pos) {
 				goto fail6
 			}
-			// a
-			if !_node(parser, _aNode, node, &pos) {
+			// A
+			if !_node(parser, _ANode, node, &pos) {
 				goto fail6
 			}
 			goto ok3
 		fail6:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// h u e
+			// h U e
 			// h
 			if !_node(parser, _hNode, node, &pos) {
 				goto fail8
 			}
-			// u
-			if !_node(parser, _uNode, node, &pos) {
+			// U
+			if !_node(parser, _UNode, node, &pos) {
 				goto fail8
 			}
 			// e
@@ -47797,13 +51094,13 @@ func _interjectionNode(parser *_Parser, start int) (int, *peg.Node) {
 		fail8:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos5
-			// h i a
+			// h I a
 			// h
 			if !_node(parser, _hNode, node, &pos) {
 				goto fail10
 			}
-			// i
-			if !_node(parser, _iNode, node, &pos) {
+			// I
+			if !_node(parser, _INode, node, &pos) {
 				goto fail10
 			}
 			// a
@@ -47828,13 +51125,35 @@ func _interjectionNode(parser *_Parser, start int) (int, *peg.Node) {
 		sub := _sub(parser, pos02, pos, node.Kids[nkids1:])
 		node.Kids = append(node.Kids[:nkids1], sub)
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos14 := pos
 		nkids15 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail17
+		// (tone? boundary)
+		{
+			nkids18 := len(node.Kids)
+			pos019 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids21 := len(node.Kids)
+				pos22 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail23
+				}
+				goto ok24
+			fail23:
+				node.Kids = node.Kids[:nkids21]
+				pos = pos22
+			ok24:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail17
+			}
+			sub := _sub(parser, pos019, pos, node.Kids[nkids18:])
+			node.Kids = append(node.Kids[:nkids18], sub)
 		}
 		goto ok13
 	fail17:
@@ -47851,40 +51170,40 @@ fail:
 	return -1, nil
 }
 
-func _interjectionFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _interjection, start, errPos)
+func _HAFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _HA, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "interjection",
+		Name: "HA",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _interjection}
-	// (h a/h u e/h i a/m) &boundary
-	// (h a/h u e/h i a/m)
-	// h a/h u e/h i a/m
+	key := _key{start: start, rule: _HA}
+	// (h A/h U e/h I a/m) &(tone? boundary)
+	// (h A/h U e/h I a/m)
+	// h A/h U e/h I a/m
 	{
 		pos3 := pos
-		// h a
+		// h A
 		// h
 		if !_fail(parser, _hFail, errPos, failure, &pos) {
 			goto fail4
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
+		// A
+		if !_fail(parser, _AFail, errPos, failure, &pos) {
 			goto fail4
 		}
 		goto ok1
 	fail4:
 		pos = pos3
-		// h u e
+		// h U e
 		// h
 		if !_fail(parser, _hFail, errPos, failure, &pos) {
 			goto fail6
 		}
-		// u
-		if !_fail(parser, _uFail, errPos, failure, &pos) {
+		// U
+		if !_fail(parser, _UFail, errPos, failure, &pos) {
 			goto fail6
 		}
 		// e
@@ -47894,13 +51213,13 @@ func _interjectionFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok1
 	fail6:
 		pos = pos3
-		// h i a
+		// h I a
 		// h
 		if !_fail(parser, _hFail, errPos, failure, &pos) {
 			goto fail8
 		}
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// I
+		if !_fail(parser, _IFail, errPos, failure, &pos) {
 			goto fail8
 		}
 		// a
@@ -47920,10 +51239,24 @@ func _interjectionFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto fail
 	ok1:
 	}
-	// &boundary
+	// &(tone? boundary)
 	{
 		pos12 := pos
 		nkids13 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos18 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail19
+			}
+			goto ok20
+		fail19:
+			pos = pos18
+		ok20:
+		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
 			goto fail15
@@ -47935,7 +51268,7 @@ func _interjectionFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&boundary",
+				Want: "&(tone? boundary)",
 			})
 		}
 		goto fail
@@ -47950,12 +51283,12 @@ fail:
 	return -1, failure
 }
 
-func _interjectionAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_interjection]
+func _HAAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_HA]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _interjection}
+	key := _key{start: start, rule: _HA}
 	n := parser.act[key]
 	if n != nil {
 		n := n.(string)
@@ -47963,14 +51296,14 @@ func _interjectionAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// (h a/h u e/h i a/m) &boundary
+	// (h A/h U e/h I a/m) &(tone? boundary)
 	{
 		var node0 string
-		// (h a/h u e/h i a/m)
-		// h a/h u e/h i a/m
+		// (h A/h U e/h I a/m)
+		// h A/h U e/h I a/m
 		{
 			pos3 := pos
-			// h a
+			// h A
 			{
 				var node5 string
 				// h
@@ -47981,8 +51314,8 @@ func _interjectionAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node5
-				// a
-				if p, n := _aAction(parser, pos); n == nil {
+				// A
+				if p, n := _AAction(parser, pos); n == nil {
 					goto fail4
 				} else {
 					node5 = *n
@@ -47993,7 +51326,7 @@ func _interjectionAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail4:
 			pos = pos3
-			// h u e
+			// h U e
 			{
 				var node7 string
 				// h
@@ -48004,8 +51337,8 @@ func _interjectionAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node7
-				// u
-				if p, n := _uAction(parser, pos); n == nil {
+				// U
+				if p, n := _UAction(parser, pos); n == nil {
 					goto fail6
 				} else {
 					node7 = *n
@@ -48024,7 +51357,7 @@ func _interjectionAction(parser *_Parser, start int) (int, *string) {
 			goto ok1
 		fail6:
 			pos = pos3
-			// h i a
+			// h I a
 			{
 				var node9 string
 				// h
@@ -48035,8 +51368,8 @@ func _interjectionAction(parser *_Parser, start int) (int, *string) {
 					pos = p
 				}
 				node0 += node9
-				// i
-				if p, n := _iAction(parser, pos); n == nil {
+				// I
+				if p, n := _IAction(parser, pos); n == nil {
 					goto fail8
 				} else {
 					node9 = *n
@@ -48069,9 +51402,25 @@ func _interjectionAction(parser *_Parser, start int) (int, *string) {
 		ok1:
 		}
 		node += node0
-		// &boundary
+		// &(tone? boundary)
 		{
 			pos12 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos18 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail19
+				} else {
+					pos = p
+				}
+				goto ok20
+			fail19:
+				pos = pos18
+			ok20:
+			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
 				goto fail15

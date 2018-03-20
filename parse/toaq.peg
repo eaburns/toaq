@@ -355,11 +355,11 @@ adverb_desinence <- desinence<ã,ũ,ĩ,õ,ẽ>
 
 tone <- compound_tone / arg_tone / verb_tone / relative_tone / adverb_tone / preposition_tone / content_tone
 
-A <- a / ā / á / ǎ / ả / â / à / ã
-U <- u / ū / ú / ǔ / ủ / û / ù / ũ
-I <- i / ī / í / ǐ / ỉ / î / ì / ĩ
-O <- o / ō / ó / ǒ / ỏ / ô / ò / õ
-E <- e / ē / é / ě / ẻ / ê / è / ẽ
+A <- ā / á / ǎ / ả / â / à / ã / a
+U <- ū / ú / ǔ / ủ / û / ù / ũ / u
+I <- ī / í / ǐ / ỉ / î / ì / ĩ / i
+O <- ō / ó / ǒ / ỏ / ô / ò / õ / o
+E <- ē / é / ě / ẻ / ê / è / ẽ / e
 
 ā <- [āĀ] / [aA] ( macron_combiner / compound_tone )
 ū <- [ūŪ] / [uU] ( macron_combiner / compound_tone )

@@ -77163,60 +77163,60 @@ func _AAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// a/ā/á/ǎ/ả/â/à/ã
+	// ā/á/ǎ/ả/â/à/ã/a
 	{
 		pos2 := pos
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
+		// ā
+		if !_accept(parser, _āAccepts, &pos, &perr) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		pos = pos2
-		// ā
-		if !_accept(parser, _āAccepts, &pos, &perr) {
+		// á
+		if !_accept(parser, _áAccepts, &pos, &perr) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		pos = pos2
-		// á
-		if !_accept(parser, _áAccepts, &pos, &perr) {
+		// ǎ
+		if !_accept(parser, _ǎAccepts, &pos, &perr) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		pos = pos2
-		// ǎ
-		if !_accept(parser, _ǎAccepts, &pos, &perr) {
+		// ả
+		if !_accept(parser, _ảAccepts, &pos, &perr) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		pos = pos2
-		// ả
-		if !_accept(parser, _ảAccepts, &pos, &perr) {
+		// â
+		if !_accept(parser, _âAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		pos = pos2
-		// â
-		if !_accept(parser, _âAccepts, &pos, &perr) {
+		// à
+		if !_accept(parser, _àAccepts, &pos, &perr) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		pos = pos2
-		// à
-		if !_accept(parser, _àAccepts, &pos, &perr) {
+		// ã
+		if !_accept(parser, _ãAccepts, &pos, &perr) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		pos = pos2
-		// ã
-		if !_accept(parser, _ãAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail10
 		}
 		goto ok0
@@ -77242,68 +77242,68 @@ func _ANode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "A"}
-	// a/ā/á/ǎ/ả/â/à/ã
+	// ā/á/ǎ/ả/â/à/ã/a
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
-		// a
-		if !_node(parser, _aNode, node, &pos) {
+		// ā
+		if !_node(parser, _āNode, node, &pos) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ā
-		if !_node(parser, _āNode, node, &pos) {
+		// á
+		if !_node(parser, _áNode, node, &pos) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// á
-		if !_node(parser, _áNode, node, &pos) {
+		// ǎ
+		if !_node(parser, _ǎNode, node, &pos) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ǎ
-		if !_node(parser, _ǎNode, node, &pos) {
+		// ả
+		if !_node(parser, _ảNode, node, &pos) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ả
-		if !_node(parser, _ảNode, node, &pos) {
+		// â
+		if !_node(parser, _âNode, node, &pos) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// â
-		if !_node(parser, _âNode, node, &pos) {
+		// à
+		if !_node(parser, _àNode, node, &pos) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// à
-		if !_node(parser, _àNode, node, &pos) {
+		// ã
+		if !_node(parser, _ãNode, node, &pos) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ã
-		if !_node(parser, _ãNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail10
 		}
 		goto ok0
@@ -77330,60 +77330,60 @@ func _AFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _A}
-	// a/ā/á/ǎ/ả/â/à/ã
+	// ā/á/ǎ/ả/â/à/ã/a
 	{
 		pos2 := pos
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
+		// ā
+		if !_fail(parser, _āFail, errPos, failure, &pos) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		pos = pos2
-		// ā
-		if !_fail(parser, _āFail, errPos, failure, &pos) {
+		// á
+		if !_fail(parser, _áFail, errPos, failure, &pos) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		pos = pos2
-		// á
-		if !_fail(parser, _áFail, errPos, failure, &pos) {
+		// ǎ
+		if !_fail(parser, _ǎFail, errPos, failure, &pos) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		pos = pos2
-		// ǎ
-		if !_fail(parser, _ǎFail, errPos, failure, &pos) {
+		// ả
+		if !_fail(parser, _ảFail, errPos, failure, &pos) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		pos = pos2
-		// ả
-		if !_fail(parser, _ảFail, errPos, failure, &pos) {
+		// â
+		if !_fail(parser, _âFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		pos = pos2
-		// â
-		if !_fail(parser, _âFail, errPos, failure, &pos) {
+		// à
+		if !_fail(parser, _àFail, errPos, failure, &pos) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		pos = pos2
-		// à
-		if !_fail(parser, _àFail, errPos, failure, &pos) {
+		// ã
+		if !_fail(parser, _ãFail, errPos, failure, &pos) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		pos = pos2
-		// ã
-		if !_fail(parser, _ãFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail10
 		}
 		goto ok0
@@ -77412,11 +77412,11 @@ func _AAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// a/ā/á/ǎ/ả/â/à/ã
+	// ā/á/ǎ/ả/â/à/ã/a
 	{
 		pos2 := pos
-		// a
-		if p, n := _aAction(parser, pos); n == nil {
+		// ā
+		if p, n := _āAction(parser, pos); n == nil {
 			goto fail3
 		} else {
 			node = *n
@@ -77425,8 +77425,8 @@ func _AAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// ā
-		if p, n := _āAction(parser, pos); n == nil {
+		// á
+		if p, n := _áAction(parser, pos); n == nil {
 			goto fail4
 		} else {
 			node = *n
@@ -77435,8 +77435,8 @@ func _AAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail4:
 		pos = pos2
-		// á
-		if p, n := _áAction(parser, pos); n == nil {
+		// ǎ
+		if p, n := _ǎAction(parser, pos); n == nil {
 			goto fail5
 		} else {
 			node = *n
@@ -77445,8 +77445,8 @@ func _AAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail5:
 		pos = pos2
-		// ǎ
-		if p, n := _ǎAction(parser, pos); n == nil {
+		// ả
+		if p, n := _ảAction(parser, pos); n == nil {
 			goto fail6
 		} else {
 			node = *n
@@ -77455,8 +77455,8 @@ func _AAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail6:
 		pos = pos2
-		// ả
-		if p, n := _ảAction(parser, pos); n == nil {
+		// â
+		if p, n := _âAction(parser, pos); n == nil {
 			goto fail7
 		} else {
 			node = *n
@@ -77465,8 +77465,8 @@ func _AAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail7:
 		pos = pos2
-		// â
-		if p, n := _âAction(parser, pos); n == nil {
+		// à
+		if p, n := _àAction(parser, pos); n == nil {
 			goto fail8
 		} else {
 			node = *n
@@ -77475,8 +77475,8 @@ func _AAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail8:
 		pos = pos2
-		// à
-		if p, n := _àAction(parser, pos); n == nil {
+		// ã
+		if p, n := _ãAction(parser, pos); n == nil {
 			goto fail9
 		} else {
 			node = *n
@@ -77485,8 +77485,8 @@ func _AAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail9:
 		pos = pos2
-		// ã
-		if p, n := _ãAction(parser, pos); n == nil {
+		// a
+		if p, n := _aAction(parser, pos); n == nil {
 			goto fail10
 		} else {
 			node = *n
@@ -77509,60 +77509,60 @@ func _UAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// u/ū/ú/ǔ/ủ/û/ù/ũ
+	// ū/ú/ǔ/ủ/û/ù/ũ/u
 	{
 		pos2 := pos
-		// u
-		if !_accept(parser, _uAccepts, &pos, &perr) {
+		// ū
+		if !_accept(parser, _ūAccepts, &pos, &perr) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		pos = pos2
-		// ū
-		if !_accept(parser, _ūAccepts, &pos, &perr) {
+		// ú
+		if !_accept(parser, _úAccepts, &pos, &perr) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		pos = pos2
-		// ú
-		if !_accept(parser, _úAccepts, &pos, &perr) {
+		// ǔ
+		if !_accept(parser, _ǔAccepts, &pos, &perr) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		pos = pos2
-		// ǔ
-		if !_accept(parser, _ǔAccepts, &pos, &perr) {
+		// ủ
+		if !_accept(parser, _ủAccepts, &pos, &perr) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		pos = pos2
-		// ủ
-		if !_accept(parser, _ủAccepts, &pos, &perr) {
+		// û
+		if !_accept(parser, _ûAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		pos = pos2
-		// û
-		if !_accept(parser, _ûAccepts, &pos, &perr) {
+		// ù
+		if !_accept(parser, _ùAccepts, &pos, &perr) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		pos = pos2
-		// ù
-		if !_accept(parser, _ùAccepts, &pos, &perr) {
+		// ũ
+		if !_accept(parser, _ũAccepts, &pos, &perr) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		pos = pos2
-		// ũ
-		if !_accept(parser, _ũAccepts, &pos, &perr) {
+		// u
+		if !_accept(parser, _uAccepts, &pos, &perr) {
 			goto fail10
 		}
 		goto ok0
@@ -77588,68 +77588,68 @@ func _UNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "U"}
-	// u/ū/ú/ǔ/ủ/û/ù/ũ
+	// ū/ú/ǔ/ủ/û/ù/ũ/u
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
-		// u
-		if !_node(parser, _uNode, node, &pos) {
+		// ū
+		if !_node(parser, _ūNode, node, &pos) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ū
-		if !_node(parser, _ūNode, node, &pos) {
+		// ú
+		if !_node(parser, _úNode, node, &pos) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ú
-		if !_node(parser, _úNode, node, &pos) {
+		// ǔ
+		if !_node(parser, _ǔNode, node, &pos) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ǔ
-		if !_node(parser, _ǔNode, node, &pos) {
+		// ủ
+		if !_node(parser, _ủNode, node, &pos) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ủ
-		if !_node(parser, _ủNode, node, &pos) {
+		// û
+		if !_node(parser, _ûNode, node, &pos) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// û
-		if !_node(parser, _ûNode, node, &pos) {
+		// ù
+		if !_node(parser, _ùNode, node, &pos) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ù
-		if !_node(parser, _ùNode, node, &pos) {
+		// ũ
+		if !_node(parser, _ũNode, node, &pos) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ũ
-		if !_node(parser, _ũNode, node, &pos) {
+		// u
+		if !_node(parser, _uNode, node, &pos) {
 			goto fail10
 		}
 		goto ok0
@@ -77676,60 +77676,60 @@ func _UFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _U}
-	// u/ū/ú/ǔ/ủ/û/ù/ũ
+	// ū/ú/ǔ/ủ/û/ù/ũ/u
 	{
 		pos2 := pos
-		// u
-		if !_fail(parser, _uFail, errPos, failure, &pos) {
+		// ū
+		if !_fail(parser, _ūFail, errPos, failure, &pos) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		pos = pos2
-		// ū
-		if !_fail(parser, _ūFail, errPos, failure, &pos) {
+		// ú
+		if !_fail(parser, _úFail, errPos, failure, &pos) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		pos = pos2
-		// ú
-		if !_fail(parser, _úFail, errPos, failure, &pos) {
+		// ǔ
+		if !_fail(parser, _ǔFail, errPos, failure, &pos) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		pos = pos2
-		// ǔ
-		if !_fail(parser, _ǔFail, errPos, failure, &pos) {
+		// ủ
+		if !_fail(parser, _ủFail, errPos, failure, &pos) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		pos = pos2
-		// ủ
-		if !_fail(parser, _ủFail, errPos, failure, &pos) {
+		// û
+		if !_fail(parser, _ûFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		pos = pos2
-		// û
-		if !_fail(parser, _ûFail, errPos, failure, &pos) {
+		// ù
+		if !_fail(parser, _ùFail, errPos, failure, &pos) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		pos = pos2
-		// ù
-		if !_fail(parser, _ùFail, errPos, failure, &pos) {
+		// ũ
+		if !_fail(parser, _ũFail, errPos, failure, &pos) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		pos = pos2
-		// ũ
-		if !_fail(parser, _ũFail, errPos, failure, &pos) {
+		// u
+		if !_fail(parser, _uFail, errPos, failure, &pos) {
 			goto fail10
 		}
 		goto ok0
@@ -77758,11 +77758,11 @@ func _UAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// u/ū/ú/ǔ/ủ/û/ù/ũ
+	// ū/ú/ǔ/ủ/û/ù/ũ/u
 	{
 		pos2 := pos
-		// u
-		if p, n := _uAction(parser, pos); n == nil {
+		// ū
+		if p, n := _ūAction(parser, pos); n == nil {
 			goto fail3
 		} else {
 			node = *n
@@ -77771,8 +77771,8 @@ func _UAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// ū
-		if p, n := _ūAction(parser, pos); n == nil {
+		// ú
+		if p, n := _úAction(parser, pos); n == nil {
 			goto fail4
 		} else {
 			node = *n
@@ -77781,8 +77781,8 @@ func _UAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail4:
 		pos = pos2
-		// ú
-		if p, n := _úAction(parser, pos); n == nil {
+		// ǔ
+		if p, n := _ǔAction(parser, pos); n == nil {
 			goto fail5
 		} else {
 			node = *n
@@ -77791,8 +77791,8 @@ func _UAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail5:
 		pos = pos2
-		// ǔ
-		if p, n := _ǔAction(parser, pos); n == nil {
+		// ủ
+		if p, n := _ủAction(parser, pos); n == nil {
 			goto fail6
 		} else {
 			node = *n
@@ -77801,8 +77801,8 @@ func _UAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail6:
 		pos = pos2
-		// ủ
-		if p, n := _ủAction(parser, pos); n == nil {
+		// û
+		if p, n := _ûAction(parser, pos); n == nil {
 			goto fail7
 		} else {
 			node = *n
@@ -77811,8 +77811,8 @@ func _UAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail7:
 		pos = pos2
-		// û
-		if p, n := _ûAction(parser, pos); n == nil {
+		// ù
+		if p, n := _ùAction(parser, pos); n == nil {
 			goto fail8
 		} else {
 			node = *n
@@ -77821,8 +77821,8 @@ func _UAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail8:
 		pos = pos2
-		// ù
-		if p, n := _ùAction(parser, pos); n == nil {
+		// ũ
+		if p, n := _ũAction(parser, pos); n == nil {
 			goto fail9
 		} else {
 			node = *n
@@ -77831,8 +77831,8 @@ func _UAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail9:
 		pos = pos2
-		// ũ
-		if p, n := _ũAction(parser, pos); n == nil {
+		// u
+		if p, n := _uAction(parser, pos); n == nil {
 			goto fail10
 		} else {
 			node = *n
@@ -77855,60 +77855,60 @@ func _IAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// i/ī/í/ǐ/ỉ/î/ì/ĩ
+	// ī/í/ǐ/ỉ/î/ì/ĩ/i
 	{
 		pos2 := pos
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// ī
+		if !_accept(parser, _īAccepts, &pos, &perr) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		pos = pos2
-		// ī
-		if !_accept(parser, _īAccepts, &pos, &perr) {
+		// í
+		if !_accept(parser, _íAccepts, &pos, &perr) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		pos = pos2
-		// í
-		if !_accept(parser, _íAccepts, &pos, &perr) {
+		// ǐ
+		if !_accept(parser, _ǐAccepts, &pos, &perr) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		pos = pos2
-		// ǐ
-		if !_accept(parser, _ǐAccepts, &pos, &perr) {
+		// ỉ
+		if !_accept(parser, _ỉAccepts, &pos, &perr) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		pos = pos2
-		// ỉ
-		if !_accept(parser, _ỉAccepts, &pos, &perr) {
+		// î
+		if !_accept(parser, _îAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		pos = pos2
-		// î
-		if !_accept(parser, _îAccepts, &pos, &perr) {
+		// ì
+		if !_accept(parser, _ìAccepts, &pos, &perr) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		pos = pos2
-		// ì
-		if !_accept(parser, _ìAccepts, &pos, &perr) {
+		// ĩ
+		if !_accept(parser, _ĩAccepts, &pos, &perr) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		pos = pos2
-		// ĩ
-		if !_accept(parser, _ĩAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail10
 		}
 		goto ok0
@@ -77934,68 +77934,68 @@ func _INode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "I"}
-	// i/ī/í/ǐ/ỉ/î/ì/ĩ
+	// ī/í/ǐ/ỉ/î/ì/ĩ/i
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
-		// i
-		if !_node(parser, _iNode, node, &pos) {
+		// ī
+		if !_node(parser, _īNode, node, &pos) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ī
-		if !_node(parser, _īNode, node, &pos) {
+		// í
+		if !_node(parser, _íNode, node, &pos) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// í
-		if !_node(parser, _íNode, node, &pos) {
+		// ǐ
+		if !_node(parser, _ǐNode, node, &pos) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ǐ
-		if !_node(parser, _ǐNode, node, &pos) {
+		// ỉ
+		if !_node(parser, _ỉNode, node, &pos) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ỉ
-		if !_node(parser, _ỉNode, node, &pos) {
+		// î
+		if !_node(parser, _îNode, node, &pos) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// î
-		if !_node(parser, _îNode, node, &pos) {
+		// ì
+		if !_node(parser, _ìNode, node, &pos) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ì
-		if !_node(parser, _ìNode, node, &pos) {
+		// ĩ
+		if !_node(parser, _ĩNode, node, &pos) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ĩ
-		if !_node(parser, _ĩNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail10
 		}
 		goto ok0
@@ -78022,60 +78022,60 @@ func _IFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _I}
-	// i/ī/í/ǐ/ỉ/î/ì/ĩ
+	// ī/í/ǐ/ỉ/î/ì/ĩ/i
 	{
 		pos2 := pos
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// ī
+		if !_fail(parser, _īFail, errPos, failure, &pos) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		pos = pos2
-		// ī
-		if !_fail(parser, _īFail, errPos, failure, &pos) {
+		// í
+		if !_fail(parser, _íFail, errPos, failure, &pos) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		pos = pos2
-		// í
-		if !_fail(parser, _íFail, errPos, failure, &pos) {
+		// ǐ
+		if !_fail(parser, _ǐFail, errPos, failure, &pos) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		pos = pos2
-		// ǐ
-		if !_fail(parser, _ǐFail, errPos, failure, &pos) {
+		// ỉ
+		if !_fail(parser, _ỉFail, errPos, failure, &pos) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		pos = pos2
-		// ỉ
-		if !_fail(parser, _ỉFail, errPos, failure, &pos) {
+		// î
+		if !_fail(parser, _îFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		pos = pos2
-		// î
-		if !_fail(parser, _îFail, errPos, failure, &pos) {
+		// ì
+		if !_fail(parser, _ìFail, errPos, failure, &pos) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		pos = pos2
-		// ì
-		if !_fail(parser, _ìFail, errPos, failure, &pos) {
+		// ĩ
+		if !_fail(parser, _ĩFail, errPos, failure, &pos) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		pos = pos2
-		// ĩ
-		if !_fail(parser, _ĩFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail10
 		}
 		goto ok0
@@ -78104,11 +78104,11 @@ func _IAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// i/ī/í/ǐ/ỉ/î/ì/ĩ
+	// ī/í/ǐ/ỉ/î/ì/ĩ/i
 	{
 		pos2 := pos
-		// i
-		if p, n := _iAction(parser, pos); n == nil {
+		// ī
+		if p, n := _īAction(parser, pos); n == nil {
 			goto fail3
 		} else {
 			node = *n
@@ -78117,8 +78117,8 @@ func _IAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// ī
-		if p, n := _īAction(parser, pos); n == nil {
+		// í
+		if p, n := _íAction(parser, pos); n == nil {
 			goto fail4
 		} else {
 			node = *n
@@ -78127,8 +78127,8 @@ func _IAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail4:
 		pos = pos2
-		// í
-		if p, n := _íAction(parser, pos); n == nil {
+		// ǐ
+		if p, n := _ǐAction(parser, pos); n == nil {
 			goto fail5
 		} else {
 			node = *n
@@ -78137,8 +78137,8 @@ func _IAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail5:
 		pos = pos2
-		// ǐ
-		if p, n := _ǐAction(parser, pos); n == nil {
+		// ỉ
+		if p, n := _ỉAction(parser, pos); n == nil {
 			goto fail6
 		} else {
 			node = *n
@@ -78147,8 +78147,8 @@ func _IAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail6:
 		pos = pos2
-		// ỉ
-		if p, n := _ỉAction(parser, pos); n == nil {
+		// î
+		if p, n := _îAction(parser, pos); n == nil {
 			goto fail7
 		} else {
 			node = *n
@@ -78157,8 +78157,8 @@ func _IAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail7:
 		pos = pos2
-		// î
-		if p, n := _îAction(parser, pos); n == nil {
+		// ì
+		if p, n := _ìAction(parser, pos); n == nil {
 			goto fail8
 		} else {
 			node = *n
@@ -78167,8 +78167,8 @@ func _IAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail8:
 		pos = pos2
-		// ì
-		if p, n := _ìAction(parser, pos); n == nil {
+		// ĩ
+		if p, n := _ĩAction(parser, pos); n == nil {
 			goto fail9
 		} else {
 			node = *n
@@ -78177,8 +78177,8 @@ func _IAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail9:
 		pos = pos2
-		// ĩ
-		if p, n := _ĩAction(parser, pos); n == nil {
+		// i
+		if p, n := _iAction(parser, pos); n == nil {
 			goto fail10
 		} else {
 			node = *n
@@ -78201,60 +78201,60 @@ func _OAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// o/ō/ó/ǒ/ỏ/ô/ò/õ
+	// ō/ó/ǒ/ỏ/ô/ò/õ/o
 	{
 		pos2 := pos
-		// o
-		if !_accept(parser, _oAccepts, &pos, &perr) {
+		// ō
+		if !_accept(parser, _ōAccepts, &pos, &perr) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		pos = pos2
-		// ō
-		if !_accept(parser, _ōAccepts, &pos, &perr) {
+		// ó
+		if !_accept(parser, _óAccepts, &pos, &perr) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		pos = pos2
-		// ó
-		if !_accept(parser, _óAccepts, &pos, &perr) {
+		// ǒ
+		if !_accept(parser, _ǒAccepts, &pos, &perr) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		pos = pos2
-		// ǒ
-		if !_accept(parser, _ǒAccepts, &pos, &perr) {
+		// ỏ
+		if !_accept(parser, _ỏAccepts, &pos, &perr) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		pos = pos2
-		// ỏ
-		if !_accept(parser, _ỏAccepts, &pos, &perr) {
+		// ô
+		if !_accept(parser, _ôAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		pos = pos2
-		// ô
-		if !_accept(parser, _ôAccepts, &pos, &perr) {
+		// ò
+		if !_accept(parser, _òAccepts, &pos, &perr) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		pos = pos2
-		// ò
-		if !_accept(parser, _òAccepts, &pos, &perr) {
+		// õ
+		if !_accept(parser, _õAccepts, &pos, &perr) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		pos = pos2
-		// õ
-		if !_accept(parser, _õAccepts, &pos, &perr) {
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail10
 		}
 		goto ok0
@@ -78280,68 +78280,68 @@ func _ONode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "O"}
-	// o/ō/ó/ǒ/ỏ/ô/ò/õ
+	// ō/ó/ǒ/ỏ/ô/ò/õ/o
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
-		// o
-		if !_node(parser, _oNode, node, &pos) {
+		// ō
+		if !_node(parser, _ōNode, node, &pos) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ō
-		if !_node(parser, _ōNode, node, &pos) {
+		// ó
+		if !_node(parser, _óNode, node, &pos) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ó
-		if !_node(parser, _óNode, node, &pos) {
+		// ǒ
+		if !_node(parser, _ǒNode, node, &pos) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ǒ
-		if !_node(parser, _ǒNode, node, &pos) {
+		// ỏ
+		if !_node(parser, _ỏNode, node, &pos) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ỏ
-		if !_node(parser, _ỏNode, node, &pos) {
+		// ô
+		if !_node(parser, _ôNode, node, &pos) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ô
-		if !_node(parser, _ôNode, node, &pos) {
+		// ò
+		if !_node(parser, _òNode, node, &pos) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ò
-		if !_node(parser, _òNode, node, &pos) {
+		// õ
+		if !_node(parser, _õNode, node, &pos) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// õ
-		if !_node(parser, _õNode, node, &pos) {
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail10
 		}
 		goto ok0
@@ -78368,60 +78368,60 @@ func _OFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _O}
-	// o/ō/ó/ǒ/ỏ/ô/ò/õ
+	// ō/ó/ǒ/ỏ/ô/ò/õ/o
 	{
 		pos2 := pos
-		// o
-		if !_fail(parser, _oFail, errPos, failure, &pos) {
+		// ō
+		if !_fail(parser, _ōFail, errPos, failure, &pos) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		pos = pos2
-		// ō
-		if !_fail(parser, _ōFail, errPos, failure, &pos) {
+		// ó
+		if !_fail(parser, _óFail, errPos, failure, &pos) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		pos = pos2
-		// ó
-		if !_fail(parser, _óFail, errPos, failure, &pos) {
+		// ǒ
+		if !_fail(parser, _ǒFail, errPos, failure, &pos) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		pos = pos2
-		// ǒ
-		if !_fail(parser, _ǒFail, errPos, failure, &pos) {
+		// ỏ
+		if !_fail(parser, _ỏFail, errPos, failure, &pos) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		pos = pos2
-		// ỏ
-		if !_fail(parser, _ỏFail, errPos, failure, &pos) {
+		// ô
+		if !_fail(parser, _ôFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		pos = pos2
-		// ô
-		if !_fail(parser, _ôFail, errPos, failure, &pos) {
+		// ò
+		if !_fail(parser, _òFail, errPos, failure, &pos) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		pos = pos2
-		// ò
-		if !_fail(parser, _òFail, errPos, failure, &pos) {
+		// õ
+		if !_fail(parser, _õFail, errPos, failure, &pos) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		pos = pos2
-		// õ
-		if !_fail(parser, _õFail, errPos, failure, &pos) {
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail10
 		}
 		goto ok0
@@ -78450,11 +78450,11 @@ func _OAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// o/ō/ó/ǒ/ỏ/ô/ò/õ
+	// ō/ó/ǒ/ỏ/ô/ò/õ/o
 	{
 		pos2 := pos
-		// o
-		if p, n := _oAction(parser, pos); n == nil {
+		// ō
+		if p, n := _ōAction(parser, pos); n == nil {
 			goto fail3
 		} else {
 			node = *n
@@ -78463,8 +78463,8 @@ func _OAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// ō
-		if p, n := _ōAction(parser, pos); n == nil {
+		// ó
+		if p, n := _óAction(parser, pos); n == nil {
 			goto fail4
 		} else {
 			node = *n
@@ -78473,8 +78473,8 @@ func _OAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail4:
 		pos = pos2
-		// ó
-		if p, n := _óAction(parser, pos); n == nil {
+		// ǒ
+		if p, n := _ǒAction(parser, pos); n == nil {
 			goto fail5
 		} else {
 			node = *n
@@ -78483,8 +78483,8 @@ func _OAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail5:
 		pos = pos2
-		// ǒ
-		if p, n := _ǒAction(parser, pos); n == nil {
+		// ỏ
+		if p, n := _ỏAction(parser, pos); n == nil {
 			goto fail6
 		} else {
 			node = *n
@@ -78493,8 +78493,8 @@ func _OAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail6:
 		pos = pos2
-		// ỏ
-		if p, n := _ỏAction(parser, pos); n == nil {
+		// ô
+		if p, n := _ôAction(parser, pos); n == nil {
 			goto fail7
 		} else {
 			node = *n
@@ -78503,8 +78503,8 @@ func _OAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail7:
 		pos = pos2
-		// ô
-		if p, n := _ôAction(parser, pos); n == nil {
+		// ò
+		if p, n := _òAction(parser, pos); n == nil {
 			goto fail8
 		} else {
 			node = *n
@@ -78513,8 +78513,8 @@ func _OAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail8:
 		pos = pos2
-		// ò
-		if p, n := _òAction(parser, pos); n == nil {
+		// õ
+		if p, n := _õAction(parser, pos); n == nil {
 			goto fail9
 		} else {
 			node = *n
@@ -78523,8 +78523,8 @@ func _OAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail9:
 		pos = pos2
-		// õ
-		if p, n := _õAction(parser, pos); n == nil {
+		// o
+		if p, n := _oAction(parser, pos); n == nil {
 			goto fail10
 		} else {
 			node = *n
@@ -78547,60 +78547,60 @@ func _EAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// e/ē/é/ě/ẻ/ê/è/ẽ
+	// ē/é/ě/ẻ/ê/è/ẽ/e
 	{
 		pos2 := pos
-		// e
-		if !_accept(parser, _eAccepts, &pos, &perr) {
+		// ē
+		if !_accept(parser, _ēAccepts, &pos, &perr) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		pos = pos2
-		// ē
-		if !_accept(parser, _ēAccepts, &pos, &perr) {
+		// é
+		if !_accept(parser, _éAccepts, &pos, &perr) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		pos = pos2
-		// é
-		if !_accept(parser, _éAccepts, &pos, &perr) {
+		// ě
+		if !_accept(parser, _ěAccepts, &pos, &perr) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		pos = pos2
-		// ě
-		if !_accept(parser, _ěAccepts, &pos, &perr) {
+		// ẻ
+		if !_accept(parser, _ẻAccepts, &pos, &perr) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		pos = pos2
-		// ẻ
-		if !_accept(parser, _ẻAccepts, &pos, &perr) {
+		// ê
+		if !_accept(parser, _êAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		pos = pos2
-		// ê
-		if !_accept(parser, _êAccepts, &pos, &perr) {
+		// è
+		if !_accept(parser, _èAccepts, &pos, &perr) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		pos = pos2
-		// è
-		if !_accept(parser, _èAccepts, &pos, &perr) {
+		// ẽ
+		if !_accept(parser, _ẽAccepts, &pos, &perr) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		pos = pos2
-		// ẽ
-		if !_accept(parser, _ẽAccepts, &pos, &perr) {
+		// e
+		if !_accept(parser, _eAccepts, &pos, &perr) {
 			goto fail10
 		}
 		goto ok0
@@ -78626,68 +78626,68 @@ func _ENode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "E"}
-	// e/ē/é/ě/ẻ/ê/è/ẽ
+	// ē/é/ě/ẻ/ê/è/ẽ/e
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
-		// e
-		if !_node(parser, _eNode, node, &pos) {
+		// ē
+		if !_node(parser, _ēNode, node, &pos) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ē
-		if !_node(parser, _ēNode, node, &pos) {
+		// é
+		if !_node(parser, _éNode, node, &pos) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// é
-		if !_node(parser, _éNode, node, &pos) {
+		// ě
+		if !_node(parser, _ěNode, node, &pos) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ě
-		if !_node(parser, _ěNode, node, &pos) {
+		// ẻ
+		if !_node(parser, _ẻNode, node, &pos) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ẻ
-		if !_node(parser, _ẻNode, node, &pos) {
+		// ê
+		if !_node(parser, _êNode, node, &pos) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ê
-		if !_node(parser, _êNode, node, &pos) {
+		// è
+		if !_node(parser, _èNode, node, &pos) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// è
-		if !_node(parser, _èNode, node, &pos) {
+		// ẽ
+		if !_node(parser, _ẽNode, node, &pos) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// ẽ
-		if !_node(parser, _ẽNode, node, &pos) {
+		// e
+		if !_node(parser, _eNode, node, &pos) {
 			goto fail10
 		}
 		goto ok0
@@ -78714,60 +78714,60 @@ func _EFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _E}
-	// e/ē/é/ě/ẻ/ê/è/ẽ
+	// ē/é/ě/ẻ/ê/è/ẽ/e
 	{
 		pos2 := pos
-		// e
-		if !_fail(parser, _eFail, errPos, failure, &pos) {
+		// ē
+		if !_fail(parser, _ēFail, errPos, failure, &pos) {
 			goto fail3
 		}
 		goto ok0
 	fail3:
 		pos = pos2
-		// ē
-		if !_fail(parser, _ēFail, errPos, failure, &pos) {
+		// é
+		if !_fail(parser, _éFail, errPos, failure, &pos) {
 			goto fail4
 		}
 		goto ok0
 	fail4:
 		pos = pos2
-		// é
-		if !_fail(parser, _éFail, errPos, failure, &pos) {
+		// ě
+		if !_fail(parser, _ěFail, errPos, failure, &pos) {
 			goto fail5
 		}
 		goto ok0
 	fail5:
 		pos = pos2
-		// ě
-		if !_fail(parser, _ěFail, errPos, failure, &pos) {
+		// ẻ
+		if !_fail(parser, _ẻFail, errPos, failure, &pos) {
 			goto fail6
 		}
 		goto ok0
 	fail6:
 		pos = pos2
-		// ẻ
-		if !_fail(parser, _ẻFail, errPos, failure, &pos) {
+		// ê
+		if !_fail(parser, _êFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok0
 	fail7:
 		pos = pos2
-		// ê
-		if !_fail(parser, _êFail, errPos, failure, &pos) {
+		// è
+		if !_fail(parser, _èFail, errPos, failure, &pos) {
 			goto fail8
 		}
 		goto ok0
 	fail8:
 		pos = pos2
-		// è
-		if !_fail(parser, _èFail, errPos, failure, &pos) {
+		// ẽ
+		if !_fail(parser, _ẽFail, errPos, failure, &pos) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
 		pos = pos2
-		// ẽ
-		if !_fail(parser, _ẽFail, errPos, failure, &pos) {
+		// e
+		if !_fail(parser, _eFail, errPos, failure, &pos) {
 			goto fail10
 		}
 		goto ok0
@@ -78796,11 +78796,11 @@ func _EAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// e/ē/é/ě/ẻ/ê/è/ẽ
+	// ē/é/ě/ẻ/ê/è/ẽ/e
 	{
 		pos2 := pos
-		// e
-		if p, n := _eAction(parser, pos); n == nil {
+		// ē
+		if p, n := _ēAction(parser, pos); n == nil {
 			goto fail3
 		} else {
 			node = *n
@@ -78809,8 +78809,8 @@ func _EAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// ē
-		if p, n := _ēAction(parser, pos); n == nil {
+		// é
+		if p, n := _éAction(parser, pos); n == nil {
 			goto fail4
 		} else {
 			node = *n
@@ -78819,8 +78819,8 @@ func _EAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail4:
 		pos = pos2
-		// é
-		if p, n := _éAction(parser, pos); n == nil {
+		// ě
+		if p, n := _ěAction(parser, pos); n == nil {
 			goto fail5
 		} else {
 			node = *n
@@ -78829,8 +78829,8 @@ func _EAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail5:
 		pos = pos2
-		// ě
-		if p, n := _ěAction(parser, pos); n == nil {
+		// ẻ
+		if p, n := _ẻAction(parser, pos); n == nil {
 			goto fail6
 		} else {
 			node = *n
@@ -78839,8 +78839,8 @@ func _EAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail6:
 		pos = pos2
-		// ẻ
-		if p, n := _ẻAction(parser, pos); n == nil {
+		// ê
+		if p, n := _êAction(parser, pos); n == nil {
 			goto fail7
 		} else {
 			node = *n
@@ -78849,8 +78849,8 @@ func _EAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail7:
 		pos = pos2
-		// ê
-		if p, n := _êAction(parser, pos); n == nil {
+		// è
+		if p, n := _èAction(parser, pos); n == nil {
 			goto fail8
 		} else {
 			node = *n
@@ -78859,8 +78859,8 @@ func _EAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail8:
 		pos = pos2
-		// è
-		if p, n := _èAction(parser, pos); n == nil {
+		// ẽ
+		if p, n := _ẽAction(parser, pos); n == nil {
 			goto fail9
 		} else {
 			node = *n
@@ -78869,8 +78869,8 @@ func _EAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail9:
 		pos = pos2
-		// ẽ
-		if p, n := _ẽAction(parser, pos); n == nil {
+		// e
+		if p, n := _eAction(parser, pos); n == nil {
 			goto fail10
 		} else {
 			node = *n

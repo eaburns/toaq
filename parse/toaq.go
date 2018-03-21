@@ -78893,7 +78893,7 @@ func _āAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [āĀ]/[aA] (macron_combiner/compound_tone)
+	// [āĀ]/a (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [āĀ]
@@ -78906,13 +78906,10 @@ func _āAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (macron_combiner/compound_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
-			perr = _max(perr, pos)
+		// a (macron_combiner/compound_tone)
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		// macron_combiner/compound_tone
@@ -78958,7 +78955,7 @@ func _āNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ā"}
-	// [āĀ]/[aA] (macron_combiner/compound_tone)
+	// [āĀ]/a (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -78973,13 +78970,10 @@ func _āNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [aA] (macron_combiner/compound_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
+		// a (macron_combiner/compound_tone)
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		{
@@ -79035,7 +79029,7 @@ func _āFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ā}
-	// [āĀ]/[aA] (macron_combiner/compound_tone)
+	// [āĀ]/a (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [āĀ]
@@ -79053,18 +79047,10 @@ func _āFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (macron_combiner/compound_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[aA]",
-				})
-			}
+		// a (macron_combiner/compound_tone)
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		// macron_combiner/compound_tone
@@ -79113,7 +79099,7 @@ func _āAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [āĀ]/[aA] (macron_combiner/compound_tone)
+	// [āĀ]/a (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [āĀ]
@@ -79126,15 +79112,15 @@ func _āAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (macron_combiner/compound_tone)
+		// a (macron_combiner/compound_tone)
 		{
 			var node5 string
-			// [aA]
-			if r, w := _next(parser, pos); r != 'a' && r != 'A' {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (macron_combiner/compound_tone)
@@ -79183,7 +79169,7 @@ func _ūAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ūŪ]/[uU] (macron_combiner/compound_tone)
+	// [ūŪ]/u (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [ūŪ]
@@ -79196,13 +79182,10 @@ func _ūAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (macron_combiner/compound_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
-			perr = _max(perr, pos)
+		// u (macron_combiner/compound_tone)
+		// u
+		if !_accept(parser, _uAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		// macron_combiner/compound_tone
@@ -79248,7 +79231,7 @@ func _ūNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ū"}
-	// [ūŪ]/[uU] (macron_combiner/compound_tone)
+	// [ūŪ]/u (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -79263,13 +79246,10 @@ func _ūNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [uU] (macron_combiner/compound_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
+		// u (macron_combiner/compound_tone)
+		// u
+		if !_node(parser, _uNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		{
@@ -79325,7 +79305,7 @@ func _ūFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ū}
-	// [ūŪ]/[uU] (macron_combiner/compound_tone)
+	// [ūŪ]/u (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [ūŪ]
@@ -79343,18 +79323,10 @@ func _ūFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (macron_combiner/compound_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[uU]",
-				})
-			}
+		// u (macron_combiner/compound_tone)
+		// u
+		if !_fail(parser, _uFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		// macron_combiner/compound_tone
@@ -79403,7 +79375,7 @@ func _ūAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ūŪ]/[uU] (macron_combiner/compound_tone)
+	// [ūŪ]/u (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [ūŪ]
@@ -79416,15 +79388,15 @@ func _ūAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (macron_combiner/compound_tone)
+		// u (macron_combiner/compound_tone)
 		{
 			var node5 string
-			// [uU]
-			if r, w := _next(parser, pos); r != 'u' && r != 'U' {
+			// u
+			if p, n := _uAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (macron_combiner/compound_tone)
@@ -79473,7 +79445,7 @@ func _īAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [īĪ]/[iI] (macron_combiner/compound_tone)
+	// [īĪ]/i (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [īĪ]
@@ -79486,13 +79458,10 @@ func _īAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (macron_combiner/compound_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
-			perr = _max(perr, pos)
+		// i (macron_combiner/compound_tone)
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		// macron_combiner/compound_tone
@@ -79538,7 +79507,7 @@ func _īNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ī"}
-	// [īĪ]/[iI] (macron_combiner/compound_tone)
+	// [īĪ]/i (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -79553,13 +79522,10 @@ func _īNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [iI] (macron_combiner/compound_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
+		// i (macron_combiner/compound_tone)
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		{
@@ -79615,7 +79581,7 @@ func _īFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ī}
-	// [īĪ]/[iI] (macron_combiner/compound_tone)
+	// [īĪ]/i (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [īĪ]
@@ -79633,18 +79599,10 @@ func _īFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (macron_combiner/compound_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[iI]",
-				})
-			}
+		// i (macron_combiner/compound_tone)
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		// macron_combiner/compound_tone
@@ -79693,7 +79651,7 @@ func _īAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [īĪ]/[iI] (macron_combiner/compound_tone)
+	// [īĪ]/i (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [īĪ]
@@ -79706,15 +79664,15 @@ func _īAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (macron_combiner/compound_tone)
+		// i (macron_combiner/compound_tone)
 		{
 			var node5 string
-			// [iI]
-			if r, w := _next(parser, pos); r != 'i' && r != 'I' {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (macron_combiner/compound_tone)
@@ -79763,7 +79721,7 @@ func _ōAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ōŌ]/[oO] (macron_combiner/compound_tone)
+	// [ōŌ]/o (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [ōŌ]
@@ -79776,13 +79734,10 @@ func _ōAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (macron_combiner/compound_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
-			perr = _max(perr, pos)
+		// o (macron_combiner/compound_tone)
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		// macron_combiner/compound_tone
@@ -79828,7 +79783,7 @@ func _ōNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ō"}
-	// [ōŌ]/[oO] (macron_combiner/compound_tone)
+	// [ōŌ]/o (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -79843,13 +79798,10 @@ func _ōNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [oO] (macron_combiner/compound_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
+		// o (macron_combiner/compound_tone)
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		{
@@ -79905,7 +79857,7 @@ func _ōFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ō}
-	// [ōŌ]/[oO] (macron_combiner/compound_tone)
+	// [ōŌ]/o (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [ōŌ]
@@ -79923,18 +79875,10 @@ func _ōFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (macron_combiner/compound_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[oO]",
-				})
-			}
+		// o (macron_combiner/compound_tone)
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		// macron_combiner/compound_tone
@@ -79983,7 +79927,7 @@ func _ōAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ōŌ]/[oO] (macron_combiner/compound_tone)
+	// [ōŌ]/o (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [ōŌ]
@@ -79996,15 +79940,15 @@ func _ōAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (macron_combiner/compound_tone)
+		// o (macron_combiner/compound_tone)
 		{
 			var node5 string
-			// [oO]
-			if r, w := _next(parser, pos); r != 'o' && r != 'O' {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (macron_combiner/compound_tone)
@@ -80053,7 +79997,7 @@ func _ēAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ēĒ]/[eE] (macron_combiner/compound_tone)
+	// [ēĒ]/e (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [ēĒ]
@@ -80066,13 +80010,10 @@ func _ēAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (macron_combiner/compound_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
-			perr = _max(perr, pos)
+		// e (macron_combiner/compound_tone)
+		// e
+		if !_accept(parser, _eAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		// macron_combiner/compound_tone
@@ -80118,7 +80059,7 @@ func _ēNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ē"}
-	// [ēĒ]/[eE] (macron_combiner/compound_tone)
+	// [ēĒ]/e (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -80133,13 +80074,10 @@ func _ēNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [eE] (macron_combiner/compound_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
+		// e (macron_combiner/compound_tone)
+		// e
+		if !_node(parser, _eNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		{
@@ -80195,7 +80133,7 @@ func _ēFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ē}
-	// [ēĒ]/[eE] (macron_combiner/compound_tone)
+	// [ēĒ]/e (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [ēĒ]
@@ -80213,18 +80151,10 @@ func _ēFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (macron_combiner/compound_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[eE]",
-				})
-			}
+		// e (macron_combiner/compound_tone)
+		// e
+		if !_fail(parser, _eFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (macron_combiner/compound_tone)
 		// macron_combiner/compound_tone
@@ -80273,7 +80203,7 @@ func _ēAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ēĒ]/[eE] (macron_combiner/compound_tone)
+	// [ēĒ]/e (macron_combiner/compound_tone)
 	{
 		pos2 := pos
 		// [ēĒ]
@@ -80286,15 +80216,15 @@ func _ēAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (macron_combiner/compound_tone)
+		// e (macron_combiner/compound_tone)
 		{
 			var node5 string
-			// [eE]
-			if r, w := _next(parser, pos); r != 'e' && r != 'E' {
+			// e
+			if p, n := _eAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (macron_combiner/compound_tone)
@@ -80539,7 +80469,7 @@ func _áAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [áÁ]/[aA] (acute_combiner/arg_tone)
+	// [áÁ]/a (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [áÁ]
@@ -80552,13 +80482,10 @@ func _áAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (acute_combiner/arg_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
-			perr = _max(perr, pos)
+		// a (acute_combiner/arg_tone)
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		// acute_combiner/arg_tone
@@ -80604,7 +80531,7 @@ func _áNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "á"}
-	// [áÁ]/[aA] (acute_combiner/arg_tone)
+	// [áÁ]/a (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -80619,13 +80546,10 @@ func _áNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [aA] (acute_combiner/arg_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
+		// a (acute_combiner/arg_tone)
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		{
@@ -80681,7 +80605,7 @@ func _áFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _á}
-	// [áÁ]/[aA] (acute_combiner/arg_tone)
+	// [áÁ]/a (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [áÁ]
@@ -80699,18 +80623,10 @@ func _áFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (acute_combiner/arg_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[aA]",
-				})
-			}
+		// a (acute_combiner/arg_tone)
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		// acute_combiner/arg_tone
@@ -80759,7 +80675,7 @@ func _áAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [áÁ]/[aA] (acute_combiner/arg_tone)
+	// [áÁ]/a (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [áÁ]
@@ -80772,15 +80688,15 @@ func _áAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (acute_combiner/arg_tone)
+		// a (acute_combiner/arg_tone)
 		{
 			var node5 string
-			// [aA]
-			if r, w := _next(parser, pos); r != 'a' && r != 'A' {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (acute_combiner/arg_tone)
@@ -80829,7 +80745,7 @@ func _úAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [úÚ]/[uU] (acute_combiner/arg_tone)
+	// [úÚ]/u (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [úÚ]
@@ -80842,13 +80758,10 @@ func _úAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (acute_combiner/arg_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
-			perr = _max(perr, pos)
+		// u (acute_combiner/arg_tone)
+		// u
+		if !_accept(parser, _uAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		// acute_combiner/arg_tone
@@ -80894,7 +80807,7 @@ func _úNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ú"}
-	// [úÚ]/[uU] (acute_combiner/arg_tone)
+	// [úÚ]/u (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -80909,13 +80822,10 @@ func _úNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [uU] (acute_combiner/arg_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
+		// u (acute_combiner/arg_tone)
+		// u
+		if !_node(parser, _uNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		{
@@ -80971,7 +80881,7 @@ func _úFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ú}
-	// [úÚ]/[uU] (acute_combiner/arg_tone)
+	// [úÚ]/u (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [úÚ]
@@ -80989,18 +80899,10 @@ func _úFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (acute_combiner/arg_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[uU]",
-				})
-			}
+		// u (acute_combiner/arg_tone)
+		// u
+		if !_fail(parser, _uFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		// acute_combiner/arg_tone
@@ -81049,7 +80951,7 @@ func _úAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [úÚ]/[uU] (acute_combiner/arg_tone)
+	// [úÚ]/u (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [úÚ]
@@ -81062,15 +80964,15 @@ func _úAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (acute_combiner/arg_tone)
+		// u (acute_combiner/arg_tone)
 		{
 			var node5 string
-			// [uU]
-			if r, w := _next(parser, pos); r != 'u' && r != 'U' {
+			// u
+			if p, n := _uAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (acute_combiner/arg_tone)
@@ -81119,7 +81021,7 @@ func _íAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [íÍ]/[iI] (acute_combiner/arg_tone)
+	// [íÍ]/i (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [íÍ]
@@ -81132,13 +81034,10 @@ func _íAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (acute_combiner/arg_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
-			perr = _max(perr, pos)
+		// i (acute_combiner/arg_tone)
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		// acute_combiner/arg_tone
@@ -81184,7 +81083,7 @@ func _íNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "í"}
-	// [íÍ]/[iI] (acute_combiner/arg_tone)
+	// [íÍ]/i (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -81199,13 +81098,10 @@ func _íNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [iI] (acute_combiner/arg_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
+		// i (acute_combiner/arg_tone)
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		{
@@ -81261,7 +81157,7 @@ func _íFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _í}
-	// [íÍ]/[iI] (acute_combiner/arg_tone)
+	// [íÍ]/i (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [íÍ]
@@ -81279,18 +81175,10 @@ func _íFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (acute_combiner/arg_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[iI]",
-				})
-			}
+		// i (acute_combiner/arg_tone)
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		// acute_combiner/arg_tone
@@ -81339,7 +81227,7 @@ func _íAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [íÍ]/[iI] (acute_combiner/arg_tone)
+	// [íÍ]/i (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [íÍ]
@@ -81352,15 +81240,15 @@ func _íAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (acute_combiner/arg_tone)
+		// i (acute_combiner/arg_tone)
 		{
 			var node5 string
-			// [iI]
-			if r, w := _next(parser, pos); r != 'i' && r != 'I' {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (acute_combiner/arg_tone)
@@ -81409,7 +81297,7 @@ func _óAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [óÓ]/[oO] (acute_combiner/arg_tone)
+	// [óÓ]/o (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [óÓ]
@@ -81422,13 +81310,10 @@ func _óAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (acute_combiner/arg_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
-			perr = _max(perr, pos)
+		// o (acute_combiner/arg_tone)
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		// acute_combiner/arg_tone
@@ -81474,7 +81359,7 @@ func _óNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ó"}
-	// [óÓ]/[oO] (acute_combiner/arg_tone)
+	// [óÓ]/o (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -81489,13 +81374,10 @@ func _óNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [oO] (acute_combiner/arg_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
+		// o (acute_combiner/arg_tone)
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		{
@@ -81551,7 +81433,7 @@ func _óFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ó}
-	// [óÓ]/[oO] (acute_combiner/arg_tone)
+	// [óÓ]/o (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [óÓ]
@@ -81569,18 +81451,10 @@ func _óFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (acute_combiner/arg_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[oO]",
-				})
-			}
+		// o (acute_combiner/arg_tone)
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		// acute_combiner/arg_tone
@@ -81629,7 +81503,7 @@ func _óAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [óÓ]/[oO] (acute_combiner/arg_tone)
+	// [óÓ]/o (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [óÓ]
@@ -81642,15 +81516,15 @@ func _óAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (acute_combiner/arg_tone)
+		// o (acute_combiner/arg_tone)
 		{
 			var node5 string
-			// [oO]
-			if r, w := _next(parser, pos); r != 'o' && r != 'O' {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (acute_combiner/arg_tone)
@@ -81699,7 +81573,7 @@ func _éAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [éÉ]/[eE] (acute_combiner/arg_tone)
+	// [éÉ]/e (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [éÉ]
@@ -81712,13 +81586,10 @@ func _éAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (acute_combiner/arg_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
-			perr = _max(perr, pos)
+		// e (acute_combiner/arg_tone)
+		// e
+		if !_accept(parser, _eAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		// acute_combiner/arg_tone
@@ -81764,7 +81635,7 @@ func _éNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "é"}
-	// [éÉ]/[eE] (acute_combiner/arg_tone)
+	// [éÉ]/e (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -81779,13 +81650,10 @@ func _éNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [eE] (acute_combiner/arg_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
+		// e (acute_combiner/arg_tone)
+		// e
+		if !_node(parser, _eNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		{
@@ -81841,7 +81709,7 @@ func _éFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _é}
-	// [éÉ]/[eE] (acute_combiner/arg_tone)
+	// [éÉ]/e (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [éÉ]
@@ -81859,18 +81727,10 @@ func _éFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (acute_combiner/arg_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[eE]",
-				})
-			}
+		// e (acute_combiner/arg_tone)
+		// e
+		if !_fail(parser, _eFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (acute_combiner/arg_tone)
 		// acute_combiner/arg_tone
@@ -81919,7 +81779,7 @@ func _éAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [éÉ]/[eE] (acute_combiner/arg_tone)
+	// [éÉ]/e (acute_combiner/arg_tone)
 	{
 		pos2 := pos
 		// [éÉ]
@@ -81932,15 +81792,15 @@ func _éAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (acute_combiner/arg_tone)
+		// e (acute_combiner/arg_tone)
 		{
 			var node5 string
-			// [eE]
-			if r, w := _next(parser, pos); r != 'e' && r != 'E' {
+			// e
+			if p, n := _eAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (acute_combiner/arg_tone)
@@ -82185,7 +82045,7 @@ func _ǎAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ǎǍ]/[aA] (caron_combiner/breve_combiner/relative_tone)
+	// [ǎǍ]/a (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ǎǍ]
@@ -82198,13 +82058,10 @@ func _ǎAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (caron_combiner/breve_combiner/relative_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
-			perr = _max(perr, pos)
+		// a (caron_combiner/breve_combiner/relative_tone)
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		// caron_combiner/breve_combiner/relative_tone
@@ -82257,7 +82114,7 @@ func _ǎNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ǎ"}
-	// [ǎǍ]/[aA] (caron_combiner/breve_combiner/relative_tone)
+	// [ǎǍ]/a (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -82272,13 +82129,10 @@ func _ǎNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [aA] (caron_combiner/breve_combiner/relative_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
+		// a (caron_combiner/breve_combiner/relative_tone)
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		{
@@ -82342,7 +82196,7 @@ func _ǎFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ǎ}
-	// [ǎǍ]/[aA] (caron_combiner/breve_combiner/relative_tone)
+	// [ǎǍ]/a (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ǎǍ]
@@ -82360,18 +82214,10 @@ func _ǎFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (caron_combiner/breve_combiner/relative_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[aA]",
-				})
-			}
+		// a (caron_combiner/breve_combiner/relative_tone)
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		// caron_combiner/breve_combiner/relative_tone
@@ -82427,7 +82273,7 @@ func _ǎAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ǎǍ]/[aA] (caron_combiner/breve_combiner/relative_tone)
+	// [ǎǍ]/a (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ǎǍ]
@@ -82440,15 +82286,15 @@ func _ǎAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (caron_combiner/breve_combiner/relative_tone)
+		// a (caron_combiner/breve_combiner/relative_tone)
 		{
 			var node5 string
-			// [aA]
-			if r, w := _next(parser, pos); r != 'a' && r != 'A' {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (caron_combiner/breve_combiner/relative_tone)
@@ -82507,7 +82353,7 @@ func _ǔAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ǔǓ]/[uU] (caron_combiner/breve_combiner/relative_tone)
+	// [ǔǓ]/u (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ǔǓ]
@@ -82520,13 +82366,10 @@ func _ǔAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (caron_combiner/breve_combiner/relative_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
-			perr = _max(perr, pos)
+		// u (caron_combiner/breve_combiner/relative_tone)
+		// u
+		if !_accept(parser, _uAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		// caron_combiner/breve_combiner/relative_tone
@@ -82579,7 +82422,7 @@ func _ǔNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ǔ"}
-	// [ǔǓ]/[uU] (caron_combiner/breve_combiner/relative_tone)
+	// [ǔǓ]/u (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -82594,13 +82437,10 @@ func _ǔNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [uU] (caron_combiner/breve_combiner/relative_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
+		// u (caron_combiner/breve_combiner/relative_tone)
+		// u
+		if !_node(parser, _uNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		{
@@ -82664,7 +82504,7 @@ func _ǔFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ǔ}
-	// [ǔǓ]/[uU] (caron_combiner/breve_combiner/relative_tone)
+	// [ǔǓ]/u (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ǔǓ]
@@ -82682,18 +82522,10 @@ func _ǔFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (caron_combiner/breve_combiner/relative_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[uU]",
-				})
-			}
+		// u (caron_combiner/breve_combiner/relative_tone)
+		// u
+		if !_fail(parser, _uFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		// caron_combiner/breve_combiner/relative_tone
@@ -82749,7 +82581,7 @@ func _ǔAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ǔǓ]/[uU] (caron_combiner/breve_combiner/relative_tone)
+	// [ǔǓ]/u (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ǔǓ]
@@ -82762,15 +82594,15 @@ func _ǔAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (caron_combiner/breve_combiner/relative_tone)
+		// u (caron_combiner/breve_combiner/relative_tone)
 		{
 			var node5 string
-			// [uU]
-			if r, w := _next(parser, pos); r != 'u' && r != 'U' {
+			// u
+			if p, n := _uAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (caron_combiner/breve_combiner/relative_tone)
@@ -82829,7 +82661,7 @@ func _ǐAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ǐǏ]/[iI] (caron_combiner/breve_combiner/relative_tone)
+	// [ǐǏ]/i (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ǐǏ]
@@ -82842,13 +82674,10 @@ func _ǐAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (caron_combiner/breve_combiner/relative_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
-			perr = _max(perr, pos)
+		// i (caron_combiner/breve_combiner/relative_tone)
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		// caron_combiner/breve_combiner/relative_tone
@@ -82901,7 +82730,7 @@ func _ǐNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ǐ"}
-	// [ǐǏ]/[iI] (caron_combiner/breve_combiner/relative_tone)
+	// [ǐǏ]/i (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -82916,13 +82745,10 @@ func _ǐNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [iI] (caron_combiner/breve_combiner/relative_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
+		// i (caron_combiner/breve_combiner/relative_tone)
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		{
@@ -82986,7 +82812,7 @@ func _ǐFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ǐ}
-	// [ǐǏ]/[iI] (caron_combiner/breve_combiner/relative_tone)
+	// [ǐǏ]/i (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ǐǏ]
@@ -83004,18 +82830,10 @@ func _ǐFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (caron_combiner/breve_combiner/relative_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[iI]",
-				})
-			}
+		// i (caron_combiner/breve_combiner/relative_tone)
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		// caron_combiner/breve_combiner/relative_tone
@@ -83071,7 +82889,7 @@ func _ǐAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ǐǏ]/[iI] (caron_combiner/breve_combiner/relative_tone)
+	// [ǐǏ]/i (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ǐǏ]
@@ -83084,15 +82902,15 @@ func _ǐAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (caron_combiner/breve_combiner/relative_tone)
+		// i (caron_combiner/breve_combiner/relative_tone)
 		{
 			var node5 string
-			// [iI]
-			if r, w := _next(parser, pos); r != 'i' && r != 'I' {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (caron_combiner/breve_combiner/relative_tone)
@@ -83151,7 +82969,7 @@ func _ǒAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ǒǑ]/[oO] (caron_combiner/breve_combiner/relative_tone)
+	// [ǒǑ]/o (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ǒǑ]
@@ -83164,13 +82982,10 @@ func _ǒAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (caron_combiner/breve_combiner/relative_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
-			perr = _max(perr, pos)
+		// o (caron_combiner/breve_combiner/relative_tone)
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		// caron_combiner/breve_combiner/relative_tone
@@ -83223,7 +83038,7 @@ func _ǒNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ǒ"}
-	// [ǒǑ]/[oO] (caron_combiner/breve_combiner/relative_tone)
+	// [ǒǑ]/o (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -83238,13 +83053,10 @@ func _ǒNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [oO] (caron_combiner/breve_combiner/relative_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
+		// o (caron_combiner/breve_combiner/relative_tone)
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		{
@@ -83308,7 +83120,7 @@ func _ǒFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ǒ}
-	// [ǒǑ]/[oO] (caron_combiner/breve_combiner/relative_tone)
+	// [ǒǑ]/o (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ǒǑ]
@@ -83326,18 +83138,10 @@ func _ǒFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (caron_combiner/breve_combiner/relative_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[oO]",
-				})
-			}
+		// o (caron_combiner/breve_combiner/relative_tone)
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		// caron_combiner/breve_combiner/relative_tone
@@ -83393,7 +83197,7 @@ func _ǒAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ǒǑ]/[oO] (caron_combiner/breve_combiner/relative_tone)
+	// [ǒǑ]/o (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ǒǑ]
@@ -83406,15 +83210,15 @@ func _ǒAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (caron_combiner/breve_combiner/relative_tone)
+		// o (caron_combiner/breve_combiner/relative_tone)
 		{
 			var node5 string
-			// [oO]
-			if r, w := _next(parser, pos); r != 'o' && r != 'O' {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (caron_combiner/breve_combiner/relative_tone)
@@ -83473,7 +83277,7 @@ func _ěAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ěĚ]/[eE] (caron_combiner/breve_combiner/relative_tone)
+	// [ěĚ]/e (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ěĚ]
@@ -83486,13 +83290,10 @@ func _ěAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (caron_combiner/breve_combiner/relative_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
-			perr = _max(perr, pos)
+		// e (caron_combiner/breve_combiner/relative_tone)
+		// e
+		if !_accept(parser, _eAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		// caron_combiner/breve_combiner/relative_tone
@@ -83545,7 +83346,7 @@ func _ěNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ě"}
-	// [ěĚ]/[eE] (caron_combiner/breve_combiner/relative_tone)
+	// [ěĚ]/e (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -83560,13 +83361,10 @@ func _ěNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [eE] (caron_combiner/breve_combiner/relative_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
+		// e (caron_combiner/breve_combiner/relative_tone)
+		// e
+		if !_node(parser, _eNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		{
@@ -83630,7 +83428,7 @@ func _ěFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ě}
-	// [ěĚ]/[eE] (caron_combiner/breve_combiner/relative_tone)
+	// [ěĚ]/e (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ěĚ]
@@ -83648,18 +83446,10 @@ func _ěFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (caron_combiner/breve_combiner/relative_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[eE]",
-				})
-			}
+		// e (caron_combiner/breve_combiner/relative_tone)
+		// e
+		if !_fail(parser, _eFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (caron_combiner/breve_combiner/relative_tone)
 		// caron_combiner/breve_combiner/relative_tone
@@ -83715,7 +83505,7 @@ func _ěAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ěĚ]/[eE] (caron_combiner/breve_combiner/relative_tone)
+	// [ěĚ]/e (caron_combiner/breve_combiner/relative_tone)
 	{
 		pos2 := pos
 		// [ěĚ]
@@ -83728,15 +83518,15 @@ func _ěAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (caron_combiner/breve_combiner/relative_tone)
+		// e (caron_combiner/breve_combiner/relative_tone)
 		{
 			var node5 string
-			// [eE]
-			if r, w := _next(parser, pos); r != 'e' && r != 'E' {
+			// e
+			if p, n := _eAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (caron_combiner/breve_combiner/relative_tone)
@@ -84089,7 +83879,7 @@ func _ảAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ảẢ]/[aA] (hook_combiner/verb_tone)
+	// [ảẢ]/a (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ảẢ]
@@ -84102,13 +83892,10 @@ func _ảAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (hook_combiner/verb_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
-			perr = _max(perr, pos)
+		// a (hook_combiner/verb_tone)
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		// hook_combiner/verb_tone
@@ -84154,7 +83941,7 @@ func _ảNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ả"}
-	// [ảẢ]/[aA] (hook_combiner/verb_tone)
+	// [ảẢ]/a (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -84169,13 +83956,10 @@ func _ảNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [aA] (hook_combiner/verb_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
+		// a (hook_combiner/verb_tone)
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		{
@@ -84231,7 +84015,7 @@ func _ảFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ả}
-	// [ảẢ]/[aA] (hook_combiner/verb_tone)
+	// [ảẢ]/a (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ảẢ]
@@ -84249,18 +84033,10 @@ func _ảFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (hook_combiner/verb_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[aA]",
-				})
-			}
+		// a (hook_combiner/verb_tone)
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		// hook_combiner/verb_tone
@@ -84309,7 +84085,7 @@ func _ảAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ảẢ]/[aA] (hook_combiner/verb_tone)
+	// [ảẢ]/a (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ảẢ]
@@ -84322,15 +84098,15 @@ func _ảAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (hook_combiner/verb_tone)
+		// a (hook_combiner/verb_tone)
 		{
 			var node5 string
-			// [aA]
-			if r, w := _next(parser, pos); r != 'a' && r != 'A' {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (hook_combiner/verb_tone)
@@ -84379,7 +84155,7 @@ func _ủAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ủỦ]/[uU] (hook_combiner/verb_tone)
+	// [ủỦ]/u (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ủỦ]
@@ -84392,13 +84168,10 @@ func _ủAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (hook_combiner/verb_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
-			perr = _max(perr, pos)
+		// u (hook_combiner/verb_tone)
+		// u
+		if !_accept(parser, _uAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		// hook_combiner/verb_tone
@@ -84444,7 +84217,7 @@ func _ủNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ủ"}
-	// [ủỦ]/[uU] (hook_combiner/verb_tone)
+	// [ủỦ]/u (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -84459,13 +84232,10 @@ func _ủNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [uU] (hook_combiner/verb_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
+		// u (hook_combiner/verb_tone)
+		// u
+		if !_node(parser, _uNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		{
@@ -84521,7 +84291,7 @@ func _ủFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ủ}
-	// [ủỦ]/[uU] (hook_combiner/verb_tone)
+	// [ủỦ]/u (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ủỦ]
@@ -84539,18 +84309,10 @@ func _ủFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (hook_combiner/verb_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[uU]",
-				})
-			}
+		// u (hook_combiner/verb_tone)
+		// u
+		if !_fail(parser, _uFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		// hook_combiner/verb_tone
@@ -84599,7 +84361,7 @@ func _ủAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ủỦ]/[uU] (hook_combiner/verb_tone)
+	// [ủỦ]/u (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ủỦ]
@@ -84612,15 +84374,15 @@ func _ủAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (hook_combiner/verb_tone)
+		// u (hook_combiner/verb_tone)
 		{
 			var node5 string
-			// [uU]
-			if r, w := _next(parser, pos); r != 'u' && r != 'U' {
+			// u
+			if p, n := _uAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (hook_combiner/verb_tone)
@@ -84669,7 +84431,7 @@ func _ỉAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ỉỈ]/[iI] (hook_combiner/verb_tone)
+	// [ỉỈ]/i (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ỉỈ]
@@ -84682,13 +84444,10 @@ func _ỉAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (hook_combiner/verb_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
-			perr = _max(perr, pos)
+		// i (hook_combiner/verb_tone)
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		// hook_combiner/verb_tone
@@ -84734,7 +84493,7 @@ func _ỉNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ỉ"}
-	// [ỉỈ]/[iI] (hook_combiner/verb_tone)
+	// [ỉỈ]/i (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -84749,13 +84508,10 @@ func _ỉNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [iI] (hook_combiner/verb_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
+		// i (hook_combiner/verb_tone)
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		{
@@ -84811,7 +84567,7 @@ func _ỉFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ỉ}
-	// [ỉỈ]/[iI] (hook_combiner/verb_tone)
+	// [ỉỈ]/i (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ỉỈ]
@@ -84829,18 +84585,10 @@ func _ỉFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (hook_combiner/verb_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[iI]",
-				})
-			}
+		// i (hook_combiner/verb_tone)
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		// hook_combiner/verb_tone
@@ -84889,7 +84637,7 @@ func _ỉAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ỉỈ]/[iI] (hook_combiner/verb_tone)
+	// [ỉỈ]/i (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ỉỈ]
@@ -84902,15 +84650,15 @@ func _ỉAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (hook_combiner/verb_tone)
+		// i (hook_combiner/verb_tone)
 		{
 			var node5 string
-			// [iI]
-			if r, w := _next(parser, pos); r != 'i' && r != 'I' {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (hook_combiner/verb_tone)
@@ -84959,7 +84707,7 @@ func _ỏAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ỏỎ]/[oO] (hook_combiner/verb_tone)
+	// [ỏỎ]/o (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ỏỎ]
@@ -84972,13 +84720,10 @@ func _ỏAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (hook_combiner/verb_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
-			perr = _max(perr, pos)
+		// o (hook_combiner/verb_tone)
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		// hook_combiner/verb_tone
@@ -85024,7 +84769,7 @@ func _ỏNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ỏ"}
-	// [ỏỎ]/[oO] (hook_combiner/verb_tone)
+	// [ỏỎ]/o (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -85039,13 +84784,10 @@ func _ỏNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [oO] (hook_combiner/verb_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
+		// o (hook_combiner/verb_tone)
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		{
@@ -85101,7 +84843,7 @@ func _ỏFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ỏ}
-	// [ỏỎ]/[oO] (hook_combiner/verb_tone)
+	// [ỏỎ]/o (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ỏỎ]
@@ -85119,18 +84861,10 @@ func _ỏFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (hook_combiner/verb_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[oO]",
-				})
-			}
+		// o (hook_combiner/verb_tone)
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		// hook_combiner/verb_tone
@@ -85179,7 +84913,7 @@ func _ỏAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ỏỎ]/[oO] (hook_combiner/verb_tone)
+	// [ỏỎ]/o (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ỏỎ]
@@ -85192,15 +84926,15 @@ func _ỏAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (hook_combiner/verb_tone)
+		// o (hook_combiner/verb_tone)
 		{
 			var node5 string
-			// [oO]
-			if r, w := _next(parser, pos); r != 'o' && r != 'O' {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (hook_combiner/verb_tone)
@@ -85249,7 +84983,7 @@ func _ẻAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ẻẺ]/[eE] (hook_combiner/verb_tone)
+	// [ẻẺ]/e (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ẻẺ]
@@ -85262,13 +84996,10 @@ func _ẻAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (hook_combiner/verb_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
-			perr = _max(perr, pos)
+		// e (hook_combiner/verb_tone)
+		// e
+		if !_accept(parser, _eAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		// hook_combiner/verb_tone
@@ -85314,7 +85045,7 @@ func _ẻNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ẻ"}
-	// [ẻẺ]/[eE] (hook_combiner/verb_tone)
+	// [ẻẺ]/e (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -85329,13 +85060,10 @@ func _ẻNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [eE] (hook_combiner/verb_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
+		// e (hook_combiner/verb_tone)
+		// e
+		if !_node(parser, _eNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		{
@@ -85391,7 +85119,7 @@ func _ẻFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ẻ}
-	// [ẻẺ]/[eE] (hook_combiner/verb_tone)
+	// [ẻẺ]/e (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ẻẺ]
@@ -85409,18 +85137,10 @@ func _ẻFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (hook_combiner/verb_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[eE]",
-				})
-			}
+		// e (hook_combiner/verb_tone)
+		// e
+		if !_fail(parser, _eFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (hook_combiner/verb_tone)
 		// hook_combiner/verb_tone
@@ -85469,7 +85189,7 @@ func _ẻAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ẻẺ]/[eE] (hook_combiner/verb_tone)
+	// [ẻẺ]/e (hook_combiner/verb_tone)
 	{
 		pos2 := pos
 		// [ẻẺ]
@@ -85482,15 +85202,15 @@ func _ẻAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (hook_combiner/verb_tone)
+		// e (hook_combiner/verb_tone)
 		{
 			var node5 string
-			// [eE]
-			if r, w := _next(parser, pos); r != 'e' && r != 'E' {
+			// e
+			if p, n := _eAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (hook_combiner/verb_tone)
@@ -85735,7 +85455,7 @@ func _âAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [âÂ]/[aA] (circumflex_combiner/content_tone)
+	// [âÂ]/a (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [âÂ]
@@ -85748,13 +85468,10 @@ func _âAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (circumflex_combiner/content_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
-			perr = _max(perr, pos)
+		// a (circumflex_combiner/content_tone)
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		// circumflex_combiner/content_tone
@@ -85800,7 +85517,7 @@ func _âNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "â"}
-	// [âÂ]/[aA] (circumflex_combiner/content_tone)
+	// [âÂ]/a (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -85815,13 +85532,10 @@ func _âNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [aA] (circumflex_combiner/content_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
+		// a (circumflex_combiner/content_tone)
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		{
@@ -85877,7 +85591,7 @@ func _âFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _â}
-	// [âÂ]/[aA] (circumflex_combiner/content_tone)
+	// [âÂ]/a (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [âÂ]
@@ -85895,18 +85609,10 @@ func _âFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (circumflex_combiner/content_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[aA]",
-				})
-			}
+		// a (circumflex_combiner/content_tone)
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		// circumflex_combiner/content_tone
@@ -85955,7 +85661,7 @@ func _âAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [âÂ]/[aA] (circumflex_combiner/content_tone)
+	// [âÂ]/a (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [âÂ]
@@ -85968,15 +85674,15 @@ func _âAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (circumflex_combiner/content_tone)
+		// a (circumflex_combiner/content_tone)
 		{
 			var node5 string
-			// [aA]
-			if r, w := _next(parser, pos); r != 'a' && r != 'A' {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (circumflex_combiner/content_tone)
@@ -86025,7 +85731,7 @@ func _ûAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ûÛ]/[uU] (circumflex_combiner/content_tone)
+	// [ûÛ]/u (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [ûÛ]
@@ -86038,13 +85744,10 @@ func _ûAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (circumflex_combiner/content_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
-			perr = _max(perr, pos)
+		// u (circumflex_combiner/content_tone)
+		// u
+		if !_accept(parser, _uAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		// circumflex_combiner/content_tone
@@ -86090,7 +85793,7 @@ func _ûNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "û"}
-	// [ûÛ]/[uU] (circumflex_combiner/content_tone)
+	// [ûÛ]/u (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -86105,13 +85808,10 @@ func _ûNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [uU] (circumflex_combiner/content_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
+		// u (circumflex_combiner/content_tone)
+		// u
+		if !_node(parser, _uNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		{
@@ -86167,7 +85867,7 @@ func _ûFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _û}
-	// [ûÛ]/[uU] (circumflex_combiner/content_tone)
+	// [ûÛ]/u (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [ûÛ]
@@ -86185,18 +85885,10 @@ func _ûFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (circumflex_combiner/content_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[uU]",
-				})
-			}
+		// u (circumflex_combiner/content_tone)
+		// u
+		if !_fail(parser, _uFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		// circumflex_combiner/content_tone
@@ -86245,7 +85937,7 @@ func _ûAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ûÛ]/[uU] (circumflex_combiner/content_tone)
+	// [ûÛ]/u (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [ûÛ]
@@ -86258,15 +85950,15 @@ func _ûAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (circumflex_combiner/content_tone)
+		// u (circumflex_combiner/content_tone)
 		{
 			var node5 string
-			// [uU]
-			if r, w := _next(parser, pos); r != 'u' && r != 'U' {
+			// u
+			if p, n := _uAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (circumflex_combiner/content_tone)
@@ -86315,7 +86007,7 @@ func _îAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [îÎ]/[iI] (circumflex_combiner/content_tone)
+	// [îÎ]/i (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [îÎ]
@@ -86328,13 +86020,10 @@ func _îAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (circumflex_combiner/content_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
-			perr = _max(perr, pos)
+		// i (circumflex_combiner/content_tone)
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		// circumflex_combiner/content_tone
@@ -86380,7 +86069,7 @@ func _îNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "î"}
-	// [îÎ]/[iI] (circumflex_combiner/content_tone)
+	// [îÎ]/i (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -86395,13 +86084,10 @@ func _îNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [iI] (circumflex_combiner/content_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
+		// i (circumflex_combiner/content_tone)
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		{
@@ -86457,7 +86143,7 @@ func _îFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _î}
-	// [îÎ]/[iI] (circumflex_combiner/content_tone)
+	// [îÎ]/i (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [îÎ]
@@ -86475,18 +86161,10 @@ func _îFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (circumflex_combiner/content_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[iI]",
-				})
-			}
+		// i (circumflex_combiner/content_tone)
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		// circumflex_combiner/content_tone
@@ -86535,7 +86213,7 @@ func _îAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [îÎ]/[iI] (circumflex_combiner/content_tone)
+	// [îÎ]/i (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [îÎ]
@@ -86548,15 +86226,15 @@ func _îAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (circumflex_combiner/content_tone)
+		// i (circumflex_combiner/content_tone)
 		{
 			var node5 string
-			// [iI]
-			if r, w := _next(parser, pos); r != 'i' && r != 'I' {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (circumflex_combiner/content_tone)
@@ -86605,7 +86283,7 @@ func _ôAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ôÔ]/[oO] (circumflex_combiner/content_tone)
+	// [ôÔ]/o (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [ôÔ]
@@ -86618,13 +86296,10 @@ func _ôAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (circumflex_combiner/content_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
-			perr = _max(perr, pos)
+		// o (circumflex_combiner/content_tone)
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		// circumflex_combiner/content_tone
@@ -86670,7 +86345,7 @@ func _ôNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ô"}
-	// [ôÔ]/[oO] (circumflex_combiner/content_tone)
+	// [ôÔ]/o (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -86685,13 +86360,10 @@ func _ôNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [oO] (circumflex_combiner/content_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
+		// o (circumflex_combiner/content_tone)
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		{
@@ -86747,7 +86419,7 @@ func _ôFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ô}
-	// [ôÔ]/[oO] (circumflex_combiner/content_tone)
+	// [ôÔ]/o (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [ôÔ]
@@ -86765,18 +86437,10 @@ func _ôFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (circumflex_combiner/content_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[oO]",
-				})
-			}
+		// o (circumflex_combiner/content_tone)
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		// circumflex_combiner/content_tone
@@ -86825,7 +86489,7 @@ func _ôAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ôÔ]/[oO] (circumflex_combiner/content_tone)
+	// [ôÔ]/o (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [ôÔ]
@@ -86838,15 +86502,15 @@ func _ôAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (circumflex_combiner/content_tone)
+		// o (circumflex_combiner/content_tone)
 		{
 			var node5 string
-			// [oO]
-			if r, w := _next(parser, pos); r != 'o' && r != 'O' {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (circumflex_combiner/content_tone)
@@ -86895,7 +86559,7 @@ func _êAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [êÊ]/[eE] (circumflex_combiner/content_tone)
+	// [êÊ]/e (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [êÊ]
@@ -86908,13 +86572,10 @@ func _êAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (circumflex_combiner/content_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
-			perr = _max(perr, pos)
+		// e (circumflex_combiner/content_tone)
+		// e
+		if !_accept(parser, _eAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		// circumflex_combiner/content_tone
@@ -86960,7 +86621,7 @@ func _êNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ê"}
-	// [êÊ]/[eE] (circumflex_combiner/content_tone)
+	// [êÊ]/e (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -86975,13 +86636,10 @@ func _êNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [eE] (circumflex_combiner/content_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
+		// e (circumflex_combiner/content_tone)
+		// e
+		if !_node(parser, _eNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		{
@@ -87037,7 +86695,7 @@ func _êFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ê}
-	// [êÊ]/[eE] (circumflex_combiner/content_tone)
+	// [êÊ]/e (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [êÊ]
@@ -87055,18 +86713,10 @@ func _êFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (circumflex_combiner/content_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[eE]",
-				})
-			}
+		// e (circumflex_combiner/content_tone)
+		// e
+		if !_fail(parser, _eFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (circumflex_combiner/content_tone)
 		// circumflex_combiner/content_tone
@@ -87115,7 +86765,7 @@ func _êAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [êÊ]/[eE] (circumflex_combiner/content_tone)
+	// [êÊ]/e (circumflex_combiner/content_tone)
 	{
 		pos2 := pos
 		// [êÊ]
@@ -87128,15 +86778,15 @@ func _êAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (circumflex_combiner/content_tone)
+		// e (circumflex_combiner/content_tone)
 		{
 			var node5 string
-			// [eE]
-			if r, w := _next(parser, pos); r != 'e' && r != 'E' {
+			// e
+			if p, n := _eAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (circumflex_combiner/content_tone)
@@ -87381,7 +87031,7 @@ func _àAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [àÀ]/[aA] (grave_combiner/preposition_tone)
+	// [àÀ]/a (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [àÀ]
@@ -87394,13 +87044,10 @@ func _àAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (grave_combiner/preposition_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
-			perr = _max(perr, pos)
+		// a (grave_combiner/preposition_tone)
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		// grave_combiner/preposition_tone
@@ -87446,7 +87093,7 @@ func _àNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "à"}
-	// [àÀ]/[aA] (grave_combiner/preposition_tone)
+	// [àÀ]/a (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -87461,13 +87108,10 @@ func _àNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [aA] (grave_combiner/preposition_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
+		// a (grave_combiner/preposition_tone)
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		{
@@ -87523,7 +87167,7 @@ func _àFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _à}
-	// [àÀ]/[aA] (grave_combiner/preposition_tone)
+	// [àÀ]/a (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [àÀ]
@@ -87541,18 +87185,10 @@ func _àFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (grave_combiner/preposition_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[aA]",
-				})
-			}
+		// a (grave_combiner/preposition_tone)
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		// grave_combiner/preposition_tone
@@ -87601,7 +87237,7 @@ func _àAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [àÀ]/[aA] (grave_combiner/preposition_tone)
+	// [àÀ]/a (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [àÀ]
@@ -87614,15 +87250,15 @@ func _àAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (grave_combiner/preposition_tone)
+		// a (grave_combiner/preposition_tone)
 		{
 			var node5 string
-			// [aA]
-			if r, w := _next(parser, pos); r != 'a' && r != 'A' {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (grave_combiner/preposition_tone)
@@ -87671,7 +87307,7 @@ func _ùAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ùÙ]/[uU] (grave_combiner/preposition_tone)
+	// [ùÙ]/u (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [ùÙ]
@@ -87684,13 +87320,10 @@ func _ùAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (grave_combiner/preposition_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
-			perr = _max(perr, pos)
+		// u (grave_combiner/preposition_tone)
+		// u
+		if !_accept(parser, _uAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		// grave_combiner/preposition_tone
@@ -87736,7 +87369,7 @@ func _ùNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ù"}
-	// [ùÙ]/[uU] (grave_combiner/preposition_tone)
+	// [ùÙ]/u (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -87751,13 +87384,10 @@ func _ùNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [uU] (grave_combiner/preposition_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
+		// u (grave_combiner/preposition_tone)
+		// u
+		if !_node(parser, _uNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		{
@@ -87813,7 +87443,7 @@ func _ùFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ù}
-	// [ùÙ]/[uU] (grave_combiner/preposition_tone)
+	// [ùÙ]/u (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [ùÙ]
@@ -87831,18 +87461,10 @@ func _ùFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (grave_combiner/preposition_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[uU]",
-				})
-			}
+		// u (grave_combiner/preposition_tone)
+		// u
+		if !_fail(parser, _uFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		// grave_combiner/preposition_tone
@@ -87891,7 +87513,7 @@ func _ùAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ùÙ]/[uU] (grave_combiner/preposition_tone)
+	// [ùÙ]/u (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [ùÙ]
@@ -87904,15 +87526,15 @@ func _ùAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (grave_combiner/preposition_tone)
+		// u (grave_combiner/preposition_tone)
 		{
 			var node5 string
-			// [uU]
-			if r, w := _next(parser, pos); r != 'u' && r != 'U' {
+			// u
+			if p, n := _uAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (grave_combiner/preposition_tone)
@@ -87961,7 +87583,7 @@ func _ìAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ìÌ]/[iI] (grave_combiner/preposition_tone)
+	// [ìÌ]/i (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [ìÌ]
@@ -87974,13 +87596,10 @@ func _ìAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (grave_combiner/preposition_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
-			perr = _max(perr, pos)
+		// i (grave_combiner/preposition_tone)
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		// grave_combiner/preposition_tone
@@ -88026,7 +87645,7 @@ func _ìNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ì"}
-	// [ìÌ]/[iI] (grave_combiner/preposition_tone)
+	// [ìÌ]/i (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -88041,13 +87660,10 @@ func _ìNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [iI] (grave_combiner/preposition_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
+		// i (grave_combiner/preposition_tone)
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		{
@@ -88103,7 +87719,7 @@ func _ìFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ì}
-	// [ìÌ]/[iI] (grave_combiner/preposition_tone)
+	// [ìÌ]/i (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [ìÌ]
@@ -88121,18 +87737,10 @@ func _ìFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (grave_combiner/preposition_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[iI]",
-				})
-			}
+		// i (grave_combiner/preposition_tone)
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		// grave_combiner/preposition_tone
@@ -88181,7 +87789,7 @@ func _ìAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ìÌ]/[iI] (grave_combiner/preposition_tone)
+	// [ìÌ]/i (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [ìÌ]
@@ -88194,15 +87802,15 @@ func _ìAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (grave_combiner/preposition_tone)
+		// i (grave_combiner/preposition_tone)
 		{
 			var node5 string
-			// [iI]
-			if r, w := _next(parser, pos); r != 'i' && r != 'I' {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (grave_combiner/preposition_tone)
@@ -88251,7 +87859,7 @@ func _òAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [òÒ]/[oO] (grave_combiner/preposition_tone)
+	// [òÒ]/o (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [òÒ]
@@ -88264,13 +87872,10 @@ func _òAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (grave_combiner/preposition_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
-			perr = _max(perr, pos)
+		// o (grave_combiner/preposition_tone)
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		// grave_combiner/preposition_tone
@@ -88316,7 +87921,7 @@ func _òNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ò"}
-	// [òÒ]/[oO] (grave_combiner/preposition_tone)
+	// [òÒ]/o (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -88331,13 +87936,10 @@ func _òNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [oO] (grave_combiner/preposition_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
+		// o (grave_combiner/preposition_tone)
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		{
@@ -88393,7 +87995,7 @@ func _òFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ò}
-	// [òÒ]/[oO] (grave_combiner/preposition_tone)
+	// [òÒ]/o (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [òÒ]
@@ -88411,18 +88013,10 @@ func _òFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (grave_combiner/preposition_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[oO]",
-				})
-			}
+		// o (grave_combiner/preposition_tone)
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		// grave_combiner/preposition_tone
@@ -88471,7 +88065,7 @@ func _òAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [òÒ]/[oO] (grave_combiner/preposition_tone)
+	// [òÒ]/o (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [òÒ]
@@ -88484,15 +88078,15 @@ func _òAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (grave_combiner/preposition_tone)
+		// o (grave_combiner/preposition_tone)
 		{
 			var node5 string
-			// [oO]
-			if r, w := _next(parser, pos); r != 'o' && r != 'O' {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (grave_combiner/preposition_tone)
@@ -88541,7 +88135,7 @@ func _èAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [èÈ]/[eE] (grave_combiner/preposition_tone)
+	// [èÈ]/e (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [èÈ]
@@ -88554,13 +88148,10 @@ func _èAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (grave_combiner/preposition_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
-			perr = _max(perr, pos)
+		// e (grave_combiner/preposition_tone)
+		// e
+		if !_accept(parser, _eAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		// grave_combiner/preposition_tone
@@ -88606,7 +88197,7 @@ func _èNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "è"}
-	// [èÈ]/[eE] (grave_combiner/preposition_tone)
+	// [èÈ]/e (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -88621,13 +88212,10 @@ func _èNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [eE] (grave_combiner/preposition_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
+		// e (grave_combiner/preposition_tone)
+		// e
+		if !_node(parser, _eNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		{
@@ -88683,7 +88271,7 @@ func _èFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _è}
-	// [èÈ]/[eE] (grave_combiner/preposition_tone)
+	// [èÈ]/e (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [èÈ]
@@ -88701,18 +88289,10 @@ func _èFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (grave_combiner/preposition_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[eE]",
-				})
-			}
+		// e (grave_combiner/preposition_tone)
+		// e
+		if !_fail(parser, _eFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (grave_combiner/preposition_tone)
 		// grave_combiner/preposition_tone
@@ -88761,7 +88341,7 @@ func _èAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [èÈ]/[eE] (grave_combiner/preposition_tone)
+	// [èÈ]/e (grave_combiner/preposition_tone)
 	{
 		pos2 := pos
 		// [èÈ]
@@ -88774,15 +88354,15 @@ func _èAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (grave_combiner/preposition_tone)
+		// e (grave_combiner/preposition_tone)
 		{
 			var node5 string
-			// [eE]
-			if r, w := _next(parser, pos); r != 'e' && r != 'E' {
+			// e
+			if p, n := _eAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (grave_combiner/preposition_tone)
@@ -89027,7 +88607,7 @@ func _ãAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ãÃ]/[aA] (tilde_combiner/adverb_tone)
+	// [ãÃ]/a (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [ãÃ]
@@ -89040,13 +88620,10 @@ func _ãAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (tilde_combiner/adverb_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
-			perr = _max(perr, pos)
+		// a (tilde_combiner/adverb_tone)
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		// tilde_combiner/adverb_tone
@@ -89092,7 +88669,7 @@ func _ãNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ã"}
-	// [ãÃ]/[aA] (tilde_combiner/adverb_tone)
+	// [ãÃ]/a (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -89107,13 +88684,10 @@ func _ãNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [aA] (tilde_combiner/adverb_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
+		// a (tilde_combiner/adverb_tone)
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		{
@@ -89169,7 +88743,7 @@ func _ãFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ã}
-	// [ãÃ]/[aA] (tilde_combiner/adverb_tone)
+	// [ãÃ]/a (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [ãÃ]
@@ -89187,18 +88761,10 @@ func _ãFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (tilde_combiner/adverb_tone)
-		// [aA]
-		if r, w := _next(parser, pos); r != 'a' && r != 'A' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[aA]",
-				})
-			}
+		// a (tilde_combiner/adverb_tone)
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		// tilde_combiner/adverb_tone
@@ -89247,7 +88813,7 @@ func _ãAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ãÃ]/[aA] (tilde_combiner/adverb_tone)
+	// [ãÃ]/a (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [ãÃ]
@@ -89260,15 +88826,15 @@ func _ãAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [aA] (tilde_combiner/adverb_tone)
+		// a (tilde_combiner/adverb_tone)
 		{
 			var node5 string
-			// [aA]
-			if r, w := _next(parser, pos); r != 'a' && r != 'A' {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (tilde_combiner/adverb_tone)
@@ -89317,7 +88883,7 @@ func _ũAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ũŨ]/[uU] (tilde_combiner/adverb_tone)
+	// [ũŨ]/u (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [ũŨ]
@@ -89330,13 +88896,10 @@ func _ũAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (tilde_combiner/adverb_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
-			perr = _max(perr, pos)
+		// u (tilde_combiner/adverb_tone)
+		// u
+		if !_accept(parser, _uAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		// tilde_combiner/adverb_tone
@@ -89382,7 +88945,7 @@ func _ũNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ũ"}
-	// [ũŨ]/[uU] (tilde_combiner/adverb_tone)
+	// [ũŨ]/u (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -89397,13 +88960,10 @@ func _ũNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [uU] (tilde_combiner/adverb_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
+		// u (tilde_combiner/adverb_tone)
+		// u
+		if !_node(parser, _uNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		{
@@ -89459,7 +89019,7 @@ func _ũFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ũ}
-	// [ũŨ]/[uU] (tilde_combiner/adverb_tone)
+	// [ũŨ]/u (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [ũŨ]
@@ -89477,18 +89037,10 @@ func _ũFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (tilde_combiner/adverb_tone)
-		// [uU]
-		if r, w := _next(parser, pos); r != 'u' && r != 'U' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[uU]",
-				})
-			}
+		// u (tilde_combiner/adverb_tone)
+		// u
+		if !_fail(parser, _uFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		// tilde_combiner/adverb_tone
@@ -89537,7 +89089,7 @@ func _ũAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ũŨ]/[uU] (tilde_combiner/adverb_tone)
+	// [ũŨ]/u (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [ũŨ]
@@ -89550,15 +89102,15 @@ func _ũAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [uU] (tilde_combiner/adverb_tone)
+		// u (tilde_combiner/adverb_tone)
 		{
 			var node5 string
-			// [uU]
-			if r, w := _next(parser, pos); r != 'u' && r != 'U' {
+			// u
+			if p, n := _uAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (tilde_combiner/adverb_tone)
@@ -89607,7 +89159,7 @@ func _ĩAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ĩĨ]/[iI] (tilde_combiner/adverb_tone)
+	// [ĩĨ]/i (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [ĩĨ]
@@ -89620,13 +89172,10 @@ func _ĩAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (tilde_combiner/adverb_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
-			perr = _max(perr, pos)
+		// i (tilde_combiner/adverb_tone)
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		// tilde_combiner/adverb_tone
@@ -89672,7 +89221,7 @@ func _ĩNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ĩ"}
-	// [ĩĨ]/[iI] (tilde_combiner/adverb_tone)
+	// [ĩĨ]/i (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -89687,13 +89236,10 @@ func _ĩNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [iI] (tilde_combiner/adverb_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
+		// i (tilde_combiner/adverb_tone)
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		{
@@ -89749,7 +89295,7 @@ func _ĩFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ĩ}
-	// [ĩĨ]/[iI] (tilde_combiner/adverb_tone)
+	// [ĩĨ]/i (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [ĩĨ]
@@ -89767,18 +89313,10 @@ func _ĩFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (tilde_combiner/adverb_tone)
-		// [iI]
-		if r, w := _next(parser, pos); r != 'i' && r != 'I' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[iI]",
-				})
-			}
+		// i (tilde_combiner/adverb_tone)
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		// tilde_combiner/adverb_tone
@@ -89827,7 +89365,7 @@ func _ĩAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ĩĨ]/[iI] (tilde_combiner/adverb_tone)
+	// [ĩĨ]/i (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [ĩĨ]
@@ -89840,15 +89378,15 @@ func _ĩAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [iI] (tilde_combiner/adverb_tone)
+		// i (tilde_combiner/adverb_tone)
 		{
 			var node5 string
-			// [iI]
-			if r, w := _next(parser, pos); r != 'i' && r != 'I' {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (tilde_combiner/adverb_tone)
@@ -89897,7 +89435,7 @@ func _õAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [õÕ]/[oO] (tilde_combiner/adverb_tone)
+	// [õÕ]/o (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [õÕ]
@@ -89910,13 +89448,10 @@ func _õAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (tilde_combiner/adverb_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
-			perr = _max(perr, pos)
+		// o (tilde_combiner/adverb_tone)
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		// tilde_combiner/adverb_tone
@@ -89962,7 +89497,7 @@ func _õNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "õ"}
-	// [õÕ]/[oO] (tilde_combiner/adverb_tone)
+	// [õÕ]/o (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -89977,13 +89512,10 @@ func _õNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [oO] (tilde_combiner/adverb_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
+		// o (tilde_combiner/adverb_tone)
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		{
@@ -90039,7 +89571,7 @@ func _õFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _õ}
-	// [õÕ]/[oO] (tilde_combiner/adverb_tone)
+	// [õÕ]/o (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [õÕ]
@@ -90057,18 +89589,10 @@ func _õFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (tilde_combiner/adverb_tone)
-		// [oO]
-		if r, w := _next(parser, pos); r != 'o' && r != 'O' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[oO]",
-				})
-			}
+		// o (tilde_combiner/adverb_tone)
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		// tilde_combiner/adverb_tone
@@ -90117,7 +89641,7 @@ func _õAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [õÕ]/[oO] (tilde_combiner/adverb_tone)
+	// [õÕ]/o (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [õÕ]
@@ -90130,15 +89654,15 @@ func _õAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [oO] (tilde_combiner/adverb_tone)
+		// o (tilde_combiner/adverb_tone)
 		{
 			var node5 string
-			// [oO]
-			if r, w := _next(parser, pos); r != 'o' && r != 'O' {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (tilde_combiner/adverb_tone)
@@ -90187,7 +89711,7 @@ func _ẽAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ẽẼ]/[eE] (tilde_combiner/adverb_tone)
+	// [ẽẼ]/e (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [ẽẼ]
@@ -90200,13 +89724,10 @@ func _ẽAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (tilde_combiner/adverb_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
-			perr = _max(perr, pos)
+		// e (tilde_combiner/adverb_tone)
+		// e
+		if !_accept(parser, _eAccepts, &pos, &perr) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		// tilde_combiner/adverb_tone
@@ -90252,7 +89773,7 @@ func _ẽNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ẽ"}
-	// [ẽẼ]/[eE] (tilde_combiner/adverb_tone)
+	// [ẽẼ]/e (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		nkids1 := len(node.Kids)
@@ -90267,13 +89788,10 @@ func _ẽNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail3:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
-		// [eE] (tilde_combiner/adverb_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
+		// e (tilde_combiner/adverb_tone)
+		// e
+		if !_node(parser, _eNode, node, &pos) {
 			goto fail4
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		{
@@ -90329,7 +89847,7 @@ func _ẽFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ẽ}
-	// [ẽẼ]/[eE] (tilde_combiner/adverb_tone)
+	// [ẽẼ]/e (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [ẽẼ]
@@ -90347,18 +89865,10 @@ func _ẽFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (tilde_combiner/adverb_tone)
-		// [eE]
-		if r, w := _next(parser, pos); r != 'e' && r != 'E' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[eE]",
-				})
-			}
+		// e (tilde_combiner/adverb_tone)
+		// e
+		if !_fail(parser, _eFail, errPos, failure, &pos) {
 			goto fail4
-		} else {
-			pos += w
 		}
 		// (tilde_combiner/adverb_tone)
 		// tilde_combiner/adverb_tone
@@ -90407,7 +89917,7 @@ func _ẽAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ẽẼ]/[eE] (tilde_combiner/adverb_tone)
+	// [ẽẼ]/e (tilde_combiner/adverb_tone)
 	{
 		pos2 := pos
 		// [ẽẼ]
@@ -90420,15 +89930,15 @@ func _ẽAction(parser *_Parser, start int) (int, *string) {
 		goto ok0
 	fail3:
 		pos = pos2
-		// [eE] (tilde_combiner/adverb_tone)
+		// e (tilde_combiner/adverb_tone)
 		{
 			var node5 string
-			// [eE]
-			if r, w := _next(parser, pos); r != 'e' && r != 'E' {
+			// e
+			if p, n := _eAction(parser, pos); n == nil {
 				goto fail4
 			} else {
-				node5 = parser.text[pos : pos+w]
-				pos += w
+				node5 = *n
+				pos = p
 			}
 			node += node5
 			// (tilde_combiner/adverb_tone)

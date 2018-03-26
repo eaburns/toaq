@@ -324,7 +324,7 @@ DA <- ( d A / m O q / k A / s O / b A ) &( tone? boundary )
 TU <- ( t U / s I a / s A / h I / j A ) &( tone? boundary )
 HA <- ( h A / h U e / h I a / m ) &( tone? boundary )
 
-syllable<desinence, tone> <- initial (desinence / neutral_desinence tone) &boundary
+syllable<desinence, tone> <- initial ( desinence / d:neutral_desinence t:tone string:{ return addTone(d, t) } ) &boundary
 neutral_syllable <- initial neutral_desinence spaces?
 compound_syllable <- syllable<compound_desinence, compound_tone>
 arg_syllable <- syllable<arg_desinence, arg_tone>
@@ -361,62 +361,62 @@ I <- ī / í / ǐ / ỉ / î / ì / ĩ / i
 O <- ō / ó / ǒ / ỏ / ô / ò / õ / o
 E <- ē / é / ě / ẻ / ê / è / ẽ / e
 
-ā <- [āĀ] / a ( macron_combiner / compound_tone )
-ū <- [ūŪ] / u ( macron_combiner / compound_tone )
-ī <- [īĪ] / i ( macron_combiner / compound_tone )
-ō <- [ōŌ] / o ( macron_combiner / compound_tone )
-ē <- [ēĒ] / e ( macron_combiner / compound_tone )
+ā <- [āĀ] / l:a ( macron_combiner / compound_tone ) string:{ return diacritic['-'][l] }
+ū <- [ūŪ] / l:u ( macron_combiner / compound_tone ) string:{ return diacritic['-'][l] }
+ī <- [īĪ] / l:i ( macron_combiner / compound_tone ) string:{ return diacritic['-'][l] }
+ō <- [ōŌ] / l:o ( macron_combiner / compound_tone ) string:{ return diacritic['-'][l] }
+ē <- [ēĒ] / l:e ( macron_combiner / compound_tone ) string:{ return diacritic['-'][l] }
 macron_combiner "\u25CC\u0304" <- "\u0304"
 compound_tone <- [\-1]
 
-á <- [áÁ] / a ( acute_combiner / arg_tone )
-ú <- [úÚ] / u ( acute_combiner / arg_tone )
-í <- [íÍ] / i ( acute_combiner / arg_tone )
-ó <- [óÓ] / o ( acute_combiner / arg_tone )
-é <- [éÉ] / e ( acute_combiner / arg_tone )
+á <- [áÁ] / l:a ( acute_combiner / arg_tone ) string:{ return diacritic['/'][l] }
+ú <- [úÚ] / l:u ( acute_combiner / arg_tone ) string:{ return diacritic['/'][l] }
+í <- [íÍ] / l:i ( acute_combiner / arg_tone ) string:{ return diacritic['/'][l] }
+ó <- [óÓ] / l:o ( acute_combiner / arg_tone ) string:{ return diacritic['/'][l] }
+é <- [éÉ] / l:e ( acute_combiner / arg_tone ) string:{ return diacritic['/'][l] }
 acute_combiner "\u25CC\u0301" <- "\u0301"
 arg_tone <- [/2]
 
 # This also includes the combining breve forms ( \u0306 ),
 # because la jelca is too lazy to fix his keyboard.
-ǎ <- [ǎǍ] / a ( caron_combiner / breve_combiner / relative_tone )
-ǔ <- [ǔǓ] / u ( caron_combiner / breve_combiner / relative_tone )
-ǐ <- [ǐǏ] / i ( caron_combiner / breve_combiner / relative_tone )
-ǒ <- [ǒǑ] / o ( caron_combiner / breve_combiner / relative_tone )
-ě <- [ěĚ] / e ( caron_combiner / breve_combiner / relative_tone )
+ǎ <- [ǎǍ] / l:a ( caron_combiner / breve_combiner / relative_tone ) string:{ return diacritic['V'][l] }
+ǔ <- [ǔǓ] / l:u ( caron_combiner / breve_combiner / relative_tone ) string:{ return diacritic['V'][l] }
+ǐ <- [ǐǏ] / l:i ( caron_combiner / breve_combiner / relative_tone ) string:{ return diacritic['V'][l] }
+ǒ <- [ǒǑ] / l:o ( caron_combiner / breve_combiner / relative_tone ) string:{ return diacritic['V'][l] }
+ě <- [ěĚ] / l:e ( caron_combiner / breve_combiner / relative_tone ) string:{ return diacritic['V'][l] }
 caron_combiner "\u25CC\u030C" <- "\u030C"
 breve_combiner "\u25CC\u0306" <- "\u0306"
 relative_tone <- [V3]
 
-ả <- [ảẢ] / a ( hook_combiner / verb_tone )
-ủ <- [ủỦ] / u ( hook_combiner / verb_tone )
-ỉ <- [ỉỈ] / i ( hook_combiner / verb_tone )
-ỏ <- [ỏỎ] / o ( hook_combiner / verb_tone )
-ẻ <- [ẻẺ] / e ( hook_combiner / verb_tone )
+ả <- [ảẢ] / l:a ( hook_combiner / verb_tone ) string:{ return diacritic['?'][l] }
+ủ <- [ủỦ] / l:u ( hook_combiner / verb_tone ) string:{ return diacritic['?'][l] }
+ỉ <- [ỉỈ] / l:i ( hook_combiner / verb_tone ) string:{ return diacritic['?'][l] }
+ỏ <- [ỏỎ] / l:o ( hook_combiner / verb_tone ) string:{ return diacritic['?'][l] }
+ẻ <- [ẻẺ] / l:e ( hook_combiner / verb_tone ) string:{ return diacritic['?'][l] }
 hook_combiner "\u25CC\u0309" <- "\u0309"
 verb_tone <- [?4]
 
-â <- [âÂ] / a ( circumflex_combiner / content_tone )
-û <- [ûÛ] / u ( circumflex_combiner / content_tone )
-î <- [îÎ] / i ( circumflex_combiner / content_tone )
-ô <- [ôÔ] / o ( circumflex_combiner / content_tone )
-ê <- [êÊ] / e ( circumflex_combiner / content_tone )
+â <- [âÂ] / l:a ( circumflex_combiner / content_tone ) string:{ return diacritic['^'][l] }
+û <- [ûÛ] / l:u ( circumflex_combiner / content_tone ) string:{ return diacritic['^'][l] }
+î <- [îÎ] / l:i ( circumflex_combiner / content_tone ) string:{ return diacritic['^'][l] }
+ô <- [ôÔ] / l:o ( circumflex_combiner / content_tone ) string:{ return diacritic['^'][l] }
+ê <- [êÊ] / l:e ( circumflex_combiner / content_tone ) string:{ return diacritic['^'][l] }
 circumflex_combiner "\u25CC\u0302" <- "\u0302"
 content_tone <- [5\^]
 
-à <- [àÀ] / a ( grave_combiner / preposition_tone )
-ù <- [ùÙ] / u ( grave_combiner / preposition_tone )
-ì <- [ìÌ] / i ( grave_combiner / preposition_tone )
-ò <- [òÒ] / o ( grave_combiner / preposition_tone )
-è <- [èÈ] / e ( grave_combiner / preposition_tone )
+à <- [àÀ] / l:a ( grave_combiner / preposition_tone ) string:{ return diacritic['\\'][l] }
+ù <- [ùÙ] / l:u ( grave_combiner / preposition_tone ) string:{ return diacritic['\\'][l] }
+ì <- [ìÌ] / l:i ( grave_combiner / preposition_tone ) string:{ return diacritic['\\'][l] }
+ò <- [òÒ] / l:o ( grave_combiner / preposition_tone ) string:{ return diacritic['\\'][l] }
+è <- [èÈ] / l:e ( grave_combiner / preposition_tone ) string:{ return diacritic['\\'][l] }
 grave_combiner "\u25CC\u0300" <- "\u0300"
 preposition_tone <- [\\6]
 
-ã <- [ãÃ] / a ( tilde_combiner / adverb_tone )
-ũ <- [ũŨ] / u ( tilde_combiner / adverb_tone )
-ĩ <- [ĩĨ] / i ( tilde_combiner / adverb_tone )
-õ <- [õÕ] / o ( tilde_combiner / adverb_tone )
-ẽ <- [ẽẼ] / e ( tilde_combiner / adverb_tone )
+ã <- [ãÃ] / l:a ( tilde_combiner / adverb_tone ) string:{ return diacritic['~'][l] }
+ũ <- [ũŨ] / l:u ( tilde_combiner / adverb_tone ) string:{ return diacritic['~'][l] }
+ĩ <- [ĩĨ] / l:i ( tilde_combiner / adverb_tone ) string:{ return diacritic['~'][l] }
+õ <- [õÕ] / l:o ( tilde_combiner / adverb_tone ) string:{ return diacritic['~'][l] }
+ẽ <- [ẽẼ] / l:e ( tilde_combiner / adverb_tone ) string:{ return diacritic['~'][l] }
 tilde_combiner "\u25CC\u0303" <- "\u0303"
 adverb_tone <- [~7]
 
@@ -428,7 +428,7 @@ e <- [eE]
 f <- [fF]
 g <- [gG]
 h <- [hH]
-i <- [ıiI]
+i <- l:[ıiI] string:{ if l == "i" { return "ı" }; return l }
 j <- [jJ]
 k <- [kK]
 l <- [lL]

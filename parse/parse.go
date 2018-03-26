@@ -26,6 +26,11 @@ func (txt *Text) ParseTree() *peg.Node {
 	return t
 }
 
+func (txt *Text) String() string {
+	_, str := _full_textAction(txt._Parser, 0)
+	return *str
+}
+
 // An Error is a parse error.
 type Error interface {
 	error

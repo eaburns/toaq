@@ -31,4 +31,6 @@ func main() {
 		os.Exit(1)
 	}
 	peg.PrettyWrite(os.Stdout, text.ParseTree())
+	os.Stdout.WriteString("\n")
+	os.Stdout.WriteString(text.String())
 }

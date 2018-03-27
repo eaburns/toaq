@@ -2,7 +2,7 @@
 // For Acme users:
 // Font /mnt/font/FreeSans/11a/font
 
-package parse
+package parser
 
 import "github.com/eaburns/peggy/peg"
 
@@ -52669,8 +52669,8 @@ fail:
 func _syllable__relative_desinence__relative_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label1 string
 	var label0 string
+	var label1 string
 	dp := parser.deltaPos[start][_syllable__relative_desinence__relative_tone]
 	if dp < 0 {
 		return -1, nil
@@ -53377,8 +53377,8 @@ fail:
 func _syllable__content_desinence__content_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label1 string
 	var label0 string
+	var label1 string
 	dp := parser.deltaPos[start][_syllable__content_desinence__content_tone]
 	if dp < 0 {
 		return -1, nil

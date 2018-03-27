@@ -3,7 +3,7 @@
 	// For Acme users:
 	// Font /mnt/font/FreeSans/11a/font
 
-	package parse
+	package parser
 	import "github.com/eaburns/peggy/peg"
 }
 

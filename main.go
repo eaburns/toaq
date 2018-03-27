@@ -3,34 +3,47 @@ package main
 
 import (
 	"fmt"
+	"io"
+	"io/ioutil"
 	"os"
 
 	"github.com/eaburns/peggy/peg"
-	"github.com/eaburns/toaq/parse"
+	"github.com/eaburns/toaq/parser"
 )
 
 func main() {
-	var err error
-	var text *parse.Text
+	var path string
+	var in io.Reader = os.Stdin
 	if len(os.Args) > 1 {
-		text, err = parse.File(os.Args[1])
-	} else {
-		text, err = parse.Input(os.Stdin)
-	}
-	if err != nil {
-		parseErr, ok := err.(parse.Error)
-		if !ok {
-			fmt.Println("failed to read input:", err)
+		path = os.Args[1]
+		f, err := os.Open(path)
+		if err != nil {
+			fmt.Printf("failed to open %s: %v", path, err)
 			os.Exit(1)
 		}
-		failTree := parseErr.FailTree()
+		defer f.Close()
+		in = f
+	}
+	data, err := ioutil.ReadAll(in)
+	if err != nil {
+		fmt.Printf("failed to read input: %v", err)
+		os.Exit(1)
+	}
+	p := parser.New(string(data))
+	parseTree, err := p.Tree()
+	if err != nil {
+		failTree := err.(parser.Error).Tree()
 		peg.DedupFails(failTree)
 		peg.PrettyWrite(os.Stdout, failTree)
 		os.Stdout.WriteString("\n")
-		fmt.Println(parseErr)
+		fmt.Println(err)
 		os.Exit(1)
 	}
-	peg.PrettyWrite(os.Stdout, text.ParseTree())
+	peg.PrettyWrite(os.Stdout, parseTree)
 	os.Stdout.WriteString("\n")
-	os.Stdout.WriteString(text.String())
+	tree, err := p.Text()
+	if err != nil {
+		panic(err) // can't fail since ParseTree succeeded.
+	}
+	fmt.Println(tree)
 }

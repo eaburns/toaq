@@ -302,27 +302,27 @@ interjection <- &HA neutral_syllable
 # The following function word rules match any tone.
 # The intended use is as the subexpression of a ! or &,
 # followed by the desired syllable tone.
-function_word <- KEO / RA / JU / KIO / KI / TU / DA / BI / NA / LU / MI / PO / MO / TEO / GA / GO / HU
-LU <- ( l U / l I / l O / m A / t I o ) &( tone? boundary )
-MI <- ( m I / s h U ) &( tone? boundary )
-PO <- ( p O / p E ) &( tone? boundary )
-MO <- m O &( tone? boundary )
-TEO <- t E o &( tone? boundary )
-GA <- g A &( tone? boundary )
-NA <- n A &( tone? boundary )
-MU <- m U &( tone? boundary )
-KU <- k U &( tone? boundary )
-KEO <- ( k E o / j E ) &( tone? boundary )
+function_word <- BI / DA / GA / GO / HA / HU / JU / KU / KI / KIO / KEO / LU / MU / MI / MO / NA / PO / RA / TEO / TU
 BI <- ( b I / p A ) &( tone? boundary )
-JU <- j U &( tone? boundary )
-KIO <- k I o &( tone? boundary )
-KI <- k I &( tone? boundary )
-HU <- h U &( tone? boundary )
-GO <- ( g O / f I / c U / k E ) &( tone? boundary )
-RA <- ( r A / r U / r I / r O i / r O / r E ) &( tone? boundary )
 DA <- ( d A / m O q / k A / s O / b A ) &( tone? boundary )
-TU <- ( t U / s I a / s A / h I / j A ) &( tone? boundary )
+GA <- g A &( tone? boundary )
+GO <- ( g O / f I / c U / k E ) &( tone? boundary )
 HA <- ( h A / h U e / h I a / m ) &( tone? boundary )
+HU <- h U &( tone? boundary )
+JU <- j U &( tone? boundary )
+KU <- k U &( tone? boundary )
+KI <- k I &( tone? boundary )
+KIO <- k I o &( tone? boundary )
+KEO <- ( k E o / j E ) &( tone? boundary )
+LU <- ( l U / l I / l O / m A / t I o ) &( tone? boundary )
+MU <- m U &( tone? boundary )
+MI <- ( m I / s h U ) &( tone? boundary )
+MO <- m O &( tone? boundary )
+NA <- n A &( tone? boundary )
+PO <- ( p O / p E ) &( tone? boundary )
+RA <- ( r A / r U / r I / r O i / r O / r E ) &( tone? boundary )
+TEO <- t E o &( tone? boundary )
+TU <- ( t U / s I a / s A / h I / j A ) &( tone? boundary )
 
 syllable<desinence, tone> <- initial ( desinence / d:neutral_desinence t:tone string:{ return addTone(d, t) } ) &boundary
 neutral_syllable <- initial neutral_desinence spaces?

@@ -27,7 +27,7 @@ go test -test.timeout=60s ./... > $o 2>&1 || fail
 echo Linting
 golint ./... \
 	| egrep -v '^parser/.*underscores in Go names'\
-	| egrep -v '^parser/.*(Start|End) should have comment'\
+	| egrep -v '^ast/.*(Start|End|Mod) should have comment'\
 	> $o 2>&1
 # Silly: diff the grepped golint output with empty.
 # If it's non-empty, error, otherwise succeed.

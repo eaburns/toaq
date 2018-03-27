@@ -29,7 +29,8 @@ func main() {
 		fmt.Printf("failed to read input: %v", err)
 		os.Exit(1)
 	}
-	p := parser.New(string(data))
+	text := string(data)
+	p := parser.New(text)
 	parseTree, err := p.Tree()
 	if err != nil {
 		failTree := err.(parser.Error).Tree()
@@ -46,4 +47,18 @@ func main() {
 		panic(err) // can't fail since ParseTree succeeded.
 	}
 	fmt.Println(tree)
+	for i := 0; i < len(text); {
+		fmt.Print(i, ": ")
+		w, d, err := p.Word(i)
+		if err != nil {
+			failTree := err.(parser.Error).Tree()
+			peg.DedupFails(failTree)
+			peg.PrettyWrite(os.Stdout, failTree)
+			os.Stdout.WriteString("\n")
+			fmt.Println(err)
+			os.Exit(1)
+		}
+		fmt.Println(w)
+		i += d
+	}
 }

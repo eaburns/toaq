@@ -4,7 +4,10 @@
 	// Font /mnt/font/FreeSans/11a/font
 
 	package parser
-	import "github.com/eaburns/peggy/peg"
+	import (
+		"github.com/eaburns/peggy/peg"
+		"github.com/eaburns/toaq/ast"
+	)
 }
 
 full_text <- text EOF
@@ -279,6 +282,18 @@ vocative <- vocative_marker spaces? argument
 #
 # Morphology
 #
+
+word <- w:( non_function_word / toned_function_word / neutral_function_word ) s:space_word? "ast.Word":{
+	return ast.Word{S: start, E: end, T: w}.Mod(s).(ast.Word)
+}
+non_function_word <- initial_syllable compound_syllable+ / !function_word initial_syllable
+neutral_function_word <- !toned_function_word &function_word neutral_syllable
+toned_function_word <- !neutral_syllable ( LU / MI / MO / PO )
+# The space_word rule is temporary until the actual space rule can return a word without breaking the types of other rules.
+space_word <- w:spaces "ast.Node":{
+	return ast.Word{S: start, E: end, T: w}
+}
+initial_syllable <- ( arg_syllable / relative_syllable / verb_syllable / content_syllable / preposition_syllable / adverb_syllable )
 
 prefix <- &MU neutral_syllable freemod?
 focus <- &KU neutral_syllable

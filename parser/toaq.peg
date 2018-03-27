@@ -325,7 +325,7 @@ TEO <- t E o &( tone? boundary )
 TU <- ( t U / s I a / s A / h I / j A ) &( tone? boundary )
 
 syllable<desinence, tone> <- initial ( desinence / d:neutral_desinence t:tone string:{ return addTone(d, t) } ) &boundary
-neutral_syllable <- initial neutral_desinence spaces?
+neutral_syllable <- initial neutral_desinence &boundary
 compound_syllable <- syllable<compound_desinence, compound_tone>
 arg_syllable <- syllable<arg_desinence, arg_tone>
 relative_syllable <- syllable<relative_desinence, relative_tone>

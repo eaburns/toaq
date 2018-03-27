@@ -52060,8 +52060,8 @@ fail:
 func _syllable__compound_desinence__compound_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label0 string
 	var label1 string
+	var label0 string
 	dp := parser.deltaPos[start][_syllable__compound_desinence__compound_tone]
 	if dp < 0 {
 		return -1, nil
@@ -53830,8 +53830,8 @@ fail:
 func _syllable__preposition_desinence__preposition_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label0 string
 	var label1 string
+	var label0 string
 	dp := parser.deltaPos[start][_syllable__preposition_desinence__preposition_tone]
 	if dp < 0 {
 		return -1, nil
@@ -54184,8 +54184,8 @@ fail:
 func _syllable__adverb_desinence__adverb_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label0 string
 	var label1 string
+	var label0 string
 	dp := parser.deltaPos[start][_syllable__adverb_desinence__adverb_tone]
 	if dp < 0 {
 		return -1, nil
@@ -54297,7 +54297,7 @@ func _neutral_syllableAccepts(parser *_Parser, start int) (deltaPos, deltaErr in
 		return dp, de
 	}
 	pos, perr := start, -1
-	// initial neutral_desinence spaces?
+	// initial neutral_desinence &boundary
 	// initial
 	if !_accept(parser, _initialAccepts, &pos, &perr) {
 		goto fail
@@ -54306,17 +54306,22 @@ func _neutral_syllableAccepts(parser *_Parser, start int) (deltaPos, deltaErr in
 	if !_accept(parser, _neutral_desinenceAccepts, &pos, &perr) {
 		goto fail
 	}
-	// spaces?
+	// &boundary
 	{
 		pos2 := pos
-		// spaces
-		if !_accept(parser, _spacesAccepts, &pos, &perr) {
-			goto fail3
+		perr4 := perr
+		// boundary
+		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
+			goto fail5
 		}
-		goto ok4
-	fail3:
+		goto ok1
+	fail5:
 		pos = pos2
-	ok4:
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
 	}
 	return _memoize(parser, _neutral_syllable, start, pos, perr)
 fail:
@@ -54335,7 +54340,7 @@ func _neutral_syllableNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "neutral_syllable"}
-	// initial neutral_desinence spaces?
+	// initial neutral_desinence &boundary
 	// initial
 	if !_node(parser, _initialNode, node, &pos) {
 		goto fail
@@ -54344,19 +54349,21 @@ func _neutral_syllableNode(parser *_Parser, start int) (int, *peg.Node) {
 	if !_node(parser, _neutral_desinenceNode, node, &pos) {
 		goto fail
 	}
-	// spaces?
+	// &boundary
 	{
-		nkids1 := len(node.Kids)
 		pos2 := pos
-		// spaces
-		if !_node(parser, _spacesNode, node, &pos) {
-			goto fail3
+		nkids3 := len(node.Kids)
+		// boundary
+		if !_node(parser, _boundaryNode, node, &pos) {
+			goto fail5
 		}
-		goto ok4
-	fail3:
-		node.Kids = node.Kids[:nkids1]
+		goto ok1
+	fail5:
 		pos = pos2
-	ok4:
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
 	}
 	node.Text = parser.text[start:pos]
 	parser.node[key] = node
@@ -54375,7 +54382,7 @@ func _neutral_syllableFail(parser *_Parser, start, errPos int) (int, *peg.Fail) 
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _neutral_syllable}
-	// initial neutral_desinence spaces?
+	// initial neutral_desinence &boundary
 	// initial
 	if !_fail(parser, _initialFail, errPos, failure, &pos) {
 		goto fail
@@ -54384,17 +54391,28 @@ func _neutral_syllableFail(parser *_Parser, start, errPos int) (int, *peg.Fail) 
 	if !_fail(parser, _neutral_desinenceFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// spaces?
+	// &boundary
 	{
 		pos2 := pos
-		// spaces
-		if !_fail(parser, _spacesFail, errPos, failure, &pos) {
-			goto fail3
+		nkids3 := len(failure.Kids)
+		// boundary
+		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
+			goto fail5
 		}
-		goto ok4
-	fail3:
+		goto ok1
+	fail5:
 		pos = pos2
-	ok4:
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&boundary",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
 	}
 	parser.fail[key] = failure
 	return pos, failure
@@ -54416,7 +54434,7 @@ func _neutral_syllableAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// initial neutral_desinence spaces?
+	// initial neutral_desinence &boundary
 	{
 		var node0 string
 		// initial
@@ -54435,21 +54453,22 @@ func _neutral_syllableAction(parser *_Parser, start int) (int, *string) {
 			pos = p
 		}
 		node, node0 = node+node0, ""
-		// spaces?
+		// &boundary
 		{
 			pos2 := pos
-			// spaces
-			if p, n := _spacesAction(parser, pos); n == nil {
-				goto fail3
+			// boundary
+			if p, n := _boundaryAction(parser, pos); n == nil {
+				goto fail5
 			} else {
-				node0 = *n
 				pos = p
 			}
-			goto ok4
-		fail3:
-			node0 = ""
+			goto ok1
+		fail5:
 			pos = pos2
-		ok4:
+			goto fail
+		ok1:
+			pos = pos2
+			node0 = ""
 		}
 		node, node0 = node+node0, ""
 	}

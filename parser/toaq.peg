@@ -29,7 +29,7 @@ coP_sentence <- sentence_1 spaces? co_bar_sentence
 co_bar_sentence <- connective spaces? sentence_1
 forethought_coP_sentence <- forethought_connective spaces? forethought_coP_sentence_1
 forethought_coP_sentence_1 <- sentence spaces? forethought_co_bar_sentence
-forethought_co_bar_sentence <- gik spaces? sentence
+forethought_co_bar_sentence <- forethought_marker spaces? sentence
 statement <- coP_statement / statement_1
 statement_1 <- forethought_coP_statement / statement_2
 statement_2 <- statement_3 end_statement?
@@ -40,7 +40,7 @@ coP_statement <- statement_1 spaces? co_bar_statement
 co_bar_statement <- connective spaces? statement_1
 forethought_coP_statement <- forethought_connective spaces? forethought_coP_statement_1
 forethought_coP_statement_1 <- statement spaces? forethought_co_bar_statement
-forethought_co_bar_statement <- gik spaces? statement
+forethought_co_bar_statement <- forethought_marker spaces? statement
 
 #
 # Predicates
@@ -57,7 +57,7 @@ coP_pred <- predicate_2 spaces? co_bar_pred
 co_bar_pred <- connective spaces? predicate_1
 forethought_coP_pred <- forethought_connective spaces? forethought_coP_pred_1
 forethought_coP_pred_1 <- predicate spaces? forethought_co_bar_pred
-forethought_co_bar_pred <- gik spaces? predicate
+forethought_co_bar_pred <- forethought_marker spaces? predicate
 LU_predicate <- LU_predicate_tone spaces? statement
 LU_predicate_tone <- &LU verb_syllable
 MI_predicate <- MI_predicate_1 spaces? end_predicatizer?
@@ -96,7 +96,7 @@ coP_arg <- arg_1 spaces? co_bar_arg
 co_bar_arg <- connective spaces? argument
 forethought_coP_arg <- forethought_connective spaces? forethought_coP_arg_1
 forethought_coP_arg_1 <- argument spaces? forethought_co_bar_arg
-forethought_co_bar_arg <- gik spaces? argument
+forethought_co_bar_arg <- forethought_marker spaces? argument
 coP_pred_arg <- arg_7 spaces? co_bar_pred
 forethought_coP_pred_arg <- forethought_connective spaces? forethought_coP_pred_arg_1
 forethought_coP_pred_arg_1 <- argument spaces? forethought_co_bar_pred
@@ -126,7 +126,7 @@ coP_rel <- relative_clause_1 spaces? co_bar_rel
 co_bar_rel <- connective spaces? relative_clause_1
 forethought_coP_rel <- forethought_connective spaces? forethought_coP_rel_1
 forethought_coP_rel_1 <- relative_clause spaces? forethought_co_bar_rel
-forethought_co_bar_rel <- gik spaces? relative_clause
+forethought_co_bar_rel <- forethought_marker spaces? relative_clause
 relative_predicate <- serial_relative_predicate / relative_predicate_1
 relative_predicate_1 <- coP_pred_relative_predicate / forethought_coP_pred_relative_predicate / relative_predicate_2
 relative_predicate_2 <- MI_relative_predicate / PO_relative_predicate / quotation_relative_predicate / relative_predicate_3
@@ -154,19 +154,17 @@ MO_relative_predicate_tone <- &MO relative_syllable
 termset <- termset_V / termset_IV / termset_III / termset_II
 termset_II <- forethought_connective spaces? forethought_coP_term_II
 forethought_coP_term_II <- terms_II spaces? forethought_co_bar_term_II
-forethought_co_bar_term_II <- gik spaces? terms_II
+forethought_co_bar_term_II <- forethought_marker spaces? terms_II
 termset_III <- forethought_connective spaces? forethought_coP_term_III
 forethought_coP_term_III <- terms_III spaces? forethought_co_bar_term_III
-forethought_co_bar_term_III <- gik spaces? terms_III
+forethought_co_bar_term_III <- forethought_marker spaces? terms_III
 termset_IV <- forethought_connective spaces? forethought_coP_term_IV
 forethought_coP_term_IV <- terms_IV spaces? forethought_co_bar_term_IV
-forethought_co_bar_term_IV <- gik spaces? terms_IV
+forethought_co_bar_term_IV <- forethought_marker spaces? terms_IV
 termset_V <- forethought_connective spaces? forethought_coP_term_V
 forethought_coP_term_V <- terms_V spaces? forethought_co_bar_term_V
-forethought_co_bar_term_V <- gik spaces? terms_V
+forethought_co_bar_term_V <- forethought_marker spaces? terms_V
 forethought_connective <- spaces? forethought_marker spaces? connective
-forethought_marker <- t o &boundary
-gik <- t o &boundary
 terms_II <- term spaces? term
 terms_III <- term spaces? terms_II
 terms_IV <- term spaces? terms_III
@@ -185,7 +183,7 @@ coP_adverb <- adverb_1 spaces? co_bar_adverb
 co_bar_adverb <- connective spaces? adverb
 forethought_coP_adverb <- forethought_connective spaces? forethought_coP_adverb_1
 forethought_coP_adverb_1 <- adverb spaces? forethought_co_bar_adverb
-forethought_co_bar_adverb <- gik spaces? adverb
+forethought_co_bar_adverb <- forethought_marker spaces? adverb
 serial_adverb <- adverb_3 spaces? serial_predicate
 coP_pred_adverb <- adverb_4 spaces? co_bar_pred
 forethought_coP_pred_adverb <- forethought_connective spaces? forethought_coP_pred_adverb_1
@@ -213,7 +211,7 @@ coP_prepositional_phrase <- prepositional_phrase_1 spaces? co_bar_prepositional_
 co_bar_prepositional_phrase <- connective spaces? prepositional_phrase_1
 forethought_coP_prepositional_phrase <- forethought_connective spaces? forethought_coP_prepositional_phrase_1
 forethought_coP_prepositional_phrase_1 <- prepositional_phrase spaces? forethought_co_bar_prepositional_phrase
-forethought_co_bar_prepositional_phrase <- gik spaces? prepositional_phrase
+forethought_co_bar_prepositional_phrase <- forethought_marker spaces? prepositional_phrase
 preposition <- coP_preposition / preposition_1
 preposition_1 <- forethought_coP_preposition / preposition_2
 preposition_2 <- serial_preposition / preposition_3
@@ -223,7 +221,7 @@ coP_preposition <- preposition_1 spaces? co_bar_preposition
 co_bar_preposition <- connective spaces? preposition
 forethought_coP_preposition <- forethought_connective spaces? forethought_coP_preposition_1
 forethought_coP_preposition_1 <- preposition spaces? forethought_co_bar_preposition
-forethought_co_bar_preposition <- gik spaces? preposition
+forethought_co_bar_preposition <- forethought_marker spaces? preposition
 serial_preposition <- preposition_3 spaces? serial_predicate
 coP_pred_preposition <- preposition_4 spaces? co_bar_pred
 forethought_coP_pred_preposition <- forethought_connective spaces? forethought_coP_pred_preposition_1
@@ -298,11 +296,12 @@ connective <- &RA neutral_syllable
 illocutionary <- &DA neutral_syllable
 quantifier <- &TU neutral_syllable
 interjection <- &HA neutral_syllable
+forethought_marker <- &TO neutral_syllable
 
 # The following function word rules match any tone.
 # The intended use is as the subexpression of a ! or &,
 # followed by the desired syllable tone.
-function_word <- BI / DA / GA / GO / HA / HU / JU / KU / KI / KIO / KEO / LU / MU / MI / MO / NA / PO / RA / TEO / TU
+function_word <- BI / DA / GA / GO / HA / HU / JU / KU / KI / KIO / KEO / LU / MU / MI / MO / NA / PO / RA / TU / TO / TEO
 BI <- ( b I / p A ) &( tone? boundary )
 DA <- ( d A / m O q / k A / s O / b A ) &( tone? boundary )
 GA <- g A &( tone? boundary )
@@ -321,8 +320,9 @@ MO <- m O &( tone? boundary )
 NA <- n A &( tone? boundary )
 PO <- ( p O / p E ) &( tone? boundary )
 RA <- ( r A / r U / r I / r O i / r O / r E ) &( tone? boundary )
-TEO <- t E o &( tone? boundary )
 TU <- ( t U / s I a / s A / h I / j A ) &( tone? boundary )
+TO <- t O &boundary
+TEO <- t E o &( tone? boundary )
 
 syllable<desinence, tone> <- initial ( desinence / d:neutral_desinence t:tone string:{ return addTone(d, t) } ) &boundary
 neutral_syllable <- initial neutral_desinence &boundary

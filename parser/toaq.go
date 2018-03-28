@@ -129,135 +129,135 @@ const (
 	_forethought_coP_term_V                            int = 119
 	_forethought_co_bar_term_V                         int = 120
 	_forethought_connective                            int = 121
-	_forethought_marker                                int = 122
-	_gik                                               int = 123
-	_terms_II                                          int = 124
-	_terms_III                                         int = 125
-	_terms_IV                                          int = 126
-	_terms_V                                           int = 127
-	_adverb                                            int = 128
-	_adverb_1                                          int = 129
-	_adverb_2                                          int = 130
-	_adverb_3                                          int = 131
-	_adverb_4                                          int = 132
-	_coP_adverb                                        int = 133
-	_co_bar_adverb                                     int = 134
-	_forethought_coP_adverb                            int = 135
-	_forethought_coP_adverb_1                          int = 136
-	_forethought_co_bar_adverb                         int = 137
-	_serial_adverb                                     int = 138
-	_coP_pred_adverb                                   int = 139
-	_forethought_coP_pred_adverb                       int = 140
-	_forethought_coP_pred_adverb_1                     int = 141
-	_LU_adverb                                         int = 142
-	_LU_adverb_tone                                    int = 143
-	_MI_adverb                                         int = 144
-	_MI_adverb_1                                       int = 145
-	_MI_adverb_tone                                    int = 146
-	_PO_adverb                                         int = 147
-	_PO_adverb_1                                       int = 148
-	_PO_adverb_tone                                    int = 149
-	_quotation_adverb                                  int = 150
-	_MO_adverb                                         int = 151
-	_MO_adverb_tone                                    int = 152
-	_prepositional_phrase                              int = 153
-	_prepositional_phrase_1                            int = 154
-	_prepositional_phrase_2                            int = 155
-	_coP_prepositional_phrase                          int = 156
-	_co_bar_prepositional_phrase                       int = 157
-	_forethought_coP_prepositional_phrase              int = 158
-	_forethought_coP_prepositional_phrase_1            int = 159
-	_forethought_co_bar_prepositional_phrase           int = 160
-	_preposition                                       int = 161
-	_preposition_1                                     int = 162
-	_preposition_2                                     int = 163
-	_preposition_3                                     int = 164
-	_preposition_4                                     int = 165
-	_coP_preposition                                   int = 166
-	_co_bar_preposition                                int = 167
-	_forethought_coP_preposition                       int = 168
-	_forethought_coP_preposition_1                     int = 169
-	_forethought_co_bar_preposition                    int = 170
-	_serial_preposition                                int = 171
-	_coP_pred_preposition                              int = 172
-	_forethought_coP_pred_preposition                  int = 173
-	_forethought_coP_pred_preposition_1                int = 174
-	_LU_preposition                                    int = 175
-	_LU_preposition_tone                               int = 176
-	_MI_preposition                                    int = 177
-	_MI_preposition_1                                  int = 178
-	_MI_preposition_tone                               int = 179
-	_PO_preposition                                    int = 180
-	_PO_preposition_1                                  int = 181
-	_PO_preposition_tone                               int = 182
-	_quotation_preposition                             int = 183
-	_MO_preposition                                    int = 184
-	_MO_preposition_tone                               int = 185
-	_content_clause                                    int = 186
-	_content_clause_1                                  int = 187
-	_content_predication                               int = 188
-	_coP_content_statement                             int = 189
-	_content_predicate                                 int = 190
-	_content_predicate_1                               int = 191
-	_content_predicate_2                               int = 192
-	_content_predicate_3                               int = 193
-	_serial_content_predicate                          int = 194
-	_coP_pred_content_predicate                        int = 195
-	_forethought_coP_pred_content_predicate            int = 196
-	_forethought_coP_pred_content_predicate_1          int = 197
-	_LU_content                                        int = 198
-	_LU_content_tone                                   int = 199
-	_MI_content_predicate                              int = 200
-	_MI_content_predicate_1                            int = 201
-	_MI_content_tone                                   int = 202
-	_PO_content_predicate                              int = 203
-	_PO_content_predicate_1                            int = 204
-	_PO_content_tone                                   int = 205
-	_quotation_content_predicate                       int = 206
-	_MO_content_predicate                              int = 207
-	_MO_content_predicate_tone                         int = 208
-	_freemod                                           int = 209
-	_parenthetical                                     int = 210
-	_parenthetical_1                                   int = 211
-	_incidental                                        int = 212
-	_vocative                                          int = 213
-	_prefix                                            int = 214
-	_focus                                             int = 215
-	_end_quote                                         int = 216
-	_end_predicatizer                                  int = 217
-	_end_statement                                     int = 218
-	_sentence_prefix                                   int = 219
-	_end_prenex                                        int = 220
-	_start_incidental                                  int = 221
-	_start_parenthetical                               int = 222
-	_end_parenthetical                                 int = 223
-	_vocative_marker                                   int = 224
-	_linking_word                                      int = 225
-	_connective                                        int = 226
-	_illocutionary                                     int = 227
-	_quantifier                                        int = 228
-	_interjection                                      int = 229
-	_function_word                                     int = 230
-	_BI                                                int = 231
-	_DA                                                int = 232
-	_GA                                                int = 233
-	_GO                                                int = 234
-	_HA                                                int = 235
-	_HU                                                int = 236
-	_JU                                                int = 237
-	_KU                                                int = 238
-	_KI                                                int = 239
-	_KIO                                               int = 240
-	_KEO                                               int = 241
-	_LU                                                int = 242
-	_MU                                                int = 243
-	_MI                                                int = 244
-	_MO                                                int = 245
-	_NA                                                int = 246
-	_PO                                                int = 247
-	_RA                                                int = 248
-	_TEO                                               int = 249
-	_TU                                                int = 250
+	_terms_II                                          int = 122
+	_terms_III                                         int = 123
+	_terms_IV                                          int = 124
+	_terms_V                                           int = 125
+	_adverb                                            int = 126
+	_adverb_1                                          int = 127
+	_adverb_2                                          int = 128
+	_adverb_3                                          int = 129
+	_adverb_4                                          int = 130
+	_coP_adverb                                        int = 131
+	_co_bar_adverb                                     int = 132
+	_forethought_coP_adverb                            int = 133
+	_forethought_coP_adverb_1                          int = 134
+	_forethought_co_bar_adverb                         int = 135
+	_serial_adverb                                     int = 136
+	_coP_pred_adverb                                   int = 137
+	_forethought_coP_pred_adverb                       int = 138
+	_forethought_coP_pred_adverb_1                     int = 139
+	_LU_adverb                                         int = 140
+	_LU_adverb_tone                                    int = 141
+	_MI_adverb                                         int = 142
+	_MI_adverb_1                                       int = 143
+	_MI_adverb_tone                                    int = 144
+	_PO_adverb                                         int = 145
+	_PO_adverb_1                                       int = 146
+	_PO_adverb_tone                                    int = 147
+	_quotation_adverb                                  int = 148
+	_MO_adverb                                         int = 149
+	_MO_adverb_tone                                    int = 150
+	_prepositional_phrase                              int = 151
+	_prepositional_phrase_1                            int = 152
+	_prepositional_phrase_2                            int = 153
+	_coP_prepositional_phrase                          int = 154
+	_co_bar_prepositional_phrase                       int = 155
+	_forethought_coP_prepositional_phrase              int = 156
+	_forethought_coP_prepositional_phrase_1            int = 157
+	_forethought_co_bar_prepositional_phrase           int = 158
+	_preposition                                       int = 159
+	_preposition_1                                     int = 160
+	_preposition_2                                     int = 161
+	_preposition_3                                     int = 162
+	_preposition_4                                     int = 163
+	_coP_preposition                                   int = 164
+	_co_bar_preposition                                int = 165
+	_forethought_coP_preposition                       int = 166
+	_forethought_coP_preposition_1                     int = 167
+	_forethought_co_bar_preposition                    int = 168
+	_serial_preposition                                int = 169
+	_coP_pred_preposition                              int = 170
+	_forethought_coP_pred_preposition                  int = 171
+	_forethought_coP_pred_preposition_1                int = 172
+	_LU_preposition                                    int = 173
+	_LU_preposition_tone                               int = 174
+	_MI_preposition                                    int = 175
+	_MI_preposition_1                                  int = 176
+	_MI_preposition_tone                               int = 177
+	_PO_preposition                                    int = 178
+	_PO_preposition_1                                  int = 179
+	_PO_preposition_tone                               int = 180
+	_quotation_preposition                             int = 181
+	_MO_preposition                                    int = 182
+	_MO_preposition_tone                               int = 183
+	_content_clause                                    int = 184
+	_content_clause_1                                  int = 185
+	_content_predication                               int = 186
+	_coP_content_statement                             int = 187
+	_content_predicate                                 int = 188
+	_content_predicate_1                               int = 189
+	_content_predicate_2                               int = 190
+	_content_predicate_3                               int = 191
+	_serial_content_predicate                          int = 192
+	_coP_pred_content_predicate                        int = 193
+	_forethought_coP_pred_content_predicate            int = 194
+	_forethought_coP_pred_content_predicate_1          int = 195
+	_LU_content                                        int = 196
+	_LU_content_tone                                   int = 197
+	_MI_content_predicate                              int = 198
+	_MI_content_predicate_1                            int = 199
+	_MI_content_tone                                   int = 200
+	_PO_content_predicate                              int = 201
+	_PO_content_predicate_1                            int = 202
+	_PO_content_tone                                   int = 203
+	_quotation_content_predicate                       int = 204
+	_MO_content_predicate                              int = 205
+	_MO_content_predicate_tone                         int = 206
+	_freemod                                           int = 207
+	_parenthetical                                     int = 208
+	_parenthetical_1                                   int = 209
+	_incidental                                        int = 210
+	_vocative                                          int = 211
+	_prefix                                            int = 212
+	_focus                                             int = 213
+	_end_quote                                         int = 214
+	_end_predicatizer                                  int = 215
+	_end_statement                                     int = 216
+	_sentence_prefix                                   int = 217
+	_end_prenex                                        int = 218
+	_start_incidental                                  int = 219
+	_start_parenthetical                               int = 220
+	_end_parenthetical                                 int = 221
+	_vocative_marker                                   int = 222
+	_linking_word                                      int = 223
+	_connective                                        int = 224
+	_illocutionary                                     int = 225
+	_quantifier                                        int = 226
+	_interjection                                      int = 227
+	_forethought_marker                                int = 228
+	_function_word                                     int = 229
+	_BI                                                int = 230
+	_DA                                                int = 231
+	_GA                                                int = 232
+	_GO                                                int = 233
+	_HA                                                int = 234
+	_HU                                                int = 235
+	_JU                                                int = 236
+	_KU                                                int = 237
+	_KI                                                int = 238
+	_KIO                                               int = 239
+	_KEO                                               int = 240
+	_LU                                                int = 241
+	_MU                                                int = 242
+	_MI                                                int = 243
+	_MO                                                int = 244
+	_NA                                                int = 245
+	_PO                                                int = 246
+	_RA                                                int = 247
+	_TU                                                int = 248
+	_TO                                                int = 249
+	_TEO                                               int = 250
 	_syllable__compound_desinence__compound_tone       int = 251
 	_syllable__arg_desinence__arg_tone                 int = 252
 	_syllable__relative_desinence__relative_tone       int = 253
@@ -3245,9 +3245,9 @@ func _forethought_co_bar_sentenceAccepts(parser *_Parser, start int) (deltaPos, 
 		return dp, de
 	}
 	pos, perr := start, -1
-	// gik spaces? sentence
-	// gik
-	if !_accept(parser, _gikAccepts, &pos, &perr) {
+	// forethought_marker spaces? sentence
+	// forethought_marker
+	if !_accept(parser, _forethought_markerAccepts, &pos, &perr) {
 		goto fail
 	}
 	// spaces?
@@ -3283,9 +3283,9 @@ func _forethought_co_bar_sentenceNode(parser *_Parser, start int) (int, *peg.Nod
 	}
 	pos := start
 	node = &peg.Node{Name: "forethought_co_bar_sentence"}
-	// gik spaces? sentence
-	// gik
-	if !_node(parser, _gikNode, node, &pos) {
+	// forethought_marker spaces? sentence
+	// forethought_marker
+	if !_node(parser, _forethought_markerNode, node, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -3323,9 +3323,9 @@ func _forethought_co_bar_sentenceFail(parser *_Parser, start, errPos int) (int, 
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _forethought_co_bar_sentence}
-	// gik spaces? sentence
-	// gik
-	if !_fail(parser, _gikFail, errPos, failure, &pos) {
+	// forethought_marker spaces? sentence
+	// forethought_marker
+	if !_fail(parser, _forethought_markerFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -3364,11 +3364,11 @@ func _forethought_co_bar_sentenceAction(parser *_Parser, start int) (int, *strin
 	}
 	var node string
 	pos := start
-	// gik spaces? sentence
+	// forethought_marker spaces? sentence
 	{
 		var node0 string
-		// gik
-		if p, n := _gikAction(parser, pos); n == nil {
+		// forethought_marker
+		if p, n := _forethought_markerAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -5112,9 +5112,9 @@ func _forethought_co_bar_statementAccepts(parser *_Parser, start int) (deltaPos,
 		return dp, de
 	}
 	pos, perr := start, -1
-	// gik spaces? statement
-	// gik
-	if !_accept(parser, _gikAccepts, &pos, &perr) {
+	// forethought_marker spaces? statement
+	// forethought_marker
+	if !_accept(parser, _forethought_markerAccepts, &pos, &perr) {
 		goto fail
 	}
 	// spaces?
@@ -5150,9 +5150,9 @@ func _forethought_co_bar_statementNode(parser *_Parser, start int) (int, *peg.No
 	}
 	pos := start
 	node = &peg.Node{Name: "forethought_co_bar_statement"}
-	// gik spaces? statement
-	// gik
-	if !_node(parser, _gikNode, node, &pos) {
+	// forethought_marker spaces? statement
+	// forethought_marker
+	if !_node(parser, _forethought_markerNode, node, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -5190,9 +5190,9 @@ func _forethought_co_bar_statementFail(parser *_Parser, start, errPos int) (int,
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _forethought_co_bar_statement}
-	// gik spaces? statement
-	// gik
-	if !_fail(parser, _gikFail, errPos, failure, &pos) {
+	// forethought_marker spaces? statement
+	// forethought_marker
+	if !_fail(parser, _forethought_markerFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -5231,11 +5231,11 @@ func _forethought_co_bar_statementAction(parser *_Parser, start int) (int, *stri
 	}
 	var node string
 	pos := start
-	// gik spaces? statement
+	// forethought_marker spaces? statement
 	{
 		var node0 string
-		// gik
-		if p, n := _gikAction(parser, pos); n == nil {
+		// forethought_marker
+		if p, n := _forethought_markerAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -7438,9 +7438,9 @@ func _forethought_co_bar_predAccepts(parser *_Parser, start int) (deltaPos, delt
 		return dp, de
 	}
 	pos, perr := start, -1
-	// gik spaces? predicate
-	// gik
-	if !_accept(parser, _gikAccepts, &pos, &perr) {
+	// forethought_marker spaces? predicate
+	// forethought_marker
+	if !_accept(parser, _forethought_markerAccepts, &pos, &perr) {
 		goto fail
 	}
 	// spaces?
@@ -7476,9 +7476,9 @@ func _forethought_co_bar_predNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "forethought_co_bar_pred"}
-	// gik spaces? predicate
-	// gik
-	if !_node(parser, _gikNode, node, &pos) {
+	// forethought_marker spaces? predicate
+	// forethought_marker
+	if !_node(parser, _forethought_markerNode, node, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -7516,9 +7516,9 @@ func _forethought_co_bar_predFail(parser *_Parser, start, errPos int) (int, *peg
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _forethought_co_bar_pred}
-	// gik spaces? predicate
-	// gik
-	if !_fail(parser, _gikFail, errPos, failure, &pos) {
+	// forethought_marker spaces? predicate
+	// forethought_marker
+	if !_fail(parser, _forethought_markerFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -7557,11 +7557,11 @@ func _forethought_co_bar_predAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// gik spaces? predicate
+	// forethought_marker spaces? predicate
 	{
 		var node0 string
-		// gik
-		if p, n := _gikAction(parser, pos); n == nil {
+		// forethought_marker
+		if p, n := _forethought_markerAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -13001,9 +13001,9 @@ func _forethought_co_bar_argAccepts(parser *_Parser, start int) (deltaPos, delta
 		return dp, de
 	}
 	pos, perr := start, -1
-	// gik spaces? argument
-	// gik
-	if !_accept(parser, _gikAccepts, &pos, &perr) {
+	// forethought_marker spaces? argument
+	// forethought_marker
+	if !_accept(parser, _forethought_markerAccepts, &pos, &perr) {
 		goto fail
 	}
 	// spaces?
@@ -13039,9 +13039,9 @@ func _forethought_co_bar_argNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "forethought_co_bar_arg"}
-	// gik spaces? argument
-	// gik
-	if !_node(parser, _gikNode, node, &pos) {
+	// forethought_marker spaces? argument
+	// forethought_marker
+	if !_node(parser, _forethought_markerNode, node, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -13079,9 +13079,9 @@ func _forethought_co_bar_argFail(parser *_Parser, start, errPos int) (int, *peg.
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _forethought_co_bar_arg}
-	// gik spaces? argument
-	// gik
-	if !_fail(parser, _gikFail, errPos, failure, &pos) {
+	// forethought_marker spaces? argument
+	// forethought_marker
+	if !_fail(parser, _forethought_markerFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -13120,11 +13120,11 @@ func _forethought_co_bar_argAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// gik spaces? argument
+	// forethought_marker spaces? argument
 	{
 		var node0 string
-		// gik
-		if p, n := _gikAction(parser, pos); n == nil {
+		// forethought_marker
+		if p, n := _forethought_markerAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -17464,9 +17464,9 @@ func _forethought_co_bar_relAccepts(parser *_Parser, start int) (deltaPos, delta
 		return dp, de
 	}
 	pos, perr := start, -1
-	// gik spaces? relative_clause
-	// gik
-	if !_accept(parser, _gikAccepts, &pos, &perr) {
+	// forethought_marker spaces? relative_clause
+	// forethought_marker
+	if !_accept(parser, _forethought_markerAccepts, &pos, &perr) {
 		goto fail
 	}
 	// spaces?
@@ -17502,9 +17502,9 @@ func _forethought_co_bar_relNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "forethought_co_bar_rel"}
-	// gik spaces? relative_clause
-	// gik
-	if !_node(parser, _gikNode, node, &pos) {
+	// forethought_marker spaces? relative_clause
+	// forethought_marker
+	if !_node(parser, _forethought_markerNode, node, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -17542,9 +17542,9 @@ func _forethought_co_bar_relFail(parser *_Parser, start, errPos int) (int, *peg.
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _forethought_co_bar_rel}
-	// gik spaces? relative_clause
-	// gik
-	if !_fail(parser, _gikFail, errPos, failure, &pos) {
+	// forethought_marker spaces? relative_clause
+	// forethought_marker
+	if !_fail(parser, _forethought_markerFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -17583,11 +17583,11 @@ func _forethought_co_bar_relAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// gik spaces? relative_clause
+	// forethought_marker spaces? relative_clause
 	{
 		var node0 string
-		// gik
-		if p, n := _gikAction(parser, pos); n == nil {
+		// forethought_marker
+		if p, n := _forethought_markerAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -21797,9 +21797,9 @@ func _forethought_co_bar_term_IIAccepts(parser *_Parser, start int) (deltaPos, d
 		return dp, de
 	}
 	pos, perr := start, -1
-	// gik spaces? terms_II
-	// gik
-	if !_accept(parser, _gikAccepts, &pos, &perr) {
+	// forethought_marker spaces? terms_II
+	// forethought_marker
+	if !_accept(parser, _forethought_markerAccepts, &pos, &perr) {
 		goto fail
 	}
 	// spaces?
@@ -21835,9 +21835,9 @@ func _forethought_co_bar_term_IINode(parser *_Parser, start int) (int, *peg.Node
 	}
 	pos := start
 	node = &peg.Node{Name: "forethought_co_bar_term_II"}
-	// gik spaces? terms_II
-	// gik
-	if !_node(parser, _gikNode, node, &pos) {
+	// forethought_marker spaces? terms_II
+	// forethought_marker
+	if !_node(parser, _forethought_markerNode, node, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -21875,9 +21875,9 @@ func _forethought_co_bar_term_IIFail(parser *_Parser, start, errPos int) (int, *
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _forethought_co_bar_term_II}
-	// gik spaces? terms_II
-	// gik
-	if !_fail(parser, _gikFail, errPos, failure, &pos) {
+	// forethought_marker spaces? terms_II
+	// forethought_marker
+	if !_fail(parser, _forethought_markerFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -21916,11 +21916,11 @@ func _forethought_co_bar_term_IIAction(parser *_Parser, start int) (int, *string
 	}
 	var node string
 	pos := start
-	// gik spaces? terms_II
+	// forethought_marker spaces? terms_II
 	{
 		var node0 string
-		// gik
-		if p, n := _gikAction(parser, pos); n == nil {
+		// forethought_marker
+		if p, n := _forethought_markerAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -22298,9 +22298,9 @@ func _forethought_co_bar_term_IIIAccepts(parser *_Parser, start int) (deltaPos, 
 		return dp, de
 	}
 	pos, perr := start, -1
-	// gik spaces? terms_III
-	// gik
-	if !_accept(parser, _gikAccepts, &pos, &perr) {
+	// forethought_marker spaces? terms_III
+	// forethought_marker
+	if !_accept(parser, _forethought_markerAccepts, &pos, &perr) {
 		goto fail
 	}
 	// spaces?
@@ -22336,9 +22336,9 @@ func _forethought_co_bar_term_IIINode(parser *_Parser, start int) (int, *peg.Nod
 	}
 	pos := start
 	node = &peg.Node{Name: "forethought_co_bar_term_III"}
-	// gik spaces? terms_III
-	// gik
-	if !_node(parser, _gikNode, node, &pos) {
+	// forethought_marker spaces? terms_III
+	// forethought_marker
+	if !_node(parser, _forethought_markerNode, node, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -22376,9 +22376,9 @@ func _forethought_co_bar_term_IIIFail(parser *_Parser, start, errPos int) (int, 
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _forethought_co_bar_term_III}
-	// gik spaces? terms_III
-	// gik
-	if !_fail(parser, _gikFail, errPos, failure, &pos) {
+	// forethought_marker spaces? terms_III
+	// forethought_marker
+	if !_fail(parser, _forethought_markerFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -22417,11 +22417,11 @@ func _forethought_co_bar_term_IIIAction(parser *_Parser, start int) (int, *strin
 	}
 	var node string
 	pos := start
-	// gik spaces? terms_III
+	// forethought_marker spaces? terms_III
 	{
 		var node0 string
-		// gik
-		if p, n := _gikAction(parser, pos); n == nil {
+		// forethought_marker
+		if p, n := _forethought_markerAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -22799,9 +22799,9 @@ func _forethought_co_bar_term_IVAccepts(parser *_Parser, start int) (deltaPos, d
 		return dp, de
 	}
 	pos, perr := start, -1
-	// gik spaces? terms_IV
-	// gik
-	if !_accept(parser, _gikAccepts, &pos, &perr) {
+	// forethought_marker spaces? terms_IV
+	// forethought_marker
+	if !_accept(parser, _forethought_markerAccepts, &pos, &perr) {
 		goto fail
 	}
 	// spaces?
@@ -22837,9 +22837,9 @@ func _forethought_co_bar_term_IVNode(parser *_Parser, start int) (int, *peg.Node
 	}
 	pos := start
 	node = &peg.Node{Name: "forethought_co_bar_term_IV"}
-	// gik spaces? terms_IV
-	// gik
-	if !_node(parser, _gikNode, node, &pos) {
+	// forethought_marker spaces? terms_IV
+	// forethought_marker
+	if !_node(parser, _forethought_markerNode, node, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -22877,9 +22877,9 @@ func _forethought_co_bar_term_IVFail(parser *_Parser, start, errPos int) (int, *
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _forethought_co_bar_term_IV}
-	// gik spaces? terms_IV
-	// gik
-	if !_fail(parser, _gikFail, errPos, failure, &pos) {
+	// forethought_marker spaces? terms_IV
+	// forethought_marker
+	if !_fail(parser, _forethought_markerFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -22918,11 +22918,11 @@ func _forethought_co_bar_term_IVAction(parser *_Parser, start int) (int, *string
 	}
 	var node string
 	pos := start
-	// gik spaces? terms_IV
+	// forethought_marker spaces? terms_IV
 	{
 		var node0 string
-		// gik
-		if p, n := _gikAction(parser, pos); n == nil {
+		// forethought_marker
+		if p, n := _forethought_markerAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -23300,9 +23300,9 @@ func _forethought_co_bar_term_VAccepts(parser *_Parser, start int) (deltaPos, de
 		return dp, de
 	}
 	pos, perr := start, -1
-	// gik spaces? terms_V
-	// gik
-	if !_accept(parser, _gikAccepts, &pos, &perr) {
+	// forethought_marker spaces? terms_V
+	// forethought_marker
+	if !_accept(parser, _forethought_markerAccepts, &pos, &perr) {
 		goto fail
 	}
 	// spaces?
@@ -23338,9 +23338,9 @@ func _forethought_co_bar_term_VNode(parser *_Parser, start int) (int, *peg.Node)
 	}
 	pos := start
 	node = &peg.Node{Name: "forethought_co_bar_term_V"}
-	// gik spaces? terms_V
-	// gik
-	if !_node(parser, _gikNode, node, &pos) {
+	// forethought_marker spaces? terms_V
+	// forethought_marker
+	if !_node(parser, _forethought_markerNode, node, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -23378,9 +23378,9 @@ func _forethought_co_bar_term_VFail(parser *_Parser, start, errPos int) (int, *p
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _forethought_co_bar_term_V}
-	// gik spaces? terms_V
-	// gik
-	if !_fail(parser, _gikFail, errPos, failure, &pos) {
+	// forethought_marker spaces? terms_V
+	// forethought_marker
+	if !_fail(parser, _forethought_markerFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -23419,11 +23419,11 @@ func _forethought_co_bar_term_VAction(parser *_Parser, start int) (int, *string)
 	}
 	var node string
 	pos := start
-	// gik spaces? terms_V
+	// forethought_marker spaces? terms_V
 	{
 		var node0 string
-		// gik
-		if p, n := _gikAction(parser, pos); n == nil {
+		// forethought_marker
+		if p, n := _forethought_markerAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -23675,378 +23675,6 @@ func _forethought_connectiveAction(parser *_Parser, start int) (int, *string) {
 		} else {
 			node0 = *n
 			pos = p
-		}
-		node, node0 = node+node0, ""
-	}
-	parser.act[key] = node
-	return pos, &node
-fail:
-	return -1, nil
-}
-
-func _forethought_markerAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _forethought_marker, start); ok {
-		return dp, de
-	}
-	pos, perr := start, -1
-	// t o &boundary
-	// t
-	if !_accept(parser, _tAccepts, &pos, &perr) {
-		goto fail
-	}
-	// o
-	if !_accept(parser, _oAccepts, &pos, &perr) {
-		goto fail
-	}
-	// &boundary
-	{
-		pos2 := pos
-		perr4 := perr
-		// boundary
-		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
-			goto fail5
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		perr = _max(perr4, pos)
-		goto fail
-	ok1:
-		pos = pos2
-		perr = perr4
-	}
-	return _memoize(parser, _forethought_marker, start, pos, perr)
-fail:
-	return _memoize(parser, _forethought_marker, start, -1, perr)
-}
-
-func _forethought_markerNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_forethought_marker]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _forethought_marker}
-	node := parser.node[key]
-	if node != nil {
-		return start + int(dp-1), node
-	}
-	pos := start
-	node = &peg.Node{Name: "forethought_marker"}
-	// t o &boundary
-	// t
-	if !_node(parser, _tNode, node, &pos) {
-		goto fail
-	}
-	// o
-	if !_node(parser, _oNode, node, &pos) {
-		goto fail
-	}
-	// &boundary
-	{
-		pos2 := pos
-		nkids3 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail5
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		goto fail
-	ok1:
-		pos = pos2
-		node.Kids = node.Kids[:nkids3]
-	}
-	node.Text = parser.text[start:pos]
-	parser.node[key] = node
-	return pos, node
-fail:
-	return -1, nil
-}
-
-func _forethought_markerFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _forethought_marker, start, errPos)
-	if failure != nil {
-		return pos, failure
-	}
-	failure = &peg.Fail{
-		Name: "forethought_marker",
-		Pos:  int(start),
-	}
-	key := _key{start: start, rule: _forethought_marker}
-	// t o &boundary
-	// t
-	if !_fail(parser, _tFail, errPos, failure, &pos) {
-		goto fail
-	}
-	// o
-	if !_fail(parser, _oFail, errPos, failure, &pos) {
-		goto fail
-	}
-	// &boundary
-	{
-		pos2 := pos
-		nkids3 := len(failure.Kids)
-		// boundary
-		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
-			goto fail5
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		failure.Kids = failure.Kids[:nkids3]
-		if pos >= errPos {
-			failure.Kids = append(failure.Kids, &peg.Fail{
-				Pos:  int(pos),
-				Want: "&boundary",
-			})
-		}
-		goto fail
-	ok1:
-		pos = pos2
-		failure.Kids = failure.Kids[:nkids3]
-	}
-	parser.fail[key] = failure
-	return pos, failure
-fail:
-	parser.fail[key] = failure
-	return -1, failure
-}
-
-func _forethought_markerAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_forethought_marker]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _forethought_marker}
-	n := parser.act[key]
-	if n != nil {
-		n := n.(string)
-		return start + int(dp-1), &n
-	}
-	var node string
-	pos := start
-	// t o &boundary
-	{
-		var node0 string
-		// t
-		if p, n := _tAction(parser, pos); n == nil {
-			goto fail
-		} else {
-			node0 = *n
-			pos = p
-		}
-		node, node0 = node+node0, ""
-		// o
-		if p, n := _oAction(parser, pos); n == nil {
-			goto fail
-		} else {
-			node0 = *n
-			pos = p
-		}
-		node, node0 = node+node0, ""
-		// &boundary
-		{
-			pos2 := pos
-			// boundary
-			if p, n := _boundaryAction(parser, pos); n == nil {
-				goto fail5
-			} else {
-				pos = p
-			}
-			goto ok1
-		fail5:
-			pos = pos2
-			goto fail
-		ok1:
-			pos = pos2
-			node0 = ""
-		}
-		node, node0 = node+node0, ""
-	}
-	parser.act[key] = node
-	return pos, &node
-fail:
-	return -1, nil
-}
-
-func _gikAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _gik, start); ok {
-		return dp, de
-	}
-	pos, perr := start, -1
-	// t o &boundary
-	// t
-	if !_accept(parser, _tAccepts, &pos, &perr) {
-		goto fail
-	}
-	// o
-	if !_accept(parser, _oAccepts, &pos, &perr) {
-		goto fail
-	}
-	// &boundary
-	{
-		pos2 := pos
-		perr4 := perr
-		// boundary
-		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
-			goto fail5
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		perr = _max(perr4, pos)
-		goto fail
-	ok1:
-		pos = pos2
-		perr = perr4
-	}
-	return _memoize(parser, _gik, start, pos, perr)
-fail:
-	return _memoize(parser, _gik, start, -1, perr)
-}
-
-func _gikNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_gik]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _gik}
-	node := parser.node[key]
-	if node != nil {
-		return start + int(dp-1), node
-	}
-	pos := start
-	node = &peg.Node{Name: "gik"}
-	// t o &boundary
-	// t
-	if !_node(parser, _tNode, node, &pos) {
-		goto fail
-	}
-	// o
-	if !_node(parser, _oNode, node, &pos) {
-		goto fail
-	}
-	// &boundary
-	{
-		pos2 := pos
-		nkids3 := len(node.Kids)
-		// boundary
-		if !_node(parser, _boundaryNode, node, &pos) {
-			goto fail5
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		goto fail
-	ok1:
-		pos = pos2
-		node.Kids = node.Kids[:nkids3]
-	}
-	node.Text = parser.text[start:pos]
-	parser.node[key] = node
-	return pos, node
-fail:
-	return -1, nil
-}
-
-func _gikFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _gik, start, errPos)
-	if failure != nil {
-		return pos, failure
-	}
-	failure = &peg.Fail{
-		Name: "gik",
-		Pos:  int(start),
-	}
-	key := _key{start: start, rule: _gik}
-	// t o &boundary
-	// t
-	if !_fail(parser, _tFail, errPos, failure, &pos) {
-		goto fail
-	}
-	// o
-	if !_fail(parser, _oFail, errPos, failure, &pos) {
-		goto fail
-	}
-	// &boundary
-	{
-		pos2 := pos
-		nkids3 := len(failure.Kids)
-		// boundary
-		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
-			goto fail5
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		failure.Kids = failure.Kids[:nkids3]
-		if pos >= errPos {
-			failure.Kids = append(failure.Kids, &peg.Fail{
-				Pos:  int(pos),
-				Want: "&boundary",
-			})
-		}
-		goto fail
-	ok1:
-		pos = pos2
-		failure.Kids = failure.Kids[:nkids3]
-	}
-	parser.fail[key] = failure
-	return pos, failure
-fail:
-	parser.fail[key] = failure
-	return -1, failure
-}
-
-func _gikAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_gik]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _gik}
-	n := parser.act[key]
-	if n != nil {
-		n := n.(string)
-		return start + int(dp-1), &n
-	}
-	var node string
-	pos := start
-	// t o &boundary
-	{
-		var node0 string
-		// t
-		if p, n := _tAction(parser, pos); n == nil {
-			goto fail
-		} else {
-			node0 = *n
-			pos = p
-		}
-		node, node0 = node+node0, ""
-		// o
-		if p, n := _oAction(parser, pos); n == nil {
-			goto fail
-		} else {
-			node0 = *n
-			pos = p
-		}
-		node, node0 = node+node0, ""
-		// &boundary
-		{
-			pos2 := pos
-			// boundary
-			if p, n := _boundaryAction(parser, pos); n == nil {
-				goto fail5
-			} else {
-				pos = p
-			}
-			goto ok1
-		fail5:
-			pos = pos2
-			goto fail
-		ok1:
-			pos = pos2
-			node0 = ""
 		}
 		node, node0 = node+node0, ""
 	}
@@ -26509,9 +26137,9 @@ func _forethought_co_bar_adverbAccepts(parser *_Parser, start int) (deltaPos, de
 		return dp, de
 	}
 	pos, perr := start, -1
-	// gik spaces? adverb
-	// gik
-	if !_accept(parser, _gikAccepts, &pos, &perr) {
+	// forethought_marker spaces? adverb
+	// forethought_marker
+	if !_accept(parser, _forethought_markerAccepts, &pos, &perr) {
 		goto fail
 	}
 	// spaces?
@@ -26547,9 +26175,9 @@ func _forethought_co_bar_adverbNode(parser *_Parser, start int) (int, *peg.Node)
 	}
 	pos := start
 	node = &peg.Node{Name: "forethought_co_bar_adverb"}
-	// gik spaces? adverb
-	// gik
-	if !_node(parser, _gikNode, node, &pos) {
+	// forethought_marker spaces? adverb
+	// forethought_marker
+	if !_node(parser, _forethought_markerNode, node, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -26587,9 +26215,9 @@ func _forethought_co_bar_adverbFail(parser *_Parser, start, errPos int) (int, *p
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _forethought_co_bar_adverb}
-	// gik spaces? adverb
-	// gik
-	if !_fail(parser, _gikFail, errPos, failure, &pos) {
+	// forethought_marker spaces? adverb
+	// forethought_marker
+	if !_fail(parser, _forethought_markerFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -26628,11 +26256,11 @@ func _forethought_co_bar_adverbAction(parser *_Parser, start int) (int, *string)
 	}
 	var node string
 	pos := start
-	// gik spaces? adverb
+	// forethought_marker spaces? adverb
 	{
 		var node0 string
-		// gik
-		if p, n := _gikAction(parser, pos); n == nil {
+		// forethought_marker
+		if p, n := _forethought_markerAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -30545,9 +30173,9 @@ func _forethought_co_bar_prepositional_phraseAccepts(parser *_Parser, start int)
 		return dp, de
 	}
 	pos, perr := start, -1
-	// gik spaces? prepositional_phrase
-	// gik
-	if !_accept(parser, _gikAccepts, &pos, &perr) {
+	// forethought_marker spaces? prepositional_phrase
+	// forethought_marker
+	if !_accept(parser, _forethought_markerAccepts, &pos, &perr) {
 		goto fail
 	}
 	// spaces?
@@ -30583,9 +30211,9 @@ func _forethought_co_bar_prepositional_phraseNode(parser *_Parser, start int) (i
 	}
 	pos := start
 	node = &peg.Node{Name: "forethought_co_bar_prepositional_phrase"}
-	// gik spaces? prepositional_phrase
-	// gik
-	if !_node(parser, _gikNode, node, &pos) {
+	// forethought_marker spaces? prepositional_phrase
+	// forethought_marker
+	if !_node(parser, _forethought_markerNode, node, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -30623,9 +30251,9 @@ func _forethought_co_bar_prepositional_phraseFail(parser *_Parser, start, errPos
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _forethought_co_bar_prepositional_phrase}
-	// gik spaces? prepositional_phrase
-	// gik
-	if !_fail(parser, _gikFail, errPos, failure, &pos) {
+	// forethought_marker spaces? prepositional_phrase
+	// forethought_marker
+	if !_fail(parser, _forethought_markerFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -30664,11 +30292,11 @@ func _forethought_co_bar_prepositional_phraseAction(parser *_Parser, start int) 
 	}
 	var node string
 	pos := start
-	// gik spaces? prepositional_phrase
+	// forethought_marker spaces? prepositional_phrase
 	{
 		var node0 string
-		// gik
-		if p, n := _gikAction(parser, pos); n == nil {
+		// forethought_marker
+		if p, n := _forethought_markerAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -32492,9 +32120,9 @@ func _forethought_co_bar_prepositionAccepts(parser *_Parser, start int) (deltaPo
 		return dp, de
 	}
 	pos, perr := start, -1
-	// gik spaces? preposition
-	// gik
-	if !_accept(parser, _gikAccepts, &pos, &perr) {
+	// forethought_marker spaces? preposition
+	// forethought_marker
+	if !_accept(parser, _forethought_markerAccepts, &pos, &perr) {
 		goto fail
 	}
 	// spaces?
@@ -32530,9 +32158,9 @@ func _forethought_co_bar_prepositionNode(parser *_Parser, start int) (int, *peg.
 	}
 	pos := start
 	node = &peg.Node{Name: "forethought_co_bar_preposition"}
-	// gik spaces? preposition
-	// gik
-	if !_node(parser, _gikNode, node, &pos) {
+	// forethought_marker spaces? preposition
+	// forethought_marker
+	if !_node(parser, _forethought_markerNode, node, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -32570,9 +32198,9 @@ func _forethought_co_bar_prepositionFail(parser *_Parser, start, errPos int) (in
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _forethought_co_bar_preposition}
-	// gik spaces? preposition
-	// gik
-	if !_fail(parser, _gikFail, errPos, failure, &pos) {
+	// forethought_marker spaces? preposition
+	// forethought_marker
+	if !_fail(parser, _forethought_markerFail, errPos, failure, &pos) {
 		goto fail
 	}
 	// spaces?
@@ -32611,11 +32239,11 @@ func _forethought_co_bar_prepositionAction(parser *_Parser, start int) (int, *st
 	}
 	var node string
 	pos := start
-	// gik spaces? preposition
+	// forethought_marker spaces? preposition
 	{
 		var node0 string
-		// gik
-		if p, n := _gikAction(parser, pos); n == nil {
+		// forethought_marker
+		if p, n := _forethought_markerAction(parser, pos); n == nil {
 			goto fail
 		} else {
 			node0 = *n
@@ -43624,12 +43252,178 @@ fail:
 	return -1, nil
 }
 
+func _forethought_markerAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _forethought_marker, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// &TO neutral_syllable
+	// &TO
+	{
+		pos2 := pos
+		perr4 := perr
+		// TO
+		if !_accept(parser, _TOAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	// neutral_syllable
+	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
+		goto fail
+	}
+	return _memoize(parser, _forethought_marker, start, pos, perr)
+fail:
+	return _memoize(parser, _forethought_marker, start, -1, perr)
+}
+
+func _forethought_markerNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_forethought_marker]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _forethought_marker}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "forethought_marker"}
+	// &TO neutral_syllable
+	// &TO
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// TO
+		if !_node(parser, _TONode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_node(parser, _neutral_syllableNode, node, &pos) {
+		goto fail
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _forethought_markerFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _forethought_marker, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "forethought_marker",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _forethought_marker}
+	// &TO neutral_syllable
+	// &TO
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// TO
+		if !_fail(parser, _TOFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&TO",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	// neutral_syllable
+	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
+		goto fail
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _forethought_markerAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_forethought_marker]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _forethought_marker}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// &TO neutral_syllable
+	{
+		var node0 string
+		// &TO
+		{
+			pos2 := pos
+			// TO
+			if p, n := _TOAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node0 = ""
+		}
+		node, node0 = node+node0, ""
+		// neutral_syllable
+		if p, n := _neutral_syllableAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node, node0 = node+node0, ""
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
 func _function_wordAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	if dp, de, ok := _memo(parser, _function_word, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/NA/PO/RA/TEO/TU
+	// BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/NA/PO/RA/TU/TO/TEO
 	{
 		pos3 := pos
 		// BI
@@ -43758,19 +43552,26 @@ func _function_wordAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) 
 		goto ok0
 	fail21:
 		pos = pos3
-		// TEO
-		if !_accept(parser, _TEOAccepts, &pos, &perr) {
+		// TU
+		if !_accept(parser, _TUAccepts, &pos, &perr) {
 			goto fail22
 		}
 		goto ok0
 	fail22:
 		pos = pos3
-		// TU
-		if !_accept(parser, _TUAccepts, &pos, &perr) {
+		// TO
+		if !_accept(parser, _TOAccepts, &pos, &perr) {
 			goto fail23
 		}
 		goto ok0
 	fail23:
+		pos = pos3
+		// TEO
+		if !_accept(parser, _TEOAccepts, &pos, &perr) {
+			goto fail24
+		}
+		goto ok0
+	fail24:
 		pos = pos3
 		goto fail
 	ok0:
@@ -43792,7 +43593,7 @@ func _function_wordNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "function_word"}
-	// BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/NA/PO/RA/TEO/TU
+	// BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/NA/PO/RA/TU/TO/TEO
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
@@ -43940,20 +43741,28 @@ func _function_wordNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail21:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// TEO
-		if !_node(parser, _TEONode, node, &pos) {
+		// TU
+		if !_node(parser, _TUNode, node, &pos) {
 			goto fail22
 		}
 		goto ok0
 	fail22:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// TU
-		if !_node(parser, _TUNode, node, &pos) {
+		// TO
+		if !_node(parser, _TONode, node, &pos) {
 			goto fail23
 		}
 		goto ok0
 	fail23:
+		node.Kids = node.Kids[:nkids1]
+		pos = pos3
+		// TEO
+		if !_node(parser, _TEONode, node, &pos) {
+			goto fail24
+		}
+		goto ok0
+	fail24:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
 		goto fail
@@ -43976,7 +43785,7 @@ func _function_wordFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _function_word}
-	// BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/NA/PO/RA/TEO/TU
+	// BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/NA/PO/RA/TU/TO/TEO
 	{
 		pos3 := pos
 		// BI
@@ -44105,19 +43914,26 @@ func _function_wordFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail21:
 		pos = pos3
-		// TEO
-		if !_fail(parser, _TEOFail, errPos, failure, &pos) {
+		// TU
+		if !_fail(parser, _TUFail, errPos, failure, &pos) {
 			goto fail22
 		}
 		goto ok0
 	fail22:
 		pos = pos3
-		// TU
-		if !_fail(parser, _TUFail, errPos, failure, &pos) {
+		// TO
+		if !_fail(parser, _TOFail, errPos, failure, &pos) {
 			goto fail23
 		}
 		goto ok0
 	fail23:
+		pos = pos3
+		// TEO
+		if !_fail(parser, _TEOFail, errPos, failure, &pos) {
+			goto fail24
+		}
+		goto ok0
+	fail24:
 		pos = pos3
 		goto fail
 	ok0:
@@ -44142,7 +43958,7 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/NA/PO/RA/TEO/TU
+	// BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/NA/PO/RA/TU/TO/TEO
 	{
 		pos3 := pos
 		var node2 string
@@ -44344,8 +44160,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	fail21:
 		node = node2
 		pos = pos3
-		// TEO
-		if p, n := _TEOAction(parser, pos); n == nil {
+		// TU
+		if p, n := _TUAction(parser, pos); n == nil {
 			goto fail22
 		} else {
 			node = *n
@@ -44355,8 +44171,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	fail22:
 		node = node2
 		pos = pos3
-		// TU
-		if p, n := _TUAction(parser, pos); n == nil {
+		// TO
+		if p, n := _TOAction(parser, pos); n == nil {
 			goto fail23
 		} else {
 			node = *n
@@ -44364,6 +44180,17 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 		}
 		goto ok0
 	fail23:
+		node = node2
+		pos = pos3
+		// TEO
+		if p, n := _TEOAction(parser, pos); n == nil {
+			goto fail24
+		} else {
+			node = *n
+			pos = p
+		}
+		goto ok0
+	fail24:
 		node = node2
 		pos = pos3
 		goto fail
@@ -50968,278 +50795,6 @@ fail:
 	return -1, nil
 }
 
-func _TEOAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _TEO, start); ok {
-		return dp, de
-	}
-	pos, perr := start, -1
-	// t E o &(tone? boundary)
-	// t
-	if !_accept(parser, _tAccepts, &pos, &perr) {
-		goto fail
-	}
-	// E
-	if !_accept(parser, _EAccepts, &pos, &perr) {
-		goto fail
-	}
-	// o
-	if !_accept(parser, _oAccepts, &pos, &perr) {
-		goto fail
-	}
-	// &(tone? boundary)
-	{
-		pos2 := pos
-		perr4 := perr
-		// (tone? boundary)
-		// tone? boundary
-		// tone?
-		{
-			pos8 := pos
-			// tone
-			if !_accept(parser, _toneAccepts, &pos, &perr) {
-				goto fail9
-			}
-			goto ok10
-		fail9:
-			pos = pos8
-		ok10:
-		}
-		// boundary
-		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
-			goto fail5
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		perr = _max(perr4, pos)
-		goto fail
-	ok1:
-		pos = pos2
-		perr = perr4
-	}
-	return _memoize(parser, _TEO, start, pos, perr)
-fail:
-	return _memoize(parser, _TEO, start, -1, perr)
-}
-
-func _TEONode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_TEO]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _TEO}
-	node := parser.node[key]
-	if node != nil {
-		return start + int(dp-1), node
-	}
-	pos := start
-	node = &peg.Node{Name: "TEO"}
-	// t E o &(tone? boundary)
-	// t
-	if !_node(parser, _tNode, node, &pos) {
-		goto fail
-	}
-	// E
-	if !_node(parser, _ENode, node, &pos) {
-		goto fail
-	}
-	// o
-	if !_node(parser, _oNode, node, &pos) {
-		goto fail
-	}
-	// &(tone? boundary)
-	{
-		pos2 := pos
-		nkids3 := len(node.Kids)
-		// (tone? boundary)
-		{
-			nkids6 := len(node.Kids)
-			pos07 := pos
-			// tone? boundary
-			// tone?
-			{
-				nkids9 := len(node.Kids)
-				pos10 := pos
-				// tone
-				if !_node(parser, _toneNode, node, &pos) {
-					goto fail11
-				}
-				goto ok12
-			fail11:
-				node.Kids = node.Kids[:nkids9]
-				pos = pos10
-			ok12:
-			}
-			// boundary
-			if !_node(parser, _boundaryNode, node, &pos) {
-				goto fail5
-			}
-			sub := _sub(parser, pos07, pos, node.Kids[nkids6:])
-			node.Kids = append(node.Kids[:nkids6], sub)
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		goto fail
-	ok1:
-		pos = pos2
-		node.Kids = node.Kids[:nkids3]
-	}
-	node.Text = parser.text[start:pos]
-	parser.node[key] = node
-	return pos, node
-fail:
-	return -1, nil
-}
-
-func _TEOFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _TEO, start, errPos)
-	if failure != nil {
-		return pos, failure
-	}
-	failure = &peg.Fail{
-		Name: "TEO",
-		Pos:  int(start),
-	}
-	key := _key{start: start, rule: _TEO}
-	// t E o &(tone? boundary)
-	// t
-	if !_fail(parser, _tFail, errPos, failure, &pos) {
-		goto fail
-	}
-	// E
-	if !_fail(parser, _EFail, errPos, failure, &pos) {
-		goto fail
-	}
-	// o
-	if !_fail(parser, _oFail, errPos, failure, &pos) {
-		goto fail
-	}
-	// &(tone? boundary)
-	{
-		pos2 := pos
-		nkids3 := len(failure.Kids)
-		// (tone? boundary)
-		// tone? boundary
-		// tone?
-		{
-			pos8 := pos
-			// tone
-			if !_fail(parser, _toneFail, errPos, failure, &pos) {
-				goto fail9
-			}
-			goto ok10
-		fail9:
-			pos = pos8
-		ok10:
-		}
-		// boundary
-		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
-			goto fail5
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		failure.Kids = failure.Kids[:nkids3]
-		if pos >= errPos {
-			failure.Kids = append(failure.Kids, &peg.Fail{
-				Pos:  int(pos),
-				Want: "&(tone? boundary)",
-			})
-		}
-		goto fail
-	ok1:
-		pos = pos2
-		failure.Kids = failure.Kids[:nkids3]
-	}
-	parser.fail[key] = failure
-	return pos, failure
-fail:
-	parser.fail[key] = failure
-	return -1, failure
-}
-
-func _TEOAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_TEO]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _TEO}
-	n := parser.act[key]
-	if n != nil {
-		n := n.(string)
-		return start + int(dp-1), &n
-	}
-	var node string
-	pos := start
-	// t E o &(tone? boundary)
-	{
-		var node0 string
-		// t
-		if p, n := _tAction(parser, pos); n == nil {
-			goto fail
-		} else {
-			node0 = *n
-			pos = p
-		}
-		node, node0 = node+node0, ""
-		// E
-		if p, n := _EAction(parser, pos); n == nil {
-			goto fail
-		} else {
-			node0 = *n
-			pos = p
-		}
-		node, node0 = node+node0, ""
-		// o
-		if p, n := _oAction(parser, pos); n == nil {
-			goto fail
-		} else {
-			node0 = *n
-			pos = p
-		}
-		node, node0 = node+node0, ""
-		// &(tone? boundary)
-		{
-			pos2 := pos
-			// (tone? boundary)
-			// tone? boundary
-			// tone?
-			{
-				pos8 := pos
-				// tone
-				if p, n := _toneAction(parser, pos); n == nil {
-					goto fail9
-				} else {
-					pos = p
-				}
-				goto ok10
-			fail9:
-				pos = pos8
-			ok10:
-			}
-			// boundary
-			if p, n := _boundaryAction(parser, pos); n == nil {
-				goto fail5
-			} else {
-				pos = p
-			}
-			goto ok1
-		fail5:
-			pos = pos2
-			goto fail
-		ok1:
-			pos = pos2
-			node0 = ""
-		}
-		node, node0 = node+node0, ""
-	}
-	parser.act[key] = node
-	return pos, &node
-fail:
-	return -1, nil
-}
-
 func _TUAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	if dp, de, ok := _memo(parser, _TU, start); ok {
 		return dp, de
@@ -51814,6 +51369,464 @@ fail:
 	return -1, nil
 }
 
+func _TOAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _TO, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// t O &boundary
+	// t
+	if !_accept(parser, _tAccepts, &pos, &perr) {
+		goto fail
+	}
+	// O
+	if !_accept(parser, _OAccepts, &pos, &perr) {
+		goto fail
+	}
+	// &boundary
+	{
+		pos2 := pos
+		perr4 := perr
+		// boundary
+		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	return _memoize(parser, _TO, start, pos, perr)
+fail:
+	return _memoize(parser, _TO, start, -1, perr)
+}
+
+func _TONode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_TO]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _TO}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "TO"}
+	// t O &boundary
+	// t
+	if !_node(parser, _tNode, node, &pos) {
+		goto fail
+	}
+	// O
+	if !_node(parser, _ONode, node, &pos) {
+		goto fail
+	}
+	// &boundary
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// boundary
+		if !_node(parser, _boundaryNode, node, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _TOFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _TO, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "TO",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _TO}
+	// t O &boundary
+	// t
+	if !_fail(parser, _tFail, errPos, failure, &pos) {
+		goto fail
+	}
+	// O
+	if !_fail(parser, _OFail, errPos, failure, &pos) {
+		goto fail
+	}
+	// &boundary
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// boundary
+		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&boundary",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _TOAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_TO]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _TO}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// t O &boundary
+	{
+		var node0 string
+		// t
+		if p, n := _tAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node, node0 = node+node0, ""
+		// O
+		if p, n := _OAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node, node0 = node+node0, ""
+		// &boundary
+		{
+			pos2 := pos
+			// boundary
+			if p, n := _boundaryAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node0 = ""
+		}
+		node, node0 = node+node0, ""
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _TEOAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _TEO, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// t E o &(tone? boundary)
+	// t
+	if !_accept(parser, _tAccepts, &pos, &perr) {
+		goto fail
+	}
+	// E
+	if !_accept(parser, _EAccepts, &pos, &perr) {
+		goto fail
+	}
+	// o
+	if !_accept(parser, _oAccepts, &pos, &perr) {
+		goto fail
+	}
+	// &(tone? boundary)
+	{
+		pos2 := pos
+		perr4 := perr
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_accept(parser, _toneAccepts, &pos, &perr) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
+		// boundary
+		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		perr = _max(perr4, pos)
+		goto fail
+	ok1:
+		pos = pos2
+		perr = perr4
+	}
+	return _memoize(parser, _TEO, start, pos, perr)
+fail:
+	return _memoize(parser, _TEO, start, -1, perr)
+}
+
+func _TEONode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_TEO]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _TEO}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "TEO"}
+	// t E o &(tone? boundary)
+	// t
+	if !_node(parser, _tNode, node, &pos) {
+		goto fail
+	}
+	// E
+	if !_node(parser, _ENode, node, &pos) {
+		goto fail
+	}
+	// o
+	if !_node(parser, _oNode, node, &pos) {
+		goto fail
+	}
+	// &(tone? boundary)
+	{
+		pos2 := pos
+		nkids3 := len(node.Kids)
+		// (tone? boundary)
+		{
+			nkids6 := len(node.Kids)
+			pos07 := pos
+			// tone? boundary
+			// tone?
+			{
+				nkids9 := len(node.Kids)
+				pos10 := pos
+				// tone
+				if !_node(parser, _toneNode, node, &pos) {
+					goto fail11
+				}
+				goto ok12
+			fail11:
+				node.Kids = node.Kids[:nkids9]
+				pos = pos10
+			ok12:
+			}
+			// boundary
+			if !_node(parser, _boundaryNode, node, &pos) {
+				goto fail5
+			}
+			sub := _sub(parser, pos07, pos, node.Kids[nkids6:])
+			node.Kids = append(node.Kids[:nkids6], sub)
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		goto fail
+	ok1:
+		pos = pos2
+		node.Kids = node.Kids[:nkids3]
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _TEOFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _TEO, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "TEO",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _TEO}
+	// t E o &(tone? boundary)
+	// t
+	if !_fail(parser, _tFail, errPos, failure, &pos) {
+		goto fail
+	}
+	// E
+	if !_fail(parser, _EFail, errPos, failure, &pos) {
+		goto fail
+	}
+	// o
+	if !_fail(parser, _oFail, errPos, failure, &pos) {
+		goto fail
+	}
+	// &(tone? boundary)
+	{
+		pos2 := pos
+		nkids3 := len(failure.Kids)
+		// (tone? boundary)
+		// tone? boundary
+		// tone?
+		{
+			pos8 := pos
+			// tone
+			if !_fail(parser, _toneFail, errPos, failure, &pos) {
+				goto fail9
+			}
+			goto ok10
+		fail9:
+			pos = pos8
+		ok10:
+		}
+		// boundary
+		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+		if pos >= errPos {
+			failure.Kids = append(failure.Kids, &peg.Fail{
+				Pos:  int(pos),
+				Want: "&(tone? boundary)",
+			})
+		}
+		goto fail
+	ok1:
+		pos = pos2
+		failure.Kids = failure.Kids[:nkids3]
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _TEOAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_TEO]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _TEO}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// t E o &(tone? boundary)
+	{
+		var node0 string
+		// t
+		if p, n := _tAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node, node0 = node+node0, ""
+		// E
+		if p, n := _EAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node, node0 = node+node0, ""
+		// o
+		if p, n := _oAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node, node0 = node+node0, ""
+		// &(tone? boundary)
+		{
+			pos2 := pos
+			// (tone? boundary)
+			// tone? boundary
+			// tone?
+			{
+				pos8 := pos
+				// tone
+				if p, n := _toneAction(parser, pos); n == nil {
+					goto fail9
+				} else {
+					pos = p
+				}
+				goto ok10
+			fail9:
+				pos = pos8
+			ok10:
+			}
+			// boundary
+			if p, n := _boundaryAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				pos = p
+			}
+			goto ok1
+		fail5:
+			pos = pos2
+			goto fail
+		ok1:
+			pos = pos2
+			node0 = ""
+		}
+		node, node0 = node+node0, ""
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
 func _syllable__compound_desinence__compound_toneAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	var labels [2]string
 	use(labels)
@@ -52060,8 +52073,8 @@ fail:
 func _syllable__compound_desinence__compound_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label1 string
 	var label0 string
+	var label1 string
 	dp := parser.deltaPos[start][_syllable__compound_desinence__compound_tone]
 	if dp < 0 {
 		return -1, nil
@@ -53830,8 +53843,8 @@ fail:
 func _syllable__preposition_desinence__preposition_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label1 string
 	var label0 string
+	var label1 string
 	dp := parser.deltaPos[start][_syllable__preposition_desinence__preposition_tone]
 	if dp < 0 {
 		return -1, nil
@@ -54184,8 +54197,8 @@ fail:
 func _syllable__adverb_desinence__adverb_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label1 string
 	var label0 string
+	var label1 string
 	dp := parser.deltaPos[start][_syllable__adverb_desinence__adverb_tone]
 	if dp < 0 {
 		return -1, nil

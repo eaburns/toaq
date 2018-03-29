@@ -1,8 +1,4 @@
 {
-	// FreeSans has all the glyphs used in this file.
-	// For Acme users:
-	// Font /mnt/font/FreeSans/11a/font
-
 	package parser
 	import (
 		"github.com/eaburns/peggy/peg"
@@ -10,309 +6,393 @@
 	)
 }
 
-full_text <- text EOF
-text <- spaces? discourse? spaces? EOF?
+full_text <- t:text EOF { return ast.Text(t) }
+text <- s:_ d:discourse? EOF? { return ast.Text(text(s, d)) }
 
 #
 # Discourse
 #
 
-discourse <- ( sentence / fragment )+
+discourse <- (
+		x0:sentence s0:_ { return ast.Node(x0.ModSentence(s0)) } /
+		x1:fragment s1:_ { return ast.Node(x1.ModFragment(s1)) }
+	)+
 
 #
-# Sentence and statement
+# Fragment, sentence, and statement
 #
 
-sentence <- coP_sentence / sentence_1
-sentence_1 <- forethought_coP_sentence / sentence_2
-sentence_2 <- spaces? sentence_prefix? sentence_3
-sentence_3 <- spaces? statement spaces? illocutionary?
-fragment <- spaces? coP_rel / spaces? relative_clause / spaces? prenex / spaces? terms
-coP_sentence <- sentence_1 spaces? co_bar_sentence
-co_bar_sentence <- connective spaces? sentence_1
-forethought_coP_sentence <- forethought_connective spaces? forethought_coP_sentence_1
-forethought_coP_sentence_1 <- sentence spaces? forethought_co_bar_sentence
-forethought_co_bar_sentence <- forethought_marker spaces? sentence
-statement <- coP_statement / statement_1
-statement_1 <- forethought_coP_statement / statement_2
-statement_2 <- statement_3 end_statement?
-statement_3 <- prenex? spaces? predication
-prenex <- terms spaces? end_prenex
-predication <- predicate spaces? terms?
-coP_statement <- statement_1 spaces? co_bar_statement
-co_bar_statement <- connective spaces? statement_1
-forethought_coP_statement <- forethought_connective spaces? forethought_coP_statement_1
-forethought_coP_statement_1 <- statement spaces? forethought_co_bar_statement
-forethought_co_bar_statement <- forethought_marker spaces? statement
+fragment <- f:(
+	x0:afterthought_cop<relative_clause_1, relative_clause_1> { return ast.Fragment((*ast.CoPRelative)(x0)) } /
+	x1:relative_clause  { return ast.Fragment(x1) } /
+	x2:prenex  { return ast.Fragment(x2) } /
+	x3:terms { return ast.Fragment(x3) }
+	) s:_ { return ast.Fragment(f.ModFragment(s)) }
+
+sentence <-
+	x:afterthought_cop<sentence_1, sentence_1> { return ast.Sentence((*ast.CoPSentence)(x)) } /
+	sentence_1
+sentence_1 <-
+	x:forethought_cop<sentence, sentence> { return ast.Sentence((*ast.CoPSentence)(x)) } /
+	sentence_2
+sentence_2 <-
+	je:sentence_prefix_spaces? se:sentence_3 { se.JE = je; return ast.Sentence(se) }
+sentence_prefix_spaces <-
+	je:sentence_prefix s:_ { return ast.Word(*je.Mod(s)) }
+sentence_3 <-
+	st:statement s:_ da:illocutionary? { return &ast.StatementSentence{Statement: st.ModStatement(s), DA: da} }
+
+statement <-
+	n:afterthought_cop<statement_1, statement_1> { return ast.Statement((*ast.CoPStatement)(n)) } /
+	statement_1
+statement_1 <-
+	n:forethought_cop<statement, statement> { return ast.Statement((*ast.CoPStatement)(n)) } /
+	statement_2
+statement_2 <-
+	st:statement_3 s:_ na:end_statement? { return ast.Statement(endPredication(st, s, na)) }
+statement_3 <-
+	n:prenex_spaces? p:predication { return ast.Predication(prenexStmt(n, p)) }
+prenex_spaces <-
+	 p:prenex s:_ { return ast.Prenex(*p.Mod(s)) }
+prenex <-
+	ts:terms s:_ bi:end_prenex { return (*ast.Prenex)(prenex(ts, s, bi)) }
+predication <-
+	p:predicate s:_ ts:terms? { return ast.Predication(predication(p, s, ts)) }
 
 #
 # Predicates
 #
 
 predicate <- serial_predicate
-predicate_1 <- coP_pred / predicate_2
-predicate_2 <- forethought_coP_pred / LU_predicate / MI_predicate / PO_predicate / quotation_predicate / prefix spaces? predicate_2 / predicate_3
-predicate_3 <- predicate_4 spaces?
-predicate_4 <- verb_syllable compound_syllable+ / !function_word verb_syllable
-serial_predicate <- serial_predicate_2 / predicate_1
-serial_predicate_2 <- predicate_1 spaces? serial_predicate
-coP_pred <- predicate_2 spaces? co_bar_pred
-co_bar_pred <- connective spaces? predicate_1
-forethought_coP_pred <- forethought_connective spaces? forethought_coP_pred_1
-forethought_coP_pred_1 <- predicate spaces? forethought_co_bar_pred
-forethought_co_bar_pred <- forethought_marker spaces? predicate
-LU_predicate <- LU_predicate_tone spaces? statement
-LU_predicate_tone <- &LU verb_syllable
-MI_predicate <- MI_predicate_1 spaces? end_predicatizer?
-MI_predicate_1 <- MI_predicate_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
-MI_predicate_tone <- &MI verb_syllable
-PO_predicate <- PO_predicate_1 spaces? end_predicatizer?
-PO_predicate_1 <- PO_predicate_tone spaces? argument
-PO_predicate_tone <- &PO verb_syllable
-quotation_predicate <- MO_predicate spaces? end_quote
-MO_predicate <- MO_predicate_tone spaces? discourse
-MO_predicate_tone <- &MO verb_syllable
-
+predicate_1 <-
+	x:afterthought_cop<predicate_2, predicate_1> { return ast.Predicate((*ast.CoPPredicate)(x)) } /
+	predicate_2
+predicate_2 <-
+	forethought_cop_pred<predicate> /
+	LU_predicate<verb_syllable> /
+	MI_phrase<verb_syllable> /
+	PO_phrase<verb_syllable> /
+	MO_phrase<verb_syllable> /
+	prefixed_predicate /
+	predicate_3
+prefixed_predicate <-
+	x:prefix s:_ p:predicate_2 { return ast.Predicate(prefixed(x, s, p)) }
+predicate_3 <-
+	p:predicate_word<verb_syllable> s:_ { return ast.Predicate(p.ModPredicate(s)) }
+serial_predicate <-
+	serial<predicate_1> /
+	predicate_1
+serial<left> <-
+	l:left s:_ r:serial_predicate { return ast.Predicate(serial(l, s, r)) }
 
 #
 # Terms
 #
 
-terms <- terms_2 / term
-terms_2 <- term spaces? terms
-term <- ( linking_word? spaces? argument ) / adverb / termset / prepositional_phrase
+terms <-
+	terms_2 /
+	t:term { return &ast.Terms{Term: t} }
+terms_2 <-
+	t:term s:_ ts:terms { return &ast.Terms{Term: t.ModTerm(s), Terms: ts} }
+term <-
+	x0:linked_argument { return ast.Term(x0) } /
+	x1:adverb { return ast.Term(x1) } /
+	x2:termset { return ast.Term(x2) } /
+	x3:prepositional_phrase { return ast.Term(x3) }
+linked_argument <-
+	g:linking_word_spaces? a:argument { return ast.Term(linkedTerm(g, a)) }
+linking_word_spaces <-
+	w:linking_word s:_ { return (*ast.Word)(w.Mod(s)) }
+termset <-
+	x0:forethought_cop<terms_V, terms_V> { return (*ast.TermSet)(x0) } /
+	x1:forethought_cop<terms_IV, terms_IV> { return (*ast.TermSet)(x1) } /
+	x2:forethought_cop<terms_III, terms_III> { return (*ast.TermSet)(x2) } /
+	x3:forethought_cop<terms_II, terms_II> { return (*ast.TermSet)(x3) } /
+	x4:forethought_cop<terms_V, terms_V> { return (*ast.TermSet)(x4) }
+terms_II <-
+	l:term s:_ r:term { return &ast.Terms{Term: l.ModTerm(s), Terms: &ast.Terms{Term: r}} }
+terms_III <-
+	l:term s:_ r:terms_II { return &ast.Terms{Term: l.ModTerm(s), Terms: r} }
+terms_IV <-
+	l:term s:_ r:terms_III { return &ast.Terms{Term: l.ModTerm(s), Terms: r} }
+terms_V <-
+	l:term s:_ r:terms_IV { return &ast.Terms{Term: l.ModTerm(s), Terms: r} }
 
 #
 # Arguments
 #
 
-argument <- coP_arg / arg_1
-arg_1 <- forethought_coP_arg / arg_2
-arg_2 <- focus? spaces? arg_3
-arg_3 <- quantifier? spaces? arg_4
-arg_4 <- arg_5 spaces? relative_clause?
-arg_5 <- serial_argument / arg_6
-arg_6 <- content_clause / coP_pred_arg / forethought_coP_pred_arg / LU_arg / MI_arg / PO_arg / quotation_argument / arg_7
-arg_7 <- arg_syllable compound_syllable+ / !function_word arg_syllable
-serial_argument <- arg_6 spaces? serial_predicate
-coP_arg <- arg_1 spaces? co_bar_arg
-co_bar_arg <- connective spaces? argument
-forethought_coP_arg <- forethought_connective spaces? forethought_coP_arg_1
-forethought_coP_arg_1 <- argument spaces? forethought_co_bar_arg
-forethought_co_bar_arg <- forethought_marker spaces? argument
-coP_pred_arg <- arg_7 spaces? co_bar_pred
-forethought_coP_pred_arg <- forethought_connective spaces? forethought_coP_pred_arg_1
-forethought_coP_pred_arg_1 <- argument spaces? forethought_co_bar_pred
-LU_arg <- LU_arg_tone spaces? statement
-LU_arg_tone <- &LU arg_syllable
-MI_arg <- MI_arg_1 spaces? end_predicatizer?
-MI_arg_1 <- MI_arg_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
-MI_arg_tone <- &MI arg_syllable
-PO_arg <- PO_arg_1 spaces? end_predicatizer?
-PO_arg_1 <- PO_arg_tone spaces? argument
-PO_arg_tone <- &PO arg_syllable
-quotation_argument <- MO_argument spaces? end_quote
-MO_argument <- MO_argument_tone spaces? discourse
-MO_argument_tone <- &MO arg_syllable
+argument <-
+	x:afterthought_cop<arg_1, argument> { return ast.Argument((*ast.CoPArgument)(x)) } /
+	arg_1
+arg_1 <-
+	x:forethought_cop<argument, argument> { return ast.Argument((*ast.CoPArgument)(x)) } /
+	arg_2
+arg_2 <-
+	ku:focus_spaces? a:arg_3 { return ast.Argument(focusedArgument(ku, a)) }
+focus_spaces <-
+	ku:focus s:_ { return ast.Word(*ku.Mod(s)) }
+arg_3 <-
+	q:quantifier_spaces? a:arg_4 { return ast.PredicateArgument(quantifiedArgument(q, a)) }
+quantifier_spaces <-
+	q:quantifier s:_ { return ast.Word(*q.Mod(s)) }
+arg_4 <-
+	a:arg_5 s:_ rc:relative_clause? { return ast.PredicateArgument(argumentRelative(*a, s, rc)) }
+arg_5 <-
+	p:( serial<arg_6> / arg_6 ) { return &ast.PredicateArgument{Predicate: p} }
+arg_6 <-
+	x0:content_clause { return ast.Predicate(x0) } /
+	afterthought_cop_pred<arg_7> /
+	# NOTE: this differs from the official grammar, which uses argument instead of arg_5.
+	forethought_cop_pred<arg_5> /
+	LU_predicate<arg_syllable> /
+	MI_phrase<arg_syllable> /
+	PO_phrase<arg_syllable> /
+	MO_phrase<arg_syllable> /
+	arg_7
+arg_7 <- predicate_word<arg_syllable>
 
 #
 # Relative clauses
 #
 
-relative_clause <- coP_rel / LU_relative / relative_clause_1
-relative_clause_1 <- forethought_coP_rel / relative_clause_2
-relative_clause_2 <- coP_rel_statement / relative_clause_3
-relative_clause_3 <- relative_predication spaces? end_statement?
-relative_predication <- relative_predicate spaces? terms?
-coP_rel_statement <- relative_clause_3 spaces? co_bar_statement
-coP_rel <- relative_clause_1 spaces? co_bar_rel
-co_bar_rel <- connective spaces? relative_clause_1
-forethought_coP_rel <- forethought_connective spaces? forethought_coP_rel_1
-forethought_coP_rel_1 <- relative_clause spaces? forethought_co_bar_rel
-forethought_co_bar_rel <- forethought_marker spaces? relative_clause
-relative_predicate <- serial_relative_predicate / relative_predicate_1
-relative_predicate_1 <- coP_pred_relative_predicate / forethought_coP_pred_relative_predicate / relative_predicate_2
-relative_predicate_2 <- MI_relative_predicate / PO_relative_predicate / quotation_relative_predicate / relative_predicate_3
-relative_predicate_3 <- relative_syllable compound_syllable+ / !function_word relative_syllable
-serial_relative_predicate <- relative_predicate_1 spaces? serial_predicate
-coP_pred_relative_predicate <- relative_predicate_2 spaces? co_bar_pred
-forethought_coP_pred_relative_predicate <- forethought_connective spaces? forethought_coP_pred_relative_predicate_1
-forethought_coP_pred_relative_predicate_1 <- relative_predicate spaces? forethought_co_bar_pred
-LU_relative <- LU_relative_tone spaces? statement
-LU_relative_tone <- &LU relative_syllable
-MI_relative_predicate <- MI_relative_predicate_1 spaces? end_predicatizer?
-MI_relative_predicate_1 <- MI_relative_predicate_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
-MI_relative_predicate_tone <- &MI relative_syllable
-PO_relative_predicate <- PO_relative_predicate_1 spaces? end_predicatizer?
-PO_relative_predicate_1 <- PO_relative_predicate_tone spaces? argument
-PO_relative_predicate_tone <- &PO relative_syllable
-quotation_relative_predicate <- MO_relative_predicate spaces? end_quote
-MO_relative_predicate <- MO_relative_predicate_tone spaces? discourse
-MO_relative_predicate_tone <- &MO relative_syllable
+relative_clause <-
+	# BUG? should the right branch be relative_clause instead of relative_clause_1?
+	x0:afterthought_cop<relative_clause_1, relative_clause_1> { return ast.Relative((*ast.CoPRelative)(x0)) } /
+	x1:LU_phrase<relative_syllable> { return ast.Relative((*ast.LURelative)(x1)) } /
+	relative_clause_1
+relative_clause_1 <-
+	x:forethought_cop<relative_clause, relative_clause> { return ast.Relative((*ast.CoPRelative)(x)) } /
+	relative_clause_2
+relative_clause_2 <-
+	x0:afterthought_cop<relative_clause_3, statement> { return ast.Relative((*ast.CoPRelative)(x0)) } /
+	x1:relative_clause_3 { return ast.Relative(x1) }
+relative_clause_3 <-
+	p:relative_predication s:_ na:end_statement? { return &ast.PredicationRelative{Predication: *endPredication(p, s, na)} }
+relative_predication <-
+	p:relative_predicate s:_ ts:terms? { return ast.Predication(predication(p, s, ts))  }
 
-#
-# Termsets
-#
-
-termset <- termset_V / termset_IV / termset_III / termset_II
-termset_II <- forethought_connective spaces? forethought_coP_term_II
-forethought_coP_term_II <- terms_II spaces? forethought_co_bar_term_II
-forethought_co_bar_term_II <- forethought_marker spaces? terms_II
-termset_III <- forethought_connective spaces? forethought_coP_term_III
-forethought_coP_term_III <- terms_III spaces? forethought_co_bar_term_III
-forethought_co_bar_term_III <- forethought_marker spaces? terms_III
-termset_IV <- forethought_connective spaces? forethought_coP_term_IV
-forethought_coP_term_IV <- terms_IV spaces? forethought_co_bar_term_IV
-forethought_co_bar_term_IV <- forethought_marker spaces? terms_IV
-termset_V <- forethought_connective spaces? forethought_coP_term_V
-forethought_coP_term_V <- terms_V spaces? forethought_co_bar_term_V
-forethought_co_bar_term_V <- forethought_marker spaces? terms_V
-forethought_connective <- spaces? forethought_marker spaces? connective
-terms_II <- term spaces? term
-terms_III <- term spaces? terms_II
-terms_IV <- term spaces? terms_III
-terms_V <- term spaces? terms_IV
+relative_predicate <-
+	serial<relative_predicate_1> / relative_predicate_1
+relative_predicate_1 <-
+	afterthought_cop_pred<relative_predicate_2> /
+	forethought_cop_pred<relative_predicate> /
+	relative_predicate_2
+relative_predicate_2 <-
+	MI_phrase<relative_syllable> /
+	PO_phrase<relative_syllable> /
+	MO_phrase<relative_syllable> /
+	predicate_word<relative_syllable>
 
 #
 # Adverbs
 #
 
-adverb <- coP_adverb / adverb_1
-adverb_1 <- forethought_coP_adverb / adverb_2
-adverb_2 <- serial_adverb / adverb_3
-adverb_3 <- coP_pred_adverb / forethought_coP_pred_adverb / LU_adverb / MI_adverb / PO_adverb / quotation_adverb / adverb_4
-adverb_4 <- adverb_syllable compound_syllable+ / !function_word adverb_syllable
-coP_adverb <- adverb_1 spaces? co_bar_adverb
-co_bar_adverb <- connective spaces? adverb
-forethought_coP_adverb <- forethought_connective spaces? forethought_coP_adverb_1
-forethought_coP_adverb_1 <- adverb spaces? forethought_co_bar_adverb
-forethought_co_bar_adverb <- forethought_marker spaces? adverb
-serial_adverb <- adverb_3 spaces? serial_predicate
-coP_pred_adverb <- adverb_4 spaces? co_bar_pred
-forethought_coP_pred_adverb <- forethought_connective spaces? forethought_coP_pred_adverb_1
-forethought_coP_pred_adverb_1 <- adverb spaces? forethought_co_bar_pred
-LU_adverb <- LU_adverb_tone spaces? statement
-LU_adverb_tone <- &LU adverb_syllable
-MI_adverb <- MI_adverb_1 spaces? end_predicatizer?
-MI_adverb_1 <- MI_adverb_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
-MI_adverb_tone <- &MI adverb_syllable
-PO_adverb <- PO_adverb_1 spaces? end_predicatizer?
-PO_adverb_1 <- PO_adverb_tone spaces? argument
-PO_adverb_tone <- &PO adverb_syllable
-quotation_adverb <- MO_adverb spaces? end_quote
-MO_adverb <- MO_adverb_tone spaces? discourse
-MO_adverb_tone <- &MO adverb_syllable
+adverb <-
+	x:afterthought_cop<adverb_1, adverb> { return ast.Adverb((*ast.CoPAdverb)(x)) } /
+	adverb_1
+adverb_1 <-
+	x:forethought_cop<adverb, adverb> { return ast.Adverb((*ast.CoPAdverb)(x)) } /
+	adverb_2
+adverb_2 <-
+	p:( serial<adverb_3> / adverb_3 ) { return ast.Adverb(&ast.PredicateAdverb{Predicate: p}) }
+adverb_3 <-
+	afterthought_cop_pred<adverb_4> /
+	# NOTE: this differs from the original grammar, which uses adverb instead of adverb_3.
+	forethought_cop_pred<adverb_3> /
+	LU_predicate<adverb_syllable> /
+	MI_phrase<adverb_syllable> /
+	PO_phrase<adverb_syllable> /
+	MO_phrase<adverb_syllable> /
+	adverb_4
+adverb_4 <- predicate_word<adverb_syllable>
 
 #
 # Prepositional phrases
 #
 
-prepositional_phrase <- coP_prepositional_phrase / prepositional_phrase_1
-prepositional_phrase_1 <- forethought_coP_prepositional_phrase / prepositional_phrase_2
-prepositional_phrase_2 <- preposition spaces? argument
-coP_prepositional_phrase <- prepositional_phrase_1 spaces? co_bar_prepositional_phrase
-co_bar_prepositional_phrase <- connective spaces? prepositional_phrase_1
-forethought_coP_prepositional_phrase <- forethought_connective spaces? forethought_coP_prepositional_phrase_1
-forethought_coP_prepositional_phrase_1 <- prepositional_phrase spaces? forethought_co_bar_prepositional_phrase
-forethought_co_bar_prepositional_phrase <- forethought_marker spaces? prepositional_phrase
-preposition <- coP_preposition / preposition_1
-preposition_1 <- forethought_coP_preposition / preposition_2
-preposition_2 <- serial_preposition / preposition_3
-preposition_3 <- coP_pred_preposition / forethought_coP_pred_preposition / LU_preposition / MI_preposition / PO_preposition / quotation_preposition / preposition_4
-preposition_4 <- preposition_syllable compound_syllable+ / !function_word preposition_syllable
-coP_preposition <- preposition_1 spaces? co_bar_preposition
-co_bar_preposition <- connective spaces? preposition
-forethought_coP_preposition <- forethought_connective spaces? forethought_coP_preposition_1
-forethought_coP_preposition_1 <- preposition spaces? forethought_co_bar_preposition
-forethought_co_bar_preposition <- forethought_marker spaces? preposition
-serial_preposition <- preposition_3 spaces? serial_predicate
-coP_pred_preposition <- preposition_4 spaces? co_bar_pred
-forethought_coP_pred_preposition <- forethought_connective spaces? forethought_coP_pred_preposition_1
-forethought_coP_pred_preposition_1 <- preposition spaces? forethought_co_bar_pred
-LU_preposition <- LU_preposition_tone spaces? statement
-LU_preposition_tone <- &LU preposition_syllable
-MI_preposition <- MI_preposition_1 spaces? end_predicatizer?
-MI_preposition_1 <- MI_preposition_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
-MI_preposition_tone <- &MI preposition_syllable
-PO_preposition <- PO_preposition_1 spaces? end_predicatizer?
-PO_preposition_1 <- PO_preposition_tone spaces? argument
-PO_preposition_tone <- &PO preposition_syllable
-quotation_preposition <- MO_preposition spaces? end_quote
-MO_preposition <- MO_preposition_tone spaces? discourse
-MO_preposition_tone <- &MO preposition_syllable
+prepositional_phrase <-
+	x:afterthought_cop<prepositional_phrase_1, prepositional_phrase_1> { return ast.Preposition((*ast.CoPPreposition)(x)) } /
+	prepositional_phrase_1
+prepositional_phrase_1 <-
+	x:forethought_cop<prepositional_phrase, prepositional_phrase> { return ast.Preposition((*ast.CoPPreposition)(x)) } /
+	prepositional_phrase_2
+prepositional_phrase_2 <-
+	p:preposition s:_ a:argument { return ast.Preposition(prepPhrase(p, s, a)) }
+
+preposition <-
+	x:afterthought_cop<preposition_1, preposition> { return ast.Predicate((*ast.CoPPredicate)(x)) } /
+	preposition_1
+preposition_1 <-
+	x:forethought_cop<preposition, preposition> { return ast.Predicate((*ast.CoPPredicate)(x)) } /
+	preposition_2
+preposition_2 <-
+	serial<preposition_3> / preposition_3
+preposition_3 <-
+	afterthought_cop_pred<preposition_4> /
+	forethought_cop_pred<preposition> /
+	LU_predicate<preposition_syllable> /
+	MI_phrase<preposition_syllable> /
+	PO_phrase<preposition_syllable> /
+	MO_phrase<preposition_syllable> /
+	preposition_4
+preposition_4 <- predicate_word<preposition_syllable>
 
 #
 # Content clauses
 #
 
-content_clause <- coP_content_statement / content_clause_1
-content_clause_1 <- content_predication spaces? end_statement? / LU_content
-content_predication <- content_predicate spaces? terms?
-coP_content_statement <- content_clause_1 spaces? co_bar_statement
-content_predicate <- serial_content_predicate / content_predicate_1
-content_predicate_1 <- coP_pred_content_predicate / forethought_coP_pred_content_predicate / content_predicate_2
-content_predicate_2 <- MI_content_predicate / PO_content_predicate / quotation_content_predicate / content_predicate_3
-content_predicate_3 <- content_syllable compound_syllable+ / !function_word content_syllable
-serial_content_predicate <- content_predicate_1 spaces? serial_predicate
-coP_pred_content_predicate <- content_predicate_2 spaces? co_bar_pred
-forethought_coP_pred_content_predicate <- forethought_connective spaces? forethought_coP_pred_content_predicate_1
-forethought_coP_pred_content_predicate_1 <- content_predicate spaces? forethought_co_bar_pred
-LU_content <- LU_content_tone statement
-LU_content_tone <- &LU content_syllable
-MI_content_predicate <- MI_content_predicate_1 spaces? end_predicatizer?
-MI_content_predicate_1 <- MI_content_tone spaces? ( predicate / argument / adverb / prepositional_phrase )
-MI_content_tone <- &MI content_syllable
-PO_content_predicate <- PO_content_predicate_1 spaces? end_predicatizer?
-PO_content_predicate_1 <- PO_content_tone spaces? argument
-PO_content_tone <- &PO content_syllable
-quotation_content_predicate <- MO_content_predicate spaces? end_quote
-MO_content_predicate <- MO_content_predicate_tone spaces? discourse
-MO_content_predicate_tone <- &MO content_syllable
+content_clause <-
+	x:afterthought_cop<content_clause_1, statement> { return ast.Content((*ast.CoPContent)(x)) } /
+	content_clause_1
+content_clause_1 <-
+	x0:content_statement { return ast.Content(x0) } /
+	x1:LU_phrase<content_syllable> { return ast.Content((*ast.LUContent)(x1)) }
+content_statement <-
+	p:content_predication s:_ na:end_statement? { return &ast.PredicationContent{Predication: *endPredication(p, s, na)} }
+content_predication <-
+	p:content_predicate s:_ ts:terms? { return ast.Predication(predication(p, s, ts)) }
+
+content_predicate <-
+	serial<content_predicate_1> / content_predicate_1
+content_predicate_1 <-
+	afterthought_cop_pred<content_predicate_2> /
+	forethought_cop_pred<content_predicate_2> /
+	content_predicate_2
+content_predicate_2 <-
+	MI_phrase<content_syllable> /
+	PO_phrase<content_syllable> /
+	MO_phrase<content_syllable> /
+	predicate_word<content_syllable>
 
 #
-# Free modifiers and interjections
+# CoP
 #
 
-freemod <- ( interjection / parenthetical / incidental / vocative )
-parenthetical <- parenthetical_1 spaces? end_parenthetical
-parenthetical_1 <- start_parenthetical spaces? discourse
-incidental <- start_incidental spaces? statement
-vocative <- vocative_marker spaces? argument
-spaces <- ( freemod / space+ ) spaces?
+afterthought_cop_pred<left> <-
+	x:afterthought_cop<left, predicate> { return ast.Predicate((*ast.CoPPredicate)(x)) }
+forethought_cop_pred<left> <-
+	x:forethought_cop<left, predicate> { return ast.Predicate((*ast.CoPPredicate)(x)) }
+
+afterthought_cop<left, right> <-
+	l:left s:_ bar:cop_bar<right> { return (*ast.CoP)(copLeft(l, s, bar)) }
+cop_bar<right> <-
+	ru:connective s:_ r:right { return ast.CoP(copRight(ru, s, r)) }
+
+forethought_cop<left, right> <-
+	con:forethought_connective s:_ cop:forethought_cop_1<left, right> { return (*ast.CoP)(foreCoP(con, s, cop)) }
+forethought_cop_1<left, right> <-
+	l:left s:_ bar:forethought_cop_bar<right> { return ast.CoP(foreCoPLeft(l, s, bar)) }
+forethought_cop_bar<right> <-
+	to:forethought_marker s:_ r:right { return ast.CoP(foreCoPRight(to, s, r)) }
+forethought_connective <-
+	to:forethought_marker s:_ ru:connective { return ast.CoP(connector(to, s, ru)) }
+
+#
+# LU, MI, PO, and MO phrases
+#
+
+LU_predicate<syllable> <-
+	x:LU_phrase<syllable> { return ast.Predicate((*ast.LUPredicate)(x)) }
+LU_phrase<syllable> <-
+	lu:LU_word<syllable> s:_ st:statement { return &ast.LUPhrase{LU: *lu.Mod(s), Statement: st} }
+LU_word<syllable> <-
+	&LU w:syllable { return &ast.Word{S: start, E: end, T: w} }
+	
+
+MI_phrase<syllable> <-
+	mi:MI_phrase_1<syllable> s:_ ga:end_predicatizer? { return ast.Predicate(miEnd(mi, s, ga)) }
+MI_phrase_1<syllable> <-
+	mi:MI_word<syllable> s:_ p:MI_complement { return ast.MIPredicate{MI: *mi.Mod(s), Phrase: p} }
+MI_word<syllable> <-
+	&MI w:syllable { return &ast.Word{S: start, E: end, T: w} }
+MI_complement <-
+	x0:predicate { return ast.Phrase(x0) } /
+	x1:argument { return ast.Phrase(x1) } /
+	x2:adverb { return ast.Phrase(x2) }/
+	x3:prepositional_phrase { return ast.Phrase(x3) }
+
+PO_phrase<syllable> <-
+	po:PO_phrase_1<syllable> s:_ ga:end_predicatizer? { return ast.Predicate(poEnd(po, s, ga)) }
+PO_phrase_1<syllable> <-
+	po:PO_word<syllable> s:_ a:argument { return ast.POPredicate{PO: *po.Mod(s), Argument: a} }
+PO_word<syllable> <-
+	&PO w:syllable { return &ast.Word{S: start, E: end, T: w} }
+
+MO_phrase<syllable> <-
+	mo:MO_phrase_1<syllable> s:_ teo:end_quote { return ast.Predicate(moEnd(mo, s, teo)) }
+MO_phrase_1<syllable> <-
+	mo:MO_word<syllable> s:_ d:discourse { return ast.MOPredicate{MO: *mo.Mod(s), Discourse: d} }
+MO_word<syllable> <-
+	&MO w:syllable { return &ast.Word{S: start, E: end, T: w} }
+
+#
+# Space and free modifiers
+#
+
+_ <- space_or_freemod?
+space_or_freemod <-
+	m:( freemod / space_word ) ms:space_or_freemod? { return ast.Mod(m.Mod(ms)) }
+space_word <-
+	s:space+ { return ast.Mod(&ast.Space{S: start, E: end, T: s}) }
+freemod <-
+	x0:interjection { return ast.Mod(x0) } /
+	x1:parenthetical { return ast.Mod(x1) }/
+	x2:incidental { return ast.Mod(x2) } /
+	x3:vocative { return ast.Mod(x3) }
+parenthetical <-
+	p:parenthetical_1 s:_ ki:end_parenthetical { return (*ast.Parenthetical)(endParen(p, s, ki)) }
+parenthetical_1 <-
+	kio:start_parenthetical s:_ d:discourse { return ast.Parenthetical{KIO: *kio.Mod(s), Discourse: d} }
+incidental <-
+	ju:start_incidental s:_ st:statement { return &ast.Incidental{JU: *ju.Mod(s), Statement: st} }
+vocative <-
+	hu:vocative_marker s:_ a:argument { return &ast.Vocative{HU: *hu.Mod(s), Argument: a} }
 
 #
 # Morphology
 #
 
-word <- w:( non_function_word / toned_function_word / neutral_function_word ) s:space_word? "ast.Word":{
-	return ast.Word{S: start, E: end, T: w}.Mod(s).(ast.Word)
-}
-non_function_word <- initial_syllable compound_syllable+ / !function_word initial_syllable
-neutral_function_word <- !toned_function_word &function_word neutral_syllable
-toned_function_word <- !neutral_syllable ( LU / MI / MO / PO )
-# The space_word rule is temporary until the actual space rule can return a word without breaking the types of other rules.
-space_word <- w:spaces "ast.Node":{
-	return ast.Word{S: start, E: end, T: w}
-}
-initial_syllable <- ( arg_syllable / relative_syllable / verb_syllable / content_syllable / preposition_syllable / adverb_syllable )
+word <- w:(
+		non_function_word /
+		toned_function_word /
+		neutral_function_word
+	) s:space_word? { return (*ast.Word)(ast.Word{S: start, E: end, T: w}.Mod(s)) }
+predicate_word<syllable> <- w:(
+		syllable compound_syllable+ /
+		!function_word syllable
+	){ return ast.Predicate(&ast.WordPredicate{S: start, E: end, T: w}) }
+non_function_word <-
+	initial_syllable compound_syllable+ / !function_word initial_syllable
+neutral_function_word <-
+	!toned_function_word &function_word neutral_syllable
+toned_function_word <-
+	!neutral_syllable ( LU / MI / MO / PO )
+initial_syllable <-
+	arg_syllable /
+	relative_syllable /
+	verb_syllable /
+	content_syllable /
+	preposition_syllable /
+	adverb_syllable
 
-prefix <- &MU neutral_syllable
-focus <- &KU neutral_syllable
-end_quote <- &TEO neutral_syllable
-end_predicatizer <- &GA neutral_syllable
-end_statement <- &NA neutral_syllable
-sentence_prefix <- &KEO neutral_syllable
-end_prenex <- &BI neutral_syllable
-start_incidental <- &JU neutral_syllable
-start_parenthetical <- &KIO neutral_syllable
-end_parenthetical <- &KI neutral_syllable
-vocative_marker <- &HU neutral_syllable
-linking_word <- &GO neutral_syllable
-connective <- &RA neutral_syllable
-illocutionary <- &DA neutral_syllable
-quantifier <- &TU neutral_syllable
-interjection <- &HA neutral_syllable
-forethought_marker <- &TO neutral_syllable
+prefix <- &MU w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+focus <- &KU w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+end_quote <- &TEO w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+end_predicatizer <- &GA w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+end_statement <- &NA w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+sentence_prefix <- &KEO w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+end_prenex <- &BI w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+start_incidental <- &JU w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+start_parenthetical <- &KIO w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+end_parenthetical <- &KI w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+vocative_marker <- &HU w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+linking_word <- &GO w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+connective <- &RA w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+illocutionary <- &DA w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+quantifier <- &TU w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+interjection <- &HA w:neutral_syllable { return &ast.Interjection{S: start, E: end, T: w} }
+forethought_marker <- &TO w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
 
 # The following function word rules match any tone.
 # The intended use is as the subexpression of a ! or &,
@@ -336,11 +416,11 @@ MO <- m O &( tone? boundary )
 NA <- n A &( tone? boundary )
 PO <- ( p O / p E ) &( tone? boundary )
 RA <- ( r A / r U / r I / r O i / r O / r E ) &( tone? boundary )
-TU <- ( t U / s I a / s A / h I / j A ) &( tone? boundary )
+TU <- ( t A / t U / s I a / s A / h I / j A ) &( tone? boundary )
 TO <- t O &boundary
 TEO <- t E o &( tone? boundary )
 
-syllable<desinence, tone> <- initial ( desinence / d:neutral_desinence t:tone string:{ return addTone(d, t) } ) &boundary
+syllable<desinence, tone> <- initial ( desinence / d:neutral_desinence t:tone { return string(addTone(d, t)) } ) &boundary
 neutral_syllable <- initial neutral_desinence &boundary
 compound_syllable <- syllable<compound_desinence, compound_tone>
 arg_syllable <- syllable<arg_desinence, arg_tone>
@@ -350,7 +430,7 @@ content_syllable <- syllable<content_desinence, content_tone>
 preposition_syllable <- syllable<preposition_desinence, preposition_tone>
 adverb_syllable <- syllable<adverb_desinence, adverb_tone>
 
-boundary <- initial / spaces / EOF
+boundary <- ( initial / space / EOF ) { return "" } # Return string just for type checking.
 
 initial <- b / c h / c / d / f / g / h / j / k / l / m / n / p / r / s h / s / t
 
@@ -377,62 +457,62 @@ I <- ī / í / ǐ / ỉ / î / ì / ĩ / i
 O <- ō / ó / ǒ / ỏ / ô / ò / õ / o
 E <- ē / é / ě / ẻ / ê / è / ẽ / e
 
-ā <- [āĀ] / l:a ( macron_combiner / compound_tone ) string:{ return diacritic['-'][l] }
-ū <- [ūŪ] / l:u ( macron_combiner / compound_tone ) string:{ return diacritic['-'][l] }
-ī <- [īĪ] / l:i ( macron_combiner / compound_tone ) string:{ return diacritic['-'][l] }
-ō <- [ōŌ] / l:o ( macron_combiner / compound_tone ) string:{ return diacritic['-'][l] }
-ē <- [ēĒ] / l:e ( macron_combiner / compound_tone ) string:{ return diacritic['-'][l] }
+ā <- [āĀ] / l:a ( macron_combiner / compound_tone ) { return string(diacritic['-'][l]) }
+ū <- [ūŪ] / l:u ( macron_combiner / compound_tone ) { return string(diacritic['-'][l]) }
+ī <- [īĪ] / l:i ( macron_combiner / compound_tone ) { return string(diacritic['-'][l]) }
+ō <- [ōŌ] / l:o ( macron_combiner / compound_tone ) { return string(diacritic['-'][l]) }
+ē <- [ēĒ] / l:e ( macron_combiner / compound_tone ) { return string(diacritic['-'][l]) }
 macron_combiner "\u25CC\u0304" <- "\u0304"
 compound_tone <- [\-1]
 
-á <- [áÁ] / l:a ( acute_combiner / arg_tone ) string:{ return diacritic['/'][l] }
-ú <- [úÚ] / l:u ( acute_combiner / arg_tone ) string:{ return diacritic['/'][l] }
-í <- [íÍ] / l:i ( acute_combiner / arg_tone ) string:{ return diacritic['/'][l] }
-ó <- [óÓ] / l:o ( acute_combiner / arg_tone ) string:{ return diacritic['/'][l] }
-é <- [éÉ] / l:e ( acute_combiner / arg_tone ) string:{ return diacritic['/'][l] }
+á <- [áÁ] / l:a ( acute_combiner / arg_tone ) { return string(diacritic['/'][l]) }
+ú <- [úÚ] / l:u ( acute_combiner / arg_tone ) { return string(diacritic['/'][l]) }
+í <- [íÍ] / l:i ( acute_combiner / arg_tone ) { return string(diacritic['/'][l]) }
+ó <- [óÓ] / l:o ( acute_combiner / arg_tone ) { return string(diacritic['/'][l]) }
+é <- [éÉ] / l:e ( acute_combiner / arg_tone ) { return string(diacritic['/'][l]) }
 acute_combiner "\u25CC\u0301" <- "\u0301"
 arg_tone <- [/2]
 
 # This also includes the combining breve forms ( \u0306 ),
 # because la jelca is too lazy to fix his keyboard.
-ǎ <- [ǎǍ] / l:a ( caron_combiner / breve_combiner / relative_tone ) string:{ return diacritic['V'][l] }
-ǔ <- [ǔǓ] / l:u ( caron_combiner / breve_combiner / relative_tone ) string:{ return diacritic['V'][l] }
-ǐ <- [ǐǏ] / l:i ( caron_combiner / breve_combiner / relative_tone ) string:{ return diacritic['V'][l] }
-ǒ <- [ǒǑ] / l:o ( caron_combiner / breve_combiner / relative_tone ) string:{ return diacritic['V'][l] }
-ě <- [ěĚ] / l:e ( caron_combiner / breve_combiner / relative_tone ) string:{ return diacritic['V'][l] }
+ǎ <- [ǎǍ] / l:a ( caron_combiner / breve_combiner / relative_tone ) { return string(diacritic['V'][l]) }
+ǔ <- [ǔǓ] / l:u ( caron_combiner / breve_combiner / relative_tone ) { return string(diacritic['V'][l]) }
+ǐ <- [ǐǏ] / l:i ( caron_combiner / breve_combiner / relative_tone ) { return string(diacritic['V'][l]) }
+ǒ <- [ǒǑ] / l:o ( caron_combiner / breve_combiner / relative_tone ) { return string(diacritic['V'][l]) }
+ě <- [ěĚ] / l:e ( caron_combiner / breve_combiner / relative_tone ) { return string(diacritic['V'][l]) }
 caron_combiner "\u25CC\u030C" <- "\u030C"
 breve_combiner "\u25CC\u0306" <- "\u0306"
 relative_tone <- [V3]
 
-ả <- [ảẢ] / l:a ( hook_combiner / verb_tone ) string:{ return diacritic['?'][l] }
-ủ <- [ủỦ] / l:u ( hook_combiner / verb_tone ) string:{ return diacritic['?'][l] }
-ỉ <- [ỉỈ] / l:i ( hook_combiner / verb_tone ) string:{ return diacritic['?'][l] }
-ỏ <- [ỏỎ] / l:o ( hook_combiner / verb_tone ) string:{ return diacritic['?'][l] }
-ẻ <- [ẻẺ] / l:e ( hook_combiner / verb_tone ) string:{ return diacritic['?'][l] }
+ả <- [ảẢ] / l:a ( hook_combiner / verb_tone ) { return string(diacritic['?'][l]) }
+ủ <- [ủỦ] / l:u ( hook_combiner / verb_tone ) { return string(diacritic['?'][l]) }
+ỉ <- [ỉỈ] / l:i ( hook_combiner / verb_tone ) { return string(diacritic['?'][l]) }
+ỏ <- [ỏỎ] / l:o ( hook_combiner / verb_tone ) { return string(diacritic['?'][l]) }
+ẻ <- [ẻẺ] / l:e ( hook_combiner / verb_tone ) { return string(diacritic['?'][l]) }
 hook_combiner "\u25CC\u0309" <- "\u0309"
 verb_tone <- [?4]
 
-â <- [âÂ] / l:a ( circumflex_combiner / content_tone ) string:{ return diacritic['^'][l] }
-û <- [ûÛ] / l:u ( circumflex_combiner / content_tone ) string:{ return diacritic['^'][l] }
-î <- [îÎ] / l:i ( circumflex_combiner / content_tone ) string:{ return diacritic['^'][l] }
-ô <- [ôÔ] / l:o ( circumflex_combiner / content_tone ) string:{ return diacritic['^'][l] }
-ê <- [êÊ] / l:e ( circumflex_combiner / content_tone ) string:{ return diacritic['^'][l] }
+â <- [âÂ] / l:a ( circumflex_combiner / content_tone ) { return string(diacritic['^'][l]) }
+û <- [ûÛ] / l:u ( circumflex_combiner / content_tone ) { return string(diacritic['^'][l]) }
+î <- [îÎ] / l:i ( circumflex_combiner / content_tone ) { return string(diacritic['^'][l]) }
+ô <- [ôÔ] / l:o ( circumflex_combiner / content_tone ) { return string(diacritic['^'][l]) }
+ê <- [êÊ] / l:e ( circumflex_combiner / content_tone ) { return string(diacritic['^'][l]) }
 circumflex_combiner "\u25CC\u0302" <- "\u0302"
 content_tone <- [5\^]
 
-à <- [àÀ] / l:a ( grave_combiner / preposition_tone ) string:{ return diacritic['\\'][l] }
-ù <- [ùÙ] / l:u ( grave_combiner / preposition_tone ) string:{ return diacritic['\\'][l] }
-ì <- [ìÌ] / l:i ( grave_combiner / preposition_tone ) string:{ return diacritic['\\'][l] }
-ò <- [òÒ] / l:o ( grave_combiner / preposition_tone ) string:{ return diacritic['\\'][l] }
-è <- [èÈ] / l:e ( grave_combiner / preposition_tone ) string:{ return diacritic['\\'][l] }
+à <- [àÀ] / l:a ( grave_combiner / preposition_tone ) { return string(diacritic['\\'][l]) }
+ù <- [ùÙ] / l:u ( grave_combiner / preposition_tone ) { return string(diacritic['\\'][l]) }
+ì <- [ìÌ] / l:i ( grave_combiner / preposition_tone ) { return string(diacritic['\\'][l]) }
+ò <- [òÒ] / l:o ( grave_combiner / preposition_tone ) { return string(diacritic['\\'][l]) }
+è <- [èÈ] / l:e ( grave_combiner / preposition_tone ) { return string(diacritic['\\'][l]) }
 grave_combiner "\u25CC\u0300" <- "\u0300"
 preposition_tone <- [\\6]
 
-ã <- [ãÃ] / l:a ( tilde_combiner / adverb_tone ) string:{ return diacritic['~'][l] }
-ũ <- [ũŨ] / l:u ( tilde_combiner / adverb_tone ) string:{ return diacritic['~'][l] }
-ĩ <- [ĩĨ] / l:i ( tilde_combiner / adverb_tone ) string:{ return diacritic['~'][l] }
-õ <- [õÕ] / l:o ( tilde_combiner / adverb_tone ) string:{ return diacritic['~'][l] }
-ẽ <- [ẽẼ] / l:e ( tilde_combiner / adverb_tone ) string:{ return diacritic['~'][l] }
+ã <- [ãÃ] / l:a ( tilde_combiner / adverb_tone ) { return string(diacritic['~'][l]) }
+ũ <- [ũŨ] / l:u ( tilde_combiner / adverb_tone ) { return string(diacritic['~'][l]) }
+ĩ <- [ĩĨ] / l:i ( tilde_combiner / adverb_tone ) { return string(diacritic['~'][l]) }
+õ <- [õÕ] / l:o ( tilde_combiner / adverb_tone ) { return string(diacritic['~'][l]) }
+ẽ <- [ẽẼ] / l:e ( tilde_combiner / adverb_tone ) { return string(diacritic['~'][l]) }
 tilde_combiner "\u25CC\u0303" <- "\u0303"
 adverb_tone <- [~7]
 
@@ -444,7 +524,7 @@ e <- [eE]
 f <- [fF]
 g <- [gG]
 h <- [hH]
-i <- l:[ıiI] string:{ if l == "i" { return "ı" }; return l }
+i <- l:[ıiI] { if l == "i" { return "ı" }; return string(l) }
 j <- [jJ]
 k <- [kK]
 l <- [lL]
@@ -460,5 +540,5 @@ u <- [uU]
 w <- [wW]
 y <- [yY]
 
-space "space" <- [\t\n\r\u0020.,:!]
+space "space" <- s:[\t\n\r\u0020.,:!]+
 EOF "EOF" <- !.

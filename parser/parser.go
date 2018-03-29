@@ -13,6 +13,8 @@ import (
 type Error interface {
 	error
 	Tree() *peg.Fail
+	// ByteOffset returns the byte-offset of the deepest error in the parse.
+	ByteOffset() int
 }
 
 type parseError struct {
@@ -24,6 +26,21 @@ func (err *parseError) Error() string { return err.err.Error() }
 
 // Tree returns the tree of all failed backtracks that lead to a deepest-error.
 func (err *parseError) Tree() *peg.Fail { return err.fail }
+func (err *parseError) ByteOffset() int { return byteOffset(err.fail) }
+
+func byteOffset(fail *peg.Fail) int {
+	if len(fail.Kids) == 0 {
+		return fail.Pos
+	}
+	max := -1
+	for _, k := range fail.Kids {
+		if o := byteOffset(k); o > max {
+			max = o
+		}
+	}
+	return max
+
+}
 
 // A Parser parses a given Toaq text.
 type Parser struct {
@@ -61,20 +78,20 @@ func (p *Parser) Word(offs int) (*ast.Word, int, Error) {
 	// This allows the caller to modify the returned tree
 	// without affecting the tree made by subsequent calls.
 	p._Parser.node = make(map[_key]*peg.Node)
-	return t, pos - offs, nil
+	return *t, pos - offs, nil
 }
 
 // Text returns the AST of the text.
-func (p *Parser) Text() (string, Error) {
+func (p *Parser) Text() (*ast.Text, Error) {
 	if err := p.parse(_full_textAccepts, 0); err != nil {
-		return "", err
+		return nil, err
 	}
-	_, str := _full_textAction(p._Parser, 0)
+	_, txt := _full_textAction(p._Parser, 0)
 	// Reset so subsequent calls return a different tree.
 	// This allows the caller to modify the returned tree
 	// without affecting the tree made by subsequent calls.
 	p._Parser.act = make(map[_key]interface{})
-	return *str, nil
+	return txt, nil
 }
 
 func (p *Parser) parse(rule func(*_Parser, int) (int, int), start int) Error {

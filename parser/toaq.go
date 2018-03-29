@@ -40718,8 +40718,8 @@ fail:
 func _wordAction(parser *_Parser, start int) (int, *ast.Word) {
 	var labels [2]string
 	use(labels)
-	var label0 string
 	var label1 *ast.Node
+	var label0 string
 	dp := parser.deltaPos[start][_word]
 	if dp < 0 {
 		return -1, nil
@@ -83298,7 +83298,7 @@ func _macron_combinerAccepts(parser *_Parser, start int) (deltaPos, deltaErr int
 		return dp, de
 	}
 	pos, perr := start, -1
-	// "̄"
+	// "\u0304"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̄" {
 		perr = _max(perr, pos)
 		goto fail
@@ -83322,7 +83322,7 @@ func _macron_combinerNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "macron_combiner"}
-	// "̄"
+	// "\u0304"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̄" {
 		goto fail
 	}
@@ -83345,12 +83345,12 @@ func _macron_combinerFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _macron_combiner}
-	// "̄"
+	// "\u0304"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̄" {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "\"̄\"",
+				Want: "\"\\u0304\"",
 			})
 		}
 		goto fail
@@ -83379,7 +83379,7 @@ func _macron_combinerAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// "̄"
+	// "\u0304"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̄" {
 		goto fail
 	}
@@ -85059,7 +85059,7 @@ func _acute_combinerAccepts(parser *_Parser, start int) (deltaPos, deltaErr int)
 		return dp, de
 	}
 	pos, perr := start, -1
-	// "́"
+	// "\u0301"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "́" {
 		perr = _max(perr, pos)
 		goto fail
@@ -85083,7 +85083,7 @@ func _acute_combinerNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "acute_combiner"}
-	// "́"
+	// "\u0301"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "́" {
 		goto fail
 	}
@@ -85106,12 +85106,12 @@ func _acute_combinerFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _acute_combiner}
-	// "́"
+	// "\u0301"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "́" {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "\"́\"",
+				Want: "\"\\u0301\"",
 			})
 		}
 		goto fail
@@ -85140,7 +85140,7 @@ func _acute_combinerAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// "́"
+	// "\u0301"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "́" {
 		goto fail
 	}
@@ -86975,7 +86975,7 @@ func _caron_combinerAccepts(parser *_Parser, start int) (deltaPos, deltaErr int)
 		return dp, de
 	}
 	pos, perr := start, -1
-	// "̌"
+	// "\u030c"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̌" {
 		perr = _max(perr, pos)
 		goto fail
@@ -86999,7 +86999,7 @@ func _caron_combinerNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "caron_combiner"}
-	// "̌"
+	// "\u030c"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̌" {
 		goto fail
 	}
@@ -87022,12 +87022,12 @@ func _caron_combinerFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _caron_combiner}
-	// "̌"
+	// "\u030c"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̌" {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "\"̌\"",
+				Want: "\"\\u030c\"",
 			})
 		}
 		goto fail
@@ -87056,7 +87056,7 @@ func _caron_combinerAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// "̌"
+	// "\u030c"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̌" {
 		goto fail
 	}
@@ -87073,7 +87073,7 @@ func _breve_combinerAccepts(parser *_Parser, start int) (deltaPos, deltaErr int)
 		return dp, de
 	}
 	pos, perr := start, -1
-	// "̆"
+	// "\u0306"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̆" {
 		perr = _max(perr, pos)
 		goto fail
@@ -87097,7 +87097,7 @@ func _breve_combinerNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "breve_combiner"}
-	// "̆"
+	// "\u0306"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̆" {
 		goto fail
 	}
@@ -87120,12 +87120,12 @@ func _breve_combinerFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _breve_combiner}
-	// "̆"
+	// "\u0306"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̆" {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "\"̆\"",
+				Want: "\"\\u0306\"",
 			})
 		}
 		goto fail
@@ -87154,7 +87154,7 @@ func _breve_combinerAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// "̆"
+	// "\u0306"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̆" {
 		goto fail
 	}
@@ -88834,7 +88834,7 @@ func _hook_combinerAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) 
 		return dp, de
 	}
 	pos, perr := start, -1
-	// "̉"
+	// "\u0309"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̉" {
 		perr = _max(perr, pos)
 		goto fail
@@ -88858,7 +88858,7 @@ func _hook_combinerNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "hook_combiner"}
-	// "̉"
+	// "\u0309"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̉" {
 		goto fail
 	}
@@ -88881,12 +88881,12 @@ func _hook_combinerFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _hook_combiner}
-	// "̉"
+	// "\u0309"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̉" {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "\"̉\"",
+				Want: "\"\\u0309\"",
 			})
 		}
 		goto fail
@@ -88915,7 +88915,7 @@ func _hook_combinerAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// "̉"
+	// "\u0309"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̉" {
 		goto fail
 	}
@@ -90595,7 +90595,7 @@ func _circumflex_combinerAccepts(parser *_Parser, start int) (deltaPos, deltaErr
 		return dp, de
 	}
 	pos, perr := start, -1
-	// "̂"
+	// "\u0302"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̂" {
 		perr = _max(perr, pos)
 		goto fail
@@ -90619,7 +90619,7 @@ func _circumflex_combinerNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "circumflex_combiner"}
-	// "̂"
+	// "\u0302"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̂" {
 		goto fail
 	}
@@ -90642,12 +90642,12 @@ func _circumflex_combinerFail(parser *_Parser, start, errPos int) (int, *peg.Fai
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _circumflex_combiner}
-	// "̂"
+	// "\u0302"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̂" {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "\"̂\"",
+				Want: "\"\\u0302\"",
 			})
 		}
 		goto fail
@@ -90676,7 +90676,7 @@ func _circumflex_combinerAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// "̂"
+	// "\u0302"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̂" {
 		goto fail
 	}
@@ -92356,7 +92356,7 @@ func _grave_combinerAccepts(parser *_Parser, start int) (deltaPos, deltaErr int)
 		return dp, de
 	}
 	pos, perr := start, -1
-	// "̀"
+	// "\u0300"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̀" {
 		perr = _max(perr, pos)
 		goto fail
@@ -92380,7 +92380,7 @@ func _grave_combinerNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "grave_combiner"}
-	// "̀"
+	// "\u0300"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̀" {
 		goto fail
 	}
@@ -92403,12 +92403,12 @@ func _grave_combinerFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _grave_combiner}
-	// "̀"
+	// "\u0300"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̀" {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "\"̀\"",
+				Want: "\"\\u0300\"",
 			})
 		}
 		goto fail
@@ -92437,7 +92437,7 @@ func _grave_combinerAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// "̀"
+	// "\u0300"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̀" {
 		goto fail
 	}
@@ -94117,7 +94117,7 @@ func _tilde_combinerAccepts(parser *_Parser, start int) (deltaPos, deltaErr int)
 		return dp, de
 	}
 	pos, perr := start, -1
-	// "̃"
+	// "\u0303"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̃" {
 		perr = _max(perr, pos)
 		goto fail
@@ -94141,7 +94141,7 @@ func _tilde_combinerNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "tilde_combiner"}
-	// "̃"
+	// "\u0303"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̃" {
 		goto fail
 	}
@@ -94164,12 +94164,12 @@ func _tilde_combinerFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _tilde_combiner}
-	// "̃"
+	// "\u0303"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̃" {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "\"̃\"",
+				Want: "\"\\u0303\"",
 			})
 		}
 		goto fail
@@ -94198,7 +94198,7 @@ func _tilde_combinerAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// "̃"
+	// "\u0303"
 	if len(parser.text[pos:]) < 2 || parser.text[pos:pos+2] != "̃" {
 		goto fail
 	}

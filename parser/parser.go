@@ -6,7 +6,8 @@ import (
 	"github.com/eaburns/toaq/ast"
 )
 
-//go:generate peggy -o toaq.go toaq.peg
+//go:generate peggy -o toaq.go toaq.peggy
+//go:generate peggy -pretty -o toaq.peg toaq.peggy
 
 // Error is a parse error.
 type Error interface {

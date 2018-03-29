@@ -222,167 +222,168 @@ const (
 	_parenthetical_1                                   int = 209
 	_incidental                                        int = 210
 	_vocative                                          int = 211
-	_word                                              int = 212
-	_non_function_word                                 int = 213
-	_neutral_function_word                             int = 214
-	_toned_function_word                               int = 215
-	_space_word                                        int = 216
-	_initial_syllable                                  int = 217
-	_prefix                                            int = 218
-	_focus                                             int = 219
-	_end_quote                                         int = 220
-	_end_predicatizer                                  int = 221
-	_end_statement                                     int = 222
-	_sentence_prefix                                   int = 223
-	_end_prenex                                        int = 224
-	_start_incidental                                  int = 225
-	_start_parenthetical                               int = 226
-	_end_parenthetical                                 int = 227
-	_vocative_marker                                   int = 228
-	_linking_word                                      int = 229
-	_connective                                        int = 230
-	_illocutionary                                     int = 231
-	_quantifier                                        int = 232
-	_interjection                                      int = 233
-	_forethought_marker                                int = 234
-	_function_word                                     int = 235
-	_BI                                                int = 236
-	_DA                                                int = 237
-	_GA                                                int = 238
-	_GO                                                int = 239
-	_HA                                                int = 240
-	_HU                                                int = 241
-	_JU                                                int = 242
-	_KU                                                int = 243
-	_KI                                                int = 244
-	_KIO                                               int = 245
-	_KEO                                               int = 246
-	_LU                                                int = 247
-	_MU                                                int = 248
-	_MI                                                int = 249
-	_MO                                                int = 250
-	_NA                                                int = 251
-	_PO                                                int = 252
-	_RA                                                int = 253
-	_TU                                                int = 254
-	_TO                                                int = 255
-	_TEO                                               int = 256
-	_syllable__compound_desinence__compound_tone       int = 257
-	_syllable__arg_desinence__arg_tone                 int = 258
-	_syllable__relative_desinence__relative_tone       int = 259
-	_syllable__verb_desinence__verb_tone               int = 260
-	_syllable__content_desinence__content_tone         int = 261
-	_syllable__preposition_desinence__preposition_tone int = 262
-	_syllable__adverb_desinence__adverb_tone           int = 263
-	_neutral_syllable                                  int = 264
-	_compound_syllable                                 int = 265
-	_arg_syllable                                      int = 266
-	_relative_syllable                                 int = 267
-	_verb_syllable                                     int = 268
-	_content_syllable                                  int = 269
-	_preposition_syllable                              int = 270
-	_adverb_syllable                                   int = 271
-	_boundary                                          int = 272
-	_initial                                           int = 273
-	_desinence__a__u__i__o__e                          int = 274
-	_desinence__ā__ū__ī__ō__ē                          int = 275
-	_desinence__á__ú__í__ó__é                          int = 276
-	_desinence__ǎ__ǔ__ǐ__ǒ__ě                          int = 277
-	_desinence__ả__ủ__ỉ__ỏ__ẻ                          int = 278
-	_desinence__â__û__î__ô__ê                          int = 279
-	_desinence__à__ù__ì__ò__è                          int = 280
-	_desinence__ã__ũ__ĩ__õ__ẽ                          int = 281
-	_neutral_desinence                                 int = 282
-	_compound_desinence                                int = 283
-	_arg_desinence                                     int = 284
-	_relative_desinence                                int = 285
-	_verb_desinence                                    int = 286
-	_content_desinence                                 int = 287
-	_preposition_desinence                             int = 288
-	_adverb_desinence                                  int = 289
-	_tone                                              int = 290
-	_A                                                 int = 291
-	_U                                                 int = 292
-	_I                                                 int = 293
-	_O                                                 int = 294
-	_E                                                 int = 295
-	_ā                                                 int = 296
-	_ū                                                 int = 297
-	_ī                                                 int = 298
-	_ō                                                 int = 299
-	_ē                                                 int = 300
-	_macron_combiner                                   int = 301
-	_compound_tone                                     int = 302
-	_á                                                 int = 303
-	_ú                                                 int = 304
-	_í                                                 int = 305
-	_ó                                                 int = 306
-	_é                                                 int = 307
-	_acute_combiner                                    int = 308
-	_arg_tone                                          int = 309
-	_ǎ                                                 int = 310
-	_ǔ                                                 int = 311
-	_ǐ                                                 int = 312
-	_ǒ                                                 int = 313
-	_ě                                                 int = 314
-	_caron_combiner                                    int = 315
-	_breve_combiner                                    int = 316
-	_relative_tone                                     int = 317
-	_ả                                                 int = 318
-	_ủ                                                 int = 319
-	_ỉ                                                 int = 320
-	_ỏ                                                 int = 321
-	_ẻ                                                 int = 322
-	_hook_combiner                                     int = 323
-	_verb_tone                                         int = 324
-	_â                                                 int = 325
-	_û                                                 int = 326
-	_î                                                 int = 327
-	_ô                                                 int = 328
-	_ê                                                 int = 329
-	_circumflex_combiner                               int = 330
-	_content_tone                                      int = 331
-	_à                                                 int = 332
-	_ù                                                 int = 333
-	_ì                                                 int = 334
-	_ò                                                 int = 335
-	_è                                                 int = 336
-	_grave_combiner                                    int = 337
-	_preposition_tone                                  int = 338
-	_ã                                                 int = 339
-	_ũ                                                 int = 340
-	_ĩ                                                 int = 341
-	_õ                                                 int = 342
-	_ẽ                                                 int = 343
-	_tilde_combiner                                    int = 344
-	_adverb_tone                                       int = 345
-	_a                                                 int = 346
-	_b                                                 int = 347
-	_c                                                 int = 348
-	_d                                                 int = 349
-	_e                                                 int = 350
-	_f                                                 int = 351
-	_g                                                 int = 352
-	_h                                                 int = 353
-	_i                                                 int = 354
-	_j                                                 int = 355
-	_k                                                 int = 356
-	_l                                                 int = 357
-	_m                                                 int = 358
-	_n                                                 int = 359
-	_o                                                 int = 360
-	_p                                                 int = 361
-	_q                                                 int = 362
-	_r                                                 int = 363
-	_s                                                 int = 364
-	_t                                                 int = 365
-	_u                                                 int = 366
-	_w                                                 int = 367
-	_y                                                 int = 368
-	_spaces                                            int = 369
-	_EOF                                               int = 370
+	_spaces                                            int = 212
+	_word                                              int = 213
+	_non_function_word                                 int = 214
+	_neutral_function_word                             int = 215
+	_toned_function_word                               int = 216
+	_space_word                                        int = 217
+	_initial_syllable                                  int = 218
+	_prefix                                            int = 219
+	_focus                                             int = 220
+	_end_quote                                         int = 221
+	_end_predicatizer                                  int = 222
+	_end_statement                                     int = 223
+	_sentence_prefix                                   int = 224
+	_end_prenex                                        int = 225
+	_start_incidental                                  int = 226
+	_start_parenthetical                               int = 227
+	_end_parenthetical                                 int = 228
+	_vocative_marker                                   int = 229
+	_linking_word                                      int = 230
+	_connective                                        int = 231
+	_illocutionary                                     int = 232
+	_quantifier                                        int = 233
+	_interjection                                      int = 234
+	_forethought_marker                                int = 235
+	_function_word                                     int = 236
+	_BI                                                int = 237
+	_DA                                                int = 238
+	_GA                                                int = 239
+	_GO                                                int = 240
+	_HA                                                int = 241
+	_HU                                                int = 242
+	_JU                                                int = 243
+	_KU                                                int = 244
+	_KI                                                int = 245
+	_KIO                                               int = 246
+	_KEO                                               int = 247
+	_LU                                                int = 248
+	_MU                                                int = 249
+	_MI                                                int = 250
+	_MO                                                int = 251
+	_NA                                                int = 252
+	_PO                                                int = 253
+	_RA                                                int = 254
+	_TU                                                int = 255
+	_TO                                                int = 256
+	_TEO                                               int = 257
+	_syllable__compound_desinence__compound_tone       int = 258
+	_syllable__arg_desinence__arg_tone                 int = 259
+	_syllable__relative_desinence__relative_tone       int = 260
+	_syllable__verb_desinence__verb_tone               int = 261
+	_syllable__content_desinence__content_tone         int = 262
+	_syllable__preposition_desinence__preposition_tone int = 263
+	_syllable__adverb_desinence__adverb_tone           int = 264
+	_neutral_syllable                                  int = 265
+	_compound_syllable                                 int = 266
+	_arg_syllable                                      int = 267
+	_relative_syllable                                 int = 268
+	_verb_syllable                                     int = 269
+	_content_syllable                                  int = 270
+	_preposition_syllable                              int = 271
+	_adverb_syllable                                   int = 272
+	_boundary                                          int = 273
+	_initial                                           int = 274
+	_desinence__a__u__i__o__e                          int = 275
+	_desinence__ā__ū__ī__ō__ē                          int = 276
+	_desinence__á__ú__í__ó__é                          int = 277
+	_desinence__ǎ__ǔ__ǐ__ǒ__ě                          int = 278
+	_desinence__ả__ủ__ỉ__ỏ__ẻ                          int = 279
+	_desinence__â__û__î__ô__ê                          int = 280
+	_desinence__à__ù__ì__ò__è                          int = 281
+	_desinence__ã__ũ__ĩ__õ__ẽ                          int = 282
+	_neutral_desinence                                 int = 283
+	_compound_desinence                                int = 284
+	_arg_desinence                                     int = 285
+	_relative_desinence                                int = 286
+	_verb_desinence                                    int = 287
+	_content_desinence                                 int = 288
+	_preposition_desinence                             int = 289
+	_adverb_desinence                                  int = 290
+	_tone                                              int = 291
+	_A                                                 int = 292
+	_U                                                 int = 293
+	_I                                                 int = 294
+	_O                                                 int = 295
+	_E                                                 int = 296
+	_ā                                                 int = 297
+	_ū                                                 int = 298
+	_ī                                                 int = 299
+	_ō                                                 int = 300
+	_ē                                                 int = 301
+	_macron_combiner                                   int = 302
+	_compound_tone                                     int = 303
+	_á                                                 int = 304
+	_ú                                                 int = 305
+	_í                                                 int = 306
+	_ó                                                 int = 307
+	_é                                                 int = 308
+	_acute_combiner                                    int = 309
+	_arg_tone                                          int = 310
+	_ǎ                                                 int = 311
+	_ǔ                                                 int = 312
+	_ǐ                                                 int = 313
+	_ǒ                                                 int = 314
+	_ě                                                 int = 315
+	_caron_combiner                                    int = 316
+	_breve_combiner                                    int = 317
+	_relative_tone                                     int = 318
+	_ả                                                 int = 319
+	_ủ                                                 int = 320
+	_ỉ                                                 int = 321
+	_ỏ                                                 int = 322
+	_ẻ                                                 int = 323
+	_hook_combiner                                     int = 324
+	_verb_tone                                         int = 325
+	_â                                                 int = 326
+	_û                                                 int = 327
+	_î                                                 int = 328
+	_ô                                                 int = 329
+	_ê                                                 int = 330
+	_circumflex_combiner                               int = 331
+	_content_tone                                      int = 332
+	_à                                                 int = 333
+	_ù                                                 int = 334
+	_ì                                                 int = 335
+	_ò                                                 int = 336
+	_è                                                 int = 337
+	_grave_combiner                                    int = 338
+	_preposition_tone                                  int = 339
+	_ã                                                 int = 340
+	_ũ                                                 int = 341
+	_ĩ                                                 int = 342
+	_õ                                                 int = 343
+	_ẽ                                                 int = 344
+	_tilde_combiner                                    int = 345
+	_adverb_tone                                       int = 346
+	_a                                                 int = 347
+	_b                                                 int = 348
+	_c                                                 int = 349
+	_d                                                 int = 350
+	_e                                                 int = 351
+	_f                                                 int = 352
+	_g                                                 int = 353
+	_h                                                 int = 354
+	_i                                                 int = 355
+	_j                                                 int = 356
+	_k                                                 int = 357
+	_l                                                 int = 358
+	_m                                                 int = 359
+	_n                                                 int = 360
+	_o                                                 int = 361
+	_p                                                 int = 362
+	_q                                                 int = 363
+	_r                                                 int = 364
+	_s                                                 int = 365
+	_t                                                 int = 366
+	_u                                                 int = 367
+	_w                                                 int = 368
+	_y                                                 int = 369
+	_space                                             int = 370
+	_EOF                                               int = 371
 
-	_N int = 371
+	_N int = 372
 )
 
 type _Parser struct {
@@ -636,7 +637,7 @@ func _textAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// spaces? freemod? spaces? discourse? spaces? EOF?
+	// spaces? discourse? spaces? EOF?
 	// spaces?
 	{
 		pos2 := pos
@@ -649,11 +650,11 @@ func _textAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos2
 	ok4:
 	}
-	// freemod?
+	// discourse?
 	{
 		pos6 := pos
-		// freemod
-		if !_accept(parser, _freemodAccepts, &pos, &perr) {
+		// discourse
+		if !_accept(parser, _discourseAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok8
@@ -673,41 +674,17 @@ func _textAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos10
 	ok12:
 	}
-	// discourse?
+	// EOF?
 	{
 		pos14 := pos
-		// discourse
-		if !_accept(parser, _discourseAccepts, &pos, &perr) {
+		// EOF
+		if !_accept(parser, _EOFAccepts, &pos, &perr) {
 			goto fail15
 		}
 		goto ok16
 	fail15:
 		pos = pos14
 	ok16:
-	}
-	// spaces?
-	{
-		pos18 := pos
-		// spaces
-		if !_accept(parser, _spacesAccepts, &pos, &perr) {
-			goto fail19
-		}
-		goto ok20
-	fail19:
-		pos = pos18
-	ok20:
-	}
-	// EOF?
-	{
-		pos22 := pos
-		// EOF
-		if !_accept(parser, _EOFAccepts, &pos, &perr) {
-			goto fail23
-		}
-		goto ok24
-	fail23:
-		pos = pos22
-	ok24:
 	}
 	return _memoize(parser, _text, start, pos, perr)
 }
@@ -724,7 +701,7 @@ func _textNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "text"}
-	// spaces? freemod? spaces? discourse? spaces? EOF?
+	// spaces? discourse? spaces? EOF?
 	// spaces?
 	{
 		nkids1 := len(node.Kids)
@@ -739,12 +716,12 @@ func _textNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// freemod?
+	// discourse?
 	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
-		// freemod
-		if !_node(parser, _freemodNode, node, &pos) {
+		// discourse
+		if !_node(parser, _discourseNode, node, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -767,12 +744,12 @@ func _textNode(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos10
 	ok12:
 	}
-	// discourse?
+	// EOF?
 	{
 		nkids13 := len(node.Kids)
 		pos14 := pos
-		// discourse
-		if !_node(parser, _discourseNode, node, &pos) {
+		// EOF
+		if !_node(parser, _EOFNode, node, &pos) {
 			goto fail15
 		}
 		goto ok16
@@ -780,34 +757,6 @@ func _textNode(parser *_Parser, start int) (int, *peg.Node) {
 		node.Kids = node.Kids[:nkids13]
 		pos = pos14
 	ok16:
-	}
-	// spaces?
-	{
-		nkids17 := len(node.Kids)
-		pos18 := pos
-		// spaces
-		if !_node(parser, _spacesNode, node, &pos) {
-			goto fail19
-		}
-		goto ok20
-	fail19:
-		node.Kids = node.Kids[:nkids17]
-		pos = pos18
-	ok20:
-	}
-	// EOF?
-	{
-		nkids21 := len(node.Kids)
-		pos22 := pos
-		// EOF
-		if !_node(parser, _EOFNode, node, &pos) {
-			goto fail23
-		}
-		goto ok24
-	fail23:
-		node.Kids = node.Kids[:nkids21]
-		pos = pos22
-	ok24:
 	}
 	node.Text = parser.text[start:pos]
 	parser.node[key] = node
@@ -824,7 +773,7 @@ func _textFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _text}
-	// spaces? freemod? spaces? discourse? spaces? EOF?
+	// spaces? discourse? spaces? EOF?
 	// spaces?
 	{
 		pos2 := pos
@@ -837,11 +786,11 @@ func _textFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		pos = pos2
 	ok4:
 	}
-	// freemod?
+	// discourse?
 	{
 		pos6 := pos
-		// freemod
-		if !_fail(parser, _freemodFail, errPos, failure, &pos) {
+		// discourse
+		if !_fail(parser, _discourseFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok8
@@ -861,41 +810,17 @@ func _textFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		pos = pos10
 	ok12:
 	}
-	// discourse?
+	// EOF?
 	{
 		pos14 := pos
-		// discourse
-		if !_fail(parser, _discourseFail, errPos, failure, &pos) {
+		// EOF
+		if !_fail(parser, _EOFFail, errPos, failure, &pos) {
 			goto fail15
 		}
 		goto ok16
 	fail15:
 		pos = pos14
 	ok16:
-	}
-	// spaces?
-	{
-		pos18 := pos
-		// spaces
-		if !_fail(parser, _spacesFail, errPos, failure, &pos) {
-			goto fail19
-		}
-		goto ok20
-	fail19:
-		pos = pos18
-	ok20:
-	}
-	// EOF?
-	{
-		pos22 := pos
-		// EOF
-		if !_fail(parser, _EOFFail, errPos, failure, &pos) {
-			goto fail23
-		}
-		goto ok24
-	fail23:
-		pos = pos22
-	ok24:
 	}
 	parser.fail[key] = failure
 	return pos, failure
@@ -914,7 +839,7 @@ func _textAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// spaces? freemod? spaces? discourse? spaces? EOF?
+	// spaces? discourse? spaces? EOF?
 	{
 		var node0 string
 		// spaces?
@@ -934,11 +859,11 @@ func _textAction(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node, node0 = node+node0, ""
-		// freemod?
+		// discourse?
 		{
 			pos6 := pos
-			// freemod
-			if p, n := _freemodAction(parser, pos); n == nil {
+			// discourse
+			if p, n := _discourseAction(parser, pos); n == nil {
 				goto fail7
 			} else {
 				node0 = *n
@@ -968,11 +893,11 @@ func _textAction(parser *_Parser, start int) (int, *string) {
 		ok12:
 		}
 		node, node0 = node+node0, ""
-		// discourse?
+		// EOF?
 		{
 			pos14 := pos
-			// discourse
-			if p, n := _discourseAction(parser, pos); n == nil {
+			// EOF
+			if p, n := _EOFAction(parser, pos); n == nil {
 				goto fail15
 			} else {
 				node0 = *n
@@ -983,40 +908,6 @@ func _textAction(parser *_Parser, start int) (int, *string) {
 			node0 = ""
 			pos = pos14
 		ok16:
-		}
-		node, node0 = node+node0, ""
-		// spaces?
-		{
-			pos18 := pos
-			// spaces
-			if p, n := _spacesAction(parser, pos); n == nil {
-				goto fail19
-			} else {
-				node0 = *n
-				pos = p
-			}
-			goto ok20
-		fail19:
-			node0 = ""
-			pos = pos18
-		ok20:
-		}
-		node, node0 = node+node0, ""
-		// EOF?
-		{
-			pos22 := pos
-			// EOF
-			if p, n := _EOFAction(parser, pos); n == nil {
-				goto fail23
-			} else {
-				node0 = *n
-				pos = p
-			}
-			goto ok24
-		fail23:
-			node0 = ""
-			pos = pos22
-		ok24:
 		}
 		node, node0 = node+node0, ""
 	}
@@ -5934,7 +5825,7 @@ func _predicate_3Accepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// predicate_4 spaces? freemod?
+	// predicate_4 spaces?
 	// predicate_4
 	if !_accept(parser, _predicate_4Accepts, &pos, &perr) {
 		goto fail
@@ -5950,18 +5841,6 @@ func _predicate_3Accepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	fail3:
 		pos = pos2
 	ok4:
-	}
-	// freemod?
-	{
-		pos6 := pos
-		// freemod
-		if !_accept(parser, _freemodAccepts, &pos, &perr) {
-			goto fail7
-		}
-		goto ok8
-	fail7:
-		pos = pos6
-	ok8:
 	}
 	return _memoize(parser, _predicate_3, start, pos, perr)
 fail:
@@ -5980,7 +5859,7 @@ func _predicate_3Node(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "predicate_3"}
-	// predicate_4 spaces? freemod?
+	// predicate_4 spaces?
 	// predicate_4
 	if !_node(parser, _predicate_4Node, node, &pos) {
 		goto fail
@@ -5999,20 +5878,6 @@ func _predicate_3Node(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// freemod?
-	{
-		nkids5 := len(node.Kids)
-		pos6 := pos
-		// freemod
-		if !_node(parser, _freemodNode, node, &pos) {
-			goto fail7
-		}
-		goto ok8
-	fail7:
-		node.Kids = node.Kids[:nkids5]
-		pos = pos6
-	ok8:
-	}
 	node.Text = parser.text[start:pos]
 	parser.node[key] = node
 	return pos, node
@@ -6030,7 +5895,7 @@ func _predicate_3Fail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _predicate_3}
-	// predicate_4 spaces? freemod?
+	// predicate_4 spaces?
 	// predicate_4
 	if !_fail(parser, _predicate_4Fail, errPos, failure, &pos) {
 		goto fail
@@ -6046,18 +5911,6 @@ func _predicate_3Fail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 	fail3:
 		pos = pos2
 	ok4:
-	}
-	// freemod?
-	{
-		pos6 := pos
-		// freemod
-		if !_fail(parser, _freemodFail, errPos, failure, &pos) {
-			goto fail7
-		}
-		goto ok8
-	fail7:
-		pos = pos6
-	ok8:
 	}
 	parser.fail[key] = failure
 	return pos, failure
@@ -6079,7 +5932,7 @@ func _predicate_3Action(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// predicate_4 spaces? freemod?
+	// predicate_4 spaces?
 	{
 		var node0 string
 		// predicate_4
@@ -6105,23 +5958,6 @@ func _predicate_3Action(parser *_Parser, start int) (int, *string) {
 			node0 = ""
 			pos = pos2
 		ok4:
-		}
-		node, node0 = node+node0, ""
-		// freemod?
-		{
-			pos6 := pos
-			// freemod
-			if p, n := _freemodAction(parser, pos); n == nil {
-				goto fail7
-			} else {
-				node0 = *n
-				pos = p
-			}
-			goto ok8
-		fail7:
-			node0 = ""
-			pos = pos6
-		ok8:
 		}
 		node, node0 = node+node0, ""
 	}
@@ -11059,7 +10895,7 @@ func _arg_4Accepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// arg_5 spaces? (relative_clause/freemod)?
+	// arg_5 spaces? relative_clause?
 	// arg_5
 	if !_accept(parser, _arg_5Accepts, &pos, &perr) {
 		goto fail
@@ -11076,34 +10912,17 @@ func _arg_4Accepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		pos = pos2
 	ok4:
 	}
-	// (relative_clause/freemod)?
+	// relative_clause?
 	{
 		pos6 := pos
-		// (relative_clause/freemod)
-		// relative_clause/freemod
-		{
-			pos11 := pos
-			// relative_clause
-			if !_accept(parser, _relative_clauseAccepts, &pos, &perr) {
-				goto fail12
-			}
-			goto ok8
-		fail12:
-			pos = pos11
-			// freemod
-			if !_accept(parser, _freemodAccepts, &pos, &perr) {
-				goto fail13
-			}
-			goto ok8
-		fail13:
-			pos = pos11
+		// relative_clause
+		if !_accept(parser, _relative_clauseAccepts, &pos, &perr) {
 			goto fail7
-		ok8:
 		}
-		goto ok14
+		goto ok8
 	fail7:
 		pos = pos6
-	ok14:
+	ok8:
 	}
 	return _memoize(parser, _arg_4, start, pos, perr)
 fail:
@@ -11122,7 +10941,7 @@ func _arg_4Node(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "arg_4"}
-	// arg_5 spaces? (relative_clause/freemod)?
+	// arg_5 spaces? relative_clause?
 	// arg_5
 	if !_node(parser, _arg_5Node, node, &pos) {
 		goto fail
@@ -11141,45 +10960,19 @@ func _arg_4Node(parser *_Parser, start int) (int, *peg.Node) {
 		pos = pos2
 	ok4:
 	}
-	// (relative_clause/freemod)?
+	// relative_clause?
 	{
 		nkids5 := len(node.Kids)
 		pos6 := pos
-		// (relative_clause/freemod)
-		{
-			nkids8 := len(node.Kids)
-			pos09 := pos
-			// relative_clause/freemod
-			{
-				pos13 := pos
-				nkids11 := len(node.Kids)
-				// relative_clause
-				if !_node(parser, _relative_clauseNode, node, &pos) {
-					goto fail14
-				}
-				goto ok10
-			fail14:
-				node.Kids = node.Kids[:nkids11]
-				pos = pos13
-				// freemod
-				if !_node(parser, _freemodNode, node, &pos) {
-					goto fail15
-				}
-				goto ok10
-			fail15:
-				node.Kids = node.Kids[:nkids11]
-				pos = pos13
-				goto fail7
-			ok10:
-			}
-			sub := _sub(parser, pos09, pos, node.Kids[nkids8:])
-			node.Kids = append(node.Kids[:nkids8], sub)
+		// relative_clause
+		if !_node(parser, _relative_clauseNode, node, &pos) {
+			goto fail7
 		}
-		goto ok16
+		goto ok8
 	fail7:
 		node.Kids = node.Kids[:nkids5]
 		pos = pos6
-	ok16:
+	ok8:
 	}
 	node.Text = parser.text[start:pos]
 	parser.node[key] = node
@@ -11198,7 +10991,7 @@ func _arg_4Fail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _arg_4}
-	// arg_5 spaces? (relative_clause/freemod)?
+	// arg_5 spaces? relative_clause?
 	// arg_5
 	if !_fail(parser, _arg_5Fail, errPos, failure, &pos) {
 		goto fail
@@ -11215,34 +11008,17 @@ func _arg_4Fail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		pos = pos2
 	ok4:
 	}
-	// (relative_clause/freemod)?
+	// relative_clause?
 	{
 		pos6 := pos
-		// (relative_clause/freemod)
-		// relative_clause/freemod
-		{
-			pos11 := pos
-			// relative_clause
-			if !_fail(parser, _relative_clauseFail, errPos, failure, &pos) {
-				goto fail12
-			}
-			goto ok8
-		fail12:
-			pos = pos11
-			// freemod
-			if !_fail(parser, _freemodFail, errPos, failure, &pos) {
-				goto fail13
-			}
-			goto ok8
-		fail13:
-			pos = pos11
+		// relative_clause
+		if !_fail(parser, _relative_clauseFail, errPos, failure, &pos) {
 			goto fail7
-		ok8:
 		}
-		goto ok14
+		goto ok8
 	fail7:
 		pos = pos6
-	ok14:
+	ok8:
 	}
 	parser.fail[key] = failure
 	return pos, failure
@@ -11264,7 +11040,7 @@ func _arg_4Action(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// arg_5 spaces? (relative_clause/freemod)?
+	// arg_5 spaces? relative_clause?
 	{
 		var node0 string
 		// arg_5
@@ -11292,44 +11068,21 @@ func _arg_4Action(parser *_Parser, start int) (int, *string) {
 		ok4:
 		}
 		node, node0 = node+node0, ""
-		// (relative_clause/freemod)?
+		// relative_clause?
 		{
 			pos6 := pos
-			// (relative_clause/freemod)
-			// relative_clause/freemod
-			{
-				pos11 := pos
-				var node10 string
-				// relative_clause
-				if p, n := _relative_clauseAction(parser, pos); n == nil {
-					goto fail12
-				} else {
-					node0 = *n
-					pos = p
-				}
-				goto ok8
-			fail12:
-				node0 = node10
-				pos = pos11
-				// freemod
-				if p, n := _freemodAction(parser, pos); n == nil {
-					goto fail13
-				} else {
-					node0 = *n
-					pos = p
-				}
-				goto ok8
-			fail13:
-				node0 = node10
-				pos = pos11
+			// relative_clause
+			if p, n := _relative_clauseAction(parser, pos); n == nil {
 				goto fail7
-			ok8:
+			} else {
+				node0 = *n
+				pos = p
 			}
-			goto ok14
+			goto ok8
 		fail7:
 			node0 = ""
 			pos = pos6
-		ok14:
+		ok8:
 		}
 		node, node0 = node+node0, ""
 	}
@@ -39371,77 +39124,40 @@ func _freemodAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// spaces? (interjection/parenthetical/incidental/vocative) spaces? freemod?
-	// spaces?
-	{
-		pos2 := pos
-		// spaces
-		if !_accept(parser, _spacesAccepts, &pos, &perr) {
-			goto fail3
-		}
-		goto ok4
-	fail3:
-		pos = pos2
-	ok4:
-	}
 	// (interjection/parenthetical/incidental/vocative)
 	// interjection/parenthetical/incidental/vocative
 	{
-		pos8 := pos
+		pos3 := pos
 		// interjection
 		if !_accept(parser, _interjectionAccepts, &pos, &perr) {
-			goto fail9
+			goto fail4
 		}
-		goto ok5
-	fail9:
-		pos = pos8
+		goto ok0
+	fail4:
+		pos = pos3
 		// parenthetical
 		if !_accept(parser, _parentheticalAccepts, &pos, &perr) {
-			goto fail10
+			goto fail5
 		}
-		goto ok5
-	fail10:
-		pos = pos8
+		goto ok0
+	fail5:
+		pos = pos3
 		// incidental
 		if !_accept(parser, _incidentalAccepts, &pos, &perr) {
-			goto fail11
+			goto fail6
 		}
-		goto ok5
-	fail11:
-		pos = pos8
+		goto ok0
+	fail6:
+		pos = pos3
 		// vocative
 		if !_accept(parser, _vocativeAccepts, &pos, &perr) {
-			goto fail12
+			goto fail7
 		}
-		goto ok5
-	fail12:
-		pos = pos8
+		goto ok0
+	fail7:
+		pos = pos3
 		goto fail
-	ok5:
-	}
-	// spaces?
-	{
-		pos14 := pos
-		// spaces
-		if !_accept(parser, _spacesAccepts, &pos, &perr) {
-			goto fail15
-		}
-		goto ok16
-	fail15:
-		pos = pos14
-	ok16:
-	}
-	// freemod?
-	{
-		pos18 := pos
-		// freemod
-		if !_accept(parser, _freemodAccepts, &pos, &perr) {
-			goto fail19
-		}
-		goto ok20
-	fail19:
-		pos = pos18
-	ok20:
+	ok0:
 	}
 	return _memoize(parser, _freemod, start, pos, perr)
 fail:
@@ -39460,94 +39176,51 @@ func _freemodNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "freemod"}
-	// spaces? (interjection/parenthetical/incidental/vocative) spaces? freemod?
-	// spaces?
-	{
-		nkids1 := len(node.Kids)
-		pos2 := pos
-		// spaces
-		if !_node(parser, _spacesNode, node, &pos) {
-			goto fail3
-		}
-		goto ok4
-	fail3:
-		node.Kids = node.Kids[:nkids1]
-		pos = pos2
-	ok4:
-	}
 	// (interjection/parenthetical/incidental/vocative)
 	{
-		nkids5 := len(node.Kids)
-		pos06 := pos
+		nkids0 := len(node.Kids)
+		pos01 := pos
 		// interjection/parenthetical/incidental/vocative
 		{
-			pos10 := pos
-			nkids8 := len(node.Kids)
+			pos5 := pos
+			nkids3 := len(node.Kids)
 			// interjection
 			if !_node(parser, _interjectionNode, node, &pos) {
-				goto fail11
+				goto fail6
 			}
-			goto ok7
-		fail11:
-			node.Kids = node.Kids[:nkids8]
-			pos = pos10
+			goto ok2
+		fail6:
+			node.Kids = node.Kids[:nkids3]
+			pos = pos5
 			// parenthetical
 			if !_node(parser, _parentheticalNode, node, &pos) {
-				goto fail12
+				goto fail7
 			}
-			goto ok7
-		fail12:
-			node.Kids = node.Kids[:nkids8]
-			pos = pos10
+			goto ok2
+		fail7:
+			node.Kids = node.Kids[:nkids3]
+			pos = pos5
 			// incidental
 			if !_node(parser, _incidentalNode, node, &pos) {
-				goto fail13
+				goto fail8
 			}
-			goto ok7
-		fail13:
-			node.Kids = node.Kids[:nkids8]
-			pos = pos10
+			goto ok2
+		fail8:
+			node.Kids = node.Kids[:nkids3]
+			pos = pos5
 			// vocative
 			if !_node(parser, _vocativeNode, node, &pos) {
-				goto fail14
+				goto fail9
 			}
-			goto ok7
-		fail14:
-			node.Kids = node.Kids[:nkids8]
-			pos = pos10
+			goto ok2
+		fail9:
+			node.Kids = node.Kids[:nkids3]
+			pos = pos5
 			goto fail
-		ok7:
+		ok2:
 		}
-		sub := _sub(parser, pos06, pos, node.Kids[nkids5:])
-		node.Kids = append(node.Kids[:nkids5], sub)
-	}
-	// spaces?
-	{
-		nkids15 := len(node.Kids)
-		pos16 := pos
-		// spaces
-		if !_node(parser, _spacesNode, node, &pos) {
-			goto fail17
-		}
-		goto ok18
-	fail17:
-		node.Kids = node.Kids[:nkids15]
-		pos = pos16
-	ok18:
-	}
-	// freemod?
-	{
-		nkids19 := len(node.Kids)
-		pos20 := pos
-		// freemod
-		if !_node(parser, _freemodNode, node, &pos) {
-			goto fail21
-		}
-		goto ok22
-	fail21:
-		node.Kids = node.Kids[:nkids19]
-		pos = pos20
-	ok22:
+		sub := _sub(parser, pos01, pos, node.Kids[nkids0:])
+		node.Kids = append(node.Kids[:nkids0], sub)
 	}
 	node.Text = parser.text[start:pos]
 	parser.node[key] = node
@@ -39566,77 +39239,40 @@ func _freemodFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _freemod}
-	// spaces? (interjection/parenthetical/incidental/vocative) spaces? freemod?
-	// spaces?
-	{
-		pos2 := pos
-		// spaces
-		if !_fail(parser, _spacesFail, errPos, failure, &pos) {
-			goto fail3
-		}
-		goto ok4
-	fail3:
-		pos = pos2
-	ok4:
-	}
 	// (interjection/parenthetical/incidental/vocative)
 	// interjection/parenthetical/incidental/vocative
 	{
-		pos8 := pos
+		pos3 := pos
 		// interjection
 		if !_fail(parser, _interjectionFail, errPos, failure, &pos) {
-			goto fail9
+			goto fail4
 		}
-		goto ok5
-	fail9:
-		pos = pos8
+		goto ok0
+	fail4:
+		pos = pos3
 		// parenthetical
 		if !_fail(parser, _parentheticalFail, errPos, failure, &pos) {
-			goto fail10
+			goto fail5
 		}
-		goto ok5
-	fail10:
-		pos = pos8
+		goto ok0
+	fail5:
+		pos = pos3
 		// incidental
 		if !_fail(parser, _incidentalFail, errPos, failure, &pos) {
-			goto fail11
+			goto fail6
 		}
-		goto ok5
-	fail11:
-		pos = pos8
+		goto ok0
+	fail6:
+		pos = pos3
 		// vocative
 		if !_fail(parser, _vocativeFail, errPos, failure, &pos) {
-			goto fail12
+			goto fail7
 		}
-		goto ok5
-	fail12:
-		pos = pos8
+		goto ok0
+	fail7:
+		pos = pos3
 		goto fail
-	ok5:
-	}
-	// spaces?
-	{
-		pos14 := pos
-		// spaces
-		if !_fail(parser, _spacesFail, errPos, failure, &pos) {
-			goto fail15
-		}
-		goto ok16
-	fail15:
-		pos = pos14
-	ok16:
-	}
-	// freemod?
-	{
-		pos18 := pos
-		// freemod
-		if !_fail(parser, _freemodFail, errPos, failure, &pos) {
-			goto fail19
-		}
-		goto ok20
-	fail19:
-		pos = pos18
-	ok20:
+	ok0:
 	}
 	parser.fail[key] = failure
 	return pos, failure
@@ -39658,113 +39294,57 @@ func _freemodAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// spaces? (interjection/parenthetical/incidental/vocative) spaces? freemod?
+	// (interjection/parenthetical/incidental/vocative)
+	// interjection/parenthetical/incidental/vocative
 	{
-		var node0 string
-		// spaces?
-		{
-			pos2 := pos
-			// spaces
-			if p, n := _spacesAction(parser, pos); n == nil {
-				goto fail3
-			} else {
-				node0 = *n
-				pos = p
-			}
-			goto ok4
-		fail3:
-			node0 = ""
-			pos = pos2
-		ok4:
+		pos3 := pos
+		var node2 string
+		// interjection
+		if p, n := _interjectionAction(parser, pos); n == nil {
+			goto fail4
+		} else {
+			node = *n
+			pos = p
 		}
-		node, node0 = node+node0, ""
-		// (interjection/parenthetical/incidental/vocative)
-		// interjection/parenthetical/incidental/vocative
-		{
-			pos8 := pos
-			var node7 string
-			// interjection
-			if p, n := _interjectionAction(parser, pos); n == nil {
-				goto fail9
-			} else {
-				node0 = *n
-				pos = p
-			}
-			goto ok5
-		fail9:
-			node0 = node7
-			pos = pos8
-			// parenthetical
-			if p, n := _parentheticalAction(parser, pos); n == nil {
-				goto fail10
-			} else {
-				node0 = *n
-				pos = p
-			}
-			goto ok5
-		fail10:
-			node0 = node7
-			pos = pos8
-			// incidental
-			if p, n := _incidentalAction(parser, pos); n == nil {
-				goto fail11
-			} else {
-				node0 = *n
-				pos = p
-			}
-			goto ok5
-		fail11:
-			node0 = node7
-			pos = pos8
-			// vocative
-			if p, n := _vocativeAction(parser, pos); n == nil {
-				goto fail12
-			} else {
-				node0 = *n
-				pos = p
-			}
-			goto ok5
-		fail12:
-			node0 = node7
-			pos = pos8
-			goto fail
-		ok5:
+		goto ok0
+	fail4:
+		node = node2
+		pos = pos3
+		// parenthetical
+		if p, n := _parentheticalAction(parser, pos); n == nil {
+			goto fail5
+		} else {
+			node = *n
+			pos = p
 		}
-		node, node0 = node+node0, ""
-		// spaces?
-		{
-			pos14 := pos
-			// spaces
-			if p, n := _spacesAction(parser, pos); n == nil {
-				goto fail15
-			} else {
-				node0 = *n
-				pos = p
-			}
-			goto ok16
-		fail15:
-			node0 = ""
-			pos = pos14
-		ok16:
+		goto ok0
+	fail5:
+		node = node2
+		pos = pos3
+		// incidental
+		if p, n := _incidentalAction(parser, pos); n == nil {
+			goto fail6
+		} else {
+			node = *n
+			pos = p
 		}
-		node, node0 = node+node0, ""
-		// freemod?
-		{
-			pos18 := pos
-			// freemod
-			if p, n := _freemodAction(parser, pos); n == nil {
-				goto fail19
-			} else {
-				node0 = *n
-				pos = p
-			}
-			goto ok20
-		fail19:
-			node0 = ""
-			pos = pos18
-		ok20:
+		goto ok0
+	fail6:
+		node = node2
+		pos = pos3
+		// vocative
+		if p, n := _vocativeAction(parser, pos); n == nil {
+			goto fail7
+		} else {
+			node = *n
+			pos = p
 		}
-		node, node0 = node+node0, ""
+		goto ok0
+	fail7:
+		node = node2
+		pos = pos3
+		goto fail
+	ok0:
 	}
 	parser.act[key] = node
 	return pos, &node
@@ -40111,7 +39691,11 @@ func _incidentalAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// spaces? start_incidental freemod? statement
+	// start_incidental spaces? statement
+	// start_incidental
+	if !_accept(parser, _start_incidentalAccepts, &pos, &perr) {
+		goto fail
+	}
 	// spaces?
 	{
 		pos2 := pos
@@ -40123,22 +39707,6 @@ func _incidentalAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	fail3:
 		pos = pos2
 	ok4:
-	}
-	// start_incidental
-	if !_accept(parser, _start_incidentalAccepts, &pos, &perr) {
-		goto fail
-	}
-	// freemod?
-	{
-		pos6 := pos
-		// freemod
-		if !_accept(parser, _freemodAccepts, &pos, &perr) {
-			goto fail7
-		}
-		goto ok8
-	fail7:
-		pos = pos6
-	ok8:
 	}
 	// statement
 	if !_accept(parser, _statementAccepts, &pos, &perr) {
@@ -40161,7 +39729,11 @@ func _incidentalNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "incidental"}
-	// spaces? start_incidental freemod? statement
+	// start_incidental spaces? statement
+	// start_incidental
+	if !_node(parser, _start_incidentalNode, node, &pos) {
+		goto fail
+	}
 	// spaces?
 	{
 		nkids1 := len(node.Kids)
@@ -40175,24 +39747,6 @@ func _incidentalNode(parser *_Parser, start int) (int, *peg.Node) {
 		node.Kids = node.Kids[:nkids1]
 		pos = pos2
 	ok4:
-	}
-	// start_incidental
-	if !_node(parser, _start_incidentalNode, node, &pos) {
-		goto fail
-	}
-	// freemod?
-	{
-		nkids5 := len(node.Kids)
-		pos6 := pos
-		// freemod
-		if !_node(parser, _freemodNode, node, &pos) {
-			goto fail7
-		}
-		goto ok8
-	fail7:
-		node.Kids = node.Kids[:nkids5]
-		pos = pos6
-	ok8:
 	}
 	// statement
 	if !_node(parser, _statementNode, node, &pos) {
@@ -40215,7 +39769,11 @@ func _incidentalFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _incidental}
-	// spaces? start_incidental freemod? statement
+	// start_incidental spaces? statement
+	// start_incidental
+	if !_fail(parser, _start_incidentalFail, errPos, failure, &pos) {
+		goto fail
+	}
 	// spaces?
 	{
 		pos2 := pos
@@ -40227,22 +39785,6 @@ func _incidentalFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 	fail3:
 		pos = pos2
 	ok4:
-	}
-	// start_incidental
-	if !_fail(parser, _start_incidentalFail, errPos, failure, &pos) {
-		goto fail
-	}
-	// freemod?
-	{
-		pos6 := pos
-		// freemod
-		if !_fail(parser, _freemodFail, errPos, failure, &pos) {
-			goto fail7
-		}
-		goto ok8
-	fail7:
-		pos = pos6
-	ok8:
 	}
 	// statement
 	if !_fail(parser, _statementFail, errPos, failure, &pos) {
@@ -40268,9 +39810,17 @@ func _incidentalAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// spaces? start_incidental freemod? statement
+	// start_incidental spaces? statement
 	{
 		var node0 string
+		// start_incidental
+		if p, n := _start_incidentalAction(parser, pos); n == nil {
+			goto fail
+		} else {
+			node0 = *n
+			pos = p
+		}
+		node, node0 = node+node0, ""
 		// spaces?
 		{
 			pos2 := pos
@@ -40286,31 +39836,6 @@ func _incidentalAction(parser *_Parser, start int) (int, *string) {
 			node0 = ""
 			pos = pos2
 		ok4:
-		}
-		node, node0 = node+node0, ""
-		// start_incidental
-		if p, n := _start_incidentalAction(parser, pos); n == nil {
-			goto fail
-		} else {
-			node0 = *n
-			pos = p
-		}
-		node, node0 = node+node0, ""
-		// freemod?
-		{
-			pos6 := pos
-			// freemod
-			if p, n := _freemodAction(parser, pos); n == nil {
-				goto fail7
-			} else {
-				node0 = *n
-				pos = p
-			}
-			goto ok8
-		fail7:
-			node0 = ""
-			pos = pos6
-		ok8:
 		}
 		node, node0 = node+node0, ""
 		// statement
@@ -40486,6 +40011,295 @@ func _vocativeAction(parser *_Parser, start int) (int, *string) {
 		} else {
 			node0 = *n
 			pos = p
+		}
+		node, node0 = node+node0, ""
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
+func _spacesAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _spaces, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// (freemod/space+) spaces?
+	// (freemod/space+)
+	// freemod/space+
+	{
+		pos4 := pos
+		// freemod
+		if !_accept(parser, _freemodAccepts, &pos, &perr) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos4
+		// space+
+		// space
+		if !_accept(parser, _spaceAccepts, &pos, &perr) {
+			goto fail6
+		}
+		for {
+			pos8 := pos
+			// space
+			if !_accept(parser, _spaceAccepts, &pos, &perr) {
+				goto fail10
+			}
+			continue
+		fail10:
+			pos = pos8
+			break
+		}
+		goto ok1
+	fail6:
+		pos = pos4
+		goto fail
+	ok1:
+	}
+	// spaces?
+	{
+		pos12 := pos
+		// spaces
+		if !_accept(parser, _spacesAccepts, &pos, &perr) {
+			goto fail13
+		}
+		goto ok14
+	fail13:
+		pos = pos12
+	ok14:
+	}
+	return _memoize(parser, _spaces, start, pos, perr)
+fail:
+	return _memoize(parser, _spaces, start, -1, perr)
+}
+
+func _spacesNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_spaces]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _spaces}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "spaces"}
+	// (freemod/space+) spaces?
+	// (freemod/space+)
+	{
+		nkids1 := len(node.Kids)
+		pos02 := pos
+		// freemod/space+
+		{
+			pos6 := pos
+			nkids4 := len(node.Kids)
+			// freemod
+			if !_node(parser, _freemodNode, node, &pos) {
+				goto fail7
+			}
+			goto ok3
+		fail7:
+			node.Kids = node.Kids[:nkids4]
+			pos = pos6
+			// space+
+			// space
+			if !_node(parser, _spaceNode, node, &pos) {
+				goto fail8
+			}
+			for {
+				nkids9 := len(node.Kids)
+				pos10 := pos
+				// space
+				if !_node(parser, _spaceNode, node, &pos) {
+					goto fail12
+				}
+				continue
+			fail12:
+				node.Kids = node.Kids[:nkids9]
+				pos = pos10
+				break
+			}
+			goto ok3
+		fail8:
+			node.Kids = node.Kids[:nkids4]
+			pos = pos6
+			goto fail
+		ok3:
+		}
+		sub := _sub(parser, pos02, pos, node.Kids[nkids1:])
+		node.Kids = append(node.Kids[:nkids1], sub)
+	}
+	// spaces?
+	{
+		nkids13 := len(node.Kids)
+		pos14 := pos
+		// spaces
+		if !_node(parser, _spacesNode, node, &pos) {
+			goto fail15
+		}
+		goto ok16
+	fail15:
+		node.Kids = node.Kids[:nkids13]
+		pos = pos14
+	ok16:
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _spacesFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _spaces, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "spaces",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _spaces}
+	// (freemod/space+) spaces?
+	// (freemod/space+)
+	// freemod/space+
+	{
+		pos4 := pos
+		// freemod
+		if !_fail(parser, _freemodFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		goto ok1
+	fail5:
+		pos = pos4
+		// space+
+		// space
+		if !_fail(parser, _spaceFail, errPos, failure, &pos) {
+			goto fail6
+		}
+		for {
+			pos8 := pos
+			// space
+			if !_fail(parser, _spaceFail, errPos, failure, &pos) {
+				goto fail10
+			}
+			continue
+		fail10:
+			pos = pos8
+			break
+		}
+		goto ok1
+	fail6:
+		pos = pos4
+		goto fail
+	ok1:
+	}
+	// spaces?
+	{
+		pos12 := pos
+		// spaces
+		if !_fail(parser, _spacesFail, errPos, failure, &pos) {
+			goto fail13
+		}
+		goto ok14
+	fail13:
+		pos = pos12
+	ok14:
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _spacesAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_spaces]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _spaces}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(string)
+		return start + int(dp-1), &n
+	}
+	var node string
+	pos := start
+	// (freemod/space+) spaces?
+	{
+		var node0 string
+		// (freemod/space+)
+		// freemod/space+
+		{
+			pos4 := pos
+			var node3 string
+			// freemod
+			if p, n := _freemodAction(parser, pos); n == nil {
+				goto fail5
+			} else {
+				node0 = *n
+				pos = p
+			}
+			goto ok1
+		fail5:
+			node0 = node3
+			pos = pos4
+			// space+
+			{
+				var node9 string
+				// space
+				if p, n := _spaceAction(parser, pos); n == nil {
+					goto fail6
+				} else {
+					node9 = *n
+					pos = p
+				}
+				node0 += node9
+			}
+			for {
+				pos8 := pos
+				var node9 string
+				// space
+				if p, n := _spaceAction(parser, pos); n == nil {
+					goto fail10
+				} else {
+					node9 = *n
+					pos = p
+				}
+				node0 += node9
+				continue
+			fail10:
+				pos = pos8
+				break
+			}
+			goto ok1
+		fail6:
+			node0 = node3
+			pos = pos4
+			goto fail
+		ok1:
+		}
+		node, node0 = node+node0, ""
+		// spaces?
+		{
+			pos12 := pos
+			// spaces
+			if p, n := _spacesAction(parser, pos); n == nil {
+				goto fail13
+			} else {
+				node0 = *n
+				pos = p
+			}
+			goto ok14
+		fail13:
+			node0 = ""
+			pos = pos12
+		ok14:
 		}
 		node, node0 = node+node0, ""
 	}
@@ -40718,8 +40532,8 @@ fail:
 func _wordAction(parser *_Parser, start int) (int, *ast.Word) {
 	var labels [2]string
 	use(labels)
-	var label1 *ast.Node
 	var label0 string
+	var label1 *ast.Node
 	dp := parser.deltaPos[start][_word]
 	if dp < 0 {
 		return -1, nil
@@ -42105,7 +41919,7 @@ func _prefixAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// &MU neutral_syllable freemod?
+	// &MU neutral_syllable
 	// &MU
 	{
 		pos2 := pos
@@ -42127,18 +41941,6 @@ func _prefixAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
 		goto fail
 	}
-	// freemod?
-	{
-		pos7 := pos
-		// freemod
-		if !_accept(parser, _freemodAccepts, &pos, &perr) {
-			goto fail8
-		}
-		goto ok9
-	fail8:
-		pos = pos7
-	ok9:
-	}
 	return _memoize(parser, _prefix, start, pos, perr)
 fail:
 	return _memoize(parser, _prefix, start, -1, perr)
@@ -42156,7 +41958,7 @@ func _prefixNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "prefix"}
-	// &MU neutral_syllable freemod?
+	// &MU neutral_syllable
 	// &MU
 	{
 		pos2 := pos
@@ -42177,20 +41979,6 @@ func _prefixNode(parser *_Parser, start int) (int, *peg.Node) {
 	if !_node(parser, _neutral_syllableNode, node, &pos) {
 		goto fail
 	}
-	// freemod?
-	{
-		nkids6 := len(node.Kids)
-		pos7 := pos
-		// freemod
-		if !_node(parser, _freemodNode, node, &pos) {
-			goto fail8
-		}
-		goto ok9
-	fail8:
-		node.Kids = node.Kids[:nkids6]
-		pos = pos7
-	ok9:
-	}
 	node.Text = parser.text[start:pos]
 	parser.node[key] = node
 	return pos, node
@@ -42208,7 +41996,7 @@ func _prefixFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _prefix}
-	// &MU neutral_syllable freemod?
+	// &MU neutral_syllable
 	// &MU
 	{
 		pos2 := pos
@@ -42236,18 +42024,6 @@ func _prefixFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// freemod?
-	{
-		pos7 := pos
-		// freemod
-		if !_fail(parser, _freemodFail, errPos, failure, &pos) {
-			goto fail8
-		}
-		goto ok9
-	fail8:
-		pos = pos7
-	ok9:
-	}
 	parser.fail[key] = failure
 	return pos, failure
 fail:
@@ -42268,7 +42044,7 @@ func _prefixAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// &MU neutral_syllable freemod?
+	// &MU neutral_syllable
 	{
 		var node0 string
 		// &MU
@@ -42295,23 +42071,6 @@ func _prefixAction(parser *_Parser, start int) (int, *string) {
 		} else {
 			node0 = *n
 			pos = p
-		}
-		node, node0 = node+node0, ""
-		// freemod?
-		{
-			pos7 := pos
-			// freemod
-			if p, n := _freemodAction(parser, pos); n == nil {
-				goto fail8
-			} else {
-				node0 = *n
-				pos = p
-			}
-			goto ok9
-		fail8:
-			node0 = ""
-			pos = pos7
-		ok9:
 		}
 		node, node0 = node+node0, ""
 	}
@@ -42824,7 +42583,7 @@ func _end_statementAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) 
 		return dp, de
 	}
 	pos, perr := start, -1
-	// &NA neutral_syllable freemod?
+	// &NA neutral_syllable
 	// &NA
 	{
 		pos2 := pos
@@ -42846,18 +42605,6 @@ func _end_statementAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) 
 	if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
 		goto fail
 	}
-	// freemod?
-	{
-		pos7 := pos
-		// freemod
-		if !_accept(parser, _freemodAccepts, &pos, &perr) {
-			goto fail8
-		}
-		goto ok9
-	fail8:
-		pos = pos7
-	ok9:
-	}
 	return _memoize(parser, _end_statement, start, pos, perr)
 fail:
 	return _memoize(parser, _end_statement, start, -1, perr)
@@ -42875,7 +42622,7 @@ func _end_statementNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "end_statement"}
-	// &NA neutral_syllable freemod?
+	// &NA neutral_syllable
 	// &NA
 	{
 		pos2 := pos
@@ -42896,20 +42643,6 @@ func _end_statementNode(parser *_Parser, start int) (int, *peg.Node) {
 	if !_node(parser, _neutral_syllableNode, node, &pos) {
 		goto fail
 	}
-	// freemod?
-	{
-		nkids6 := len(node.Kids)
-		pos7 := pos
-		// freemod
-		if !_node(parser, _freemodNode, node, &pos) {
-			goto fail8
-		}
-		goto ok9
-	fail8:
-		node.Kids = node.Kids[:nkids6]
-		pos = pos7
-	ok9:
-	}
 	node.Text = parser.text[start:pos]
 	parser.node[key] = node
 	return pos, node
@@ -42927,7 +42660,7 @@ func _end_statementFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _end_statement}
-	// &NA neutral_syllable freemod?
+	// &NA neutral_syllable
 	// &NA
 	{
 		pos2 := pos
@@ -42955,18 +42688,6 @@ func _end_statementFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 	if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
 		goto fail
 	}
-	// freemod?
-	{
-		pos7 := pos
-		// freemod
-		if !_fail(parser, _freemodFail, errPos, failure, &pos) {
-			goto fail8
-		}
-		goto ok9
-	fail8:
-		pos = pos7
-	ok9:
-	}
 	parser.fail[key] = failure
 	return pos, failure
 fail:
@@ -42987,7 +42708,7 @@ func _end_statementAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// &NA neutral_syllable freemod?
+	// &NA neutral_syllable
 	{
 		var node0 string
 		// &NA
@@ -43014,23 +42735,6 @@ func _end_statementAction(parser *_Parser, start int) (int, *string) {
 		} else {
 			node0 = *n
 			pos = p
-		}
-		node, node0 = node+node0, ""
-		// freemod?
-		{
-			pos7 := pos
-			// freemod
-			if p, n := _freemodAction(parser, pos); n == nil {
-				goto fail8
-			} else {
-				node0 = *n
-				pos = p
-			}
-			goto ok9
-		fail8:
-			node0 = ""
-			pos = pos7
-		ok9:
 		}
 		node, node0 = node+node0, ""
 	}
@@ -55457,8 +55161,8 @@ fail:
 func _syllable__preposition_desinence__preposition_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label0 string
 	var label1 string
+	var label0 string
 	dp := parser.deltaPos[start][_syllable__preposition_desinence__preposition_tone]
 	if dp < 0 {
 		return -1, nil
@@ -96606,12 +96310,11 @@ fail:
 	return -1, nil
 }
 
-func _spacesAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _spaces, start); ok {
+func _spaceAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _space, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [\t\n\r .,:!]+
 	// [\t\n\r .,:!]
 	if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
 		perr = _max(perr, pos)
@@ -96619,61 +96322,30 @@ func _spacesAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	} else {
 		pos += w
 	}
-	for {
-		pos1 := pos
-		// [\t\n\r .,:!]
-		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
-			perr = _max(perr, pos)
-			goto fail3
-		} else {
-			pos += w
-		}
-		continue
-	fail3:
-		pos = pos1
-		break
-	}
 	perr = start
-	return _memoize(parser, _spaces, start, pos, perr)
+	return _memoize(parser, _space, start, pos, perr)
 fail:
-	return _memoize(parser, _spaces, start, -1, perr)
+	return _memoize(parser, _space, start, -1, perr)
 }
 
-func _spacesNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_spaces]
+func _spaceNode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_space]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _spaces}
+	key := _key{start: start, rule: _space}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "spaces"}
-	// [\t\n\r .,:!]+
+	node = &peg.Node{Name: "space"}
 	// [\t\n\r .,:!]
 	if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
 		goto fail
 	} else {
 		node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
 		pos += w
-	}
-	for {
-		nkids0 := len(node.Kids)
-		pos1 := pos
-		// [\t\n\r .,:!]
-		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
-			goto fail3
-		} else {
-			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
-			pos += w
-		}
-		continue
-	fail3:
-		node.Kids = node.Kids[:nkids0]
-		pos = pos1
-		break
 	}
 	node.Text = parser.text[start:pos]
 	parser.node[key] = node
@@ -96682,17 +96354,16 @@ fail:
 	return -1, nil
 }
 
-func _spacesFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _spaces, start, errPos)
+func _spaceFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _space, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "spaces",
+		Name: "space",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _spaces}
-	// [\t\n\r .,:!]+
+	key := _key{start: start, rule: _space}
 	// [\t\n\r .,:!]
 	if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
 		if pos >= errPos {
@@ -96705,25 +96376,6 @@ func _spacesFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 	} else {
 		pos += w
 	}
-	for {
-		pos1 := pos
-		// [\t\n\r .,:!]
-		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
-			if pos >= errPos {
-				failure.Kids = append(failure.Kids, &peg.Fail{
-					Pos:  int(pos),
-					Want: "[\\t\\n\\r .,:!]",
-				})
-			}
-			goto fail3
-		} else {
-			pos += w
-		}
-		continue
-	fail3:
-		pos = pos1
-		break
-	}
 	failure.Kids = nil
 	parser.fail[key] = failure
 	return pos, failure
@@ -96734,12 +96386,12 @@ fail:
 	return -1, failure
 }
 
-func _spacesAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_spaces]
+func _spaceAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_space]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _spaces}
+	key := _key{start: start, rule: _space}
 	n := parser.act[key]
 	if n != nil {
 		n := n.(string)
@@ -96747,33 +96399,12 @@ func _spacesAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [\t\n\r .,:!]+
-	{
-		var node2 string
-		// [\t\n\r .,:!]
-		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
-			goto fail
-		} else {
-			node2 = parser.text[pos : pos+w]
-			pos += w
-		}
-		node += node2
-	}
-	for {
-		pos1 := pos
-		var node2 string
-		// [\t\n\r .,:!]
-		if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
-			goto fail3
-		} else {
-			node2 = parser.text[pos : pos+w]
-			pos += w
-		}
-		node += node2
-		continue
-	fail3:
-		pos = pos1
-		break
+	// [\t\n\r .,:!]
+	if r, w := _next(parser, pos); r != '\t' && r != '\n' && r != '\r' && r != ' ' && r != '.' && r != ',' && r != ':' && r != '!' {
+		goto fail
+	} else {
+		node = parser.text[pos : pos+w]
+		pos += w
 	}
 	parser.act[key] = node
 	return pos, &node

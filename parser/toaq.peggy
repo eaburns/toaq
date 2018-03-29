@@ -11,7 +11,7 @@
 }
 
 full_text <- text EOF
-text <- spaces? freemod? spaces? discourse? spaces? EOF?
+text <- spaces? discourse? spaces? EOF?
 
 #
 # Discourse
@@ -52,7 +52,7 @@ forethought_co_bar_statement <- forethought_marker spaces? statement
 predicate <- serial_predicate
 predicate_1 <- coP_pred / predicate_2
 predicate_2 <- forethought_coP_pred / LU_predicate / MI_predicate / PO_predicate / quotation_predicate / prefix spaces? predicate_2 / predicate_3
-predicate_3 <- predicate_4 spaces? freemod?
+predicate_3 <- predicate_4 spaces?
 predicate_4 <- verb_syllable compound_syllable+ / !function_word verb_syllable
 serial_predicate <- serial_predicate_2 / predicate_1
 serial_predicate_2 <- predicate_1 spaces? serial_predicate
@@ -90,7 +90,7 @@ argument <- coP_arg / arg_1
 arg_1 <- forethought_coP_arg / arg_2
 arg_2 <- focus? spaces? arg_3
 arg_3 <- quantifier? spaces? arg_4
-arg_4 <- arg_5 spaces? ( relative_clause / freemod )?
+arg_4 <- arg_5 spaces? relative_clause?
 arg_5 <- serial_argument / arg_6
 arg_6 <- content_clause / coP_pred_arg / forethought_coP_pred_arg / LU_arg / MI_arg / PO_arg / quotation_argument / arg_7
 arg_7 <- arg_syllable compound_syllable+ / !function_word arg_syllable
@@ -273,11 +273,12 @@ MO_content_predicate_tone <- &MO content_syllable
 # Free modifiers and interjections
 #
 
-freemod <- spaces? ( interjection / parenthetical / incidental / vocative ) spaces? freemod?
+freemod <- ( interjection / parenthetical / incidental / vocative )
 parenthetical <- parenthetical_1 spaces? end_parenthetical
 parenthetical_1 <- start_parenthetical spaces? discourse
-incidental <- spaces? start_incidental freemod? statement
+incidental <- start_incidental spaces? statement
 vocative <- vocative_marker spaces? argument
+spaces <- ( freemod / space+ ) spaces?
 
 #
 # Morphology
@@ -295,11 +296,11 @@ space_word <- w:spaces "ast.Node":{
 }
 initial_syllable <- ( arg_syllable / relative_syllable / verb_syllable / content_syllable / preposition_syllable / adverb_syllable )
 
-prefix <- &MU neutral_syllable freemod?
+prefix <- &MU neutral_syllable
 focus <- &KU neutral_syllable
 end_quote <- &TEO neutral_syllable
 end_predicatizer <- &GA neutral_syllable
-end_statement <- &NA neutral_syllable freemod?
+end_statement <- &NA neutral_syllable
 sentence_prefix <- &KEO neutral_syllable
 end_prenex <- &BI neutral_syllable
 start_incidental <- &JU neutral_syllable
@@ -459,5 +460,5 @@ u <- [uU]
 w <- [wW]
 y <- [yY]
 
-spaces "space" <- [\t\n\r\u0020.,:!]+
+space "space" <- [\t\n\r\u0020.,:!]
 EOF "EOF" <- !.

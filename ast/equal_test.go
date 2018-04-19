@@ -1029,6 +1029,13 @@ func TestEq(t *testing.T) {
 				(*Space)(&Word{T: "\n"}),
 			},
 		},
+		{
+			n: &Word{T: "jai?"},
+			ne: []Node{
+				(*Interjection)(&Word{T: "hia"}),
+				&Word{T: "mai?"},
+			},
+		},
 	}
 	for _, test := range tests {
 		as := toString(test.n)

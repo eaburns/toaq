@@ -3,6 +3,7 @@ package parser
 import (
 	"github.com/eaburns/peggy/peg"
 	"github.com/eaburns/toaq/ast"
+	"github.com/eaburns/toaq/tone"
 )
 
 const (
@@ -872,8 +873,8 @@ fail:
 func _textAction(parser *_Parser, start int) (int, *ast.Text) {
 	var labels [2]string
 	use(labels)
-	var label1 *[]ast.Node
 	var label0 *ast.Mod
+	var label1 *[]ast.Node
 	dp := parser.deltaPos[start][_text]
 	if dp < 0 {
 		return -1, nil
@@ -1367,10 +1368,10 @@ fail:
 func _discourseAction(parser *_Parser, start int) (int, *[]ast.Node) {
 	var labels [4]string
 	use(labels)
-	var label0 ast.Sentence
 	var label1 *ast.Mod
 	var label2 ast.Fragment
 	var label3 *ast.Mod
+	var label0 ast.Sentence
 	dp := parser.deltaPos[start][_discourse]
 	if dp < 0 {
 		return -1, nil
@@ -1862,12 +1863,12 @@ fail:
 func _fragmentAction(parser *_Parser, start int) (int, *ast.Fragment) {
 	var labels [6]string
 	use(labels)
+	var label3 *ast.Terms
 	var label4 ast.Fragment
 	var label5 *ast.Mod
 	var label0 (*ast.CoP)
 	var label1 ast.Relative
 	var label2 (*ast.Prenex)
-	var label3 *ast.Terms
 	dp := parser.deltaPos[start][_fragment]
 	if dp < 0 {
 		return -1, nil
@@ -3601,9 +3602,9 @@ fail:
 func _statement_2Action(parser *_Parser, start int) (int, *ast.Statement) {
 	var labels [3]string
 	use(labels)
+	var label0 ast.Predication
 	var label1 *ast.Mod
 	var label2 *ast.Word
-	var label0 ast.Predication
 	dp := parser.deltaPos[start][_statement_2]
 	if dp < 0 {
 		return -1, nil
@@ -4429,9 +4430,9 @@ fail:
 func _predicationAction(parser *_Parser, start int) (int, *ast.Predication) {
 	var labels [3]string
 	use(labels)
-	var label0 ast.Predicate
 	var label1 *ast.Mod
 	var label2 **ast.Terms
+	var label0 ast.Predicate
 	dp := parser.deltaPos[start][_predication]
 	if dp < 0 {
 		return -1, nil
@@ -5985,9 +5986,9 @@ fail:
 func _terms_2Action(parser *_Parser, start int) (int, **ast.Terms) {
 	var labels [3]string
 	use(labels)
-	var label0 ast.Term
 	var label1 *ast.Mod
 	var label2 *ast.Terms
+	var label0 ast.Term
 	dp := parser.deltaPos[start][_terms_2]
 	if dp < 0 {
 		return -1, nil
@@ -6286,10 +6287,10 @@ fail:
 func _termAction(parser *_Parser, start int) (int, *ast.Term) {
 	var labels [4]string
 	use(labels)
-	var label2 (*ast.TermSet)
-	var label3 ast.Preposition
 	var label0 ast.Term
 	var label1 ast.Adverb
+	var label2 (*ast.TermSet)
+	var label3 ast.Preposition
 	dp := parser.deltaPos[start][_term]
 	if dp < 0 {
 		return -1, nil
@@ -6735,8 +6736,8 @@ fail:
 func _linking_word_spacesAction(parser *_Parser, start int) (int, *(*ast.Word)) {
 	var labels [2]string
 	use(labels)
-	var label1 *ast.Mod
 	var label0 ast.Word
+	var label1 *ast.Mod
 	dp := parser.deltaPos[start][_linking_word_spaces]
 	if dp < 0 {
 		return -1, nil
@@ -7360,9 +7361,9 @@ fail:
 func _terms_IIAction(parser *_Parser, start int) (int, **ast.Terms) {
 	var labels [3]string
 	use(labels)
+	var label1 *ast.Mod
 	var label2 ast.Term
 	var label0 ast.Term
-	var label1 *ast.Mod
 	dp := parser.deltaPos[start][_terms_II]
 	if dp < 0 {
 		return -1, nil
@@ -7987,9 +7988,9 @@ fail:
 func _terms_VAction(parser *_Parser, start int) (int, **ast.Terms) {
 	var labels [3]string
 	use(labels)
-	var label0 ast.Term
 	var label1 *ast.Mod
 	var label2 *ast.Terms
+	var label0 ast.Term
 	dp := parser.deltaPos[start][_terms_V]
 	if dp < 0 {
 		return -1, nil
@@ -8965,8 +8966,8 @@ fail:
 func _arg_3Action(parser *_Parser, start int) (int, *ast.PredicateArgument) {
 	var labels [2]string
 	use(labels)
-	var label0 *ast.Word
 	var label1 ast.PredicateArgument
+	var label0 *ast.Word
 	dp := parser.deltaPos[start][_arg_3]
 	if dp < 0 {
 		return -1, nil
@@ -9366,9 +9367,9 @@ fail:
 func _arg_4Action(parser *_Parser, start int) (int, *ast.PredicateArgument) {
 	var labels [3]string
 	use(labels)
+	var label2 *ast.Relative
 	var label0 *ast.PredicateArgument
 	var label1 *ast.Mod
-	var label2 *ast.Relative
 	dp := parser.deltaPos[start][_arg_4]
 	if dp < 0 {
 		return -1, nil
@@ -10307,8 +10308,8 @@ fail:
 func _relative_clauseAction(parser *_Parser, start int) (int, *ast.Relative) {
 	var labels [2]string
 	use(labels)
-	var label0 (*ast.CoP)
 	var label1 *ast.LUPhrase
+	var label0 (*ast.CoP)
 	dp := parser.deltaPos[start][_relative_clause]
 	if dp < 0 {
 		return -1, nil
@@ -11237,9 +11238,9 @@ fail:
 func _relative_predicationAction(parser *_Parser, start int) (int, *ast.Predication) {
 	var labels [3]string
 	use(labels)
-	var label0 ast.Predicate
 	var label1 *ast.Mod
 	var label2 **ast.Terms
+	var label0 ast.Predicate
 	dp := parser.deltaPos[start][_relative_predication]
 	if dp < 0 {
 		return -1, nil
@@ -15300,9 +15301,9 @@ fail:
 func _content_predicationAction(parser *_Parser, start int) (int, *ast.Predication) {
 	var labels [3]string
 	use(labels)
+	var label0 ast.Predicate
 	var label1 *ast.Mod
 	var label2 **ast.Terms
-	var label0 ast.Predicate
 	dp := parser.deltaPos[start][_content_predication]
 	if dp < 0 {
 		return -1, nil
@@ -16089,9 +16090,9 @@ fail:
 func _forethought_connectiveAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
-	var label2 ast.Word
 	var label0 ast.Word
 	var label1 *ast.Mod
+	var label2 ast.Word
 	dp := parser.deltaPos[start][_forethought_connective]
 	if dp < 0 {
 		return -1, nil
@@ -16390,10 +16391,10 @@ fail:
 func _MI_complementAction(parser *_Parser, start int) (int, *ast.Phrase) {
 	var labels [4]string
 	use(labels)
-	var label0 ast.Predicate
-	var label1 ast.Argument
 	var label2 ast.Adverb
 	var label3 ast.Preposition
+	var label0 ast.Predicate
+	var label1 ast.Argument
 	dp := parser.deltaPos[start][_MI_complement]
 	if dp < 0 {
 		return -1, nil
@@ -16831,8 +16832,8 @@ fail:
 func _space_or_freemodAction(parser *_Parser, start int) (int, *ast.Mod) {
 	var labels [2]string
 	use(labels)
-	var label0 ast.Mod
 	var label1 *ast.Mod
+	var label0 ast.Mod
 	dp := parser.deltaPos[start][_space_or_freemod]
 	if dp < 0 {
 		return -1, nil
@@ -17336,10 +17337,10 @@ fail:
 func _freemodAction(parser *_Parser, start int) (int, *ast.Mod) {
 	var labels [4]string
 	use(labels)
-	var label0 *ast.Interjection
-	var label1 (*ast.Parenthetical)
 	var label2 *ast.Incidental
 	var label3 *ast.Vocative
+	var label0 *ast.Interjection
+	var label1 (*ast.Parenthetical)
 	dp := parser.deltaPos[start][_freemod]
 	if dp < 0 {
 		return -1, nil
@@ -18234,9 +18235,9 @@ fail:
 func _vocativeAction(parser *_Parser, start int) (int, **ast.Vocative) {
 	var labels [3]string
 	use(labels)
+	var label2 ast.Argument
 	var label0 ast.Word
 	var label1 *ast.Mod
-	var label2 ast.Argument
 	dp := parser.deltaPos[start][_vocative]
 	if dp < 0 {
 		return -1, nil
@@ -36410,7 +36411,7 @@ func _āAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['-'][l])
+				return string(tone.Diacritic['-'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -36723,7 +36724,7 @@ func _ūAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['-'][l])
+				return string(tone.Diacritic['-'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -37036,7 +37037,7 @@ func _īAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['-'][l])
+				return string(tone.Diacritic['-'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -37349,7 +37350,7 @@ func _ōAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['-'][l])
+				return string(tone.Diacritic['-'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -37662,7 +37663,7 @@ func _ēAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['-'][l])
+				return string(tone.Diacritic['-'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -38171,7 +38172,7 @@ func _áAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['/'][l])
+				return string(tone.Diacritic['/'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -38484,7 +38485,7 @@ func _úAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['/'][l])
+				return string(tone.Diacritic['/'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -38797,7 +38798,7 @@ func _íAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['/'][l])
+				return string(tone.Diacritic['/'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -39110,7 +39111,7 @@ func _óAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['/'][l])
+				return string(tone.Diacritic['/'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -39423,7 +39424,7 @@ func _éAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['/'][l])
+				return string(tone.Diacritic['/'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -39963,7 +39964,7 @@ func _ǎAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['V'][l])
+				return string(tone.Diacritic['V'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -40307,7 +40308,7 @@ func _ǔAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['V'][l])
+				return string(tone.Diacritic['V'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -40651,7 +40652,7 @@ func _ǐAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['V'][l])
+				return string(tone.Diacritic['V'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -40995,7 +40996,7 @@ func _ǒAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['V'][l])
+				return string(tone.Diacritic['V'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -41339,7 +41340,7 @@ func _ěAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['V'][l])
+				return string(tone.Diacritic['V'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -41946,7 +41947,7 @@ func _ảAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['?'][l])
+				return string(tone.Diacritic['?'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -42259,7 +42260,7 @@ func _ủAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['?'][l])
+				return string(tone.Diacritic['?'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -42572,7 +42573,7 @@ func _ỉAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['?'][l])
+				return string(tone.Diacritic['?'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -42885,7 +42886,7 @@ func _ỏAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['?'][l])
+				return string(tone.Diacritic['?'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -43198,7 +43199,7 @@ func _ẻAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['?'][l])
+				return string(tone.Diacritic['?'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -43707,7 +43708,7 @@ func _âAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['^'][l])
+				return string(tone.Diacritic['^'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -44020,7 +44021,7 @@ func _ûAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['^'][l])
+				return string(tone.Diacritic['^'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -44333,7 +44334,7 @@ func _îAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['^'][l])
+				return string(tone.Diacritic['^'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -44646,7 +44647,7 @@ func _ôAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['^'][l])
+				return string(tone.Diacritic['^'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -44959,7 +44960,7 @@ func _êAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['^'][l])
+				return string(tone.Diacritic['^'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -45468,7 +45469,7 @@ func _àAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['\\'][l])
+				return string(tone.Diacritic['\\'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -45781,7 +45782,7 @@ func _ùAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['\\'][l])
+				return string(tone.Diacritic['\\'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -46094,7 +46095,7 @@ func _ìAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['\\'][l])
+				return string(tone.Diacritic['\\'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -46407,7 +46408,7 @@ func _òAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['\\'][l])
+				return string(tone.Diacritic['\\'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -46720,7 +46721,7 @@ func _èAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['\\'][l])
+				return string(tone.Diacritic['\\'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -47229,7 +47230,7 @@ func _ãAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['~'][l])
+				return string(tone.Diacritic['~'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -47542,7 +47543,7 @@ func _ũAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['~'][l])
+				return string(tone.Diacritic['~'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -47855,7 +47856,7 @@ func _ĩAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['~'][l])
+				return string(tone.Diacritic['~'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -48168,7 +48169,7 @@ func _õAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['~'][l])
+				return string(tone.Diacritic['~'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -48481,7 +48482,7 @@ func _ẽAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(diacritic['~'][l])
+				return string(tone.Diacritic['~'][l])
 			}(
 				start6, pos, label0)
 		}
@@ -51697,9 +51698,9 @@ fail:
 func _afterthought_cop__sentence_1__sentence_1Action(parser *_Parser, start int) (int, *(*ast.CoP)) {
 	var labels [3]string
 	use(labels)
+	var label1 *ast.Mod
 	var label2 ast.CoP
 	var label0 ast.Sentence
-	var label1 *ast.Mod
 	dp := parser.deltaPos[start][_afterthought_cop__sentence_1__sentence_1]
 	if dp < 0 {
 		return -1, nil
@@ -52115,9 +52116,9 @@ fail:
 func _afterthought_cop__statement_1__statement_1Action(parser *_Parser, start int) (int, *(*ast.CoP)) {
 	var labels [3]string
 	use(labels)
+	var label2 ast.CoP
 	var label0 ast.Statement
 	var label1 *ast.Mod
-	var label2 ast.CoP
 	dp := parser.deltaPos[start][_afterthought_cop__statement_1__statement_1]
 	if dp < 0 {
 		return -1, nil
@@ -52533,9 +52534,9 @@ fail:
 func _afterthought_cop__predicate_2__predicate_1Action(parser *_Parser, start int) (int, *(*ast.CoP)) {
 	var labels [3]string
 	use(labels)
+	var label2 ast.CoP
 	var label0 ast.Predicate
 	var label1 *ast.Mod
-	var label2 ast.CoP
 	dp := parser.deltaPos[start][_afterthought_cop__predicate_2__predicate_1]
 	if dp < 0 {
 		return -1, nil
@@ -53263,9 +53264,9 @@ fail:
 func _PO_phrase__verb_syllableAction(parser *_Parser, start int) (int, *ast.Predicate) {
 	var labels [3]string
 	use(labels)
-	var label2 *ast.Word
 	var label0 ast.POPredicate
 	var label1 *ast.Mod
+	var label2 *ast.Word
 	dp := parser.deltaPos[start][_PO_phrase__verb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -53482,9 +53483,9 @@ fail:
 func _MO_phrase__verb_syllableAction(parser *_Parser, start int) (int, *ast.Predicate) {
 	var labels [3]string
 	use(labels)
-	var label2 ast.Word
 	var label0 ast.MOPredicate
 	var label1 *ast.Mod
+	var label2 ast.Word
 	dp := parser.deltaPos[start][_MO_phrase__verb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -54479,9 +54480,9 @@ fail:
 func _forethought_cop__terms_IV__terms_IVAction(parser *_Parser, start int) (int, *(*ast.CoP)) {
 	var labels [3]string
 	use(labels)
-	var label0 ast.CoP
 	var label1 *ast.Mod
 	var label2 ast.CoP
+	var label0 ast.CoP
 	dp := parser.deltaPos[start][_forethought_cop__terms_IV__terms_IV]
 	if dp < 0 {
 		return -1, nil
@@ -54897,9 +54898,9 @@ fail:
 func _forethought_cop__terms_II__terms_IIAction(parser *_Parser, start int) (int, *(*ast.CoP)) {
 	var labels [3]string
 	use(labels)
-	var label2 ast.CoP
 	var label0 ast.CoP
 	var label1 *ast.Mod
+	var label2 ast.CoP
 	dp := parser.deltaPos[start][_forethought_cop__terms_II__terms_II]
 	if dp < 0 {
 		return -1, nil
@@ -55106,9 +55107,9 @@ fail:
 func _afterthought_cop__arg_1__argumentAction(parser *_Parser, start int) (int, *(*ast.CoP)) {
 	var labels [3]string
 	use(labels)
-	var label0 ast.Argument
 	var label1 *ast.Mod
 	var label2 ast.CoP
+	var label0 ast.Argument
 	dp := parser.deltaPos[start][_afterthought_cop__arg_1__argument]
 	if dp < 0 {
 		return -1, nil
@@ -57177,9 +57178,9 @@ fail:
 func _LU_phrase__relative_syllableAction(parser *_Parser, start int) (int, **ast.LUPhrase) {
 	var labels [3]string
 	use(labels)
-	var label0 *ast.Word
 	var label1 *ast.Mod
 	var label2 ast.Statement
+	var label0 *ast.Word
 	dp := parser.deltaPos[start][_LU_phrase__relative_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -57386,9 +57387,9 @@ fail:
 func _forethought_cop__relative_clause__relative_clauseAction(parser *_Parser, start int) (int, *(*ast.CoP)) {
 	var labels [3]string
 	use(labels)
+	var label0 ast.CoP
 	var label1 *ast.Mod
 	var label2 ast.CoP
-	var label0 ast.CoP
 	dp := parser.deltaPos[start][_forethought_cop__relative_clause__relative_clause]
 	if dp < 0 {
 		return -1, nil
@@ -57595,9 +57596,9 @@ fail:
 func _afterthought_cop__relative_clause_3__statementAction(parser *_Parser, start int) (int, *(*ast.CoP)) {
 	var labels [3]string
 	use(labels)
-	var label0 *ast.PredicationRelative
 	var label1 *ast.Mod
 	var label2 ast.CoP
+	var label0 *ast.PredicationRelative
 	dp := parser.deltaPos[start][_afterthought_cop__relative_clause_3__statement]
 	if dp < 0 {
 		return -1, nil
@@ -57804,9 +57805,9 @@ fail:
 func _serial__relative_predicate_1Action(parser *_Parser, start int) (int, *ast.Predicate) {
 	var labels [3]string
 	use(labels)
+	var label0 ast.Predicate
 	var label1 *ast.Mod
 	var label2 ast.Predicate
-	var label0 ast.Predicate
 	dp := parser.deltaPos[start][_serial__relative_predicate_1]
 	if dp < 0 {
 		return -1, nil
@@ -58289,9 +58290,9 @@ fail:
 func _MI_phrase__relative_syllableAction(parser *_Parser, start int) (int, *ast.Predicate) {
 	var labels [3]string
 	use(labels)
+	var label0 ast.MIPredicate
 	var label1 *ast.Mod
 	var label2 *ast.Word
-	var label0 ast.MIPredicate
 	dp := parser.deltaPos[start][_MI_phrase__relative_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -59541,9 +59542,9 @@ fail:
 func _forethought_cop__adverb__adverbAction(parser *_Parser, start int) (int, *(*ast.CoP)) {
 	var labels [3]string
 	use(labels)
+	var label0 ast.CoP
 	var label1 *ast.Mod
 	var label2 ast.CoP
-	var label0 ast.CoP
 	dp := parser.deltaPos[start][_forethought_cop__adverb__adverb]
 	if dp < 0 {
 		return -1, nil
@@ -60360,9 +60361,9 @@ fail:
 func _MI_phrase__adverb_syllableAction(parser *_Parser, start int) (int, *ast.Predicate) {
 	var labels [3]string
 	use(labels)
+	var label0 ast.MIPredicate
 	var label1 *ast.Mod
 	var label2 *ast.Word
-	var label0 ast.MIPredicate
 	dp := parser.deltaPos[start][_MI_phrase__adverb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -60824,9 +60825,9 @@ fail:
 func _MO_phrase__adverb_syllableAction(parser *_Parser, start int) (int, *ast.Predicate) {
 	var labels [3]string
 	use(labels)
-	var label2 ast.Word
 	var label0 ast.MOPredicate
 	var label1 *ast.Mod
+	var label2 ast.Word
 	dp := parser.deltaPos[start][_MO_phrase__adverb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -63094,9 +63095,9 @@ fail:
 func _PO_phrase__preposition_syllableAction(parser *_Parser, start int) (int, *ast.Predicate) {
 	var labels [3]string
 	use(labels)
-	var label2 *ast.Word
 	var label0 ast.POPredicate
 	var label1 *ast.Mod
+	var label2 *ast.Word
 	dp := parser.deltaPos[start][_PO_phrase__preposition_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -63313,9 +63314,9 @@ fail:
 func _MO_phrase__preposition_syllableAction(parser *_Parser, start int) (int, *ast.Predicate) {
 	var labels [3]string
 	use(labels)
-	var label2 ast.Word
 	var label0 ast.MOPredicate
 	var label1 *ast.Mod
+	var label2 ast.Word
 	dp := parser.deltaPos[start][_MO_phrase__preposition_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -63892,9 +63893,9 @@ fail:
 func _afterthought_cop__content_clause_1__statementAction(parser *_Parser, start int) (int, *(*ast.CoP)) {
 	var labels [3]string
 	use(labels)
-	var label0 ast.Content
 	var label1 *ast.Mod
 	var label2 ast.CoP
+	var label0 ast.Content
 	dp := parser.deltaPos[start][_afterthought_cop__content_clause_1__statement]
 	if dp < 0 {
 		return -1, nil
@@ -64310,9 +64311,9 @@ fail:
 func _serial__content_predicate_1Action(parser *_Parser, start int) (int, *ast.Predicate) {
 	var labels [3]string
 	use(labels)
-	var label2 ast.Predicate
 	var label0 ast.Predicate
 	var label1 *ast.Mod
+	var label2 ast.Predicate
 	dp := parser.deltaPos[start][_serial__content_predicate_1]
 	if dp < 0 {
 		return -1, nil
@@ -65259,9 +65260,9 @@ fail:
 func _MO_phrase__content_syllableAction(parser *_Parser, start int) (int, *ast.Predicate) {
 	var labels [3]string
 	use(labels)
-	var label0 ast.MOPredicate
 	var label1 *ast.Mod
 	var label2 ast.Word
+	var label0 ast.MOPredicate
 	dp := parser.deltaPos[start][_MO_phrase__content_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -65942,8 +65943,8 @@ fail:
 func _syllable__compound_desinence__compound_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label1 string
 	var label0 string
+	var label1 string
 	dp := parser.deltaPos[start][_syllable__compound_desinence__compound_tone]
 	if dp < 0 {
 		return -1, nil
@@ -67004,8 +67005,8 @@ fail:
 func _syllable__verb_desinence__verb_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label0 string
 	var label1 string
+	var label0 string
 	dp := parser.deltaPos[start][_syllable__verb_desinence__verb_tone]
 	if dp < 0 {
 		return -1, nil
@@ -90311,9 +90312,9 @@ fail:
 func _cop_bar__statement_1Action(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
-	var label1 *ast.Mod
 	var label2 ast.Statement
 	var label0 ast.Word
+	var label1 *ast.Mod
 	dp := parser.deltaPos[start][_cop_bar__statement_1]
 	if dp < 0 {
 		return -1, nil
@@ -90520,9 +90521,9 @@ fail:
 func _forethought_cop_1__statement__statementAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
-	var label0 ast.Statement
 	var label1 *ast.Mod
 	var label2 ast.CoP
+	var label0 ast.Statement
 	dp := parser.deltaPos[start][_forethought_cop_1__statement__statement]
 	if dp < 0 {
 		return -1, nil
@@ -91147,9 +91148,9 @@ fail:
 func _LU_phrase__verb_syllableAction(parser *_Parser, start int) (int, **ast.LUPhrase) {
 	var labels [3]string
 	use(labels)
+	var label2 ast.Statement
 	var label0 *ast.Word
 	var label1 *ast.Mod
-	var label2 ast.Statement
 	dp := parser.deltaPos[start][_LU_phrase__verb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -91356,9 +91357,9 @@ fail:
 func _MI_phrase_1__verb_syllableAction(parser *_Parser, start int) (int, *ast.MIPredicate) {
 	var labels [3]string
 	use(labels)
+	var label0 *ast.Word
 	var label1 *ast.Mod
 	var label2 ast.Phrase
-	var label0 *ast.Word
 	dp := parser.deltaPos[start][_MI_phrase_1__verb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -91565,9 +91566,9 @@ fail:
 func _PO_phrase_1__verb_syllableAction(parser *_Parser, start int) (int, *ast.POPredicate) {
 	var labels [3]string
 	use(labels)
+	var label0 *ast.Word
 	var label1 *ast.Mod
 	var label2 ast.Argument
-	var label0 *ast.Word
 	dp := parser.deltaPos[start][_PO_phrase_1__verb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -91983,9 +91984,9 @@ fail:
 func _forethought_cop_1__terms_V__terms_VAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
+	var label2 ast.CoP
 	var label0 *ast.Terms
 	var label1 *ast.Mod
-	var label2 ast.CoP
 	dp := parser.deltaPos[start][_forethought_cop_1__terms_V__terms_V]
 	if dp < 0 {
 		return -1, nil
@@ -92192,9 +92193,9 @@ fail:
 func _forethought_cop_1__terms_IV__terms_IVAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
+	var label1 *ast.Mod
 	var label2 ast.CoP
 	var label0 *ast.Terms
-	var label1 *ast.Mod
 	dp := parser.deltaPos[start][_forethought_cop_1__terms_IV__terms_IV]
 	if dp < 0 {
 		return -1, nil
@@ -92610,9 +92611,9 @@ fail:
 func _forethought_cop_1__terms_II__terms_IIAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
-	var label2 ast.CoP
 	var label0 *ast.Terms
 	var label1 *ast.Mod
+	var label2 ast.CoP
 	dp := parser.deltaPos[start][_forethought_cop_1__terms_II__terms_II]
 	if dp < 0 {
 		return -1, nil
@@ -92819,9 +92820,9 @@ fail:
 func _cop_bar__argumentAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
-	var label0 ast.Word
 	var label1 *ast.Mod
 	var label2 ast.Argument
+	var label0 ast.Word
 	dp := parser.deltaPos[start][_cop_bar__argument]
 	if dp < 0 {
 		return -1, nil
@@ -93028,9 +93029,9 @@ fail:
 func _forethought_cop_1__argument__argumentAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
-	var label0 ast.Argument
 	var label1 *ast.Mod
 	var label2 ast.CoP
+	var label0 ast.Argument
 	dp := parser.deltaPos[start][_forethought_cop_1__argument__argument]
 	if dp < 0 {
 		return -1, nil
@@ -93237,9 +93238,9 @@ fail:
 func _afterthought_cop__arg_7__predicateAction(parser *_Parser, start int) (int, *(*ast.CoP)) {
 	var labels [3]string
 	use(labels)
-	var label2 ast.CoP
 	var label0 ast.Predicate
 	var label1 *ast.Mod
+	var label2 ast.CoP
 	dp := parser.deltaPos[start][_afterthought_cop__arg_7__predicate]
 	if dp < 0 {
 		return -1, nil
@@ -93655,9 +93656,9 @@ fail:
 func _LU_phrase__arg_syllableAction(parser *_Parser, start int) (int, **ast.LUPhrase) {
 	var labels [3]string
 	use(labels)
-	var label0 *ast.Word
 	var label1 *ast.Mod
 	var label2 ast.Statement
+	var label0 *ast.Word
 	dp := parser.deltaPos[start][_LU_phrase__arg_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -94282,9 +94283,9 @@ fail:
 func _MO_phrase_1__arg_syllableAction(parser *_Parser, start int) (int, *ast.MOPredicate) {
 	var labels [3]string
 	use(labels)
+	var label2 []ast.Node
 	var label0 *ast.Word
 	var label1 *ast.Mod
-	var label2 []ast.Node
 	dp := parser.deltaPos[start][_MO_phrase_1__arg_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -95946,9 +95947,9 @@ fail:
 func _MO_phrase_1__relative_syllableAction(parser *_Parser, start int) (int, *ast.MOPredicate) {
 	var labels [3]string
 	use(labels)
-	var label2 []ast.Node
 	var label0 *ast.Word
 	var label1 *ast.Mod
+	var label2 []ast.Node
 	dp := parser.deltaPos[start][_MO_phrase_1__relative_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -96364,9 +96365,9 @@ fail:
 func _forethought_cop_1__adverb__adverbAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
-	var label1 *ast.Mod
 	var label2 ast.CoP
 	var label0 ast.Adverb
+	var label1 *ast.Mod
 	dp := parser.deltaPos[start][_forethought_cop_1__adverb__adverb]
 	if dp < 0 {
 		return -1, nil
@@ -96573,9 +96574,9 @@ fail:
 func _afterthought_cop__adverb_4__predicateAction(parser *_Parser, start int) (int, *(*ast.CoP)) {
 	var labels [3]string
 	use(labels)
-	var label2 ast.CoP
 	var label0 ast.Predicate
 	var label1 *ast.Mod
+	var label2 ast.CoP
 	dp := parser.deltaPos[start][_afterthought_cop__adverb_4__predicate]
 	if dp < 0 {
 		return -1, nil
@@ -96991,9 +96992,9 @@ fail:
 func _LU_phrase__adverb_syllableAction(parser *_Parser, start int) (int, **ast.LUPhrase) {
 	var labels [3]string
 	use(labels)
-	var label0 *ast.Word
 	var label1 *ast.Mod
 	var label2 ast.Statement
+	var label0 *ast.Word
 	dp := parser.deltaPos[start][_LU_phrase__adverb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -97618,9 +97619,9 @@ fail:
 func _MO_phrase_1__adverb_syllableAction(parser *_Parser, start int) (int, *ast.MOPredicate) {
 	var labels [3]string
 	use(labels)
+	var label0 *ast.Word
 	var label1 *ast.Mod
 	var label2 []ast.Node
-	var label0 *ast.Word
 	dp := parser.deltaPos[start][_MO_phrase_1__adverb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -97827,9 +97828,9 @@ fail:
 func _cop_bar__prepositional_phrase_1Action(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
+	var label0 ast.Word
 	var label1 *ast.Mod
 	var label2 ast.Preposition
-	var label0 ast.Word
 	dp := parser.deltaPos[start][_cop_bar__prepositional_phrase_1]
 	if dp < 0 {
 		return -1, nil
@@ -98036,9 +98037,9 @@ fail:
 func _forethought_cop_1__prepositional_phrase__prepositional_phraseAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
+	var label2 ast.CoP
 	var label0 ast.Preposition
 	var label1 *ast.Mod
-	var label2 ast.CoP
 	dp := parser.deltaPos[start][_forethought_cop_1__prepositional_phrase__prepositional_phrase]
 	if dp < 0 {
 		return -1, nil
@@ -98245,9 +98246,9 @@ fail:
 func _cop_bar__prepositionAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
+	var label2 ast.Predicate
 	var label0 ast.Word
 	var label1 *ast.Mod
-	var label2 ast.Predicate
 	dp := parser.deltaPos[start][_cop_bar__preposition]
 	if dp < 0 {
 		return -1, nil
@@ -100954,9 +100955,9 @@ fail:
 func _MO_phrase_1__content_syllableAction(parser *_Parser, start int) (int, *ast.MOPredicate) {
 	var labels [3]string
 	use(labels)
-	var label2 []ast.Node
 	var label0 *ast.Word
 	var label1 *ast.Mod
+	var label2 []ast.Node
 	dp := parser.deltaPos[start][_MO_phrase_1__content_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -102594,9 +102595,9 @@ fail:
 func _forethought_cop_bar__terms_VAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
-	var label2 *ast.Terms
 	var label0 ast.Word
 	var label1 *ast.Mod
+	var label2 *ast.Terms
 	dp := parser.deltaPos[start][_forethought_cop_bar__terms_V]
 	if dp < 0 {
 		return -1, nil
@@ -102803,9 +102804,9 @@ fail:
 func _forethought_cop_bar__terms_IVAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
+	var label0 ast.Word
 	var label1 *ast.Mod
 	var label2 *ast.Terms
-	var label0 ast.Word
 	dp := parser.deltaPos[start][_forethought_cop_bar__terms_IV]
 	if dp < 0 {
 		return -1, nil
@@ -103221,9 +103222,9 @@ fail:
 func _forethought_cop_bar__terms_IIAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
+	var label2 *ast.Terms
 	var label0 ast.Word
 	var label1 *ast.Mod
-	var label2 *ast.Terms
 	dp := parser.deltaPos[start][_forethought_cop_bar__terms_II]
 	if dp < 0 {
 		return -1, nil
@@ -104861,9 +104862,9 @@ fail:
 func _forethought_cop_bar__relative_clauseAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
-	var label2 ast.Relative
 	var label0 ast.Word
 	var label1 *ast.Mod
+	var label2 ast.Relative
 	dp := parser.deltaPos[start][_forethought_cop_bar__relative_clause]
 	if dp < 0 {
 		return -1, nil
@@ -107313,9 +107314,9 @@ fail:
 func _forethought_cop_bar__prepositionAction(parser *_Parser, start int) (int, *ast.CoP) {
 	var labels [3]string
 	use(labels)
-	var label2 ast.Predicate
 	var label0 ast.Word
 	var label1 *ast.Mod
+	var label2 ast.Predicate
 	dp := parser.deltaPos[start][_forethought_cop_bar__preposition]
 	if dp < 0 {
 		return -1, nil

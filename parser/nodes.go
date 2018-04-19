@@ -1,6 +1,11 @@
 package parser
 
-import "github.com/eaburns/toaq/ast"
+import (
+	"unicode/utf8"
+
+	"github.com/eaburns/toaq/ast"
+	"github.com/eaburns/toaq/tone"
+)
 
 func text(s0 *ast.Mod, d *[]ast.Node) ast.Text {
 	var txt ast.Text
@@ -124,4 +129,11 @@ func endParen(p ast.Parenthetical, s *ast.Mod, ki ast.Word) *ast.Parenthetical {
 	p.KI = ki
 	p.Discourse = *p.Discourse.Mod(s)
 	return &p
+}
+
+// addTone swaps the first letter of des with its diacritic variant given the tone rune.
+func addTone(des, ton string) string {
+	t, _ := utf8.DecodeRuneInString(ton)
+	_, w := utf8.DecodeRuneInString(des)
+	return tone.Diacritic[t][des[:w]] + des[w:]
 }

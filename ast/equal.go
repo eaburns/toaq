@@ -177,6 +177,10 @@ func Equal(a, b Node) bool {
 		b, ok := b.(*Space)
 		return ok && wordEqual((*Word)(a), (*Word)(b))
 
+	case *Word:
+		b, ok := b.(*Word)
+		return ok && wordEqual(a, b)
+
 	default:
 		panic(fmt.Sprintf("unknown node type %T", a))
 	}

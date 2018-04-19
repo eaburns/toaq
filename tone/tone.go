@@ -1,12 +1,15 @@
-package parser
+package tone
 
 import (
 	"strings"
 	"unicode/utf8"
+
+	"github.com/eaburns/toaq/ast"
 )
 
 var (
-	diacritic = map[rune]map[string]string{
+	// Diacritic is a mapping from tones and letters to the diacritic form of the letter.
+	Diacritic = map[rune]map[string]string{
 		'-': {
 			"a": "ā",
 			"A": "Ā",
@@ -102,7 +105,7 @@ var (
 
 	tone = func() map[rune]rune {
 		m := make(map[rune]rune)
-		for t, rs := range diacritic {
+		for t, rs := range Diacritic {
 			for _, str := range rs {
 				r, _ := utf8.DecodeRuneInString(str)
 				m[r] = t
@@ -113,7 +116,7 @@ var (
 
 	ascii = func() map[rune]rune {
 		m := make(map[rune]rune)
-		for _, rs := range diacritic {
+		for _, rs := range Diacritic {
 			for ascii, unicode := range rs {
 				aR, _ := utf8.DecodeRuneInString(ascii)
 				if aR == 'ı' {
@@ -126,16 +129,29 @@ var (
 		return m
 	}()
 
-	vowels = "aeiou"
+	vowels = "aeiıouAEIOU" + func() string {
+		var vs string
+		for _, rs := range Diacritic {
+			for _, d := range rs {
+				vs += d
+			}
+		}
+		return vs
+	}()
 
-	noTone rune // 0
+	// None is the tone marker indicating no tone.
+	None rune // 0
 )
 
-// addTone swaps the first letter of des with its diacritic variant given the tone rune.
-func addTone(des, tone string) string {
-	t, _ := utf8.DecodeRuneInString(tone)
-	_, w := utf8.DecodeRuneInString(des)
-	return diacritic[t][des[:w]] + des[w:]
+// ToASCII converts all words of an AST to their standard ASCII form,
+// with a tone marker following each syllable.
+func ToASCII(node ast.Node) {
+	ast.Visit(node, func(n ast.Node) bool {
+		if w, ok := n.(*ast.Word); ok {
+			w.T = toASCII(w.T)
+		}
+		return true
+	})
 }
 
 func toASCII(txt string) string {
@@ -146,22 +162,45 @@ func toASCII(txt string) string {
 			s.WriteRune('i')
 			continue
 		}
-		if t != noTone {
+		if t != None {
 			if !strings.ContainsRune(vowels, r) && r != 'q' {
 				s.WriteRune(t)
-				t = noTone
+				t = None
 			}
 			s.WriteRune(r)
 		} else {
-			if t = tone[r]; t != noTone {
+			if t = tone[r]; t != None {
 				s.WriteRune(ascii[r])
 				continue
 			}
 			s.WriteRune(r)
 		}
 	}
-	if t != noTone {
+	if t != None {
 		s.WriteRune(t)
 	}
 	return s.String()
+}
+
+// WithTone returns the string with the tone of the first syllable
+// replaced with the given tone.
+func WithTone(str string, t rune) string {
+	i := strings.IndexAny(str, vowels)
+	if i < 0 {
+		return str
+	}
+	r, w := utf8.DecodeRuneInString(str[i:])
+	var R string
+	if a, ok := ascii[r]; ok {
+		R = string([]rune{a})
+	} else {
+		R = string([]rune{r})
+	}
+	if t != None {
+		R = Diacritic[t][R]
+	}
+	if R == "i" {
+		R = "ı"
+	}
+	return str[:i] + R + str[i+w:]
 }

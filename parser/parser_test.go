@@ -6,6 +6,7 @@ import (
 
 	"github.com/eaburns/pretty"
 	. "github.com/eaburns/toaq/ast"
+	"github.com/eaburns/toaq/tone"
 )
 
 func TestDiscourse(t *testing.T) {
@@ -1008,7 +1009,7 @@ func normalize(node Node) {
 	Visit(node, func(n Node) bool {
 		if w, ok := n.(*Word); ok {
 			w.S, w.E = 0, 0
-			w.T = toASCII(w.T)
+			tone.ToASCII(w)
 			if s, ok := w.M.(*Space); ok {
 				w.M = s.M
 			}

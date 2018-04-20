@@ -2,13 +2,13 @@ full_text <- text EOF
 text <- _ discourse? EOF?
 discourse <- (sentence _/fragment _)+
 fragment <- (afterthought_cop<relative_clause_1, relative_clause_1>/relative_clause/prenex/terms) _
-sentence <- afterthought_cop<sentence_1, sentence_1>/sentence_1
+sentence <- afterthought_cop<sentence_1, sentence>/sentence_1
 sentence_1 <- forethought_cop<sentence, sentence>/sentence_2
 sentence_2 <- sentence_prefix_spaces? sentence_3
 sentence_prefix_spaces <- sentence_prefix _
 sentence_3 <- statement _ illocutionary?
 statement <- prenex_spaces? statement_1
-statement_1 <- afterthought_cop<statement_2, statement_2>/statement_2
+statement_1 <- afterthought_cop<statement_2, statement>/statement_2
 statement_2 <- forethought_cop<statement, statement>/statement_3
 statement_3 <- predication _ end_statement?
 predication <- predicate _ terms?

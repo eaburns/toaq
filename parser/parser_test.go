@@ -119,7 +119,7 @@ func TestSentence(t *testing.T) {
 		},
 		{
 			name: "sentence afterthought cop",
-			text: "hio? ka ru jai?",
+			text: "hio? ka ru jai? da ru meo?",
 			want: discourse(
 				&CoPSentence{
 					Left: &StatementSentence{
@@ -129,9 +129,18 @@ func TestSentence(t *testing.T) {
 						DA: &Word{T: "ka"},
 					},
 					RU: Word{T: "ru"},
-					Right: &StatementSentence{
-						Statement: &Predication{
-							Predicate: &WordPredicate{T: "jai?"},
+					Right: &CoPSentence{
+						Left: &StatementSentence{
+							Statement: &Predication{
+								Predicate: &WordPredicate{T: "jai?"},
+							},
+							DA: &Word{T: "da"},
+						},
+						RU: Word{T: "ru"},
+						Right: &StatementSentence{
+							Statement: &Predication{
+								Predicate: &WordPredicate{T: "meo?"},
+							},
 						},
 					},
 				},
@@ -240,6 +249,29 @@ func TestStatement(t *testing.T) {
 					RU: Word{T: "ru"},
 					Right: &Predication{
 						Predicate: &WordPredicate{T: "jai?"},
+					},
+				},
+			),
+		},
+		{
+			name: "statement afterthought cop",
+			text: "hio? na ru jai? na ru meo?",
+			want: sentence(
+				&CoPStatement{
+					Left: &Predication{
+						Predicate: &WordPredicate{T: "hio?"},
+						NA:        &Word{T: "na"},
+					},
+					RU: Word{T: "ru"},
+					Right: &CoPStatement{
+						Left: &Predication{
+							Predicate: &WordPredicate{T: "jai?"},
+							NA:        &Word{T: "na"},
+						},
+						RU: Word{T: "ru"},
+						Right: &Predication{
+							Predicate: &WordPredicate{T: "meo?"},
+						},
 					},
 				},
 			),

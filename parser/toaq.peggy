@@ -31,7 +31,7 @@ fragment <- f:(
 	) s:_ { return ast.Fragment(f.ModFragment(s)) }
 
 sentence <-
-	x:afterthought_cop<sentence_1, sentence_1> { return ast.Sentence((*ast.CoPSentence)(x)) } /
+	x:afterthought_cop<sentence_1, sentence> { return ast.Sentence((*ast.CoPSentence)(x)) } /
 	sentence_1
 sentence_1 <-
 	x:forethought_cop<sentence, sentence> { return ast.Sentence((*ast.CoPSentence)(x)) } /
@@ -45,7 +45,7 @@ sentence_3 <-
 
 statement <- p:prenex_spaces? s:statement_1 { return ast.Statement(prenexStmt(p, s)) }
 statement_1 <-
-	n:afterthought_cop<statement_2, statement_2> { return ast.Statement((*ast.CoPStatement)(n)) } /
+	n:afterthought_cop<statement_2, statement> { return ast.Statement((*ast.CoPStatement)(n)) } /
 	statement_2
 statement_2 <-
 	n:forethought_cop<statement, statement> { return ast.Statement((*ast.CoPStatement)(n)) } /

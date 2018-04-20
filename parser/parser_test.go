@@ -277,24 +277,19 @@ func TestStatement(t *testing.T) {
 			),
 		},
 		{
-			// BUG: This should connect statements, not sentences.
 			name: "statement forethought cop",
 			text: "to ru hio? na to jai?",
-			want: discourse(
-				&CoPSentence{
+			want: sentence(
+				&CoPStatement{
 					TO0: &Word{T: "to"},
 					RU:  Word{T: "ru"},
-					Left: &StatementSentence{
-						Statement: &Predication{
-							Predicate: &WordPredicate{T: "hio?"},
-							NA:        &Word{T: "na"},
-						},
+					Left: &Predication{
+						Predicate: &WordPredicate{T: "hio?"},
+						NA:        &Word{T: "na"},
 					},
 					TO1: &Word{T: "to"},
-					Right: &StatementSentence{
-						Statement: &Predication{
-							Predicate: &WordPredicate{T: "jai?"},
-						},
+					Right: &Predication{
+						Predicate: &WordPredicate{T: "jai?"},
 					},
 				},
 			),
@@ -411,24 +406,15 @@ func TestPredicate(t *testing.T) {
 			),
 		},
 		{
-			// BUG: This should connect predicates, not sentences.
 			name: "predicate forethought cop",
 			text: "to ru hio? to jai?",
-			want: discourse(
-				&CoPSentence{
-					TO0: &Word{T: "to"},
-					RU:  Word{T: "ru"},
-					Left: &StatementSentence{
-						Statement: &Predication{
-							Predicate: &WordPredicate{T: "hio?"},
-						},
-					},
-					TO1: &Word{T: "to"},
-					Right: &StatementSentence{
-						Statement: &Predication{
-							Predicate: &WordPredicate{T: "jai?"},
-						},
-					},
+			want: statement(
+				&CoPPredicate{
+					TO0:   &Word{T: "to"},
+					RU:    Word{T: "ru"},
+					Left:  &WordPredicate{T: "hio?"},
+					TO1:   &Word{T: "to"},
+					Right: &WordPredicate{T: "jai?"},
 				},
 			),
 		},

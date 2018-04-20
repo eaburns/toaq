@@ -34,8 +34,8 @@ sentence <-
 	x:afterthought_cop<sentence_1, sentence> { return ast.Sentence((*ast.CoPSentence)(x)) } /
 	sentence_1
 sentence_1 <-
-	x:forethought_cop<sentence, sentence> { return ast.Sentence((*ast.CoPSentence)(x)) } /
-	sentence_2
+	sentence_2 /
+	x:forethought_cop<sentence, sentence> { return ast.Sentence((*ast.CoPSentence)(x)) }
 sentence_2 <-
 	je:sentence_prefix_spaces? se:sentence_3 { se.JE = je; return ast.Sentence(se) }
 sentence_prefix_spaces <-
@@ -48,8 +48,8 @@ statement_1 <-
 	n:afterthought_cop<statement_2, statement> { return ast.Statement((*ast.CoPStatement)(n)) } /
 	statement_2
 statement_2 <-
-	n:forethought_cop<statement, statement> { return ast.Statement((*ast.CoPStatement)(n)) } /
-	statement_3
+	statement_3 /
+	n:forethought_cop<statement, statement> { return ast.Statement((*ast.CoPStatement)(n)) }
 statement_3 <-
 	p:predication s:_ na:end_statement? { return ast.Statement(endPredication(p, s, na)) }
 predication <-

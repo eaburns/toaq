@@ -18,9 +18,11 @@ func text(s0 *ast.Mod, d *[]ast.Node) ast.Text {
 	return txt
 }
 
-func prenexStmt(n *ast.Prenex, p ast.Predication) ast.Predication {
-	p.Prenex = n
-	return p
+func prenexStmt(p *ast.Prenex, st ast.Statement) ast.Statement {
+	if p == nil {
+		return st
+	}
+	return &ast.PrenexStatement{Prenex: *p, Statement: st}
 }
 
 func prenex(ts *ast.Terms, s *ast.Mod, bi ast.Word) *ast.Prenex {

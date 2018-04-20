@@ -158,11 +158,33 @@ func TestEq(t *testing.T) {
 			},
 		},
 		{
-			n: &Predication{
-				Prenex: &Prenex{
+			n: &PrenexStatement{
+				Prenex: Prenex{
 					Terms: Terms{Term: &PredicateArgument{Predicate: p("hio/")}},
 					BI:    Word{T: "bi"},
 				},
+				Statement: &Predication{Predicate: p("mai/")},
+			},
+			ne: []Node{
+				(*Interjection)(&Word{T: "hia"}),
+				&PrenexStatement{
+					Prenex: Prenex{
+						Terms: Terms{Term: &PredicateArgument{Predicate: p("hio/")}},
+						BI:    Word{T: "pa"},
+					},
+					Statement: &Predication{Predicate: p("mai/")},
+				},
+				&PrenexStatement{
+					Prenex: Prenex{
+						Terms: Terms{Term: &PredicateArgument{Predicate: p("hio/")}},
+						BI:    Word{T: "bi"},
+					},
+					Statement: &Predication{Predicate: p("pai/")},
+				},
+			},
+		},
+		{
+			n: &Predication{
 				Predicate: p("mai?"),
 				Terms: &Terms{
 					Term: &PredicateArgument{Predicate: p("ji/")},
@@ -172,21 +194,6 @@ func TestEq(t *testing.T) {
 			ne: []Node{
 				(*Interjection)(&Word{T: "hia"}),
 				&Predication{
-					Prenex: &Prenex{
-						Terms: Terms{Term: &PredicateArgument{Predicate: p("mai/")}},
-						BI:    Word{T: "bi"},
-					},
-					Predicate: p("mai?"),
-					Terms: &Terms{
-						Term: &PredicateArgument{Predicate: p("ji/")},
-					},
-					NA: &Word{T: "na"},
-				},
-				&Predication{
-					Prenex: &Prenex{
-						Terms: Terms{Term: &PredicateArgument{Predicate: p("hio/")}},
-						BI:    Word{T: "bi"},
-					},
 					Predicate: p("pai?"),
 					Terms: &Terms{
 						Term: &PredicateArgument{Predicate: p("ji/")},
@@ -194,10 +201,6 @@ func TestEq(t *testing.T) {
 					NA: &Word{T: "na"},
 				},
 				&Predication{
-					Prenex: &Prenex{
-						Terms: Terms{Term: &PredicateArgument{Predicate: p("hio/")}},
-						BI:    Word{T: "bi"},
-					},
 					Predicate: p("mai?"),
 					Terms: &Terms{
 						Term: &PredicateArgument{Predicate: p("suq/")},
@@ -205,18 +208,10 @@ func TestEq(t *testing.T) {
 					NA: &Word{T: "na"},
 				},
 				&Predication{
-					Prenex: &Prenex{
-						Terms: Terms{Term: &PredicateArgument{Predicate: p("hio/")}},
-						BI:    Word{T: "bi"},
-					},
 					Predicate: p("mai?"),
 					NA:        &Word{T: "na"},
 				},
 				&Predication{
-					Prenex: &Prenex{
-						Terms: Terms{Term: &PredicateArgument{Predicate: p("hio/")}},
-						BI:    Word{T: "bi"},
-					},
 					Predicate: p("mai?"),
 					Terms: &Terms{
 						Term: &PredicateArgument{Predicate: p("suq/")},

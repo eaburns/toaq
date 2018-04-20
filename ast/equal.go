@@ -44,15 +44,17 @@ func Equal(a, b Node) bool {
 		b, ok := b.(*Prenex)
 		return ok && wordEqual(&a.BI, &b.BI) && Equal(&a.Terms, &b.Terms)
 
+	case *PrenexStatement:
+		b, ok := b.(*PrenexStatement)
+		return ok && Equal(&a.Prenex, &b.Prenex) && Equal(a.Statement, b.Statement)
+
 	case *Predication:
 		b, ok := b.(*Predication)
 		return ok &&
 			wordEqual(a.NA, b.NA) &&
 			Equal(a.Predicate, b.Predicate) &&
 			(a.Terms == nil) == (b.Terms == nil) &&
-			(a.Terms == nil || Equal(a.Terms, b.Terms)) &&
-			(a.Prenex == nil) == (b.Prenex == nil) &&
-			(a.Prenex == nil || Equal(a.Prenex, b.Prenex))
+			(a.Terms == nil || Equal(a.Terms, b.Terms))
 
 	case *CoPStatement:
 		b, ok := b.(*CoPStatement)

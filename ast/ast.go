@@ -132,21 +132,30 @@ type Statement interface {
 	ModStatement(*Mod) Statement
 }
 
+// A PrenexStatement is a statement with a prenex.
+type PrenexStatement struct {
+	Prenex    Prenex
+	Statement Statement
+}
+
+func (n *PrenexStatement) Start() int                   { return n.Prenex.Start() }
+func (n *PrenexStatement) End() int                     { return n.Statement.End() }
+func (n PrenexStatement) ModNode(m *Mod) Node           { return n.Mod(m) }
+func (n PrenexStatement) ModStatement(m *Mod) Statement { return n.Mod(m) }
+
+func (n PrenexStatement) Mod(m *Mod) *PrenexStatement {
+	n.Statement = n.Statement.ModStatement(m)
+	return &n
+}
+
 // A Predication is a statement with a predicate and terms.
 type Predication struct {
-	Prenex    *Prenex
 	Predicate Predicate
 	Terms     *Terms
 	NA        *Word
 }
 
-func (n *Predication) Start() int {
-	if n.Prenex != nil {
-		return n.Prenex.Start()
-	}
-	return n.Predicate.Start()
-}
-
+func (n *Predication) Start() int                   { return n.Predicate.Start() }
 func (n *Predication) End() int                     { return end(n.NA, n.Terms) }
 func (n Predication) ModNode(m *Mod) Node           { return n.Mod(m) }
 func (n Predication) ModStatement(m *Mod) Statement { return n.Mod(m) }

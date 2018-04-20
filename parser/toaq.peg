@@ -7,13 +7,13 @@ sentence_1 <- forethought_cop<sentence, sentence>/sentence_2
 sentence_2 <- sentence_prefix_spaces? sentence_3
 sentence_prefix_spaces <- sentence_prefix _
 sentence_3 <- statement _ illocutionary?
-statement <- afterthought_cop<statement_1, statement_1>/statement_1
-statement_1 <- forethought_cop<statement, statement>/statement_2
-statement_2 <- statement_3 _ end_statement?
-statement_3 <- prenex_spaces? predication
+statement <- prenex_spaces? statement_1
+statement_1 <- afterthought_cop<statement_2, statement_2>/statement_2
+statement_2 <- forethought_cop<statement, statement>/statement_3
+statement_3 <- predication _ end_statement?
+predication <- predicate _ terms?
 prenex_spaces <- prenex _
 prenex <- terms _ end_prenex
-predication <- predicate _ terms?
 predicate <- serial_predicate
 predicate_1 <- afterthought_cop<predicate_2, predicate_1>/predicate_2
 predicate_2 <- forethought_cop_pred<predicate>/LU_predicate<verb_syllable>/MI_phrase<verb_syllable>/PO_phrase<verb_syllable>/MO_phrase<verb_syllable>/prefixed_predicate/predicate_3

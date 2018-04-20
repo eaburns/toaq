@@ -44,8 +44,11 @@ func Visit(n Node, f func(Node) bool) bool {
 	case *Prenex:
 		return f(n) && Visit(&n.Terms, f) && Visit(&n.BI, f)
 
+	case *PrenexStatement:
+		return f(n) && Visit(&n.Prenex, f) && Visit(n.Statement, f)
+
 	case *Predication:
-		return f(n) && Visit(n.Prenex, f) && Visit(n.Predicate, f) && Visit(n.Terms, f) && Visit(n.NA, f)
+		return f(n) && Visit(n.Predicate, f) && Visit(n.Terms, f) && Visit(n.NA, f)
 
 	case *CoPStatement:
 		return f(n) && visitCoP((*CoP)(n), f)

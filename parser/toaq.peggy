@@ -43,22 +43,21 @@ sentence_prefix_spaces <-
 sentence_3 <-
 	st:statement s:_ da:illocutionary? { return &ast.StatementSentence{Statement: st.ModStatement(s), DA: da} }
 
-statement <-
-	n:afterthought_cop<statement_1, statement_1> { return ast.Statement((*ast.CoPStatement)(n)) } /
-	statement_1
+statement <- p:prenex_spaces? s:statement_1 { return ast.Statement(prenexStmt(p, s)) }
 statement_1 <-
-	n:forethought_cop<statement, statement> { return ast.Statement((*ast.CoPStatement)(n)) } /
+	n:afterthought_cop<statement_2, statement_2> { return ast.Statement((*ast.CoPStatement)(n)) } /
 	statement_2
 statement_2 <-
-	st:statement_3 s:_ na:end_statement? { return ast.Statement(endPredication(st, s, na)) }
+	n:forethought_cop<statement, statement> { return ast.Statement((*ast.CoPStatement)(n)) } /
+	statement_3
 statement_3 <-
-	n:prenex_spaces? p:predication { return ast.Predication(prenexStmt(n, p)) }
+	p:predication s:_ na:end_statement? { return ast.Statement(endPredication(p, s, na)) }
+predication <-
+	p:predicate s:_ ts:terms? { return ast.Predication(predication(p, s, ts)) }
 prenex_spaces <-
 	 p:prenex s:_ { return ast.Prenex(*p.Mod(s)) }
 prenex <-
 	ts:terms s:_ bi:end_prenex { return (*ast.Prenex)(prenex(ts, s, bi)) }
-predication <-
-	p:predicate s:_ ts:terms? { return ast.Predication(predication(p, s, ts)) }
 
 #
 # Predicates

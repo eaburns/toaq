@@ -4,6 +4,7 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/eaburns/pretty"
 	"github.com/eaburns/toaq/ast"
 	"github.com/eaburns/toaq/parser"
 )
@@ -88,8 +89,12 @@ func TestVisit(t *testing.T) {
 		},
 		{
 			name: "statements",
-			text: "mai? na ru pai? na",
+			text: "jai/ bi mai? na ru pai? na",
 			counts: []typeCount{
+				{
+					typ:   reflect.TypeOf(&ast.PrenexStatement{}),
+					count: 1,
+				},
 				{
 					typ:   reflect.TypeOf(&ast.Predication{}),
 					count: 2,
@@ -260,6 +265,7 @@ func TestVisit(t *testing.T) {
 			if err != nil {
 				t.Fatalf("parse(%q)=%v, want nil", test.text, err)
 			}
+			ok := true
 			for _, tc := range test.counts {
 				var got int
 				ast.Visit(txt, func(n ast.Node) bool {
@@ -269,8 +275,12 @@ func TestVisit(t *testing.T) {
 					return true
 				})
 				if got != tc.count {
+					ok = false
 					t.Errorf("%s: got: %d\nwant: %d", tc.typ, got, tc.count)
 				}
+			}
+			if !ok {
+				t.Logf("%s\n", pretty.String(txt))
 			}
 		})
 	}

@@ -173,17 +173,9 @@ func TestStatement(t *testing.T) {
 	tests := []parserTest{
 		{
 			name: "predication",
-			text: "jai~ bi hio? ji/ suq/ na",
+			text: "hio? ji/ suq/ na",
 			want: sentence(
 				&Predication{
-					Prenex: &Prenex{
-						Terms: Terms{
-							Term: &PredicateAdverb{
-								Predicate: &WordPredicate{T: "jai~"},
-							},
-						},
-						BI: Word{T: "bi"},
-					},
 					Predicate: &WordPredicate{T: "hio?"},
 					Terms: &Terms{
 						Term: &PredicateArgument{
@@ -196,6 +188,43 @@ func TestStatement(t *testing.T) {
 						},
 					},
 					NA: &Word{T: "na"},
+				},
+			),
+		},
+		{
+			name: "prenex statement",
+			text: "sa do/ bi jai? do/ na ru meo? do/",
+			want: sentence(
+				&PrenexStatement{
+					Prenex: Prenex{
+						Terms: Terms{
+							Term: &PredicateArgument{
+								Quantifier: &Word{T: "sa"},
+								Predicate:  &WordPredicate{T: "do/"},
+							},
+						},
+						BI: Word{T: "bi"},
+					},
+					Statement: &CoPStatement{
+						Left: &Predication{
+							Predicate: &WordPredicate{T: "jai?"},
+							Terms: &Terms{
+								Term: &PredicateArgument{
+									Predicate: &WordPredicate{T: "do/"},
+								},
+							},
+							NA: &Word{T: "na"},
+						},
+						RU: Word{T: "ru"},
+						Right: &Predication{
+							Predicate: &WordPredicate{T: "meo?"},
+							Terms: &Terms{
+								Term: &PredicateArgument{
+									Predicate: &WordPredicate{T: "do/"},
+								},
+							},
+						},
+					},
 				},
 			),
 		},

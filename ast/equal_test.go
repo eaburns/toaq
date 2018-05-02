@@ -1054,11 +1054,10 @@ func p(t string) *WordPredicate { return &WordPredicate{T: t} }
 
 func toString(node Node) string {
 	var s strings.Builder
-	Visit(node, func(n Node) bool {
+	Visit(node, FuncVisitor(func(n Node) {
 		if w, ok := n.(*Word); ok {
 			s.WriteString(w.T)
 		}
-		return true
-	})
+	}))
 	return s.String()
 }

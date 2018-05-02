@@ -54,11 +54,10 @@ func main() {
 
 func toString(node ast.Node) string {
 	var s strings.Builder
-	ast.Visit(node, func(n ast.Node) bool {
+	ast.Visit(node, ast.FuncVisitor(func(n ast.Node) {
 		if w, ok := n.(*ast.Word); ok {
 			s.WriteString(w.T)
 		}
-		return true
-	})
+	}))
 	return s.String()
 }

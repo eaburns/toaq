@@ -146,12 +146,11 @@ var (
 // ToASCII converts all words of an AST to their standard ASCII form,
 // with a tone marker following each syllable.
 func ToASCII(node ast.Node) {
-	ast.Visit(node, func(n ast.Node) bool {
+	ast.Visit(node, ast.FuncVisitor(func(n ast.Node) {
 		if w, ok := n.(*ast.Word); ok {
 			w.T = toASCII(w.T)
 		}
-		return true
-	})
+	}))
 }
 
 func toASCII(txt string) string {

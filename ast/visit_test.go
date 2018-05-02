@@ -268,12 +268,14 @@ func TestVisit(t *testing.T) {
 			ok := true
 			for _, tc := range test.counts {
 				var got int
-				ast.Visit(txt, func(n ast.Node) bool {
+				ast.Visit(txt, ast.FuncVisitor(func(n ast.Node) {
+					if n == nil {
+						return
+					}
 					if v := reflect.ValueOf(n); v.Type() == tc.typ {
 						got++
 					}
-					return true
-				})
+				}))
 				if got != tc.count {
 					ok = false
 					t.Errorf("%s: got: %d\nwant: %d", tc.typ, got, tc.count)

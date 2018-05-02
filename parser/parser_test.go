@@ -1053,7 +1053,7 @@ func (test parserTest) runErrTest(t *testing.T) {
 // and removes all space nodes following a word
 // (all but a space at the beginning of Text.Leading).
 func normalize(node Node) {
-	Visit(node, func(n Node) bool {
+	Visit(node, FuncVisitor(func(n Node) {
 		if w, ok := n.(*Word); ok {
 			w.S, w.E = 0, 0
 			tone.ToASCII(w)
@@ -1061,6 +1061,5 @@ func normalize(node Node) {
 				w.M = s.M
 			}
 		}
-		return true
-	})
+	}))
 }

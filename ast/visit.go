@@ -5,149 +5,198 @@ import (
 	"reflect"
 )
 
-// Visit calls f for each node in the tree in pre-, depth-first order
-// (first f is called on the node itself, then its children).
+// A Visitor has its Visit method called on each node of the AST by the Visit function.
+type Visitor interface {
+	Visit(Node) Visitor
+}
+
+// A FuncVisitor is a Visitor that calls a function for each node in the AST.
+type FuncVisitor func(Node)
+
+// Visit implements the Visitor interface for FuncVisitor.
+func (v FuncVisitor) Visit(n Node) Visitor {
+	v(n)
+	return v
+}
+
+// Visit traverses the AST in depth-first order.
+// For each node, it calls v.Visit(node) with a non-nil node.
+// If the returned visitor is non-nil, then Visit recurs,
+// calling Visit on all children of the node with the returned visitor,
+// and finally calling Visit on the returned visitor with nil.
 //
-// For nodes that are also Words, Visit is called on the node as a Word
-// as though the Word were its single child;
-// Mods are considered children of the Word node.
-//
-// If f return false for any node, the traversal stops and Visit return false.
-func Visit(n Node, f func(Node) bool) bool {
+// Visit considers all single-word nodes to have a single child Word.
+// So, for example, if Visit recurs on a WordPredicate node,
+// the next call to visit will be for a node of type Word.
+func Visit(n Node, v Visitor) {
 	if n == nil {
-		return true
+		return
 	}
 	if v := reflect.ValueOf(n); v.Kind() == reflect.Ptr && v.IsNil() {
-		return true
+		return
 	}
+	if v = v.Visit(n); v == nil {
+		return
+	}
+	defer v.Visit(nil)
+
 	switch n := n.(type) {
 	case *Text:
-		return f(n) && Visit(n.Leading, f) && Visit(&n.Discourse, f)
+		Visit(n.Leading, v)
+		Visit(&n.Discourse, v)
 
 	case *Discourse:
-		if !f(n) {
-			return false
-		}
 		for _, k := range *n {
-			if !Visit(k, f) {
-				return false
-			}
+			Visit(k, v)
 		}
-		return true
 
 	case *StatementSentence:
-		return f(n) && Visit(n.JE, f) && Visit(n.Statement, f) && Visit(n.DA, f)
+		Visit(n.JE, v)
+		Visit(n.Statement, v)
+		Visit(n.DA, v)
 
 	case *CoPSentence:
-		return f(n) && visitCoP((*CoP)(n), f)
+		visitCoP((*CoP)(n), v)
 
 	case *Prenex:
-		return f(n) && Visit(&n.Terms, f) && Visit(&n.BI, f)
+		Visit(&n.Terms, v)
+		Visit(&n.BI, v)
 
 	case *PrenexStatement:
-		return f(n) && Visit(&n.Prenex, f) && Visit(n.Statement, f)
+		Visit(&n.Prenex, v)
+		Visit(n.Statement, v)
 
 	case *Predication:
-		return f(n) && Visit(n.Predicate, f) && Visit(n.Terms, f) && Visit(n.NA, f)
+		Visit(n.Predicate, v)
+		Visit(n.Terms, v)
+		Visit(n.NA, v)
 
 	case *CoPStatement:
-		return f(n) && visitCoP((*CoP)(n), f)
+		visitCoP((*CoP)(n), v)
 
 	case *PrefixedPredicate:
-		return f(n) && Visit(&n.MU, f) && Visit(n.Predicate, f)
+		Visit(&n.MU, v)
+		Visit(n.Predicate, v)
 
 	case *SerialPredicate:
-		return f(n) && Visit(n.Left, f) && Visit(n.Right, f)
+		Visit(n.Left, v)
+		Visit(n.Right, v)
 
 	case *WordPredicate:
-		return f(n) && Visit((*Word)(n), f)
+		Visit((*Word)(n), v)
 
 	case *MIPredicate:
-		return f(n) && Visit(&n.MI, f) && Visit(n.Phrase, f) && Visit(n.GA, f)
+		Visit(&n.MI, v)
+		Visit(n.Phrase, v)
+		Visit(n.GA, v)
 
 	case *POPredicate:
-		return f(n) && Visit(&n.PO, f) && Visit(n.Argument, f) && Visit(n.GA, f)
+		Visit(&n.PO, v)
+		Visit(n.Argument, v)
+		Visit(n.GA, v)
 
 	case *MOPredicate:
-		return f(n) && Visit(&n.MO, f) && Visit(&n.Discourse, f) && Visit(&n.TEO, f)
+		Visit(&n.MO, v)
+		Visit(&n.Discourse, v)
+		Visit(&n.TEO, v)
 
 	case *LUPredicate:
-		return f(n) && Visit(&n.LU, f) && Visit(n.Statement, f)
+		Visit(&n.LU, v)
+		Visit(n.Statement, v)
 
 	case *CoPPredicate:
-		return f(n) && visitCoP((*CoP)(n), f)
+		visitCoP((*CoP)(n), v)
 
 	case *LinkedTerm:
-		return f(n) && Visit(&n.GO, f) && Visit(n.Argument, f)
+		Visit(&n.GO, v)
+		Visit(n.Argument, v)
 
 	case *Terms:
-		return f(n) && Visit(n.Term, f) && Visit(n.Terms, f)
+		Visit(n.Term, v)
+		Visit(n.Terms, v)
 
 	case *TermSet:
-		return f(n) && visitCoP((*CoP)(n), f)
+		visitCoP((*CoP)(n), v)
 
 	case *PredicateArgument:
-		return f(n) && Visit(n.Focus, f) && Visit(n.Quantifier, f) && Visit(n.Predicate, f) && Visit(n.Relative, f)
+		Visit(n.Focus, v)
+		Visit(n.Quantifier, v)
+		Visit(n.Predicate, v)
+		Visit(n.Relative, v)
 
 	case *CoPArgument:
-		return f(n) && visitCoP((*CoP)(n), f)
+		visitCoP((*CoP)(n), v)
 
 	case *PredicationRelative:
-		return f(n) && Visit(&n.Predication, f)
+		Visit(&n.Predication, v)
 
 	case *LURelative:
-		return f(n) && Visit(&n.LU, f) && Visit(n.Statement, f)
+		Visit(&n.LU, v)
+		Visit(n.Statement, v)
 
 	case *CoPRelative:
-		return f(n) && visitCoP((*CoP)(n), f)
+		visitCoP((*CoP)(n), v)
 
 	case *PredicateAdverb:
-		return f(n) && Visit(n.Predicate, f)
+		Visit(n.Predicate, v)
 
 	case *CoPAdverb:
-		return f(n) && visitCoP((*CoP)(n), f)
+		visitCoP((*CoP)(n), v)
 
 	case *PredicationPreposition:
-		return f(n) && Visit(n.Predicate, f) && Visit(n.Argument, f)
+		Visit(n.Predicate, v)
+		Visit(n.Argument, v)
 
 	case *CoPPreposition:
-		return f(n) && visitCoP((*CoP)(n), f)
+		visitCoP((*CoP)(n), v)
 
 	case *PredicationContent:
-		return f(n) && Visit(&n.Predication, f)
+		Visit(&n.Predication, v)
 
 	case *LUContent:
-		return f(n) && Visit(&n.LU, f) && Visit(n.Statement, f)
+		Visit(&n.LU, v)
+		Visit(n.Statement, v)
 
 	case *CoPContent:
-		return f(n) && visitCoP((*CoP)(n), f)
+		visitCoP((*CoP)(n), v)
 
 	case *Parenthetical:
-		return f(n) && Visit(&n.KIO, f) && Visit(&n.Discourse, f) && Visit(&n.KI, f)
+		Visit(&n.KIO, v)
+		Visit(&n.Discourse, v)
+		Visit(&n.KI, v)
 
 	case *Incidental:
-		return f(n) && Visit(&n.JU, f) && Visit(n.Statement, f)
+		Visit(&n.JU, v)
+		Visit(n.Statement, v)
 
 	case *Vocative:
-		return f(n) && Visit(&n.HU, f) && Visit(n.Argument, f)
+		Visit(&n.HU, v)
+		Visit(n.Argument, v)
 
 	case *Interjection:
-		return f(n) && Visit((*Word)(n), f)
+		Visit((*Word)(n), v)
 
 	case *Space:
-		return f(n) && Visit((*Word)(n), f)
+		Visit((*Word)(n), v)
 
 	case *Word:
-		return n == nil || f(n) && (n.M == nil || Visit(n.M, f))
+		Visit(n.M, v)
 
 	default:
 		panic(fmt.Sprintf("unknown node type %T", n))
 	}
 }
 
-func visitCoP(n *CoP, f func(Node) bool) bool {
+func visitCoP(n *CoP, v Visitor) {
 	if n.TO0 == nil {
-		return Visit(n.Left, f) && Visit(&n.RU, f) && Visit(n.Right, f)
+		Visit(n.Left, v)
+		Visit(&n.RU, v)
+		Visit(n.Right, v)
+		return
 	}
-	return Visit(n.TO0, f) && Visit(&n.RU, f) && Visit(n.Left, f) && Visit(n.TO1, f) && Visit(n.Right, f)
+	Visit(n.TO0, v)
+	Visit(&n.RU, v)
+	Visit(n.Left, v)
+	Visit(n.TO1, v)
+	Visit(n.Right, v)
 }

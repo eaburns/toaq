@@ -43,29 +43,13 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	peg.PrettyWrite(os.Stdout, parseTree)
-	os.Stdout.WriteString("\n")
 	text, err := p.Text()
 	if err != nil {
 		panic(err) // can't fail since ParseTree succeeded.
 	}
-	pretty.Print(text)
-	fmt.Println("")
+	fmt.Println(peg.Pretty(parseTree))
+	fmt.Println(pretty.String(text))
 	fmt.Println(toString(text))
-	for i := 0; i < len(input); {
-		fmt.Print(i, ": ")
-		w, d, err := p.Word(i)
-		if err != nil {
-			failTree := err.(parser.Error).Tree()
-			peg.DedupFails(failTree)
-			peg.PrettyWrite(os.Stdout, failTree)
-			os.Stdout.WriteString("\n")
-			fmt.Println(err)
-			os.Exit(1)
-		}
-		fmt.Println(toString(w))
-		i += d
-	}
 }
 
 func toString(node ast.Node) string {

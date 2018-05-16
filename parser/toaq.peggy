@@ -91,9 +91,9 @@ serial<left> <-
 
 terms <-
 	terms_2 /
-	t:term { return &ast.Terms{Term: t} }
+	t:term { return ast.Terms{t} }
 terms_2 <-
-	t:term s:_ ts:terms { return &ast.Terms{Term: t.ModTerm(s), Terms: ts} }
+	t:term s:_ ts:terms { return ast.Terms(ts.Prepend(t.ModTerm(s))) }
 term <-
 	x0:linked_argument { return ast.Term(x0) } /
 	x1:adverb { return ast.Term(x1) } /
@@ -110,13 +110,13 @@ termset <-
 	x3:forethought_cop<terms_II, terms_II> { return (*ast.TermSet)(x3) } /
 	x4:forethought_cop<terms_V, terms_V> { return (*ast.TermSet)(x4) }
 terms_II <-
-	l:term s:_ r:term { return &ast.Terms{Term: l.ModTerm(s), Terms: &ast.Terms{Term: r}} }
+	l:term s:_ r:term { return ast.Terms{l.ModTerm(s), r} }
 terms_III <-
-	l:term s:_ r:terms_II { return &ast.Terms{Term: l.ModTerm(s), Terms: r} }
+	l:term s:_ r:terms_II { return ast.Terms(r.Prepend(l.ModTerm(s))) }
 terms_IV <-
-	l:term s:_ r:terms_III { return &ast.Terms{Term: l.ModTerm(s), Terms: r} }
+	l:term s:_ r:terms_III { return ast.Terms(r.Prepend(l.ModTerm(s))) }
 terms_V <-
-	l:term s:_ r:terms_IV { return &ast.Terms{Term: l.ModTerm(s), Terms: r} }
+	l:term s:_ r:terms_IV { return ast.Terms(r.Prepend(l.ModTerm(s))) }
 
 #
 # Arguments

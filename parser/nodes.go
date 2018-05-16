@@ -25,11 +25,11 @@ func prenexStmt(p *ast.Prenex, st ast.Statement) ast.Statement {
 	return &ast.PrenexStatement{Prenex: *p, Statement: st}
 }
 
-func prenex(ts *ast.Terms, s *ast.Mod, bi ast.Word) *ast.Prenex {
-	return &ast.Prenex{Terms: *ts.Mod(s), BI: bi}
+func prenex(ts ast.Terms, s *ast.Mod, bi ast.Word) *ast.Prenex {
+	return &ast.Prenex{Terms: ts.Mod(s), BI: bi}
 }
 
-func predication(p ast.Predicate, s *ast.Mod, ts **ast.Terms) ast.Predication {
+func predication(p ast.Predicate, s *ast.Mod, ts *ast.Terms) ast.Predication {
 	st := ast.Predication{Predicate: p.ModPredicate(s)}
 	if ts != nil {
 		st.Terms = *ts

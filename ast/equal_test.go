@@ -142,17 +142,17 @@ func TestEq(t *testing.T) {
 		},
 		{
 			n: &Prenex{
-				Terms: Terms{Term: &PredicateArgument{Predicate: p("hio/")}},
+				Terms: Terms{&PredicateArgument{Predicate: p("hio/")}},
 				BI:    Word{T: "bi"},
 			},
 			ne: []Node{
 				(*Interjection)(&Word{T: "hia"}),
 				&Prenex{
-					Terms: Terms{Term: &PredicateArgument{Predicate: p("jai/")}},
+					Terms: Terms{&PredicateArgument{Predicate: p("jai/")}},
 					BI:    Word{T: "bi"},
 				},
 				&Prenex{
-					Terms: Terms{Term: &PredicateArgument{Predicate: p("hio/")}},
+					Terms: Terms{&PredicateArgument{Predicate: p("hio/")}},
 					BI:    Word{T: "pa"},
 				},
 			},
@@ -160,7 +160,7 @@ func TestEq(t *testing.T) {
 		{
 			n: &PrenexStatement{
 				Prenex: Prenex{
-					Terms: Terms{Term: &PredicateArgument{Predicate: p("hio/")}},
+					Terms: Terms{&PredicateArgument{Predicate: p("hio/")}},
 					BI:    Word{T: "bi"},
 				},
 				Statement: &Predication{Predicate: p("mai/")},
@@ -169,14 +169,14 @@ func TestEq(t *testing.T) {
 				(*Interjection)(&Word{T: "hia"}),
 				&PrenexStatement{
 					Prenex: Prenex{
-						Terms: Terms{Term: &PredicateArgument{Predicate: p("hio/")}},
+						Terms: Terms{&PredicateArgument{Predicate: p("hio/")}},
 						BI:    Word{T: "pa"},
 					},
 					Statement: &Predication{Predicate: p("mai/")},
 				},
 				&PrenexStatement{
 					Prenex: Prenex{
-						Terms: Terms{Term: &PredicateArgument{Predicate: p("hio/")}},
+						Terms: Terms{&PredicateArgument{Predicate: p("hio/")}},
 						BI:    Word{T: "bi"},
 					},
 					Statement: &Predication{Predicate: p("pai/")},
@@ -186,26 +186,20 @@ func TestEq(t *testing.T) {
 		{
 			n: &Predication{
 				Predicate: p("mai?"),
-				Terms: &Terms{
-					Term: &PredicateArgument{Predicate: p("ji/")},
-				},
-				NA: &Word{T: "na"},
+				Terms:     Terms{&PredicateArgument{Predicate: p("ji/")}},
+				NA:        &Word{T: "na"},
 			},
 			ne: []Node{
 				(*Interjection)(&Word{T: "hia"}),
 				&Predication{
 					Predicate: p("pai?"),
-					Terms: &Terms{
-						Term: &PredicateArgument{Predicate: p("ji/")},
-					},
-					NA: &Word{T: "na"},
+					Terms:     Terms{&PredicateArgument{Predicate: p("ji/")}},
+					NA:        &Word{T: "na"},
 				},
 				&Predication{
 					Predicate: p("mai?"),
-					Terms: &Terms{
-						Term: &PredicateArgument{Predicate: p("suq/")},
-					},
-					NA: &Word{T: "na"},
+					Terms:     Terms{&PredicateArgument{Predicate: p("suq/")}},
+					NA:        &Word{T: "na"},
 				},
 				&Predication{
 					Predicate: p("mai?"),
@@ -213,9 +207,7 @@ func TestEq(t *testing.T) {
 				},
 				&Predication{
 					Predicate: p("mai?"),
-					Terms: &Terms{
-						Term: &PredicateArgument{Predicate: p("suq/")},
-					},
+					Terms:     Terms{&PredicateArgument{Predicate: p("suq/")}},
 				},
 			},
 		},

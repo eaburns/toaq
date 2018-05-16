@@ -151,7 +151,7 @@ func (n PrenexStatement) Mod(m *Mod) *PrenexStatement {
 // A Predication is a statement with a predicate and terms.
 type Predication struct {
 	Predicate Predicate
-	Terms     *Terms
+	Terms     Terms
 	NA        *Word
 }
 
@@ -336,31 +336,31 @@ func (n LinkedTerm) ModTerm(m *Mod) Term {
 	return &n
 }
 
-// A Terms is a linked list of Term nodes.
-type Terms struct {
-	Term  Term
-	Terms *Terms
-}
+// A Terms is a silce of Terms.
+type Terms []Term
 
-func (n *Terms) Start() int { return n.Term.Start() }
-
-func (n *Terms) End() int {
-	if n.Terms != nil {
-		return n.Terms.End()
-	}
-	return n.Term.End()
-}
-
+func (n Terms) Start() int                  { return n[0].Start() }
+func (n Terms) End() int                    { return n[len(n)-1].End() }
 func (n Terms) ModNode(m *Mod) Node         { return n.Mod(m) }
 func (n Terms) ModFragment(m *Mod) Fragment { return n.Mod(m) }
 
-func (n Terms) Mod(m *Mod) *Terms {
-	if n.Terms != nil {
-		n.Terms = n.Terms.Mod(m)
-	} else {
-		n.Term = n.Term.ModTerm(m)
+func (n Terms) Mod(m *Mod) Terms {
+	if m == nil {
+		return n
 	}
-	return &n
+	l := len(n)
+	c := make(Terms, l)
+	copy(c, n)
+	c[l-1] = c[l-1].ModTerm(m)
+	return c
+}
+
+// Prepend returns a copy of the receiver with the given Terms prepended.
+func (n Terms) Prepend(ts ...Term) Terms {
+	c := make(Terms, len(n)+len(ts))
+	copy(c[len(ts):], n)
+	copy(c, ts)
+	return c
 }
 
 // A TermSet is a connector of terms.

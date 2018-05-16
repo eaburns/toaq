@@ -59,7 +59,7 @@ func Visit(n Node, v Visitor) {
 		visitCoP((*CoP)(n), v)
 
 	case *Prenex:
-		Visit(&n.Terms, v)
+		Visit(n.Terms, v)
 		Visit(&n.BI, v)
 
 	case *PrenexStatement:
@@ -111,9 +111,10 @@ func Visit(n Node, v Visitor) {
 		Visit(&n.GO, v)
 		Visit(n.Argument, v)
 
-	case *Terms:
-		Visit(n.Term, v)
-		Visit(n.Terms, v)
+	case Terms:
+		for _, t := range n {
+			Visit(t, v)
+		}
 
 	case *TermSet:
 		visitCoP((*CoP)(n), v)

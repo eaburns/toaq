@@ -42,7 +42,7 @@ func Equal(a, b Node) bool {
 
 	case *Prenex:
 		b, ok := b.(*Prenex)
-		return ok && wordEqual(&a.BI, &b.BI) && Equal(&a.Terms, &b.Terms)
+		return ok && wordEqual(&a.BI, &b.BI) && Equal(a.Terms, b.Terms)
 
 	case *PrenexStatement:
 		b, ok := b.(*PrenexStatement)
@@ -96,11 +96,17 @@ func Equal(a, b Node) bool {
 		b, ok := b.(*LinkedTerm)
 		return ok && wordEqual(&a.GO, &b.GO) && Equal(a.Argument, b.Argument)
 
-	case *Terms:
-		b, ok := b.(*Terms)
-		return ok && Equal(a.Term, b.Term) &&
-			(a.Terms == nil) == (b.Terms == nil) &&
-			(a.Terms == nil || Equal(a.Terms, b.Terms))
+	case Terms:
+		b, ok := b.(Terms)
+		if !ok || len(a) != len(b) {
+			return false
+		}
+		for i := range a {
+			if !Equal(a[i], b[i]) {
+				return false
+			}
+		}
+		return true
 
 	case *TermSet:
 		b, ok := b.(*TermSet)

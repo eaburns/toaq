@@ -56,7 +56,7 @@ func TestDiscourse(t *testing.T) {
 				Discourse: Discourse{
 					&Prenex{
 						Terms: Terms{
-							Term: &PredicateArgument{
+							&PredicateArgument{
 								Predicate: &WordPredicate{T: "ji/"},
 							},
 						},
@@ -82,8 +82,8 @@ func TestDiscourse(t *testing.T) {
 						},
 						DA: &Word{T: "da"},
 					},
-					&Terms{
-						Term: &PredicateArgument{
+					Terms{
+						&PredicateArgument{
 							Predicate: &WordPredicate{T: "ji/"},
 						},
 					},
@@ -186,14 +186,12 @@ func TestStatement(t *testing.T) {
 			want: sentence(
 				&Predication{
 					Predicate: &WordPredicate{T: "hio?"},
-					Terms: &Terms{
-						Term: &PredicateArgument{
+					Terms: Terms{
+						&PredicateArgument{
 							Predicate: &WordPredicate{T: "ji/"},
 						},
-						Terms: &Terms{
-							Term: &PredicateArgument{
-								Predicate: &WordPredicate{T: "suq/"},
-							},
+						&PredicateArgument{
+							Predicate: &WordPredicate{T: "suq/"},
 						},
 					},
 					NA: &Word{T: "na"},
@@ -207,7 +205,7 @@ func TestStatement(t *testing.T) {
 				&PrenexStatement{
 					Prenex: Prenex{
 						Terms: Terms{
-							Term: &PredicateArgument{
+							&PredicateArgument{
 								Quantifier: &Word{T: "sa"},
 								Predicate:  &WordPredicate{T: "do/"},
 							},
@@ -217,8 +215,8 @@ func TestStatement(t *testing.T) {
 					Statement: &CoPStatement{
 						Left: &Predication{
 							Predicate: &WordPredicate{T: "jai?"},
-							Terms: &Terms{
-								Term: &PredicateArgument{
+							Terms: Terms{
+								&PredicateArgument{
 									Predicate: &WordPredicate{T: "do/"},
 								},
 							},
@@ -227,8 +225,8 @@ func TestStatement(t *testing.T) {
 						RU: Word{T: "ru"},
 						Right: &Predication{
 							Predicate: &WordPredicate{T: "meo?"},
-							Terms: &Terms{
-								Term: &PredicateArgument{
+							Terms: Terms{
+								&PredicateArgument{
 									Predicate: &WordPredicate{T: "do/"},
 								},
 							},
@@ -300,12 +298,8 @@ func TestStatement(t *testing.T) {
 	}
 }
 
-func statement(n Predicate, terms ...Term) Node {
-	var ts *Terms
-	for i := len(terms) - 1; i >= 0; i-- {
-		ts = &Terms{Term: terms[i], Terms: ts}
-	}
-	return sentence(&Predication{Predicate: n, Terms: ts})
+func statement(n Predicate, ts ...Term) Node {
+	return sentence(&Predication{Predicate: n, Terms: Terms(ts)})
 }
 
 func TestPredicate(t *testing.T) {
@@ -447,25 +441,21 @@ func TestTerms(t *testing.T) {
 				&TermSet{
 					TO0: &Word{T: "to"},
 					RU:  Word{T: "ru"},
-					Left: &Terms{
-						Term: &PredicateArgument{
+					Left: Terms{
+						&PredicateArgument{
 							Predicate: &WordPredicate{T: "ji/"},
 						},
-						Terms: &Terms{
-							Term: &PredicateArgument{
-								Predicate: &WordPredicate{T: "suq/"},
-							},
+						&PredicateArgument{
+							Predicate: &WordPredicate{T: "suq/"},
 						},
 					},
 					TO1: &Word{T: "to"},
-					Right: &Terms{
-						Term: &PredicateArgument{
+					Right: Terms{
+						&PredicateArgument{
 							Predicate: &WordPredicate{T: "suq/"},
 						},
-						Terms: &Terms{
-							Term: &PredicateArgument{
-								Predicate: &WordPredicate{T: "ji/"},
-							},
+						&PredicateArgument{
+							Predicate: &WordPredicate{T: "ji/"},
 						},
 					},
 				},
@@ -495,8 +485,8 @@ func TestArgument(t *testing.T) {
 					Relative: &PredicationRelative{
 						Predication: Predication{
 							Predicate: &WordPredicate{T: "maiV"},
-							Terms: &Terms{
-								Term: &PredicateArgument{
+							Terms: Terms{
+								&PredicateArgument{
 									Predicate: &WordPredicate{T: "suq/"},
 								},
 							},
@@ -571,8 +561,8 @@ func TestRelative(t *testing.T) {
 					Relative: &PredicationRelative{
 						Predication: Predication{
 							Predicate: &WordPredicate{T: "maiV"},
-							Terms: &Terms{
-								Term: &PredicateArgument{
+							Terms: Terms{
+								&PredicateArgument{
 									Predicate: &WordPredicate{T: "suq/"},
 								},
 							},
@@ -611,8 +601,8 @@ func TestRelative(t *testing.T) {
 						LU: Word{T: "luV"},
 						Statement: &Predication{
 							Predicate: &WordPredicate{T: "mai?"},
-							Terms: &Terms{
-								Term: &PredicateArgument{
+							Terms: Terms{
+								&PredicateArgument{
 									Predicate: &WordPredicate{T: "suq/"},
 								},
 							},
@@ -854,8 +844,8 @@ func TestContent(t *testing.T) {
 					Predicate: &PredicationContent{
 						Predication: Predication{
 							Predicate: &WordPredicate{T: "jai^"},
-							Terms: &Terms{
-								Term: &PredicateArgument{
+							Terms: Terms{
+								&PredicateArgument{
 									Predicate: &WordPredicate{T: "ji/"},
 								},
 							},
@@ -877,8 +867,8 @@ func TestContent(t *testing.T) {
 								RU:    Word{T: "ru"},
 								Right: &WordPredicate{T: "pai?"},
 							},
-							Terms: &Terms{
-								Term: &PredicateArgument{
+							Terms: Terms{
+								&PredicateArgument{
 									Predicate: &WordPredicate{T: "ji/"},
 								},
 							},
@@ -897,8 +887,8 @@ func TestContent(t *testing.T) {
 						LU: Word{T: "lu^"},
 						Statement: &Predication{
 							Predicate: &WordPredicate{T: "jai?"},
-							Terms: &Terms{
-								Term: &PredicateArgument{
+							Terms: Terms{
+								&PredicateArgument{
 									Predicate: &WordPredicate{T: "ji/"},
 								},
 							},
@@ -918,8 +908,8 @@ func TestContent(t *testing.T) {
 						Left: &PredicationContent{
 							Predication: Predication{
 								Predicate: &WordPredicate{T: "jai^"},
-								Terms: &Terms{
-									Term: &PredicateArgument{
+								Terms: Terms{
+									&PredicateArgument{
 										Predicate: &WordPredicate{T: "ji/"},
 									},
 								},
@@ -929,8 +919,8 @@ func TestContent(t *testing.T) {
 						RU: Word{T: "ru"},
 						Right: &Predication{
 							Predicate: &WordPredicate{T: "meo?"},
-							Terms: &Terms{
-								Term: &PredicateArgument{
+							Terms: Terms{
+								&PredicateArgument{
 									Predicate: &WordPredicate{T: "suq/"},
 								},
 							},

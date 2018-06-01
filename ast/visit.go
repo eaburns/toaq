@@ -25,13 +25,10 @@ func (v FuncVisitor) Visit(n Node) Visitor {
 // calling Visit on all children of the node with the returned visitor,
 // and finally calling Visit on the returned visitor with nil.
 //
-// Visit considers all single-word nodes to have a single child Word.
+// Visit considers all Word nodes, CoP nodes, and LU nodes
+// to have a single child of type Word, CoP, and LUPhrase respectively.
 // So, for example, if Visit recurs on a WordPredicate node,
 // the next call to visit will be for a node of type Word.
-//
-// Similarly, Visit considers all CoP-type nodes to have a single child CoP.
-// So, for example, if Visit recurs on a CoPArgument node,
-// the next call to visit will be for a node of type CoP.
 func Visit(n Node, v Visitor) {
 	if n == nil {
 		return
@@ -105,8 +102,7 @@ func Visit(n Node, v Visitor) {
 		Visit(&n.TEO, v)
 
 	case *LUPredicate:
-		Visit(&n.LU, v)
-		Visit(n.Statement, v)
+		Visit((*LUPhrase)(n), v)
 
 	case *CoPPredicate:
 		Visit((*CoP)(n), v)
@@ -136,8 +132,7 @@ func Visit(n Node, v Visitor) {
 		Visit(&n.Predication, v)
 
 	case *LURelative:
-		Visit(&n.LU, v)
-		Visit(n.Statement, v)
+		Visit((*LUPhrase)(n), v)
 
 	case *CoPRelative:
 		Visit((*CoP)(n), v)
@@ -159,8 +154,7 @@ func Visit(n Node, v Visitor) {
 		Visit(&n.Predication, v)
 
 	case *LUContent:
-		Visit(&n.LU, v)
-		Visit(n.Statement, v)
+		Visit((*LUPhrase)(n), v)
 
 	case *CoPContent:
 		Visit((*CoP)(n), v)
@@ -196,6 +190,10 @@ func Visit(n Node, v Visitor) {
 		Visit(n.Left, v)
 		Visit(n.TO1, v)
 		Visit(n.Right, v)
+
+	case *LUPhrase:
+		Visit(&n.LU, v)
+		Visit(n.Statement, v)
 
 	case *Word:
 		Visit(n.M, v)

@@ -146,6 +146,10 @@ func TestVisit(t *testing.T) {
 					count: 1,
 				},
 				{
+					typ:   reflect.TypeOf(&ast.LUPhrase{}),
+					count: 1,
+				},
+				{
 					typ:   reflect.TypeOf(&ast.CoPPredicate{}),
 					count: 1,
 				},
@@ -197,6 +201,10 @@ func TestVisit(t *testing.T) {
 				},
 				{
 					typ:   reflect.TypeOf(&ast.LURelative{}),
+					count: 1,
+				},
+				{
+					typ:   reflect.TypeOf(&ast.LUPhrase{}),
 					count: 1,
 				},
 				{
@@ -255,6 +263,10 @@ func TestVisit(t *testing.T) {
 				},
 				{
 					typ:   reflect.TypeOf(&ast.LUContent{}),
+					count: 1,
+				},
+				{
+					typ:   reflect.TypeOf(&ast.LUPhrase{}),
 					count: 1,
 				},
 				{

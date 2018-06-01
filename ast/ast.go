@@ -694,8 +694,9 @@ type LUPhrase struct {
 	Statement Statement
 }
 
-func (n *LUPhrase) Start() int { return n.LU.Start() }
-func (n *LUPhrase) End() int   { return n.Statement.End() }
+func (n *LUPhrase) Start() int         { return n.LU.Start() }
+func (n *LUPhrase) End() int           { return n.Statement.End() }
+func (n LUPhrase) ModNode(m *Mod) Node { return n.Mod(m) }
 
 func (n LUPhrase) Mod(m *Mod) *LUPhrase {
 	n.Statement = n.Statement.ModStatement(m)

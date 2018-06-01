@@ -56,12 +56,16 @@ func TestVisit(t *testing.T) {
 			text: "pai? da ru mai? da",
 			counts: []typeCount{
 				{
+					typ:   reflect.TypeOf(&ast.StatementSentence{}),
+					count: 2,
+				},
+				{
 					typ:   reflect.TypeOf(&ast.CoPSentence{}),
 					count: 1,
 				},
 				{
-					typ:   reflect.TypeOf(&ast.StatementSentence{}),
-					count: 2,
+					typ:   reflect.TypeOf(&ast.CoP{}),
+					count: 1,
 				},
 			},
 		},
@@ -103,6 +107,10 @@ func TestVisit(t *testing.T) {
 					typ:   reflect.TypeOf(&ast.CoPStatement{}),
 					count: 1,
 				},
+				{
+					typ:   reflect.TypeOf(&ast.CoP{}),
+					count: 1,
+				},
 			},
 		},
 		{
@@ -141,6 +149,10 @@ func TestVisit(t *testing.T) {
 					typ:   reflect.TypeOf(&ast.CoPPredicate{}),
 					count: 1,
 				},
+				{
+					typ:   reflect.TypeOf(&ast.CoP{}),
+					count: 1,
+				},
 			},
 		},
 		{
@@ -169,6 +181,10 @@ func TestVisit(t *testing.T) {
 					typ:   reflect.TypeOf(&ast.CoPArgument{}),
 					count: 1,
 				},
+				{
+					typ:   reflect.TypeOf(&ast.CoP{}),
+					count: 1,
+				},
 			},
 		},
 		{
@@ -187,6 +203,10 @@ func TestVisit(t *testing.T) {
 					typ:   reflect.TypeOf(&ast.CoPRelative{}),
 					count: 1,
 				},
+				{
+					typ:   reflect.TypeOf(&ast.CoP{}),
+					count: 1,
+				},
 			},
 		},
 		{
@@ -201,6 +221,10 @@ func TestVisit(t *testing.T) {
 					typ:   reflect.TypeOf(&ast.CoPAdverb{}),
 					count: 1,
 				},
+				{
+					typ:   reflect.TypeOf(&ast.CoP{}),
+					count: 1,
+				},
 			},
 		},
 		{
@@ -213,6 +237,10 @@ func TestVisit(t *testing.T) {
 				},
 				{
 					typ:   reflect.TypeOf(&ast.CoPPreposition{}),
+					count: 1,
+				},
+				{
+					typ:   reflect.TypeOf(&ast.CoP{}),
 					count: 1,
 				},
 			},
@@ -231,6 +259,10 @@ func TestVisit(t *testing.T) {
 				},
 				{
 					typ:   reflect.TypeOf(&ast.CoPContent{}),
+					count: 1,
+				},
+				{
+					typ:   reflect.TypeOf(&ast.CoP{}),
 					count: 1,
 				},
 			},

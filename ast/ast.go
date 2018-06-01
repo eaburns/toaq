@@ -679,8 +679,9 @@ type CoP struct {
 	Left, Right Node
 }
 
-func (n *CoP) Start() int { return start(n.TO0, n.Left) }
-func (n *CoP) End() int   { return n.Right.End() }
+func (n *CoP) Start() int         { return start(n.TO0, n.Left) }
+func (n *CoP) End() int           { return n.Right.End() }
+func (n CoP) ModNode(m *Mod) Node { return n.Mod(m) }
 
 func (n CoP) Mod(m *Mod) *CoP {
 	n.Right = n.Right.ModNode(m)

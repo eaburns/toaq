@@ -28,6 +28,10 @@ func (v FuncVisitor) Visit(n Node) Visitor {
 // Visit considers all single-word nodes to have a single child Word.
 // So, for example, if Visit recurs on a WordPredicate node,
 // the next call to visit will be for a node of type Word.
+//
+// Similarly, Visit considers all CoP-type nodes to have a single child CoP.
+// So, for example, if Visit recurs on a CoPArgument node,
+// the next call to visit will be for a node of type CoP.
 func Visit(n Node, v Visitor) {
 	if n == nil {
 		return
@@ -56,7 +60,7 @@ func Visit(n Node, v Visitor) {
 		Visit(n.DA, v)
 
 	case *CoPSentence:
-		visitCoP((*CoP)(n), v)
+		Visit((*CoP)(n), v)
 
 	case *Prenex:
 		Visit(n.Terms, v)
@@ -72,7 +76,7 @@ func Visit(n Node, v Visitor) {
 		Visit(n.NA, v)
 
 	case *CoPStatement:
-		visitCoP((*CoP)(n), v)
+		Visit((*CoP)(n), v)
 
 	case *PrefixedPredicate:
 		Visit(&n.MU, v)
@@ -105,7 +109,7 @@ func Visit(n Node, v Visitor) {
 		Visit(n.Statement, v)
 
 	case *CoPPredicate:
-		visitCoP((*CoP)(n), v)
+		Visit((*CoP)(n), v)
 
 	case *LinkedTerm:
 		Visit(&n.GO, v)
@@ -117,7 +121,7 @@ func Visit(n Node, v Visitor) {
 		}
 
 	case *TermSet:
-		visitCoP((*CoP)(n), v)
+		Visit((*CoP)(n), v)
 
 	case *PredicateArgument:
 		Visit(n.Focus, v)
@@ -126,7 +130,7 @@ func Visit(n Node, v Visitor) {
 		Visit(n.Relative, v)
 
 	case *CoPArgument:
-		visitCoP((*CoP)(n), v)
+		Visit((*CoP)(n), v)
 
 	case *PredicationRelative:
 		Visit(&n.Predication, v)
@@ -136,20 +140,20 @@ func Visit(n Node, v Visitor) {
 		Visit(n.Statement, v)
 
 	case *CoPRelative:
-		visitCoP((*CoP)(n), v)
+		Visit((*CoP)(n), v)
 
 	case *PredicateAdverb:
 		Visit(n.Predicate, v)
 
 	case *CoPAdverb:
-		visitCoP((*CoP)(n), v)
+		Visit((*CoP)(n), v)
 
 	case *PredicationPreposition:
 		Visit(n.Predicate, v)
 		Visit(n.Argument, v)
 
 	case *CoPPreposition:
-		visitCoP((*CoP)(n), v)
+		Visit((*CoP)(n), v)
 
 	case *PredicationContent:
 		Visit(&n.Predication, v)
@@ -159,7 +163,7 @@ func Visit(n Node, v Visitor) {
 		Visit(n.Statement, v)
 
 	case *CoPContent:
-		visitCoP((*CoP)(n), v)
+		Visit((*CoP)(n), v)
 
 	case *Parenthetical:
 		Visit(&n.KIO, v)
@@ -180,24 +184,23 @@ func Visit(n Node, v Visitor) {
 	case *Space:
 		Visit((*Word)(n), v)
 
+	case *CoP:
+		if n.TO0 == nil {
+			Visit(n.Left, v)
+			Visit(&n.RU, v)
+			Visit(n.Right, v)
+			return
+		}
+		Visit(n.TO0, v)
+		Visit(&n.RU, v)
+		Visit(n.Left, v)
+		Visit(n.TO1, v)
+		Visit(n.Right, v)
+
 	case *Word:
 		Visit(n.M, v)
 
 	default:
 		panic(fmt.Sprintf("unknown node type %T", n))
 	}
-}
-
-func visitCoP(n *CoP, v Visitor) {
-	if n.TO0 == nil {
-		Visit(n.Left, v)
-		Visit(&n.RU, v)
-		Visit(n.Right, v)
-		return
-	}
-	Visit(n.TO0, v)
-	Visit(&n.RU, v)
-	Visit(n.Left, v)
-	Visit(n.TO1, v)
-	Visit(n.Right, v)
 }

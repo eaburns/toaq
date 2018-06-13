@@ -11,6 +11,7 @@ import (
 	"github.com/eaburns/peggy/peg"
 	"github.com/eaburns/pretty"
 	"github.com/eaburns/toaq/ast"
+	"github.com/eaburns/toaq/logic"
 )
 
 func main() {
@@ -50,6 +51,14 @@ func main() {
 	fmt.Println(pretty.String(text))
 	fmt.Println(toString(text))
 	fmt.Println(ast.BracesString(text))
+	stmt := logic.Interpret(text)
+	if stmt == nil {
+		fmt.Println("fragment")
+		return
+	}
+	logic.NillOutAST(stmt)
+	fmt.Println(pretty.String(stmt))
+	fmt.Println(logic.String(stmt))
 }
 
 func toString(node ast.Node) string {

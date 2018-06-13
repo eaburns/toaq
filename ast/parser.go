@@ -1,10 +1,6 @@
-// Package parser is a parser for Toaq.
-package parser
+package ast
 
-import (
-	"github.com/eaburns/peggy/peg"
-	"github.com/eaburns/toaq/ast"
-)
+import "github.com/eaburns/peggy/peg"
 
 //go:generate peggy -o toaq.go toaq.peggy
 //go:generate peggy -pretty -o toaq.peg toaq.peggy
@@ -49,8 +45,8 @@ type Parser struct {
 	*_Parser
 }
 
-// New returns a new parser for a Toaq text.
-func New(text string) *Parser {
+// NewParser returns a new parser for a Toaq text.
+func NewParser(text string) *Parser {
 	return &Parser{_Parser: _NewParser(text)}
 }
 
@@ -69,7 +65,7 @@ func (p *Parser) Tree() (*peg.Node, Error) {
 
 // Word returns the word at the given byte-offset into the text
 // with any trailing whitespace attached and the number of bytes parsed.
-func (p *Parser) Word(offs int) (*ast.Word, int, Error) {
+func (p *Parser) Word(offs int) (*Word, int, Error) {
 	if err := p.parse(_wordAccepts, offs); err != nil {
 		return nil, 0, err
 	}
@@ -82,7 +78,7 @@ func (p *Parser) Word(offs int) (*ast.Word, int, Error) {
 }
 
 // Text returns the AST of the text.
-func (p *Parser) Text() (*ast.Text, Error) {
+func (p *Parser) Text() (*Text, Error) {
 	if err := p.parse(_full_textAccepts, 0); err != nil {
 		return nil, err
 	}

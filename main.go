@@ -11,7 +11,6 @@ import (
 	"github.com/eaburns/peggy/peg"
 	"github.com/eaburns/pretty"
 	"github.com/eaburns/toaq/ast"
-	"github.com/eaburns/toaq/parser"
 )
 
 func main() {
@@ -33,10 +32,10 @@ func main() {
 		os.Exit(1)
 	}
 	input := string(data)
-	p := parser.New(input)
+	p := ast.NewParser(input)
 	parseTree, err := p.Tree()
 	if err != nil {
-		failTree := err.(parser.Error).Tree()
+		failTree := err.(ast.Error).Tree()
 		peg.DedupFails(failTree)
 		peg.PrettyWrite(os.Stdout, failTree)
 		os.Stdout.WriteString("\n")

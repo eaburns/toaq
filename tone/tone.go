@@ -3,8 +3,6 @@ package tone
 import (
 	"strings"
 	"unicode/utf8"
-
-	"github.com/eaburns/toaq/ast"
 )
 
 var (
@@ -103,6 +101,8 @@ var (
 		},
 	}
 
+	toneNameRunes = `-/V?^\~`
+
 	tone = func() map[rune]rune {
 		m := make(map[rune]rune)
 		for t, rs := range Diacritic {
@@ -143,17 +143,9 @@ var (
 	None rune // 0
 )
 
-// ToASCII converts all words of an AST to their standard ASCII form,
+// ToASCII converts a single word string to standard ASCII form,
 // with a tone marker following each syllable.
-func ToASCII(node ast.Node) {
-	ast.Visit(node, ast.FuncVisitor(func(n ast.Node) {
-		if w, ok := n.(*ast.Word); ok {
-			w.T = toASCII(w.T)
-		}
-	}))
-}
-
-func toASCII(txt string) string {
+func ToASCII(txt string) string {
 	var s strings.Builder
 	var t rune
 	for _, r := range txt {
@@ -202,4 +194,14 @@ func WithTone(str string, t rune) string {
 		R = "ı"
 	}
 	return str[:i] + R + str[i+w:]
+}
+
+// Tone returns the tone of first syllable of the string.
+func Tone(s string) rune {
+	ascii := ToASCII(s)
+	i := strings.IndexAny(ascii, toneNameRunes)
+	if i < 0 {
+		return None
+	}
+	return rune(ascii[i])
 }

@@ -1,12 +1,10 @@
-package parser
+package ast
 
 import (
 	"strings"
 	"testing"
 
 	"github.com/eaburns/pretty"
-	. "github.com/eaburns/toaq/ast"
-	"github.com/eaburns/toaq/tone"
 )
 
 func TestDiscourse(t *testing.T) {
@@ -1014,7 +1012,7 @@ func (test parserTest) run(t *testing.T) {
 }
 
 func (test parserTest) runParseTest(t *testing.T) {
-	text, err := New(test.text).Text()
+	text, err := NewParser(test.text).Text()
 	if err != nil {
 		t.Errorf("%q, got error %v, want %q", test.text, err, test.want)
 		return
@@ -1028,7 +1026,7 @@ func (test parserTest) runParseTest(t *testing.T) {
 func (test parserTest) runErrTest(t *testing.T) {
 	want := strings.IndexRune(test.text, '☹')
 	input := strings.Replace(test.text, "☹", "", 1)
-	_, err := New(test.text).Text()
+	_, err := NewParser(test.text).Text()
 	if err == nil {
 		t.Errorf("%q, got error %v, want error at %d", input, err, want)
 		return
@@ -1046,7 +1044,7 @@ func normalize(node Node) {
 	Visit(node, FuncVisitor(func(n Node) {
 		if w, ok := n.(*Word); ok {
 			w.S, w.E = 0, 0
-			tone.ToASCII(w)
+			ToASCII(w)
 			if s, ok := w.M.(*Space); ok {
 				w.M = s.M
 			}

@@ -1,22 +1,21 @@
 {
-	package parser
+	package ast
 	import (
 		"github.com/eaburns/peggy/peg"
-		"github.com/eaburns/toaq/ast"
 		"github.com/eaburns/toaq/tone"
 	)
 }
 
-full_text <- t:text EOF { return ast.Text(t) }
-text <- s:_ d:discourse? EOF? { return ast.Text(text(s, d)) }
+full_text <- t:text EOF { return Text(t) }
+text <- s:_ d:discourse? EOF? { return Text(text(s, d)) }
 
 #
 # Discourse
 #
 
 discourse <- (
-		x0:sentence s0:_ { return ast.Node(x0.ModSentence(s0)) } /
-		x1:fragment s1:_ { return ast.Node(x1.ModFragment(s1)) }
+		x0:sentence s0:_ { return Node(x0.modSentence(s0)) } /
+		x1:fragment s1:_ { return Node(x1.modFragment(s1)) }
 	)+
 
 #
@@ -24,40 +23,40 @@ discourse <- (
 #
 
 fragment <- f:(
-	x0:afterthought_cop<relative_clause_1, relative_clause_1> { return ast.Fragment((*ast.CoPRelative)(x0)) } /
-	x1:relative_clause  { return ast.Fragment(x1) } /
-	x2:prenex  { return ast.Fragment(x2) } /
-	x3:terms { return ast.Fragment(x3) }
-	) s:_ { return ast.Fragment(f.ModFragment(s)) }
+	x0:afterthought_cop<relative_clause_1, relative_clause_1> { return Fragment((*CoPRelative)(x0)) } /
+	x1:relative_clause  { return Fragment(x1) } /
+	x2:prenex  { return Fragment(x2) } /
+	x3:terms { return Fragment(x3) }
+	) s:_ { return Fragment(f.modFragment(s)) }
 
 sentence <-
-	x:afterthought_cop<sentence_1, sentence> { return ast.Sentence((*ast.CoPSentence)(x)) } /
+	x:afterthought_cop<sentence_1, sentence> { return Sentence((*CoPSentence)(x)) } /
 	sentence_1
 sentence_1 <-
 	sentence_2 /
-	x:forethought_cop<sentence, sentence> { return ast.Sentence((*ast.CoPSentence)(x)) }
+	x:forethought_cop<sentence, sentence> { return Sentence((*CoPSentence)(x)) }
 sentence_2 <-
-	je:sentence_prefix_spaces? se:sentence_3 { se.JE = je; return ast.Sentence(se) }
+	je:sentence_prefix_spaces? se:sentence_3 { se.JE = je; return Sentence(se) }
 sentence_prefix_spaces <-
-	je:sentence_prefix s:_ { return ast.Word(*je.Mod(s)) }
+	je:sentence_prefix s:_ { return Word(*je.mod(s)) }
 sentence_3 <-
-	st:statement s:_ da:illocutionary? { return &ast.StatementSentence{Statement: st.ModStatement(s), DA: da} }
+	st:statement s:_ da:illocutionary? { return &StatementSentence{Statement: st.modStatement(s), DA: da} }
 
-statement <- p:prenex_spaces? s:statement_1 { return ast.Statement(prenexStmt(p, s)) }
+statement <- p:prenex_spaces? s:statement_1 { return Statement(prenexStmt(p, s)) }
 statement_1 <-
-	n:afterthought_cop<statement_2, statement> { return ast.Statement((*ast.CoPStatement)(n)) } /
+	n:afterthought_cop<statement_2, statement> { return Statement((*CoPStatement)(n)) } /
 	statement_2
 statement_2 <-
 	statement_3 /
-	n:forethought_cop<statement, statement> { return ast.Statement((*ast.CoPStatement)(n)) }
+	n:forethought_cop<statement, statement> { return Statement((*CoPStatement)(n)) }
 statement_3 <-
-	p:predication s:_ na:end_statement? { return ast.Statement(endPredication(p, s, na)) }
+	p:predication s:_ na:end_statement? { return Statement(endPredication(p, s, na)) }
 predication <-
-	p:predicate s:_ ts:terms? { return ast.Predication(predication(p, s, ts)) }
+	p:predicate s:_ ts:terms? { return Predication(predication(p, s, ts)) }
 prenex_spaces <-
-	 p:prenex s:_ { return ast.Prenex(*p.Mod(s)) }
+	 p:prenex s:_ { return Prenex(*p.mod(s)) }
 prenex <-
-	ts:terms s:_ bi:end_prenex { return (*ast.Prenex)(prenex(ts, s, bi)) }
+	ts:terms s:_ bi:end_prenex { return (*Prenex)(prenex(ts, s, bi)) }
 
 #
 # Predicates
@@ -65,7 +64,7 @@ prenex <-
 
 predicate <- serial_predicate
 predicate_1 <-
-	x:afterthought_cop<predicate_2, predicate_1> { return ast.Predicate((*ast.CoPPredicate)(x)) } /
+	x:afterthought_cop<predicate_2, predicate_1> { return Predicate((*CoPPredicate)(x)) } /
 	predicate_2
 predicate_2 <-
 	forethought_cop_pred<predicate> /
@@ -76,14 +75,14 @@ predicate_2 <-
 	prefixed_predicate /
 	predicate_3
 prefixed_predicate <-
-	x:prefix s:_ p:predicate_2 { return ast.Predicate(prefixed(x, s, p)) }
+	x:prefix s:_ p:predicate_2 { return Predicate(prefixed(x, s, p)) }
 predicate_3 <-
-	p:predicate_word<verb_syllable> s:_ { return ast.Predicate(p.ModPredicate(s)) }
+	p:predicate_word<verb_syllable> s:_ { return Predicate(p.modPredicate(s)) }
 serial_predicate <-
 	serial<predicate_1> /
 	predicate_1
 serial<left> <-
-	l:left s:_ r:serial_predicate { return ast.Predicate(serial(l, s, r)) }
+	l:left s:_ r:serial_predicate { return Predicate(serial(l, s, r)) }
 
 #
 # Terms
@@ -91,57 +90,57 @@ serial<left> <-
 
 terms <-
 	terms_2 /
-	t:term { return ast.Terms{t} }
+	t:term { return Terms{t} }
 terms_2 <-
-	t:term s:_ ts:terms { return ast.Terms(ts.Prepend(t.ModTerm(s))) }
+	t:term s:_ ts:terms { return Terms(ts.Prepend(t.modTerm(s))) }
 term <-
-	x0:linked_argument { return ast.Term(x0) } /
-	x1:adverb { return ast.Term(x1) } /
-	x2:termset { return ast.Term(x2) } /
-	x3:prepositional_phrase { return ast.Term(x3) }
+	x0:linked_argument { return Term(x0) } /
+	x1:adverb { return Term(x1) } /
+	x2:termset { return Term(x2) } /
+	x3:prepositional_phrase { return Term(x3) }
 linked_argument <-
-	g:linking_word_spaces? a:argument { return ast.Term(linkedTerm(g, a)) }
+	g:linking_word_spaces? a:argument { return Term(linkedTerm(g, a)) }
 linking_word_spaces <-
-	w:linking_word s:_ { return (*ast.Word)(w.Mod(s)) }
+	w:linking_word s:_ { return (*Word)(w.mod(s)) }
 termset <-
-	x0:forethought_cop<terms_V, terms_V> { return (*ast.TermSet)(x0) } /
-	x1:forethought_cop<terms_IV, terms_IV> { return (*ast.TermSet)(x1) } /
-	x2:forethought_cop<terms_III, terms_III> { return (*ast.TermSet)(x2) } /
-	x3:forethought_cop<terms_II, terms_II> { return (*ast.TermSet)(x3) } /
-	x4:forethought_cop<terms_V, terms_V> { return (*ast.TermSet)(x4) }
+	x0:forethought_cop<terms_V, terms_V> { return (*TermSet)(x0) } /
+	x1:forethought_cop<terms_IV, terms_IV> { return (*TermSet)(x1) } /
+	x2:forethought_cop<terms_III, terms_III> { return (*TermSet)(x2) } /
+	x3:forethought_cop<terms_II, terms_II> { return (*TermSet)(x3) } /
+	x4:forethought_cop<terms_V, terms_V> { return (*TermSet)(x4) }
 terms_II <-
-	l:term s:_ r:term { return ast.Terms{l.ModTerm(s), r} }
+	l:term s:_ r:term { return Terms{l.modTerm(s), r} }
 terms_III <-
-	l:term s:_ r:terms_II { return ast.Terms(r.Prepend(l.ModTerm(s))) }
+	l:term s:_ r:terms_II { return Terms(r.Prepend(l.modTerm(s))) }
 terms_IV <-
-	l:term s:_ r:terms_III { return ast.Terms(r.Prepend(l.ModTerm(s))) }
+	l:term s:_ r:terms_III { return Terms(r.Prepend(l.modTerm(s))) }
 terms_V <-
-	l:term s:_ r:terms_IV { return ast.Terms(r.Prepend(l.ModTerm(s))) }
+	l:term s:_ r:terms_IV { return Terms(r.Prepend(l.modTerm(s))) }
 
 #
 # Arguments
 #
 
 argument <-
-	x:afterthought_cop<arg_1, argument> { return ast.Argument((*ast.CoPArgument)(x)) } /
+	x:afterthought_cop<arg_1, argument> { return Argument((*CoPArgument)(x)) } /
 	arg_1
 arg_1 <-
-	x:forethought_cop<argument, argument> { return ast.Argument((*ast.CoPArgument)(x)) } /
+	x:forethought_cop<argument, argument> { return Argument((*CoPArgument)(x)) } /
 	arg_2
 arg_2 <-
-	ku:focus_spaces? a:arg_3 { return ast.Argument(focusedArgument(ku, a)) }
+	ku:focus_spaces? a:arg_3 { return Argument(focusedArgument(ku, a)) }
 focus_spaces <-
-	ku:focus s:_ { return ast.Word(*ku.Mod(s)) }
+	ku:focus s:_ { return Word(*ku.mod(s)) }
 arg_3 <-
-	q:quantifier_spaces? a:arg_4 { return ast.PredicateArgument(quantifiedArgument(q, a)) }
+	q:quantifier_spaces? a:arg_4 { return PredicateArgument(quantifiedArgument(q, a)) }
 quantifier_spaces <-
-	q:quantifier s:_ { return ast.Word(*q.Mod(s)) }
+	q:quantifier s:_ { return Word(*q.mod(s)) }
 arg_4 <-
-	a:arg_5 s:_ rc:relative_clause? { return ast.PredicateArgument(argumentRelative(*a, s, rc)) }
+	a:arg_5 s:_ rc:relative_clause? { return PredicateArgument(argumentRelative(*a, s, rc)) }
 arg_5 <-
-	p:( serial<arg_6> / arg_6 ) { return &ast.PredicateArgument{Predicate: p} }
+	p:( serial<arg_6> / arg_6 ) { return &PredicateArgument{Predicate: p} }
 arg_6 <-
-	x0:content_clause { return ast.Predicate(x0) } /
+	x0:content_clause { return Predicate(x0) } /
 	afterthought_cop_pred<arg_7> /
 	# NOTE: this differs from the official grammar, which uses argument instead of arg_5.
 	forethought_cop_pred<arg_5> /
@@ -158,19 +157,19 @@ arg_7 <- predicate_word<arg_syllable>
 
 relative_clause <-
 	# BUG? should the right branch be relative_clause instead of relative_clause_1?
-	x0:afterthought_cop<relative_clause_1, relative_clause_1> { return ast.Relative((*ast.CoPRelative)(x0)) } /
-	x1:LU_phrase<relative_syllable> { return ast.Relative((*ast.LURelative)(x1)) } /
+	x0:afterthought_cop<relative_clause_1, relative_clause_1> { return Relative((*CoPRelative)(x0)) } /
+	x1:LU_phrase<relative_syllable> { return Relative((*LURelative)(x1)) } /
 	relative_clause_1
 relative_clause_1 <-
-	x:forethought_cop<relative_clause, relative_clause> { return ast.Relative((*ast.CoPRelative)(x)) } /
+	x:forethought_cop<relative_clause, relative_clause> { return Relative((*CoPRelative)(x)) } /
 	relative_clause_2
 relative_clause_2 <-
-	x0:afterthought_cop<relative_clause_3, statement> { return ast.Relative((*ast.CoPRelative)(x0)) } /
-	x1:relative_clause_3 { return ast.Relative(x1) }
+	x0:afterthought_cop<relative_clause_3, statement> { return Relative((*CoPRelative)(x0)) } /
+	x1:relative_clause_3 { return Relative(x1) }
 relative_clause_3 <-
-	p:relative_predication s:_ na:end_statement? { return &ast.PredicationRelative{Predication: *endPredication(p, s, na)} }
+	p:relative_predication s:_ na:end_statement? { return &PredicationRelative{Predication: *endPredication(p, s, na)} }
 relative_predication <-
-	p:relative_predicate s:_ ts:terms? { return ast.Predication(predication(p, s, ts))  }
+	p:relative_predicate s:_ ts:terms? { return Predication(predication(p, s, ts))  }
 
 relative_predicate <-
 	serial<relative_predicate_1> / relative_predicate_1
@@ -189,13 +188,13 @@ relative_predicate_2 <-
 #
 
 adverb <-
-	x:afterthought_cop<adverb_1, adverb> { return ast.Adverb((*ast.CoPAdverb)(x)) } /
+	x:afterthought_cop<adverb_1, adverb> { return Adverb((*CoPAdverb)(x)) } /
 	adverb_1
 adverb_1 <-
-	x:forethought_cop<adverb, adverb> { return ast.Adverb((*ast.CoPAdverb)(x)) } /
+	x:forethought_cop<adverb, adverb> { return Adverb((*CoPAdverb)(x)) } /
 	adverb_2
 adverb_2 <-
-	p:( serial<adverb_3> / adverb_3 ) { return ast.Adverb(&ast.PredicateAdverb{Predicate: p}) }
+	p:( serial<adverb_3> / adverb_3 ) { return Adverb(&PredicateAdverb{Predicate: p}) }
 adverb_3 <-
 	afterthought_cop_pred<adverb_4> /
 	# NOTE: this differs from the original grammar, which uses adverb instead of adverb_3.
@@ -212,19 +211,19 @@ adverb_4 <- predicate_word<adverb_syllable>
 #
 
 prepositional_phrase <-
-	x:afterthought_cop<prepositional_phrase_1, prepositional_phrase_1> { return ast.Preposition((*ast.CoPPreposition)(x)) } /
+	x:afterthought_cop<prepositional_phrase_1, prepositional_phrase_1> { return Preposition((*CoPPreposition)(x)) } /
 	prepositional_phrase_1
 prepositional_phrase_1 <-
-	x:forethought_cop<prepositional_phrase, prepositional_phrase> { return ast.Preposition((*ast.CoPPreposition)(x)) } /
+	x:forethought_cop<prepositional_phrase, prepositional_phrase> { return Preposition((*CoPPreposition)(x)) } /
 	prepositional_phrase_2
 prepositional_phrase_2 <-
-	p:preposition s:_ a:argument { return ast.Preposition(prepPhrase(p, s, a)) }
+	p:preposition s:_ a:argument { return Preposition(prepPhrase(p, s, a)) }
 
 preposition <-
-	x:afterthought_cop<preposition_1, preposition> { return ast.Predicate((*ast.CoPPredicate)(x)) } /
+	x:afterthought_cop<preposition_1, preposition> { return Predicate((*CoPPredicate)(x)) } /
 	preposition_1
 preposition_1 <-
-	x:forethought_cop<preposition, preposition> { return ast.Predicate((*ast.CoPPredicate)(x)) } /
+	x:forethought_cop<preposition, preposition> { return Predicate((*CoPPredicate)(x)) } /
 	preposition_2
 preposition_2 <-
 	serial<preposition_3> / preposition_3
@@ -243,15 +242,15 @@ preposition_4 <- predicate_word<preposition_syllable>
 #
 
 content_clause <-
-	x:afterthought_cop<content_clause_1, statement> { return ast.Content((*ast.CoPContent)(x)) } /
+	x:afterthought_cop<content_clause_1, statement> { return Content((*CoPContent)(x)) } /
 	content_clause_1
 content_clause_1 <-
-	x0:content_statement { return ast.Content(x0) } /
-	x1:LU_phrase<content_syllable> { return ast.Content((*ast.LUContent)(x1)) }
+	x0:content_statement { return Content(x0) } /
+	x1:LU_phrase<content_syllable> { return Content((*LUContent)(x1)) }
 content_statement <-
-	p:content_predication s:_ na:end_statement? { return &ast.PredicationContent{Predication: *endPredication(p, s, na)} }
+	p:content_predication s:_ na:end_statement? { return &PredicationContent{Predication: *endPredication(p, s, na)} }
 content_predication <-
-	p:content_predicate s:_ ts:terms? { return ast.Predication(predication(p, s, ts)) }
+	p:content_predicate s:_ ts:terms? { return Predication(predication(p, s, ts)) }
 
 content_predicate <-
 	serial<content_predicate_1> / content_predicate_1
@@ -270,61 +269,61 @@ content_predicate_2 <-
 #
 
 afterthought_cop_pred<left> <-
-	x:afterthought_cop<left, predicate> { return ast.Predicate((*ast.CoPPredicate)(x)) }
+	x:afterthought_cop<left, predicate> { return Predicate((*CoPPredicate)(x)) }
 forethought_cop_pred<left> <-
-	x:forethought_cop<left, predicate> { return ast.Predicate((*ast.CoPPredicate)(x)) }
+	x:forethought_cop<left, predicate> { return Predicate((*CoPPredicate)(x)) }
 
 afterthought_cop<left, right> <-
-	l:left s:_ bar:cop_bar<right> { return (*ast.CoP)(copLeft(l, s, bar)) }
+	l:left s:_ bar:cop_bar<right> { return (*CoP)(copLeft(l, s, bar)) }
 cop_bar<right> <-
-	ru:connective s:_ r:right { return ast.CoP(copRight(ru, s, r)) }
+	ru:connective s:_ r:right { return CoP(copRight(ru, s, r)) }
 
 forethought_cop<left, right> <-
-	con:forethought_connective s:_ cop:forethought_cop_1<left, right> { return (*ast.CoP)(foreCoP(con, s, cop)) }
+	con:forethought_connective s:_ cop:forethought_cop_1<left, right> { return (*CoP)(foreCoP(con, s, cop)) }
 forethought_cop_1<left, right> <-
-	l:left s:_ bar:forethought_cop_bar<right> { return ast.CoP(foreCoPLeft(l, s, bar)) }
+	l:left s:_ bar:forethought_cop_bar<right> { return CoP(foreCoPLeft(l, s, bar)) }
 forethought_cop_bar<right> <-
-	to:forethought_marker s:_ r:right { return ast.CoP(foreCoPRight(to, s, r)) }
+	to:forethought_marker s:_ r:right { return CoP(foreCoPRight(to, s, r)) }
 forethought_connective <-
-	to:forethought_marker s:_ ru:connective { return ast.CoP(connector(to, s, ru)) }
+	to:forethought_marker s:_ ru:connective { return CoP(connector(to, s, ru)) }
 
 #
 # LU, MI, PO, and MO phrases
 #
 
 LU_predicate<syllable> <-
-	x:LU_phrase<syllable> { return ast.Predicate((*ast.LUPredicate)(x)) }
+	x:LU_phrase<syllable> { return Predicate((*LUPredicate)(x)) }
 LU_phrase<syllable> <-
-	lu:LU_word<syllable> s:_ st:statement { return &ast.LUPhrase{LU: *lu.Mod(s), Statement: st} }
+	lu:LU_word<syllable> s:_ st:statement { return &LUPhrase{LU: *lu.mod(s), Statement: st} }
 LU_word<syllable> <-
-	&LU w:syllable { return &ast.Word{S: start, E: end, T: w} }
+	&LU w:syllable { return &Word{S: start, E: end, T: w} }
 	
 
 MI_phrase<syllable> <-
-	mi:MI_phrase_1<syllable> s:_ ga:end_predicatizer? { return ast.Predicate(miEnd(mi, s, ga)) }
+	mi:MI_phrase_1<syllable> s:_ ga:end_predicatizer? { return Predicate(miEnd(mi, s, ga)) }
 MI_phrase_1<syllable> <-
-	mi:MI_word<syllable> s:_ p:MI_complement { return ast.MIPredicate{MI: *mi.Mod(s), Phrase: p} }
+	mi:MI_word<syllable> s:_ p:MI_complement { return MIPredicate{MI: *mi.mod(s), Phrase: p} }
 MI_word<syllable> <-
-	&MI w:syllable { return &ast.Word{S: start, E: end, T: w} }
+	&MI w:syllable { return &Word{S: start, E: end, T: w} }
 MI_complement <-
-	x0:predicate { return ast.Phrase(x0) } /
-	x1:argument { return ast.Phrase(x1) } /
-	x2:adverb { return ast.Phrase(x2) }/
-	x3:prepositional_phrase { return ast.Phrase(x3) }
+	x0:predicate { return Phrase(x0) } /
+	x1:argument { return Phrase(x1) } /
+	x2:adverb { return Phrase(x2) }/
+	x3:prepositional_phrase { return Phrase(x3) }
 
 PO_phrase<syllable> <-
-	po:PO_phrase_1<syllable> s:_ ga:end_predicatizer? { return ast.Predicate(poEnd(po, s, ga)) }
+	po:PO_phrase_1<syllable> s:_ ga:end_predicatizer? { return Predicate(poEnd(po, s, ga)) }
 PO_phrase_1<syllable> <-
-	po:PO_word<syllable> s:_ a:argument { return ast.POPredicate{PO: *po.Mod(s), Argument: a} }
+	po:PO_word<syllable> s:_ a:argument { return POPredicate{PO: *po.mod(s), Argument: a} }
 PO_word<syllable> <-
-	&PO w:syllable { return &ast.Word{S: start, E: end, T: w} }
+	&PO w:syllable { return &Word{S: start, E: end, T: w} }
 
 MO_phrase<syllable> <-
-	mo:MO_phrase_1<syllable> s:_ teo:end_quote { return ast.Predicate(moEnd(mo, s, teo)) }
+	mo:MO_phrase_1<syllable> s:_ teo:end_quote { return Predicate(moEnd(mo, s, teo)) }
 MO_phrase_1<syllable> <-
-	mo:MO_word<syllable> s:_ d:discourse { return ast.MOPredicate{MO: *mo.Mod(s), Discourse: d} }
+	mo:MO_word<syllable> s:_ d:discourse { return MOPredicate{MO: *mo.mod(s), Discourse: d} }
 MO_word<syllable> <-
-	&MO w:syllable { return &ast.Word{S: start, E: end, T: w} }
+	&MO w:syllable { return &Word{S: start, E: end, T: w} }
 
 #
 # Space and free modifiers
@@ -332,22 +331,22 @@ MO_word<syllable> <-
 
 _ <- space_or_freemod?
 space_or_freemod <-
-	m:( freemod / space_word ) ms:space_or_freemod? { return ast.Mod(m.Mod(ms)) }
+	m:( freemod / space_word ) ms:space_or_freemod? { return Mod(m.mod(ms)) }
 space_word <-
-	s:space+ { return ast.Mod(&ast.Space{S: start, E: end, T: s}) }
+	s:space+ { return Mod(&Space{S: start, E: end, T: s}) }
 freemod <-
-	x0:interjection { return ast.Mod(x0) } /
-	x1:parenthetical { return ast.Mod(x1) }/
-	x2:incidental { return ast.Mod(x2) } /
-	x3:vocative { return ast.Mod(x3) }
+	x0:interjection { return Mod(x0) } /
+	x1:parenthetical { return Mod(x1) }/
+	x2:incidental { return Mod(x2) } /
+	x3:vocative { return Mod(x3) }
 parenthetical <-
-	p:parenthetical_1 s:_ ki:end_parenthetical { return (*ast.Parenthetical)(endParen(p, s, ki)) }
+	p:parenthetical_1 s:_ ki:end_parenthetical { return (*Parenthetical)(endParen(p, s, ki)) }
 parenthetical_1 <-
-	kio:start_parenthetical s:_ d:discourse { return ast.Parenthetical{KIO: *kio.Mod(s), Discourse: d} }
+	kio:start_parenthetical s:_ d:discourse { return Parenthetical{KIO: *kio.mod(s), Discourse: d} }
 incidental <-
-	ju:start_incidental s:_ st:statement { return &ast.Incidental{JU: *ju.Mod(s), Statement: st} }
+	ju:start_incidental s:_ st:statement { return &Incidental{JU: *ju.mod(s), Statement: st} }
 vocative <-
-	hu:vocative_marker s:_ a:argument { return &ast.Vocative{HU: *hu.Mod(s), Argument: a} }
+	hu:vocative_marker s:_ a:argument { return &Vocative{HU: *hu.mod(s), Argument: a} }
 
 #
 # Morphology
@@ -357,11 +356,11 @@ word <- w:(
 		non_function_word /
 		toned_function_word /
 		neutral_function_word
-	) s:space_word? { return (*ast.Word)(ast.Word{S: start, E: end, T: w}.Mod(s)) }
+	) s:space_word? { return (*Word)(Word{S: start, E: end, T: w}.mod(s)) }
 predicate_word<syllable> <- w:(
 		syllable compound_syllable+ /
 		!function_word syllable
-	){ return ast.Predicate(&ast.WordPredicate{S: start, E: end, T: w}) }
+	){ return Predicate(&WordPredicate{S: start, E: end, T: w}) }
 non_function_word <-
 	initial_syllable compound_syllable+ / !function_word initial_syllable
 neutral_function_word <-
@@ -376,23 +375,23 @@ initial_syllable <-
 	preposition_syllable /
 	adverb_syllable
 
-prefix <- &MU w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-focus <- &KU w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-end_quote <- &TEO w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-end_predicatizer <- &GA w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-end_statement <- &NA w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-sentence_prefix <- &KEO w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-end_prenex <- &BI w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-start_incidental <- &JU w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-start_parenthetical <- &KIO w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-end_parenthetical <- &KI w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-vocative_marker <- &HU w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-linking_word <- &GO w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-connective <- &RA w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-illocutionary <- &DA w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-quantifier <- &TU w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
-interjection <- &HA w:neutral_syllable { return &ast.Interjection{S: start, E: end, T: w} }
-forethought_marker <- &TO w:neutral_syllable { return ast.Word{S: start, E: end, T: w} }
+prefix <- &MU w:neutral_syllable { return Word{S: start, E: end, T: w} }
+focus <- &KU w:neutral_syllable { return Word{S: start, E: end, T: w} }
+end_quote <- &TEO w:neutral_syllable { return Word{S: start, E: end, T: w} }
+end_predicatizer <- &GA w:neutral_syllable { return Word{S: start, E: end, T: w} }
+end_statement <- &NA w:neutral_syllable { return Word{S: start, E: end, T: w} }
+sentence_prefix <- &KEO w:neutral_syllable { return Word{S: start, E: end, T: w} }
+end_prenex <- &BI w:neutral_syllable { return Word{S: start, E: end, T: w} }
+start_incidental <- &JU w:neutral_syllable { return Word{S: start, E: end, T: w} }
+start_parenthetical <- &KIO w:neutral_syllable { return Word{S: start, E: end, T: w} }
+end_parenthetical <- &KI w:neutral_syllable { return Word{S: start, E: end, T: w} }
+vocative_marker <- &HU w:neutral_syllable { return Word{S: start, E: end, T: w} }
+linking_word <- &GO w:neutral_syllable { return Word{S: start, E: end, T: w} }
+connective <- &RA w:neutral_syllable { return Word{S: start, E: end, T: w} }
+illocutionary <- &DA w:neutral_syllable { return Word{S: start, E: end, T: w} }
+quantifier <- &TU w:neutral_syllable { return Word{S: start, E: end, T: w} }
+interjection <- &HA w:neutral_syllable { return &Interjection{S: start, E: end, T: w} }
+forethought_marker <- &TO w:neutral_syllable { return Word{S: start, E: end, T: w} }
 
 # The following function word rules match any tone.
 # The intended use is as the subexpression of a ! or &,

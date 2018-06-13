@@ -6,7 +6,6 @@ import (
 
 	"github.com/eaburns/pretty"
 	"github.com/eaburns/toaq/ast"
-	"github.com/eaburns/toaq/parser"
 )
 
 func TestVisit(t *testing.T) {
@@ -305,7 +304,7 @@ func TestVisit(t *testing.T) {
 	for _, test := range tests {
 		test := test
 		t.Run(test.name, func(t *testing.T) {
-			txt, err := parser.New(test.text).Text()
+			txt, err := ast.NewParser(test.text).Text()
 			if err != nil {
 				t.Fatalf("parse(%q)=%v, want nil", test.text, err)
 			}

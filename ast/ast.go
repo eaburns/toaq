@@ -1,5 +1,7 @@
-// Package ast contains an abstract syntax tree for Toaq.
+// Package ast contains an abstract syntax tree and Toaq parser.
 package ast
+
+import "github.com/eaburns/toaq/tone"
 
 // A note on node naming:
 // Besides the Node interface, all nodes belong to a more specific interface.
@@ -19,7 +21,7 @@ type Node interface {
 	// End returns the exclusive byte-offset into the text of the end of the node.
 	End() int
 
-	ModNode(*Mod) Node
+	modNode(*Mod) Node
 }
 
 //
@@ -34,7 +36,7 @@ type Text struct {
 
 func (n *Text) Start() int         { return n.Discourse.Start() }
 func (n *Text) End() int           { return n.Discourse.End() }
-func (n Text) ModNode(m *Mod) Node { n.Discourse = *n.Discourse.Mod(m); return &n }
+func (n Text) modNode(m *Mod) Node { n.Discourse = *n.Discourse.mod(m); return &n }
 
 // A Discourse is a non-empty sequence of sentences and/or fragments.
 type Discourse []Node
@@ -42,16 +44,16 @@ type Discourse []Node
 func (n *Discourse) Start() int { return (*n)[0].Start() }
 func (n *Discourse) End() int   { return (*n)[len(*n)-1].End() }
 
-func (n Discourse) ModNode(m *Mod) Node { return n.Mod(m) }
+func (n Discourse) modNode(m *Mod) Node { return n.mod(m) }
 
-func (n Discourse) Mod(m *Mod) *Discourse {
+func (n Discourse) mod(m *Mod) *Discourse {
 	l := len(n)
 	c := make(Discourse, l)
 	copy(c, n)
 	if s, ok := c[l-1].(Sentence); ok {
-		c[l-1] = s.ModSentence(m)
+		c[l-1] = s.modSentence(m)
 	} else {
-		c[l-1] = c[l-1].(Fragment).ModFragment(m)
+		c[l-1] = c[l-1].(Fragment).modFragment(m)
 	}
 	return &c
 }
@@ -64,7 +66,7 @@ func (n Discourse) Mod(m *Mod) *Discourse {
 type Sentence interface {
 	Node
 
-	ModSentence(*Mod) Sentence
+	modSentence(*Mod) Sentence
 }
 
 // A StatementSentence is a statement that is a sentence.
@@ -76,13 +78,13 @@ type StatementSentence struct {
 
 func (n *StatementSentence) Start() int         { return start(n.JE, n.Statement) }
 func (n *StatementSentence) End() int           { return end(n.DA, n.Statement) }
-func (n StatementSentence) ModNode(m *Mod) Node { return n.ModSentence(m) }
+func (n StatementSentence) modNode(m *Mod) Node { return n.modSentence(m) }
 
-func (n StatementSentence) ModSentence(m *Mod) Sentence {
+func (n StatementSentence) modSentence(m *Mod) Sentence {
 	if n.DA != nil {
-		n.DA = n.DA.Mod(m)
+		n.DA = n.DA.mod(m)
 	} else {
-		n.Statement = n.Statement.ModStatement(m)
+		n.Statement = n.Statement.modStatement(m)
 	}
 	return &n
 }
@@ -92,9 +94,9 @@ type CoPSentence CoP
 
 func (n *CoPSentence) Start() int                 { return (*CoP)(n).Start() }
 func (n *CoPSentence) End() int                   { return (*CoP)(n).End() }
-func (n CoPSentence) ModNode(m *Mod) Node         { return n.Mod(m) }
-func (n CoPSentence) ModSentence(m *Mod) Sentence { return n.Mod(m) }
-func (n CoPSentence) Mod(m *Mod) *CoPSentence     { return (*CoPSentence)(CoP(n).Mod(m)) }
+func (n CoPSentence) modNode(m *Mod) Node         { return n.mod(m) }
+func (n CoPSentence) modSentence(m *Mod) Sentence { return n.mod(m) }
+func (n CoPSentence) mod(m *Mod) *CoPSentence     { return (*CoPSentence)(CoP(n).mod(m)) }
 
 //
 // Fragments
@@ -103,7 +105,7 @@ func (n CoPSentence) Mod(m *Mod) *CoPSentence     { return (*CoPSentence)(CoP(n)
 // Fragment is implemented by all fragment nodes.
 type Fragment interface {
 	Node
-	ModFragment(*Mod) Fragment
+	modFragment(*Mod) Fragment
 }
 
 // A Prenex is a prenex.
@@ -114,11 +116,11 @@ type Prenex struct {
 
 func (n *Prenex) Start() int                 { return n.Terms.Start() }
 func (n *Prenex) End() int                   { return n.BI.End() }
-func (n Prenex) ModNode(m *Mod) Node         { return n.Mod(m) }
-func (n Prenex) ModFragment(m *Mod) Fragment { return n.Mod(m) }
+func (n Prenex) modNode(m *Mod) Node         { return n.mod(m) }
+func (n Prenex) modFragment(m *Mod) Fragment { return n.mod(m) }
 
-func (n Prenex) Mod(m *Mod) *Prenex {
-	n.BI = *n.BI.Mod(m)
+func (n Prenex) mod(m *Mod) *Prenex {
+	n.BI = *n.BI.mod(m)
 	return &n
 }
 
@@ -129,7 +131,7 @@ func (n Prenex) Mod(m *Mod) *Prenex {
 // Statement is implemented by all statement nodes.
 type Statement interface {
 	Node
-	ModStatement(*Mod) Statement
+	modStatement(*Mod) Statement
 }
 
 // A PrenexStatement is a statement with a prenex.
@@ -140,11 +142,11 @@ type PrenexStatement struct {
 
 func (n *PrenexStatement) Start() int                   { return n.Prenex.Start() }
 func (n *PrenexStatement) End() int                     { return n.Statement.End() }
-func (n PrenexStatement) ModNode(m *Mod) Node           { return n.Mod(m) }
-func (n PrenexStatement) ModStatement(m *Mod) Statement { return n.Mod(m) }
+func (n PrenexStatement) modNode(m *Mod) Node           { return n.mod(m) }
+func (n PrenexStatement) modStatement(m *Mod) Statement { return n.mod(m) }
 
-func (n PrenexStatement) Mod(m *Mod) *PrenexStatement {
-	n.Statement = n.Statement.ModStatement(m)
+func (n PrenexStatement) mod(m *Mod) *PrenexStatement {
+	n.Statement = n.Statement.modStatement(m)
 	return &n
 }
 
@@ -157,16 +159,16 @@ type Predication struct {
 
 func (n *Predication) Start() int                   { return n.Predicate.Start() }
 func (n *Predication) End() int                     { return end(n.NA, n.Terms) }
-func (n Predication) ModNode(m *Mod) Node           { return n.Mod(m) }
-func (n Predication) ModStatement(m *Mod) Statement { return n.Mod(m) }
+func (n Predication) modNode(m *Mod) Node           { return n.mod(m) }
+func (n Predication) modStatement(m *Mod) Statement { return n.mod(m) }
 
-func (n Predication) Mod(m *Mod) *Predication {
+func (n Predication) mod(m *Mod) *Predication {
 	if n.NA != nil {
-		n.NA = n.NA.Mod(m)
+		n.NA = n.NA.mod(m)
 	} else if n.Terms != nil {
-		n.Terms = n.Terms.Mod(m)
+		n.Terms = n.Terms.mod(m)
 	} else {
-		n.Predicate = n.Predicate.ModPredicate(m)
+		n.Predicate = n.Predicate.modPredicate(m)
 	}
 	return &n
 }
@@ -176,8 +178,8 @@ type CoPStatement CoP
 
 func (n *CoPStatement) Start() int                   { return (*CoP)(n).Start() }
 func (n *CoPStatement) End() int                     { return (*CoP)(n).End() }
-func (n CoPStatement) ModNode(m *Mod) Node           { return n.ModStatement(m) }
-func (n CoPStatement) ModStatement(m *Mod) Statement { return (*CoPStatement)(CoP(n).Mod(m)) }
+func (n CoPStatement) modNode(m *Mod) Node           { return n.modStatement(m) }
+func (n CoPStatement) modStatement(m *Mod) Statement { return (*CoPStatement)(CoP(n).mod(m)) }
 
 //
 // Predicate nodes
@@ -186,8 +188,8 @@ func (n CoPStatement) ModStatement(m *Mod) Statement { return (*CoPStatement)(Co
 // The Predicate interface is implemented by all predicate nodes.
 type Predicate interface {
 	Node
-	ModPhrase(*Mod) Phrase
-	ModPredicate(*Mod) Predicate
+	modPhrase(*Mod) Phrase
+	modPredicate(*Mod) Predicate
 }
 
 // A PrefixedPredicate is a predicate with a prefix word.
@@ -198,11 +200,11 @@ type PrefixedPredicate struct {
 
 func (n *PrefixedPredicate) Start() int             { return n.MU.Start() }
 func (n *PrefixedPredicate) End() int               { return n.Predicate.End() }
-func (n PrefixedPredicate) ModNode(m *Mod) Node     { return n.ModPredicate(m) }
-func (n PrefixedPredicate) ModPhrase(m *Mod) Phrase { return n.ModPredicate(m) }
+func (n PrefixedPredicate) modNode(m *Mod) Node     { return n.modPredicate(m) }
+func (n PrefixedPredicate) modPhrase(m *Mod) Phrase { return n.modPredicate(m) }
 
-func (n PrefixedPredicate) ModPredicate(m *Mod) Predicate {
-	n.Predicate = n.Predicate.ModPredicate(m)
+func (n PrefixedPredicate) modPredicate(m *Mod) Predicate {
+	n.Predicate = n.Predicate.modPredicate(m)
 	return &n
 }
 
@@ -213,11 +215,11 @@ type SerialPredicate struct {
 
 func (n *SerialPredicate) Start() int             { return n.Left.Start() }
 func (n *SerialPredicate) End() int               { return n.Right.End() }
-func (n SerialPredicate) ModNode(m *Mod) Node     { return n.ModPredicate(m) }
-func (n SerialPredicate) ModPhrase(m *Mod) Phrase { return n.ModPredicate(m) }
+func (n SerialPredicate) modNode(m *Mod) Node     { return n.modPredicate(m) }
+func (n SerialPredicate) modPhrase(m *Mod) Phrase { return n.modPredicate(m) }
 
-func (n SerialPredicate) ModPredicate(m *Mod) Predicate {
-	n.Right = n.Right.ModPredicate(m)
+func (n SerialPredicate) modPredicate(m *Mod) Predicate {
+	n.Right = n.Right.modPredicate(m)
 	return &n
 }
 
@@ -227,15 +229,15 @@ type WordPredicate Word
 func (n WordPredicate) PrettyPrint() string           { return `WordPredicate("` + n.T + `")` }
 func (n *WordPredicate) Start() int                   { return (*Word)(n).Start() }
 func (n *WordPredicate) End() int                     { return (*Word)(n).End() }
-func (n WordPredicate) ModNode(m *Mod) Node           { return n.ModPredicate(m) }
-func (n WordPredicate) ModPhrase(m *Mod) Phrase       { return n.ModPredicate(m) }
-func (n WordPredicate) ModPredicate(m *Mod) Predicate { return (*WordPredicate)(Word(n).Mod(m)) }
+func (n WordPredicate) modNode(m *Mod) Node           { return n.modPredicate(m) }
+func (n WordPredicate) modPhrase(m *Mod) Phrase       { return n.modPredicate(m) }
+func (n WordPredicate) modPredicate(m *Mod) Predicate { return (*WordPredicate)(Word(n).mod(m)) }
 
 // Phrase is implemented by all nodes
 // that can be the complement of a MI phrase.
 type Phrase interface {
 	Node
-	ModPhrase(*Mod) Phrase
+	modPhrase(*Mod) Phrase
 }
 
 // A MIPredicate is a predicate beginning with word-class MI.
@@ -247,14 +249,14 @@ type MIPredicate struct {
 
 func (n *MIPredicate) Start() int             { return n.MI.Start() }
 func (n *MIPredicate) End() int               { return end(n.GA, n.Phrase) }
-func (n MIPredicate) ModNode(m *Mod) Node     { return n.ModPredicate(m) }
-func (n MIPredicate) ModPhrase(m *Mod) Phrase { return n.ModPredicate(m) }
+func (n MIPredicate) modNode(m *Mod) Node     { return n.modPredicate(m) }
+func (n MIPredicate) modPhrase(m *Mod) Phrase { return n.modPredicate(m) }
 
-func (n MIPredicate) ModPredicate(m *Mod) Predicate {
+func (n MIPredicate) modPredicate(m *Mod) Predicate {
 	if n.GA != nil {
-		n.GA = n.GA.Mod(m)
+		n.GA = n.GA.mod(m)
 	} else {
-		n.Phrase = n.Phrase.ModPhrase(m)
+		n.Phrase = n.Phrase.modPhrase(m)
 	}
 	return &n
 }
@@ -268,14 +270,14 @@ type POPredicate struct {
 
 func (n *POPredicate) Start() int             { return n.PO.Start() }
 func (n *POPredicate) End() int               { return end(n.GA, n.Argument) }
-func (n POPredicate) ModNode(m *Mod) Node     { return n.ModPredicate(m) }
-func (n POPredicate) ModPhrase(m *Mod) Phrase { return n.ModPredicate(m) }
+func (n POPredicate) modNode(m *Mod) Node     { return n.modPredicate(m) }
+func (n POPredicate) modPhrase(m *Mod) Phrase { return n.modPredicate(m) }
 
-func (n POPredicate) ModPredicate(m *Mod) Predicate {
+func (n POPredicate) modPredicate(m *Mod) Predicate {
 	if n.GA != nil {
-		n.GA = n.GA.Mod(m)
+		n.GA = n.GA.mod(m)
 	} else {
-		n.Argument = n.Argument.ModArgument(m)
+		n.Argument = n.Argument.modArgument(m)
 	}
 	return &n
 }
@@ -288,28 +290,28 @@ type MOPredicate struct {
 
 func (n *MOPredicate) Start() int                   { return n.MO.Start() }
 func (n *MOPredicate) End() int                     { return n.TEO.End() }
-func (n MOPredicate) ModNode(m *Mod) Node           { return n.ModPredicate(m) }
-func (n MOPredicate) ModPhrase(m *Mod) Phrase       { return n.ModPredicate(m) }
-func (n MOPredicate) ModPredicate(m *Mod) Predicate { n.TEO = *n.TEO.Mod(m); return &n }
+func (n MOPredicate) modNode(m *Mod) Node           { return n.modPredicate(m) }
+func (n MOPredicate) modPhrase(m *Mod) Phrase       { return n.modPredicate(m) }
+func (n MOPredicate) modPredicate(m *Mod) Predicate { n.TEO = *n.TEO.mod(m); return &n }
 
 // A LUPredicate is a LU phrase predicate.
 type LUPredicate LUPhrase
 
 func (n *LUPredicate) Start() int                   { return (*LUPhrase)(n).Start() }
 func (n *LUPredicate) End() int                     { return (*LUPhrase)(n).End() }
-func (n LUPredicate) ModNode(m *Mod) Node           { return n.ModPredicate(m) }
-func (n LUPredicate) ModPhrase(m *Mod) Phrase       { return n.ModPredicate(m) }
-func (n LUPredicate) ModPredicate(m *Mod) Predicate { return (*LUPredicate)(LUPhrase(n).Mod(m)) }
+func (n LUPredicate) modNode(m *Mod) Node           { return n.modPredicate(m) }
+func (n LUPredicate) modPhrase(m *Mod) Phrase       { return n.modPredicate(m) }
+func (n LUPredicate) modPredicate(m *Mod) Predicate { return (*LUPredicate)(LUPhrase(n).mod(m)) }
 
 // A CoPPredicate is a connector predicate phrase.
 type CoPPredicate CoP
 
 func (n *CoPPredicate) Start() int                   { return (*CoP)(n).Start() }
 func (n *CoPPredicate) End() int                     { return (*CoP)(n).End() }
-func (n CoPPredicate) ModNode(m *Mod) Node           { return n.Mod(m) }
-func (n CoPPredicate) ModPhrase(m *Mod) Phrase       { return n.Mod(m) }
-func (n CoPPredicate) ModPredicate(m *Mod) Predicate { return n.Mod(m) }
-func (n CoPPredicate) Mod(m *Mod) *CoPPredicate      { return (*CoPPredicate)(CoP(n).Mod(m)) }
+func (n CoPPredicate) modNode(m *Mod) Node           { return n.mod(m) }
+func (n CoPPredicate) modPhrase(m *Mod) Phrase       { return n.mod(m) }
+func (n CoPPredicate) modPredicate(m *Mod) Predicate { return n.mod(m) }
+func (n CoPPredicate) mod(m *Mod) *CoPPredicate      { return (*CoPPredicate)(CoP(n).mod(m)) }
 
 //
 // Terms
@@ -318,7 +320,7 @@ func (n CoPPredicate) Mod(m *Mod) *CoPPredicate      { return (*CoPPredicate)(Co
 // Term is implemented by all term nodes.
 type Term interface {
 	Node
-	ModTerm(*Mod) Term
+	modTerm(*Mod) Term
 }
 
 // A LinkedTerm is an argument preceeded by a linking word.
@@ -329,10 +331,10 @@ type LinkedTerm struct {
 
 func (n *LinkedTerm) Start() int         { return n.GO.Start() }
 func (n *LinkedTerm) End() int           { return n.Argument.End() }
-func (n LinkedTerm) ModNode(m *Mod) Node { return n.ModTerm(m) }
+func (n LinkedTerm) modNode(m *Mod) Node { return n.modTerm(m) }
 
-func (n LinkedTerm) ModTerm(m *Mod) Term {
-	n.Argument = n.Argument.ModArgument(m)
+func (n LinkedTerm) modTerm(m *Mod) Term {
+	n.Argument = n.Argument.modArgument(m)
 	return &n
 }
 
@@ -341,17 +343,17 @@ type Terms []Term
 
 func (n Terms) Start() int                  { return n[0].Start() }
 func (n Terms) End() int                    { return n[len(n)-1].End() }
-func (n Terms) ModNode(m *Mod) Node         { return n.Mod(m) }
-func (n Terms) ModFragment(m *Mod) Fragment { return n.Mod(m) }
+func (n Terms) modNode(m *Mod) Node         { return n.mod(m) }
+func (n Terms) modFragment(m *Mod) Fragment { return n.mod(m) }
 
-func (n Terms) Mod(m *Mod) Terms {
+func (n Terms) mod(m *Mod) Terms {
 	if m == nil {
 		return n
 	}
 	l := len(n)
 	c := make(Terms, l)
 	copy(c, n)
-	c[l-1] = c[l-1].ModTerm(m)
+	c[l-1] = c[l-1].modTerm(m)
 	return c
 }
 
@@ -368,9 +370,9 @@ type TermSet CoP
 
 func (n *TermSet) Start() int         { return (*CoP)(n).Start() }
 func (n *TermSet) End() int           { return (*CoP)(n).End() }
-func (n TermSet) ModNode(m *Mod) Node { return n.Mod(m) }
-func (n TermSet) ModTerm(m *Mod) Term { return n.Mod(m) }
-func (n TermSet) Mod(m *Mod) *TermSet { return (*TermSet)(CoP(n).Mod(m)) }
+func (n TermSet) modNode(m *Mod) Node { return n.mod(m) }
+func (n TermSet) modTerm(m *Mod) Term { return n.mod(m) }
+func (n TermSet) mod(m *Mod) *TermSet { return (*TermSet)(CoP(n).mod(m)) }
 
 //
 // Argument nodes.
@@ -379,9 +381,9 @@ func (n TermSet) Mod(m *Mod) *TermSet { return (*TermSet)(CoP(n).Mod(m)) }
 // Argument is implemented by all argument nodes.
 type Argument interface {
 	Node
-	ModTerm(*Mod) Term
-	ModPhrase(*Mod) Phrase
-	ModArgument(*Mod) Argument
+	modTerm(*Mod) Term
+	modPhrase(*Mod) Phrase
+	modArgument(*Mod) Argument
 }
 
 // A PredicateArgument is a predicate that is an argument.
@@ -407,16 +409,16 @@ func (n *PredicateArgument) End() int {
 	return n.Predicate.End()
 }
 
-func (n PredicateArgument) ModNode(m *Mod) Node         { return n.Mod(m) }
-func (n PredicateArgument) ModTerm(m *Mod) Term         { return n.Mod(m) }
-func (n PredicateArgument) ModPhrase(m *Mod) Phrase     { return n.Mod(m) }
-func (n PredicateArgument) ModArgument(m *Mod) Argument { return n.Mod(m) }
+func (n PredicateArgument) modNode(m *Mod) Node         { return n.mod(m) }
+func (n PredicateArgument) modTerm(m *Mod) Term         { return n.mod(m) }
+func (n PredicateArgument) modPhrase(m *Mod) Phrase     { return n.mod(m) }
+func (n PredicateArgument) modArgument(m *Mod) Argument { return n.mod(m) }
 
-func (n PredicateArgument) Mod(m *Mod) *PredicateArgument {
+func (n PredicateArgument) mod(m *Mod) *PredicateArgument {
 	if n.Relative != nil {
-		n.Relative = n.Relative.ModRelative(m)
+		n.Relative = n.Relative.modRelative(m)
 	} else {
-		n.Predicate = n.Predicate.ModPredicate(m)
+		n.Predicate = n.Predicate.modPredicate(m)
 	}
 	return &n
 }
@@ -426,10 +428,10 @@ type CoPArgument CoP
 
 func (n *CoPArgument) Start() int                 { return (*CoP)(n).Start() }
 func (n *CoPArgument) End() int                   { return (*CoP)(n).End() }
-func (n CoPArgument) ModNode(m *Mod) Node         { return n.ModArgument(m) }
-func (n CoPArgument) ModTerm(m *Mod) Term         { return n.ModArgument(m) }
-func (n CoPArgument) ModPhrase(m *Mod) Phrase     { return n.ModArgument(m) }
-func (n CoPArgument) ModArgument(m *Mod) Argument { return (*CoPArgument)(CoP(n).Mod(m)) }
+func (n CoPArgument) modNode(m *Mod) Node         { return n.modArgument(m) }
+func (n CoPArgument) modTerm(m *Mod) Term         { return n.modArgument(m) }
+func (n CoPArgument) modPhrase(m *Mod) Phrase     { return n.modArgument(m) }
+func (n CoPArgument) modArgument(m *Mod) Argument { return (*CoPArgument)(CoP(n).mod(m)) }
 
 //
 // Relative clasue nodes.
@@ -438,18 +440,18 @@ func (n CoPArgument) ModArgument(m *Mod) Argument { return (*CoPArgument)(CoP(n)
 // Relative is implemented by all relative clause nodes.
 type Relative interface {
 	Node
-	ModFragment(*Mod) Fragment
-	ModRelative(*Mod) Relative
+	modFragment(*Mod) Fragment
+	modRelative(*Mod) Relative
 }
 
 // A PredicationRelative is a statement relative clause.
 type PredicationRelative struct{ Predication }
 
-func (n PredicationRelative) ModNode(m *Mod) Node         { return n.ModRelative(m) }
-func (n PredicationRelative) ModFragment(m *Mod) Fragment { return n.ModRelative(m) }
+func (n PredicationRelative) modNode(m *Mod) Node         { return n.modRelative(m) }
+func (n PredicationRelative) modFragment(m *Mod) Fragment { return n.modRelative(m) }
 
-func (n PredicationRelative) ModRelative(m *Mod) Relative {
-	n.Predication = *n.Predication.Mod(m)
+func (n PredicationRelative) modRelative(m *Mod) Relative {
+	n.Predication = *n.Predication.mod(m)
 	return &n
 }
 
@@ -458,18 +460,18 @@ type LURelative LUPhrase
 
 func (n *LURelative) Start() int                 { return (*LUPhrase)(n).Start() }
 func (n *LURelative) End() int                   { return (*LUPhrase)(n).End() }
-func (n LURelative) ModNode(m *Mod) Node         { return n.ModRelative(m) }
-func (n LURelative) ModFragment(m *Mod) Fragment { return n.ModRelative(m) }
-func (n LURelative) ModRelative(m *Mod) Relative { return (*LURelative)(LUPhrase(n).Mod(m)) }
+func (n LURelative) modNode(m *Mod) Node         { return n.modRelative(m) }
+func (n LURelative) modFragment(m *Mod) Fragment { return n.modRelative(m) }
+func (n LURelative) modRelative(m *Mod) Relative { return (*LURelative)(LUPhrase(n).mod(m)) }
 
 // An CoPRelative is an argument connector phrase.
 type CoPRelative CoP
 
 func (n *CoPRelative) Start() int                 { return (*CoP)(n).Start() }
 func (n *CoPRelative) End() int                   { return (*CoP)(n).End() }
-func (n CoPRelative) ModNode(m *Mod) Node         { return n.ModRelative(m) }
-func (n CoPRelative) ModFragment(m *Mod) Fragment { return n.ModRelative(m) }
-func (n CoPRelative) ModRelative(m *Mod) Relative { return (*CoPRelative)(CoP(n).Mod(m)) }
+func (n CoPRelative) modNode(m *Mod) Node         { return n.modRelative(m) }
+func (n CoPRelative) modFragment(m *Mod) Fragment { return n.modRelative(m) }
+func (n CoPRelative) modRelative(m *Mod) Relative { return (*CoPRelative)(CoP(n).mod(m)) }
 
 //
 // Adverb nodes.
@@ -478,20 +480,20 @@ func (n CoPRelative) ModRelative(m *Mod) Relative { return (*CoPRelative)(CoP(n)
 // Adverb is implement by all adverb nodes.
 type Adverb interface {
 	Node
-	ModTerm(*Mod) Term
-	ModPhrase(*Mod) Phrase
-	ModAdverb(*Mod) Adverb
+	modTerm(*Mod) Term
+	modPhrase(*Mod) Phrase
+	modAdverb(*Mod) Adverb
 }
 
 // An PredicateAdverb is a predicate functioning as an adverb.
 type PredicateAdverb struct{ Predicate }
 
-func (n *PredicateAdverb) ModNode(m *Mod) Node     { return n.ModAdverb(m) }
-func (n *PredicateAdverb) ModTerm(m *Mod) Term     { return n.ModAdverb(m) }
-func (n *PredicateAdverb) ModPhrase(m *Mod) Phrase { return n.ModAdverb(m) }
+func (n *PredicateAdverb) modNode(m *Mod) Node     { return n.modAdverb(m) }
+func (n *PredicateAdverb) modTerm(m *Mod) Term     { return n.modAdverb(m) }
+func (n *PredicateAdverb) modPhrase(m *Mod) Phrase { return n.modAdverb(m) }
 
-func (n PredicateAdverb) ModAdverb(m *Mod) Adverb {
-	n.Predicate = n.Predicate.ModPredicate(m)
+func (n PredicateAdverb) modAdverb(m *Mod) Adverb {
+	n.Predicate = n.Predicate.modPredicate(m)
 	return &n
 }
 
@@ -500,10 +502,10 @@ type CoPAdverb CoP
 
 func (n *CoPAdverb) Start() int             { return (*CoP)(n).Start() }
 func (n *CoPAdverb) End() int               { return (*CoP)(n).End() }
-func (n CoPAdverb) ModNode(m *Mod) Node     { return n.ModAdverb(m) }
-func (n CoPAdverb) ModTerm(m *Mod) Term     { return n.ModAdverb(m) }
-func (n CoPAdverb) ModPhrase(m *Mod) Phrase { return n.ModAdverb(m) }
-func (n CoPAdverb) ModAdverb(m *Mod) Adverb { return (*CoPAdverb)(CoP(n).Mod(m)) }
+func (n CoPAdverb) modNode(m *Mod) Node     { return n.modAdverb(m) }
+func (n CoPAdverb) modTerm(m *Mod) Term     { return n.modAdverb(m) }
+func (n CoPAdverb) modPhrase(m *Mod) Phrase { return n.modAdverb(m) }
+func (n CoPAdverb) modAdverb(m *Mod) Adverb { return (*CoPAdverb)(CoP(n).mod(m)) }
 
 //
 // Preposition nodes.
@@ -516,9 +518,9 @@ func (n CoPAdverb) ModAdverb(m *Mod) Adverb { return (*CoPAdverb)(CoP(n).Mod(m))
 // and "PrepositionalPhrase" is too long (and "PP" is too short).
 type Preposition interface {
 	Node
-	ModTerm(*Mod) Term
-	ModPhrase(*Mod) Phrase
-	ModPreposition(*Mod) Preposition
+	modTerm(*Mod) Term
+	modPhrase(*Mod) Phrase
+	modPreposition(*Mod) Preposition
 }
 
 // A PredicationPreposition is a prepositional predicate and an argument.
@@ -529,12 +531,12 @@ type PredicationPreposition struct {
 
 func (n *PredicationPreposition) Start() int             { return n.Predicate.Start() }
 func (n *PredicationPreposition) End() int               { return n.Argument.End() }
-func (n PredicationPreposition) ModNode(m *Mod) Node     { return n.ModPreposition(m) }
-func (n PredicationPreposition) ModTerm(m *Mod) Term     { return n.ModPreposition(m) }
-func (n PredicationPreposition) ModPhrase(m *Mod) Phrase { return n.ModPreposition(m) }
+func (n PredicationPreposition) modNode(m *Mod) Node     { return n.modPreposition(m) }
+func (n PredicationPreposition) modTerm(m *Mod) Term     { return n.modPreposition(m) }
+func (n PredicationPreposition) modPhrase(m *Mod) Phrase { return n.modPreposition(m) }
 
-func (n PredicationPreposition) ModPreposition(m *Mod) Preposition {
-	n.Argument = n.Argument.ModArgument(m)
+func (n PredicationPreposition) modPreposition(m *Mod) Preposition {
+	n.Argument = n.Argument.modArgument(m)
 	return &n
 }
 
@@ -543,11 +545,11 @@ type CoPPreposition CoP
 
 func (n *CoPPreposition) Start() int                       { return (*CoP)(n).Start() }
 func (n *CoPPreposition) End() int                         { return (*CoP)(n).End() }
-func (n CoPPreposition) ModNode(m *Mod) Node               { return n.Mod(m) }
-func (n CoPPreposition) ModTerm(m *Mod) Term               { return n.Mod(m) }
-func (n CoPPreposition) ModPhrase(m *Mod) Phrase           { return n.Mod(m) }
-func (n CoPPreposition) ModPreposition(m *Mod) Preposition { return n.Mod(m) }
-func (n CoPPreposition) Mod(m *Mod) *CoPPreposition        { return (*CoPPreposition)(CoP(n).Mod(m)) }
+func (n CoPPreposition) modNode(m *Mod) Node               { return n.mod(m) }
+func (n CoPPreposition) modTerm(m *Mod) Term               { return n.mod(m) }
+func (n CoPPreposition) modPhrase(m *Mod) Phrase           { return n.mod(m) }
+func (n CoPPreposition) modPreposition(m *Mod) Preposition { return n.mod(m) }
+func (n CoPPreposition) mod(m *Mod) *CoPPreposition        { return (*CoPPreposition)(CoP(n).mod(m)) }
 
 //
 // Content nodes.
@@ -556,21 +558,21 @@ func (n CoPPreposition) Mod(m *Mod) *CoPPreposition        { return (*CoPPreposi
 // Content is implemented by all content clause nodes.
 type Content interface {
 	Node
-	ModPredicate(*Mod) Predicate
-	ModPhrase(*Mod) Phrase
-	ModContent(*Mod) Content
+	modPredicate(*Mod) Predicate
+	modPhrase(*Mod) Phrase
+	modContent(*Mod) Content
 }
 
 // A PredicationContent is a statement content clause.
 type PredicationContent struct{ Predication }
 
-func (n PredicationContent) ModNode(m *Mod) Node           { return n.Mod(m) }
-func (n PredicationContent) ModPredicate(m *Mod) Predicate { return n.Mod(m) }
-func (n PredicationContent) ModPhrase(m *Mod) Phrase       { return n.Mod(m) }
-func (n PredicationContent) ModContent(m *Mod) Content     { return n.Mod(m) }
+func (n PredicationContent) modNode(m *Mod) Node           { return n.mod(m) }
+func (n PredicationContent) modPredicate(m *Mod) Predicate { return n.mod(m) }
+func (n PredicationContent) modPhrase(m *Mod) Phrase       { return n.mod(m) }
+func (n PredicationContent) modContent(m *Mod) Content     { return n.mod(m) }
 
-func (n PredicationContent) Mod(m *Mod) *PredicationContent {
-	n.Predication = *n.Predication.Mod(m)
+func (n PredicationContent) mod(m *Mod) *PredicationContent {
+	n.Predication = *n.Predication.mod(m)
 	return &n
 }
 
@@ -579,20 +581,20 @@ type LUContent LUPhrase
 
 func (n *LUContent) Start() int                   { return (*LUPhrase)(n).Start() }
 func (n *LUContent) End() int                     { return (*LUPhrase)(n).End() }
-func (n LUContent) ModNode(m *Mod) Node           { return n.ModContent(m) }
-func (n LUContent) ModPredicate(m *Mod) Predicate { return n.ModContent(m) }
-func (n LUContent) ModPhrase(m *Mod) Phrase       { return n.ModContent(m) }
-func (n LUContent) ModContent(m *Mod) Content     { return (*LUContent)(LUPhrase(n).Mod(m)) }
+func (n LUContent) modNode(m *Mod) Node           { return n.modContent(m) }
+func (n LUContent) modPredicate(m *Mod) Predicate { return n.modContent(m) }
+func (n LUContent) modPhrase(m *Mod) Phrase       { return n.modContent(m) }
+func (n LUContent) modContent(m *Mod) Content     { return (*LUContent)(LUPhrase(n).mod(m)) }
 
 // An CoPContent is an argument connector phrase.
 type CoPContent CoP
 
 func (n *CoPContent) Start() int                   { return (*CoP)(n).Start() }
 func (n *CoPContent) End() int                     { return (*CoP)(n).End() }
-func (n CoPContent) ModNode(m *Mod) Node           { return n.ModContent(m) }
-func (n CoPContent) ModPredicate(m *Mod) Predicate { return n.ModContent(m) }
-func (n CoPContent) ModPhrase(m *Mod) Phrase       { return n.ModContent(m) }
-func (n CoPContent) ModContent(m *Mod) Content     { return (*CoPContent)(CoP(n).Mod(m)) }
+func (n CoPContent) modNode(m *Mod) Node           { return n.modContent(m) }
+func (n CoPContent) modPredicate(m *Mod) Predicate { return n.modContent(m) }
+func (n CoPContent) modPhrase(m *Mod) Phrase       { return n.modContent(m) }
+func (n CoPContent) modContent(m *Mod) Content     { return (*CoPContent)(CoP(n).mod(m)) }
 
 //
 // Mod nodes
@@ -601,7 +603,7 @@ func (n CoPContent) ModContent(m *Mod) Content     { return (*CoPContent)(CoP(n)
 // Mod is implemented by all free modifier nodes.
 type Mod interface {
 	Node
-	Mod(*Mod) Mod
+	mod(*Mod) Mod
 }
 
 // A Parenthetical is a parenthetical  free modifier.
@@ -612,10 +614,10 @@ type Parenthetical struct {
 
 func (n *Parenthetical) Start() int         { return n.KIO.Start() }
 func (n *Parenthetical) End() int           { return n.KI.End() }
-func (n Parenthetical) ModNode(m *Mod) Node { return n.Mod(m) }
+func (n Parenthetical) modNode(m *Mod) Node { return n.mod(m) }
 
-func (n Parenthetical) Mod(m *Mod) Mod {
-	n.Discourse = *n.Discourse.Mod(m)
+func (n Parenthetical) mod(m *Mod) Mod {
+	n.Discourse = *n.Discourse.mod(m)
 	return &n
 }
 
@@ -627,10 +629,10 @@ type Incidental struct {
 
 func (n *Incidental) Start() int         { return n.JU.Start() }
 func (n *Incidental) End() int           { return n.Statement.End() }
-func (n Incidental) ModNode(m *Mod) Node { return n.Mod(m) }
+func (n Incidental) modNode(m *Mod) Node { return n.mod(m) }
 
-func (n Incidental) Mod(m *Mod) Mod {
-	n.Statement = n.Statement.ModStatement(m)
+func (n Incidental) mod(m *Mod) Mod {
+	n.Statement = n.Statement.modStatement(m)
 	return &n
 }
 
@@ -642,10 +644,10 @@ type Vocative struct {
 
 func (n *Vocative) Start() int         { return n.HU.Start() }
 func (n *Vocative) End() int           { return n.Argument.End() }
-func (n Vocative) ModNode(m *Mod) Node { return n.Mod(m) }
+func (n Vocative) modNode(m *Mod) Node { return n.mod(m) }
 
-func (n Vocative) Mod(m *Mod) Mod {
-	n.Argument = n.Argument.ModArgument(m)
+func (n Vocative) mod(m *Mod) Mod {
+	n.Argument = n.Argument.modArgument(m)
 	return &n
 }
 
@@ -655,8 +657,8 @@ type Interjection Word
 func (n Interjection) PrettyPrint() string { return `Interjection("` + n.T + `"})` }
 func (n *Interjection) Start() int         { return (*Word)(n).Start() }
 func (n *Interjection) End() int           { return (*Word)(n).End() }
-func (n Interjection) ModNode(m *Mod) Node { return n.Mod(m) }
-func (n Interjection) Mod(m *Mod) Mod      { return (*Interjection)(Word(n).Mod(m)) }
+func (n Interjection) modNode(m *Mod) Node { return n.mod(m) }
+func (n Interjection) mod(m *Mod) Mod      { return (*Interjection)(Word(n).mod(m)) }
 
 // A Space is a whitespace-only word.
 type Space Word
@@ -664,8 +666,8 @@ type Space Word
 func (n Space) PrettyPrint() string { return `Space("` + n.T + `")` }
 func (n *Space) Start() int         { return (*Word)(n).Start() }
 func (n *Space) End() int           { return (*Word)(n).End() }
-func (n Space) ModNode(m *Mod) Node { return n.Mod(m) }
-func (n Space) Mod(m *Mod) Mod      { return (*Space)(Word(n).Mod(m)) }
+func (n Space) modNode(m *Mod) Node { return n.mod(m) }
+func (n Space) mod(m *Mod) Mod      { return (*Space)(Word(n).mod(m)) }
 
 //
 // General nodes
@@ -681,10 +683,10 @@ type CoP struct {
 
 func (n *CoP) Start() int         { return start(n.TO0, n.Left) }
 func (n *CoP) End() int           { return n.Right.End() }
-func (n CoP) ModNode(m *Mod) Node { return n.Mod(m) }
+func (n CoP) modNode(m *Mod) Node { return n.mod(m) }
 
-func (n CoP) Mod(m *Mod) *CoP {
-	n.Right = n.Right.ModNode(m)
+func (n CoP) mod(m *Mod) *CoP {
+	n.Right = n.Right.modNode(m)
 	return &n
 }
 
@@ -696,10 +698,10 @@ type LUPhrase struct {
 
 func (n *LUPhrase) Start() int         { return n.LU.Start() }
 func (n *LUPhrase) End() int           { return n.Statement.End() }
-func (n LUPhrase) ModNode(m *Mod) Node { return n.Mod(m) }
+func (n LUPhrase) modNode(m *Mod) Node { return n.mod(m) }
 
-func (n LUPhrase) Mod(m *Mod) *LUPhrase {
-	n.Statement = n.Statement.ModStatement(m)
+func (n LUPhrase) mod(m *Mod) *LUPhrase {
+	n.Statement = n.Statement.modStatement(m)
 	return &n
 }
 
@@ -714,16 +716,16 @@ func (n Word) PrettyPrint() string { return `"` + n.T + `"` }
 func (n *Word) Start() int         { return n.S }
 func (n *Word) End() int           { return n.E }
 
-func (n Word) ModNode(m *Mod) Node { return n.Mod(m) }
+func (n Word) modNode(m *Mod) Node { return n.mod(m) }
 
-func (n Word) Mod(m *Mod) *Word {
+func (n Word) mod(m *Mod) *Word {
 	if m == nil {
 		return &n
 	}
 	if n.M == nil {
 		n.M = *m
 	} else {
-		n.M = n.M.Mod(m)
+		n.M = n.M.mod(m)
 	}
 	return &n
 }
@@ -740,4 +742,14 @@ func end(w *Word, n Node) int {
 		return w.End()
 	}
 	return n.End()
+}
+
+// ToASCII converts all words of an AST to their standard ASCII form,
+// with a tone marker following each syllable.
+func ToASCII(node Node) {
+	Visit(node, FuncVisitor(func(n Node) {
+		if w, ok := n.(*Word); ok {
+			w.T = tone.ToASCII(w.T)
+		}
+	}))
 }

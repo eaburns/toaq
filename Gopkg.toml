@@ -1,0 +1,16 @@
+[[constraint]]
+  branch = "master"
+  name = "github.com/eaburns/peggy"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/eaburns/pretty"
+
+[prune]
+  go-tests = true
+  unused-packages = true
+
+[metadata.heroku]
+  root-package = "github.com/eaburns/toaq"
+  install = [ "./server" ]
+  ensure = "false"

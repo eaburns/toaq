@@ -31,6 +31,7 @@ golint ./... \
 	| egrep -v '^ast/.*const __ should be _'\
 	| egrep -v '^ast/.*(Start|End|PrettyPrint).*should have comment'\
 	| egrep -v '^logic/.*(ASTNode|Write|Visit).*should have comment'\
+	| egrep -v '^vendor/'\
 	> $o 2>&1
 # Silly: diff the grepped golint output with empty.
 # If it's non-empty, error, otherwise succeed.

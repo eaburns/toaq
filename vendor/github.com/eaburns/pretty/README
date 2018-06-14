@@ -1,0 +1,4 @@
+Package pretty provides a pretty-printer for Go types. It produces a
+lightweight, Go-syntax-like output. It elides some type information
+and syntactic details. The intent is to show a data structure, such as
+an abstract syntax tree, without much clutter.

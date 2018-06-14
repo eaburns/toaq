@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.pink-light_blue.min.css" />
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+	<style>
+		@font-face {
+			font-family: "Latin Modern Math";
+			src: url('font/latinmodern-math.otf');
+		}
+		.toaq-textfield {
+			left: 1%;
+			width: 98%;
+		}
+		.toaq-input-area {
+			height: 20vh;
+			resize: none;
+		}
+		.toaq-output-panel {
+			font-family: sans-serif;
+			padding-left: 10px;
+			padding-bottom: 50px;
+		}
+		.toaq-logic-output-panel {
+			font-family: "Latin Modern Math", serif;
+		}
+		.toaq-tree-output-panel {
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+		.mdl-button--fab {
+			position: fixed;
+			bottom: 25px;
+			right: 25px;
+		}
+	</style>
+
+	<script>
+		function escapeHtml(str) {
+			return str.replace(/&/g, "&amp;")
+				.replace(/</g, "&lt;")
+				.replace(/>/g, "&gt;")
+				.replace(/"/g, "&quot;")
+				.replace(/'/g, "&#039;");
+		}
+
+		function showResults(resp) {
+			var bracesPanel = document.getElementById("toaq-braces-panel")
+			bracesPanel.innerHTML = "<p>" + escapeHtml(resp.Braces) + "</p>";
+
+			var logicPanel = document.getElementById("toaq-logic-panel")
+			logicPanel.innerHTML = "<p>" + escapeHtml(resp.Logic) + "</p>";
+
+			var textPanel = document.getElementById("toaq-text-panel")
+			textPanel.innerHTML = "<p>" + escapeHtml(resp.Text) + "</p>";
+			
+			var astPanel = document.getElementById("toaq-ast-panel")
+			astPanel.innerHTML = "<pre>" + escapeHtml(resp.AST) + "</pre>";
+
+			var parsePanel = document.getElementById("toaq-parse-panel")
+			parsePanel.innerHTML = "<pre>" + escapeHtml(resp.Parse) + "</pre>";
+
+			var resultTabs = document.getElementById("toaq-result-tabs");
+			resultTabs.style.display = "block";
+			var errorTabs = document.getElementById("toaq-error-tabs");
+			errorTabs.style.display = "none";
+		}
+
+		function showError(msg) {
+			var errorPanel = document.getElementById("toaq-error-panel");
+			errorPanel.innerHTML = "<p>" + escapeHtml(msg) + "</p>";
+
+			var resultTabs = document.getElementById("toaq-result-tabs");
+			resultTabs.style.display = "none";
+			var errorTabs = document.getElementById("toaq-error-tabs");
+			errorTabs.style.display = "block";
+
+			var pos = msg.split(":")[1].split(".");
+			var line = parseInt(pos[0]);
+			var col = parseInt(pos[1]);
+			var textArea = document.getElementById("toaq-input-area");
+			var text = textArea.value;
+			var lines = text.split("\n");
+			var offs = 0;
+			for (i = 0; i < Math.min(lines.length, line-1); i++) {
+				offs += lines[i].length;
+			}
+			offs += line - 1; // newlines
+			offs += col - 1; // 0-indexed
+			textArea.selectionStart = offs;
+			textArea.selectionEnd = text.length;
+			textArea.focus();
+		}
+
+		function parse() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState != 4 || this.status != 200) {
+					return;
+				}
+				var resp = JSON.parse(this.responseText);
+				if (typeof(resp.Error) !== 'undefined') {
+					showError(resp.Error);
+					return;
+				}
+				showResults(resp);
+			};
+			var url = document.URL
+			xhttp.open("POST", url, true);
+			var text = document.getElementById("toaq-input-area").value;
+			xhttp.send(text);			
+		}
+	</script>
+
+	<title>Mỉ mỉu</title>
+
+</head>
+
+<body>
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<header class="mdl-layout__header">
+			<div class="mdl-layout__header-row" style="padding: 0 16px 0 10px">
+				<span class="mdl-layout-title">Mỉ mỉu</span>
+			</div>
+		</header>
+
+		<main class="mdl-layout__content">
+			<div class="page-content">
+				<form action="#">
+					<div class="toaq-textfield mdl-textfield mdl-js-textfield">
+						<textarea class="toaq-input-area mdl-textfield__input" type="text" id="toaq-input-area"></textarea>
+						<label class="mdl-textfield__label" for="text">
+							Enter Toaq text here
+						</label>
+					</div>
+				</form>
+
+				<div style="display: none;" class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect" id="toaq-result-tabs">
+					<div class="mdl-tabs__tab-bar">
+						<a href="#toaq-braces-panel" class="mdl-tabs__tab is-active" id="toaq-braces-tab">Braces</a>
+						<a href="#toaq-logic-panel" class="mdl-tabs__tab" id="toaq-logic-tab">Logic</a>
+						<a href="#toaq-text-panel" class="mdl-tabs__tab" id="toaq-text-tab">Text</a>
+						<a href="#toaq-ast-panel" class="mdl-tabs__tab" id="toaq-ast-tab">AST</a>
+						<a href="#toaq-parse-panel" class="mdl-tabs__tab" id="toaq-parse-tab">Parse</a>
+					</div>
+					<div class="toaq-output-panel mdl-tabs__panel is-active" id="toaq-braces-panel"></div>
+					<div class="toaq-output-panel toaq-logic-output-panel mdl-tabs__panel" id="toaq-logic-panel"></div>
+					<div class="toaq-output-panel mdl-tabs__panel" id="toaq-text-panel"></div>
+					<div class="toaq-output-panel toaq-tree-output-panel mdl-tabs__panel" id="toaq-ast-panel"></div>
+					<div class="toaq-output-panel toaq-tree-output-panel mdl-tabs__panel" id="toaq-parse-panel"></div>
+				</div>
+
+				<div style="display: none;" class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect" id="toaq-error-tabs">
+					<div class="mdl-tabs__tab-bar">
+						<a href="#toaq-error-panel" class="mdl-tabs__tab is-active" id="toaq-error-tab">Error</a>
+					</div>
+					<div class="toaq-output-panel mdl-tabs__panel is-active" id="toaq-error-panel"></div>
+				</div>
+
+				<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" onclick="parse()">
+					<i class="material-icons">cached</i>
+				</button>
+			</div>
+		</main>
+	</div>
+</body>
+
+</html>

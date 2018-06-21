@@ -413,7 +413,7 @@ MU <- m U &( tone? boundary )
 MI <- ( m I / s h U ) &( tone? boundary )
 MO <- m O &( tone? boundary )
 NA <- n A &( tone? boundary )
-PO <- ( p O / p E ) &( tone? boundary )
+PO <- ( j E i / p O ) &( tone? boundary )
 RA <- ( r A / r U / r I / r O i / r O / r E ) &( tone? boundary )
 TU <- ( t A / t U / s I a / s A / h I / j A ) &( tone? boundary )
 TO <- t O &boundary

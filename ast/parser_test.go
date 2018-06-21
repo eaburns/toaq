@@ -357,6 +357,19 @@ func TestPredicate(t *testing.T) {
 			),
 		},
 		{
+			name: "jei predicate",
+			text: "jei? toaq/ ga",
+			want: statement(
+				&POPredicate{
+					PO: Word{T: "jei?"},
+					Argument: &PredicateArgument{
+						Predicate: &WordPredicate{T: "toaq/"},
+					},
+					GA: &Word{T: "ga"},
+				},
+			),
+		},
+		{
 			name: "mo predicate",
 			text: "mo? hio? teo",
 			want: statement(

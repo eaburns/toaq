@@ -242,5 +242,6 @@ t <- [tT]
 u <- [uU]
 w <- [wW]
 y <- [yY]
-space "space" <- [\t\n\r .,:!]+
+space "space" <- ([\t\n\r .,:!]/punctuation)+
+punctuation <- !tone . &{…}
 EOF "EOF" <- !.

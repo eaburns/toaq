@@ -1,6 +1,8 @@
 {
 	package ast
 	import (
+		"unicode"
+
 		"github.com/eaburns/peggy/peg"
 		"github.com/eaburns/toaq/tone"
 	)
@@ -539,5 +541,6 @@ u <- [uU]
 w <- [wW]
 y <- [yY]
 
-space "space" <- s:[\t\n\r\u0020.,:!]+
+space "space" <- s: ([\t\n\r\u0020.,:!] / punctuation )+
+punctuation <- !tone p:. &{ func() bool { r, _ := peg.DecodeRuneInString(p); return unicode.IsPunct(r) }() }
 EOF "EOF" <- !.

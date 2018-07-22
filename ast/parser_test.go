@@ -1008,6 +1008,52 @@ func TestMod(t *testing.T) {
 	}
 }
 
+func TestWhitespace(t *testing.T) {
+	tests := []parserTest{
+		{
+			name: "spaces, tabs, and newlines",
+			text: "	\nhio?    ji/",
+			want: &Text{
+				Leading: &Space{T: "	\n"},
+				Discourse: Discourse{
+					&StatementSentence{
+						Statement: &Predication{
+							Predicate: &WordPredicate{T: "hio?"},
+							Terms: Terms{
+								&PredicateArgument{
+									Predicate: &WordPredicate{T: "ji/"},
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+		{
+			name: "various punctuation",
+			text: ".—(hio?    )!!ji/«]",
+			want: &Text{
+				Leading: &Space{T: ".—("},
+				Discourse: Discourse{
+					&StatementSentence{
+						Statement: &Predication{
+							Predicate: &WordPredicate{T: "hio?"},
+							Terms: Terms{
+								&PredicateArgument{
+									Predicate: &WordPredicate{T: "ji/"},
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+	}
+	for _, test := range tests {
+		test.run(t)
+	}
+}
+
 type parserTest struct {
 	name string
 	text string

@@ -39,7 +39,7 @@ func main() {
 		peg.DedupFails(failTree)
 		peg.PrettyWrite(os.Stdout, failTree)
 		os.Stdout.WriteString("\n")
-		fmt.Println(path+err.Error())
+		fmt.Println(path + err.Error())
 		os.Exit(1)
 	}
 	text, err := p.Text()

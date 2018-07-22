@@ -390,7 +390,11 @@ end_parenthetical <- &KI w:neutral_syllable { return Word{S: start, E: end, T: w
 vocative_marker <- &HU w:neutral_syllable { return Word{S: start, E: end, T: w} }
 linking_word <- &GO w:neutral_syllable { return Word{S: start, E: end, T: w} }
 connective <- &RA w:neutral_syllable { return Word{S: start, E: end, T: w} }
-illocutionary <- &DA w:neutral_syllable { return Word{S: start, E: end, T: w} }
+# As a special case, we allow ? after moq.
+illocutionary <-
+	&DA w:neutral_syllable { return Word{S: start, E: end, T: w} } /
+	moq:moq s:( questions? ) { return Word(*moq.mod(s)) }
+moq <- &MOQ w:moq_syllable { return Word{S: start, E: end, T: w} }
 quantifier <- &TU w:neutral_syllable { return Word{S: start, E: end, T: w} }
 interjection <- &HA w:neutral_syllable { return &Interjection{S: start, E: end, T: w} }
 forethought_marker <- &TO w:neutral_syllable { return Word{S: start, E: end, T: w} }
@@ -400,7 +404,8 @@ forethought_marker <- &TO w:neutral_syllable { return Word{S: start, E: end, T: 
 # followed by the desired syllable tone.
 function_word <- BI / DA / GA / GO / HA / HU / JU / KU / KI / KIO / KEO / LU / MU / MI / MO / NA / PO / RA / TU / TO / TEO
 BI <- ( b I / p A ) &( tone? boundary )
-DA <- ( d A / m O q / k A / s O / b A ) &( tone? boundary )
+DA <- ( d A / k A / s O / b A ) &( tone? boundary )
+MOQ <- m O q &( ( questions / tone )? boundary )
 GA <- g A &( tone? boundary )
 GO <- ( g O / f I / c U / k E ) &( tone? boundary )
 HA <- ( h A / h U e / h I a / m ) &( tone? boundary )
@@ -423,6 +428,8 @@ TEO <- t E o &( tone? boundary )
 
 syllable<desinence, tone> <- initial ( desinence / d:neutral_desinence t:tone { return string(addTone(d, t)) } ) &boundary
 neutral_syllable <- initial neutral_desinence &boundary
+# moq syllable is like a neutral syllable, but allows question marks before the boundary.
+moq_syllable <- initial neutral_desinence &( questions boundary / boundary )
 compound_syllable <- syllable<compound_desinence, compound_tone>
 arg_syllable <- syllable<arg_desinence, arg_tone>
 relative_syllable <- syllable<relative_desinence, relative_tone>
@@ -543,4 +550,5 @@ y <- [yY]
 
 space "space" <- s: ([\t\n\r\u0020.,:!] / punctuation )+
 punctuation <- !tone p:. &{ func() bool { r, _ := peg.DecodeRuneInString(p); return unicode.IsPunct(r) }() }
+questions <- w:( '?' + ) { return Mod(&Space{S: start, E: end, T: w }) }
 EOF "EOF" <- !.

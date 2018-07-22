@@ -117,13 +117,16 @@ end_parenthetical <- &KI neutral_syllable
 vocative_marker <- &HU neutral_syllable
 linking_word <- &GO neutral_syllable
 connective <- &RA neutral_syllable
-illocutionary <- &DA neutral_syllable
+illocutionary <- &DA neutral_syllable/moq (questions?)
+moq <- &MOQ moq_syllable
+moq_syllable <- initial neutral_desinence &(questions boundary/boundary)
 quantifier <- &TU neutral_syllable
 interjection <- &HA neutral_syllable
 forethought_marker <- &TO neutral_syllable
 function_word <- BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/NA/PO/RA/TU/TO/TEO
 BI <- (b I/p A) &(tone? boundary)
-DA <- (d A/m O q/k A/s O/b A) &(tone? boundary)
+DA <- (d A/k A/s O/b A) &(tone? boundary)
+MOQ <- m O q &((questions/tone)? boundary)
 GA <- g A &(tone? boundary)
 GO <- (g O/f I/c U/k E) &(tone? boundary)
 HA <- (h A/h U e/h I a/m) &(tone? boundary)
@@ -244,4 +247,5 @@ w <- [wW]
 y <- [yY]
 space "space" <- ([\t\n\r .,:!]/punctuation)+
 punctuation <- !tone . &{…}
+questions <- ("?"+)
 EOF "EOF" <- !.

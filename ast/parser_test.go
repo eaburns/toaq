@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/eaburns/pretty"
+	"github.com/google/go-cmp/cmp"
 )
 
 func TestDiscourse(t *testing.T) {
@@ -1048,6 +1049,25 @@ func TestWhitespace(t *testing.T) {
 				},
 			},
 		},
+		{
+			name: "allow ? after moq",
+			text: "hio? moq??? jai?",
+			want: &Text{
+				Discourse: Discourse{
+					&StatementSentence{
+						Statement: &Predication{
+							Predicate: &WordPredicate{T: "hio?"},
+						},
+						DA: &Word{T: "moq"},
+					},
+					&StatementSentence{
+						Statement: &Predication{
+							Predicate: &WordPredicate{T: "jai?"},
+						},
+					},
+				},
+			},
+		},
 	}
 	for _, test := range tests {
 		test.run(t)
@@ -1078,6 +1098,7 @@ func (test parserTest) runParseTest(t *testing.T) {
 	}
 	normalize(text)
 	if !Equal(test.want, text) {
+		t.Log(cmp.Diff(test.want, text))
 		t.Errorf("parse(%q)=%s\nwant\n%s", test.text, pretty.String(text), pretty.String(test.want))
 	}
 }
@@ -1104,7 +1125,11 @@ func normalize(node Node) {
 		if w, ok := n.(*Word); ok {
 			w.S, w.E = 0, 0
 			ToASCII(w)
-			if s, ok := w.M.(*Space); ok {
+			for {
+				s, ok := w.M.(*Space)
+				if !ok {
+					break
+				}
 				w.M = s.M
 			}
 		}

@@ -26,16 +26,6 @@ func TestDiscourse(t *testing.T) {
 			want: &Text{Leading: &Space{T: " "}},
 		},
 		{
-			name: "leading freemods",
-			text: "ha ha",
-			want: &Text{
-				Leading: &Interjection{
-					T: "ha",
-					M: &Interjection{T: "ha"},
-				},
-			},
-		},
-		{
 			name: "sentence",
 			text: "hio?",
 			want: &Text{
@@ -954,23 +944,28 @@ func TestMod(t *testing.T) {
 			name: "interjection",
 			text: "hia",
 			want: &Text{
-				Leading: &Interjection{T: "hia"},
+				Discourse: Discourse{
+					&Interjection{T: "hia"},
+				},
 			},
 		},
 		{
 			name: "parenthetical",
 			text: "kio hio? ki",
 			want: &Text{
-				Leading: &Parenthetical{
-					KIO: Word{T: "kio"},
-					Discourse: Discourse{
-						&StatementSentence{
-							Statement: &Predication{
-								Predicate: &WordPredicate{T: "hio?"},
+
+				Discourse: Discourse{
+					&Parenthetical{
+						KIO: Word{T: "kio"},
+						Discourse: Discourse{
+							&StatementSentence{
+								Statement: &Predication{
+									Predicate: &WordPredicate{T: "hio?"},
+								},
 							},
 						},
+						KI: Word{T: "ki"},
 					},
-					KI: Word{T: "ki"},
 				},
 			},
 		},
@@ -978,11 +973,13 @@ func TestMod(t *testing.T) {
 			name: "incidental",
 			text: "ju hio? na",
 			want: &Text{
-				Leading: &Incidental{
-					JU: Word{T: "ju"},
-					Statement: &Predication{
-						Predicate: &WordPredicate{T: "hio?"},
-						NA:        &Word{T: "na"},
+				Discourse: Discourse{
+					&Incidental{
+						JU: Word{T: "ju"},
+						Statement: &Predication{
+							Predicate: &WordPredicate{T: "hio?"},
+							NA:        &Word{T: "na"},
+						},
 					},
 				},
 			},
@@ -991,13 +988,15 @@ func TestMod(t *testing.T) {
 			name: "vocative",
 			text: "hu mi/ hoaq? ga",
 			want: &Text{
-				Leading: &Vocative{
-					HU: Word{T: "hu"},
-					Argument: &PredicateArgument{
-						Predicate: &MIPredicate{
-							MI:     Word{T: "mi/"},
-							Phrase: &WordPredicate{T: "hoaq?"},
-							GA:     &Word{T: "ga"},
+				Discourse: Discourse{
+					&Vocative{
+						HU: Word{T: "hu"},
+						Argument: &PredicateArgument{
+							Predicate: &MIPredicate{
+								MI:     Word{T: "mi/"},
+								Phrase: &WordPredicate{T: "hoaq?"},
+								GA:     &Word{T: "ga"},
+							},
 						},
 					},
 				},

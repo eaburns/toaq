@@ -603,6 +603,7 @@ func (n CoPContent) modContent(m *Mod) Content     { return (*CoPContent)(CoP(n)
 // Mod is implemented by all free modifier nodes.
 type Mod interface {
 	Node
+	modFragment(*Mod) Fragment
 	mod(*Mod) Mod
 }
 
@@ -612,9 +613,10 @@ type Parenthetical struct {
 	Discourse Discourse
 }
 
-func (n *Parenthetical) Start() int         { return n.KIO.Start() }
-func (n *Parenthetical) End() int           { return n.KI.End() }
-func (n Parenthetical) modNode(m *Mod) Node { return n.mod(m) }
+func (n *Parenthetical) Start() int                 { return n.KIO.Start() }
+func (n *Parenthetical) End() int                   { return n.KI.End() }
+func (n Parenthetical) modNode(m *Mod) Node         { return n.mod(m) }
+func (n Parenthetical) modFragment(m *Mod) Fragment { return n.mod(m) }
 
 func (n Parenthetical) mod(m *Mod) Mod {
 	n.Discourse = *n.Discourse.mod(m)
@@ -627,9 +629,10 @@ type Incidental struct {
 	Statement Statement
 }
 
-func (n *Incidental) Start() int         { return n.JU.Start() }
-func (n *Incidental) End() int           { return n.Statement.End() }
-func (n Incidental) modNode(m *Mod) Node { return n.mod(m) }
+func (n *Incidental) Start() int                 { return n.JU.Start() }
+func (n *Incidental) End() int                   { return n.Statement.End() }
+func (n Incidental) modNode(m *Mod) Node         { return n.mod(m) }
+func (n Incidental) modFragment(m *Mod) Fragment { return n.mod(m) }
 
 func (n Incidental) mod(m *Mod) Mod {
 	n.Statement = n.Statement.modStatement(m)
@@ -642,9 +645,10 @@ type Vocative struct {
 	Argument Argument
 }
 
-func (n *Vocative) Start() int         { return n.HU.Start() }
-func (n *Vocative) End() int           { return n.Argument.End() }
-func (n Vocative) modNode(m *Mod) Node { return n.mod(m) }
+func (n *Vocative) Start() int                 { return n.HU.Start() }
+func (n *Vocative) End() int                   { return n.Argument.End() }
+func (n Vocative) modNode(m *Mod) Node         { return n.mod(m) }
+func (n Vocative) modFragment(m *Mod) Fragment { return n.mod(m) }
 
 func (n Vocative) mod(m *Mod) Mod {
 	n.Argument = n.Argument.modArgument(m)
@@ -654,20 +658,22 @@ func (n Vocative) mod(m *Mod) Mod {
 // An Interjection is an interjection word.
 type Interjection Word
 
-func (n Interjection) PrettyPrint() string { return `Interjection("` + n.T + `"})` }
-func (n *Interjection) Start() int         { return (*Word)(n).Start() }
-func (n *Interjection) End() int           { return (*Word)(n).End() }
-func (n Interjection) modNode(m *Mod) Node { return n.mod(m) }
-func (n Interjection) mod(m *Mod) Mod      { return (*Interjection)(Word(n).mod(m)) }
+func (n Interjection) PrettyPrint() string         { return `Interjection("` + n.T + `"})` }
+func (n *Interjection) Start() int                 { return (*Word)(n).Start() }
+func (n *Interjection) End() int                   { return (*Word)(n).End() }
+func (n Interjection) modNode(m *Mod) Node         { return n.mod(m) }
+func (n Interjection) modFragment(m *Mod) Fragment { return n.mod(m) }
+func (n Interjection) mod(m *Mod) Mod              { return (*Interjection)(Word(n).mod(m)) }
 
 // A Space is a whitespace-only word.
 type Space Word
 
-func (n Space) PrettyPrint() string { return `Space("` + n.T + `")` }
-func (n *Space) Start() int         { return (*Word)(n).Start() }
-func (n *Space) End() int           { return (*Word)(n).End() }
-func (n Space) modNode(m *Mod) Node { return n.mod(m) }
-func (n Space) mod(m *Mod) Mod      { return (*Space)(Word(n).mod(m)) }
+func (n Space) PrettyPrint() string         { return `Space("` + n.T + `")` }
+func (n *Space) Start() int                 { return (*Word)(n).Start() }
+func (n *Space) End() int                   { return (*Word)(n).End() }
+func (n Space) modNode(m *Mod) Node         { return n.mod(m) }
+func (n Space) modFragment(m *Mod) Fragment { return n.mod(m) }
+func (n Space) mod(m *Mod) Mod              { return (*Space)(Word(n).mod(m)) }
 
 //
 // General nodes

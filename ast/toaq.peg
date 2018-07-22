@@ -1,7 +1,7 @@
 full_text <- text EOF
-text <- _ discourse? EOF?
+text <- space_word? discourse? EOF?
 discourse <- (sentence _/fragment _)+
-fragment <- (afterthought_cop<relative_clause_1, relative_clause_1>/relative_clause/prenex/terms) _
+fragment <- (afterthought_cop<relative_clause_1, relative_clause_1>/relative_clause/prenex/terms/freemod) _
 sentence <- afterthought_cop<sentence_1, sentence>/sentence_1
 sentence_1 <- sentence_2/forethought_cop<sentence, sentence>
 sentence_2 <- sentence_prefix_spaces? sentence_3
@@ -88,7 +88,7 @@ PO_phrase<syllable> <- PO_phrase_1<syllable> _ end_predicatizer?
 PO_phrase_1<syllable> <- PO_word<syllable> _ argument
 PO_word<syllable> <- &PO syllable
 MO_phrase<syllable> <- MO_phrase_1<syllable> _ end_quote
-MO_phrase_1<syllable> <- MO_word<syllable> _ discourse
+MO_phrase_1<syllable> <- MO_word<syllable> space_word? discourse
 MO_word<syllable> <- &MO syllable
 _ <- space_or_freemod?
 space_or_freemod <- (freemod/space_word) space_or_freemod?
@@ -119,7 +119,6 @@ linking_word <- &GO neutral_syllable
 connective <- &RA neutral_syllable
 illocutionary <- &DA neutral_syllable/moq (questions?)
 moq <- &MOQ moq_syllable
-moq_syllable <- initial neutral_desinence &(questions boundary/boundary)
 quantifier <- &TU neutral_syllable
 interjection <- &HA neutral_syllable
 forethought_marker <- &TO neutral_syllable
@@ -148,6 +147,7 @@ TO <- t O &boundary
 TEO <- t E o &(tone? boundary)
 syllable<desinence, tone> <- initial (desinence/neutral_desinence tone) &boundary
 neutral_syllable <- initial neutral_desinence &boundary
+moq_syllable <- initial neutral_desinence &(questions boundary/boundary)
 compound_syllable <- syllable<compound_desinence, compound_tone>
 arg_syllable <- syllable<arg_desinence, arg_tone>
 relative_syllable <- syllable<relative_desinence, relative_tone>

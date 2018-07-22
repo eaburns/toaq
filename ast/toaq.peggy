@@ -9,7 +9,7 @@
 }
 
 full_text <- t:text EOF { return Text(t) }
-text <- s:_ d:discourse? EOF? { return Text(text(s, d)) }
+text <- s:space_word? d:discourse? EOF? { return Text(text(s, d)) }
 
 #
 # Discourse
@@ -28,7 +28,8 @@ fragment <- f:(
 	x0:afterthought_cop<relative_clause_1, relative_clause_1> { return Fragment((*CoPRelative)(x0)) } /
 	x1:relative_clause  { return Fragment(x1) } /
 	x2:prenex  { return Fragment(x2) } /
-	x3:terms { return Fragment(x3) }
+	x3:terms { return Fragment(x3) } /
+	x4:freemod { return Fragment(x4) }
 	) s:_ { return Fragment(f.modFragment(s)) }
 
 sentence <-
@@ -322,8 +323,11 @@ PO_word<syllable> <-
 
 MO_phrase<syllable> <-
 	mo:MO_phrase_1<syllable> s:_ teo:end_quote { return Predicate(moEnd(mo, s, teo)) }
+# The mod attached to mo is a space_word, not a _,
+# because we want any non-space freemod to instead
+# lead the quoted discourse.
 MO_phrase_1<syllable> <-
-	mo:MO_word<syllable> s:_ d:discourse { return MOPredicate{MO: *mo.mod(s), Discourse: d} }
+	mo:MO_word<syllable> s:space_word? d:discourse { return MOPredicate{MO: *mo.mod(s), Discourse: d} }
 MO_word<syllable> <-
 	&MO w:syllable { return &Word{S: start, E: end, T: w} }
 

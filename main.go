@@ -49,6 +49,7 @@ func main() {
 	fmt.Println(peg.Pretty(parseTree))
 	fmt.Println(pretty.String(text))
 	fmt.Println(toString(text))
+	fmt.Println(ast.BracesString(text))
 }
 
 func toString(node ast.Node) string {

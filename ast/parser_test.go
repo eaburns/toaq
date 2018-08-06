@@ -1049,6 +1049,25 @@ func TestWhitespace(t *testing.T) {
 			},
 		},
 		{
+			name: "moq is a funciton word",
+			text: "ma? cho? moq?",
+			want: &Text{
+				Discourse: Discourse{
+					&StatementSentence{
+						Statement: &Predication{
+							Predicate: &LUPredicate{
+								LU: Word{T: "ma?"},
+								Statement: &Predication{
+									Predicate: &WordPredicate{T: "cho?"},
+								},
+							},
+						},
+						DA: &Word{T: "moq"},
+					},
+				},
+			},
+		},
+		{
 			name: "allow ? after moq",
 			text: "hio? moq??? jai?",
 			want: &Text{

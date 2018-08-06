@@ -122,7 +122,7 @@ moq <- &MOQ moq_syllable
 quantifier <- &TU neutral_syllable
 interjection <- &HA neutral_syllable
 forethought_marker <- &TO neutral_syllable
-function_word <- BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/NA/PO/RA/TU/TO/TEO
+function_word <- BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/MOQ/NA/PO/RA/TU/TO/TEO
 BI <- (b I/p A) &(tone? boundary)
 DA <- (d A/k A/s O/b A) &(tone? boundary)
 MOQ <- m O q &((questions/tone)? boundary)

@@ -406,7 +406,7 @@ forethought_marker <- &TO w:neutral_syllable { return Word{S: start, E: end, T: 
 # The following function word rules match any tone.
 # The intended use is as the subexpression of a ! or &,
 # followed by the desired syllable tone.
-function_word <- BI / DA / GA / GO / HA / HU / JU / KU / KI / KIO / KEO / LU / MU / MI / MO / NA / PO / RA / TU / TO / TEO
+function_word <- BI / DA / GA / GO / HA / HU / JU / KU / KI / KIO / KEO / LU / MU / MI / MO / MOQ / NA / PO / RA / TU / TO / TEO
 BI <- ( b I / p A ) &( tone? boundary )
 DA <- ( d A / k A / s O / b A ) &( tone? boundary )
 MOQ <- m O q &( ( questions / tone )? boundary )

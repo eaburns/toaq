@@ -173,6 +173,18 @@ func ToASCII(txt string) string {
 	return s.String()
 }
 
+// Strip returns the ASCII representation of a single word
+// with capitalization preserved, but all tone markers stripped.
+func Strip(text string) string {
+	var s strings.Builder
+	for _, r := range ToASCII(text) {
+		if !strings.ContainsRune(toneNameRunes, r) {
+			s.WriteRune(r)
+		}
+	}
+	return s.String()
+}
+
 // WithTone returns the string with the tone of the first syllable
 // replaced with the given tone.
 func WithTone(str string, t rune) string {

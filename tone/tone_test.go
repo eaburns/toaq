@@ -22,6 +22,24 @@ func TestToASCII(t *testing.T) {
 	}
 }
 
+func TestStrip(t *testing.T) {
+	tests := []struct {
+		in, want string
+	}{
+		{"", ""},
+		{"hıa", "hia"},
+		{"jí", "ji"},
+		{"pójījī", "pojiji"},
+		{"rảı", "rai"},
+		{"rảI", "raI"},
+	}
+	for _, test := range tests {
+		if got := Strip(test.in); got != test.want {
+			t.Errorf("Strip(%q)=%q, want %q", test.in, got, test.want)
+		}
+	}
+}
+
 func TestWithTone(t *testing.T) {
 	tests := []struct {
 		word string

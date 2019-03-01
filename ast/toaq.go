@@ -1935,13 +1935,13 @@ fail:
 func _fragmentAction(parser *_Parser, start int) (int, *Fragment) {
 	var labels [7]string
 	use(labels)
-	var label3 Terms
-	var label4 Mod
-	var label5 Fragment
 	var label6 *Mod
 	var label0 (*CoP)
 	var label1 Relative
 	var label2 (*Prenex)
+	var label3 Terms
+	var label4 Mod
+	var label5 Fragment
 	dp := parser.deltaPos[start][_fragment]
 	if dp < 0 {
 		return -1, nil
@@ -3059,9 +3059,9 @@ fail:
 func _sentence_3Action(parser *_Parser, start int) (int, **StatementSentence) {
 	var labels [3]string
 	use(labels)
-	var label0 Statement
 	var label1 *Mod
 	var label2 *Word
+	var label0 Statement
 	dp := parser.deltaPos[start][_sentence_3]
 	if dp < 0 {
 		return -1, nil
@@ -3905,9 +3905,9 @@ fail:
 func _statement_3Action(parser *_Parser, start int) (int, *Statement) {
 	var labels [3]string
 	use(labels)
+	var label2 *Word
 	var label0 Predication
 	var label1 *Mod
-	var label2 *Word
 	dp := parser.deltaPos[start][_statement_3]
 	if dp < 0 {
 		return -1, nil
@@ -4150,9 +4150,9 @@ fail:
 func _predicationAction(parser *_Parser, start int) (int, *Predication) {
 	var labels [3]string
 	use(labels)
+	var label2 *Terms
 	var label0 Predicate
 	var label1 *Mod
-	var label2 *Terms
 	dp := parser.deltaPos[start][_predication]
 	if dp < 0 {
 		return -1, nil
@@ -4538,9 +4538,9 @@ fail:
 func _prenexAction(parser *_Parser, start int) (int, *(*Prenex)) {
 	var labels [3]string
 	use(labels)
+	var label0 Terms
 	var label1 *Mod
 	var label2 Word
-	var label0 Terms
 	dp := parser.deltaPos[start][_prenex]
 	if dp < 0 {
 		return -1, nil
@@ -5533,8 +5533,8 @@ fail:
 func _predicate_3Action(parser *_Parser, start int) (int, *Predicate) {
 	var labels [2]string
 	use(labels)
-	var label1 *Mod
 	var label0 Predicate
+	var label1 *Mod
 	dp := parser.deltaPos[start][_predicate_3]
 	if dp < 0 {
 		return -1, nil
@@ -6084,9 +6084,9 @@ fail:
 func _terms_2Action(parser *_Parser, start int) (int, *Terms) {
 	var labels [3]string
 	use(labels)
+	var label2 Terms
 	var label0 Term
 	var label1 *Mod
-	var label2 Terms
 	dp := parser.deltaPos[start][_terms_2]
 	if dp < 0 {
 		return -1, nil
@@ -7162,11 +7162,11 @@ fail:
 func _termsetAction(parser *_Parser, start int) (int, *(*TermSet)) {
 	var labels [5]string
 	use(labels)
-	var label4 (*CoP)
-	var label0 (*CoP)
 	var label1 (*CoP)
 	var label2 (*CoP)
 	var label3 (*CoP)
+	var label4 (*CoP)
+	var label0 (*CoP)
 	dp := parser.deltaPos[start][_termset]
 	if dp < 0 {
 		return -1, nil
@@ -7459,9 +7459,9 @@ fail:
 func _terms_IIAction(parser *_Parser, start int) (int, *Terms) {
 	var labels [3]string
 	use(labels)
+	var label0 Term
 	var label1 *Mod
 	var label2 Term
-	var label0 Term
 	dp := parser.deltaPos[start][_terms_II]
 	if dp < 0 {
 		return -1, nil
@@ -8086,9 +8086,9 @@ fail:
 func _terms_VAction(parser *_Parser, start int) (int, *Terms) {
 	var labels [3]string
 	use(labels)
-	var label2 Terms
 	var label0 Term
 	var label1 *Mod
+	var label2 Terms
 	dp := parser.deltaPos[start][_terms_V]
 	if dp < 0 {
 		return -1, nil
@@ -11091,9 +11091,9 @@ fail:
 func _relative_clause_3Action(parser *_Parser, start int) (int, **PredicationRelative) {
 	var labels [3]string
 	use(labels)
-	var label0 Predication
 	var label1 *Mod
 	var label2 *Word
+	var label0 Predication
 	dp := parser.deltaPos[start][_relative_clause_3]
 	if dp < 0 {
 		return -1, nil
@@ -11336,9 +11336,9 @@ fail:
 func _relative_predicationAction(parser *_Parser, start int) (int, *Predication) {
 	var labels [3]string
 	use(labels)
-	var label2 *Terms
 	var label0 Predicate
 	var label1 *Mod
+	var label2 *Terms
 	dp := parser.deltaPos[start][_relative_predication]
 	if dp < 0 {
 		return -1, nil
@@ -15154,9 +15154,9 @@ fail:
 func _content_statementAction(parser *_Parser, start int) (int, **PredicationContent) {
 	var labels [3]string
 	use(labels)
+	var label2 *Word
 	var label0 Predication
 	var label1 *Mod
-	var label2 *Word
 	dp := parser.deltaPos[start][_content_statement]
 	if dp < 0 {
 		return -1, nil
@@ -16489,10 +16489,10 @@ fail:
 func _MI_complementAction(parser *_Parser, start int) (int, *Phrase) {
 	var labels [4]string
 	use(labels)
+	var label3 Preposition
 	var label0 Predicate
 	var label1 Argument
 	var label2 Adverb
-	var label3 Preposition
 	dp := parser.deltaPos[start][_MI_complement]
 	if dp < 0 {
 		return -1, nil
@@ -17435,10 +17435,10 @@ fail:
 func _freemodAction(parser *_Parser, start int) (int, *Mod) {
 	var labels [4]string
 	use(labels)
+	var label0 *Interjection
 	var label1 (*Parenthetical)
 	var label2 *Incidental
 	var label3 *Vocative
-	var label0 *Interjection
 	dp := parser.deltaPos[start][_freemod]
 	if dp < 0 {
 		return -1, nil
@@ -17706,9 +17706,9 @@ fail:
 func _parentheticalAction(parser *_Parser, start int) (int, *(*Parenthetical)) {
 	var labels [3]string
 	use(labels)
-	var label1 *Mod
 	var label2 Word
 	var label0 Parenthetical
+	var label1 *Mod
 	dp := parser.deltaPos[start][_parenthetical]
 	if dp < 0 {
 		return -1, nil
@@ -18124,9 +18124,9 @@ fail:
 func _incidentalAction(parser *_Parser, start int) (int, **Incidental) {
 	var labels [3]string
 	use(labels)
+	var label2 Statement
 	var label0 Word
 	var label1 *Mod
-	var label2 Statement
 	dp := parser.deltaPos[start][_incidental]
 	if dp < 0 {
 		return -1, nil
@@ -18623,8 +18623,8 @@ fail:
 func _wordAction(parser *_Parser, start int) (int, *(*Word)) {
 	var labels [2]string
 	use(labels)
-	var label1 *Mod
 	var label0 string
+	var label1 *Mod
 	dp := parser.deltaPos[start][_word]
 	if dp < 0 {
 		return -1, nil
@@ -22761,9 +22761,9 @@ fail:
 func _illocutionaryAction(parser *_Parser, start int) (int, *Word) {
 	var labels [3]string
 	use(labels)
+	var label2 *Mod
 	var label0 string
 	var label1 Word
-	var label2 *Mod
 	dp := parser.deltaPos[start][_illocutionary]
 	if dp < 0 {
 		return -1, nil
@@ -53210,9 +53210,9 @@ fail:
 func _afterthought_cop__relative_clause_1__relative_clause_1Action(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label2 CoP
 	var label0 Relative
 	var label1 *Mod
+	var label2 CoP
 	dp := parser.deltaPos[start][_afterthought_cop__relative_clause_1__relative_clause_1]
 	if dp < 0 {
 		return -1, nil
@@ -54255,9 +54255,9 @@ fail:
 func _afterthought_cop__predicate_2__predicate_1Action(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
+	var label2 CoP
 	var label0 Predicate
 	var label1 *Mod
-	var label2 CoP
 	dp := parser.deltaPos[start][_afterthought_cop__predicate_2__predicate_1]
 	if dp < 0 {
 		return -1, nil
@@ -55204,9 +55204,9 @@ fail:
 func _MO_phrase__verb_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
+	var label1 *Mod
 	var label2 Word
 	var label0 MOPredicate
-	var label1 *Mod
 	dp := parser.deltaPos[start][_MO_phrase__verb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -55783,9 +55783,9 @@ fail:
 func _serial__predicate_1Action(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
+	var label2 Predicate
 	var label0 Predicate
 	var label1 *Mod
-	var label2 Predicate
 	dp := parser.deltaPos[start][_serial__predicate_1]
 	if dp < 0 {
 		return -1, nil
@@ -55992,9 +55992,9 @@ fail:
 func _forethought_cop__terms_V__terms_VAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label2 CoP
 	var label0 CoP
 	var label1 *Mod
+	var label2 CoP
 	dp := parser.deltaPos[start][_forethought_cop__terms_V__terms_V]
 	if dp < 0 {
 		return -1, nil
@@ -56410,9 +56410,9 @@ fail:
 func _forethought_cop__terms_III__terms_IIIAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
+	var label0 CoP
 	var label1 *Mod
 	var label2 CoP
-	var label0 CoP
 	dp := parser.deltaPos[start][_forethought_cop__terms_III__terms_III]
 	if dp < 0 {
 		return -1, nil
@@ -56619,9 +56619,9 @@ fail:
 func _forethought_cop__terms_II__terms_IIAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label0 CoP
 	var label1 *Mod
 	var label2 CoP
+	var label0 CoP
 	dp := parser.deltaPos[start][_forethought_cop__terms_II__terms_II]
 	if dp < 0 {
 		return -1, nil
@@ -56828,9 +56828,9 @@ fail:
 func _afterthought_cop__arg_1__argumentAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
+	var label0 Argument
 	var label1 *Mod
 	var label2 CoP
-	var label0 Argument
 	dp := parser.deltaPos[start][_afterthought_cop__arg_1__argument]
 	if dp < 0 {
 		return -1, nil
@@ -57037,9 +57037,9 @@ fail:
 func _forethought_cop__argument__argumentAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
+	var label0 CoP
 	var label1 *Mod
 	var label2 CoP
-	var label0 CoP
 	dp := parser.deltaPos[start][_forethought_cop__argument__argument]
 	if dp < 0 {
 		return -1, nil
@@ -58101,9 +58101,9 @@ fail:
 func _PO_phrase__arg_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
-	var label0 POPredicate
 	var label1 *Mod
 	var label2 *Word
+	var label0 POPredicate
 	dp := parser.deltaPos[start][_PO_phrase__arg_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -59526,9 +59526,9 @@ fail:
 func _serial__relative_predicate_1Action(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
+	var label2 Predicate
 	var label0 Predicate
 	var label1 *Mod
-	var label2 Predicate
 	dp := parser.deltaPos[start][_serial__relative_predicate_1]
 	if dp < 0 {
 		return -1, nil
@@ -60256,9 +60256,9 @@ fail:
 func _PO_phrase__relative_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
-	var label2 *Word
 	var label0 POPredicate
 	var label1 *Mod
+	var label2 *Word
 	dp := parser.deltaPos[start][_PO_phrase__relative_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -61054,9 +61054,9 @@ fail:
 func _afterthought_cop__adverb_1__adverbAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
+	var label1 *Mod
 	var label2 CoP
 	var label0 Adverb
-	var label1 *Mod
 	dp := parser.deltaPos[start][_afterthought_cop__adverb_1__adverb]
 	if dp < 0 {
 		return -1, nil
@@ -61472,9 +61472,9 @@ fail:
 func _serial__adverb_3Action(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
-	var label0 Predicate
 	var label1 *Mod
 	var label2 Predicate
+	var label0 Predicate
 	dp := parser.deltaPos[start][_serial__adverb_3]
 	if dp < 0 {
 		return -1, nil
@@ -63125,9 +63125,9 @@ fail:
 func _afterthought_cop__prepositional_phrase_1__prepositional_phrase_1Action(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
+	var label2 CoP
 	var label0 Preposition
 	var label1 *Mod
-	var label2 CoP
 	dp := parser.deltaPos[start][_afterthought_cop__prepositional_phrase_1__prepositional_phrase_1]
 	if dp < 0 {
 		return -1, nil
@@ -63752,9 +63752,9 @@ fail:
 func _forethought_cop__preposition__prepositionAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
+	var label2 CoP
 	var label0 CoP
 	var label1 *Mod
-	var label2 CoP
 	dp := parser.deltaPos[start][_forethought_cop__preposition__preposition]
 	if dp < 0 {
 		return -1, nil
@@ -65035,9 +65035,9 @@ fail:
 func _MO_phrase__preposition_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
+	var label0 MOPredicate
 	var label1 *Mod
 	var label2 Word
-	var label0 MOPredicate
 	dp := parser.deltaPos[start][_MO_phrase__preposition_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -66032,9 +66032,9 @@ fail:
 func _serial__content_predicate_1Action(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
+	var label0 Predicate
 	var label1 *Mod
 	var label2 Predicate
-	var label0 Predicate
 	dp := parser.deltaPos[start][_serial__content_predicate_1]
 	if dp < 0 {
 		return -1, nil
@@ -66981,9 +66981,9 @@ fail:
 func _MO_phrase__content_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
+	var label0 MOPredicate
 	var label1 *Mod
 	var label2 Word
-	var label0 MOPredicate
 	dp := parser.deltaPos[start][_MO_phrase__content_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -68726,8 +68726,8 @@ fail:
 func _syllable__verb_desinence__verb_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label0 string
 	var label1 string
+	var label0 string
 	dp := parser.deltaPos[start][_syllable__verb_desinence__verb_tone]
 	if dp < 0 {
 		return -1, nil
@@ -69080,8 +69080,8 @@ fail:
 func _syllable__content_desinence__content_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label0 string
 	var label1 string
+	var label0 string
 	dp := parser.deltaPos[start][_syllable__content_desinence__content_tone]
 	if dp < 0 {
 		return -1, nil
@@ -69901,7 +69901,7 @@ func _desinence__a__u__i__o__eAccepts(parser *_Parser, start int) (deltaPos, del
 		return dp, de
 	}
 	pos, perr := start, -1
-	// a o/a i/a q/a/u a o/u a i/u e q/u e/u o q/u o/u i/u a q/u a/u q/u/i a o/i a i/i e q/i e/i o q/i o/i u/i a q/i a/i q/i/o e q/o e/o i/o a q/o a/o q/o/e o q/e o/e i/e a q/e a/e q/e
+	// a o/a i/a q/a/u a o/u a i/u e q/u e/u o q/u o/u i/u a q/u a/u q/u/i a o/i a i/i e q/i e/i o q/i o/i u/i a q/i a/i q/i/o e q/o e/o i/o a i/o a q/o a/o q/o/e o q/e o/e i/e a q/e a/e q/e
 	{
 		pos3 := pos
 		// a o
@@ -70281,7 +70281,7 @@ func _desinence__a__u__i__o__eAccepts(parser *_Parser, start int) (deltaPos, del
 		goto ok0
 	fail57:
 		pos = pos3
-		// o a q
+		// o a i
 		// o
 		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail59
@@ -70290,101 +70290,101 @@ func _desinence__a__u__i__o__eAccepts(parser *_Parser, start int) (deltaPos, del
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail59
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// o a
+		// o a q
 		// o
 		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail61
 		}
 		// a
 		if !_accept(parser, _aAccepts, &pos, &perr) {
+			goto fail61
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// o q
+		// o a
 		// o
 		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail63
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// o q
 		// o
 		if !_accept(parser, _oAccepts, &pos, &perr) {
+			goto fail65
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// e o q
-		// e
-		if !_accept(parser, _eAccepts, &pos, &perr) {
-			goto fail66
-		}
 		// o
 		if !_accept(parser, _oAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
-			goto fail66
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// e o
+		// e o q
 		// e
 		if !_accept(parser, _eAccepts, &pos, &perr) {
 			goto fail68
 		}
 		// o
 		if !_accept(parser, _oAccepts, &pos, &perr) {
+			goto fail68
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// e i
+		// e o
 		// e
 		if !_accept(parser, _eAccepts, &pos, &perr) {
 			goto fail70
 		}
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// e a q
+		// e i
 		// e
 		if !_accept(parser, _eAccepts, &pos, &perr) {
 			goto fail72
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
-			goto fail72
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// e a
+		// e a q
 		// e
 		if !_accept(parser, _eAccepts, &pos, &perr) {
 			goto fail74
@@ -70393,27 +70393,43 @@ func _desinence__a__u__i__o__eAccepts(parser *_Parser, start int) (deltaPos, del
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail74
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// e q
+		// e a
 		// e
 		if !_accept(parser, _eAccepts, &pos, &perr) {
 			goto fail76
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// e q
 		// e
 		if !_accept(parser, _eAccepts, &pos, &perr) {
 			goto fail78
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// e
+		if !_accept(parser, _eAccepts, &pos, &perr) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -70435,7 +70451,7 @@ func _desinence__a__u__i__o__eNode(parser *_Parser, start int) (int, *peg.Node) 
 	}
 	pos := start
 	node = &peg.Node{Name: "desinence<a, u, i, o, e>"}
-	// a o/a i/a q/a/u a o/u a i/u e q/u e/u o q/u o/u i/u a q/u a/u q/u/i a o/i a i/i e q/i e/i o q/i o/i u/i a q/i a/i q/i/o e q/o e/o i/o a q/o a/o q/o/e o q/e o/e i/e a q/e a/e q/e
+	// a o/a i/a q/a/u a o/u a i/u e q/u e/u o q/u o/u i/u a q/u a/u q/u/i a o/i a i/i e q/i e/i o q/i o/i u/i a q/i a/i q/i/o e q/o e/o i/o a i/o a q/o a/o q/o/e o q/e o/e i/e a q/e a/e q/e
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
@@ -70845,7 +70861,7 @@ func _desinence__a__u__i__o__eNode(parser *_Parser, start int) (int, *peg.Node) 
 	fail57:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// o a q
+		// o a i
 		// o
 		if !_node(parser, _oNode, node, &pos) {
 			goto fail59
@@ -70854,109 +70870,109 @@ func _desinence__a__u__i__o__eNode(parser *_Parser, start int) (int, *peg.Node) 
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail59
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// o a
+		// o a q
 		// o
 		if !_node(parser, _oNode, node, &pos) {
 			goto fail61
 		}
 		// a
 		if !_node(parser, _aNode, node, &pos) {
+			goto fail61
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// o q
+		// o a
 		// o
 		if !_node(parser, _oNode, node, &pos) {
 			goto fail63
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// o q
 		// o
 		if !_node(parser, _oNode, node, &pos) {
+			goto fail65
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// e o q
-		// e
-		if !_node(parser, _eNode, node, &pos) {
-			goto fail66
-		}
 		// o
 		if !_node(parser, _oNode, node, &pos) {
-			goto fail66
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
-			goto fail66
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// e o
+		// e o q
 		// e
 		if !_node(parser, _eNode, node, &pos) {
 			goto fail68
 		}
 		// o
 		if !_node(parser, _oNode, node, &pos) {
+			goto fail68
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// e i
+		// e o
 		// e
 		if !_node(parser, _eNode, node, &pos) {
 			goto fail70
 		}
-		// i
-		if !_node(parser, _iNode, node, &pos) {
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// e a q
+		// e i
 		// e
 		if !_node(parser, _eNode, node, &pos) {
 			goto fail72
 		}
-		// a
-		if !_node(parser, _aNode, node, &pos) {
-			goto fail72
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// e a
+		// e a q
 		// e
 		if !_node(parser, _eNode, node, &pos) {
 			goto fail74
@@ -70965,29 +70981,46 @@ func _desinence__a__u__i__o__eNode(parser *_Parser, start int) (int, *peg.Node) 
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail74
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// e q
+		// e a
 		// e
 		if !_node(parser, _eNode, node, &pos) {
 			goto fail76
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// e q
 		// e
 		if !_node(parser, _eNode, node, &pos) {
 			goto fail78
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		node.Kids = node.Kids[:nkids1]
+		pos = pos3
+		// e
+		if !_node(parser, _eNode, node, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
 		goto fail
@@ -71010,7 +71043,7 @@ func _desinence__a__u__i__o__eFail(parser *_Parser, start, errPos int) (int, *pe
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _desinence__a__u__i__o__e}
-	// a o/a i/a q/a/u a o/u a i/u e q/u e/u o q/u o/u i/u a q/u a/u q/u/i a o/i a i/i e q/i e/i o q/i o/i u/i a q/i a/i q/i/o e q/o e/o i/o a q/o a/o q/o/e o q/e o/e i/e a q/e a/e q/e
+	// a o/a i/a q/a/u a o/u a i/u e q/u e/u o q/u o/u i/u a q/u a/u q/u/i a o/i a i/i e q/i e/i o q/i o/i u/i a q/i a/i q/i/o e q/o e/o i/o a i/o a q/o a/o q/o/e o q/e o/e i/e a q/e a/e q/e
 	{
 		pos3 := pos
 		// a o
@@ -71390,7 +71423,7 @@ func _desinence__a__u__i__o__eFail(parser *_Parser, start, errPos int) (int, *pe
 		goto ok0
 	fail57:
 		pos = pos3
-		// o a q
+		// o a i
 		// o
 		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail59
@@ -71399,101 +71432,101 @@ func _desinence__a__u__i__o__eFail(parser *_Parser, start, errPos int) (int, *pe
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail59
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// o a
+		// o a q
 		// o
 		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		// a
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
+			goto fail61
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// o q
+		// o a
 		// o
 		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail63
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// o q
 		// o
 		if !_fail(parser, _oFail, errPos, failure, &pos) {
+			goto fail65
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// e o q
-		// e
-		if !_fail(parser, _eFail, errPos, failure, &pos) {
-			goto fail66
-		}
 		// o
 		if !_fail(parser, _oFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
-			goto fail66
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// e o
+		// e o q
 		// e
 		if !_fail(parser, _eFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		// o
 		if !_fail(parser, _oFail, errPos, failure, &pos) {
+			goto fail68
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// e i
+		// e o
 		// e
 		if !_fail(parser, _eFail, errPos, failure, &pos) {
 			goto fail70
 		}
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// e a q
+		// e i
 		// e
 		if !_fail(parser, _eFail, errPos, failure, &pos) {
 			goto fail72
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
-			goto fail72
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// e a
+		// e a q
 		// e
 		if !_fail(parser, _eFail, errPos, failure, &pos) {
 			goto fail74
@@ -71502,27 +71535,43 @@ func _desinence__a__u__i__o__eFail(parser *_Parser, start, errPos int) (int, *pe
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail74
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// e q
+		// e a
 		// e
 		if !_fail(parser, _eFail, errPos, failure, &pos) {
 			goto fail76
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// e q
 		// e
 		if !_fail(parser, _eFail, errPos, failure, &pos) {
 			goto fail78
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// e
+		if !_fail(parser, _eFail, errPos, failure, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -71547,7 +71596,7 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 	}
 	var node string
 	pos := start
-	// a o/a i/a q/a/u a o/u a i/u e q/u e/u o q/u o/u i/u a q/u a/u q/u/i a o/i a i/i e q/i e/i o q/i o/i u/i a q/i a/i q/i/o e q/o e/o i/o a q/o a/o q/o/e o q/e o/e i/e a q/e a/e q/e
+	// a o/a i/a q/a/u a o/u a i/u e q/u e/u o q/u o/u i/u a q/u a/u q/u/i a o/i a i/i e q/i e/i o q/i o/i u/i a q/i a/i q/i/o e q/o e/o i/o a i/o a q/o a/o q/o/e o q/e o/e i/e a q/e a/e q/e
 	{
 		pos3 := pos
 		var node2 string
@@ -72296,7 +72345,7 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 	fail57:
 		node = node2
 		pos = pos3
-		// o a q
+		// o a i
 		{
 			var node60 string
 			// o
@@ -72315,8 +72364,8 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 				pos = p
 			}
 			node, node60 = node+node60, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail59
 			} else {
 				node60 = *n
@@ -72328,7 +72377,7 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 	fail59:
 		node = node2
 		pos = pos3
-		// o a
+		// o a q
 		{
 			var node62 string
 			// o
@@ -72347,12 +72396,20 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 				pos = p
 			}
 			node, node62 = node+node62, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail61
+			} else {
+				node62 = *n
+				pos = p
+			}
+			node, node62 = node+node62, ""
 		}
 		goto ok0
 	fail61:
 		node = node2
 		pos = pos3
-		// o q
+		// o a
 		{
 			var node64 string
 			// o
@@ -72363,8 +72420,8 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 				pos = p
 			}
 			node, node64 = node+node64, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail63
 			} else {
 				node64 = *n
@@ -72376,50 +72433,42 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 	fail63:
 		node = node2
 		pos = pos3
-		// o
-		if p, n := _oAction(parser, pos); n == nil {
-			goto fail65
-		} else {
-			node = *n
-			pos = p
+		// o q
+		{
+			var node66 string
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
 		}
 		goto ok0
 	fail65:
 		node = node2
 		pos = pos3
-		// e o q
-		{
-			var node67 string
-			// e
-			if p, n := _eAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// o
-			if p, n := _oAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
+		// o
+		if p, n := _oAction(parser, pos); n == nil {
+			goto fail67
+		} else {
+			node = *n
+			pos = p
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node = node2
 		pos = pos3
-		// e o
+		// e o q
 		{
 			var node69 string
 			// e
@@ -72438,12 +72487,20 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 				pos = p
 			}
 			node, node69 = node+node69, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail68
+			} else {
+				node69 = *n
+				pos = p
+			}
+			node, node69 = node+node69, ""
 		}
 		goto ok0
 	fail68:
 		node = node2
 		pos = pos3
-		// e i
+		// e o
 		{
 			var node71 string
 			// e
@@ -72454,8 +72511,8 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 				pos = p
 			}
 			node, node71 = node+node71, ""
-			// i
-			if p, n := _iAction(parser, pos); n == nil {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail70
 			} else {
 				node71 = *n
@@ -72467,7 +72524,7 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 	fail70:
 		node = node2
 		pos = pos3
-		// e a q
+		// e i
 		{
 			var node73 string
 			// e
@@ -72478,16 +72535,8 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 				pos = p
 			}
 			node, node73 = node+node73, ""
-			// a
-			if p, n := _aAction(parser, pos); n == nil {
-				goto fail72
-			} else {
-				node73 = *n
-				pos = p
-			}
-			node, node73 = node+node73, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail72
 			} else {
 				node73 = *n
@@ -72499,7 +72548,7 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 	fail72:
 		node = node2
 		pos = pos3
-		// e a
+		// e a q
 		{
 			var node75 string
 			// e
@@ -72518,12 +72567,20 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 				pos = p
 			}
 			node, node75 = node+node75, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail74
+			} else {
+				node75 = *n
+				pos = p
+			}
+			node, node75 = node+node75, ""
 		}
 		goto ok0
 	fail74:
 		node = node2
 		pos = pos3
-		// e q
+		// e a
 		{
 			var node77 string
 			// e
@@ -72534,8 +72591,8 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 				pos = p
 			}
 			node, node77 = node+node77, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail76
 			} else {
 				node77 = *n
@@ -72547,15 +72604,39 @@ func _desinence__a__u__i__o__eAction(parser *_Parser, start int) (int, *string) 
 	fail76:
 		node = node2
 		pos = pos3
+		// e q
+		{
+			var node79 string
+			// e
+			if p, n := _eAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+		}
+		goto ok0
+	fail78:
+		node = node2
+		pos = pos3
 		// e
 		if p, n := _eAction(parser, pos); n == nil {
-			goto fail78
+			goto fail80
 		} else {
 			node = *n
 			pos = p
 		}
 		goto ok0
-	fail78:
+	fail80:
 		node = node2
 		pos = pos3
 		goto fail
@@ -72572,7 +72653,7 @@ func _desinence__ā__ū__ī__ō__ēAccepts(parser *_Parser, start int) (deltaPos
 		return dp, de
 	}
 	pos, perr := start, -1
-	// ā o/ā i/ā q/ā/ū a o/ū a i/ū e q/ū e/ū o q/ū o/ū i/ū a q/ū a/ū q/ū/ī a o/ī a i/ī e q/ī e/ī o q/ī o/ī u/ī a q/ī a/ī q/ī/ō e q/ō e/ō i/ō a q/ō a/ō q/ō/ē o q/ē o/ē i/ē a q/ē a/ē q/ē
+	// ā o/ā i/ā q/ā/ū a o/ū a i/ū e q/ū e/ū o q/ū o/ū i/ū a q/ū a/ū q/ū/ī a o/ī a i/ī e q/ī e/ī o q/ī o/ī u/ī a q/ī a/ī q/ī/ō e q/ō e/ō i/ō a i/ō a q/ō a/ō q/ō/ē o q/ē o/ē i/ē a q/ē a/ē q/ē
 	{
 		pos3 := pos
 		// ā o
@@ -72952,7 +73033,7 @@ func _desinence__ā__ū__ī__ō__ēAccepts(parser *_Parser, start int) (deltaPos
 		goto ok0
 	fail57:
 		pos = pos3
-		// ō a q
+		// ō a i
 		// ō
 		if !_accept(parser, _ōAccepts, &pos, &perr) {
 			goto fail59
@@ -72961,101 +73042,101 @@ func _desinence__ā__ū__ī__ō__ēAccepts(parser *_Parser, start int) (deltaPos
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail59
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// ō a
+		// ō a q
 		// ō
 		if !_accept(parser, _ōAccepts, &pos, &perr) {
 			goto fail61
 		}
 		// a
 		if !_accept(parser, _aAccepts, &pos, &perr) {
+			goto fail61
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// ō q
+		// ō a
 		// ō
 		if !_accept(parser, _ōAccepts, &pos, &perr) {
 			goto fail63
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// ō q
 		// ō
 		if !_accept(parser, _ōAccepts, &pos, &perr) {
+			goto fail65
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// ē o q
-		// ē
-		if !_accept(parser, _ēAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// o
-		if !_accept(parser, _oAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
-			goto fail66
+		// ō
+		if !_accept(parser, _ōAccepts, &pos, &perr) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// ē o
+		// ē o q
 		// ē
 		if !_accept(parser, _ēAccepts, &pos, &perr) {
 			goto fail68
 		}
 		// o
 		if !_accept(parser, _oAccepts, &pos, &perr) {
+			goto fail68
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// ē i
+		// ē o
 		// ē
 		if !_accept(parser, _ēAccepts, &pos, &perr) {
 			goto fail70
 		}
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// ē a q
+		// ē i
 		// ē
 		if !_accept(parser, _ēAccepts, &pos, &perr) {
 			goto fail72
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
-			goto fail72
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// ē a
+		// ē a q
 		// ē
 		if !_accept(parser, _ēAccepts, &pos, &perr) {
 			goto fail74
@@ -73064,27 +73145,43 @@ func _desinence__ā__ū__ī__ō__ēAccepts(parser *_Parser, start int) (deltaPos
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail74
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// ē q
+		// ē a
 		// ē
 		if !_accept(parser, _ēAccepts, &pos, &perr) {
 			goto fail76
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// ē q
 		// ē
 		if !_accept(parser, _ēAccepts, &pos, &perr) {
 			goto fail78
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// ē
+		if !_accept(parser, _ēAccepts, &pos, &perr) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -73106,7 +73203,7 @@ func _desinence__ā__ū__ī__ō__ēNode(parser *_Parser, start int) (int, *peg.N
 	}
 	pos := start
 	node = &peg.Node{Name: "desinence<ā, ū, ī, ō, ē>"}
-	// ā o/ā i/ā q/ā/ū a o/ū a i/ū e q/ū e/ū o q/ū o/ū i/ū a q/ū a/ū q/ū/ī a o/ī a i/ī e q/ī e/ī o q/ī o/ī u/ī a q/ī a/ī q/ī/ō e q/ō e/ō i/ō a q/ō a/ō q/ō/ē o q/ē o/ē i/ē a q/ē a/ē q/ē
+	// ā o/ā i/ā q/ā/ū a o/ū a i/ū e q/ū e/ū o q/ū o/ū i/ū a q/ū a/ū q/ū/ī a o/ī a i/ī e q/ī e/ī o q/ī o/ī u/ī a q/ī a/ī q/ī/ō e q/ō e/ō i/ō a i/ō a q/ō a/ō q/ō/ē o q/ē o/ē i/ē a q/ē a/ē q/ē
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
@@ -73516,7 +73613,7 @@ func _desinence__ā__ū__ī__ō__ēNode(parser *_Parser, start int) (int, *peg.N
 	fail57:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ō a q
+		// ō a i
 		// ō
 		if !_node(parser, _ōNode, node, &pos) {
 			goto fail59
@@ -73525,109 +73622,109 @@ func _desinence__ā__ū__ī__ō__ēNode(parser *_Parser, start int) (int, *peg.N
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail59
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ō a
+		// ō a q
 		// ō
 		if !_node(parser, _ōNode, node, &pos) {
 			goto fail61
 		}
 		// a
 		if !_node(parser, _aNode, node, &pos) {
+			goto fail61
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ō q
+		// ō a
 		// ō
 		if !_node(parser, _ōNode, node, &pos) {
 			goto fail63
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// ō q
 		// ō
 		if !_node(parser, _ōNode, node, &pos) {
+			goto fail65
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ē o q
-		// ē
-		if !_node(parser, _ēNode, node, &pos) {
-			goto fail66
-		}
-		// o
-		if !_node(parser, _oNode, node, &pos) {
-			goto fail66
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
-			goto fail66
+		// ō
+		if !_node(parser, _ōNode, node, &pos) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ē o
+		// ē o q
 		// ē
 		if !_node(parser, _ēNode, node, &pos) {
 			goto fail68
 		}
 		// o
 		if !_node(parser, _oNode, node, &pos) {
+			goto fail68
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ē i
+		// ē o
 		// ē
 		if !_node(parser, _ēNode, node, &pos) {
 			goto fail70
 		}
-		// i
-		if !_node(parser, _iNode, node, &pos) {
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ē a q
+		// ē i
 		// ē
 		if !_node(parser, _ēNode, node, &pos) {
 			goto fail72
 		}
-		// a
-		if !_node(parser, _aNode, node, &pos) {
-			goto fail72
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ē a
+		// ē a q
 		// ē
 		if !_node(parser, _ēNode, node, &pos) {
 			goto fail74
@@ -73636,29 +73733,46 @@ func _desinence__ā__ū__ī__ō__ēNode(parser *_Parser, start int) (int, *peg.N
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail74
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ē q
+		// ē a
 		// ē
 		if !_node(parser, _ēNode, node, &pos) {
 			goto fail76
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// ē q
 		// ē
 		if !_node(parser, _ēNode, node, &pos) {
 			goto fail78
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		node.Kids = node.Kids[:nkids1]
+		pos = pos3
+		// ē
+		if !_node(parser, _ēNode, node, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
 		goto fail
@@ -73681,7 +73795,7 @@ func _desinence__ā__ū__ī__ō__ēFail(parser *_Parser, start, errPos int) (int
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _desinence__ā__ū__ī__ō__ē}
-	// ā o/ā i/ā q/ā/ū a o/ū a i/ū e q/ū e/ū o q/ū o/ū i/ū a q/ū a/ū q/ū/ī a o/ī a i/ī e q/ī e/ī o q/ī o/ī u/ī a q/ī a/ī q/ī/ō e q/ō e/ō i/ō a q/ō a/ō q/ō/ē o q/ē o/ē i/ē a q/ē a/ē q/ē
+	// ā o/ā i/ā q/ā/ū a o/ū a i/ū e q/ū e/ū o q/ū o/ū i/ū a q/ū a/ū q/ū/ī a o/ī a i/ī e q/ī e/ī o q/ī o/ī u/ī a q/ī a/ī q/ī/ō e q/ō e/ō i/ō a i/ō a q/ō a/ō q/ō/ē o q/ē o/ē i/ē a q/ē a/ē q/ē
 	{
 		pos3 := pos
 		// ā o
@@ -74061,7 +74175,7 @@ func _desinence__ā__ū__ī__ō__ēFail(parser *_Parser, start, errPos int) (int
 		goto ok0
 	fail57:
 		pos = pos3
-		// ō a q
+		// ō a i
 		// ō
 		if !_fail(parser, _ōFail, errPos, failure, &pos) {
 			goto fail59
@@ -74070,101 +74184,101 @@ func _desinence__ā__ū__ī__ō__ēFail(parser *_Parser, start, errPos int) (int
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail59
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// ō a
+		// ō a q
 		// ō
 		if !_fail(parser, _ōFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		// a
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
+			goto fail61
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// ō q
+		// ō a
 		// ō
 		if !_fail(parser, _ōFail, errPos, failure, &pos) {
 			goto fail63
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// ō q
 		// ō
 		if !_fail(parser, _ōFail, errPos, failure, &pos) {
+			goto fail65
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// ē o q
-		// ē
-		if !_fail(parser, _ēFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// o
-		if !_fail(parser, _oFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
-			goto fail66
+		// ō
+		if !_fail(parser, _ōFail, errPos, failure, &pos) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// ē o
+		// ē o q
 		// ē
 		if !_fail(parser, _ēFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		// o
 		if !_fail(parser, _oFail, errPos, failure, &pos) {
+			goto fail68
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// ē i
+		// ē o
 		// ē
 		if !_fail(parser, _ēFail, errPos, failure, &pos) {
 			goto fail70
 		}
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// ē a q
+		// ē i
 		// ē
 		if !_fail(parser, _ēFail, errPos, failure, &pos) {
 			goto fail72
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
-			goto fail72
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// ē a
+		// ē a q
 		// ē
 		if !_fail(parser, _ēFail, errPos, failure, &pos) {
 			goto fail74
@@ -74173,27 +74287,43 @@ func _desinence__ā__ū__ī__ō__ēFail(parser *_Parser, start, errPos int) (int
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail74
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// ē q
+		// ē a
 		// ē
 		if !_fail(parser, _ēFail, errPos, failure, &pos) {
 			goto fail76
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// ē q
 		// ē
 		if !_fail(parser, _ēFail, errPos, failure, &pos) {
 			goto fail78
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// ē
+		if !_fail(parser, _ēFail, errPos, failure, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -74218,7 +74348,7 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 	}
 	var node string
 	pos := start
-	// ā o/ā i/ā q/ā/ū a o/ū a i/ū e q/ū e/ū o q/ū o/ū i/ū a q/ū a/ū q/ū/ī a o/ī a i/ī e q/ī e/ī o q/ī o/ī u/ī a q/ī a/ī q/ī/ō e q/ō e/ō i/ō a q/ō a/ō q/ō/ē o q/ē o/ē i/ē a q/ē a/ē q/ē
+	// ā o/ā i/ā q/ā/ū a o/ū a i/ū e q/ū e/ū o q/ū o/ū i/ū a q/ū a/ū q/ū/ī a o/ī a i/ī e q/ī e/ī o q/ī o/ī u/ī a q/ī a/ī q/ī/ō e q/ō e/ō i/ō a i/ō a q/ō a/ō q/ō/ē o q/ē o/ē i/ē a q/ē a/ē q/ē
 	{
 		pos3 := pos
 		var node2 string
@@ -74967,7 +75097,7 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 	fail57:
 		node = node2
 		pos = pos3
-		// ō a q
+		// ō a i
 		{
 			var node60 string
 			// ō
@@ -74986,8 +75116,8 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node60 = node+node60, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail59
 			} else {
 				node60 = *n
@@ -74999,7 +75129,7 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 	fail59:
 		node = node2
 		pos = pos3
-		// ō a
+		// ō a q
 		{
 			var node62 string
 			// ō
@@ -75018,12 +75148,20 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node62 = node+node62, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail61
+			} else {
+				node62 = *n
+				pos = p
+			}
+			node, node62 = node+node62, ""
 		}
 		goto ok0
 	fail61:
 		node = node2
 		pos = pos3
-		// ō q
+		// ō a
 		{
 			var node64 string
 			// ō
@@ -75034,8 +75172,8 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node64 = node+node64, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail63
 			} else {
 				node64 = *n
@@ -75047,50 +75185,42 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 	fail63:
 		node = node2
 		pos = pos3
-		// ō
-		if p, n := _ōAction(parser, pos); n == nil {
-			goto fail65
-		} else {
-			node = *n
-			pos = p
+		// ō q
+		{
+			var node66 string
+			// ō
+			if p, n := _ōAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
 		}
 		goto ok0
 	fail65:
 		node = node2
 		pos = pos3
-		// ē o q
-		{
-			var node67 string
-			// ē
-			if p, n := _ēAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// o
-			if p, n := _oAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
+		// ō
+		if p, n := _ōAction(parser, pos); n == nil {
+			goto fail67
+		} else {
+			node = *n
+			pos = p
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node = node2
 		pos = pos3
-		// ē o
+		// ē o q
 		{
 			var node69 string
 			// ē
@@ -75109,12 +75239,20 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node69 = node+node69, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail68
+			} else {
+				node69 = *n
+				pos = p
+			}
+			node, node69 = node+node69, ""
 		}
 		goto ok0
 	fail68:
 		node = node2
 		pos = pos3
-		// ē i
+		// ē o
 		{
 			var node71 string
 			// ē
@@ -75125,8 +75263,8 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node71 = node+node71, ""
-			// i
-			if p, n := _iAction(parser, pos); n == nil {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail70
 			} else {
 				node71 = *n
@@ -75138,7 +75276,7 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 	fail70:
 		node = node2
 		pos = pos3
-		// ē a q
+		// ē i
 		{
 			var node73 string
 			// ē
@@ -75149,16 +75287,8 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node73 = node+node73, ""
-			// a
-			if p, n := _aAction(parser, pos); n == nil {
-				goto fail72
-			} else {
-				node73 = *n
-				pos = p
-			}
-			node, node73 = node+node73, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail72
 			} else {
 				node73 = *n
@@ -75170,7 +75300,7 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 	fail72:
 		node = node2
 		pos = pos3
-		// ē a
+		// ē a q
 		{
 			var node75 string
 			// ē
@@ -75189,12 +75319,20 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node75 = node+node75, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail74
+			} else {
+				node75 = *n
+				pos = p
+			}
+			node, node75 = node+node75, ""
 		}
 		goto ok0
 	fail74:
 		node = node2
 		pos = pos3
-		// ē q
+		// ē a
 		{
 			var node77 string
 			// ē
@@ -75205,8 +75343,8 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node77 = node+node77, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail76
 			} else {
 				node77 = *n
@@ -75218,15 +75356,39 @@ func _desinence__ā__ū__ī__ō__ēAction(parser *_Parser, start int) (int, *str
 	fail76:
 		node = node2
 		pos = pos3
+		// ē q
+		{
+			var node79 string
+			// ē
+			if p, n := _ēAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+		}
+		goto ok0
+	fail78:
+		node = node2
+		pos = pos3
 		// ē
 		if p, n := _ēAction(parser, pos); n == nil {
-			goto fail78
+			goto fail80
 		} else {
 			node = *n
 			pos = p
 		}
 		goto ok0
-	fail78:
+	fail80:
 		node = node2
 		pos = pos3
 		goto fail
@@ -75243,7 +75405,7 @@ func _desinence__á__ú__í__ó__éAccepts(parser *_Parser, start int) (deltaPos
 		return dp, de
 	}
 	pos, perr := start, -1
-	// á o/á i/á q/á/ú a o/ú a i/ú e q/ú e/ú o q/ú o/ú i/ú a q/ú a/ú q/ú/í a o/í a i/í e q/í e/í o q/í o/í u/í a q/í a/í q/í/ó e q/ó e/ó i/ó a q/ó a/ó q/ó/é o q/é o/é i/é a q/é a/é q/é
+	// á o/á i/á q/á/ú a o/ú a i/ú e q/ú e/ú o q/ú o/ú i/ú a q/ú a/ú q/ú/í a o/í a i/í e q/í e/í o q/í o/í u/í a q/í a/í q/í/ó e q/ó e/ó i/ó a i/ó a q/ó a/ó q/ó/é o q/é o/é i/é a q/é a/é q/é
 	{
 		pos3 := pos
 		// á o
@@ -75623,7 +75785,7 @@ func _desinence__á__ú__í__ó__éAccepts(parser *_Parser, start int) (deltaPos
 		goto ok0
 	fail57:
 		pos = pos3
-		// ó a q
+		// ó a i
 		// ó
 		if !_accept(parser, _óAccepts, &pos, &perr) {
 			goto fail59
@@ -75632,101 +75794,101 @@ func _desinence__á__ú__í__ó__éAccepts(parser *_Parser, start int) (deltaPos
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail59
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// ó a
+		// ó a q
 		// ó
 		if !_accept(parser, _óAccepts, &pos, &perr) {
 			goto fail61
 		}
 		// a
 		if !_accept(parser, _aAccepts, &pos, &perr) {
+			goto fail61
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// ó q
+		// ó a
 		// ó
 		if !_accept(parser, _óAccepts, &pos, &perr) {
 			goto fail63
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// ó q
 		// ó
 		if !_accept(parser, _óAccepts, &pos, &perr) {
+			goto fail65
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// é o q
-		// é
-		if !_accept(parser, _éAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// o
-		if !_accept(parser, _oAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
-			goto fail66
+		// ó
+		if !_accept(parser, _óAccepts, &pos, &perr) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// é o
+		// é o q
 		// é
 		if !_accept(parser, _éAccepts, &pos, &perr) {
 			goto fail68
 		}
 		// o
 		if !_accept(parser, _oAccepts, &pos, &perr) {
+			goto fail68
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// é i
+		// é o
 		// é
 		if !_accept(parser, _éAccepts, &pos, &perr) {
 			goto fail70
 		}
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// é a q
+		// é i
 		// é
 		if !_accept(parser, _éAccepts, &pos, &perr) {
 			goto fail72
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
-			goto fail72
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// é a
+		// é a q
 		// é
 		if !_accept(parser, _éAccepts, &pos, &perr) {
 			goto fail74
@@ -75735,27 +75897,43 @@ func _desinence__á__ú__í__ó__éAccepts(parser *_Parser, start int) (deltaPos
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail74
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// é q
+		// é a
 		// é
 		if !_accept(parser, _éAccepts, &pos, &perr) {
 			goto fail76
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// é q
 		// é
 		if !_accept(parser, _éAccepts, &pos, &perr) {
 			goto fail78
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// é
+		if !_accept(parser, _éAccepts, &pos, &perr) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -75777,7 +75955,7 @@ func _desinence__á__ú__í__ó__éNode(parser *_Parser, start int) (int, *peg.N
 	}
 	pos := start
 	node = &peg.Node{Name: "desinence<á, ú, í, ó, é>"}
-	// á o/á i/á q/á/ú a o/ú a i/ú e q/ú e/ú o q/ú o/ú i/ú a q/ú a/ú q/ú/í a o/í a i/í e q/í e/í o q/í o/í u/í a q/í a/í q/í/ó e q/ó e/ó i/ó a q/ó a/ó q/ó/é o q/é o/é i/é a q/é a/é q/é
+	// á o/á i/á q/á/ú a o/ú a i/ú e q/ú e/ú o q/ú o/ú i/ú a q/ú a/ú q/ú/í a o/í a i/í e q/í e/í o q/í o/í u/í a q/í a/í q/í/ó e q/ó e/ó i/ó a i/ó a q/ó a/ó q/ó/é o q/é o/é i/é a q/é a/é q/é
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
@@ -76187,7 +76365,7 @@ func _desinence__á__ú__í__ó__éNode(parser *_Parser, start int) (int, *peg.N
 	fail57:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ó a q
+		// ó a i
 		// ó
 		if !_node(parser, _óNode, node, &pos) {
 			goto fail59
@@ -76196,109 +76374,109 @@ func _desinence__á__ú__í__ó__éNode(parser *_Parser, start int) (int, *peg.N
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail59
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ó a
+		// ó a q
 		// ó
 		if !_node(parser, _óNode, node, &pos) {
 			goto fail61
 		}
 		// a
 		if !_node(parser, _aNode, node, &pos) {
+			goto fail61
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ó q
+		// ó a
 		// ó
 		if !_node(parser, _óNode, node, &pos) {
 			goto fail63
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// ó q
 		// ó
 		if !_node(parser, _óNode, node, &pos) {
+			goto fail65
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// é o q
-		// é
-		if !_node(parser, _éNode, node, &pos) {
-			goto fail66
-		}
-		// o
-		if !_node(parser, _oNode, node, &pos) {
-			goto fail66
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
-			goto fail66
+		// ó
+		if !_node(parser, _óNode, node, &pos) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// é o
+		// é o q
 		// é
 		if !_node(parser, _éNode, node, &pos) {
 			goto fail68
 		}
 		// o
 		if !_node(parser, _oNode, node, &pos) {
+			goto fail68
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// é i
+		// é o
 		// é
 		if !_node(parser, _éNode, node, &pos) {
 			goto fail70
 		}
-		// i
-		if !_node(parser, _iNode, node, &pos) {
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// é a q
+		// é i
 		// é
 		if !_node(parser, _éNode, node, &pos) {
 			goto fail72
 		}
-		// a
-		if !_node(parser, _aNode, node, &pos) {
-			goto fail72
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// é a
+		// é a q
 		// é
 		if !_node(parser, _éNode, node, &pos) {
 			goto fail74
@@ -76307,29 +76485,46 @@ func _desinence__á__ú__í__ó__éNode(parser *_Parser, start int) (int, *peg.N
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail74
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// é q
+		// é a
 		// é
 		if !_node(parser, _éNode, node, &pos) {
 			goto fail76
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// é q
 		// é
 		if !_node(parser, _éNode, node, &pos) {
 			goto fail78
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		node.Kids = node.Kids[:nkids1]
+		pos = pos3
+		// é
+		if !_node(parser, _éNode, node, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
 		goto fail
@@ -76352,7 +76547,7 @@ func _desinence__á__ú__í__ó__éFail(parser *_Parser, start, errPos int) (int
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _desinence__á__ú__í__ó__é}
-	// á o/á i/á q/á/ú a o/ú a i/ú e q/ú e/ú o q/ú o/ú i/ú a q/ú a/ú q/ú/í a o/í a i/í e q/í e/í o q/í o/í u/í a q/í a/í q/í/ó e q/ó e/ó i/ó a q/ó a/ó q/ó/é o q/é o/é i/é a q/é a/é q/é
+	// á o/á i/á q/á/ú a o/ú a i/ú e q/ú e/ú o q/ú o/ú i/ú a q/ú a/ú q/ú/í a o/í a i/í e q/í e/í o q/í o/í u/í a q/í a/í q/í/ó e q/ó e/ó i/ó a i/ó a q/ó a/ó q/ó/é o q/é o/é i/é a q/é a/é q/é
 	{
 		pos3 := pos
 		// á o
@@ -76732,7 +76927,7 @@ func _desinence__á__ú__í__ó__éFail(parser *_Parser, start, errPos int) (int
 		goto ok0
 	fail57:
 		pos = pos3
-		// ó a q
+		// ó a i
 		// ó
 		if !_fail(parser, _óFail, errPos, failure, &pos) {
 			goto fail59
@@ -76741,101 +76936,101 @@ func _desinence__á__ú__í__ó__éFail(parser *_Parser, start, errPos int) (int
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail59
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// ó a
+		// ó a q
 		// ó
 		if !_fail(parser, _óFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		// a
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
+			goto fail61
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// ó q
+		// ó a
 		// ó
 		if !_fail(parser, _óFail, errPos, failure, &pos) {
 			goto fail63
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// ó q
 		// ó
 		if !_fail(parser, _óFail, errPos, failure, &pos) {
+			goto fail65
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// é o q
-		// é
-		if !_fail(parser, _éFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// o
-		if !_fail(parser, _oFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
-			goto fail66
+		// ó
+		if !_fail(parser, _óFail, errPos, failure, &pos) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// é o
+		// é o q
 		// é
 		if !_fail(parser, _éFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		// o
 		if !_fail(parser, _oFail, errPos, failure, &pos) {
+			goto fail68
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// é i
+		// é o
 		// é
 		if !_fail(parser, _éFail, errPos, failure, &pos) {
 			goto fail70
 		}
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// é a q
+		// é i
 		// é
 		if !_fail(parser, _éFail, errPos, failure, &pos) {
 			goto fail72
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
-			goto fail72
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// é a
+		// é a q
 		// é
 		if !_fail(parser, _éFail, errPos, failure, &pos) {
 			goto fail74
@@ -76844,27 +77039,43 @@ func _desinence__á__ú__í__ó__éFail(parser *_Parser, start, errPos int) (int
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail74
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// é q
+		// é a
 		// é
 		if !_fail(parser, _éFail, errPos, failure, &pos) {
 			goto fail76
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// é q
 		// é
 		if !_fail(parser, _éFail, errPos, failure, &pos) {
 			goto fail78
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// é
+		if !_fail(parser, _éFail, errPos, failure, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -76889,7 +77100,7 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 	}
 	var node string
 	pos := start
-	// á o/á i/á q/á/ú a o/ú a i/ú e q/ú e/ú o q/ú o/ú i/ú a q/ú a/ú q/ú/í a o/í a i/í e q/í e/í o q/í o/í u/í a q/í a/í q/í/ó e q/ó e/ó i/ó a q/ó a/ó q/ó/é o q/é o/é i/é a q/é a/é q/é
+	// á o/á i/á q/á/ú a o/ú a i/ú e q/ú e/ú o q/ú o/ú i/ú a q/ú a/ú q/ú/í a o/í a i/í e q/í e/í o q/í o/í u/í a q/í a/í q/í/ó e q/ó e/ó i/ó a i/ó a q/ó a/ó q/ó/é o q/é o/é i/é a q/é a/é q/é
 	{
 		pos3 := pos
 		var node2 string
@@ -77638,7 +77849,7 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 	fail57:
 		node = node2
 		pos = pos3
-		// ó a q
+		// ó a i
 		{
 			var node60 string
 			// ó
@@ -77657,8 +77868,8 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node60 = node+node60, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail59
 			} else {
 				node60 = *n
@@ -77670,7 +77881,7 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 	fail59:
 		node = node2
 		pos = pos3
-		// ó a
+		// ó a q
 		{
 			var node62 string
 			// ó
@@ -77689,12 +77900,20 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node62 = node+node62, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail61
+			} else {
+				node62 = *n
+				pos = p
+			}
+			node, node62 = node+node62, ""
 		}
 		goto ok0
 	fail61:
 		node = node2
 		pos = pos3
-		// ó q
+		// ó a
 		{
 			var node64 string
 			// ó
@@ -77705,8 +77924,8 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node64 = node+node64, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail63
 			} else {
 				node64 = *n
@@ -77718,50 +77937,42 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 	fail63:
 		node = node2
 		pos = pos3
-		// ó
-		if p, n := _óAction(parser, pos); n == nil {
-			goto fail65
-		} else {
-			node = *n
-			pos = p
+		// ó q
+		{
+			var node66 string
+			// ó
+			if p, n := _óAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
 		}
 		goto ok0
 	fail65:
 		node = node2
 		pos = pos3
-		// é o q
-		{
-			var node67 string
-			// é
-			if p, n := _éAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// o
-			if p, n := _oAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
+		// ó
+		if p, n := _óAction(parser, pos); n == nil {
+			goto fail67
+		} else {
+			node = *n
+			pos = p
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node = node2
 		pos = pos3
-		// é o
+		// é o q
 		{
 			var node69 string
 			// é
@@ -77780,12 +77991,20 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node69 = node+node69, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail68
+			} else {
+				node69 = *n
+				pos = p
+			}
+			node, node69 = node+node69, ""
 		}
 		goto ok0
 	fail68:
 		node = node2
 		pos = pos3
-		// é i
+		// é o
 		{
 			var node71 string
 			// é
@@ -77796,8 +78015,8 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node71 = node+node71, ""
-			// i
-			if p, n := _iAction(parser, pos); n == nil {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail70
 			} else {
 				node71 = *n
@@ -77809,7 +78028,7 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 	fail70:
 		node = node2
 		pos = pos3
-		// é a q
+		// é i
 		{
 			var node73 string
 			// é
@@ -77820,16 +78039,8 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node73 = node+node73, ""
-			// a
-			if p, n := _aAction(parser, pos); n == nil {
-				goto fail72
-			} else {
-				node73 = *n
-				pos = p
-			}
-			node, node73 = node+node73, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail72
 			} else {
 				node73 = *n
@@ -77841,7 +78052,7 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 	fail72:
 		node = node2
 		pos = pos3
-		// é a
+		// é a q
 		{
 			var node75 string
 			// é
@@ -77860,12 +78071,20 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node75 = node+node75, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail74
+			} else {
+				node75 = *n
+				pos = p
+			}
+			node, node75 = node+node75, ""
 		}
 		goto ok0
 	fail74:
 		node = node2
 		pos = pos3
-		// é q
+		// é a
 		{
 			var node77 string
 			// é
@@ -77876,8 +78095,8 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node77 = node+node77, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail76
 			} else {
 				node77 = *n
@@ -77889,15 +78108,39 @@ func _desinence__á__ú__í__ó__éAction(parser *_Parser, start int) (int, *str
 	fail76:
 		node = node2
 		pos = pos3
+		// é q
+		{
+			var node79 string
+			// é
+			if p, n := _éAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+		}
+		goto ok0
+	fail78:
+		node = node2
+		pos = pos3
 		// é
 		if p, n := _éAction(parser, pos); n == nil {
-			goto fail78
+			goto fail80
 		} else {
 			node = *n
 			pos = p
 		}
 		goto ok0
-	fail78:
+	fail80:
 		node = node2
 		pos = pos3
 		goto fail
@@ -77914,7 +78157,7 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAccepts(parser *_Parser, start int) (deltaPos
 		return dp, de
 	}
 	pos, perr := start, -1
-	// ǎ o/ǎ i/ǎ q/ǎ/ǔ a o/ǔ a i/ǔ e q/ǔ e/ǔ o q/ǔ o/ǔ i/ǔ a q/ǔ a/ǔ q/ǔ/ǐ a o/ǐ a i/ǐ e q/ǐ e/ǐ o q/ǐ o/ǐ u/ǐ a q/ǐ a/ǐ q/ǐ/ǒ e q/ǒ e/ǒ i/ǒ a q/ǒ a/ǒ q/ǒ/ě o q/ě o/ě i/ě a q/ě a/ě q/ě
+	// ǎ o/ǎ i/ǎ q/ǎ/ǔ a o/ǔ a i/ǔ e q/ǔ e/ǔ o q/ǔ o/ǔ i/ǔ a q/ǔ a/ǔ q/ǔ/ǐ a o/ǐ a i/ǐ e q/ǐ e/ǐ o q/ǐ o/ǐ u/ǐ a q/ǐ a/ǐ q/ǐ/ǒ e q/ǒ e/ǒ i/ǒ a i/ǒ a q/ǒ a/ǒ q/ǒ/ě o q/ě o/ě i/ě a q/ě a/ě q/ě
 	{
 		pos3 := pos
 		// ǎ o
@@ -78294,7 +78537,7 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAccepts(parser *_Parser, start int) (deltaPos
 		goto ok0
 	fail57:
 		pos = pos3
-		// ǒ a q
+		// ǒ a i
 		// ǒ
 		if !_accept(parser, _ǒAccepts, &pos, &perr) {
 			goto fail59
@@ -78303,101 +78546,101 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAccepts(parser *_Parser, start int) (deltaPos
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail59
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// ǒ a
+		// ǒ a q
 		// ǒ
 		if !_accept(parser, _ǒAccepts, &pos, &perr) {
 			goto fail61
 		}
 		// a
 		if !_accept(parser, _aAccepts, &pos, &perr) {
+			goto fail61
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// ǒ q
+		// ǒ a
 		// ǒ
 		if !_accept(parser, _ǒAccepts, &pos, &perr) {
 			goto fail63
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// ǒ q
 		// ǒ
 		if !_accept(parser, _ǒAccepts, &pos, &perr) {
+			goto fail65
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// ě o q
-		// ě
-		if !_accept(parser, _ěAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// o
-		if !_accept(parser, _oAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
-			goto fail66
+		// ǒ
+		if !_accept(parser, _ǒAccepts, &pos, &perr) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// ě o
+		// ě o q
 		// ě
 		if !_accept(parser, _ěAccepts, &pos, &perr) {
 			goto fail68
 		}
 		// o
 		if !_accept(parser, _oAccepts, &pos, &perr) {
+			goto fail68
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// ě i
+		// ě o
 		// ě
 		if !_accept(parser, _ěAccepts, &pos, &perr) {
 			goto fail70
 		}
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// ě a q
+		// ě i
 		// ě
 		if !_accept(parser, _ěAccepts, &pos, &perr) {
 			goto fail72
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
-			goto fail72
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// ě a
+		// ě a q
 		// ě
 		if !_accept(parser, _ěAccepts, &pos, &perr) {
 			goto fail74
@@ -78406,27 +78649,43 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAccepts(parser *_Parser, start int) (deltaPos
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail74
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// ě q
+		// ě a
 		// ě
 		if !_accept(parser, _ěAccepts, &pos, &perr) {
 			goto fail76
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// ě q
 		// ě
 		if !_accept(parser, _ěAccepts, &pos, &perr) {
 			goto fail78
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// ě
+		if !_accept(parser, _ěAccepts, &pos, &perr) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -78448,7 +78707,7 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěNode(parser *_Parser, start int) (int, *peg.N
 	}
 	pos := start
 	node = &peg.Node{Name: "desinence<ǎ, ǔ, ǐ, ǒ, ě>"}
-	// ǎ o/ǎ i/ǎ q/ǎ/ǔ a o/ǔ a i/ǔ e q/ǔ e/ǔ o q/ǔ o/ǔ i/ǔ a q/ǔ a/ǔ q/ǔ/ǐ a o/ǐ a i/ǐ e q/ǐ e/ǐ o q/ǐ o/ǐ u/ǐ a q/ǐ a/ǐ q/ǐ/ǒ e q/ǒ e/ǒ i/ǒ a q/ǒ a/ǒ q/ǒ/ě o q/ě o/ě i/ě a q/ě a/ě q/ě
+	// ǎ o/ǎ i/ǎ q/ǎ/ǔ a o/ǔ a i/ǔ e q/ǔ e/ǔ o q/ǔ o/ǔ i/ǔ a q/ǔ a/ǔ q/ǔ/ǐ a o/ǐ a i/ǐ e q/ǐ e/ǐ o q/ǐ o/ǐ u/ǐ a q/ǐ a/ǐ q/ǐ/ǒ e q/ǒ e/ǒ i/ǒ a i/ǒ a q/ǒ a/ǒ q/ǒ/ě o q/ě o/ě i/ě a q/ě a/ě q/ě
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
@@ -78858,7 +79117,7 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěNode(parser *_Parser, start int) (int, *peg.N
 	fail57:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ǒ a q
+		// ǒ a i
 		// ǒ
 		if !_node(parser, _ǒNode, node, &pos) {
 			goto fail59
@@ -78867,109 +79126,109 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěNode(parser *_Parser, start int) (int, *peg.N
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail59
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ǒ a
+		// ǒ a q
 		// ǒ
 		if !_node(parser, _ǒNode, node, &pos) {
 			goto fail61
 		}
 		// a
 		if !_node(parser, _aNode, node, &pos) {
+			goto fail61
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ǒ q
+		// ǒ a
 		// ǒ
 		if !_node(parser, _ǒNode, node, &pos) {
 			goto fail63
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// ǒ q
 		// ǒ
 		if !_node(parser, _ǒNode, node, &pos) {
+			goto fail65
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ě o q
-		// ě
-		if !_node(parser, _ěNode, node, &pos) {
-			goto fail66
-		}
-		// o
-		if !_node(parser, _oNode, node, &pos) {
-			goto fail66
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
-			goto fail66
+		// ǒ
+		if !_node(parser, _ǒNode, node, &pos) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ě o
+		// ě o q
 		// ě
 		if !_node(parser, _ěNode, node, &pos) {
 			goto fail68
 		}
 		// o
 		if !_node(parser, _oNode, node, &pos) {
+			goto fail68
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ě i
+		// ě o
 		// ě
 		if !_node(parser, _ěNode, node, &pos) {
 			goto fail70
 		}
-		// i
-		if !_node(parser, _iNode, node, &pos) {
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ě a q
+		// ě i
 		// ě
 		if !_node(parser, _ěNode, node, &pos) {
 			goto fail72
 		}
-		// a
-		if !_node(parser, _aNode, node, &pos) {
-			goto fail72
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ě a
+		// ě a q
 		// ě
 		if !_node(parser, _ěNode, node, &pos) {
 			goto fail74
@@ -78978,29 +79237,46 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěNode(parser *_Parser, start int) (int, *peg.N
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail74
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ě q
+		// ě a
 		// ě
 		if !_node(parser, _ěNode, node, &pos) {
 			goto fail76
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// ě q
 		// ě
 		if !_node(parser, _ěNode, node, &pos) {
 			goto fail78
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		node.Kids = node.Kids[:nkids1]
+		pos = pos3
+		// ě
+		if !_node(parser, _ěNode, node, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
 		goto fail
@@ -79023,7 +79299,7 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěFail(parser *_Parser, start, errPos int) (int
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _desinence__ǎ__ǔ__ǐ__ǒ__ě}
-	// ǎ o/ǎ i/ǎ q/ǎ/ǔ a o/ǔ a i/ǔ e q/ǔ e/ǔ o q/ǔ o/ǔ i/ǔ a q/ǔ a/ǔ q/ǔ/ǐ a o/ǐ a i/ǐ e q/ǐ e/ǐ o q/ǐ o/ǐ u/ǐ a q/ǐ a/ǐ q/ǐ/ǒ e q/ǒ e/ǒ i/ǒ a q/ǒ a/ǒ q/ǒ/ě o q/ě o/ě i/ě a q/ě a/ě q/ě
+	// ǎ o/ǎ i/ǎ q/ǎ/ǔ a o/ǔ a i/ǔ e q/ǔ e/ǔ o q/ǔ o/ǔ i/ǔ a q/ǔ a/ǔ q/ǔ/ǐ a o/ǐ a i/ǐ e q/ǐ e/ǐ o q/ǐ o/ǐ u/ǐ a q/ǐ a/ǐ q/ǐ/ǒ e q/ǒ e/ǒ i/ǒ a i/ǒ a q/ǒ a/ǒ q/ǒ/ě o q/ě o/ě i/ě a q/ě a/ě q/ě
 	{
 		pos3 := pos
 		// ǎ o
@@ -79403,7 +79679,7 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěFail(parser *_Parser, start, errPos int) (int
 		goto ok0
 	fail57:
 		pos = pos3
-		// ǒ a q
+		// ǒ a i
 		// ǒ
 		if !_fail(parser, _ǒFail, errPos, failure, &pos) {
 			goto fail59
@@ -79412,101 +79688,101 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěFail(parser *_Parser, start, errPos int) (int
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail59
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// ǒ a
+		// ǒ a q
 		// ǒ
 		if !_fail(parser, _ǒFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		// a
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
+			goto fail61
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// ǒ q
+		// ǒ a
 		// ǒ
 		if !_fail(parser, _ǒFail, errPos, failure, &pos) {
 			goto fail63
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// ǒ q
 		// ǒ
 		if !_fail(parser, _ǒFail, errPos, failure, &pos) {
+			goto fail65
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// ě o q
-		// ě
-		if !_fail(parser, _ěFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// o
-		if !_fail(parser, _oFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
-			goto fail66
+		// ǒ
+		if !_fail(parser, _ǒFail, errPos, failure, &pos) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// ě o
+		// ě o q
 		// ě
 		if !_fail(parser, _ěFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		// o
 		if !_fail(parser, _oFail, errPos, failure, &pos) {
+			goto fail68
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// ě i
+		// ě o
 		// ě
 		if !_fail(parser, _ěFail, errPos, failure, &pos) {
 			goto fail70
 		}
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// ě a q
+		// ě i
 		// ě
 		if !_fail(parser, _ěFail, errPos, failure, &pos) {
 			goto fail72
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
-			goto fail72
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// ě a
+		// ě a q
 		// ě
 		if !_fail(parser, _ěFail, errPos, failure, &pos) {
 			goto fail74
@@ -79515,27 +79791,43 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěFail(parser *_Parser, start, errPos int) (int
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail74
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// ě q
+		// ě a
 		// ě
 		if !_fail(parser, _ěFail, errPos, failure, &pos) {
 			goto fail76
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// ě q
 		// ě
 		if !_fail(parser, _ěFail, errPos, failure, &pos) {
 			goto fail78
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// ě
+		if !_fail(parser, _ěFail, errPos, failure, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -79560,7 +79852,7 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 	}
 	var node string
 	pos := start
-	// ǎ o/ǎ i/ǎ q/ǎ/ǔ a o/ǔ a i/ǔ e q/ǔ e/ǔ o q/ǔ o/ǔ i/ǔ a q/ǔ a/ǔ q/ǔ/ǐ a o/ǐ a i/ǐ e q/ǐ e/ǐ o q/ǐ o/ǐ u/ǐ a q/ǐ a/ǐ q/ǐ/ǒ e q/ǒ e/ǒ i/ǒ a q/ǒ a/ǒ q/ǒ/ě o q/ě o/ě i/ě a q/ě a/ě q/ě
+	// ǎ o/ǎ i/ǎ q/ǎ/ǔ a o/ǔ a i/ǔ e q/ǔ e/ǔ o q/ǔ o/ǔ i/ǔ a q/ǔ a/ǔ q/ǔ/ǐ a o/ǐ a i/ǐ e q/ǐ e/ǐ o q/ǐ o/ǐ u/ǐ a q/ǐ a/ǐ q/ǐ/ǒ e q/ǒ e/ǒ i/ǒ a i/ǒ a q/ǒ a/ǒ q/ǒ/ě o q/ě o/ě i/ě a q/ě a/ě q/ě
 	{
 		pos3 := pos
 		var node2 string
@@ -80309,7 +80601,7 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 	fail57:
 		node = node2
 		pos = pos3
-		// ǒ a q
+		// ǒ a i
 		{
 			var node60 string
 			// ǒ
@@ -80328,8 +80620,8 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node60 = node+node60, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail59
 			} else {
 				node60 = *n
@@ -80341,7 +80633,7 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 	fail59:
 		node = node2
 		pos = pos3
-		// ǒ a
+		// ǒ a q
 		{
 			var node62 string
 			// ǒ
@@ -80360,12 +80652,20 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node62 = node+node62, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail61
+			} else {
+				node62 = *n
+				pos = p
+			}
+			node, node62 = node+node62, ""
 		}
 		goto ok0
 	fail61:
 		node = node2
 		pos = pos3
-		// ǒ q
+		// ǒ a
 		{
 			var node64 string
 			// ǒ
@@ -80376,8 +80676,8 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node64 = node+node64, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail63
 			} else {
 				node64 = *n
@@ -80389,50 +80689,42 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 	fail63:
 		node = node2
 		pos = pos3
-		// ǒ
-		if p, n := _ǒAction(parser, pos); n == nil {
-			goto fail65
-		} else {
-			node = *n
-			pos = p
+		// ǒ q
+		{
+			var node66 string
+			// ǒ
+			if p, n := _ǒAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
 		}
 		goto ok0
 	fail65:
 		node = node2
 		pos = pos3
-		// ě o q
-		{
-			var node67 string
-			// ě
-			if p, n := _ěAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// o
-			if p, n := _oAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
+		// ǒ
+		if p, n := _ǒAction(parser, pos); n == nil {
+			goto fail67
+		} else {
+			node = *n
+			pos = p
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node = node2
 		pos = pos3
-		// ě o
+		// ě o q
 		{
 			var node69 string
 			// ě
@@ -80451,12 +80743,20 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node69 = node+node69, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail68
+			} else {
+				node69 = *n
+				pos = p
+			}
+			node, node69 = node+node69, ""
 		}
 		goto ok0
 	fail68:
 		node = node2
 		pos = pos3
-		// ě i
+		// ě o
 		{
 			var node71 string
 			// ě
@@ -80467,8 +80767,8 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node71 = node+node71, ""
-			// i
-			if p, n := _iAction(parser, pos); n == nil {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail70
 			} else {
 				node71 = *n
@@ -80480,7 +80780,7 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 	fail70:
 		node = node2
 		pos = pos3
-		// ě a q
+		// ě i
 		{
 			var node73 string
 			// ě
@@ -80491,16 +80791,8 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node73 = node+node73, ""
-			// a
-			if p, n := _aAction(parser, pos); n == nil {
-				goto fail72
-			} else {
-				node73 = *n
-				pos = p
-			}
-			node, node73 = node+node73, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail72
 			} else {
 				node73 = *n
@@ -80512,7 +80804,7 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 	fail72:
 		node = node2
 		pos = pos3
-		// ě a
+		// ě a q
 		{
 			var node75 string
 			// ě
@@ -80531,12 +80823,20 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node75 = node+node75, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail74
+			} else {
+				node75 = *n
+				pos = p
+			}
+			node, node75 = node+node75, ""
 		}
 		goto ok0
 	fail74:
 		node = node2
 		pos = pos3
-		// ě q
+		// ě a
 		{
 			var node77 string
 			// ě
@@ -80547,8 +80847,8 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node77 = node+node77, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail76
 			} else {
 				node77 = *n
@@ -80560,15 +80860,39 @@ func _desinence__ǎ__ǔ__ǐ__ǒ__ěAction(parser *_Parser, start int) (int, *str
 	fail76:
 		node = node2
 		pos = pos3
+		// ě q
+		{
+			var node79 string
+			// ě
+			if p, n := _ěAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+		}
+		goto ok0
+	fail78:
+		node = node2
+		pos = pos3
 		// ě
 		if p, n := _ěAction(parser, pos); n == nil {
-			goto fail78
+			goto fail80
 		} else {
 			node = *n
 			pos = p
 		}
 		goto ok0
-	fail78:
+	fail80:
 		node = node2
 		pos = pos3
 		goto fail
@@ -80585,7 +80909,7 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAccepts(parser *_Parser, start int) (del
 		return dp, de
 	}
 	pos, perr := start, -1
-	// ả o/ả i/ả q/ả/ủ a o/ủ a i/ủ e q/ủ e/ủ o q/ủ o/ủ i/ủ a q/ủ a/ủ q/ủ/ỉ a o/ỉ a i/ỉ e q/ỉ e/ỉ o q/ỉ o/ỉ u/ỉ a q/ỉ a/ỉ q/ỉ/ỏ e q/ỏ e/ỏ i/ỏ a q/ỏ a/ỏ q/ỏ/ẻ o q/ẻ o/ẻ i/ẻ a q/ẻ a/ẻ q/ẻ
+	// ả o/ả i/ả q/ả/ủ a o/ủ a i/ủ e q/ủ e/ủ o q/ủ o/ủ i/ủ a q/ủ a/ủ q/ủ/ỉ a o/ỉ a i/ỉ e q/ỉ e/ỉ o q/ỉ o/ỉ u/ỉ a q/ỉ a/ỉ q/ỉ/ỏ e q/ỏ e/ỏ i/ỏ a i/ỏ a q/ỏ a/ỏ q/ỏ/ẻ o q/ẻ o/ẻ i/ẻ a q/ẻ a/ẻ q/ẻ
 	{
 		pos3 := pos
 		// ả o
@@ -80965,7 +81289,7 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAccepts(parser *_Parser, start int) (del
 		goto ok0
 	fail57:
 		pos = pos3
-		// ỏ a q
+		// ỏ a i
 		// ỏ
 		if !_accept(parser, _ỏAccepts, &pos, &perr) {
 			goto fail59
@@ -80974,101 +81298,101 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAccepts(parser *_Parser, start int) (del
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail59
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// ỏ a
+		// ỏ a q
 		// ỏ
 		if !_accept(parser, _ỏAccepts, &pos, &perr) {
 			goto fail61
 		}
 		// a
 		if !_accept(parser, _aAccepts, &pos, &perr) {
+			goto fail61
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// ỏ q
+		// ỏ a
 		// ỏ
 		if !_accept(parser, _ỏAccepts, &pos, &perr) {
 			goto fail63
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// ỏ q
 		// ỏ
 		if !_accept(parser, _ỏAccepts, &pos, &perr) {
+			goto fail65
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// ẻ o q
-		// ẻ
-		if !_accept(parser, _ẻAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// o
-		if !_accept(parser, _oAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
-			goto fail66
+		// ỏ
+		if !_accept(parser, _ỏAccepts, &pos, &perr) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// ẻ o
+		// ẻ o q
 		// ẻ
 		if !_accept(parser, _ẻAccepts, &pos, &perr) {
 			goto fail68
 		}
 		// o
 		if !_accept(parser, _oAccepts, &pos, &perr) {
+			goto fail68
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// ẻ i
+		// ẻ o
 		// ẻ
 		if !_accept(parser, _ẻAccepts, &pos, &perr) {
 			goto fail70
 		}
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// ẻ a q
+		// ẻ i
 		// ẻ
 		if !_accept(parser, _ẻAccepts, &pos, &perr) {
 			goto fail72
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
-			goto fail72
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// ẻ a
+		// ẻ a q
 		// ẻ
 		if !_accept(parser, _ẻAccepts, &pos, &perr) {
 			goto fail74
@@ -81077,27 +81401,43 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAccepts(parser *_Parser, start int) (del
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail74
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// ẻ q
+		// ẻ a
 		// ẻ
 		if !_accept(parser, _ẻAccepts, &pos, &perr) {
 			goto fail76
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// ẻ q
 		// ẻ
 		if !_accept(parser, _ẻAccepts, &pos, &perr) {
 			goto fail78
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// ẻ
+		if !_accept(parser, _ẻAccepts, &pos, &perr) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -81119,7 +81459,7 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻNode(parser *_Parser, start int) (int, *
 	}
 	pos := start
 	node = &peg.Node{Name: "desinence<ả, ủ, ỉ, ỏ, ẻ>"}
-	// ả o/ả i/ả q/ả/ủ a o/ủ a i/ủ e q/ủ e/ủ o q/ủ o/ủ i/ủ a q/ủ a/ủ q/ủ/ỉ a o/ỉ a i/ỉ e q/ỉ e/ỉ o q/ỉ o/ỉ u/ỉ a q/ỉ a/ỉ q/ỉ/ỏ e q/ỏ e/ỏ i/ỏ a q/ỏ a/ỏ q/ỏ/ẻ o q/ẻ o/ẻ i/ẻ a q/ẻ a/ẻ q/ẻ
+	// ả o/ả i/ả q/ả/ủ a o/ủ a i/ủ e q/ủ e/ủ o q/ủ o/ủ i/ủ a q/ủ a/ủ q/ủ/ỉ a o/ỉ a i/ỉ e q/ỉ e/ỉ o q/ỉ o/ỉ u/ỉ a q/ỉ a/ỉ q/ỉ/ỏ e q/ỏ e/ỏ i/ỏ a i/ỏ a q/ỏ a/ỏ q/ỏ/ẻ o q/ẻ o/ẻ i/ẻ a q/ẻ a/ẻ q/ẻ
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
@@ -81529,7 +81869,7 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻNode(parser *_Parser, start int) (int, *
 	fail57:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ỏ a q
+		// ỏ a i
 		// ỏ
 		if !_node(parser, _ỏNode, node, &pos) {
 			goto fail59
@@ -81538,109 +81878,109 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻNode(parser *_Parser, start int) (int, *
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail59
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ỏ a
+		// ỏ a q
 		// ỏ
 		if !_node(parser, _ỏNode, node, &pos) {
 			goto fail61
 		}
 		// a
 		if !_node(parser, _aNode, node, &pos) {
+			goto fail61
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ỏ q
+		// ỏ a
 		// ỏ
 		if !_node(parser, _ỏNode, node, &pos) {
 			goto fail63
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// ỏ q
 		// ỏ
 		if !_node(parser, _ỏNode, node, &pos) {
+			goto fail65
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ẻ o q
-		// ẻ
-		if !_node(parser, _ẻNode, node, &pos) {
-			goto fail66
-		}
-		// o
-		if !_node(parser, _oNode, node, &pos) {
-			goto fail66
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
-			goto fail66
+		// ỏ
+		if !_node(parser, _ỏNode, node, &pos) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ẻ o
+		// ẻ o q
 		// ẻ
 		if !_node(parser, _ẻNode, node, &pos) {
 			goto fail68
 		}
 		// o
 		if !_node(parser, _oNode, node, &pos) {
+			goto fail68
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ẻ i
+		// ẻ o
 		// ẻ
 		if !_node(parser, _ẻNode, node, &pos) {
 			goto fail70
 		}
-		// i
-		if !_node(parser, _iNode, node, &pos) {
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ẻ a q
+		// ẻ i
 		// ẻ
 		if !_node(parser, _ẻNode, node, &pos) {
 			goto fail72
 		}
-		// a
-		if !_node(parser, _aNode, node, &pos) {
-			goto fail72
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ẻ a
+		// ẻ a q
 		// ẻ
 		if !_node(parser, _ẻNode, node, &pos) {
 			goto fail74
@@ -81649,29 +81989,46 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻNode(parser *_Parser, start int) (int, *
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail74
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ẻ q
+		// ẻ a
 		// ẻ
 		if !_node(parser, _ẻNode, node, &pos) {
 			goto fail76
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// ẻ q
 		// ẻ
 		if !_node(parser, _ẻNode, node, &pos) {
 			goto fail78
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		node.Kids = node.Kids[:nkids1]
+		pos = pos3
+		// ẻ
+		if !_node(parser, _ẻNode, node, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
 		goto fail
@@ -81694,7 +82051,7 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻFail(parser *_Parser, start, errPos int)
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _desinence__ả__ủ__ỉ__ỏ__ẻ}
-	// ả o/ả i/ả q/ả/ủ a o/ủ a i/ủ e q/ủ e/ủ o q/ủ o/ủ i/ủ a q/ủ a/ủ q/ủ/ỉ a o/ỉ a i/ỉ e q/ỉ e/ỉ o q/ỉ o/ỉ u/ỉ a q/ỉ a/ỉ q/ỉ/ỏ e q/ỏ e/ỏ i/ỏ a q/ỏ a/ỏ q/ỏ/ẻ o q/ẻ o/ẻ i/ẻ a q/ẻ a/ẻ q/ẻ
+	// ả o/ả i/ả q/ả/ủ a o/ủ a i/ủ e q/ủ e/ủ o q/ủ o/ủ i/ủ a q/ủ a/ủ q/ủ/ỉ a o/ỉ a i/ỉ e q/ỉ e/ỉ o q/ỉ o/ỉ u/ỉ a q/ỉ a/ỉ q/ỉ/ỏ e q/ỏ e/ỏ i/ỏ a i/ỏ a q/ỏ a/ỏ q/ỏ/ẻ o q/ẻ o/ẻ i/ẻ a q/ẻ a/ẻ q/ẻ
 	{
 		pos3 := pos
 		// ả o
@@ -82074,7 +82431,7 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻFail(parser *_Parser, start, errPos int)
 		goto ok0
 	fail57:
 		pos = pos3
-		// ỏ a q
+		// ỏ a i
 		// ỏ
 		if !_fail(parser, _ỏFail, errPos, failure, &pos) {
 			goto fail59
@@ -82083,101 +82440,101 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻFail(parser *_Parser, start, errPos int)
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail59
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// ỏ a
+		// ỏ a q
 		// ỏ
 		if !_fail(parser, _ỏFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		// a
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
+			goto fail61
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// ỏ q
+		// ỏ a
 		// ỏ
 		if !_fail(parser, _ỏFail, errPos, failure, &pos) {
 			goto fail63
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// ỏ q
 		// ỏ
 		if !_fail(parser, _ỏFail, errPos, failure, &pos) {
+			goto fail65
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// ẻ o q
-		// ẻ
-		if !_fail(parser, _ẻFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// o
-		if !_fail(parser, _oFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
-			goto fail66
+		// ỏ
+		if !_fail(parser, _ỏFail, errPos, failure, &pos) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// ẻ o
+		// ẻ o q
 		// ẻ
 		if !_fail(parser, _ẻFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		// o
 		if !_fail(parser, _oFail, errPos, failure, &pos) {
+			goto fail68
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// ẻ i
+		// ẻ o
 		// ẻ
 		if !_fail(parser, _ẻFail, errPos, failure, &pos) {
 			goto fail70
 		}
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// ẻ a q
+		// ẻ i
 		// ẻ
 		if !_fail(parser, _ẻFail, errPos, failure, &pos) {
 			goto fail72
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
-			goto fail72
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// ẻ a
+		// ẻ a q
 		// ẻ
 		if !_fail(parser, _ẻFail, errPos, failure, &pos) {
 			goto fail74
@@ -82186,27 +82543,43 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻFail(parser *_Parser, start, errPos int)
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail74
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// ẻ q
+		// ẻ a
 		// ẻ
 		if !_fail(parser, _ẻFail, errPos, failure, &pos) {
 			goto fail76
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// ẻ q
 		// ẻ
 		if !_fail(parser, _ẻFail, errPos, failure, &pos) {
 			goto fail78
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// ẻ
+		if !_fail(parser, _ẻFail, errPos, failure, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -82231,7 +82604,7 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 	}
 	var node string
 	pos := start
-	// ả o/ả i/ả q/ả/ủ a o/ủ a i/ủ e q/ủ e/ủ o q/ủ o/ủ i/ủ a q/ủ a/ủ q/ủ/ỉ a o/ỉ a i/ỉ e q/ỉ e/ỉ o q/ỉ o/ỉ u/ỉ a q/ỉ a/ỉ q/ỉ/ỏ e q/ỏ e/ỏ i/ỏ a q/ỏ a/ỏ q/ỏ/ẻ o q/ẻ o/ẻ i/ẻ a q/ẻ a/ẻ q/ẻ
+	// ả o/ả i/ả q/ả/ủ a o/ủ a i/ủ e q/ủ e/ủ o q/ủ o/ủ i/ủ a q/ủ a/ủ q/ủ/ỉ a o/ỉ a i/ỉ e q/ỉ e/ỉ o q/ỉ o/ỉ u/ỉ a q/ỉ a/ỉ q/ỉ/ỏ e q/ỏ e/ỏ i/ỏ a i/ỏ a q/ỏ a/ỏ q/ỏ/ẻ o q/ẻ o/ẻ i/ẻ a q/ẻ a/ẻ q/ẻ
 	{
 		pos3 := pos
 		var node2 string
@@ -82980,7 +83353,7 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 	fail57:
 		node = node2
 		pos = pos3
-		// ỏ a q
+		// ỏ a i
 		{
 			var node60 string
 			// ỏ
@@ -82999,8 +83372,8 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 				pos = p
 			}
 			node, node60 = node+node60, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail59
 			} else {
 				node60 = *n
@@ -83012,7 +83385,7 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 	fail59:
 		node = node2
 		pos = pos3
-		// ỏ a
+		// ỏ a q
 		{
 			var node62 string
 			// ỏ
@@ -83031,12 +83404,20 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 				pos = p
 			}
 			node, node62 = node+node62, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail61
+			} else {
+				node62 = *n
+				pos = p
+			}
+			node, node62 = node+node62, ""
 		}
 		goto ok0
 	fail61:
 		node = node2
 		pos = pos3
-		// ỏ q
+		// ỏ a
 		{
 			var node64 string
 			// ỏ
@@ -83047,8 +83428,8 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 				pos = p
 			}
 			node, node64 = node+node64, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail63
 			} else {
 				node64 = *n
@@ -83060,50 +83441,42 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 	fail63:
 		node = node2
 		pos = pos3
-		// ỏ
-		if p, n := _ỏAction(parser, pos); n == nil {
-			goto fail65
-		} else {
-			node = *n
-			pos = p
+		// ỏ q
+		{
+			var node66 string
+			// ỏ
+			if p, n := _ỏAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
 		}
 		goto ok0
 	fail65:
 		node = node2
 		pos = pos3
-		// ẻ o q
-		{
-			var node67 string
-			// ẻ
-			if p, n := _ẻAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// o
-			if p, n := _oAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
+		// ỏ
+		if p, n := _ỏAction(parser, pos); n == nil {
+			goto fail67
+		} else {
+			node = *n
+			pos = p
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node = node2
 		pos = pos3
-		// ẻ o
+		// ẻ o q
 		{
 			var node69 string
 			// ẻ
@@ -83122,12 +83495,20 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 				pos = p
 			}
 			node, node69 = node+node69, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail68
+			} else {
+				node69 = *n
+				pos = p
+			}
+			node, node69 = node+node69, ""
 		}
 		goto ok0
 	fail68:
 		node = node2
 		pos = pos3
-		// ẻ i
+		// ẻ o
 		{
 			var node71 string
 			// ẻ
@@ -83138,8 +83519,8 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 				pos = p
 			}
 			node, node71 = node+node71, ""
-			// i
-			if p, n := _iAction(parser, pos); n == nil {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail70
 			} else {
 				node71 = *n
@@ -83151,7 +83532,7 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 	fail70:
 		node = node2
 		pos = pos3
-		// ẻ a q
+		// ẻ i
 		{
 			var node73 string
 			// ẻ
@@ -83162,16 +83543,8 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 				pos = p
 			}
 			node, node73 = node+node73, ""
-			// a
-			if p, n := _aAction(parser, pos); n == nil {
-				goto fail72
-			} else {
-				node73 = *n
-				pos = p
-			}
-			node, node73 = node+node73, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail72
 			} else {
 				node73 = *n
@@ -83183,7 +83556,7 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 	fail72:
 		node = node2
 		pos = pos3
-		// ẻ a
+		// ẻ a q
 		{
 			var node75 string
 			// ẻ
@@ -83202,12 +83575,20 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 				pos = p
 			}
 			node, node75 = node+node75, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail74
+			} else {
+				node75 = *n
+				pos = p
+			}
+			node, node75 = node+node75, ""
 		}
 		goto ok0
 	fail74:
 		node = node2
 		pos = pos3
-		// ẻ q
+		// ẻ a
 		{
 			var node77 string
 			// ẻ
@@ -83218,8 +83599,8 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 				pos = p
 			}
 			node, node77 = node+node77, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail76
 			} else {
 				node77 = *n
@@ -83231,15 +83612,39 @@ func _desinence__ả__ủ__ỉ__ỏ__ẻAction(parser *_Parser, start int) (int,
 	fail76:
 		node = node2
 		pos = pos3
+		// ẻ q
+		{
+			var node79 string
+			// ẻ
+			if p, n := _ẻAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+		}
+		goto ok0
+	fail78:
+		node = node2
+		pos = pos3
 		// ẻ
 		if p, n := _ẻAction(parser, pos); n == nil {
-			goto fail78
+			goto fail80
 		} else {
 			node = *n
 			pos = p
 		}
 		goto ok0
-	fail78:
+	fail80:
 		node = node2
 		pos = pos3
 		goto fail
@@ -83256,7 +83661,7 @@ func _desinence__â__û__î__ô__êAccepts(parser *_Parser, start int) (deltaPos
 		return dp, de
 	}
 	pos, perr := start, -1
-	// â o/â i/â q/â/û a o/û a i/û e q/û e/û o q/û o/û i/û a q/û a/û q/û/î a o/î a i/î e q/î e/î o q/î o/î u/î a q/î a/î q/î/ô e q/ô e/ô i/ô a q/ô a/ô q/ô/ê o q/ê o/ê i/ê a q/ê a/ê q/ê
+	// â o/â i/â q/â/û a o/û a i/û e q/û e/û o q/û o/û i/û a q/û a/û q/û/î a o/î a i/î e q/î e/î o q/î o/î u/î a q/î a/î q/î/ô e q/ô e/ô i/ô a i/ô a q/ô a/ô q/ô/ê o q/ê o/ê i/ê a q/ê a/ê q/ê
 	{
 		pos3 := pos
 		// â o
@@ -83636,7 +84041,7 @@ func _desinence__â__û__î__ô__êAccepts(parser *_Parser, start int) (deltaPos
 		goto ok0
 	fail57:
 		pos = pos3
-		// ô a q
+		// ô a i
 		// ô
 		if !_accept(parser, _ôAccepts, &pos, &perr) {
 			goto fail59
@@ -83645,101 +84050,101 @@ func _desinence__â__û__î__ô__êAccepts(parser *_Parser, start int) (deltaPos
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail59
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// ô a
+		// ô a q
 		// ô
 		if !_accept(parser, _ôAccepts, &pos, &perr) {
 			goto fail61
 		}
 		// a
 		if !_accept(parser, _aAccepts, &pos, &perr) {
+			goto fail61
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// ô q
+		// ô a
 		// ô
 		if !_accept(parser, _ôAccepts, &pos, &perr) {
 			goto fail63
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// ô q
 		// ô
 		if !_accept(parser, _ôAccepts, &pos, &perr) {
+			goto fail65
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// ê o q
-		// ê
-		if !_accept(parser, _êAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// o
-		if !_accept(parser, _oAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
-			goto fail66
+		// ô
+		if !_accept(parser, _ôAccepts, &pos, &perr) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// ê o
+		// ê o q
 		// ê
 		if !_accept(parser, _êAccepts, &pos, &perr) {
 			goto fail68
 		}
 		// o
 		if !_accept(parser, _oAccepts, &pos, &perr) {
+			goto fail68
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// ê i
+		// ê o
 		// ê
 		if !_accept(parser, _êAccepts, &pos, &perr) {
 			goto fail70
 		}
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// ê a q
+		// ê i
 		// ê
 		if !_accept(parser, _êAccepts, &pos, &perr) {
 			goto fail72
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
-			goto fail72
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// ê a
+		// ê a q
 		// ê
 		if !_accept(parser, _êAccepts, &pos, &perr) {
 			goto fail74
@@ -83748,27 +84153,43 @@ func _desinence__â__û__î__ô__êAccepts(parser *_Parser, start int) (deltaPos
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail74
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// ê q
+		// ê a
 		// ê
 		if !_accept(parser, _êAccepts, &pos, &perr) {
 			goto fail76
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// ê q
 		// ê
 		if !_accept(parser, _êAccepts, &pos, &perr) {
 			goto fail78
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// ê
+		if !_accept(parser, _êAccepts, &pos, &perr) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -83790,7 +84211,7 @@ func _desinence__â__û__î__ô__êNode(parser *_Parser, start int) (int, *peg.N
 	}
 	pos := start
 	node = &peg.Node{Name: "desinence<â, û, î, ô, ê>"}
-	// â o/â i/â q/â/û a o/û a i/û e q/û e/û o q/û o/û i/û a q/û a/û q/û/î a o/î a i/î e q/î e/î o q/î o/î u/î a q/î a/î q/î/ô e q/ô e/ô i/ô a q/ô a/ô q/ô/ê o q/ê o/ê i/ê a q/ê a/ê q/ê
+	// â o/â i/â q/â/û a o/û a i/û e q/û e/û o q/û o/û i/û a q/û a/û q/û/î a o/î a i/î e q/î e/î o q/î o/î u/î a q/î a/î q/î/ô e q/ô e/ô i/ô a i/ô a q/ô a/ô q/ô/ê o q/ê o/ê i/ê a q/ê a/ê q/ê
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
@@ -84200,7 +84621,7 @@ func _desinence__â__û__î__ô__êNode(parser *_Parser, start int) (int, *peg.N
 	fail57:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ô a q
+		// ô a i
 		// ô
 		if !_node(parser, _ôNode, node, &pos) {
 			goto fail59
@@ -84209,109 +84630,109 @@ func _desinence__â__û__î__ô__êNode(parser *_Parser, start int) (int, *peg.N
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail59
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ô a
+		// ô a q
 		// ô
 		if !_node(parser, _ôNode, node, &pos) {
 			goto fail61
 		}
 		// a
 		if !_node(parser, _aNode, node, &pos) {
+			goto fail61
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ô q
+		// ô a
 		// ô
 		if !_node(parser, _ôNode, node, &pos) {
 			goto fail63
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// ô q
 		// ô
 		if !_node(parser, _ôNode, node, &pos) {
+			goto fail65
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ê o q
-		// ê
-		if !_node(parser, _êNode, node, &pos) {
-			goto fail66
-		}
-		// o
-		if !_node(parser, _oNode, node, &pos) {
-			goto fail66
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
-			goto fail66
+		// ô
+		if !_node(parser, _ôNode, node, &pos) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ê o
+		// ê o q
 		// ê
 		if !_node(parser, _êNode, node, &pos) {
 			goto fail68
 		}
 		// o
 		if !_node(parser, _oNode, node, &pos) {
+			goto fail68
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ê i
+		// ê o
 		// ê
 		if !_node(parser, _êNode, node, &pos) {
 			goto fail70
 		}
-		// i
-		if !_node(parser, _iNode, node, &pos) {
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ê a q
+		// ê i
 		// ê
 		if !_node(parser, _êNode, node, &pos) {
 			goto fail72
 		}
-		// a
-		if !_node(parser, _aNode, node, &pos) {
-			goto fail72
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ê a
+		// ê a q
 		// ê
 		if !_node(parser, _êNode, node, &pos) {
 			goto fail74
@@ -84320,29 +84741,46 @@ func _desinence__â__û__î__ô__êNode(parser *_Parser, start int) (int, *peg.N
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail74
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ê q
+		// ê a
 		// ê
 		if !_node(parser, _êNode, node, &pos) {
 			goto fail76
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// ê q
 		// ê
 		if !_node(parser, _êNode, node, &pos) {
 			goto fail78
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		node.Kids = node.Kids[:nkids1]
+		pos = pos3
+		// ê
+		if !_node(parser, _êNode, node, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
 		goto fail
@@ -84365,7 +84803,7 @@ func _desinence__â__û__î__ô__êFail(parser *_Parser, start, errPos int) (int
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _desinence__â__û__î__ô__ê}
-	// â o/â i/â q/â/û a o/û a i/û e q/û e/û o q/û o/û i/û a q/û a/û q/û/î a o/î a i/î e q/î e/î o q/î o/î u/î a q/î a/î q/î/ô e q/ô e/ô i/ô a q/ô a/ô q/ô/ê o q/ê o/ê i/ê a q/ê a/ê q/ê
+	// â o/â i/â q/â/û a o/û a i/û e q/û e/û o q/û o/û i/û a q/û a/û q/û/î a o/î a i/î e q/î e/î o q/î o/î u/î a q/î a/î q/î/ô e q/ô e/ô i/ô a i/ô a q/ô a/ô q/ô/ê o q/ê o/ê i/ê a q/ê a/ê q/ê
 	{
 		pos3 := pos
 		// â o
@@ -84745,7 +85183,7 @@ func _desinence__â__û__î__ô__êFail(parser *_Parser, start, errPos int) (int
 		goto ok0
 	fail57:
 		pos = pos3
-		// ô a q
+		// ô a i
 		// ô
 		if !_fail(parser, _ôFail, errPos, failure, &pos) {
 			goto fail59
@@ -84754,101 +85192,101 @@ func _desinence__â__û__î__ô__êFail(parser *_Parser, start, errPos int) (int
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail59
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// ô a
+		// ô a q
 		// ô
 		if !_fail(parser, _ôFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		// a
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
+			goto fail61
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// ô q
+		// ô a
 		// ô
 		if !_fail(parser, _ôFail, errPos, failure, &pos) {
 			goto fail63
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// ô q
 		// ô
 		if !_fail(parser, _ôFail, errPos, failure, &pos) {
+			goto fail65
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// ê o q
-		// ê
-		if !_fail(parser, _êFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// o
-		if !_fail(parser, _oFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
-			goto fail66
+		// ô
+		if !_fail(parser, _ôFail, errPos, failure, &pos) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// ê o
+		// ê o q
 		// ê
 		if !_fail(parser, _êFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		// o
 		if !_fail(parser, _oFail, errPos, failure, &pos) {
+			goto fail68
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// ê i
+		// ê o
 		// ê
 		if !_fail(parser, _êFail, errPos, failure, &pos) {
 			goto fail70
 		}
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// ê a q
+		// ê i
 		// ê
 		if !_fail(parser, _êFail, errPos, failure, &pos) {
 			goto fail72
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
-			goto fail72
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// ê a
+		// ê a q
 		// ê
 		if !_fail(parser, _êFail, errPos, failure, &pos) {
 			goto fail74
@@ -84857,27 +85295,43 @@ func _desinence__â__û__î__ô__êFail(parser *_Parser, start, errPos int) (int
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail74
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// ê q
+		// ê a
 		// ê
 		if !_fail(parser, _êFail, errPos, failure, &pos) {
 			goto fail76
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// ê q
 		// ê
 		if !_fail(parser, _êFail, errPos, failure, &pos) {
 			goto fail78
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// ê
+		if !_fail(parser, _êFail, errPos, failure, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -84902,7 +85356,7 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 	}
 	var node string
 	pos := start
-	// â o/â i/â q/â/û a o/û a i/û e q/û e/û o q/û o/û i/û a q/û a/û q/û/î a o/î a i/î e q/î e/î o q/î o/î u/î a q/î a/î q/î/ô e q/ô e/ô i/ô a q/ô a/ô q/ô/ê o q/ê o/ê i/ê a q/ê a/ê q/ê
+	// â o/â i/â q/â/û a o/û a i/û e q/û e/û o q/û o/û i/û a q/û a/û q/û/î a o/î a i/î e q/î e/î o q/î o/î u/î a q/î a/î q/î/ô e q/ô e/ô i/ô a i/ô a q/ô a/ô q/ô/ê o q/ê o/ê i/ê a q/ê a/ê q/ê
 	{
 		pos3 := pos
 		var node2 string
@@ -85651,7 +86105,7 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 	fail57:
 		node = node2
 		pos = pos3
-		// ô a q
+		// ô a i
 		{
 			var node60 string
 			// ô
@@ -85670,8 +86124,8 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node60 = node+node60, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail59
 			} else {
 				node60 = *n
@@ -85683,7 +86137,7 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 	fail59:
 		node = node2
 		pos = pos3
-		// ô a
+		// ô a q
 		{
 			var node62 string
 			// ô
@@ -85702,12 +86156,20 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node62 = node+node62, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail61
+			} else {
+				node62 = *n
+				pos = p
+			}
+			node, node62 = node+node62, ""
 		}
 		goto ok0
 	fail61:
 		node = node2
 		pos = pos3
-		// ô q
+		// ô a
 		{
 			var node64 string
 			// ô
@@ -85718,8 +86180,8 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node64 = node+node64, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail63
 			} else {
 				node64 = *n
@@ -85731,50 +86193,42 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 	fail63:
 		node = node2
 		pos = pos3
-		// ô
-		if p, n := _ôAction(parser, pos); n == nil {
-			goto fail65
-		} else {
-			node = *n
-			pos = p
+		// ô q
+		{
+			var node66 string
+			// ô
+			if p, n := _ôAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
 		}
 		goto ok0
 	fail65:
 		node = node2
 		pos = pos3
-		// ê o q
-		{
-			var node67 string
-			// ê
-			if p, n := _êAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// o
-			if p, n := _oAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
+		// ô
+		if p, n := _ôAction(parser, pos); n == nil {
+			goto fail67
+		} else {
+			node = *n
+			pos = p
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node = node2
 		pos = pos3
-		// ê o
+		// ê o q
 		{
 			var node69 string
 			// ê
@@ -85793,12 +86247,20 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node69 = node+node69, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail68
+			} else {
+				node69 = *n
+				pos = p
+			}
+			node, node69 = node+node69, ""
 		}
 		goto ok0
 	fail68:
 		node = node2
 		pos = pos3
-		// ê i
+		// ê o
 		{
 			var node71 string
 			// ê
@@ -85809,8 +86271,8 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node71 = node+node71, ""
-			// i
-			if p, n := _iAction(parser, pos); n == nil {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail70
 			} else {
 				node71 = *n
@@ -85822,7 +86284,7 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 	fail70:
 		node = node2
 		pos = pos3
-		// ê a q
+		// ê i
 		{
 			var node73 string
 			// ê
@@ -85833,16 +86295,8 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node73 = node+node73, ""
-			// a
-			if p, n := _aAction(parser, pos); n == nil {
-				goto fail72
-			} else {
-				node73 = *n
-				pos = p
-			}
-			node, node73 = node+node73, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail72
 			} else {
 				node73 = *n
@@ -85854,7 +86308,7 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 	fail72:
 		node = node2
 		pos = pos3
-		// ê a
+		// ê a q
 		{
 			var node75 string
 			// ê
@@ -85873,12 +86327,20 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node75 = node+node75, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail74
+			} else {
+				node75 = *n
+				pos = p
+			}
+			node, node75 = node+node75, ""
 		}
 		goto ok0
 	fail74:
 		node = node2
 		pos = pos3
-		// ê q
+		// ê a
 		{
 			var node77 string
 			// ê
@@ -85889,8 +86351,8 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node77 = node+node77, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail76
 			} else {
 				node77 = *n
@@ -85902,15 +86364,39 @@ func _desinence__â__û__î__ô__êAction(parser *_Parser, start int) (int, *str
 	fail76:
 		node = node2
 		pos = pos3
+		// ê q
+		{
+			var node79 string
+			// ê
+			if p, n := _êAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+		}
+		goto ok0
+	fail78:
+		node = node2
+		pos = pos3
 		// ê
 		if p, n := _êAction(parser, pos); n == nil {
-			goto fail78
+			goto fail80
 		} else {
 			node = *n
 			pos = p
 		}
 		goto ok0
-	fail78:
+	fail80:
 		node = node2
 		pos = pos3
 		goto fail
@@ -85927,7 +86413,7 @@ func _desinence__à__ù__ì__ò__èAccepts(parser *_Parser, start int) (deltaPos
 		return dp, de
 	}
 	pos, perr := start, -1
-	// à o/à i/à q/à/ù a o/ù a i/ù e q/ù e/ù o q/ù o/ù i/ù a q/ù a/ù q/ù/ì a o/ì a i/ì e q/ì e/ì o q/ì o/ì u/ì a q/ì a/ì q/ì/ò e q/ò e/ò i/ò a q/ò a/ò q/ò/è o q/è o/è i/è a q/è a/è q/è
+	// à o/à i/à q/à/ù a o/ù a i/ù e q/ù e/ù o q/ù o/ù i/ù a q/ù a/ù q/ù/ì a o/ì a i/ì e q/ì e/ì o q/ì o/ì u/ì a q/ì a/ì q/ì/ò e q/ò e/ò i/ò a i/ò a q/ò a/ò q/ò/è o q/è o/è i/è a q/è a/è q/è
 	{
 		pos3 := pos
 		// à o
@@ -86307,7 +86793,7 @@ func _desinence__à__ù__ì__ò__èAccepts(parser *_Parser, start int) (deltaPos
 		goto ok0
 	fail57:
 		pos = pos3
-		// ò a q
+		// ò a i
 		// ò
 		if !_accept(parser, _òAccepts, &pos, &perr) {
 			goto fail59
@@ -86316,101 +86802,101 @@ func _desinence__à__ù__ì__ò__èAccepts(parser *_Parser, start int) (deltaPos
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail59
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// ò a
+		// ò a q
 		// ò
 		if !_accept(parser, _òAccepts, &pos, &perr) {
 			goto fail61
 		}
 		// a
 		if !_accept(parser, _aAccepts, &pos, &perr) {
+			goto fail61
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// ò q
+		// ò a
 		// ò
 		if !_accept(parser, _òAccepts, &pos, &perr) {
 			goto fail63
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// ò q
 		// ò
 		if !_accept(parser, _òAccepts, &pos, &perr) {
+			goto fail65
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// è o q
-		// è
-		if !_accept(parser, _èAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// o
-		if !_accept(parser, _oAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
-			goto fail66
+		// ò
+		if !_accept(parser, _òAccepts, &pos, &perr) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// è o
+		// è o q
 		// è
 		if !_accept(parser, _èAccepts, &pos, &perr) {
 			goto fail68
 		}
 		// o
 		if !_accept(parser, _oAccepts, &pos, &perr) {
+			goto fail68
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// è i
+		// è o
 		// è
 		if !_accept(parser, _èAccepts, &pos, &perr) {
 			goto fail70
 		}
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// è a q
+		// è i
 		// è
 		if !_accept(parser, _èAccepts, &pos, &perr) {
 			goto fail72
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
-			goto fail72
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// è a
+		// è a q
 		// è
 		if !_accept(parser, _èAccepts, &pos, &perr) {
 			goto fail74
@@ -86419,27 +86905,43 @@ func _desinence__à__ù__ì__ò__èAccepts(parser *_Parser, start int) (deltaPos
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail74
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// è q
+		// è a
 		// è
 		if !_accept(parser, _èAccepts, &pos, &perr) {
 			goto fail76
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// è q
 		// è
 		if !_accept(parser, _èAccepts, &pos, &perr) {
 			goto fail78
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// è
+		if !_accept(parser, _èAccepts, &pos, &perr) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -86461,7 +86963,7 @@ func _desinence__à__ù__ì__ò__èNode(parser *_Parser, start int) (int, *peg.N
 	}
 	pos := start
 	node = &peg.Node{Name: "desinence<à, ù, ì, ò, è>"}
-	// à o/à i/à q/à/ù a o/ù a i/ù e q/ù e/ù o q/ù o/ù i/ù a q/ù a/ù q/ù/ì a o/ì a i/ì e q/ì e/ì o q/ì o/ì u/ì a q/ì a/ì q/ì/ò e q/ò e/ò i/ò a q/ò a/ò q/ò/è o q/è o/è i/è a q/è a/è q/è
+	// à o/à i/à q/à/ù a o/ù a i/ù e q/ù e/ù o q/ù o/ù i/ù a q/ù a/ù q/ù/ì a o/ì a i/ì e q/ì e/ì o q/ì o/ì u/ì a q/ì a/ì q/ì/ò e q/ò e/ò i/ò a i/ò a q/ò a/ò q/ò/è o q/è o/è i/è a q/è a/è q/è
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
@@ -86871,7 +87373,7 @@ func _desinence__à__ù__ì__ò__èNode(parser *_Parser, start int) (int, *peg.N
 	fail57:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ò a q
+		// ò a i
 		// ò
 		if !_node(parser, _òNode, node, &pos) {
 			goto fail59
@@ -86880,109 +87382,109 @@ func _desinence__à__ù__ì__ò__èNode(parser *_Parser, start int) (int, *peg.N
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail59
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ò a
+		// ò a q
 		// ò
 		if !_node(parser, _òNode, node, &pos) {
 			goto fail61
 		}
 		// a
 		if !_node(parser, _aNode, node, &pos) {
+			goto fail61
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ò q
+		// ò a
 		// ò
 		if !_node(parser, _òNode, node, &pos) {
 			goto fail63
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// ò q
 		// ò
 		if !_node(parser, _òNode, node, &pos) {
+			goto fail65
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// è o q
-		// è
-		if !_node(parser, _èNode, node, &pos) {
-			goto fail66
-		}
-		// o
-		if !_node(parser, _oNode, node, &pos) {
-			goto fail66
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
-			goto fail66
+		// ò
+		if !_node(parser, _òNode, node, &pos) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// è o
+		// è o q
 		// è
 		if !_node(parser, _èNode, node, &pos) {
 			goto fail68
 		}
 		// o
 		if !_node(parser, _oNode, node, &pos) {
+			goto fail68
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// è i
+		// è o
 		// è
 		if !_node(parser, _èNode, node, &pos) {
 			goto fail70
 		}
-		// i
-		if !_node(parser, _iNode, node, &pos) {
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// è a q
+		// è i
 		// è
 		if !_node(parser, _èNode, node, &pos) {
 			goto fail72
 		}
-		// a
-		if !_node(parser, _aNode, node, &pos) {
-			goto fail72
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// è a
+		// è a q
 		// è
 		if !_node(parser, _èNode, node, &pos) {
 			goto fail74
@@ -86991,29 +87493,46 @@ func _desinence__à__ù__ì__ò__èNode(parser *_Parser, start int) (int, *peg.N
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail74
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// è q
+		// è a
 		// è
 		if !_node(parser, _èNode, node, &pos) {
 			goto fail76
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// è q
 		// è
 		if !_node(parser, _èNode, node, &pos) {
 			goto fail78
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		node.Kids = node.Kids[:nkids1]
+		pos = pos3
+		// è
+		if !_node(parser, _èNode, node, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
 		goto fail
@@ -87036,7 +87555,7 @@ func _desinence__à__ù__ì__ò__èFail(parser *_Parser, start, errPos int) (int
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _desinence__à__ù__ì__ò__è}
-	// à o/à i/à q/à/ù a o/ù a i/ù e q/ù e/ù o q/ù o/ù i/ù a q/ù a/ù q/ù/ì a o/ì a i/ì e q/ì e/ì o q/ì o/ì u/ì a q/ì a/ì q/ì/ò e q/ò e/ò i/ò a q/ò a/ò q/ò/è o q/è o/è i/è a q/è a/è q/è
+	// à o/à i/à q/à/ù a o/ù a i/ù e q/ù e/ù o q/ù o/ù i/ù a q/ù a/ù q/ù/ì a o/ì a i/ì e q/ì e/ì o q/ì o/ì u/ì a q/ì a/ì q/ì/ò e q/ò e/ò i/ò a i/ò a q/ò a/ò q/ò/è o q/è o/è i/è a q/è a/è q/è
 	{
 		pos3 := pos
 		// à o
@@ -87416,7 +87935,7 @@ func _desinence__à__ù__ì__ò__èFail(parser *_Parser, start, errPos int) (int
 		goto ok0
 	fail57:
 		pos = pos3
-		// ò a q
+		// ò a i
 		// ò
 		if !_fail(parser, _òFail, errPos, failure, &pos) {
 			goto fail59
@@ -87425,101 +87944,101 @@ func _desinence__à__ù__ì__ò__èFail(parser *_Parser, start, errPos int) (int
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail59
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// ò a
+		// ò a q
 		// ò
 		if !_fail(parser, _òFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		// a
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
+			goto fail61
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// ò q
+		// ò a
 		// ò
 		if !_fail(parser, _òFail, errPos, failure, &pos) {
 			goto fail63
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// ò q
 		// ò
 		if !_fail(parser, _òFail, errPos, failure, &pos) {
+			goto fail65
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// è o q
-		// è
-		if !_fail(parser, _èFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// o
-		if !_fail(parser, _oFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
-			goto fail66
+		// ò
+		if !_fail(parser, _òFail, errPos, failure, &pos) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// è o
+		// è o q
 		// è
 		if !_fail(parser, _èFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		// o
 		if !_fail(parser, _oFail, errPos, failure, &pos) {
+			goto fail68
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// è i
+		// è o
 		// è
 		if !_fail(parser, _èFail, errPos, failure, &pos) {
 			goto fail70
 		}
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// è a q
+		// è i
 		// è
 		if !_fail(parser, _èFail, errPos, failure, &pos) {
 			goto fail72
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
-			goto fail72
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// è a
+		// è a q
 		// è
 		if !_fail(parser, _èFail, errPos, failure, &pos) {
 			goto fail74
@@ -87528,27 +88047,43 @@ func _desinence__à__ù__ì__ò__èFail(parser *_Parser, start, errPos int) (int
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail74
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// è q
+		// è a
 		// è
 		if !_fail(parser, _èFail, errPos, failure, &pos) {
 			goto fail76
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// è q
 		// è
 		if !_fail(parser, _èFail, errPos, failure, &pos) {
 			goto fail78
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// è
+		if !_fail(parser, _èFail, errPos, failure, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -87573,7 +88108,7 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 	}
 	var node string
 	pos := start
-	// à o/à i/à q/à/ù a o/ù a i/ù e q/ù e/ù o q/ù o/ù i/ù a q/ù a/ù q/ù/ì a o/ì a i/ì e q/ì e/ì o q/ì o/ì u/ì a q/ì a/ì q/ì/ò e q/ò e/ò i/ò a q/ò a/ò q/ò/è o q/è o/è i/è a q/è a/è q/è
+	// à o/à i/à q/à/ù a o/ù a i/ù e q/ù e/ù o q/ù o/ù i/ù a q/ù a/ù q/ù/ì a o/ì a i/ì e q/ì e/ì o q/ì o/ì u/ì a q/ì a/ì q/ì/ò e q/ò e/ò i/ò a i/ò a q/ò a/ò q/ò/è o q/è o/è i/è a q/è a/è q/è
 	{
 		pos3 := pos
 		var node2 string
@@ -88322,7 +88857,7 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 	fail57:
 		node = node2
 		pos = pos3
-		// ò a q
+		// ò a i
 		{
 			var node60 string
 			// ò
@@ -88341,8 +88876,8 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node60 = node+node60, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail59
 			} else {
 				node60 = *n
@@ -88354,7 +88889,7 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 	fail59:
 		node = node2
 		pos = pos3
-		// ò a
+		// ò a q
 		{
 			var node62 string
 			// ò
@@ -88373,12 +88908,20 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node62 = node+node62, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail61
+			} else {
+				node62 = *n
+				pos = p
+			}
+			node, node62 = node+node62, ""
 		}
 		goto ok0
 	fail61:
 		node = node2
 		pos = pos3
-		// ò q
+		// ò a
 		{
 			var node64 string
 			// ò
@@ -88389,8 +88932,8 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node64 = node+node64, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail63
 			} else {
 				node64 = *n
@@ -88402,50 +88945,42 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 	fail63:
 		node = node2
 		pos = pos3
-		// ò
-		if p, n := _òAction(parser, pos); n == nil {
-			goto fail65
-		} else {
-			node = *n
-			pos = p
+		// ò q
+		{
+			var node66 string
+			// ò
+			if p, n := _òAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
 		}
 		goto ok0
 	fail65:
 		node = node2
 		pos = pos3
-		// è o q
-		{
-			var node67 string
-			// è
-			if p, n := _èAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// o
-			if p, n := _oAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
+		// ò
+		if p, n := _òAction(parser, pos); n == nil {
+			goto fail67
+		} else {
+			node = *n
+			pos = p
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node = node2
 		pos = pos3
-		// è o
+		// è o q
 		{
 			var node69 string
 			// è
@@ -88464,12 +88999,20 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node69 = node+node69, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail68
+			} else {
+				node69 = *n
+				pos = p
+			}
+			node, node69 = node+node69, ""
 		}
 		goto ok0
 	fail68:
 		node = node2
 		pos = pos3
-		// è i
+		// è o
 		{
 			var node71 string
 			// è
@@ -88480,8 +89023,8 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node71 = node+node71, ""
-			// i
-			if p, n := _iAction(parser, pos); n == nil {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail70
 			} else {
 				node71 = *n
@@ -88493,7 +89036,7 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 	fail70:
 		node = node2
 		pos = pos3
-		// è a q
+		// è i
 		{
 			var node73 string
 			// è
@@ -88504,16 +89047,8 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node73 = node+node73, ""
-			// a
-			if p, n := _aAction(parser, pos); n == nil {
-				goto fail72
-			} else {
-				node73 = *n
-				pos = p
-			}
-			node, node73 = node+node73, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail72
 			} else {
 				node73 = *n
@@ -88525,7 +89060,7 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 	fail72:
 		node = node2
 		pos = pos3
-		// è a
+		// è a q
 		{
 			var node75 string
 			// è
@@ -88544,12 +89079,20 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node75 = node+node75, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail74
+			} else {
+				node75 = *n
+				pos = p
+			}
+			node, node75 = node+node75, ""
 		}
 		goto ok0
 	fail74:
 		node = node2
 		pos = pos3
-		// è q
+		// è a
 		{
 			var node77 string
 			// è
@@ -88560,8 +89103,8 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 				pos = p
 			}
 			node, node77 = node+node77, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail76
 			} else {
 				node77 = *n
@@ -88573,15 +89116,39 @@ func _desinence__à__ù__ì__ò__èAction(parser *_Parser, start int) (int, *str
 	fail76:
 		node = node2
 		pos = pos3
+		// è q
+		{
+			var node79 string
+			// è
+			if p, n := _èAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+		}
+		goto ok0
+	fail78:
+		node = node2
+		pos = pos3
 		// è
 		if p, n := _èAction(parser, pos); n == nil {
-			goto fail78
+			goto fail80
 		} else {
 			node = *n
 			pos = p
 		}
 		goto ok0
-	fail78:
+	fail80:
 		node = node2
 		pos = pos3
 		goto fail
@@ -88598,7 +89165,7 @@ func _desinence__ã__ũ__ĩ__õ__ẽAccepts(parser *_Parser, start int) (deltaPo
 		return dp, de
 	}
 	pos, perr := start, -1
-	// ã o/ã i/ã q/ã/ũ a o/ũ a i/ũ e q/ũ e/ũ o q/ũ o/ũ i/ũ a q/ũ a/ũ q/ũ/ĩ a o/ĩ a i/ĩ e q/ĩ e/ĩ o q/ĩ o/ĩ u/ĩ a q/ĩ a/ĩ q/ĩ/õ e q/õ e/õ i/õ a q/õ a/õ q/õ/ẽ o q/ẽ o/ẽ i/ẽ a q/ẽ a/ẽ q/ẽ
+	// ã o/ã i/ã q/ã/ũ a o/ũ a i/ũ e q/ũ e/ũ o q/ũ o/ũ i/ũ a q/ũ a/ũ q/ũ/ĩ a o/ĩ a i/ĩ e q/ĩ e/ĩ o q/ĩ o/ĩ u/ĩ a q/ĩ a/ĩ q/ĩ/õ e q/õ e/õ i/õ a i/õ a q/õ a/õ q/õ/ẽ o q/ẽ o/ẽ i/ẽ a q/ẽ a/ẽ q/ẽ
 	{
 		pos3 := pos
 		// ã o
@@ -88978,7 +89545,7 @@ func _desinence__ã__ũ__ĩ__õ__ẽAccepts(parser *_Parser, start int) (deltaPo
 		goto ok0
 	fail57:
 		pos = pos3
-		// õ a q
+		// õ a i
 		// õ
 		if !_accept(parser, _õAccepts, &pos, &perr) {
 			goto fail59
@@ -88987,101 +89554,101 @@ func _desinence__ã__ũ__ĩ__õ__ẽAccepts(parser *_Parser, start int) (deltaPo
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail59
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// õ a
+		// õ a q
 		// õ
 		if !_accept(parser, _õAccepts, &pos, &perr) {
 			goto fail61
 		}
 		// a
 		if !_accept(parser, _aAccepts, &pos, &perr) {
+			goto fail61
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// õ q
+		// õ a
 		// õ
 		if !_accept(parser, _õAccepts, &pos, &perr) {
 			goto fail63
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// õ q
 		// õ
 		if !_accept(parser, _õAccepts, &pos, &perr) {
+			goto fail65
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// ẽ o q
-		// ẽ
-		if !_accept(parser, _ẽAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// o
-		if !_accept(parser, _oAccepts, &pos, &perr) {
-			goto fail66
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
-			goto fail66
+		// õ
+		if !_accept(parser, _õAccepts, &pos, &perr) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// ẽ o
+		// ẽ o q
 		// ẽ
 		if !_accept(parser, _ẽAccepts, &pos, &perr) {
 			goto fail68
 		}
 		// o
 		if !_accept(parser, _oAccepts, &pos, &perr) {
+			goto fail68
+		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// ẽ i
+		// ẽ o
 		// ẽ
 		if !_accept(parser, _ẽAccepts, &pos, &perr) {
 			goto fail70
 		}
-		// i
-		if !_accept(parser, _iAccepts, &pos, &perr) {
+		// o
+		if !_accept(parser, _oAccepts, &pos, &perr) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// ẽ a q
+		// ẽ i
 		// ẽ
 		if !_accept(parser, _ẽAccepts, &pos, &perr) {
 			goto fail72
 		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
-			goto fail72
-		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// ẽ a
+		// ẽ a q
 		// ẽ
 		if !_accept(parser, _ẽAccepts, &pos, &perr) {
 			goto fail74
@@ -89090,27 +89657,43 @@ func _desinence__ã__ũ__ĩ__õ__ẽAccepts(parser *_Parser, start int) (deltaPo
 		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail74
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// ẽ q
+		// ẽ a
 		// ẽ
 		if !_accept(parser, _ẽAccepts, &pos, &perr) {
 			goto fail76
 		}
-		// q
-		if !_accept(parser, _qAccepts, &pos, &perr) {
+		// a
+		if !_accept(parser, _aAccepts, &pos, &perr) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// ẽ q
 		// ẽ
 		if !_accept(parser, _ẽAccepts, &pos, &perr) {
 			goto fail78
 		}
+		// q
+		if !_accept(parser, _qAccepts, &pos, &perr) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// ẽ
+		if !_accept(parser, _ẽAccepts, &pos, &perr) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -89132,7 +89715,7 @@ func _desinence__ã__ũ__ĩ__õ__ẽNode(parser *_Parser, start int) (int, *peg.
 	}
 	pos := start
 	node = &peg.Node{Name: "desinence<ã, ũ, ĩ, õ, ẽ>"}
-	// ã o/ã i/ã q/ã/ũ a o/ũ a i/ũ e q/ũ e/ũ o q/ũ o/ũ i/ũ a q/ũ a/ũ q/ũ/ĩ a o/ĩ a i/ĩ e q/ĩ e/ĩ o q/ĩ o/ĩ u/ĩ a q/ĩ a/ĩ q/ĩ/õ e q/õ e/õ i/õ a q/õ a/õ q/õ/ẽ o q/ẽ o/ẽ i/ẽ a q/ẽ a/ẽ q/ẽ
+	// ã o/ã i/ã q/ã/ũ a o/ũ a i/ũ e q/ũ e/ũ o q/ũ o/ũ i/ũ a q/ũ a/ũ q/ũ/ĩ a o/ĩ a i/ĩ e q/ĩ e/ĩ o q/ĩ o/ĩ u/ĩ a q/ĩ a/ĩ q/ĩ/õ e q/õ e/õ i/õ a i/õ a q/õ a/õ q/õ/ẽ o q/ẽ o/ẽ i/ẽ a q/ẽ a/ẽ q/ẽ
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
@@ -89542,7 +90125,7 @@ func _desinence__ã__ũ__ĩ__õ__ẽNode(parser *_Parser, start int) (int, *peg.
 	fail57:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// õ a q
+		// õ a i
 		// õ
 		if !_node(parser, _õNode, node, &pos) {
 			goto fail59
@@ -89551,109 +90134,109 @@ func _desinence__ã__ũ__ĩ__õ__ẽNode(parser *_Parser, start int) (int, *peg.
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail59
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// õ a
+		// õ a q
 		// õ
 		if !_node(parser, _õNode, node, &pos) {
 			goto fail61
 		}
 		// a
 		if !_node(parser, _aNode, node, &pos) {
+			goto fail61
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// õ q
+		// õ a
 		// õ
 		if !_node(parser, _õNode, node, &pos) {
 			goto fail63
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// õ q
 		// õ
 		if !_node(parser, _õNode, node, &pos) {
+			goto fail65
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ẽ o q
-		// ẽ
-		if !_node(parser, _ẽNode, node, &pos) {
-			goto fail66
-		}
-		// o
-		if !_node(parser, _oNode, node, &pos) {
-			goto fail66
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
-			goto fail66
+		// õ
+		if !_node(parser, _õNode, node, &pos) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ẽ o
+		// ẽ o q
 		// ẽ
 		if !_node(parser, _ẽNode, node, &pos) {
 			goto fail68
 		}
 		// o
 		if !_node(parser, _oNode, node, &pos) {
+			goto fail68
+		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ẽ i
+		// ẽ o
 		// ẽ
 		if !_node(parser, _ẽNode, node, &pos) {
 			goto fail70
 		}
-		// i
-		if !_node(parser, _iNode, node, &pos) {
+		// o
+		if !_node(parser, _oNode, node, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ẽ a q
+		// ẽ i
 		// ẽ
 		if !_node(parser, _ẽNode, node, &pos) {
 			goto fail72
 		}
-		// a
-		if !_node(parser, _aNode, node, &pos) {
-			goto fail72
-		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// i
+		if !_node(parser, _iNode, node, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ẽ a
+		// ẽ a q
 		// ẽ
 		if !_node(parser, _ẽNode, node, &pos) {
 			goto fail74
@@ -89662,29 +90245,46 @@ func _desinence__ã__ũ__ĩ__õ__ẽNode(parser *_Parser, start int) (int, *peg.
 		if !_node(parser, _aNode, node, &pos) {
 			goto fail74
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// ẽ q
+		// ẽ a
 		// ẽ
 		if !_node(parser, _ẽNode, node, &pos) {
 			goto fail76
 		}
-		// q
-		if !_node(parser, _qNode, node, &pos) {
+		// a
+		if !_node(parser, _aNode, node, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
+		// ẽ q
 		// ẽ
 		if !_node(parser, _ẽNode, node, &pos) {
 			goto fail78
 		}
+		// q
+		if !_node(parser, _qNode, node, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		node.Kids = node.Kids[:nkids1]
+		pos = pos3
+		// ẽ
+		if !_node(parser, _ẽNode, node, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
 		goto fail
@@ -89707,7 +90307,7 @@ func _desinence__ã__ũ__ĩ__õ__ẽFail(parser *_Parser, start, errPos int) (in
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _desinence__ã__ũ__ĩ__õ__ẽ}
-	// ã o/ã i/ã q/ã/ũ a o/ũ a i/ũ e q/ũ e/ũ o q/ũ o/ũ i/ũ a q/ũ a/ũ q/ũ/ĩ a o/ĩ a i/ĩ e q/ĩ e/ĩ o q/ĩ o/ĩ u/ĩ a q/ĩ a/ĩ q/ĩ/õ e q/õ e/õ i/õ a q/õ a/õ q/õ/ẽ o q/ẽ o/ẽ i/ẽ a q/ẽ a/ẽ q/ẽ
+	// ã o/ã i/ã q/ã/ũ a o/ũ a i/ũ e q/ũ e/ũ o q/ũ o/ũ i/ũ a q/ũ a/ũ q/ũ/ĩ a o/ĩ a i/ĩ e q/ĩ e/ĩ o q/ĩ o/ĩ u/ĩ a q/ĩ a/ĩ q/ĩ/õ e q/õ e/õ i/õ a i/õ a q/õ a/õ q/õ/ẽ o q/ẽ o/ẽ i/ẽ a q/ẽ a/ẽ q/ẽ
 	{
 		pos3 := pos
 		// ã o
@@ -90087,7 +90687,7 @@ func _desinence__ã__ũ__ĩ__õ__ẽFail(parser *_Parser, start, errPos int) (in
 		goto ok0
 	fail57:
 		pos = pos3
-		// õ a q
+		// õ a i
 		// õ
 		if !_fail(parser, _õFail, errPos, failure, &pos) {
 			goto fail59
@@ -90096,101 +90696,101 @@ func _desinence__ã__ũ__ĩ__õ__ẽFail(parser *_Parser, start, errPos int) (in
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail59
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail59
 		}
 		goto ok0
 	fail59:
 		pos = pos3
-		// õ a
+		// õ a q
 		// õ
 		if !_fail(parser, _õFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		// a
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
+			goto fail61
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail61
 		}
 		goto ok0
 	fail61:
 		pos = pos3
-		// õ q
+		// õ a
 		// õ
 		if !_fail(parser, _õFail, errPos, failure, &pos) {
 			goto fail63
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail63
 		}
 		goto ok0
 	fail63:
 		pos = pos3
+		// õ q
 		// õ
 		if !_fail(parser, _õFail, errPos, failure, &pos) {
+			goto fail65
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail65
 		}
 		goto ok0
 	fail65:
 		pos = pos3
-		// ẽ o q
-		// ẽ
-		if !_fail(parser, _ẽFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// o
-		if !_fail(parser, _oFail, errPos, failure, &pos) {
-			goto fail66
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
-			goto fail66
+		// õ
+		if !_fail(parser, _õFail, errPos, failure, &pos) {
+			goto fail67
 		}
 		goto ok0
-	fail66:
+	fail67:
 		pos = pos3
-		// ẽ o
+		// ẽ o q
 		// ẽ
 		if !_fail(parser, _ẽFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		// o
 		if !_fail(parser, _oFail, errPos, failure, &pos) {
+			goto fail68
+		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
 			goto fail68
 		}
 		goto ok0
 	fail68:
 		pos = pos3
-		// ẽ i
+		// ẽ o
 		// ẽ
 		if !_fail(parser, _ẽFail, errPos, failure, &pos) {
 			goto fail70
 		}
-		// i
-		if !_fail(parser, _iFail, errPos, failure, &pos) {
+		// o
+		if !_fail(parser, _oFail, errPos, failure, &pos) {
 			goto fail70
 		}
 		goto ok0
 	fail70:
 		pos = pos3
-		// ẽ a q
+		// ẽ i
 		// ẽ
 		if !_fail(parser, _ẽFail, errPos, failure, &pos) {
 			goto fail72
 		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
-			goto fail72
-		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail72
 		}
 		goto ok0
 	fail72:
 		pos = pos3
-		// ẽ a
+		// ẽ a q
 		// ẽ
 		if !_fail(parser, _ẽFail, errPos, failure, &pos) {
 			goto fail74
@@ -90199,27 +90799,43 @@ func _desinence__ã__ũ__ĩ__õ__ẽFail(parser *_Parser, start, errPos int) (in
 		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail74
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail74
+		}
 		goto ok0
 	fail74:
 		pos = pos3
-		// ẽ q
+		// ẽ a
 		// ẽ
 		if !_fail(parser, _ẽFail, errPos, failure, &pos) {
 			goto fail76
 		}
-		// q
-		if !_fail(parser, _qFail, errPos, failure, &pos) {
+		// a
+		if !_fail(parser, _aFail, errPos, failure, &pos) {
 			goto fail76
 		}
 		goto ok0
 	fail76:
 		pos = pos3
+		// ẽ q
 		// ẽ
 		if !_fail(parser, _ẽFail, errPos, failure, &pos) {
 			goto fail78
 		}
+		// q
+		if !_fail(parser, _qFail, errPos, failure, &pos) {
+			goto fail78
+		}
 		goto ok0
 	fail78:
+		pos = pos3
+		// ẽ
+		if !_fail(parser, _ẽFail, errPos, failure, &pos) {
+			goto fail80
+		}
+		goto ok0
+	fail80:
 		pos = pos3
 		goto fail
 	ok0:
@@ -90244,7 +90860,7 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 	}
 	var node string
 	pos := start
-	// ã o/ã i/ã q/ã/ũ a o/ũ a i/ũ e q/ũ e/ũ o q/ũ o/ũ i/ũ a q/ũ a/ũ q/ũ/ĩ a o/ĩ a i/ĩ e q/ĩ e/ĩ o q/ĩ o/ĩ u/ĩ a q/ĩ a/ĩ q/ĩ/õ e q/õ e/õ i/õ a q/õ a/õ q/õ/ẽ o q/ẽ o/ẽ i/ẽ a q/ẽ a/ẽ q/ẽ
+	// ã o/ã i/ã q/ã/ũ a o/ũ a i/ũ e q/ũ e/ũ o q/ũ o/ũ i/ũ a q/ũ a/ũ q/ũ/ĩ a o/ĩ a i/ĩ e q/ĩ e/ĩ o q/ĩ o/ĩ u/ĩ a q/ĩ a/ĩ q/ĩ/õ e q/õ e/õ i/õ a i/õ a q/õ a/õ q/õ/ẽ o q/ẽ o/ẽ i/ẽ a q/ẽ a/ẽ q/ẽ
 	{
 		pos3 := pos
 		var node2 string
@@ -90993,7 +91609,7 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 	fail57:
 		node = node2
 		pos = pos3
-		// õ a q
+		// õ a i
 		{
 			var node60 string
 			// õ
@@ -91012,8 +91628,8 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 				pos = p
 			}
 			node, node60 = node+node60, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail59
 			} else {
 				node60 = *n
@@ -91025,7 +91641,7 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 	fail59:
 		node = node2
 		pos = pos3
-		// õ a
+		// õ a q
 		{
 			var node62 string
 			// õ
@@ -91044,12 +91660,20 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 				pos = p
 			}
 			node, node62 = node+node62, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail61
+			} else {
+				node62 = *n
+				pos = p
+			}
+			node, node62 = node+node62, ""
 		}
 		goto ok0
 	fail61:
 		node = node2
 		pos = pos3
-		// õ q
+		// õ a
 		{
 			var node64 string
 			// õ
@@ -91060,8 +91684,8 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 				pos = p
 			}
 			node, node64 = node+node64, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail63
 			} else {
 				node64 = *n
@@ -91073,50 +91697,42 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 	fail63:
 		node = node2
 		pos = pos3
-		// õ
-		if p, n := _õAction(parser, pos); n == nil {
-			goto fail65
-		} else {
-			node = *n
-			pos = p
+		// õ q
+		{
+			var node66 string
+			// õ
+			if p, n := _õAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail65
+			} else {
+				node66 = *n
+				pos = p
+			}
+			node, node66 = node+node66, ""
 		}
 		goto ok0
 	fail65:
 		node = node2
 		pos = pos3
-		// ẽ o q
-		{
-			var node67 string
-			// ẽ
-			if p, n := _ẽAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// o
-			if p, n := _oAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
-				goto fail66
-			} else {
-				node67 = *n
-				pos = p
-			}
-			node, node67 = node+node67, ""
+		// õ
+		if p, n := _õAction(parser, pos); n == nil {
+			goto fail67
+		} else {
+			node = *n
+			pos = p
 		}
 		goto ok0
-	fail66:
+	fail67:
 		node = node2
 		pos = pos3
-		// ẽ o
+		// ẽ o q
 		{
 			var node69 string
 			// ẽ
@@ -91135,12 +91751,20 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 				pos = p
 			}
 			node, node69 = node+node69, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail68
+			} else {
+				node69 = *n
+				pos = p
+			}
+			node, node69 = node+node69, ""
 		}
 		goto ok0
 	fail68:
 		node = node2
 		pos = pos3
-		// ẽ i
+		// ẽ o
 		{
 			var node71 string
 			// ẽ
@@ -91151,8 +91775,8 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 				pos = p
 			}
 			node, node71 = node+node71, ""
-			// i
-			if p, n := _iAction(parser, pos); n == nil {
+			// o
+			if p, n := _oAction(parser, pos); n == nil {
 				goto fail70
 			} else {
 				node71 = *n
@@ -91164,7 +91788,7 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 	fail70:
 		node = node2
 		pos = pos3
-		// ẽ a q
+		// ẽ i
 		{
 			var node73 string
 			// ẽ
@@ -91175,16 +91799,8 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 				pos = p
 			}
 			node, node73 = node+node73, ""
-			// a
-			if p, n := _aAction(parser, pos); n == nil {
-				goto fail72
-			} else {
-				node73 = *n
-				pos = p
-			}
-			node, node73 = node+node73, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// i
+			if p, n := _iAction(parser, pos); n == nil {
 				goto fail72
 			} else {
 				node73 = *n
@@ -91196,7 +91812,7 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 	fail72:
 		node = node2
 		pos = pos3
-		// ẽ a
+		// ẽ a q
 		{
 			var node75 string
 			// ẽ
@@ -91215,12 +91831,20 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 				pos = p
 			}
 			node, node75 = node+node75, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail74
+			} else {
+				node75 = *n
+				pos = p
+			}
+			node, node75 = node+node75, ""
 		}
 		goto ok0
 	fail74:
 		node = node2
 		pos = pos3
-		// ẽ q
+		// ẽ a
 		{
 			var node77 string
 			// ẽ
@@ -91231,8 +91855,8 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 				pos = p
 			}
 			node, node77 = node+node77, ""
-			// q
-			if p, n := _qAction(parser, pos); n == nil {
+			// a
+			if p, n := _aAction(parser, pos); n == nil {
 				goto fail76
 			} else {
 				node77 = *n
@@ -91244,15 +91868,39 @@ func _desinence__ã__ũ__ĩ__õ__ẽAction(parser *_Parser, start int) (int, *st
 	fail76:
 		node = node2
 		pos = pos3
+		// ẽ q
+		{
+			var node79 string
+			// ẽ
+			if p, n := _ẽAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+			// q
+			if p, n := _qAction(parser, pos); n == nil {
+				goto fail78
+			} else {
+				node79 = *n
+				pos = p
+			}
+			node, node79 = node+node79, ""
+		}
+		goto ok0
+	fail78:
+		node = node2
+		pos = pos3
 		// ẽ
 		if p, n := _ẽAction(parser, pos); n == nil {
-			goto fail78
+			goto fail80
 		} else {
 			node = *n
 			pos = p
 		}
 		goto ok0
-	fail78:
+	fail80:
 		node = node2
 		pos = pos3
 		goto fail
@@ -91615,9 +92263,9 @@ fail:
 func _cop_bar__sentenceAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
+	var label2 Sentence
 	var label0 Word
 	var label1 *Mod
-	var label2 Sentence
 	dp := parser.deltaPos[start][_cop_bar__sentence]
 	if dp < 0 {
 		return -1, nil
@@ -92033,9 +92681,9 @@ fail:
 func _cop_bar__statementAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
+	var label0 Word
 	var label1 *Mod
 	var label2 Statement
-	var label0 Word
 	dp := parser.deltaPos[start][_cop_bar__statement]
 	if dp < 0 {
 		return -1, nil
@@ -92660,9 +93308,9 @@ fail:
 func _forethought_cop__predicate__predicateAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label0 CoP
 	var label1 *Mod
 	var label2 CoP
+	var label0 CoP
 	dp := parser.deltaPos[start][_forethought_cop__predicate__predicate]
 	if dp < 0 {
 		return -1, nil
@@ -93078,9 +93726,9 @@ fail:
 func _MI_phrase_1__verb_syllableAction(parser *_Parser, start int) (int, *MIPredicate) {
 	var labels [3]string
 	use(labels)
+	var label2 Phrase
 	var label0 *Word
 	var label1 *Mod
-	var label2 Phrase
 	dp := parser.deltaPos[start][_MI_phrase_1__verb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -95831,9 +96479,9 @@ fail:
 func _PO_phrase_1__arg_syllableAction(parser *_Parser, start int) (int, *POPredicate) {
 	var labels [3]string
 	use(labels)
+	var label0 *Word
 	var label1 *Mod
 	var label2 Argument
-	var label0 *Word
 	dp := parser.deltaPos[start][_PO_phrase_1__arg_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -96066,9 +96714,9 @@ fail:
 func _MO_phrase_1__arg_syllableAction(parser *_Parser, start int) (int, *MOPredicate) {
 	var labels [3]string
 	use(labels)
+	var label0 *Word
 	var label1 *Mod
 	var label2 []Node
-	var label0 *Word
 	dp := parser.deltaPos[start][_MO_phrase_1__arg_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -97113,9 +97761,9 @@ fail:
 func _MI_phrase_1__relative_syllableAction(parser *_Parser, start int) (int, *MIPredicate) {
 	var labels [3]string
 	use(labels)
-	var label0 *Word
 	var label1 *Mod
 	var label2 Phrase
+	var label0 *Word
 	dp := parser.deltaPos[start][_MI_phrase_1__relative_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -97557,9 +98205,9 @@ fail:
 func _MO_phrase_1__relative_syllableAction(parser *_Parser, start int) (int, *MOPredicate) {
 	var labels [3]string
 	use(labels)
-	var label0 *Word
 	var label1 *Mod
 	var label2 []Node
+	var label0 *Word
 	dp := parser.deltaPos[start][_MO_phrase_1__relative_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -98403,9 +99051,9 @@ fail:
 func _forethought_cop__adverb_3__predicateAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
+	var label2 CoP
 	var label0 CoP
 	var label1 *Mod
-	var label2 CoP
 	dp := parser.deltaPos[start][_forethought_cop__adverb_3__predicate]
 	if dp < 0 {
 		return -1, nil
@@ -98821,9 +99469,9 @@ fail:
 func _MI_phrase_1__adverb_syllableAction(parser *_Parser, start int) (int, *MIPredicate) {
 	var labels [3]string
 	use(labels)
+	var label2 Phrase
 	var label0 *Word
 	var label1 *Mod
-	var label2 Phrase
 	dp := parser.deltaPos[start][_MI_phrase_1__adverb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -100320,9 +100968,9 @@ fail:
 func _afterthought_cop__preposition_4__predicateAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
+	var label2 CoP
 	var label0 Predicate
 	var label1 *Mod
-	var label2 CoP
 	dp := parser.deltaPos[start][_afterthought_cop__preposition_4__predicate]
 	if dp < 0 {
 		return -1, nil
@@ -100529,9 +101177,9 @@ fail:
 func _forethought_cop__preposition__predicateAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label0 CoP
 	var label1 *Mod
 	var label2 CoP
+	var label0 CoP
 	dp := parser.deltaPos[start][_forethought_cop__preposition__predicate]
 	if dp < 0 {
 		return -1, nil
@@ -100947,9 +101595,9 @@ fail:
 func _MI_phrase_1__preposition_syllableAction(parser *_Parser, start int) (int, *MIPredicate) {
 	var labels [3]string
 	use(labels)
+	var label2 Phrase
 	var label0 *Word
 	var label1 *Mod
-	var label2 Phrase
 	dp := parser.deltaPos[start][_MI_phrase_1__preposition_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -101811,9 +102459,9 @@ fail:
 func _afterthought_cop__content_predicate_2__predicateAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label0 Predicate
 	var label1 *Mod
 	var label2 CoP
+	var label0 Predicate
 	dp := parser.deltaPos[start][_afterthought_cop__content_predicate_2__predicate]
 	if dp < 0 {
 		return -1, nil
@@ -102020,9 +102668,9 @@ fail:
 func _forethought_cop__content_predicate_2__predicateAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label0 CoP
 	var label1 *Mod
 	var label2 CoP
+	var label0 CoP
 	dp := parser.deltaPos[start][_forethought_cop__content_predicate_2__predicate]
 	if dp < 0 {
 		return -1, nil
@@ -102438,9 +103086,9 @@ fail:
 func _PO_phrase_1__content_syllableAction(parser *_Parser, start int) (int, *POPredicate) {
 	var labels [3]string
 	use(labels)
+	var label2 Argument
 	var label0 *Word
 	var label1 *Mod
-	var label2 Argument
 	dp := parser.deltaPos[start][_PO_phrase_1__content_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -102673,9 +103321,9 @@ fail:
 func _MO_phrase_1__content_syllableAction(parser *_Parser, start int) (int, *MOPredicate) {
 	var labels [3]string
 	use(labels)
-	var label0 *Word
 	var label1 *Mod
 	var label2 []Node
+	var label0 *Word
 	dp := parser.deltaPos[start][_MO_phrase_1__content_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -102892,9 +103540,9 @@ fail:
 func _forethought_cop_bar__sentenceAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
-	var label2 Sentence
 	var label0 Word
 	var label1 *Mod
+	var label2 Sentence
 	dp := parser.deltaPos[start][_forethought_cop_bar__sentence]
 	if dp < 0 {
 		return -1, nil
@@ -104532,9 +105180,9 @@ fail:
 func _forethought_cop_bar__terms_IVAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
-	var label0 Word
 	var label1 *Mod
 	var label2 Terms
+	var label0 Word
 	dp := parser.deltaPos[start][_forethought_cop_bar__terms_IV]
 	if dp < 0 {
 		return -1, nil
@@ -106590,9 +107238,9 @@ fail:
 func _forethought_cop_bar__relative_clauseAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
-	var label0 Word
 	var label1 *Mod
 	var label2 Relative
+	var label0 Word
 	dp := parser.deltaPos[start][_forethought_cop_bar__relative_clause]
 	if dp < 0 {
 		return -1, nil
@@ -107611,9 +108259,9 @@ fail:
 func _forethought_cop_bar__adverbAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
+	var label2 Adverb
 	var label0 Word
 	var label1 *Mod
-	var label2 Adverb
 	dp := parser.deltaPos[start][_forethought_cop_bar__adverb]
 	if dp < 0 {
 		return -1, nil
@@ -107820,9 +108468,9 @@ fail:
 func _forethought_cop_1__adverb_3__predicateAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
-	var label2 CoP
 	var label0 Predicate
 	var label1 *Mod
+	var label2 CoP
 	dp := parser.deltaPos[start][_forethought_cop_1__adverb_3__predicate]
 	if dp < 0 {
 		return -1, nil
@@ -111076,9 +111724,9 @@ fail:
 func _forethought_cop_bar__predicateAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
+	var label2 Predicate
 	var label0 Word
 	var label1 *Mod
-	var label2 Predicate
 	dp := parser.deltaPos[start][_forethought_cop_bar__predicate]
 	if dp < 0 {
 		return -1, nil

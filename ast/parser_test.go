@@ -1092,6 +1092,21 @@ func TestWhitespace(t *testing.T) {
 	}
 }
 
+func TestMorphology(t *testing.T) {
+	tests := []parserTest{
+		{
+			name: "oai desinence",
+			text: "hoai?",
+			want: statement(
+				&WordPredicate{T: "hoai?"},
+			),
+		},
+	}
+	for _, test := range tests {
+		test.run(t)
+	}
+}
+
 type parserTest struct {
 	name string
 	text string

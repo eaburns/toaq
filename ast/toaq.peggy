@@ -450,7 +450,7 @@ desinence<ā,ū,ī,ō,ē> <-
 	ā o / ā i / ā q / ā /
 	ū a o / ū a i / ū e q / ū e / ū o q / ū o / ū i / ū a q / ū a / ū q / ū /
 	ī a o / ī a i / ī e q / ī e / ī o q / ī o / ī u / ī a q / ī a / ī q / ī /
-	ō e q / ō e / ō i / ō a q / ō a / ō q / ō /
+	ō e q / ō e / ō i / ō a i / ō a q / ō a / ō q / ō /
 	ē o q / ē o / ē i / ē a q / ē a / ē q / ē
 neutral_desinence <- desinence<a,u,i,o,e>
 compound_desinence <- desinence<ā,ū,ī,ō,ē>

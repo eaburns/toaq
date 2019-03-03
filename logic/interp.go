@@ -916,14 +916,17 @@ func (interp *interpreter) hoaArgument(n *ast.PredicateArgument) (*Binding, Argu
 	y := interp.newVar()
 	b := &Binding{N: y, Quantifier: All, AST: n}
 	ay := &Variable{N: y, Def: b, AST: n}
-	b.Restriction = &Connection{
-		Connector: And,
-		Left: &Predication{
-			Predicate: &Pred{Name: Among, AST: n},
-			Arguments: []Argument{ay, ax},
-			AST:       n,
-		},
-		Right: interp.relativeClause(b, n.Relative),
+	b.Restriction = &Predication{
+		Predicate: &Pred{Name: Among, AST: n},
+		Arguments: []Argument{ay, ax},
+		AST:       n,
+	}
+	if n.Relative != nil {
+		b.Restriction = &Connection{
+			Connector: And,
+			Left:      b.Restriction,
+			Right:     interp.relativeClause(b, n.Relative),
+		}
 	}
 	return b, ay
 }

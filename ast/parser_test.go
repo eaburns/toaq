@@ -1095,6 +1095,13 @@ func TestWhitespace(t *testing.T) {
 func TestMorphology(t *testing.T) {
 	tests := []parserTest{
 		{
+			name: "uoi desinence",
+			text: "huoi?",
+			want: statement(
+				&WordPredicate{T: "huoi?"},
+			),
+		},
+		{
 			name: "oai desinence",
 			text: "hoai?",
 			want: statement(

@@ -143,11 +143,16 @@ func TestCoPStatement(t *testing.T) {
 			in:   "to ra hie? ji/ chea/ to deo? suq/ ",
 			want: "[ιJ : ji(J)] [ιC : chea(C)] [ιS : suq(S)] hie(J, C) ∨ deo(S).",
 		},
-		{
-			name: "prenex",
-			in:   "ji/ chea/ pa hie? na ra suq/ pa bo?doa-",
-			want: "[ιJ : ji(J)] [ιC : chea(C)] [ιS : suq(S)] hie(J, C) ∨ bodoa(J, C, S).",
-		},
+		/*
+			{
+				// A prenex can no longer appear on the right-hand-side
+				// of an afterthought statement CoP.
+				// See https://github.com/eaburns/toaq/issues/18 for details.
+				name: "prenex",
+				in:   "ji/ chea/ pa hie? na ra suq/ pa bo?doa-",
+				want: "[ιJ : ji(J)] [ιC : chea(C)] [ιS : suq(S)] hie(J, C) ∨ bodoa(J, C, S).",
+			},
+		*/
 		{
 			name: "prenex forethought",
 			in:   "to ra ji/ chea/ pa hie? to suq/ pa deo?",
@@ -457,6 +462,11 @@ type interpTest struct {
 }
 
 func (test *interpTest) run(t *testing.T) {
+	defer func() {
+		if err := recover(); err != nil {
+			t.Fatalf("%v", err)
+		}
+	}()
 	p := ast.NewParser(test.in)
 	text, err := p.Text()
 	if err != nil {

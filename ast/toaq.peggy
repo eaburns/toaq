@@ -47,7 +47,7 @@ sentence_3 <-
 
 statement <- p:prenex_spaces? s:statement_1 { return Statement(prenexStmt(p, s)) }
 statement_1 <-
-	n:afterthought_cop<statement_2, statement> { return Statement((*CoPStatement)(n)) } /
+	n:afterthought_cop<statement_2, statement_1> { return Statement((*CoPStatement)(n)) } /
 	statement_2
 statement_2 <-
 	statement_3 /
@@ -244,7 +244,7 @@ preposition_4 <- predicate_word<preposition_syllable>
 #
 
 content_clause <-
-	x:afterthought_cop<content_clause_1, statement> { return Content((*CoPContent)(x)) } /
+	x1:afterthought_cop<content_clause_1, statement_1> { return Content((*CoPContent)(x1)) } /
 	content_clause_1
 content_clause_1 <-
 	x0:content_statement { return Content(x0) } /

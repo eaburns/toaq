@@ -239,7 +239,7 @@ const (
 	_afterthought_cop__relative_clause_1__relative_clause           int = 228
 	_afterthought_cop__sentence_1__sentence                         int = 229
 	_forethought_cop__sentence__sentence                            int = 230
-	_afterthought_cop__statement_2__statement                       int = 231
+	_afterthought_cop__statement_2__statement_1                     int = 231
 	_forethought_cop__statement__statement                          int = 232
 	_afterthought_cop__predicate_2__predicate_1                     int = 233
 	_forethought_cop_pred__predicate                                int = 234
@@ -295,7 +295,7 @@ const (
 	_PO_phrase__preposition_syllable                                int = 284
 	_MO_phrase__preposition_syllable                                int = 285
 	_predicate_word__preposition_syllable                           int = 286
-	_afterthought_cop__content_clause_1__statement                  int = 287
+	_afterthought_cop__content_clause_1__statement_1                int = 287
 	_LU_phrase__content_syllable                                    int = 288
 	_serial__content_predicate_1                                    int = 289
 	_afterthought_cop_pred__content_predicate_2                     int = 290
@@ -322,7 +322,7 @@ const (
 	_cop_bar__relative_clause                                       int = 311
 	_cop_bar__sentence                                              int = 312
 	_forethought_cop_1__sentence__sentence                          int = 313
-	_cop_bar__statement                                             int = 314
+	_cop_bar__statement_1                                           int = 314
 	_forethought_cop_1__statement__statement                        int = 315
 	_cop_bar__predicate_1                                           int = 316
 	_forethought_cop__predicate__predicate                          int = 317
@@ -344,78 +344,79 @@ const (
 	_MO_phrase_1__arg_syllable                                      int = 333
 	_LU_word__relative_syllable                                     int = 334
 	_forethought_cop_1__relative_clause__relative_clause            int = 335
-	_afterthought_cop__relative_predicate_2__predicate              int = 336
-	_forethought_cop__relative_predicate__predicate                 int = 337
-	_MI_phrase_1__relative_syllable                                 int = 338
-	_PO_phrase_1__relative_syllable                                 int = 339
-	_MO_phrase_1__relative_syllable                                 int = 340
-	_cop_bar__adverb                                                int = 341
-	_forethought_cop_1__adverb__adverb                              int = 342
-	_afterthought_cop__adverb_4__predicate                          int = 343
-	_forethought_cop__adverb_3__predicate                           int = 344
-	_LU_phrase__adverb_syllable                                     int = 345
-	_MI_phrase_1__adverb_syllable                                   int = 346
-	_PO_phrase_1__adverb_syllable                                   int = 347
-	_MO_phrase_1__adverb_syllable                                   int = 348
-	_cop_bar__prepositional_phrase                                  int = 349
-	_forethought_cop_1__prepositional_phrase__prepositional_phrase  int = 350
-	_cop_bar__preposition                                           int = 351
-	_forethought_cop_1__preposition__preposition                    int = 352
-	_afterthought_cop__preposition_4__predicate                     int = 353
-	_forethought_cop__preposition__predicate                        int = 354
-	_LU_phrase__preposition_syllable                                int = 355
-	_MI_phrase_1__preposition_syllable                              int = 356
-	_PO_phrase_1__preposition_syllable                              int = 357
-	_MO_phrase_1__preposition_syllable                              int = 358
-	_LU_word__content_syllable                                      int = 359
-	_afterthought_cop__content_predicate_2__predicate               int = 360
-	_forethought_cop__content_predicate_2__predicate                int = 361
-	_MI_phrase_1__content_syllable                                  int = 362
-	_PO_phrase_1__content_syllable                                  int = 363
-	_MO_phrase_1__content_syllable                                  int = 364
-	_forethought_cop_bar__sentence                                  int = 365
-	_forethought_cop_bar__statement                                 int = 366
-	_forethought_cop_1__predicate__predicate                        int = 367
-	_LU_word__verb_syllable                                         int = 368
-	_MI_word__verb_syllable                                         int = 369
-	_PO_word__verb_syllable                                         int = 370
-	_MO_word__verb_syllable                                         int = 371
-	_forethought_cop_bar__terms_V                                   int = 372
-	_forethought_cop_bar__terms_IV                                  int = 373
-	_forethought_cop_bar__terms_III                                 int = 374
-	_forethought_cop_bar__terms_II                                  int = 375
-	_forethought_cop_bar__argument                                  int = 376
-	_cop_bar__predicate                                             int = 377
-	_forethought_cop_1__arg_5__predicate                            int = 378
-	_LU_word__arg_syllable                                          int = 379
-	_MI_word__arg_syllable                                          int = 380
-	_PO_word__arg_syllable                                          int = 381
-	_MO_word__arg_syllable                                          int = 382
-	_forethought_cop_bar__relative_clause                           int = 383
-	_forethought_cop_1__relative_predicate__predicate               int = 384
-	_MI_word__relative_syllable                                     int = 385
-	_PO_word__relative_syllable                                     int = 386
-	_MO_word__relative_syllable                                     int = 387
-	_forethought_cop_bar__adverb                                    int = 388
-	_forethought_cop_1__adverb_3__predicate                         int = 389
-	_LU_word__adverb_syllable                                       int = 390
-	_MI_word__adverb_syllable                                       int = 391
-	_PO_word__adverb_syllable                                       int = 392
-	_MO_word__adverb_syllable                                       int = 393
-	_forethought_cop_bar__prepositional_phrase                      int = 394
-	_forethought_cop_bar__preposition                               int = 395
-	_forethought_cop_1__preposition__predicate                      int = 396
-	_LU_word__preposition_syllable                                  int = 397
-	_MI_word__preposition_syllable                                  int = 398
-	_PO_word__preposition_syllable                                  int = 399
-	_MO_word__preposition_syllable                                  int = 400
-	_forethought_cop_1__content_predicate_2__predicate              int = 401
-	_MI_word__content_syllable                                      int = 402
-	_PO_word__content_syllable                                      int = 403
-	_MO_word__content_syllable                                      int = 404
-	_forethought_cop_bar__predicate                                 int = 405
+	_cop_bar__statement                                             int = 336
+	_afterthought_cop__relative_predicate_2__predicate              int = 337
+	_forethought_cop__relative_predicate__predicate                 int = 338
+	_MI_phrase_1__relative_syllable                                 int = 339
+	_PO_phrase_1__relative_syllable                                 int = 340
+	_MO_phrase_1__relative_syllable                                 int = 341
+	_cop_bar__adverb                                                int = 342
+	_forethought_cop_1__adverb__adverb                              int = 343
+	_afterthought_cop__adverb_4__predicate                          int = 344
+	_forethought_cop__adverb_3__predicate                           int = 345
+	_LU_phrase__adverb_syllable                                     int = 346
+	_MI_phrase_1__adverb_syllable                                   int = 347
+	_PO_phrase_1__adverb_syllable                                   int = 348
+	_MO_phrase_1__adverb_syllable                                   int = 349
+	_cop_bar__prepositional_phrase                                  int = 350
+	_forethought_cop_1__prepositional_phrase__prepositional_phrase  int = 351
+	_cop_bar__preposition                                           int = 352
+	_forethought_cop_1__preposition__preposition                    int = 353
+	_afterthought_cop__preposition_4__predicate                     int = 354
+	_forethought_cop__preposition__predicate                        int = 355
+	_LU_phrase__preposition_syllable                                int = 356
+	_MI_phrase_1__preposition_syllable                              int = 357
+	_PO_phrase_1__preposition_syllable                              int = 358
+	_MO_phrase_1__preposition_syllable                              int = 359
+	_LU_word__content_syllable                                      int = 360
+	_afterthought_cop__content_predicate_2__predicate               int = 361
+	_forethought_cop__content_predicate_2__predicate                int = 362
+	_MI_phrase_1__content_syllable                                  int = 363
+	_PO_phrase_1__content_syllable                                  int = 364
+	_MO_phrase_1__content_syllable                                  int = 365
+	_forethought_cop_bar__sentence                                  int = 366
+	_forethought_cop_bar__statement                                 int = 367
+	_forethought_cop_1__predicate__predicate                        int = 368
+	_LU_word__verb_syllable                                         int = 369
+	_MI_word__verb_syllable                                         int = 370
+	_PO_word__verb_syllable                                         int = 371
+	_MO_word__verb_syllable                                         int = 372
+	_forethought_cop_bar__terms_V                                   int = 373
+	_forethought_cop_bar__terms_IV                                  int = 374
+	_forethought_cop_bar__terms_III                                 int = 375
+	_forethought_cop_bar__terms_II                                  int = 376
+	_forethought_cop_bar__argument                                  int = 377
+	_cop_bar__predicate                                             int = 378
+	_forethought_cop_1__arg_5__predicate                            int = 379
+	_LU_word__arg_syllable                                          int = 380
+	_MI_word__arg_syllable                                          int = 381
+	_PO_word__arg_syllable                                          int = 382
+	_MO_word__arg_syllable                                          int = 383
+	_forethought_cop_bar__relative_clause                           int = 384
+	_forethought_cop_1__relative_predicate__predicate               int = 385
+	_MI_word__relative_syllable                                     int = 386
+	_PO_word__relative_syllable                                     int = 387
+	_MO_word__relative_syllable                                     int = 388
+	_forethought_cop_bar__adverb                                    int = 389
+	_forethought_cop_1__adverb_3__predicate                         int = 390
+	_LU_word__adverb_syllable                                       int = 391
+	_MI_word__adverb_syllable                                       int = 392
+	_PO_word__adverb_syllable                                       int = 393
+	_MO_word__adverb_syllable                                       int = 394
+	_forethought_cop_bar__prepositional_phrase                      int = 395
+	_forethought_cop_bar__preposition                               int = 396
+	_forethought_cop_1__preposition__predicate                      int = 397
+	_LU_word__preposition_syllable                                  int = 398
+	_MI_word__preposition_syllable                                  int = 399
+	_PO_word__preposition_syllable                                  int = 400
+	_MO_word__preposition_syllable                                  int = 401
+	_forethought_cop_1__content_predicate_2__predicate              int = 402
+	_MI_word__content_syllable                                      int = 403
+	_PO_word__content_syllable                                      int = 404
+	_MO_word__content_syllable                                      int = 405
+	_forethought_cop_bar__predicate                                 int = 406
 
-	_N int = 406
+	_N int = 407
 )
 
 type _Parser struct {
@@ -1400,10 +1401,10 @@ fail:
 func _discourseAction(parser *_Parser, start int) (int, *[]Node) {
 	var labels [4]string
 	use(labels)
-	var label0 Sentence
-	var label1 *Mod
 	var label2 Fragment
 	var label3 *Mod
+	var label0 Sentence
+	var label1 *Mod
 	dp := parser.deltaPos[start][_discourse]
 	if dp < 0 {
 		return -1, nil
@@ -2657,8 +2658,8 @@ fail:
 func _sentence_2Action(parser *_Parser, start int) (int, *Sentence) {
 	var labels [2]string
 	use(labels)
-	var label1 *StatementSentence
 	var label0 *Word
+	var label1 *StatementSentence
 	dp := parser.deltaPos[start][_sentence_2]
 	if dp < 0 {
 		return -1, nil
@@ -3348,15 +3349,15 @@ func _statement_1Accepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// n:afterthought_cop<statement_2, statement> {…}/statement_2
+	// n:afterthought_cop<statement_2, statement_1> {…}/statement_2
 	{
 		pos3 := pos
 		// action
-		// n:afterthought_cop<statement_2, statement>
+		// n:afterthought_cop<statement_2, statement_1>
 		{
 			pos5 := pos
-			// afterthought_cop<statement_2, statement>
-			if !_accept(parser, _afterthought_cop__statement_2__statementAccepts, &pos, &perr) {
+			// afterthought_cop<statement_2, statement_1>
+			if !_accept(parser, _afterthought_cop__statement_2__statement_1Accepts, &pos, &perr) {
 				goto fail4
 			}
 			labels[0] = parser.text[pos5:pos]
@@ -3393,16 +3394,16 @@ func _statement_1Node(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "statement_1"}
-	// n:afterthought_cop<statement_2, statement> {…}/statement_2
+	// n:afterthought_cop<statement_2, statement_1> {…}/statement_2
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
 		// action
-		// n:afterthought_cop<statement_2, statement>
+		// n:afterthought_cop<statement_2, statement_1>
 		{
 			pos5 := pos
-			// afterthought_cop<statement_2, statement>
-			if !_node(parser, _afterthought_cop__statement_2__statementNode, node, &pos) {
+			// afterthought_cop<statement_2, statement_1>
+			if !_node(parser, _afterthought_cop__statement_2__statement_1Node, node, &pos) {
 				goto fail4
 			}
 			labels[0] = parser.text[pos5:pos]
@@ -3441,15 +3442,15 @@ func _statement_1Fail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _statement_1}
-	// n:afterthought_cop<statement_2, statement> {…}/statement_2
+	// n:afterthought_cop<statement_2, statement_1> {…}/statement_2
 	{
 		pos3 := pos
 		// action
-		// n:afterthought_cop<statement_2, statement>
+		// n:afterthought_cop<statement_2, statement_1>
 		{
 			pos5 := pos
-			// afterthought_cop<statement_2, statement>
-			if !_fail(parser, _afterthought_cop__statement_2__statementFail, errPos, failure, &pos) {
+			// afterthought_cop<statement_2, statement_1>
+			if !_fail(parser, _afterthought_cop__statement_2__statement_1Fail, errPos, failure, &pos) {
 				goto fail4
 			}
 			labels[0] = parser.text[pos5:pos]
@@ -3490,18 +3491,18 @@ func _statement_1Action(parser *_Parser, start int) (int, *Statement) {
 	}
 	var node Statement
 	pos := start
-	// n:afterthought_cop<statement_2, statement> {…}/statement_2
+	// n:afterthought_cop<statement_2, statement_1> {…}/statement_2
 	{
 		pos3 := pos
 		var node2 Statement
 		// action
 		{
 			start5 := pos
-			// n:afterthought_cop<statement_2, statement>
+			// n:afterthought_cop<statement_2, statement_1>
 			{
 				pos6 := pos
-				// afterthought_cop<statement_2, statement>
-				if p, n := _afterthought_cop__statement_2__statementAction(parser, pos); n == nil {
+				// afterthought_cop<statement_2, statement_1>
+				if p, n := _afterthought_cop__statement_2__statement_1Action(parser, pos); n == nil {
 					goto fail4
 				} else {
 					label0 = *n
@@ -5351,9 +5352,9 @@ fail:
 func _prefixed_predicateAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
+	var label2 Predicate
 	var label0 Word
 	var label1 *Mod
-	var label2 Predicate
 	dp := parser.deltaPos[start][_prefixed_predicate]
 	if dp < 0 {
 		return -1, nil
@@ -5533,8 +5534,8 @@ fail:
 func _predicate_3Action(parser *_Parser, start int) (int, *Predicate) {
 	var labels [2]string
 	use(labels)
-	var label0 Predicate
 	var label1 *Mod
+	var label0 Predicate
 	dp := parser.deltaPos[start][_predicate_3]
 	if dp < 0 {
 		return -1, nil
@@ -6385,10 +6386,10 @@ fail:
 func _termAction(parser *_Parser, start int) (int, *Term) {
 	var labels [4]string
 	use(labels)
-	var label1 Adverb
-	var label2 (*TermSet)
 	var label3 Preposition
 	var label0 Term
+	var label1 Adverb
+	var label2 (*TermSet)
 	dp := parser.deltaPos[start][_term]
 	if dp < 0 {
 		return -1, nil
@@ -7668,9 +7669,9 @@ fail:
 func _terms_IIIAction(parser *_Parser, start int) (int, *Terms) {
 	var labels [3]string
 	use(labels)
-	var label2 Terms
 	var label0 Term
 	var label1 *Mod
+	var label2 Terms
 	dp := parser.deltaPos[start][_terms_III]
 	if dp < 0 {
 		return -1, nil
@@ -9243,8 +9244,8 @@ fail:
 func _quantifier_spacesAction(parser *_Parser, start int) (int, *Word) {
 	var labels [2]string
 	use(labels)
-	var label1 *Mod
 	var label0 Word
+	var label1 *Mod
 	dp := parser.deltaPos[start][_quantifier_spaces]
 	if dp < 0 {
 		return -1, nil
@@ -9465,9 +9466,9 @@ fail:
 func _arg_4Action(parser *_Parser, start int) (int, *PredicateArgument) {
 	var labels [3]string
 	use(labels)
-	var label2 *Relative
 	var label0 *PredicateArgument
 	var label1 *Mod
+	var label2 *Relative
 	dp := parser.deltaPos[start][_arg_4]
 	if dp < 0 {
 		return -1, nil
@@ -14564,15 +14565,15 @@ func _content_clauseAccepts(parser *_Parser, start int) (deltaPos, deltaErr int)
 		return dp, de
 	}
 	pos, perr := start, -1
-	// x:afterthought_cop<content_clause_1, statement> {…}/content_clause_1
+	// x1:afterthought_cop<content_clause_1, statement_1> {…}/content_clause_1
 	{
 		pos3 := pos
 		// action
-		// x:afterthought_cop<content_clause_1, statement>
+		// x1:afterthought_cop<content_clause_1, statement_1>
 		{
 			pos5 := pos
-			// afterthought_cop<content_clause_1, statement>
-			if !_accept(parser, _afterthought_cop__content_clause_1__statementAccepts, &pos, &perr) {
+			// afterthought_cop<content_clause_1, statement_1>
+			if !_accept(parser, _afterthought_cop__content_clause_1__statement_1Accepts, &pos, &perr) {
 				goto fail4
 			}
 			labels[0] = parser.text[pos5:pos]
@@ -14609,16 +14610,16 @@ func _content_clauseNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "content_clause"}
-	// x:afterthought_cop<content_clause_1, statement> {…}/content_clause_1
+	// x1:afterthought_cop<content_clause_1, statement_1> {…}/content_clause_1
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
 		// action
-		// x:afterthought_cop<content_clause_1, statement>
+		// x1:afterthought_cop<content_clause_1, statement_1>
 		{
 			pos5 := pos
-			// afterthought_cop<content_clause_1, statement>
-			if !_node(parser, _afterthought_cop__content_clause_1__statementNode, node, &pos) {
+			// afterthought_cop<content_clause_1, statement_1>
+			if !_node(parser, _afterthought_cop__content_clause_1__statement_1Node, node, &pos) {
 				goto fail4
 			}
 			labels[0] = parser.text[pos5:pos]
@@ -14657,15 +14658,15 @@ func _content_clauseFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _content_clause}
-	// x:afterthought_cop<content_clause_1, statement> {…}/content_clause_1
+	// x1:afterthought_cop<content_clause_1, statement_1> {…}/content_clause_1
 	{
 		pos3 := pos
 		// action
-		// x:afterthought_cop<content_clause_1, statement>
+		// x1:afterthought_cop<content_clause_1, statement_1>
 		{
 			pos5 := pos
-			// afterthought_cop<content_clause_1, statement>
-			if !_fail(parser, _afterthought_cop__content_clause_1__statementFail, errPos, failure, &pos) {
+			// afterthought_cop<content_clause_1, statement_1>
+			if !_fail(parser, _afterthought_cop__content_clause_1__statement_1Fail, errPos, failure, &pos) {
 				goto fail4
 			}
 			labels[0] = parser.text[pos5:pos]
@@ -14706,18 +14707,18 @@ func _content_clauseAction(parser *_Parser, start int) (int, *Content) {
 	}
 	var node Content
 	pos := start
-	// x:afterthought_cop<content_clause_1, statement> {…}/content_clause_1
+	// x1:afterthought_cop<content_clause_1, statement_1> {…}/content_clause_1
 	{
 		pos3 := pos
 		var node2 Content
 		// action
 		{
 			start5 := pos
-			// x:afterthought_cop<content_clause_1, statement>
+			// x1:afterthought_cop<content_clause_1, statement_1>
 			{
 				pos6 := pos
-				// afterthought_cop<content_clause_1, statement>
-				if p, n := _afterthought_cop__content_clause_1__statementAction(parser, pos); n == nil {
+				// afterthought_cop<content_clause_1, statement_1>
+				if p, n := _afterthought_cop__content_clause_1__statement_1Action(parser, pos); n == nil {
 					goto fail4
 				} else {
 					label0 = *n
@@ -14726,8 +14727,8 @@ func _content_clauseAction(parser *_Parser, start int) (int, *Content) {
 				labels[0] = parser.text[pos6:pos]
 			}
 			node = func(
-				start, end int, x *CoP) Content {
-				return Content((*CoPContent)(x))
+				start, end int, x1 *CoP) Content {
+				return Content((*CoPContent)(x1))
 			}(
 				start5, pos, label0)
 		}
@@ -16188,9 +16189,9 @@ fail:
 func _forethought_connectiveAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
-	var label0 Word
 	var label1 *Mod
 	var label2 Word
+	var label0 Word
 	dp := parser.deltaPos[start][_forethought_connective]
 	if dp < 0 {
 		return -1, nil
@@ -16930,8 +16931,8 @@ fail:
 func _space_or_freemodAction(parser *_Parser, start int) (int, *Mod) {
 	var labels [2]string
 	use(labels)
-	var label1 *Mod
 	var label0 Mod
+	var label1 *Mod
 	dp := parser.deltaPos[start][_space_or_freemod]
 	if dp < 0 {
 		return -1, nil
@@ -17435,10 +17436,10 @@ fail:
 func _freemodAction(parser *_Parser, start int) (int, *Mod) {
 	var labels [4]string
 	use(labels)
-	var label0 *Interjection
 	var label1 (*Parenthetical)
 	var label2 *Incidental
 	var label3 *Vocative
+	var label0 *Interjection
 	dp := parser.deltaPos[start][_freemod]
 	if dp < 0 {
 		return -1, nil
@@ -17915,9 +17916,9 @@ fail:
 func _parenthetical_1Action(parser *_Parser, start int) (int, *Parenthetical) {
 	var labels [3]string
 	use(labels)
+	var label2 []Node
 	var label0 Word
 	var label1 *Mod
-	var label2 []Node
 	dp := parser.deltaPos[start][_parenthetical_1]
 	if dp < 0 {
 		return -1, nil
@@ -18124,9 +18125,9 @@ fail:
 func _incidentalAction(parser *_Parser, start int) (int, **Incidental) {
 	var labels [3]string
 	use(labels)
+	var label0 Word
 	var label1 *Mod
 	var label2 Statement
-	var label0 Word
 	dp := parser.deltaPos[start][_incidental]
 	if dp < 0 {
 		return -1, nil
@@ -18333,9 +18334,9 @@ fail:
 func _vocativeAction(parser *_Parser, start int) (int, **Vocative) {
 	var labels [3]string
 	use(labels)
-	var label0 Word
 	var label1 *Mod
 	var label2 Argument
+	var label0 Word
 	dp := parser.deltaPos[start][_vocative]
 	if dp < 0 {
 		return -1, nil
@@ -22761,9 +22762,9 @@ fail:
 func _illocutionaryAction(parser *_Parser, start int) (int, *Word) {
 	var labels [3]string
 	use(labels)
-	var label2 *Mod
 	var label0 string
 	var label1 Word
+	var label2 *Mod
 	dp := parser.deltaPos[start][_illocutionary]
 	if dp < 0 {
 		return -1, nil
@@ -53695,15 +53696,15 @@ fail:
 	return -1, nil
 }
 
-func _afterthought_cop__statement_2__statementAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+func _afterthought_cop__statement_2__statement_1Accepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	var labels [3]string
 	use(labels)
-	if dp, de, ok := _memo(parser, _afterthought_cop__statement_2__statement, start); ok {
+	if dp, de, ok := _memo(parser, _afterthought_cop__statement_2__statement_1, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
 	// action
-	// l:statement_2 s:_ bar:cop_bar<statement>
+	// l:statement_2 s:_ bar:cop_bar<statement_1>
 	// l:statement_2
 	{
 		pos1 := pos
@@ -53722,36 +53723,36 @@ func _afterthought_cop__statement_2__statementAccepts(parser *_Parser, start int
 		}
 		labels[1] = parser.text[pos2:pos]
 	}
-	// bar:cop_bar<statement>
+	// bar:cop_bar<statement_1>
 	{
 		pos3 := pos
-		// cop_bar<statement>
-		if !_accept(parser, _cop_bar__statementAccepts, &pos, &perr) {
+		// cop_bar<statement_1>
+		if !_accept(parser, _cop_bar__statement_1Accepts, &pos, &perr) {
 			goto fail
 		}
 		labels[2] = parser.text[pos3:pos]
 	}
-	return _memoize(parser, _afterthought_cop__statement_2__statement, start, pos, perr)
+	return _memoize(parser, _afterthought_cop__statement_2__statement_1, start, pos, perr)
 fail:
-	return _memoize(parser, _afterthought_cop__statement_2__statement, start, -1, perr)
+	return _memoize(parser, _afterthought_cop__statement_2__statement_1, start, -1, perr)
 }
 
-func _afterthought_cop__statement_2__statementNode(parser *_Parser, start int) (int, *peg.Node) {
+func _afterthought_cop__statement_2__statement_1Node(parser *_Parser, start int) (int, *peg.Node) {
 	var labels [3]string
 	use(labels)
-	dp := parser.deltaPos[start][_afterthought_cop__statement_2__statement]
+	dp := parser.deltaPos[start][_afterthought_cop__statement_2__statement_1]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _afterthought_cop__statement_2__statement}
+	key := _key{start: start, rule: _afterthought_cop__statement_2__statement_1}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "afterthought_cop<statement_2, statement>"}
+	node = &peg.Node{Name: "afterthought_cop<statement_2, statement_1>"}
 	// action
-	// l:statement_2 s:_ bar:cop_bar<statement>
+	// l:statement_2 s:_ bar:cop_bar<statement_1>
 	// l:statement_2
 	{
 		pos1 := pos
@@ -53770,11 +53771,11 @@ func _afterthought_cop__statement_2__statementNode(parser *_Parser, start int) (
 		}
 		labels[1] = parser.text[pos2:pos]
 	}
-	// bar:cop_bar<statement>
+	// bar:cop_bar<statement_1>
 	{
 		pos3 := pos
-		// cop_bar<statement>
-		if !_node(parser, _cop_bar__statementNode, node, &pos) {
+		// cop_bar<statement_1>
+		if !_node(parser, _cop_bar__statement_1Node, node, &pos) {
 			goto fail
 		}
 		labels[2] = parser.text[pos3:pos]
@@ -53786,20 +53787,20 @@ fail:
 	return -1, nil
 }
 
-func _afterthought_cop__statement_2__statementFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+func _afterthought_cop__statement_2__statement_1Fail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 	var labels [3]string
 	use(labels)
-	pos, failure := _failMemo(parser, _afterthought_cop__statement_2__statement, start, errPos)
+	pos, failure := _failMemo(parser, _afterthought_cop__statement_2__statement_1, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "afterthought_cop__statement_2__statement",
+		Name: "afterthought_cop__statement_2__statement_1",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _afterthought_cop__statement_2__statement}
+	key := _key{start: start, rule: _afterthought_cop__statement_2__statement_1}
 	// action
-	// l:statement_2 s:_ bar:cop_bar<statement>
+	// l:statement_2 s:_ bar:cop_bar<statement_1>
 	// l:statement_2
 	{
 		pos1 := pos
@@ -53818,11 +53819,11 @@ func _afterthought_cop__statement_2__statementFail(parser *_Parser, start, errPo
 		}
 		labels[1] = parser.text[pos2:pos]
 	}
-	// bar:cop_bar<statement>
+	// bar:cop_bar<statement_1>
 	{
 		pos3 := pos
-		// cop_bar<statement>
-		if !_fail(parser, _cop_bar__statementFail, errPos, failure, &pos) {
+		// cop_bar<statement_1>
+		if !_fail(parser, _cop_bar__statement_1Fail, errPos, failure, &pos) {
 			goto fail
 		}
 		labels[2] = parser.text[pos3:pos]
@@ -53834,17 +53835,17 @@ fail:
 	return -1, failure
 }
 
-func _afterthought_cop__statement_2__statementAction(parser *_Parser, start int) (int, *(*CoP)) {
+func _afterthought_cop__statement_2__statement_1Action(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label2 CoP
 	var label0 Statement
 	var label1 *Mod
-	dp := parser.deltaPos[start][_afterthought_cop__statement_2__statement]
+	var label2 CoP
+	dp := parser.deltaPos[start][_afterthought_cop__statement_2__statement_1]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _afterthought_cop__statement_2__statement}
+	key := _key{start: start, rule: _afterthought_cop__statement_2__statement_1}
 	n := parser.act[key]
 	if n != nil {
 		n := n.((*CoP))
@@ -53855,7 +53856,7 @@ func _afterthought_cop__statement_2__statementAction(parser *_Parser, start int)
 	// action
 	{
 		start0 := pos
-		// l:statement_2 s:_ bar:cop_bar<statement>
+		// l:statement_2 s:_ bar:cop_bar<statement_1>
 		// l:statement_2
 		{
 			pos2 := pos
@@ -53880,11 +53881,11 @@ func _afterthought_cop__statement_2__statementAction(parser *_Parser, start int)
 			}
 			labels[1] = parser.text[pos3:pos]
 		}
-		// bar:cop_bar<statement>
+		// bar:cop_bar<statement_1>
 		{
 			pos4 := pos
-			// cop_bar<statement>
-			if p, n := _cop_bar__statementAction(parser, pos); n == nil {
+			// cop_bar<statement_1>
+			if p, n := _cop_bar__statement_1Action(parser, pos); n == nil {
 				goto fail
 			} else {
 				label2 = *n
@@ -54046,9 +54047,9 @@ fail:
 func _forethought_cop__statement__statementAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label2 CoP
 	var label0 CoP
 	var label1 *Mod
+	var label2 CoP
 	dp := parser.deltaPos[start][_forethought_cop__statement__statement]
 	if dp < 0 {
 		return -1, nil
@@ -54740,9 +54741,9 @@ fail:
 func _MI_phrase__verb_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
-	var label2 *Word
 	var label0 MIPredicate
 	var label1 *Mod
+	var label2 *Word
 	dp := parser.deltaPos[start][_MI_phrase__verb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -55204,9 +55205,9 @@ fail:
 func _MO_phrase__verb_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
+	var label2 Word
 	var label0 MOPredicate
 	var label1 *Mod
-	var label2 Word
 	dp := parser.deltaPos[start][_MO_phrase__verb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -55783,9 +55784,9 @@ fail:
 func _serial__predicate_1Action(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
-	var label2 Predicate
 	var label0 Predicate
 	var label1 *Mod
+	var label2 Predicate
 	dp := parser.deltaPos[start][_serial__predicate_1]
 	if dp < 0 {
 		return -1, nil
@@ -55992,9 +55993,9 @@ fail:
 func _forethought_cop__terms_V__terms_VAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
+	var label2 CoP
 	var label0 CoP
 	var label1 *Mod
-	var label2 CoP
 	dp := parser.deltaPos[start][_forethought_cop__terms_V__terms_V]
 	if dp < 0 {
 		return -1, nil
@@ -56201,9 +56202,9 @@ fail:
 func _forethought_cop__terms_IV__terms_IVAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label0 CoP
 	var label1 *Mod
 	var label2 CoP
+	var label0 CoP
 	dp := parser.deltaPos[start][_forethought_cop__terms_IV__terms_IV]
 	if dp < 0 {
 		return -1, nil
@@ -56410,9 +56411,9 @@ fail:
 func _forethought_cop__terms_III__terms_IIIAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
+	var label2 CoP
 	var label0 CoP
 	var label1 *Mod
-	var label2 CoP
 	dp := parser.deltaPos[start][_forethought_cop__terms_III__terms_III]
 	if dp < 0 {
 		return -1, nil
@@ -57856,9 +57857,9 @@ fail:
 func _MI_phrase__arg_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
+	var label2 *Word
 	var label0 MIPredicate
 	var label1 *Mod
-	var label2 *Word
 	dp := parser.deltaPos[start][_MI_phrase__arg_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -58320,9 +58321,9 @@ fail:
 func _MO_phrase__arg_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
-	var label1 *Mod
 	var label2 Word
 	var label0 MOPredicate
+	var label1 *Mod
 	dp := parser.deltaPos[start][_MO_phrase__arg_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -59108,9 +59109,9 @@ fail:
 func _forethought_cop__relative_clause__relative_clauseAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label2 CoP
 	var label0 CoP
 	var label1 *Mod
+	var label2 CoP
 	dp := parser.deltaPos[start][_forethought_cop__relative_clause__relative_clause]
 	if dp < 0 {
 		return -1, nil
@@ -59526,9 +59527,9 @@ fail:
 func _serial__relative_predicate_1Action(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
-	var label2 Predicate
 	var label0 Predicate
 	var label1 *Mod
+	var label2 Predicate
 	dp := parser.deltaPos[start][_serial__relative_predicate_1]
 	if dp < 0 {
 		return -1, nil
@@ -61472,9 +61473,9 @@ fail:
 func _serial__adverb_3Action(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
+	var label2 Predicate
 	var label0 Predicate
 	var label1 *Mod
-	var label2 Predicate
 	dp := parser.deltaPos[start][_serial__adverb_3]
 	if dp < 0 {
 		return -1, nil
@@ -62082,9 +62083,9 @@ fail:
 func _MI_phrase__adverb_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
-	var label2 *Word
 	var label0 MIPredicate
 	var label1 *Mod
+	var label2 *Word
 	dp := parser.deltaPos[start][_MI_phrase__adverb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -62546,9 +62547,9 @@ fail:
 func _MO_phrase__adverb_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
+	var label2 Word
 	var label0 MOPredicate
 	var label1 *Mod
-	var label2 Word
 	dp := parser.deltaPos[start][_MO_phrase__adverb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -63125,9 +63126,9 @@ fail:
 func _afterthought_cop__prepositional_phrase_1__prepositional_phraseAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label2 CoP
 	var label0 Preposition
 	var label1 *Mod
+	var label2 CoP
 	dp := parser.deltaPos[start][_afterthought_cop__prepositional_phrase_1__prepositional_phrase]
 	if dp < 0 {
 		return -1, nil
@@ -63543,9 +63544,9 @@ fail:
 func _afterthought_cop__preposition_1__prepositionAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label2 CoP
 	var label0 Predicate
 	var label1 *Mod
+	var label2 CoP
 	dp := parser.deltaPos[start][_afterthought_cop__preposition_1__preposition]
 	if dp < 0 {
 		return -1, nil
@@ -63752,9 +63753,9 @@ fail:
 func _forethought_cop__preposition__prepositionAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label2 CoP
 	var label0 CoP
 	var label1 *Mod
+	var label2 CoP
 	dp := parser.deltaPos[start][_forethought_cop__preposition__preposition]
 	if dp < 0 {
 		return -1, nil
@@ -63961,9 +63962,9 @@ fail:
 func _serial__preposition_3Action(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
-	var label2 Predicate
 	var label0 Predicate
 	var label1 *Mod
+	var label2 Predicate
 	dp := parser.deltaPos[start][_serial__preposition_3]
 	if dp < 0 {
 		return -1, nil
@@ -64816,9 +64817,9 @@ fail:
 func _PO_phrase__preposition_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
-	var label2 *Word
 	var label0 POPredicate
 	var label1 *Mod
+	var label2 *Word
 	dp := parser.deltaPos[start][_PO_phrase__preposition_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -65035,9 +65036,9 @@ fail:
 func _MO_phrase__preposition_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
-	var label0 MOPredicate
 	var label1 *Mod
 	var label2 Word
+	var label0 MOPredicate
 	dp := parser.deltaPos[start][_MO_phrase__preposition_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -65472,15 +65473,15 @@ fail:
 	return -1, nil
 }
 
-func _afterthought_cop__content_clause_1__statementAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+func _afterthought_cop__content_clause_1__statement_1Accepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	var labels [3]string
 	use(labels)
-	if dp, de, ok := _memo(parser, _afterthought_cop__content_clause_1__statement, start); ok {
+	if dp, de, ok := _memo(parser, _afterthought_cop__content_clause_1__statement_1, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
 	// action
-	// l:content_clause_1 s:_ bar:cop_bar<statement>
+	// l:content_clause_1 s:_ bar:cop_bar<statement_1>
 	// l:content_clause_1
 	{
 		pos1 := pos
@@ -65499,36 +65500,36 @@ func _afterthought_cop__content_clause_1__statementAccepts(parser *_Parser, star
 		}
 		labels[1] = parser.text[pos2:pos]
 	}
-	// bar:cop_bar<statement>
+	// bar:cop_bar<statement_1>
 	{
 		pos3 := pos
-		// cop_bar<statement>
-		if !_accept(parser, _cop_bar__statementAccepts, &pos, &perr) {
+		// cop_bar<statement_1>
+		if !_accept(parser, _cop_bar__statement_1Accepts, &pos, &perr) {
 			goto fail
 		}
 		labels[2] = parser.text[pos3:pos]
 	}
-	return _memoize(parser, _afterthought_cop__content_clause_1__statement, start, pos, perr)
+	return _memoize(parser, _afterthought_cop__content_clause_1__statement_1, start, pos, perr)
 fail:
-	return _memoize(parser, _afterthought_cop__content_clause_1__statement, start, -1, perr)
+	return _memoize(parser, _afterthought_cop__content_clause_1__statement_1, start, -1, perr)
 }
 
-func _afterthought_cop__content_clause_1__statementNode(parser *_Parser, start int) (int, *peg.Node) {
+func _afterthought_cop__content_clause_1__statement_1Node(parser *_Parser, start int) (int, *peg.Node) {
 	var labels [3]string
 	use(labels)
-	dp := parser.deltaPos[start][_afterthought_cop__content_clause_1__statement]
+	dp := parser.deltaPos[start][_afterthought_cop__content_clause_1__statement_1]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _afterthought_cop__content_clause_1__statement}
+	key := _key{start: start, rule: _afterthought_cop__content_clause_1__statement_1}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "afterthought_cop<content_clause_1, statement>"}
+	node = &peg.Node{Name: "afterthought_cop<content_clause_1, statement_1>"}
 	// action
-	// l:content_clause_1 s:_ bar:cop_bar<statement>
+	// l:content_clause_1 s:_ bar:cop_bar<statement_1>
 	// l:content_clause_1
 	{
 		pos1 := pos
@@ -65547,11 +65548,11 @@ func _afterthought_cop__content_clause_1__statementNode(parser *_Parser, start i
 		}
 		labels[1] = parser.text[pos2:pos]
 	}
-	// bar:cop_bar<statement>
+	// bar:cop_bar<statement_1>
 	{
 		pos3 := pos
-		// cop_bar<statement>
-		if !_node(parser, _cop_bar__statementNode, node, &pos) {
+		// cop_bar<statement_1>
+		if !_node(parser, _cop_bar__statement_1Node, node, &pos) {
 			goto fail
 		}
 		labels[2] = parser.text[pos3:pos]
@@ -65563,20 +65564,20 @@ fail:
 	return -1, nil
 }
 
-func _afterthought_cop__content_clause_1__statementFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+func _afterthought_cop__content_clause_1__statement_1Fail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 	var labels [3]string
 	use(labels)
-	pos, failure := _failMemo(parser, _afterthought_cop__content_clause_1__statement, start, errPos)
+	pos, failure := _failMemo(parser, _afterthought_cop__content_clause_1__statement_1, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "afterthought_cop__content_clause_1__statement",
+		Name: "afterthought_cop__content_clause_1__statement_1",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _afterthought_cop__content_clause_1__statement}
+	key := _key{start: start, rule: _afterthought_cop__content_clause_1__statement_1}
 	// action
-	// l:content_clause_1 s:_ bar:cop_bar<statement>
+	// l:content_clause_1 s:_ bar:cop_bar<statement_1>
 	// l:content_clause_1
 	{
 		pos1 := pos
@@ -65595,11 +65596,11 @@ func _afterthought_cop__content_clause_1__statementFail(parser *_Parser, start, 
 		}
 		labels[1] = parser.text[pos2:pos]
 	}
-	// bar:cop_bar<statement>
+	// bar:cop_bar<statement_1>
 	{
 		pos3 := pos
-		// cop_bar<statement>
-		if !_fail(parser, _cop_bar__statementFail, errPos, failure, &pos) {
+		// cop_bar<statement_1>
+		if !_fail(parser, _cop_bar__statement_1Fail, errPos, failure, &pos) {
 			goto fail
 		}
 		labels[2] = parser.text[pos3:pos]
@@ -65611,17 +65612,17 @@ fail:
 	return -1, failure
 }
 
-func _afterthought_cop__content_clause_1__statementAction(parser *_Parser, start int) (int, *(*CoP)) {
+func _afterthought_cop__content_clause_1__statement_1Action(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
 	var label0 Content
 	var label1 *Mod
 	var label2 CoP
-	dp := parser.deltaPos[start][_afterthought_cop__content_clause_1__statement]
+	dp := parser.deltaPos[start][_afterthought_cop__content_clause_1__statement_1]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _afterthought_cop__content_clause_1__statement}
+	key := _key{start: start, rule: _afterthought_cop__content_clause_1__statement_1}
 	n := parser.act[key]
 	if n != nil {
 		n := n.((*CoP))
@@ -65632,7 +65633,7 @@ func _afterthought_cop__content_clause_1__statementAction(parser *_Parser, start
 	// action
 	{
 		start0 := pos
-		// l:content_clause_1 s:_ bar:cop_bar<statement>
+		// l:content_clause_1 s:_ bar:cop_bar<statement_1>
 		// l:content_clause_1
 		{
 			pos2 := pos
@@ -65657,11 +65658,11 @@ func _afterthought_cop__content_clause_1__statementAction(parser *_Parser, start
 			}
 			labels[1] = parser.text[pos3:pos]
 		}
-		// bar:cop_bar<statement>
+		// bar:cop_bar<statement_1>
 		{
 			pos4 := pos
-			// cop_bar<statement>
-			if p, n := _cop_bar__statementAction(parser, pos); n == nil {
+			// cop_bar<statement_1>
+			if p, n := _cop_bar__statement_1Action(parser, pos); n == nil {
 				goto fail
 			} else {
 				label2 = *n
@@ -65823,9 +65824,9 @@ fail:
 func _LU_phrase__content_syllableAction(parser *_Parser, start int) (int, **LUPhrase) {
 	var labels [3]string
 	use(labels)
+	var label0 *Word
 	var label1 *Mod
 	var label2 Statement
-	var label0 *Word
 	dp := parser.deltaPos[start][_LU_phrase__content_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -66032,9 +66033,9 @@ fail:
 func _serial__content_predicate_1Action(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
-	var label2 Predicate
 	var label0 Predicate
 	var label1 *Mod
+	var label2 Predicate
 	dp := parser.deltaPos[start][_serial__content_predicate_1]
 	if dp < 0 {
 		return -1, nil
@@ -66517,9 +66518,9 @@ fail:
 func _MI_phrase__content_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
+	var label0 MIPredicate
 	var label1 *Mod
 	var label2 *Word
-	var label0 MIPredicate
 	dp := parser.deltaPos[start][_MI_phrase__content_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -66762,9 +66763,9 @@ fail:
 func _PO_phrase__content_syllableAction(parser *_Parser, start int) (int, *Predicate) {
 	var labels [3]string
 	use(labels)
+	var label0 POPredicate
 	var label1 *Mod
 	var label2 *Word
-	var label0 POPredicate
 	dp := parser.deltaPos[start][_PO_phrase__content_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -67664,8 +67665,8 @@ fail:
 func _syllable__compound_desinence__compound_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label1 string
 	var label0 string
+	var label1 string
 	dp := parser.deltaPos[start][_syllable__compound_desinence__compound_tone]
 	if dp < 0 {
 		return -1, nil
@@ -68372,8 +68373,8 @@ fail:
 func _syllable__relative_desinence__relative_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label1 string
 	var label0 string
+	var label1 string
 	dp := parser.deltaPos[start][_syllable__relative_desinence__relative_tone]
 	if dp < 0 {
 		return -1, nil
@@ -69434,8 +69435,8 @@ fail:
 func _syllable__preposition_desinence__preposition_toneAction(parser *_Parser, start int) (int, *string) {
 	var labels [2]string
 	use(labels)
-	var label0 string
 	var label1 string
+	var label0 string
 	dp := parser.deltaPos[start][_syllable__preposition_desinence__preposition_tone]
 	if dp < 0 {
 		return -1, nil
@@ -92911,9 +92912,9 @@ fail:
 func _cop_bar__sentenceAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
+	var label0 Word
 	var label1 *Mod
 	var label2 Sentence
-	var label0 Word
 	dp := parser.deltaPos[start][_cop_bar__sentence]
 	if dp < 0 {
 		return -1, nil
@@ -93120,9 +93121,9 @@ fail:
 func _forethought_cop_1__sentence__sentenceAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
-	var label2 CoP
 	var label0 Sentence
 	var label1 *Mod
+	var label2 CoP
 	dp := parser.deltaPos[start][_forethought_cop_1__sentence__sentence]
 	if dp < 0 {
 		return -1, nil
@@ -93187,15 +93188,15 @@ fail:
 	return -1, nil
 }
 
-func _cop_bar__statementAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+func _cop_bar__statement_1Accepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	var labels [3]string
 	use(labels)
-	if dp, de, ok := _memo(parser, _cop_bar__statement, start); ok {
+	if dp, de, ok := _memo(parser, _cop_bar__statement_1, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
 	// action
-	// ru:connective s:_ r:statement
+	// ru:connective s:_ r:statement_1
 	// ru:connective
 	{
 		pos1 := pos
@@ -93214,36 +93215,36 @@ func _cop_bar__statementAccepts(parser *_Parser, start int) (deltaPos, deltaErr 
 		}
 		labels[1] = parser.text[pos2:pos]
 	}
-	// r:statement
+	// r:statement_1
 	{
 		pos3 := pos
-		// statement
-		if !_accept(parser, _statementAccepts, &pos, &perr) {
+		// statement_1
+		if !_accept(parser, _statement_1Accepts, &pos, &perr) {
 			goto fail
 		}
 		labels[2] = parser.text[pos3:pos]
 	}
-	return _memoize(parser, _cop_bar__statement, start, pos, perr)
+	return _memoize(parser, _cop_bar__statement_1, start, pos, perr)
 fail:
-	return _memoize(parser, _cop_bar__statement, start, -1, perr)
+	return _memoize(parser, _cop_bar__statement_1, start, -1, perr)
 }
 
-func _cop_bar__statementNode(parser *_Parser, start int) (int, *peg.Node) {
+func _cop_bar__statement_1Node(parser *_Parser, start int) (int, *peg.Node) {
 	var labels [3]string
 	use(labels)
-	dp := parser.deltaPos[start][_cop_bar__statement]
+	dp := parser.deltaPos[start][_cop_bar__statement_1]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _cop_bar__statement}
+	key := _key{start: start, rule: _cop_bar__statement_1}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "cop_bar<statement>"}
+	node = &peg.Node{Name: "cop_bar<statement_1>"}
 	// action
-	// ru:connective s:_ r:statement
+	// ru:connective s:_ r:statement_1
 	// ru:connective
 	{
 		pos1 := pos
@@ -93262,11 +93263,11 @@ func _cop_bar__statementNode(parser *_Parser, start int) (int, *peg.Node) {
 		}
 		labels[1] = parser.text[pos2:pos]
 	}
-	// r:statement
+	// r:statement_1
 	{
 		pos3 := pos
-		// statement
-		if !_node(parser, _statementNode, node, &pos) {
+		// statement_1
+		if !_node(parser, _statement_1Node, node, &pos) {
 			goto fail
 		}
 		labels[2] = parser.text[pos3:pos]
@@ -93278,20 +93279,20 @@ fail:
 	return -1, nil
 }
 
-func _cop_bar__statementFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+func _cop_bar__statement_1Fail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 	var labels [3]string
 	use(labels)
-	pos, failure := _failMemo(parser, _cop_bar__statement, start, errPos)
+	pos, failure := _failMemo(parser, _cop_bar__statement_1, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "cop_bar__statement",
+		Name: "cop_bar__statement_1",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _cop_bar__statement}
+	key := _key{start: start, rule: _cop_bar__statement_1}
 	// action
-	// ru:connective s:_ r:statement
+	// ru:connective s:_ r:statement_1
 	// ru:connective
 	{
 		pos1 := pos
@@ -93310,11 +93311,11 @@ func _cop_bar__statementFail(parser *_Parser, start, errPos int) (int, *peg.Fail
 		}
 		labels[1] = parser.text[pos2:pos]
 	}
-	// r:statement
+	// r:statement_1
 	{
 		pos3 := pos
-		// statement
-		if !_fail(parser, _statementFail, errPos, failure, &pos) {
+		// statement_1
+		if !_fail(parser, _statement_1Fail, errPos, failure, &pos) {
 			goto fail
 		}
 		labels[2] = parser.text[pos3:pos]
@@ -93326,17 +93327,17 @@ fail:
 	return -1, failure
 }
 
-func _cop_bar__statementAction(parser *_Parser, start int) (int, *CoP) {
+func _cop_bar__statement_1Action(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
 	var label0 Word
 	var label1 *Mod
 	var label2 Statement
-	dp := parser.deltaPos[start][_cop_bar__statement]
+	dp := parser.deltaPos[start][_cop_bar__statement_1]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _cop_bar__statement}
+	key := _key{start: start, rule: _cop_bar__statement_1}
 	n := parser.act[key]
 	if n != nil {
 		n := n.(CoP)
@@ -93347,7 +93348,7 @@ func _cop_bar__statementAction(parser *_Parser, start int) (int, *CoP) {
 	// action
 	{
 		start0 := pos
-		// ru:connective s:_ r:statement
+		// ru:connective s:_ r:statement_1
 		// ru:connective
 		{
 			pos2 := pos
@@ -93372,11 +93373,11 @@ func _cop_bar__statementAction(parser *_Parser, start int) (int, *CoP) {
 			}
 			labels[1] = parser.text[pos3:pos]
 		}
-		// r:statement
+		// r:statement_1
 		{
 			pos4 := pos
-			// statement
-			if p, n := _statementAction(parser, pos); n == nil {
+			// statement_1
+			if p, n := _statement_1Action(parser, pos); n == nil {
 				goto fail
 			} else {
 				label2 = *n
@@ -93538,9 +93539,9 @@ fail:
 func _forethought_cop_1__statement__statementAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
-	var label0 Statement
 	var label1 *Mod
 	var label2 CoP
+	var label0 Statement
 	dp := parser.deltaPos[start][_forethought_cop_1__statement__statement]
 	if dp < 0 {
 		return -1, nil
@@ -93956,9 +93957,9 @@ fail:
 func _forethought_cop__predicate__predicateAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
+	var label0 CoP
 	var label1 *Mod
 	var label2 CoP
-	var label0 CoP
 	dp := parser.deltaPos[start][_forethought_cop__predicate__predicate]
 	if dp < 0 {
 		return -1, nil
@@ -94583,9 +94584,9 @@ fail:
 func _PO_phrase_1__verb_syllableAction(parser *_Parser, start int) (int, *POPredicate) {
 	var labels [3]string
 	use(labels)
-	var label0 *Word
 	var label1 *Mod
 	var label2 Argument
+	var label0 *Word
 	dp := parser.deltaPos[start][_PO_phrase_1__verb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -94818,9 +94819,9 @@ fail:
 func _MO_phrase_1__verb_syllableAction(parser *_Parser, start int) (int, *MOPredicate) {
 	var labels [3]string
 	use(labels)
-	var label0 *Word
 	var label1 *Mod
 	var label2 []Node
+	var label0 *Word
 	dp := parser.deltaPos[start][_MO_phrase_1__verb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -95037,9 +95038,9 @@ fail:
 func _forethought_cop_1__terms_V__terms_VAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
-	var label0 Terms
 	var label1 *Mod
 	var label2 CoP
+	var label0 Terms
 	dp := parser.deltaPos[start][_forethought_cop_1__terms_V__terms_V]
 	if dp < 0 {
 		return -1, nil
@@ -95455,9 +95456,9 @@ fail:
 func _forethought_cop_1__terms_III__terms_IIIAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
+	var label1 *Mod
 	var label2 CoP
 	var label0 Terms
-	var label1 *Mod
 	dp := parser.deltaPos[start][_forethought_cop_1__terms_III__terms_III]
 	if dp < 0 {
 		return -1, nil
@@ -95873,9 +95874,9 @@ fail:
 func _cop_bar__argumentAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
+	var label0 Word
 	var label1 *Mod
 	var label2 Argument
-	var label0 Word
 	dp := parser.deltaPos[start][_cop_bar__argument]
 	if dp < 0 {
 		return -1, nil
@@ -96291,9 +96292,9 @@ fail:
 func _afterthought_cop__arg_7__predicateAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label0 Predicate
 	var label1 *Mod
 	var label2 CoP
+	var label0 Predicate
 	dp := parser.deltaPos[start][_afterthought_cop__arg_7__predicate]
 	if dp < 0 {
 		return -1, nil
@@ -96500,9 +96501,9 @@ fail:
 func _forethought_cop__arg_5__predicateAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
+	var label0 CoP
 	var label1 *Mod
 	var label2 CoP
-	var label0 CoP
 	dp := parser.deltaPos[start][_forethought_cop__arg_5__predicate]
 	if dp < 0 {
 		return -1, nil
@@ -96709,9 +96710,9 @@ fail:
 func _LU_phrase__arg_syllableAction(parser *_Parser, start int) (int, **LUPhrase) {
 	var labels [3]string
 	use(labels)
-	var label0 *Word
 	var label1 *Mod
 	var label2 Statement
+	var label0 *Word
 	dp := parser.deltaPos[start][_LU_phrase__arg_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -96918,9 +96919,9 @@ fail:
 func _MI_phrase_1__arg_syllableAction(parser *_Parser, start int) (int, *MIPredicate) {
 	var labels [3]string
 	use(labels)
+	var label2 Phrase
 	var label0 *Word
 	var label1 *Mod
-	var label2 Phrase
 	dp := parser.deltaPos[start][_MI_phrase_1__arg_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -97127,9 +97128,9 @@ fail:
 func _PO_phrase_1__arg_syllableAction(parser *_Parser, start int) (int, *POPredicate) {
 	var labels [3]string
 	use(labels)
+	var label2 Argument
 	var label0 *Word
 	var label1 *Mod
-	var label2 Argument
 	dp := parser.deltaPos[start][_PO_phrase_1__arg_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -97849,6 +97850,215 @@ fail:
 	return -1, nil
 }
 
+func _cop_bar__statementAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	var labels [3]string
+	use(labels)
+	if dp, de, ok := _memo(parser, _cop_bar__statement, start); ok {
+		return dp, de
+	}
+	pos, perr := start, -1
+	// action
+	// ru:connective s:_ r:statement
+	// ru:connective
+	{
+		pos1 := pos
+		// connective
+		if !_accept(parser, _connectiveAccepts, &pos, &perr) {
+			goto fail
+		}
+		labels[0] = parser.text[pos1:pos]
+	}
+	// s:_
+	{
+		pos2 := pos
+		// _
+		if !_accept(parser, __Accepts, &pos, &perr) {
+			goto fail
+		}
+		labels[1] = parser.text[pos2:pos]
+	}
+	// r:statement
+	{
+		pos3 := pos
+		// statement
+		if !_accept(parser, _statementAccepts, &pos, &perr) {
+			goto fail
+		}
+		labels[2] = parser.text[pos3:pos]
+	}
+	return _memoize(parser, _cop_bar__statement, start, pos, perr)
+fail:
+	return _memoize(parser, _cop_bar__statement, start, -1, perr)
+}
+
+func _cop_bar__statementNode(parser *_Parser, start int) (int, *peg.Node) {
+	var labels [3]string
+	use(labels)
+	dp := parser.deltaPos[start][_cop_bar__statement]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _cop_bar__statement}
+	node := parser.node[key]
+	if node != nil {
+		return start + int(dp-1), node
+	}
+	pos := start
+	node = &peg.Node{Name: "cop_bar<statement>"}
+	// action
+	// ru:connective s:_ r:statement
+	// ru:connective
+	{
+		pos1 := pos
+		// connective
+		if !_node(parser, _connectiveNode, node, &pos) {
+			goto fail
+		}
+		labels[0] = parser.text[pos1:pos]
+	}
+	// s:_
+	{
+		pos2 := pos
+		// _
+		if !_node(parser, __Node, node, &pos) {
+			goto fail
+		}
+		labels[1] = parser.text[pos2:pos]
+	}
+	// r:statement
+	{
+		pos3 := pos
+		// statement
+		if !_node(parser, _statementNode, node, &pos) {
+			goto fail
+		}
+		labels[2] = parser.text[pos3:pos]
+	}
+	node.Text = parser.text[start:pos]
+	parser.node[key] = node
+	return pos, node
+fail:
+	return -1, nil
+}
+
+func _cop_bar__statementFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	var labels [3]string
+	use(labels)
+	pos, failure := _failMemo(parser, _cop_bar__statement, start, errPos)
+	if failure != nil {
+		return pos, failure
+	}
+	failure = &peg.Fail{
+		Name: "cop_bar__statement",
+		Pos:  int(start),
+	}
+	key := _key{start: start, rule: _cop_bar__statement}
+	// action
+	// ru:connective s:_ r:statement
+	// ru:connective
+	{
+		pos1 := pos
+		// connective
+		if !_fail(parser, _connectiveFail, errPos, failure, &pos) {
+			goto fail
+		}
+		labels[0] = parser.text[pos1:pos]
+	}
+	// s:_
+	{
+		pos2 := pos
+		// _
+		if !_fail(parser, __Fail, errPos, failure, &pos) {
+			goto fail
+		}
+		labels[1] = parser.text[pos2:pos]
+	}
+	// r:statement
+	{
+		pos3 := pos
+		// statement
+		if !_fail(parser, _statementFail, errPos, failure, &pos) {
+			goto fail
+		}
+		labels[2] = parser.text[pos3:pos]
+	}
+	parser.fail[key] = failure
+	return pos, failure
+fail:
+	parser.fail[key] = failure
+	return -1, failure
+}
+
+func _cop_bar__statementAction(parser *_Parser, start int) (int, *CoP) {
+	var labels [3]string
+	use(labels)
+	var label0 Word
+	var label1 *Mod
+	var label2 Statement
+	dp := parser.deltaPos[start][_cop_bar__statement]
+	if dp < 0 {
+		return -1, nil
+	}
+	key := _key{start: start, rule: _cop_bar__statement}
+	n := parser.act[key]
+	if n != nil {
+		n := n.(CoP)
+		return start + int(dp-1), &n
+	}
+	var node CoP
+	pos := start
+	// action
+	{
+		start0 := pos
+		// ru:connective s:_ r:statement
+		// ru:connective
+		{
+			pos2 := pos
+			// connective
+			if p, n := _connectiveAction(parser, pos); n == nil {
+				goto fail
+			} else {
+				label0 = *n
+				pos = p
+			}
+			labels[0] = parser.text[pos2:pos]
+		}
+		// s:_
+		{
+			pos3 := pos
+			// _
+			if p, n := __Action(parser, pos); n == nil {
+				goto fail
+			} else {
+				label1 = *n
+				pos = p
+			}
+			labels[1] = parser.text[pos3:pos]
+		}
+		// r:statement
+		{
+			pos4 := pos
+			// statement
+			if p, n := _statementAction(parser, pos); n == nil {
+				goto fail
+			} else {
+				label2 = *n
+				pos = p
+			}
+			labels[2] = parser.text[pos4:pos]
+		}
+		node = func(
+			start, end int, r Statement, ru Word, s *Mod) CoP {
+			return CoP(copRight(ru, s, r))
+		}(
+			start0, pos, label2, label0, label1)
+	}
+	parser.act[key] = node
+	return pos, &node
+fail:
+	return -1, nil
+}
+
 func _afterthought_cop__relative_predicate_2__predicateAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	var labels [3]string
 	use(labels)
@@ -98200,9 +98410,9 @@ fail:
 func _forethought_cop__relative_predicate__predicateAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
-	var label2 CoP
 	var label0 CoP
 	var label1 *Mod
+	var label2 CoP
 	dp := parser.deltaPos[start][_forethought_cop__relative_predicate__predicate]
 	if dp < 0 {
 		return -1, nil
@@ -98409,9 +98619,9 @@ fail:
 func _MI_phrase_1__relative_syllableAction(parser *_Parser, start int) (int, *MIPredicate) {
 	var labels [3]string
 	use(labels)
-	var label2 Phrase
 	var label0 *Word
 	var label1 *Mod
+	var label2 Phrase
 	dp := parser.deltaPos[start][_MI_phrase_1__relative_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -98618,9 +98828,9 @@ fail:
 func _PO_phrase_1__relative_syllableAction(parser *_Parser, start int) (int, *POPredicate) {
 	var labels [3]string
 	use(labels)
+	var label0 *Word
 	var label1 *Mod
 	var label2 Argument
-	var label0 *Word
 	dp := parser.deltaPos[start][_PO_phrase_1__relative_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -99908,9 +100118,9 @@ fail:
 func _LU_phrase__adverb_syllableAction(parser *_Parser, start int) (int, **LUPhrase) {
 	var labels [3]string
 	use(labels)
+	var label1 *Mod
 	var label2 Statement
 	var label0 *Word
-	var label1 *Mod
 	dp := parser.deltaPos[start][_LU_phrase__adverb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -100117,9 +100327,9 @@ fail:
 func _MI_phrase_1__adverb_syllableAction(parser *_Parser, start int) (int, *MIPredicate) {
 	var labels [3]string
 	use(labels)
+	var label1 *Mod
 	var label2 Phrase
 	var label0 *Word
-	var label1 *Mod
 	dp := parser.deltaPos[start][_MI_phrase_1__adverb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -100561,9 +100771,9 @@ fail:
 func _MO_phrase_1__adverb_syllableAction(parser *_Parser, start int) (int, *MOPredicate) {
 	var labels [3]string
 	use(labels)
+	var label2 []Node
 	var label0 *Word
 	var label1 *Mod
-	var label2 []Node
 	dp := parser.deltaPos[start][_MO_phrase_1__adverb_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -101198,9 +101408,9 @@ fail:
 func _cop_bar__prepositionAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
-	var label0 Word
 	var label1 *Mod
 	var label2 Predicate
+	var label0 Word
 	dp := parser.deltaPos[start][_cop_bar__preposition]
 	if dp < 0 {
 		return -1, nil
@@ -101616,9 +101826,9 @@ fail:
 func _afterthought_cop__preposition_4__predicateAction(parser *_Parser, start int) (int, *(*CoP)) {
 	var labels [3]string
 	use(labels)
+	var label2 CoP
 	var label0 Predicate
 	var label1 *Mod
-	var label2 CoP
 	dp := parser.deltaPos[start][_afterthought_cop__preposition_4__predicate]
 	if dp < 0 {
 		return -1, nil
@@ -102243,9 +102453,9 @@ fail:
 func _MI_phrase_1__preposition_syllableAction(parser *_Parser, start int) (int, *MIPredicate) {
 	var labels [3]string
 	use(labels)
+	var label2 Phrase
 	var label0 *Word
 	var label1 *Mod
-	var label2 Phrase
 	dp := parser.deltaPos[start][_MI_phrase_1__preposition_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -102452,9 +102662,9 @@ fail:
 func _PO_phrase_1__preposition_syllableAction(parser *_Parser, start int) (int, *POPredicate) {
 	var labels [3]string
 	use(labels)
+	var label2 Argument
 	var label0 *Word
 	var label1 *Mod
-	var label2 Argument
 	dp := parser.deltaPos[start][_PO_phrase_1__preposition_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -102687,9 +102897,9 @@ fail:
 func _MO_phrase_1__preposition_syllableAction(parser *_Parser, start int) (int, *MOPredicate) {
 	var labels [3]string
 	use(labels)
-	var label2 []Node
 	var label0 *Word
 	var label1 *Mod
+	var label2 []Node
 	dp := parser.deltaPos[start][_MO_phrase_1__preposition_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -103525,9 +103735,9 @@ fail:
 func _MI_phrase_1__content_syllableAction(parser *_Parser, start int) (int, *MIPredicate) {
 	var labels [3]string
 	use(labels)
-	var label0 *Word
 	var label1 *Mod
 	var label2 Phrase
+	var label0 *Word
 	dp := parser.deltaPos[start][_MI_phrase_1__content_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -103734,9 +103944,9 @@ fail:
 func _PO_phrase_1__content_syllableAction(parser *_Parser, start int) (int, *POPredicate) {
 	var labels [3]string
 	use(labels)
-	var label0 *Word
 	var label1 *Mod
 	var label2 Argument
+	var label0 *Word
 	dp := parser.deltaPos[start][_PO_phrase_1__content_syllable]
 	if dp < 0 {
 		return -1, nil
@@ -104188,9 +104398,9 @@ fail:
 func _forethought_cop_bar__sentenceAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
-	var label0 Word
 	var label1 *Mod
 	var label2 Sentence
+	var label0 Word
 	dp := parser.deltaPos[start][_forethought_cop_bar__sentence]
 	if dp < 0 {
 		return -1, nil
@@ -105619,9 +105829,9 @@ fail:
 func _forethought_cop_bar__terms_VAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
+	var label2 Terms
 	var label0 Word
 	var label1 *Mod
-	var label2 Terms
 	dp := parser.deltaPos[start][_forethought_cop_bar__terms_V]
 	if dp < 0 {
 		return -1, nil
@@ -105828,9 +106038,9 @@ fail:
 func _forethought_cop_bar__terms_IVAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
+	var label0 Word
 	var label1 *Mod
 	var label2 Terms
-	var label0 Word
 	dp := parser.deltaPos[start][_forethought_cop_bar__terms_IV]
 	if dp < 0 {
 		return -1, nil
@@ -106037,9 +106247,9 @@ fail:
 func _forethought_cop_bar__terms_IIIAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
+	var label0 Word
 	var label1 *Mod
 	var label2 Terms
-	var label0 Word
 	dp := parser.deltaPos[start][_forethought_cop_bar__terms_III]
 	if dp < 0 {
 		return -1, nil
@@ -108907,9 +109117,9 @@ fail:
 func _forethought_cop_bar__adverbAction(parser *_Parser, start int) (int, *CoP) {
 	var labels [3]string
 	use(labels)
+	var label2 Adverb
 	var label0 Word
 	var label1 *Mod
-	var label2 Adverb
 	dp := parser.deltaPos[start][_forethought_cop_bar__adverb]
 	if dp < 0 {
 		return -1, nil

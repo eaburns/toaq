@@ -8,7 +8,7 @@ sentence_2 <- sentence_prefix_spaces? sentence_3
 sentence_prefix_spaces <- sentence_prefix _
 sentence_3 <- statement _ illocutionary?
 statement <- prenex_spaces? statement_1
-statement_1 <- afterthought_cop<statement_2, statement>/statement_2
+statement_1 <- afterthought_cop<statement_2, statement_1>/statement_2
 statement_2 <- statement_3/forethought_cop<statement, statement>
 statement_3 <- predication _ end_statement?
 predication <- predicate _ terms?
@@ -62,7 +62,7 @@ preposition_1 <- forethought_cop<preposition, preposition>/preposition_2
 preposition_2 <- serial<preposition_3>/preposition_3
 preposition_3 <- afterthought_cop_pred<preposition_4>/forethought_cop_pred<preposition>/LU_predicate<preposition_syllable>/MI_phrase<preposition_syllable>/PO_phrase<preposition_syllable>/MO_phrase<preposition_syllable>/preposition_4
 preposition_4 <- predicate_word<preposition_syllable>
-content_clause <- afterthought_cop<content_clause_1, statement>/content_clause_1
+content_clause <- afterthought_cop<content_clause_1, statement_1>/content_clause_1
 content_clause_1 <- content_statement/LU_phrase<content_syllable>
 content_statement <- content_predication _ end_statement?
 content_predication <- content_predicate _ terms?

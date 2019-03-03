@@ -1,7 +1,7 @@
 full_text <- text EOF
 text <- space_word? discourse? EOF?
 discourse <- (sentence _/fragment _)+
-fragment <- (afterthought_cop<relative_clause_1, relative_clause_1>/relative_clause/prenex/terms/freemod) _
+fragment <- (afterthought_cop<relative_clause_1, relative_clause>/relative_clause/prenex/terms/freemod) _
 sentence <- afterthought_cop<sentence_1, sentence>/sentence_1
 sentence_1 <- sentence_2/forethought_cop<sentence, sentence>
 sentence_2 <- sentence_prefix_spaces? sentence_3
@@ -41,7 +41,7 @@ arg_4 <- arg_5 _ relative_clause?
 arg_5 <- (serial<arg_6>/arg_6)
 arg_6 <- content_clause/afterthought_cop_pred<arg_7>/forethought_cop_pred<arg_5>/LU_predicate<arg_syllable>/MI_phrase<arg_syllable>/PO_phrase<arg_syllable>/MO_phrase<arg_syllable>/arg_7
 arg_7 <- predicate_word<arg_syllable>
-relative_clause <- afterthought_cop<relative_clause_1, relative_clause_1>/LU_phrase<relative_syllable>/relative_clause_1
+relative_clause <- afterthought_cop<relative_clause_1, relative_clause>/LU_phrase<relative_syllable>/relative_clause_1
 relative_clause_1 <- forethought_cop<relative_clause, relative_clause>/relative_clause_2
 relative_clause_2 <- afterthought_cop<relative_clause_3, statement>/relative_clause_3
 relative_clause_3 <- relative_predication _ end_statement?
@@ -54,7 +54,7 @@ adverb_1 <- forethought_cop<adverb, adverb>/adverb_2
 adverb_2 <- (serial<adverb_3>/adverb_3)
 adverb_3 <- afterthought_cop_pred<adverb_4>/forethought_cop_pred<adverb_3>/LU_predicate<adverb_syllable>/MI_phrase<adverb_syllable>/PO_phrase<adverb_syllable>/MO_phrase<adverb_syllable>/adverb_4
 adverb_4 <- predicate_word<adverb_syllable>
-prepositional_phrase <- afterthought_cop<prepositional_phrase_1, prepositional_phrase_1>/prepositional_phrase_1
+prepositional_phrase <- afterthought_cop<prepositional_phrase_1, prepositional_phrase>/prepositional_phrase_1
 prepositional_phrase_1 <- forethought_cop<prepositional_phrase, prepositional_phrase>/prepositional_phrase_2
 prepositional_phrase_2 <- preposition _ argument
 preposition <- afterthought_cop<preposition_1, preposition>/preposition_1

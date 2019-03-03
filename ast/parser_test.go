@@ -26,6 +26,40 @@ func TestDiscourse(t *testing.T) {
 			want: &Text{Leading: &Space{T: " "}},
 		},
 		{
+			name: "3-way relative clause CoP",
+			text: "kùı shí ra kùı gú ra kùı sáq",
+			want: &Text{
+				Discourse: Discourse{
+					Terms{
+						&CoPPreposition{
+							RU: Word{T: "ra"},
+							Left: &PredicationPreposition{
+								Predicate: &WordPredicate{T: "kui\\"},
+								Argument: &PredicateArgument{
+									Predicate: &WordPredicate{T: "shi/"},
+								},
+							},
+							Right: &CoPPreposition{
+								RU: Word{T: "ra"},
+								Left: &PredicationPreposition{
+									Predicate: &WordPredicate{T: "kui\\"},
+									Argument: &PredicateArgument{
+										Predicate: &WordPredicate{T: "gu/"},
+									},
+								},
+								Right: &PredicationPreposition{
+									Predicate: &WordPredicate{T: "kui\\"},
+									Argument: &PredicateArgument{
+										Predicate: &WordPredicate{T: "saq/"},
+									},
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+		{
 			name: "sentence",
 			text: "hio?",
 			want: &Text{
@@ -638,6 +672,37 @@ func TestRelative(t *testing.T) {
 			),
 		},
 		{
+			name: "relative afterthought cop 3-way",
+			text: "hio? ji/ shiV ru guV ru saqV",
+			want: statement(
+				&WordPredicate{T: "hio?"},
+				&PredicateArgument{
+					Predicate: &WordPredicate{T: "ji/"},
+					Relative: &CoPRelative{
+						Left: &PredicationRelative{
+							Predication: Predication{
+								Predicate: &WordPredicate{T: "shiV"},
+							},
+						},
+						RU: Word{T: "ru"},
+						Right: &CoPRelative{
+							Left: &PredicationRelative{
+								Predication: Predication{
+									Predicate: &WordPredicate{T: "guV"},
+								},
+							},
+							RU: Word{T: "ru"},
+							Right: &PredicationRelative{
+								Predication: Predication{
+									Predicate: &WordPredicate{T: "saqV"},
+								},
+							},
+						},
+					},
+				},
+			),
+		},
+		{
 			name: "relative forethought cop",
 			text: "hio? ji/ to ru maiV to paiV",
 			want: statement(
@@ -800,6 +865,37 @@ func TestPreposition(t *testing.T) {
 						Predicate: &WordPredicate{T: `kui\`},
 						Argument: &PredicateArgument{
 							Predicate: &WordPredicate{T: "ji/"},
+						},
+					},
+				},
+			),
+		},
+		{
+			name: "preposition afterthought cop 3-way",
+			text: `rai? kui\ shi/ ra kui\ gu/ ra kui\ saq/`,
+			want: statement(
+				&WordPredicate{T: "rai?"},
+				&CoPPreposition{
+					RU: Word{T: "ra"},
+					Left: &PredicationPreposition{
+						Predicate: &WordPredicate{T: "kui\\"},
+						Argument: &PredicateArgument{
+							Predicate: &WordPredicate{T: "shi/"},
+						},
+					},
+					Right: &CoPPreposition{
+						RU: Word{T: "ra"},
+						Left: &PredicationPreposition{
+							Predicate: &WordPredicate{T: "kui\\"},
+							Argument: &PredicateArgument{
+								Predicate: &WordPredicate{T: "gu/"},
+							},
+						},
+						Right: &PredicationPreposition{
+							Predicate: &WordPredicate{T: "kui\\"},
+							Argument: &PredicateArgument{
+								Predicate: &WordPredicate{T: "saq/"},
+							},
 						},
 					},
 				},

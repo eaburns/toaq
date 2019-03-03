@@ -25,7 +25,7 @@ discourse <- (
 #
 
 fragment <- f:(
-	x0:afterthought_cop<relative_clause_1, relative_clause_1> { return Fragment((*CoPRelative)(x0)) } /
+	x0:afterthought_cop<relative_clause_1, relative_clause> { return Fragment((*CoPRelative)(x0)) } /
 	x1:relative_clause  { return Fragment(x1) } /
 	x2:prenex  { return Fragment(x2) } /
 	x3:terms { return Fragment(x3) } /
@@ -159,8 +159,7 @@ arg_7 <- predicate_word<arg_syllable>
 #
 
 relative_clause <-
-	# BUG? should the right branch be relative_clause instead of relative_clause_1?
-	x0:afterthought_cop<relative_clause_1, relative_clause_1> { return Relative((*CoPRelative)(x0)) } /
+	x0:afterthought_cop<relative_clause_1, relative_clause> { return Relative((*CoPRelative)(x0)) } /
 	x1:LU_phrase<relative_syllable> { return Relative((*LURelative)(x1)) } /
 	relative_clause_1
 relative_clause_1 <-
@@ -214,7 +213,7 @@ adverb_4 <- predicate_word<adverb_syllable>
 #
 
 prepositional_phrase <-
-	x:afterthought_cop<prepositional_phrase_1, prepositional_phrase_1> { return Preposition((*CoPPreposition)(x)) } /
+	x:afterthought_cop<prepositional_phrase_1, prepositional_phrase> { return Preposition((*CoPPreposition)(x)) } /
 	prepositional_phrase_1
 prepositional_phrase_1 <-
 	x:forethought_cop<prepositional_phrase, prepositional_phrase> { return Preposition((*CoPPreposition)(x)) } /

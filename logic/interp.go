@@ -1166,9 +1166,11 @@ func splitVar(txt string) (rune, string, bool) {
 		return tone.None, "", false
 	}
 	w++ // 'd'
-	if w < len(txt) && strings.ContainsRune("aeiıouAEIOUqQ", rune(txt[w])) {
-		// If o is no the end of the syllable, then this is not a variable.
-		return tone.None, "", false
+	if w < len(txt) {
+		if after, _ := utf8.DecodeRuneInString(txt[w:]); strings.ContainsRune("aeiıouAEIOUqQ", after) {
+			// If o is no the end of the syllable, then this is not a variable.
+			return tone.None, "", false
+		}
 	}
 	return oTones[i], strings.ToLower("do" + txt[w:]), true
 }

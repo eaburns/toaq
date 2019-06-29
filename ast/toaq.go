@@ -27,395 +27,392 @@ const (
 	_predicate                                                      int = 16
 	_predicate_1                                                    int = 17
 	_predicate_2                                                    int = 18
-	_prefixed_predicate                                             int = 19
-	_predicate_3                                                    int = 20
-	_serial_predicate                                               int = 21
-	_terms                                                          int = 22
-	_terms_2                                                        int = 23
-	_term                                                           int = 24
-	_linked_argument                                                int = 25
-	_linking_word_spaces                                            int = 26
-	_termset                                                        int = 27
-	_terms_II                                                       int = 28
-	_terms_III                                                      int = 29
-	_terms_IV                                                       int = 30
-	_terms_V                                                        int = 31
-	_argument                                                       int = 32
-	_arg_1                                                          int = 33
-	_arg_2                                                          int = 34
-	_focus_spaces                                                   int = 35
-	_arg_3                                                          int = 36
-	_quantifier_spaces                                              int = 37
-	_arg_4                                                          int = 38
-	_arg_5                                                          int = 39
-	_arg_6                                                          int = 40
-	_arg_7                                                          int = 41
-	_relative_clause                                                int = 42
-	_relative_clause_1                                              int = 43
-	_relative_clause_2                                              int = 44
-	_relative_clause_3                                              int = 45
-	_relative_predication                                           int = 46
-	_relative_predicate                                             int = 47
-	_relative_predicate_1                                           int = 48
-	_relative_predicate_2                                           int = 49
-	_adverb                                                         int = 50
-	_adverb_1                                                       int = 51
-	_adverb_2                                                       int = 52
-	_adverb_3                                                       int = 53
-	_adverb_4                                                       int = 54
-	_prepositional_phrase                                           int = 55
-	_prepositional_phrase_1                                         int = 56
-	_prepositional_phrase_2                                         int = 57
-	_preposition                                                    int = 58
-	_preposition_1                                                  int = 59
-	_preposition_2                                                  int = 60
-	_preposition_3                                                  int = 61
-	_preposition_4                                                  int = 62
-	_content_clause                                                 int = 63
-	_content_clause_1                                               int = 64
-	_content_statement                                              int = 65
-	_content_predication                                            int = 66
-	_content_predicate                                              int = 67
-	_content_predicate_1                                            int = 68
-	_content_predicate_2                                            int = 69
-	_forethought_connective                                         int = 70
-	_MI_complement                                                  int = 71
-	__                                                              int = 72
-	_space_or_freemod                                               int = 73
-	_space_word                                                     int = 74
-	_freemod                                                        int = 75
-	_parenthetical                                                  int = 76
-	_parenthetical_1                                                int = 77
-	_incidental                                                     int = 78
-	_vocative                                                       int = 79
-	_word                                                           int = 80
-	_non_function_word                                              int = 81
-	_neutral_function_word                                          int = 82
-	_toned_function_word                                            int = 83
-	_initial_syllable                                               int = 84
-	_prefix                                                         int = 85
-	_focus                                                          int = 86
-	_end_quote                                                      int = 87
-	_end_predicatizer                                               int = 88
-	_end_statement                                                  int = 89
-	_sentence_prefix                                                int = 90
-	_end_prenex                                                     int = 91
-	_start_incidental                                               int = 92
-	_start_parenthetical                                            int = 93
-	_end_parenthetical                                              int = 94
-	_vocative_marker                                                int = 95
-	_linking_word                                                   int = 96
-	_connective                                                     int = 97
-	_illocutionary                                                  int = 98
-	_moq                                                            int = 99
-	_quantifier                                                     int = 100
-	_interjection                                                   int = 101
-	_forethought_marker                                             int = 102
-	_function_word                                                  int = 103
-	_BI                                                             int = 104
-	_DA                                                             int = 105
-	_MOQ                                                            int = 106
-	_GA                                                             int = 107
-	_GO                                                             int = 108
-	_HA                                                             int = 109
-	_HU                                                             int = 110
-	_JU                                                             int = 111
-	_KU                                                             int = 112
-	_KI                                                             int = 113
-	_KIO                                                            int = 114
-	_KEO                                                            int = 115
-	_LU                                                             int = 116
-	_MU                                                             int = 117
-	_MI                                                             int = 118
-	_MO                                                             int = 119
-	_NA                                                             int = 120
-	_PO                                                             int = 121
-	_RA                                                             int = 122
-	_TU                                                             int = 123
-	_TO                                                             int = 124
-	_TEO                                                            int = 125
-	_neutral_syllable                                               int = 126
-	_moq_syllable                                                   int = 127
-	_compound_syllable                                              int = 128
-	_arg_syllable                                                   int = 129
-	_relative_syllable                                              int = 130
-	_verb_syllable                                                  int = 131
-	_content_syllable                                               int = 132
-	_preposition_syllable                                           int = 133
-	_adverb_syllable                                                int = 134
-	_boundary                                                       int = 135
-	_initial                                                        int = 136
-	_neutral_desinence                                              int = 137
-	_compound_desinence                                             int = 138
-	_arg_desinence                                                  int = 139
-	_relative_desinence                                             int = 140
-	_verb_desinence                                                 int = 141
-	_content_desinence                                              int = 142
-	_preposition_desinence                                          int = 143
-	_adverb_desinence                                               int = 144
-	_tone                                                           int = 145
-	_A                                                              int = 146
-	_U                                                              int = 147
-	_I                                                              int = 148
-	_O                                                              int = 149
-	_E                                                              int = 150
-	_ā                                                              int = 151
-	_ū                                                              int = 152
-	_ī                                                              int = 153
-	_ō                                                              int = 154
-	_ē                                                              int = 155
-	_macron_combiner                                                int = 156
-	_compound_tone                                                  int = 157
-	_á                                                              int = 158
-	_ú                                                              int = 159
-	_í                                                              int = 160
-	_ó                                                              int = 161
-	_é                                                              int = 162
-	_acute_combiner                                                 int = 163
-	_arg_tone                                                       int = 164
-	_ǎ                                                              int = 165
-	_ǔ                                                              int = 166
-	_ǐ                                                              int = 167
-	_ǒ                                                              int = 168
-	_ě                                                              int = 169
-	_caron_combiner                                                 int = 170
-	_breve_combiner                                                 int = 171
-	_relative_tone                                                  int = 172
-	_ả                                                              int = 173
-	_ủ                                                              int = 174
-	_ỉ                                                              int = 175
-	_ỏ                                                              int = 176
-	_ẻ                                                              int = 177
-	_hook_combiner                                                  int = 178
-	_verb_tone                                                      int = 179
-	_â                                                              int = 180
-	_û                                                              int = 181
-	_î                                                              int = 182
-	_ô                                                              int = 183
-	_ê                                                              int = 184
-	_circumflex_combiner                                            int = 185
-	_content_tone                                                   int = 186
-	_à                                                              int = 187
-	_ù                                                              int = 188
-	_ì                                                              int = 189
-	_ò                                                              int = 190
-	_è                                                              int = 191
-	_grave_combiner                                                 int = 192
-	_preposition_tone                                               int = 193
-	_ã                                                              int = 194
-	_ũ                                                              int = 195
-	_ĩ                                                              int = 196
-	_õ                                                              int = 197
-	_ẽ                                                              int = 198
-	_tilde_combiner                                                 int = 199
-	_adverb_tone                                                    int = 200
-	_a                                                              int = 201
-	_b                                                              int = 202
-	_c                                                              int = 203
-	_d                                                              int = 204
-	_e                                                              int = 205
-	_f                                                              int = 206
-	_g                                                              int = 207
-	_h                                                              int = 208
-	_i                                                              int = 209
-	_j                                                              int = 210
-	_k                                                              int = 211
-	_l                                                              int = 212
-	_m                                                              int = 213
-	_n                                                              int = 214
-	_o                                                              int = 215
-	_p                                                              int = 216
-	_q                                                              int = 217
-	_r                                                              int = 218
-	_s                                                              int = 219
-	_t                                                              int = 220
-	_u                                                              int = 221
-	_w                                                              int = 222
-	_y                                                              int = 223
-	_space                                                          int = 224
-	_punctuation                                                    int = 225
-	_questions                                                      int = 226
-	_EOF                                                            int = 227
-	_afterthought_cop__relative_clause_1__relative_clause           int = 228
-	_afterthought_cop__sentence_1__sentence                         int = 229
-	_forethought_cop__sentence__sentence                            int = 230
-	_afterthought_cop__statement_2__statement                       int = 231
-	_forethought_cop__statement__statement                          int = 232
-	_afterthought_cop__predicate_2__predicate_1                     int = 233
-	_forethought_cop_pred__predicate                                int = 234
-	_LU_predicate__verb_syllable                                    int = 235
-	_MI_phrase__verb_syllable                                       int = 236
-	_PO_phrase__verb_syllable                                       int = 237
-	_MO_phrase__verb_syllable                                       int = 238
-	_predicate_word__verb_syllable                                  int = 239
-	_serial__predicate_1                                            int = 240
-	_forethought_cop__terms_V__terms_V                              int = 241
-	_forethought_cop__terms_IV__terms_IV                            int = 242
-	_forethought_cop__terms_III__terms_III                          int = 243
-	_forethought_cop__terms_II__terms_II                            int = 244
-	_afterthought_cop__arg_1__argument                              int = 245
-	_forethought_cop__argument__argument                            int = 246
-	_serial__arg_6                                                  int = 247
-	_afterthought_cop_pred__arg_7                                   int = 248
-	_forethought_cop_pred__arg_5                                    int = 249
-	_LU_predicate__arg_syllable                                     int = 250
-	_MI_phrase__arg_syllable                                        int = 251
-	_PO_phrase__arg_syllable                                        int = 252
-	_MO_phrase__arg_syllable                                        int = 253
-	_predicate_word__arg_syllable                                   int = 254
-	_LU_phrase__relative_syllable                                   int = 255
-	_forethought_cop__relative_clause__relative_clause              int = 256
-	_afterthought_cop__relative_clause_3__statement                 int = 257
-	_serial__relative_predicate_1                                   int = 258
-	_afterthought_cop_pred__relative_predicate_2                    int = 259
-	_forethought_cop_pred__relative_predicate                       int = 260
-	_MI_phrase__relative_syllable                                   int = 261
-	_PO_phrase__relative_syllable                                   int = 262
-	_MO_phrase__relative_syllable                                   int = 263
-	_predicate_word__relative_syllable                              int = 264
-	_afterthought_cop__adverb_1__adverb                             int = 265
-	_forethought_cop__adverb__adverb                                int = 266
-	_serial__adverb_3                                               int = 267
-	_afterthought_cop_pred__adverb_4                                int = 268
-	_forethought_cop_pred__adverb_3                                 int = 269
-	_LU_predicate__adverb_syllable                                  int = 270
-	_MI_phrase__adverb_syllable                                     int = 271
-	_PO_phrase__adverb_syllable                                     int = 272
-	_MO_phrase__adverb_syllable                                     int = 273
-	_predicate_word__adverb_syllable                                int = 274
-	_afterthought_cop__prepositional_phrase_1__prepositional_phrase int = 275
-	_forethought_cop__prepositional_phrase__prepositional_phrase    int = 276
-	_afterthought_cop__preposition_1__preposition                   int = 277
-	_forethought_cop__preposition__preposition                      int = 278
-	_serial__preposition_3                                          int = 279
-	_afterthought_cop_pred__preposition_4                           int = 280
-	_forethought_cop_pred__preposition                              int = 281
-	_LU_predicate__preposition_syllable                             int = 282
-	_MI_phrase__preposition_syllable                                int = 283
-	_PO_phrase__preposition_syllable                                int = 284
-	_MO_phrase__preposition_syllable                                int = 285
-	_predicate_word__preposition_syllable                           int = 286
-	_afterthought_cop__content_clause_1__statement                  int = 287
-	_LU_phrase__content_syllable                                    int = 288
-	_serial__content_predicate_1                                    int = 289
-	_afterthought_cop_pred__content_predicate_2                     int = 290
-	_forethought_cop_pred__content_predicate_2                      int = 291
-	_MI_phrase__content_syllable                                    int = 292
-	_PO_phrase__content_syllable                                    int = 293
-	_MO_phrase__content_syllable                                    int = 294
-	_predicate_word__content_syllable                               int = 295
-	_syllable__compound_desinence__compound_tone                    int = 296
-	_syllable__arg_desinence__arg_tone                              int = 297
-	_syllable__relative_desinence__relative_tone                    int = 298
-	_syllable__verb_desinence__verb_tone                            int = 299
-	_syllable__content_desinence__content_tone                      int = 300
-	_syllable__preposition_desinence__preposition_tone              int = 301
-	_syllable__adverb_desinence__adverb_tone                        int = 302
-	_desinence__a__u__i__o__e                                       int = 303
-	_desinence__ā__ū__ī__ō__ē                                       int = 304
-	_desinence__á__ú__í__ó__é                                       int = 305
-	_desinence__ǎ__ǔ__ǐ__ǒ__ě                                       int = 306
-	_desinence__ả__ủ__ỉ__ỏ__ẻ                                       int = 307
-	_desinence__â__û__î__ô__ê                                       int = 308
-	_desinence__à__ù__ì__ò__è                                       int = 309
-	_desinence__ã__ũ__ĩ__õ__ẽ                                       int = 310
-	_cop_bar__relative_clause                                       int = 311
-	_cop_bar__sentence                                              int = 312
-	_forethought_cop_1__sentence__sentence                          int = 313
-	_cop_bar__statement                                             int = 314
-	_forethought_cop_1__statement__statement                        int = 315
-	_cop_bar__predicate_1                                           int = 316
-	_forethought_cop__predicate__predicate                          int = 317
-	_LU_phrase__verb_syllable                                       int = 318
-	_MI_phrase_1__verb_syllable                                     int = 319
-	_PO_phrase_1__verb_syllable                                     int = 320
-	_MO_phrase_1__verb_syllable                                     int = 321
-	_forethought_cop_1__terms_V__terms_V                            int = 322
-	_forethought_cop_1__terms_IV__terms_IV                          int = 323
-	_forethought_cop_1__terms_III__terms_III                        int = 324
-	_forethought_cop_1__terms_II__terms_II                          int = 325
-	_cop_bar__argument                                              int = 326
-	_forethought_cop_1__argument__argument                          int = 327
-	_afterthought_cop__arg_7__predicate                             int = 328
-	_forethought_cop__arg_5__predicate                              int = 329
-	_LU_phrase__arg_syllable                                        int = 330
-	_MI_phrase_1__arg_syllable                                      int = 331
-	_PO_phrase_1__arg_syllable                                      int = 332
-	_MO_phrase_1__arg_syllable                                      int = 333
-	_LU_word__relative_syllable                                     int = 334
-	_forethought_cop_1__relative_clause__relative_clause            int = 335
-	_afterthought_cop__relative_predicate_2__predicate              int = 336
-	_forethought_cop__relative_predicate__predicate                 int = 337
-	_MI_phrase_1__relative_syllable                                 int = 338
-	_PO_phrase_1__relative_syllable                                 int = 339
-	_MO_phrase_1__relative_syllable                                 int = 340
-	_cop_bar__adverb                                                int = 341
-	_forethought_cop_1__adverb__adverb                              int = 342
-	_afterthought_cop__adverb_4__predicate                          int = 343
-	_forethought_cop__adverb_3__predicate                           int = 344
-	_LU_phrase__adverb_syllable                                     int = 345
-	_MI_phrase_1__adverb_syllable                                   int = 346
-	_PO_phrase_1__adverb_syllable                                   int = 347
-	_MO_phrase_1__adverb_syllable                                   int = 348
-	_cop_bar__prepositional_phrase                                  int = 349
-	_forethought_cop_1__prepositional_phrase__prepositional_phrase  int = 350
-	_cop_bar__preposition                                           int = 351
-	_forethought_cop_1__preposition__preposition                    int = 352
-	_afterthought_cop__preposition_4__predicate                     int = 353
-	_forethought_cop__preposition__predicate                        int = 354
-	_LU_phrase__preposition_syllable                                int = 355
-	_MI_phrase_1__preposition_syllable                              int = 356
-	_PO_phrase_1__preposition_syllable                              int = 357
-	_MO_phrase_1__preposition_syllable                              int = 358
-	_LU_word__content_syllable                                      int = 359
-	_afterthought_cop__content_predicate_2__predicate               int = 360
-	_forethought_cop__content_predicate_2__predicate                int = 361
-	_MI_phrase_1__content_syllable                                  int = 362
-	_PO_phrase_1__content_syllable                                  int = 363
-	_MO_phrase_1__content_syllable                                  int = 364
-	_forethought_cop_bar__sentence                                  int = 365
-	_forethought_cop_bar__statement                                 int = 366
-	_forethought_cop_1__predicate__predicate                        int = 367
-	_LU_word__verb_syllable                                         int = 368
-	_MI_word__verb_syllable                                         int = 369
-	_PO_word__verb_syllable                                         int = 370
-	_MO_word__verb_syllable                                         int = 371
-	_forethought_cop_bar__terms_V                                   int = 372
-	_forethought_cop_bar__terms_IV                                  int = 373
-	_forethought_cop_bar__terms_III                                 int = 374
-	_forethought_cop_bar__terms_II                                  int = 375
-	_forethought_cop_bar__argument                                  int = 376
-	_cop_bar__predicate                                             int = 377
-	_forethought_cop_1__arg_5__predicate                            int = 378
-	_LU_word__arg_syllable                                          int = 379
-	_MI_word__arg_syllable                                          int = 380
-	_PO_word__arg_syllable                                          int = 381
-	_MO_word__arg_syllable                                          int = 382
-	_forethought_cop_bar__relative_clause                           int = 383
-	_forethought_cop_1__relative_predicate__predicate               int = 384
-	_MI_word__relative_syllable                                     int = 385
-	_PO_word__relative_syllable                                     int = 386
-	_MO_word__relative_syllable                                     int = 387
-	_forethought_cop_bar__adverb                                    int = 388
-	_forethought_cop_1__adverb_3__predicate                         int = 389
-	_LU_word__adverb_syllable                                       int = 390
-	_MI_word__adverb_syllable                                       int = 391
-	_PO_word__adverb_syllable                                       int = 392
-	_MO_word__adverb_syllable                                       int = 393
-	_forethought_cop_bar__prepositional_phrase                      int = 394
-	_forethought_cop_bar__preposition                               int = 395
-	_forethought_cop_1__preposition__predicate                      int = 396
-	_LU_word__preposition_syllable                                  int = 397
-	_MI_word__preposition_syllable                                  int = 398
-	_PO_word__preposition_syllable                                  int = 399
-	_MO_word__preposition_syllable                                  int = 400
-	_forethought_cop_1__content_predicate_2__predicate              int = 401
-	_MI_word__content_syllable                                      int = 402
-	_PO_word__content_syllable                                      int = 403
-	_MO_word__content_syllable                                      int = 404
-	_forethought_cop_bar__predicate                                 int = 405
+	_predicate_3                                                    int = 19
+	_serial_predicate                                               int = 20
+	_terms                                                          int = 21
+	_terms_2                                                        int = 22
+	_term                                                           int = 23
+	_linked_argument                                                int = 24
+	_linking_word_spaces                                            int = 25
+	_termset                                                        int = 26
+	_terms_II                                                       int = 27
+	_terms_III                                                      int = 28
+	_terms_IV                                                       int = 29
+	_terms_V                                                        int = 30
+	_argument                                                       int = 31
+	_arg_1                                                          int = 32
+	_arg_2                                                          int = 33
+	_focus_spaces                                                   int = 34
+	_arg_3                                                          int = 35
+	_quantifier_spaces                                              int = 36
+	_arg_4                                                          int = 37
+	_arg_5                                                          int = 38
+	_arg_6                                                          int = 39
+	_arg_7                                                          int = 40
+	_relative_clause                                                int = 41
+	_relative_clause_1                                              int = 42
+	_relative_clause_2                                              int = 43
+	_relative_clause_3                                              int = 44
+	_relative_predication                                           int = 45
+	_relative_predicate                                             int = 46
+	_relative_predicate_1                                           int = 47
+	_relative_predicate_2                                           int = 48
+	_adverb                                                         int = 49
+	_adverb_1                                                       int = 50
+	_adverb_2                                                       int = 51
+	_adverb_3                                                       int = 52
+	_adverb_4                                                       int = 53
+	_prepositional_phrase                                           int = 54
+	_prepositional_phrase_1                                         int = 55
+	_prepositional_phrase_2                                         int = 56
+	_preposition                                                    int = 57
+	_preposition_1                                                  int = 58
+	_preposition_2                                                  int = 59
+	_preposition_3                                                  int = 60
+	_preposition_4                                                  int = 61
+	_content_clause                                                 int = 62
+	_content_clause_1                                               int = 63
+	_content_statement                                              int = 64
+	_content_predication                                            int = 65
+	_content_predicate                                              int = 66
+	_content_predicate_1                                            int = 67
+	_content_predicate_2                                            int = 68
+	_forethought_connective                                         int = 69
+	_MI_complement                                                  int = 70
+	__                                                              int = 71
+	_space_or_freemod                                               int = 72
+	_space_word                                                     int = 73
+	_freemod                                                        int = 74
+	_parenthetical                                                  int = 75
+	_parenthetical_1                                                int = 76
+	_incidental                                                     int = 77
+	_vocative                                                       int = 78
+	_word                                                           int = 79
+	_non_function_word                                              int = 80
+	_neutral_function_word                                          int = 81
+	_toned_function_word                                            int = 82
+	_initial_syllable                                               int = 83
+	_focus                                                          int = 84
+	_end_quote                                                      int = 85
+	_end_predicatizer                                               int = 86
+	_end_statement                                                  int = 87
+	_sentence_prefix                                                int = 88
+	_end_prenex                                                     int = 89
+	_start_incidental                                               int = 90
+	_start_parenthetical                                            int = 91
+	_end_parenthetical                                              int = 92
+	_vocative_marker                                                int = 93
+	_linking_word                                                   int = 94
+	_connective                                                     int = 95
+	_illocutionary                                                  int = 96
+	_moq                                                            int = 97
+	_quantifier                                                     int = 98
+	_interjection                                                   int = 99
+	_forethought_marker                                             int = 100
+	_function_word                                                  int = 101
+	_BI                                                             int = 102
+	_DA                                                             int = 103
+	_MOQ                                                            int = 104
+	_GA                                                             int = 105
+	_GO                                                             int = 106
+	_BEI                                                            int = 107
+	_HU                                                             int = 108
+	_JU                                                             int = 109
+	_KU                                                             int = 110
+	_KI                                                             int = 111
+	_KIO                                                            int = 112
+	_KEO                                                            int = 113
+	_LU                                                             int = 114
+	_MI                                                             int = 115
+	_MO                                                             int = 116
+	_NA                                                             int = 117
+	_PO                                                             int = 118
+	_RA                                                             int = 119
+	_TU                                                             int = 120
+	_TO                                                             int = 121
+	_TEO                                                            int = 122
+	_neutral_syllable                                               int = 123
+	_moq_syllable                                                   int = 124
+	_compound_syllable                                              int = 125
+	_arg_syllable                                                   int = 126
+	_relative_syllable                                              int = 127
+	_verb_syllable                                                  int = 128
+	_content_syllable                                               int = 129
+	_preposition_syllable                                           int = 130
+	_adverb_syllable                                                int = 131
+	_boundary                                                       int = 132
+	_initial                                                        int = 133
+	_neutral_desinence                                              int = 134
+	_compound_desinence                                             int = 135
+	_arg_desinence                                                  int = 136
+	_relative_desinence                                             int = 137
+	_verb_desinence                                                 int = 138
+	_content_desinence                                              int = 139
+	_preposition_desinence                                          int = 140
+	_adverb_desinence                                               int = 141
+	_tone                                                           int = 142
+	_A                                                              int = 143
+	_U                                                              int = 144
+	_I                                                              int = 145
+	_O                                                              int = 146
+	_E                                                              int = 147
+	_ā                                                              int = 148
+	_ū                                                              int = 149
+	_ī                                                              int = 150
+	_ō                                                              int = 151
+	_ē                                                              int = 152
+	_macron_combiner                                                int = 153
+	_compound_tone                                                  int = 154
+	_á                                                              int = 155
+	_ú                                                              int = 156
+	_í                                                              int = 157
+	_ó                                                              int = 158
+	_é                                                              int = 159
+	_acute_combiner                                                 int = 160
+	_arg_tone                                                       int = 161
+	_ǎ                                                              int = 162
+	_ǔ                                                              int = 163
+	_ǐ                                                              int = 164
+	_ǒ                                                              int = 165
+	_ě                                                              int = 166
+	_caron_combiner                                                 int = 167
+	_breve_combiner                                                 int = 168
+	_relative_tone                                                  int = 169
+	_ả                                                              int = 170
+	_ủ                                                              int = 171
+	_ỉ                                                              int = 172
+	_ỏ                                                              int = 173
+	_ẻ                                                              int = 174
+	_hook_combiner                                                  int = 175
+	_verb_tone                                                      int = 176
+	_â                                                              int = 177
+	_û                                                              int = 178
+	_î                                                              int = 179
+	_ô                                                              int = 180
+	_ê                                                              int = 181
+	_circumflex_combiner                                            int = 182
+	_content_tone                                                   int = 183
+	_à                                                              int = 184
+	_ù                                                              int = 185
+	_ì                                                              int = 186
+	_ò                                                              int = 187
+	_è                                                              int = 188
+	_grave_combiner                                                 int = 189
+	_preposition_tone                                               int = 190
+	_ã                                                              int = 191
+	_ũ                                                              int = 192
+	_ĩ                                                              int = 193
+	_õ                                                              int = 194
+	_ẽ                                                              int = 195
+	_tilde_combiner                                                 int = 196
+	_adverb_tone                                                    int = 197
+	_a                                                              int = 198
+	_b                                                              int = 199
+	_c                                                              int = 200
+	_d                                                              int = 201
+	_e                                                              int = 202
+	_f                                                              int = 203
+	_g                                                              int = 204
+	_h                                                              int = 205
+	_i                                                              int = 206
+	_j                                                              int = 207
+	_k                                                              int = 208
+	_l                                                              int = 209
+	_m                                                              int = 210
+	_n                                                              int = 211
+	_o                                                              int = 212
+	_p                                                              int = 213
+	_q                                                              int = 214
+	_r                                                              int = 215
+	_s                                                              int = 216
+	_t                                                              int = 217
+	_u                                                              int = 218
+	_w                                                              int = 219
+	_y                                                              int = 220
+	_space                                                          int = 221
+	_punctuation                                                    int = 222
+	_questions                                                      int = 223
+	_EOF                                                            int = 224
+	_afterthought_cop__relative_clause_1__relative_clause           int = 225
+	_afterthought_cop__sentence_1__sentence                         int = 226
+	_forethought_cop__sentence__sentence                            int = 227
+	_afterthought_cop__statement_2__statement                       int = 228
+	_forethought_cop__statement__statement                          int = 229
+	_afterthought_cop__predicate_2__predicate_1                     int = 230
+	_forethought_cop_pred__predicate                                int = 231
+	_LU_predicate__verb_syllable                                    int = 232
+	_MI_phrase__verb_syllable                                       int = 233
+	_PO_phrase__verb_syllable                                       int = 234
+	_MO_phrase__verb_syllable                                       int = 235
+	_predicate_word__verb_syllable                                  int = 236
+	_serial__predicate_1                                            int = 237
+	_forethought_cop__terms_V__terms_V                              int = 238
+	_forethought_cop__terms_IV__terms_IV                            int = 239
+	_forethought_cop__terms_III__terms_III                          int = 240
+	_forethought_cop__terms_II__terms_II                            int = 241
+	_afterthought_cop__arg_1__argument                              int = 242
+	_forethought_cop__argument__argument                            int = 243
+	_serial__arg_6                                                  int = 244
+	_afterthought_cop_pred__arg_7                                   int = 245
+	_forethought_cop_pred__arg_5                                    int = 246
+	_LU_predicate__arg_syllable                                     int = 247
+	_MI_phrase__arg_syllable                                        int = 248
+	_PO_phrase__arg_syllable                                        int = 249
+	_MO_phrase__arg_syllable                                        int = 250
+	_predicate_word__arg_syllable                                   int = 251
+	_LU_phrase__relative_syllable                                   int = 252
+	_forethought_cop__relative_clause__relative_clause              int = 253
+	_afterthought_cop__relative_clause_3__statement                 int = 254
+	_serial__relative_predicate_1                                   int = 255
+	_afterthought_cop_pred__relative_predicate_2                    int = 256
+	_forethought_cop_pred__relative_predicate                       int = 257
+	_MI_phrase__relative_syllable                                   int = 258
+	_PO_phrase__relative_syllable                                   int = 259
+	_MO_phrase__relative_syllable                                   int = 260
+	_predicate_word__relative_syllable                              int = 261
+	_afterthought_cop__adverb_1__adverb                             int = 262
+	_forethought_cop__adverb__adverb                                int = 263
+	_serial__adverb_3                                               int = 264
+	_afterthought_cop_pred__adverb_4                                int = 265
+	_forethought_cop_pred__adverb_3                                 int = 266
+	_LU_predicate__adverb_syllable                                  int = 267
+	_MI_phrase__adverb_syllable                                     int = 268
+	_PO_phrase__adverb_syllable                                     int = 269
+	_MO_phrase__adverb_syllable                                     int = 270
+	_predicate_word__adverb_syllable                                int = 271
+	_afterthought_cop__prepositional_phrase_1__prepositional_phrase int = 272
+	_forethought_cop__prepositional_phrase__prepositional_phrase    int = 273
+	_afterthought_cop__preposition_1__preposition                   int = 274
+	_forethought_cop__preposition__preposition                      int = 275
+	_serial__preposition_3                                          int = 276
+	_afterthought_cop_pred__preposition_4                           int = 277
+	_forethought_cop_pred__preposition                              int = 278
+	_LU_predicate__preposition_syllable                             int = 279
+	_MI_phrase__preposition_syllable                                int = 280
+	_PO_phrase__preposition_syllable                                int = 281
+	_MO_phrase__preposition_syllable                                int = 282
+	_predicate_word__preposition_syllable                           int = 283
+	_afterthought_cop__content_clause_1__statement                  int = 284
+	_LU_phrase__content_syllable                                    int = 285
+	_serial__content_predicate_1                                    int = 286
+	_afterthought_cop_pred__content_predicate_2                     int = 287
+	_forethought_cop_pred__content_predicate_2                      int = 288
+	_MI_phrase__content_syllable                                    int = 289
+	_PO_phrase__content_syllable                                    int = 290
+	_MO_phrase__content_syllable                                    int = 291
+	_predicate_word__content_syllable                               int = 292
+	_syllable__compound_desinence__compound_tone                    int = 293
+	_syllable__arg_desinence__arg_tone                              int = 294
+	_syllable__relative_desinence__relative_tone                    int = 295
+	_syllable__verb_desinence__verb_tone                            int = 296
+	_syllable__content_desinence__content_tone                      int = 297
+	_syllable__preposition_desinence__preposition_tone              int = 298
+	_syllable__adverb_desinence__adverb_tone                        int = 299
+	_desinence__a__u__i__o__e                                       int = 300
+	_desinence__ā__ū__ī__ō__ē                                       int = 301
+	_desinence__á__ú__í__ó__é                                       int = 302
+	_desinence__ǎ__ǔ__ǐ__ǒ__ě                                       int = 303
+	_desinence__ả__ủ__ỉ__ỏ__ẻ                                       int = 304
+	_desinence__â__û__î__ô__ê                                       int = 305
+	_desinence__à__ù__ì__ò__è                                       int = 306
+	_desinence__ã__ũ__ĩ__õ__ẽ                                       int = 307
+	_cop_bar__relative_clause                                       int = 308
+	_cop_bar__sentence                                              int = 309
+	_forethought_cop_1__sentence__sentence                          int = 310
+	_cop_bar__statement                                             int = 311
+	_forethought_cop_1__statement__statement                        int = 312
+	_cop_bar__predicate_1                                           int = 313
+	_forethought_cop__predicate__predicate                          int = 314
+	_LU_phrase__verb_syllable                                       int = 315
+	_MI_phrase_1__verb_syllable                                     int = 316
+	_PO_phrase_1__verb_syllable                                     int = 317
+	_MO_phrase_1__verb_syllable                                     int = 318
+	_forethought_cop_1__terms_V__terms_V                            int = 319
+	_forethought_cop_1__terms_IV__terms_IV                          int = 320
+	_forethought_cop_1__terms_III__terms_III                        int = 321
+	_forethought_cop_1__terms_II__terms_II                          int = 322
+	_cop_bar__argument                                              int = 323
+	_forethought_cop_1__argument__argument                          int = 324
+	_afterthought_cop__arg_7__predicate                             int = 325
+	_forethought_cop__arg_5__predicate                              int = 326
+	_LU_phrase__arg_syllable                                        int = 327
+	_MI_phrase_1__arg_syllable                                      int = 328
+	_PO_phrase_1__arg_syllable                                      int = 329
+	_MO_phrase_1__arg_syllable                                      int = 330
+	_LU_word__relative_syllable                                     int = 331
+	_forethought_cop_1__relative_clause__relative_clause            int = 332
+	_afterthought_cop__relative_predicate_2__predicate              int = 333
+	_forethought_cop__relative_predicate__predicate                 int = 334
+	_MI_phrase_1__relative_syllable                                 int = 335
+	_PO_phrase_1__relative_syllable                                 int = 336
+	_MO_phrase_1__relative_syllable                                 int = 337
+	_cop_bar__adverb                                                int = 338
+	_forethought_cop_1__adverb__adverb                              int = 339
+	_afterthought_cop__adverb_4__predicate                          int = 340
+	_forethought_cop__adverb_3__predicate                           int = 341
+	_LU_phrase__adverb_syllable                                     int = 342
+	_MI_phrase_1__adverb_syllable                                   int = 343
+	_PO_phrase_1__adverb_syllable                                   int = 344
+	_MO_phrase_1__adverb_syllable                                   int = 345
+	_cop_bar__prepositional_phrase                                  int = 346
+	_forethought_cop_1__prepositional_phrase__prepositional_phrase  int = 347
+	_cop_bar__preposition                                           int = 348
+	_forethought_cop_1__preposition__preposition                    int = 349
+	_afterthought_cop__preposition_4__predicate                     int = 350
+	_forethought_cop__preposition__predicate                        int = 351
+	_LU_phrase__preposition_syllable                                int = 352
+	_MI_phrase_1__preposition_syllable                              int = 353
+	_PO_phrase_1__preposition_syllable                              int = 354
+	_MO_phrase_1__preposition_syllable                              int = 355
+	_LU_word__content_syllable                                      int = 356
+	_afterthought_cop__content_predicate_2__predicate               int = 357
+	_forethought_cop__content_predicate_2__predicate                int = 358
+	_MI_phrase_1__content_syllable                                  int = 359
+	_PO_phrase_1__content_syllable                                  int = 360
+	_MO_phrase_1__content_syllable                                  int = 361
+	_forethought_cop_bar__sentence                                  int = 362
+	_forethought_cop_bar__statement                                 int = 363
+	_forethought_cop_1__predicate__predicate                        int = 364
+	_LU_word__verb_syllable                                         int = 365
+	_MI_word__verb_syllable                                         int = 366
+	_PO_word__verb_syllable                                         int = 367
+	_MO_word__verb_syllable                                         int = 368
+	_forethought_cop_bar__terms_V                                   int = 369
+	_forethought_cop_bar__terms_IV                                  int = 370
+	_forethought_cop_bar__terms_III                                 int = 371
+	_forethought_cop_bar__terms_II                                  int = 372
+	_forethought_cop_bar__argument                                  int = 373
+	_cop_bar__predicate                                             int = 374
+	_forethought_cop_1__arg_5__predicate                            int = 375
+	_LU_word__arg_syllable                                          int = 376
+	_MI_word__arg_syllable                                          int = 377
+	_PO_word__arg_syllable                                          int = 378
+	_MO_word__arg_syllable                                          int = 379
+	_forethought_cop_bar__relative_clause                           int = 380
+	_forethought_cop_1__relative_predicate__predicate               int = 381
+	_MI_word__relative_syllable                                     int = 382
+	_PO_word__relative_syllable                                     int = 383
+	_MO_word__relative_syllable                                     int = 384
+	_forethought_cop_bar__adverb                                    int = 385
+	_forethought_cop_1__adverb_3__predicate                         int = 386
+	_LU_word__adverb_syllable                                       int = 387
+	_MI_word__adverb_syllable                                       int = 388
+	_PO_word__adverb_syllable                                       int = 389
+	_MO_word__adverb_syllable                                       int = 390
+	_forethought_cop_bar__prepositional_phrase                      int = 391
+	_forethought_cop_bar__preposition                               int = 392
+	_forethought_cop_1__preposition__predicate                      int = 393
+	_LU_word__preposition_syllable                                  int = 394
+	_MI_word__preposition_syllable                                  int = 395
+	_PO_word__preposition_syllable                                  int = 396
+	_MO_word__preposition_syllable                                  int = 397
+	_forethought_cop_1__content_predicate_2__predicate              int = 398
+	_MI_word__content_syllable                                      int = 399
+	_PO_word__content_syllable                                      int = 400
+	_MO_word__content_syllable                                      int = 401
+	_forethought_cop_bar__predicate                                 int = 402
 
-	_N int = 406
+	_N int = 403
 )
 
 type _Parser struct {
@@ -4892,7 +4889,7 @@ func _predicate_2Accepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// forethought_cop_pred<predicate>/LU_predicate<verb_syllable>/MI_phrase<verb_syllable>/PO_phrase<verb_syllable>/MO_phrase<verb_syllable>/prefixed_predicate/predicate_3
+	// forethought_cop_pred<predicate>/LU_predicate<verb_syllable>/MI_phrase<verb_syllable>/PO_phrase<verb_syllable>/MO_phrase<verb_syllable>/predicate_3
 	{
 		pos3 := pos
 		// forethought_cop_pred<predicate>
@@ -4930,19 +4927,12 @@ func _predicate_2Accepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok0
 	fail8:
 		pos = pos3
-		// prefixed_predicate
-		if !_accept(parser, _prefixed_predicateAccepts, &pos, &perr) {
+		// predicate_3
+		if !_accept(parser, _predicate_3Accepts, &pos, &perr) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
-		pos = pos3
-		// predicate_3
-		if !_accept(parser, _predicate_3Accepts, &pos, &perr) {
-			goto fail10
-		}
-		goto ok0
-	fail10:
 		pos = pos3
 		goto fail
 	ok0:
@@ -4964,7 +4954,7 @@ func _predicate_2Node(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "predicate_2"}
-	// forethought_cop_pred<predicate>/LU_predicate<verb_syllable>/MI_phrase<verb_syllable>/PO_phrase<verb_syllable>/MO_phrase<verb_syllable>/prefixed_predicate/predicate_3
+	// forethought_cop_pred<predicate>/LU_predicate<verb_syllable>/MI_phrase<verb_syllable>/PO_phrase<verb_syllable>/MO_phrase<verb_syllable>/predicate_3
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
@@ -5008,20 +4998,12 @@ func _predicate_2Node(parser *_Parser, start int) (int, *peg.Node) {
 	fail8:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// prefixed_predicate
-		if !_node(parser, _prefixed_predicateNode, node, &pos) {
+		// predicate_3
+		if !_node(parser, _predicate_3Node, node, &pos) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
-		node.Kids = node.Kids[:nkids1]
-		pos = pos3
-		// predicate_3
-		if !_node(parser, _predicate_3Node, node, &pos) {
-			goto fail10
-		}
-		goto ok0
-	fail10:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
 		goto fail
@@ -5044,7 +5026,7 @@ func _predicate_2Fail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _predicate_2}
-	// forethought_cop_pred<predicate>/LU_predicate<verb_syllable>/MI_phrase<verb_syllable>/PO_phrase<verb_syllable>/MO_phrase<verb_syllable>/prefixed_predicate/predicate_3
+	// forethought_cop_pred<predicate>/LU_predicate<verb_syllable>/MI_phrase<verb_syllable>/PO_phrase<verb_syllable>/MO_phrase<verb_syllable>/predicate_3
 	{
 		pos3 := pos
 		// forethought_cop_pred<predicate>
@@ -5082,19 +5064,12 @@ func _predicate_2Fail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail8:
 		pos = pos3
-		// prefixed_predicate
-		if !_fail(parser, _prefixed_predicateFail, errPos, failure, &pos) {
+		// predicate_3
+		if !_fail(parser, _predicate_3Fail, errPos, failure, &pos) {
 			goto fail9
 		}
 		goto ok0
 	fail9:
-		pos = pos3
-		// predicate_3
-		if !_fail(parser, _predicate_3Fail, errPos, failure, &pos) {
-			goto fail10
-		}
-		goto ok0
-	fail10:
 		pos = pos3
 		goto fail
 	ok0:
@@ -5119,7 +5094,7 @@ func _predicate_2Action(parser *_Parser, start int) (int, *Predicate) {
 	}
 	var node Predicate
 	pos := start
-	// forethought_cop_pred<predicate>/LU_predicate<verb_syllable>/MI_phrase<verb_syllable>/PO_phrase<verb_syllable>/MO_phrase<verb_syllable>/prefixed_predicate/predicate_3
+	// forethought_cop_pred<predicate>/LU_predicate<verb_syllable>/MI_phrase<verb_syllable>/PO_phrase<verb_syllable>/MO_phrase<verb_syllable>/predicate_3
 	{
 		pos3 := pos
 		var node2 Predicate
@@ -5178,8 +5153,8 @@ func _predicate_2Action(parser *_Parser, start int) (int, *Predicate) {
 	fail8:
 		node = node2
 		pos = pos3
-		// prefixed_predicate
-		if p, n := _prefixed_predicateAction(parser, pos); n == nil {
+		// predicate_3
+		if p, n := _predicate_3Action(parser, pos); n == nil {
 			goto fail9
 		} else {
 			node = *n
@@ -5189,228 +5164,8 @@ func _predicate_2Action(parser *_Parser, start int) (int, *Predicate) {
 	fail9:
 		node = node2
 		pos = pos3
-		// predicate_3
-		if p, n := _predicate_3Action(parser, pos); n == nil {
-			goto fail10
-		} else {
-			node = *n
-			pos = p
-		}
-		goto ok0
-	fail10:
-		node = node2
-		pos = pos3
 		goto fail
 	ok0:
-	}
-	parser.act[key] = node
-	return pos, &node
-fail:
-	return -1, nil
-}
-
-func _prefixed_predicateAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	var labels [3]string
-	use(labels)
-	if dp, de, ok := _memo(parser, _prefixed_predicate, start); ok {
-		return dp, de
-	}
-	pos, perr := start, -1
-	// action
-	// x:prefix s:_ p:predicate_2
-	// x:prefix
-	{
-		pos1 := pos
-		// prefix
-		if !_accept(parser, _prefixAccepts, &pos, &perr) {
-			goto fail
-		}
-		labels[0] = parser.text[pos1:pos]
-	}
-	// s:_
-	{
-		pos2 := pos
-		// _
-		if !_accept(parser, __Accepts, &pos, &perr) {
-			goto fail
-		}
-		labels[1] = parser.text[pos2:pos]
-	}
-	// p:predicate_2
-	{
-		pos3 := pos
-		// predicate_2
-		if !_accept(parser, _predicate_2Accepts, &pos, &perr) {
-			goto fail
-		}
-		labels[2] = parser.text[pos3:pos]
-	}
-	return _memoize(parser, _prefixed_predicate, start, pos, perr)
-fail:
-	return _memoize(parser, _prefixed_predicate, start, -1, perr)
-}
-
-func _prefixed_predicateNode(parser *_Parser, start int) (int, *peg.Node) {
-	var labels [3]string
-	use(labels)
-	dp := parser.deltaPos[start][_prefixed_predicate]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _prefixed_predicate}
-	node := parser.node[key]
-	if node != nil {
-		return start + int(dp-1), node
-	}
-	pos := start
-	node = &peg.Node{Name: "prefixed_predicate"}
-	// action
-	// x:prefix s:_ p:predicate_2
-	// x:prefix
-	{
-		pos1 := pos
-		// prefix
-		if !_node(parser, _prefixNode, node, &pos) {
-			goto fail
-		}
-		labels[0] = parser.text[pos1:pos]
-	}
-	// s:_
-	{
-		pos2 := pos
-		// _
-		if !_node(parser, __Node, node, &pos) {
-			goto fail
-		}
-		labels[1] = parser.text[pos2:pos]
-	}
-	// p:predicate_2
-	{
-		pos3 := pos
-		// predicate_2
-		if !_node(parser, _predicate_2Node, node, &pos) {
-			goto fail
-		}
-		labels[2] = parser.text[pos3:pos]
-	}
-	node.Text = parser.text[start:pos]
-	parser.node[key] = node
-	return pos, node
-fail:
-	return -1, nil
-}
-
-func _prefixed_predicateFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	var labels [3]string
-	use(labels)
-	pos, failure := _failMemo(parser, _prefixed_predicate, start, errPos)
-	if failure != nil {
-		return pos, failure
-	}
-	failure = &peg.Fail{
-		Name: "prefixed_predicate",
-		Pos:  int(start),
-	}
-	key := _key{start: start, rule: _prefixed_predicate}
-	// action
-	// x:prefix s:_ p:predicate_2
-	// x:prefix
-	{
-		pos1 := pos
-		// prefix
-		if !_fail(parser, _prefixFail, errPos, failure, &pos) {
-			goto fail
-		}
-		labels[0] = parser.text[pos1:pos]
-	}
-	// s:_
-	{
-		pos2 := pos
-		// _
-		if !_fail(parser, __Fail, errPos, failure, &pos) {
-			goto fail
-		}
-		labels[1] = parser.text[pos2:pos]
-	}
-	// p:predicate_2
-	{
-		pos3 := pos
-		// predicate_2
-		if !_fail(parser, _predicate_2Fail, errPos, failure, &pos) {
-			goto fail
-		}
-		labels[2] = parser.text[pos3:pos]
-	}
-	parser.fail[key] = failure
-	return pos, failure
-fail:
-	parser.fail[key] = failure
-	return -1, failure
-}
-
-func _prefixed_predicateAction(parser *_Parser, start int) (int, *Predicate) {
-	var labels [3]string
-	use(labels)
-	var label0 Word
-	var label1 *Mod
-	var label2 Predicate
-	dp := parser.deltaPos[start][_prefixed_predicate]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _prefixed_predicate}
-	n := parser.act[key]
-	if n != nil {
-		n := n.(Predicate)
-		return start + int(dp-1), &n
-	}
-	var node Predicate
-	pos := start
-	// action
-	{
-		start0 := pos
-		// x:prefix s:_ p:predicate_2
-		// x:prefix
-		{
-			pos2 := pos
-			// prefix
-			if p, n := _prefixAction(parser, pos); n == nil {
-				goto fail
-			} else {
-				label0 = *n
-				pos = p
-			}
-			labels[0] = parser.text[pos2:pos]
-		}
-		// s:_
-		{
-			pos3 := pos
-			// _
-			if p, n := __Action(parser, pos); n == nil {
-				goto fail
-			} else {
-				label1 = *n
-				pos = p
-			}
-			labels[1] = parser.text[pos3:pos]
-		}
-		// p:predicate_2
-		{
-			pos4 := pos
-			// predicate_2
-			if p, n := _predicate_2Action(parser, pos); n == nil {
-				goto fail
-			} else {
-				label2 = *n
-				pos = p
-			}
-			labels[2] = parser.text[pos4:pos]
-		}
-		node = func(
-			start, end int, p Predicate, s *Mod, x Word) Predicate {
-			return Predicate(prefixed(x, s, p))
-		}(
-			start0, pos, label2, label1, label0)
 	}
 	parser.act[key] = node
 	return pos, &node
@@ -19870,207 +19625,6 @@ fail:
 	return -1, nil
 }
 
-func _prefixAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	var labels [1]string
-	use(labels)
-	if dp, de, ok := _memo(parser, _prefix, start); ok {
-		return dp, de
-	}
-	pos, perr := start, -1
-	// action
-	// &MU w:neutral_syllable
-	// &MU
-	{
-		pos2 := pos
-		perr4 := perr
-		// MU
-		if !_accept(parser, _MUAccepts, &pos, &perr) {
-			goto fail5
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		perr = _max(perr4, pos)
-		goto fail
-	ok1:
-		pos = pos2
-		perr = perr4
-	}
-	// w:neutral_syllable
-	{
-		pos6 := pos
-		// neutral_syllable
-		if !_accept(parser, _neutral_syllableAccepts, &pos, &perr) {
-			goto fail
-		}
-		labels[0] = parser.text[pos6:pos]
-	}
-	return _memoize(parser, _prefix, start, pos, perr)
-fail:
-	return _memoize(parser, _prefix, start, -1, perr)
-}
-
-func _prefixNode(parser *_Parser, start int) (int, *peg.Node) {
-	var labels [1]string
-	use(labels)
-	dp := parser.deltaPos[start][_prefix]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _prefix}
-	node := parser.node[key]
-	if node != nil {
-		return start + int(dp-1), node
-	}
-	pos := start
-	node = &peg.Node{Name: "prefix"}
-	// action
-	// &MU w:neutral_syllable
-	// &MU
-	{
-		pos2 := pos
-		nkids3 := len(node.Kids)
-		// MU
-		if !_node(parser, _MUNode, node, &pos) {
-			goto fail5
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		goto fail
-	ok1:
-		pos = pos2
-		node.Kids = node.Kids[:nkids3]
-	}
-	// w:neutral_syllable
-	{
-		pos6 := pos
-		// neutral_syllable
-		if !_node(parser, _neutral_syllableNode, node, &pos) {
-			goto fail
-		}
-		labels[0] = parser.text[pos6:pos]
-	}
-	node.Text = parser.text[start:pos]
-	parser.node[key] = node
-	return pos, node
-fail:
-	return -1, nil
-}
-
-func _prefixFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	var labels [1]string
-	use(labels)
-	pos, failure := _failMemo(parser, _prefix, start, errPos)
-	if failure != nil {
-		return pos, failure
-	}
-	failure = &peg.Fail{
-		Name: "prefix",
-		Pos:  int(start),
-	}
-	key := _key{start: start, rule: _prefix}
-	// action
-	// &MU w:neutral_syllable
-	// &MU
-	{
-		pos2 := pos
-		nkids3 := len(failure.Kids)
-		// MU
-		if !_fail(parser, _MUFail, errPos, failure, &pos) {
-			goto fail5
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		failure.Kids = failure.Kids[:nkids3]
-		if pos >= errPos {
-			failure.Kids = append(failure.Kids, &peg.Fail{
-				Pos:  int(pos),
-				Want: "&MU",
-			})
-		}
-		goto fail
-	ok1:
-		pos = pos2
-		failure.Kids = failure.Kids[:nkids3]
-	}
-	// w:neutral_syllable
-	{
-		pos6 := pos
-		// neutral_syllable
-		if !_fail(parser, _neutral_syllableFail, errPos, failure, &pos) {
-			goto fail
-		}
-		labels[0] = parser.text[pos6:pos]
-	}
-	parser.fail[key] = failure
-	return pos, failure
-fail:
-	parser.fail[key] = failure
-	return -1, failure
-}
-
-func _prefixAction(parser *_Parser, start int) (int, *Word) {
-	var labels [1]string
-	use(labels)
-	var label0 string
-	dp := parser.deltaPos[start][_prefix]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _prefix}
-	n := parser.act[key]
-	if n != nil {
-		n := n.(Word)
-		return start + int(dp-1), &n
-	}
-	var node Word
-	pos := start
-	// action
-	{
-		start0 := pos
-		// &MU w:neutral_syllable
-		// &MU
-		{
-			pos3 := pos
-			// MU
-			if p, n := _MUAction(parser, pos); n == nil {
-				goto fail6
-			} else {
-				pos = p
-			}
-			goto ok2
-		fail6:
-			pos = pos3
-			goto fail
-		ok2:
-			pos = pos3
-		}
-		// w:neutral_syllable
-		{
-			pos7 := pos
-			// neutral_syllable
-			if p, n := _neutral_syllableAction(parser, pos); n == nil {
-				goto fail
-			} else {
-				label0 = *n
-				pos = p
-			}
-			labels[0] = parser.text[pos7:pos]
-		}
-		node = func(
-			start, end int, w string) Word {
-			return Word{S: start, E: end, T: w}
-		}(
-			start0, pos, label0)
-	}
-	parser.act[key] = node
-	return pos, &node
-fail:
-	return -1, nil
-}
-
 func _focusAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	var labels [1]string
 	use(labels)
@@ -23290,13 +22844,13 @@ func _interjectionAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 	}
 	pos, perr := start, -1
 	// action
-	// &HA w:neutral_syllable
-	// &HA
+	// &BEI w:neutral_syllable
+	// &BEI
 	{
 		pos2 := pos
 		perr4 := perr
-		// HA
-		if !_accept(parser, _HAAccepts, &pos, &perr) {
+		// BEI
+		if !_accept(parser, _BEIAccepts, &pos, &perr) {
 			goto fail5
 		}
 		goto ok1
@@ -23337,13 +22891,13 @@ func _interjectionNode(parser *_Parser, start int) (int, *peg.Node) {
 	pos := start
 	node = &peg.Node{Name: "interjection"}
 	// action
-	// &HA w:neutral_syllable
-	// &HA
+	// &BEI w:neutral_syllable
+	// &BEI
 	{
 		pos2 := pos
 		nkids3 := len(node.Kids)
-		// HA
-		if !_node(parser, _HANode, node, &pos) {
+		// BEI
+		if !_node(parser, _BEINode, node, &pos) {
 			goto fail5
 		}
 		goto ok1
@@ -23383,13 +22937,13 @@ func _interjectionFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 	}
 	key := _key{start: start, rule: _interjection}
 	// action
-	// &HA w:neutral_syllable
-	// &HA
+	// &BEI w:neutral_syllable
+	// &BEI
 	{
 		pos2 := pos
 		nkids3 := len(failure.Kids)
-		// HA
-		if !_fail(parser, _HAFail, errPos, failure, &pos) {
+		// BEI
+		if !_fail(parser, _BEIFail, errPos, failure, &pos) {
 			goto fail5
 		}
 		goto ok1
@@ -23399,7 +22953,7 @@ func _interjectionFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
-				Want: "&HA",
+				Want: "&BEI",
 			})
 		}
 		goto fail
@@ -23442,12 +22996,12 @@ func _interjectionAction(parser *_Parser, start int) (int, **Interjection) {
 	// action
 	{
 		start0 := pos
-		// &HA w:neutral_syllable
-		// &HA
+		// &BEI w:neutral_syllable
+		// &BEI
 		{
 			pos3 := pos
-			// HA
-			if p, n := _HAAction(parser, pos); n == nil {
+			// BEI
+			if p, n := _BEIAction(parser, pos); n == nil {
 				goto fail6
 			} else {
 				pos = p
@@ -23689,7 +23243,7 @@ func _function_wordAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) 
 		return dp, de
 	}
 	pos, perr := start, -1
-	// BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/MOQ/NA/PO/RA/TU/TO/TEO
+	// BI/DA/GA/GO/BEI/HU/JU/KU/KI/KIO/KEO/LU/MI/MO/MOQ/NA/PO/RA/TU/TO/TEO
 	{
 		pos3 := pos
 		// BI
@@ -23720,8 +23274,8 @@ func _function_wordAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) 
 		goto ok0
 	fail7:
 		pos = pos3
-		// HA
-		if !_accept(parser, _HAAccepts, &pos, &perr) {
+		// BEI
+		if !_accept(parser, _BEIAccepts, &pos, &perr) {
 			goto fail8
 		}
 		goto ok0
@@ -23776,75 +23330,68 @@ func _function_wordAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) 
 		goto ok0
 	fail15:
 		pos = pos3
-		// MU
-		if !_accept(parser, _MUAccepts, &pos, &perr) {
+		// MI
+		if !_accept(parser, _MIAccepts, &pos, &perr) {
 			goto fail16
 		}
 		goto ok0
 	fail16:
 		pos = pos3
-		// MI
-		if !_accept(parser, _MIAccepts, &pos, &perr) {
+		// MO
+		if !_accept(parser, _MOAccepts, &pos, &perr) {
 			goto fail17
 		}
 		goto ok0
 	fail17:
 		pos = pos3
-		// MO
-		if !_accept(parser, _MOAccepts, &pos, &perr) {
+		// MOQ
+		if !_accept(parser, _MOQAccepts, &pos, &perr) {
 			goto fail18
 		}
 		goto ok0
 	fail18:
 		pos = pos3
-		// MOQ
-		if !_accept(parser, _MOQAccepts, &pos, &perr) {
+		// NA
+		if !_accept(parser, _NAAccepts, &pos, &perr) {
 			goto fail19
 		}
 		goto ok0
 	fail19:
 		pos = pos3
-		// NA
-		if !_accept(parser, _NAAccepts, &pos, &perr) {
+		// PO
+		if !_accept(parser, _POAccepts, &pos, &perr) {
 			goto fail20
 		}
 		goto ok0
 	fail20:
 		pos = pos3
-		// PO
-		if !_accept(parser, _POAccepts, &pos, &perr) {
+		// RA
+		if !_accept(parser, _RAAccepts, &pos, &perr) {
 			goto fail21
 		}
 		goto ok0
 	fail21:
 		pos = pos3
-		// RA
-		if !_accept(parser, _RAAccepts, &pos, &perr) {
+		// TU
+		if !_accept(parser, _TUAccepts, &pos, &perr) {
 			goto fail22
 		}
 		goto ok0
 	fail22:
 		pos = pos3
-		// TU
-		if !_accept(parser, _TUAccepts, &pos, &perr) {
+		// TO
+		if !_accept(parser, _TOAccepts, &pos, &perr) {
 			goto fail23
 		}
 		goto ok0
 	fail23:
 		pos = pos3
-		// TO
-		if !_accept(parser, _TOAccepts, &pos, &perr) {
+		// TEO
+		if !_accept(parser, _TEOAccepts, &pos, &perr) {
 			goto fail24
 		}
 		goto ok0
 	fail24:
-		pos = pos3
-		// TEO
-		if !_accept(parser, _TEOAccepts, &pos, &perr) {
-			goto fail25
-		}
-		goto ok0
-	fail25:
 		pos = pos3
 		goto fail
 	ok0:
@@ -23866,7 +23413,7 @@ func _function_wordNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "function_word"}
-	// BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/MOQ/NA/PO/RA/TU/TO/TEO
+	// BI/DA/GA/GO/BEI/HU/JU/KU/KI/KIO/KEO/LU/MI/MO/MOQ/NA/PO/RA/TU/TO/TEO
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
@@ -23902,8 +23449,8 @@ func _function_wordNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail7:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// HA
-		if !_node(parser, _HANode, node, &pos) {
+		// BEI
+		if !_node(parser, _BEINode, node, &pos) {
 			goto fail8
 		}
 		goto ok0
@@ -23966,84 +23513,76 @@ func _function_wordNode(parser *_Parser, start int) (int, *peg.Node) {
 	fail15:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// MU
-		if !_node(parser, _MUNode, node, &pos) {
+		// MI
+		if !_node(parser, _MINode, node, &pos) {
 			goto fail16
 		}
 		goto ok0
 	fail16:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// MI
-		if !_node(parser, _MINode, node, &pos) {
+		// MO
+		if !_node(parser, _MONode, node, &pos) {
 			goto fail17
 		}
 		goto ok0
 	fail17:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// MO
-		if !_node(parser, _MONode, node, &pos) {
+		// MOQ
+		if !_node(parser, _MOQNode, node, &pos) {
 			goto fail18
 		}
 		goto ok0
 	fail18:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// MOQ
-		if !_node(parser, _MOQNode, node, &pos) {
+		// NA
+		if !_node(parser, _NANode, node, &pos) {
 			goto fail19
 		}
 		goto ok0
 	fail19:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// NA
-		if !_node(parser, _NANode, node, &pos) {
+		// PO
+		if !_node(parser, _PONode, node, &pos) {
 			goto fail20
 		}
 		goto ok0
 	fail20:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// PO
-		if !_node(parser, _PONode, node, &pos) {
+		// RA
+		if !_node(parser, _RANode, node, &pos) {
 			goto fail21
 		}
 		goto ok0
 	fail21:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// RA
-		if !_node(parser, _RANode, node, &pos) {
+		// TU
+		if !_node(parser, _TUNode, node, &pos) {
 			goto fail22
 		}
 		goto ok0
 	fail22:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// TU
-		if !_node(parser, _TUNode, node, &pos) {
+		// TO
+		if !_node(parser, _TONode, node, &pos) {
 			goto fail23
 		}
 		goto ok0
 	fail23:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
-		// TO
-		if !_node(parser, _TONode, node, &pos) {
+		// TEO
+		if !_node(parser, _TEONode, node, &pos) {
 			goto fail24
 		}
 		goto ok0
 	fail24:
-		node.Kids = node.Kids[:nkids1]
-		pos = pos3
-		// TEO
-		if !_node(parser, _TEONode, node, &pos) {
-			goto fail25
-		}
-		goto ok0
-	fail25:
 		node.Kids = node.Kids[:nkids1]
 		pos = pos3
 		goto fail
@@ -24066,7 +23605,7 @@ func _function_wordFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _function_word}
-	// BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/MOQ/NA/PO/RA/TU/TO/TEO
+	// BI/DA/GA/GO/BEI/HU/JU/KU/KI/KIO/KEO/LU/MI/MO/MOQ/NA/PO/RA/TU/TO/TEO
 	{
 		pos3 := pos
 		// BI
@@ -24097,8 +23636,8 @@ func _function_wordFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail7:
 		pos = pos3
-		// HA
-		if !_fail(parser, _HAFail, errPos, failure, &pos) {
+		// BEI
+		if !_fail(parser, _BEIFail, errPos, failure, &pos) {
 			goto fail8
 		}
 		goto ok0
@@ -24153,75 +23692,68 @@ func _function_wordFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok0
 	fail15:
 		pos = pos3
-		// MU
-		if !_fail(parser, _MUFail, errPos, failure, &pos) {
+		// MI
+		if !_fail(parser, _MIFail, errPos, failure, &pos) {
 			goto fail16
 		}
 		goto ok0
 	fail16:
 		pos = pos3
-		// MI
-		if !_fail(parser, _MIFail, errPos, failure, &pos) {
+		// MO
+		if !_fail(parser, _MOFail, errPos, failure, &pos) {
 			goto fail17
 		}
 		goto ok0
 	fail17:
 		pos = pos3
-		// MO
-		if !_fail(parser, _MOFail, errPos, failure, &pos) {
+		// MOQ
+		if !_fail(parser, _MOQFail, errPos, failure, &pos) {
 			goto fail18
 		}
 		goto ok0
 	fail18:
 		pos = pos3
-		// MOQ
-		if !_fail(parser, _MOQFail, errPos, failure, &pos) {
+		// NA
+		if !_fail(parser, _NAFail, errPos, failure, &pos) {
 			goto fail19
 		}
 		goto ok0
 	fail19:
 		pos = pos3
-		// NA
-		if !_fail(parser, _NAFail, errPos, failure, &pos) {
+		// PO
+		if !_fail(parser, _POFail, errPos, failure, &pos) {
 			goto fail20
 		}
 		goto ok0
 	fail20:
 		pos = pos3
-		// PO
-		if !_fail(parser, _POFail, errPos, failure, &pos) {
+		// RA
+		if !_fail(parser, _RAFail, errPos, failure, &pos) {
 			goto fail21
 		}
 		goto ok0
 	fail21:
 		pos = pos3
-		// RA
-		if !_fail(parser, _RAFail, errPos, failure, &pos) {
+		// TU
+		if !_fail(parser, _TUFail, errPos, failure, &pos) {
 			goto fail22
 		}
 		goto ok0
 	fail22:
 		pos = pos3
-		// TU
-		if !_fail(parser, _TUFail, errPos, failure, &pos) {
+		// TO
+		if !_fail(parser, _TOFail, errPos, failure, &pos) {
 			goto fail23
 		}
 		goto ok0
 	fail23:
 		pos = pos3
-		// TO
-		if !_fail(parser, _TOFail, errPos, failure, &pos) {
+		// TEO
+		if !_fail(parser, _TEOFail, errPos, failure, &pos) {
 			goto fail24
 		}
 		goto ok0
 	fail24:
-		pos = pos3
-		// TEO
-		if !_fail(parser, _TEOFail, errPos, failure, &pos) {
-			goto fail25
-		}
-		goto ok0
-	fail25:
 		pos = pos3
 		goto fail
 	ok0:
@@ -24246,7 +23778,7 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/MOQ/NA/PO/RA/TU/TO/TEO
+	// BI/DA/GA/GO/BEI/HU/JU/KU/KI/KIO/KEO/LU/MI/MO/MOQ/NA/PO/RA/TU/TO/TEO
 	{
 		pos3 := pos
 		var node2 string
@@ -24294,8 +23826,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	fail7:
 		node = node2
 		pos = pos3
-		// HA
-		if p, n := _HAAction(parser, pos); n == nil {
+		// BEI
+		if p, n := _BEIAction(parser, pos); n == nil {
 			goto fail8
 		} else {
 			node = *n
@@ -24382,8 +23914,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	fail15:
 		node = node2
 		pos = pos3
-		// MU
-		if p, n := _MUAction(parser, pos); n == nil {
+		// MI
+		if p, n := _MIAction(parser, pos); n == nil {
 			goto fail16
 		} else {
 			node = *n
@@ -24393,8 +23925,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	fail16:
 		node = node2
 		pos = pos3
-		// MI
-		if p, n := _MIAction(parser, pos); n == nil {
+		// MO
+		if p, n := _MOAction(parser, pos); n == nil {
 			goto fail17
 		} else {
 			node = *n
@@ -24404,8 +23936,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	fail17:
 		node = node2
 		pos = pos3
-		// MO
-		if p, n := _MOAction(parser, pos); n == nil {
+		// MOQ
+		if p, n := _MOQAction(parser, pos); n == nil {
 			goto fail18
 		} else {
 			node = *n
@@ -24415,8 +23947,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	fail18:
 		node = node2
 		pos = pos3
-		// MOQ
-		if p, n := _MOQAction(parser, pos); n == nil {
+		// NA
+		if p, n := _NAAction(parser, pos); n == nil {
 			goto fail19
 		} else {
 			node = *n
@@ -24426,8 +23958,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	fail19:
 		node = node2
 		pos = pos3
-		// NA
-		if p, n := _NAAction(parser, pos); n == nil {
+		// PO
+		if p, n := _POAction(parser, pos); n == nil {
 			goto fail20
 		} else {
 			node = *n
@@ -24437,8 +23969,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	fail20:
 		node = node2
 		pos = pos3
-		// PO
-		if p, n := _POAction(parser, pos); n == nil {
+		// RA
+		if p, n := _RAAction(parser, pos); n == nil {
 			goto fail21
 		} else {
 			node = *n
@@ -24448,8 +23980,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	fail21:
 		node = node2
 		pos = pos3
-		// RA
-		if p, n := _RAAction(parser, pos); n == nil {
+		// TU
+		if p, n := _TUAction(parser, pos); n == nil {
 			goto fail22
 		} else {
 			node = *n
@@ -24459,8 +23991,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	fail22:
 		node = node2
 		pos = pos3
-		// TU
-		if p, n := _TUAction(parser, pos); n == nil {
+		// TO
+		if p, n := _TOAction(parser, pos); n == nil {
 			goto fail23
 		} else {
 			node = *n
@@ -24470,8 +24002,8 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 	fail23:
 		node = node2
 		pos = pos3
-		// TO
-		if p, n := _TOAction(parser, pos); n == nil {
+		// TEO
+		if p, n := _TEOAction(parser, pos); n == nil {
 			goto fail24
 		} else {
 			node = *n
@@ -24479,17 +24011,6 @@ func _function_wordAction(parser *_Parser, start int) (int, *string) {
 		}
 		goto ok0
 	fail24:
-		node = node2
-		pos = pos3
-		// TEO
-		if p, n := _TEOAction(parser, pos); n == nil {
-			goto fail25
-		} else {
-			node = *n
-			pos = p
-		}
-		goto ok0
-	fail25:
 		node = node2
 		pos = pos3
 		goto fail
@@ -26461,180 +25982,122 @@ fail:
 	return -1, nil
 }
 
-func _HAAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _HA, start); ok {
+func _BEIAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
+	if dp, de, ok := _memo(parser, _BEI, start); ok {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// (h A/h U e/h I a/m) &(tone? boundary)
-	// (h A/h U e/h I a/m)
-	// h A/h U e/h I a/m
+	// (b E i/m) &(tone? boundary)
+	// (b E i/m)
+	// b E i/m
 	{
 		pos4 := pos
-		// h A
-		// h
-		if !_accept(parser, _hAccepts, &pos, &perr) {
+		// b E i
+		// b
+		if !_accept(parser, _bAccepts, &pos, &perr) {
 			goto fail5
 		}
-		// A
-		if !_accept(parser, _AAccepts, &pos, &perr) {
+		// E
+		if !_accept(parser, _EAccepts, &pos, &perr) {
+			goto fail5
+		}
+		// i
+		if !_accept(parser, _iAccepts, &pos, &perr) {
 			goto fail5
 		}
 		goto ok1
 	fail5:
 		pos = pos4
-		// h U e
-		// h
-		if !_accept(parser, _hAccepts, &pos, &perr) {
-			goto fail7
-		}
-		// U
-		if !_accept(parser, _UAccepts, &pos, &perr) {
-			goto fail7
-		}
-		// e
-		if !_accept(parser, _eAccepts, &pos, &perr) {
+		// m
+		if !_accept(parser, _mAccepts, &pos, &perr) {
 			goto fail7
 		}
 		goto ok1
 	fail7:
-		pos = pos4
-		// h I a
-		// h
-		if !_accept(parser, _hAccepts, &pos, &perr) {
-			goto fail9
-		}
-		// I
-		if !_accept(parser, _IAccepts, &pos, &perr) {
-			goto fail9
-		}
-		// a
-		if !_accept(parser, _aAccepts, &pos, &perr) {
-			goto fail9
-		}
-		goto ok1
-	fail9:
-		pos = pos4
-		// m
-		if !_accept(parser, _mAccepts, &pos, &perr) {
-			goto fail11
-		}
-		goto ok1
-	fail11:
 		pos = pos4
 		goto fail
 	ok1:
 	}
 	// &(tone? boundary)
 	{
-		pos13 := pos
-		perr15 := perr
+		pos9 := pos
+		perr11 := perr
 		// (tone? boundary)
 		// tone? boundary
 		// tone?
 		{
-			pos19 := pos
+			pos15 := pos
 			// tone
 			if !_accept(parser, _toneAccepts, &pos, &perr) {
-				goto fail20
+				goto fail16
 			}
-			goto ok21
-		fail20:
-			pos = pos19
-		ok21:
+			goto ok17
+		fail16:
+			pos = pos15
+		ok17:
 		}
 		// boundary
 		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
-			goto fail16
+			goto fail12
 		}
-		goto ok12
-	fail16:
-		pos = pos13
-		perr = _max(perr15, pos)
+		goto ok8
+	fail12:
+		pos = pos9
+		perr = _max(perr11, pos)
 		goto fail
-	ok12:
-		pos = pos13
-		perr = perr15
+	ok8:
+		pos = pos9
+		perr = perr11
 	}
-	return _memoize(parser, _HA, start, pos, perr)
+	return _memoize(parser, _BEI, start, pos, perr)
 fail:
-	return _memoize(parser, _HA, start, -1, perr)
+	return _memoize(parser, _BEI, start, -1, perr)
 }
 
-func _HANode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_HA]
+func _BEINode(parser *_Parser, start int) (int, *peg.Node) {
+	dp := parser.deltaPos[start][_BEI]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _HA}
+	key := _key{start: start, rule: _BEI}
 	node := parser.node[key]
 	if node != nil {
 		return start + int(dp-1), node
 	}
 	pos := start
-	node = &peg.Node{Name: "HA"}
-	// (h A/h U e/h I a/m) &(tone? boundary)
-	// (h A/h U e/h I a/m)
+	node = &peg.Node{Name: "BEI"}
+	// (b E i/m) &(tone? boundary)
+	// (b E i/m)
 	{
 		nkids1 := len(node.Kids)
 		pos02 := pos
-		// h A/h U e/h I a/m
+		// b E i/m
 		{
 			pos6 := pos
 			nkids4 := len(node.Kids)
-			// h A
-			// h
-			if !_node(parser, _hNode, node, &pos) {
+			// b E i
+			// b
+			if !_node(parser, _bNode, node, &pos) {
 				goto fail7
 			}
-			// A
-			if !_node(parser, _ANode, node, &pos) {
+			// E
+			if !_node(parser, _ENode, node, &pos) {
+				goto fail7
+			}
+			// i
+			if !_node(parser, _iNode, node, &pos) {
 				goto fail7
 			}
 			goto ok3
 		fail7:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos6
-			// h U e
-			// h
-			if !_node(parser, _hNode, node, &pos) {
-				goto fail9
-			}
-			// U
-			if !_node(parser, _UNode, node, &pos) {
-				goto fail9
-			}
-			// e
-			if !_node(parser, _eNode, node, &pos) {
+			// m
+			if !_node(parser, _mNode, node, &pos) {
 				goto fail9
 			}
 			goto ok3
 		fail9:
-			node.Kids = node.Kids[:nkids4]
-			pos = pos6
-			// h I a
-			// h
-			if !_node(parser, _hNode, node, &pos) {
-				goto fail11
-			}
-			// I
-			if !_node(parser, _INode, node, &pos) {
-				goto fail11
-			}
-			// a
-			if !_node(parser, _aNode, node, &pos) {
-				goto fail11
-			}
-			goto ok3
-		fail11:
-			node.Kids = node.Kids[:nkids4]
-			pos = pos6
-			// m
-			if !_node(parser, _mNode, node, &pos) {
-				goto fail13
-			}
-			goto ok3
-		fail13:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos6
 			goto fail
@@ -26645,41 +26108,41 @@ func _HANode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	// &(tone? boundary)
 	{
-		pos15 := pos
-		nkids16 := len(node.Kids)
+		pos11 := pos
+		nkids12 := len(node.Kids)
 		// (tone? boundary)
 		{
-			nkids19 := len(node.Kids)
-			pos020 := pos
+			nkids15 := len(node.Kids)
+			pos016 := pos
 			// tone? boundary
 			// tone?
 			{
-				nkids22 := len(node.Kids)
-				pos23 := pos
+				nkids18 := len(node.Kids)
+				pos19 := pos
 				// tone
 				if !_node(parser, _toneNode, node, &pos) {
-					goto fail24
+					goto fail20
 				}
-				goto ok25
-			fail24:
-				node.Kids = node.Kids[:nkids22]
-				pos = pos23
-			ok25:
+				goto ok21
+			fail20:
+				node.Kids = node.Kids[:nkids18]
+				pos = pos19
+			ok21:
 			}
 			// boundary
 			if !_node(parser, _boundaryNode, node, &pos) {
-				goto fail18
+				goto fail14
 			}
-			sub := _sub(parser, pos020, pos, node.Kids[nkids19:])
-			node.Kids = append(node.Kids[:nkids19], sub)
+			sub := _sub(parser, pos016, pos, node.Kids[nkids15:])
+			node.Kids = append(node.Kids[:nkids15], sub)
 		}
-		goto ok14
-	fail18:
-		pos = pos15
+		goto ok10
+	fail14:
+		pos = pos11
 		goto fail
-	ok14:
-		pos = pos15
-		node.Kids = node.Kids[:nkids16]
+	ok10:
+		pos = pos11
+		node.Kids = node.Kids[:nkids12]
 	}
 	node.Text = parser.text[start:pos]
 	parser.node[key] = node
@@ -26688,101 +26151,73 @@ fail:
 	return -1, nil
 }
 
-func _HAFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _HA, start, errPos)
+func _BEIFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
+	pos, failure := _failMemo(parser, _BEI, start, errPos)
 	if failure != nil {
 		return pos, failure
 	}
 	failure = &peg.Fail{
-		Name: "HA",
+		Name: "BEI",
 		Pos:  int(start),
 	}
-	key := _key{start: start, rule: _HA}
-	// (h A/h U e/h I a/m) &(tone? boundary)
-	// (h A/h U e/h I a/m)
-	// h A/h U e/h I a/m
+	key := _key{start: start, rule: _BEI}
+	// (b E i/m) &(tone? boundary)
+	// (b E i/m)
+	// b E i/m
 	{
 		pos4 := pos
-		// h A
-		// h
-		if !_fail(parser, _hFail, errPos, failure, &pos) {
+		// b E i
+		// b
+		if !_fail(parser, _bFail, errPos, failure, &pos) {
 			goto fail5
 		}
-		// A
-		if !_fail(parser, _AFail, errPos, failure, &pos) {
+		// E
+		if !_fail(parser, _EFail, errPos, failure, &pos) {
+			goto fail5
+		}
+		// i
+		if !_fail(parser, _iFail, errPos, failure, &pos) {
 			goto fail5
 		}
 		goto ok1
 	fail5:
 		pos = pos4
-		// h U e
-		// h
-		if !_fail(parser, _hFail, errPos, failure, &pos) {
-			goto fail7
-		}
-		// U
-		if !_fail(parser, _UFail, errPos, failure, &pos) {
-			goto fail7
-		}
-		// e
-		if !_fail(parser, _eFail, errPos, failure, &pos) {
+		// m
+		if !_fail(parser, _mFail, errPos, failure, &pos) {
 			goto fail7
 		}
 		goto ok1
 	fail7:
-		pos = pos4
-		// h I a
-		// h
-		if !_fail(parser, _hFail, errPos, failure, &pos) {
-			goto fail9
-		}
-		// I
-		if !_fail(parser, _IFail, errPos, failure, &pos) {
-			goto fail9
-		}
-		// a
-		if !_fail(parser, _aFail, errPos, failure, &pos) {
-			goto fail9
-		}
-		goto ok1
-	fail9:
-		pos = pos4
-		// m
-		if !_fail(parser, _mFail, errPos, failure, &pos) {
-			goto fail11
-		}
-		goto ok1
-	fail11:
 		pos = pos4
 		goto fail
 	ok1:
 	}
 	// &(tone? boundary)
 	{
-		pos13 := pos
-		nkids14 := len(failure.Kids)
+		pos9 := pos
+		nkids10 := len(failure.Kids)
 		// (tone? boundary)
 		// tone? boundary
 		// tone?
 		{
-			pos19 := pos
+			pos15 := pos
 			// tone
 			if !_fail(parser, _toneFail, errPos, failure, &pos) {
-				goto fail20
+				goto fail16
 			}
-			goto ok21
-		fail20:
-			pos = pos19
-		ok21:
+			goto ok17
+		fail16:
+			pos = pos15
+		ok17:
 		}
 		// boundary
 		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
-			goto fail16
+			goto fail12
 		}
-		goto ok12
-	fail16:
-		pos = pos13
-		failure.Kids = failure.Kids[:nkids14]
+		goto ok8
+	fail12:
+		pos = pos9
+		failure.Kids = failure.Kids[:nkids10]
 		if pos >= errPos {
 			failure.Kids = append(failure.Kids, &peg.Fail{
 				Pos:  int(pos),
@@ -26790,9 +26225,9 @@ func _HAFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 			})
 		}
 		goto fail
-	ok12:
-		pos = pos13
-		failure.Kids = failure.Kids[:nkids14]
+	ok8:
+		pos = pos9
+		failure.Kids = failure.Kids[:nkids10]
 	}
 	parser.fail[key] = failure
 	return pos, failure
@@ -26801,12 +26236,12 @@ fail:
 	return -1, failure
 }
 
-func _HAAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_HA]
+func _BEIAction(parser *_Parser, start int) (int, *string) {
+	dp := parser.deltaPos[start][_BEI]
 	if dp < 0 {
 		return -1, nil
 	}
-	key := _key{start: start, rule: _HA}
+	key := _key{start: start, rule: _BEI}
 	n := parser.act[key]
 	if n != nil {
 		n := n.(string)
@@ -26814,27 +26249,35 @@ func _HAAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// (h A/h U e/h I a/m) &(tone? boundary)
+	// (b E i/m) &(tone? boundary)
 	{
 		var node0 string
-		// (h A/h U e/h I a/m)
-		// h A/h U e/h I a/m
+		// (b E i/m)
+		// b E i/m
 		{
 			pos4 := pos
 			var node3 string
-			// h A
+			// b E i
 			{
 				var node6 string
-				// h
-				if p, n := _hAction(parser, pos); n == nil {
+				// b
+				if p, n := _bAction(parser, pos); n == nil {
 					goto fail5
 				} else {
 					node6 = *n
 					pos = p
 				}
 				node0, node6 = node0+node6, ""
-				// A
-				if p, n := _AAction(parser, pos); n == nil {
+				// E
+				if p, n := _EAction(parser, pos); n == nil {
+					goto fail5
+				} else {
+					node6 = *n
+					pos = p
+				}
+				node0, node6 = node0+node6, ""
+				// i
+				if p, n := _iAction(parser, pos); n == nil {
 					goto fail5
 				} else {
 					node6 = *n
@@ -26846,79 +26289,15 @@ func _HAAction(parser *_Parser, start int) (int, *string) {
 		fail5:
 			node0 = node3
 			pos = pos4
-			// h U e
-			{
-				var node8 string
-				// h
-				if p, n := _hAction(parser, pos); n == nil {
-					goto fail7
-				} else {
-					node8 = *n
-					pos = p
-				}
-				node0, node8 = node0+node8, ""
-				// U
-				if p, n := _UAction(parser, pos); n == nil {
-					goto fail7
-				} else {
-					node8 = *n
-					pos = p
-				}
-				node0, node8 = node0+node8, ""
-				// e
-				if p, n := _eAction(parser, pos); n == nil {
-					goto fail7
-				} else {
-					node8 = *n
-					pos = p
-				}
-				node0, node8 = node0+node8, ""
-			}
-			goto ok1
-		fail7:
-			node0 = node3
-			pos = pos4
-			// h I a
-			{
-				var node10 string
-				// h
-				if p, n := _hAction(parser, pos); n == nil {
-					goto fail9
-				} else {
-					node10 = *n
-					pos = p
-				}
-				node0, node10 = node0+node10, ""
-				// I
-				if p, n := _IAction(parser, pos); n == nil {
-					goto fail9
-				} else {
-					node10 = *n
-					pos = p
-				}
-				node0, node10 = node0+node10, ""
-				// a
-				if p, n := _aAction(parser, pos); n == nil {
-					goto fail9
-				} else {
-					node10 = *n
-					pos = p
-				}
-				node0, node10 = node0+node10, ""
-			}
-			goto ok1
-		fail9:
-			node0 = node3
-			pos = pos4
 			// m
 			if p, n := _mAction(parser, pos); n == nil {
-				goto fail11
+				goto fail7
 			} else {
 				node0 = *n
 				pos = p
 			}
 			goto ok1
-		fail11:
+		fail7:
 			node0 = node3
 			pos = pos4
 			goto fail
@@ -26927,35 +26306,35 @@ func _HAAction(parser *_Parser, start int) (int, *string) {
 		node, node0 = node+node0, ""
 		// &(tone? boundary)
 		{
-			pos13 := pos
+			pos9 := pos
 			// (tone? boundary)
 			// tone? boundary
 			// tone?
 			{
-				pos19 := pos
+				pos15 := pos
 				// tone
 				if p, n := _toneAction(parser, pos); n == nil {
-					goto fail20
+					goto fail16
 				} else {
 					pos = p
 				}
-				goto ok21
-			fail20:
-				pos = pos19
-			ok21:
+				goto ok17
+			fail16:
+				pos = pos15
+			ok17:
 			}
 			// boundary
 			if p, n := _boundaryAction(parser, pos); n == nil {
-				goto fail16
+				goto fail12
 			} else {
 				pos = p
 			}
-			goto ok12
-		fail16:
-			pos = pos13
+			goto ok8
+		fail12:
+			pos = pos9
 			goto fail
-		ok12:
-			pos = pos13
+		ok8:
+			pos = pos9
 			node0 = ""
 		}
 		node, node0 = node+node0, ""
@@ -29201,258 +28580,6 @@ func _LUAction(parser *_Parser, start int) (int, *string) {
 			goto fail
 		ok15:
 			pos = pos16
-			node0 = ""
-		}
-		node, node0 = node+node0, ""
-	}
-	parser.act[key] = node
-	return pos, &node
-fail:
-	return -1, nil
-}
-
-func _MUAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
-	if dp, de, ok := _memo(parser, _MU, start); ok {
-		return dp, de
-	}
-	pos, perr := start, -1
-	// m U &(tone? boundary)
-	// m
-	if !_accept(parser, _mAccepts, &pos, &perr) {
-		goto fail
-	}
-	// U
-	if !_accept(parser, _UAccepts, &pos, &perr) {
-		goto fail
-	}
-	// &(tone? boundary)
-	{
-		pos2 := pos
-		perr4 := perr
-		// (tone? boundary)
-		// tone? boundary
-		// tone?
-		{
-			pos8 := pos
-			// tone
-			if !_accept(parser, _toneAccepts, &pos, &perr) {
-				goto fail9
-			}
-			goto ok10
-		fail9:
-			pos = pos8
-		ok10:
-		}
-		// boundary
-		if !_accept(parser, _boundaryAccepts, &pos, &perr) {
-			goto fail5
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		perr = _max(perr4, pos)
-		goto fail
-	ok1:
-		pos = pos2
-		perr = perr4
-	}
-	return _memoize(parser, _MU, start, pos, perr)
-fail:
-	return _memoize(parser, _MU, start, -1, perr)
-}
-
-func _MUNode(parser *_Parser, start int) (int, *peg.Node) {
-	dp := parser.deltaPos[start][_MU]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _MU}
-	node := parser.node[key]
-	if node != nil {
-		return start + int(dp-1), node
-	}
-	pos := start
-	node = &peg.Node{Name: "MU"}
-	// m U &(tone? boundary)
-	// m
-	if !_node(parser, _mNode, node, &pos) {
-		goto fail
-	}
-	// U
-	if !_node(parser, _UNode, node, &pos) {
-		goto fail
-	}
-	// &(tone? boundary)
-	{
-		pos2 := pos
-		nkids3 := len(node.Kids)
-		// (tone? boundary)
-		{
-			nkids6 := len(node.Kids)
-			pos07 := pos
-			// tone? boundary
-			// tone?
-			{
-				nkids9 := len(node.Kids)
-				pos10 := pos
-				// tone
-				if !_node(parser, _toneNode, node, &pos) {
-					goto fail11
-				}
-				goto ok12
-			fail11:
-				node.Kids = node.Kids[:nkids9]
-				pos = pos10
-			ok12:
-			}
-			// boundary
-			if !_node(parser, _boundaryNode, node, &pos) {
-				goto fail5
-			}
-			sub := _sub(parser, pos07, pos, node.Kids[nkids6:])
-			node.Kids = append(node.Kids[:nkids6], sub)
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		goto fail
-	ok1:
-		pos = pos2
-		node.Kids = node.Kids[:nkids3]
-	}
-	node.Text = parser.text[start:pos]
-	parser.node[key] = node
-	return pos, node
-fail:
-	return -1, nil
-}
-
-func _MUFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
-	pos, failure := _failMemo(parser, _MU, start, errPos)
-	if failure != nil {
-		return pos, failure
-	}
-	failure = &peg.Fail{
-		Name: "MU",
-		Pos:  int(start),
-	}
-	key := _key{start: start, rule: _MU}
-	// m U &(tone? boundary)
-	// m
-	if !_fail(parser, _mFail, errPos, failure, &pos) {
-		goto fail
-	}
-	// U
-	if !_fail(parser, _UFail, errPos, failure, &pos) {
-		goto fail
-	}
-	// &(tone? boundary)
-	{
-		pos2 := pos
-		nkids3 := len(failure.Kids)
-		// (tone? boundary)
-		// tone? boundary
-		// tone?
-		{
-			pos8 := pos
-			// tone
-			if !_fail(parser, _toneFail, errPos, failure, &pos) {
-				goto fail9
-			}
-			goto ok10
-		fail9:
-			pos = pos8
-		ok10:
-		}
-		// boundary
-		if !_fail(parser, _boundaryFail, errPos, failure, &pos) {
-			goto fail5
-		}
-		goto ok1
-	fail5:
-		pos = pos2
-		failure.Kids = failure.Kids[:nkids3]
-		if pos >= errPos {
-			failure.Kids = append(failure.Kids, &peg.Fail{
-				Pos:  int(pos),
-				Want: "&(tone? boundary)",
-			})
-		}
-		goto fail
-	ok1:
-		pos = pos2
-		failure.Kids = failure.Kids[:nkids3]
-	}
-	parser.fail[key] = failure
-	return pos, failure
-fail:
-	parser.fail[key] = failure
-	return -1, failure
-}
-
-func _MUAction(parser *_Parser, start int) (int, *string) {
-	dp := parser.deltaPos[start][_MU]
-	if dp < 0 {
-		return -1, nil
-	}
-	key := _key{start: start, rule: _MU}
-	n := parser.act[key]
-	if n != nil {
-		n := n.(string)
-		return start + int(dp-1), &n
-	}
-	var node string
-	pos := start
-	// m U &(tone? boundary)
-	{
-		var node0 string
-		// m
-		if p, n := _mAction(parser, pos); n == nil {
-			goto fail
-		} else {
-			node0 = *n
-			pos = p
-		}
-		node, node0 = node+node0, ""
-		// U
-		if p, n := _UAction(parser, pos); n == nil {
-			goto fail
-		} else {
-			node0 = *n
-			pos = p
-		}
-		node, node0 = node+node0, ""
-		// &(tone? boundary)
-		{
-			pos2 := pos
-			// (tone? boundary)
-			// tone? boundary
-			// tone?
-			{
-				pos8 := pos
-				// tone
-				if p, n := _toneAction(parser, pos); n == nil {
-					goto fail9
-				} else {
-					pos = p
-				}
-				goto ok10
-			fail9:
-				pos = pos8
-			ok10:
-			}
-			// boundary
-			if p, n := _boundaryAction(parser, pos); n == nil {
-				goto fail5
-			} else {
-				pos = p
-			}
-			goto ok1
-		fail5:
-			pos = pos2
-			goto fail
-		ok1:
-			pos = pos2
 			node0 = ""
 		}
 		node, node0 = node+node0, ""

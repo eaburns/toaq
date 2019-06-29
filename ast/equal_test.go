@@ -13,17 +13,17 @@ func TestEq(t *testing.T) {
 		{
 			n: &Text{},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&Text{Leading: &Space{T: " "}},
-				&Text{Discourse: Discourse{(*Interjection)(&Word{T: "hia"})}},
+				&Text{Discourse: Discourse{(*Interjection)(&Word{T: "m"})}},
 			},
 		},
 		{
 			n: &Text{Leading: &Space{T: " "}},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&Text{},
-				&Text{Discourse: Discourse{(*Interjection)(&Word{T: "hia"})}},
+				&Text{Discourse: Discourse{(*Interjection)(&Word{T: "m"})}},
 			},
 		},
 		{
@@ -31,7 +31,7 @@ func TestEq(t *testing.T) {
 				Statement: &Predication{Predicate: p("hio?")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&StatementSentence{
 					Statement: &Predication{Predicate: p("mai?")},
 				},
@@ -64,7 +64,7 @@ func TestEq(t *testing.T) {
 				},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&StatementSentence{
 					Statement: &Predication{Predicate: p("mai?")},
 				},
@@ -146,7 +146,7 @@ func TestEq(t *testing.T) {
 				BI:    Word{T: "bi"},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&Prenex{
 					Terms: Terms{&PredicateArgument{Predicate: p("jai/")}},
 					BI:    Word{T: "bi"},
@@ -166,7 +166,7 @@ func TestEq(t *testing.T) {
 				Statement: &Predication{Predicate: p("mai/")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&PrenexStatement{
 					Prenex: Prenex{
 						Terms: Terms{&PredicateArgument{Predicate: p("hio/")}},
@@ -190,7 +190,7 @@ func TestEq(t *testing.T) {
 				NA:        &Word{T: "na"},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&Predication{
 					Predicate: p("pai?"),
 					Terms:     Terms{&PredicateArgument{Predicate: p("ji/")}},
@@ -220,7 +220,7 @@ func TestEq(t *testing.T) {
 				Right: &Predication{Predicate: p("pai?")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&CoPStatement{
 					TO1:   &Word{T: "to"},
 					RU:    Word{T: "ru"},
@@ -264,16 +264,9 @@ func TestEq(t *testing.T) {
 			},
 		},
 		{
-			n: &PrefixedPredicate{MU: Word{T: "mu"}, Predicate: p("mai?")},
-			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
-				&PrefixedPredicate{MU: Word{T: "mu"}, Predicate: p("pai?")},
-			},
-		},
-		{
 			n: &SerialPredicate{Left: p("mai?"), Right: p("pai?")},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&SerialPredicate{Left: p("mea?heo-"), Right: p("pai?")},
 				&SerialPredicate{Left: p("mai?"), Right: p("mea?heo-")},
 				&SerialPredicate{Right: p("mai?"), Left: p("pai?")},
@@ -282,7 +275,7 @@ func TestEq(t *testing.T) {
 		{
 			n: (*WordPredicate)(&Word{T: "pai?"}),
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				(*WordPredicate)(&Word{T: "mai?"}),
 			},
 		},
@@ -293,7 +286,7 @@ func TestEq(t *testing.T) {
 				GA:     &Word{T: "ga"},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				(*WordPredicate)(&Word{T: "mai?"}),
 				&MIPredicate{
 					MI:     Word{T: "mi/"},
@@ -313,7 +306,7 @@ func TestEq(t *testing.T) {
 				GA:       &Word{T: "ga"},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				(*WordPredicate)(&Word{T: "mai?"}),
 				&POPredicate{
 					PO:       Word{T: "po/"},
@@ -329,14 +322,14 @@ func TestEq(t *testing.T) {
 		{
 			n: &MOPredicate{
 				MO:        Word{T: "mo/"},
-				Discourse: Discourse{(*Interjection)(&Word{T: "hia"})},
+				Discourse: Discourse{(*Interjection)(&Word{T: "m"})},
 				TEO:       Word{T: "teo"},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&MOPredicate{
 					MO:        Word{T: "momo/"},
-					Discourse: Discourse{(*Interjection)(&Word{T: "hia"})},
+					Discourse: Discourse{(*Interjection)(&Word{T: "m"})},
 					TEO:       Word{T: "teo"},
 				},
 				&MOPredicate{
@@ -346,7 +339,7 @@ func TestEq(t *testing.T) {
 				},
 				&MOPredicate{
 					MO:        Word{T: "mo/"},
-					Discourse: Discourse{(*Interjection)(&Word{T: "hia"})},
+					Discourse: Discourse{(*Interjection)(&Word{T: "m"})},
 					TEO:       Word{T: "teoteo-"},
 				},
 			},
@@ -357,7 +350,7 @@ func TestEq(t *testing.T) {
 				Statement: &Predication{Predicate: p("hio?")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&LUPredicate{
 					LU:        Word{T: "lu/lu-"},
 					Statement: &Predication{Predicate: p("hio?")},
@@ -377,7 +370,7 @@ func TestEq(t *testing.T) {
 				Right: p("pai?"),
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&CoPPredicate{
 					TO1:   &Word{T: "to"},
 					RU:    Word{T: "ru"},
@@ -426,7 +419,7 @@ func TestEq(t *testing.T) {
 				Argument: &PredicateArgument{Predicate: p("ji/")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&LinkedTerm{
 					GO:       Word{T: "gogo-"},
 					Argument: &PredicateArgument{Predicate: p("ji/")},
@@ -446,7 +439,7 @@ func TestEq(t *testing.T) {
 				Right: &PredicateArgument{Predicate: p("pai?")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&TermSet{
 					TO1:   &Word{T: "to"},
 					RU:    Word{T: "ru"},
@@ -499,7 +492,7 @@ func TestEq(t *testing.T) {
 				},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&PredicateArgument{
 					Focus:      &Word{T: "kuku"},
 					Quantifier: &Word{T: "tu"},
@@ -543,7 +536,7 @@ func TestEq(t *testing.T) {
 				Right: &PredicateArgument{Predicate: p("pai?")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&CoPArgument{
 					TO1:   &Word{T: "to"},
 					RU:    Word{T: "ru"},
@@ -591,7 +584,7 @@ func TestEq(t *testing.T) {
 				Predication: Predication{Predicate: p("maiV")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&PredicationRelative{
 					Predication: Predication{Predicate: p("paiV")},
 				},
@@ -603,7 +596,7 @@ func TestEq(t *testing.T) {
 				Statement: &Predication{Predicate: p("mai?")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&LURelative{
 					LU:        Word{T: "luVlu-"},
 					Statement: &Predication{Predicate: p("mai?")},
@@ -622,7 +615,7 @@ func TestEq(t *testing.T) {
 				Right: &Predication{Predicate: p("pai?")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&CoPRelative{
 					TO1:   &Word{T: "to"},
 					RU:    Word{T: "ru"},
@@ -668,7 +661,7 @@ func TestEq(t *testing.T) {
 		{
 			n: &PredicateAdverb{Predicate: p("mai~")},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&PredicateAdverb{Predicate: p("pai~")},
 			},
 		},
@@ -681,7 +674,7 @@ func TestEq(t *testing.T) {
 				Right: &PredicateAdverb{Predicate: p("pai?")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&CoPAdverb{
 					TO1:   &Word{T: "to"},
 					RU:    Word{T: "ru"},
@@ -730,7 +723,7 @@ func TestEq(t *testing.T) {
 				Argument:  &PredicateArgument{Predicate: p("ji/")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&PredicationPreposition{
 					Predicate: p(`pai\`),
 					Argument:  &PredicateArgument{Predicate: p("ji/")},
@@ -756,7 +749,7 @@ func TestEq(t *testing.T) {
 				},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&CoPPreposition{
 					TO1: &Word{T: "to"},
 					RU:  Word{T: "ru"},
@@ -840,7 +833,7 @@ func TestEq(t *testing.T) {
 				Predication: Predication{Predicate: p("hio?")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&PredicationContent{
 					Predication: Predication{Predicate: p("mai?")},
 				},
@@ -852,7 +845,7 @@ func TestEq(t *testing.T) {
 				Statement: &Predication{Predicate: p("hio?")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&LUContent{
 					LU:        Word{T: "lu^lu-"},
 					Statement: &Predication{Predicate: p("hio?")},
@@ -876,7 +869,7 @@ func TestEq(t *testing.T) {
 				},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&CoPContent{
 					TO1: &Word{T: "to"},
 					RU:  Word{T: "ru"},
@@ -947,19 +940,19 @@ func TestEq(t *testing.T) {
 			n: &Parenthetical{
 				KI:        Word{T: "ki"},
 				KIO:       Word{T: "kio"},
-				Discourse: Discourse{(*Interjection)(&Word{T: "hia"})},
+				Discourse: Discourse{(*Interjection)(&Word{T: "m"})},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&Parenthetical{
 					KI:        Word{T: "kiki"},
 					KIO:       Word{T: "kio"},
-					Discourse: Discourse{(*Interjection)(&Word{T: "hia"})},
+					Discourse: Discourse{(*Interjection)(&Word{T: "m"})},
 				},
 				&Parenthetical{
 					KI:        Word{T: "ki"},
 					KIO:       Word{T: "kiokio"},
-					Discourse: Discourse{(*Interjection)(&Word{T: "hia"})},
+					Discourse: Discourse{(*Interjection)(&Word{T: "m"})},
 				},
 				&Parenthetical{
 					KI:        Word{T: "ki"},
@@ -974,7 +967,7 @@ func TestEq(t *testing.T) {
 				Statement: &Predication{Predicate: p("hio?")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&Incidental{
 					JU:        Word{T: "juju"},
 					Statement: &Predication{Predicate: p("hio?")},
@@ -991,7 +984,7 @@ func TestEq(t *testing.T) {
 				Argument: &PredicateArgument{Predicate: p("hoaq/")},
 			},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&Vocative{
 					HU:       Word{T: "huhu"},
 					Argument: &PredicateArgument{Predicate: p("hoaq/")},
@@ -1012,14 +1005,14 @@ func TestEq(t *testing.T) {
 		{
 			n: (*Space)(&Word{T: " "}),
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				(*Space)(&Word{T: "\n"}),
 			},
 		},
 		{
 			n: &Word{T: "jai?"},
 			ne: []Node{
-				(*Interjection)(&Word{T: "hia"}),
+				(*Interjection)(&Word{T: "m"}),
 				&Word{T: "mai?"},
 			},
 		},

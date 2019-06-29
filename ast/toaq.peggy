@@ -75,10 +75,7 @@ predicate_2 <-
 	MI_phrase<verb_syllable> /
 	PO_phrase<verb_syllable> /
 	MO_phrase<verb_syllable> /
-	prefixed_predicate /
 	predicate_3
-prefixed_predicate <-
-	x:prefix s:_ p:predicate_2 { return Predicate(prefixed(x, s, p)) }
 predicate_3 <-
 	p:predicate_word<verb_syllable> s:_ { return Predicate(p.modPredicate(s)) }
 serial_predicate <-
@@ -380,7 +377,6 @@ initial_syllable <-
 	preposition_syllable /
 	adverb_syllable
 
-prefix <- &MU w:neutral_syllable { return Word{S: start, E: end, T: w} }
 focus <- &KU w:neutral_syllable { return Word{S: start, E: end, T: w} }
 end_quote <- &TEO w:neutral_syllable { return Word{S: start, E: end, T: w} }
 end_predicatizer <- &GA w:neutral_syllable { return Word{S: start, E: end, T: w} }
@@ -399,19 +395,19 @@ illocutionary <-
 	moq:moq s:( questions? ) { return Word(*moq.mod(s)) }
 moq <- &MOQ w:moq_syllable { return Word{S: start, E: end, T: w} }
 quantifier <- &TU w:neutral_syllable { return Word{S: start, E: end, T: w} }
-interjection <- &HA w:neutral_syllable { return &Interjection{S: start, E: end, T: w} }
+interjection <- &BEI w:neutral_syllable { return &Interjection{S: start, E: end, T: w} }
 forethought_marker <- &TO w:neutral_syllable { return Word{S: start, E: end, T: w} }
 
 # The following function word rules match any tone.
 # The intended use is as the subexpression of a ! or &,
 # followed by the desired syllable tone.
-function_word <- BI / DA / GA / GO / HA / HU / JU / KU / KI / KIO / KEO / LU / MU / MI / MO / MOQ / NA / PO / RA / TU / TO / TEO
+function_word <- BI / DA / GA / GO / BEI / HU / JU / KU / KI / KIO / KEO / LU / MI / MO / MOQ / NA / PO / RA / TU / TO / TEO
 BI <- ( b I / p A ) &( tone? boundary )
 DA <- ( d A / k A / s O / b A ) &( tone? boundary )
 MOQ <- m O q &( ( questions / tone )? boundary )
 GA <- g A &( tone? boundary )
 GO <- ( g O / f I / c U / k E ) &( tone? boundary )
-HA <- ( h A / h U e / h I a / m ) &( tone? boundary )
+BEI <- ( b E i / m ) &( tone? boundary )
 HU <- h U &( tone? boundary )
 JU <- j U &( tone? boundary )
 KU <- k U &( tone? boundary )
@@ -419,7 +415,6 @@ KI <- k I &( tone? boundary )
 KIO <- k I o &( tone? boundary )
 KEO <- ( k E o / j E ) &( tone? boundary )
 LU <- ( l U / l I / l O / m A / t I o ) &( tone? boundary )
-MU <- m U &( tone? boundary )
 MI <- ( m I / s h U ) &( tone? boundary )
 MO <- m O &( tone? boundary )
 NA <- n A &( tone? boundary )

@@ -338,8 +338,6 @@ func (interp *interpreter) predicate(n ast.Predicate) interface{} {
 			return &Variable{N: def.N, Def: def, AST: n}
 		}
 		return &Pred{Name: wordPred(n), AST: n}
-	case *ast.PrefixedPredicate:
-		return interp.prefixedPredicate(n)
 	case *ast.SerialPredicate:
 		return interp.serialPredicate(n)
 	case *ast.MIPredicate:
@@ -412,11 +410,6 @@ func (interp *interpreter) makeContentPred(n ast.Node, st Statement) Predicate {
 	equal := &Pred{Name: Equal, AST: n}
 	content := &Abstraction{Statement: st, AST: n}
 	return interp.makeLambda(n, equal, content)
-}
-
-func (interp *interpreter) prefixedPredicate(n *ast.PrefixedPredicate) interface{} {
-	pred := interp.predicate(n.Predicate)
-	return interp.distributePredicatePrefix(n, pred)
 }
 
 func (interp *interpreter) distributePredicatePrefix(n *ast.PrefixedPredicate, pred interface{}) interface{} {

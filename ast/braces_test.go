@@ -36,10 +36,6 @@ func TestBraces(t *testing.T) {
 			want: "({rảı na} ru {rảı na})",
 		},
 		{
-			in:   "mu kui?",
-			want: "(mu kủı)",
-		},
-		{
 			in:   "po?ji- pai?",
 			want: "(pỏjī pảı)",
 		},
@@ -114,10 +110,6 @@ func TestBraces(t *testing.T) {
 		{
 			in:   "kio hio? ka ki",
 			want: "(kıo {hỉo ka} kı)",
-		},
-		{
-			in:   "hahahaha hia",
-			want: "(ha {ha [ha <ha hıa>]})",
 		},
 		{
 			in:   "ji? ju de? ho/",

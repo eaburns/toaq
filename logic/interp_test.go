@@ -77,12 +77,12 @@ func TestPrenexStatement(t *testing.T) {
 			in:   `sa do/ bi gi? do/`,
 			want: "∃X gi(X).",
 		},
-		{
-			name: "arg CoP",
-			in:   "chuq/guao- ru huai/chuo- ji/ pa mu choq?",
-			// TODO: all else equal, ι-bound terms should appear in lexical order.
-			want: "[ιC : chuqguao(C)] [ιJ : ji(J)] [ιH : huaichuo(H)] choq(J, C) ∧ choq(J, H).",
-		},
+		// {
+		// 	name: "arg CoP",
+		// 	in:   "chuq/guao- ru huai/chuo- ji/ pa mu choq?",
+		// 	// TODO: all else equal, ι-bound terms should appear in lexical order.
+		// 	want: "[ιC : chuqguao(C)] [ιJ : ji(J)] [ιH : huaichuo(H)] choq(J, C) ∧ choq(J, H).",
+		// },
 		{
 			name: "arg CoP roi",
 			in:   `ji/ roi suq/ pa deoq?`,
@@ -207,39 +207,6 @@ func TestQuantifiedPredicate(t *testing.T) {
 	panic("quantified predicates are unimplemented")
 }
 
-func TestMUPredicate(t *testing.T) {
-	tests := []interpTest{
-		{
-			name: "simple",
-			in:   "mu pai? suq/ ji/",
-			want: "[ιS : suq(S)] [ιJ : ji(J)] pai(J, S).",
-		},
-		{
-			name: "makes nil arg",
-			in:   "mu kui? de^",
-			want: "kui(·, {de()}).",
-		},
-		{
-			name: "with linking terms",
-			in:   "mu pai? go ji/ suq/",
-			want: "[ιJ : ji(J)] [ιS : suq(S)] pai(J, S).",
-		},
-		{
-			name: "nested",
-			in:   "mu mu mu mu pai? ji/ suq/",
-			want: "[ιJ : ji(J)] [ιS : suq(S)] pai(J, S).",
-		},
-		{
-			name: "not simplified away when with a serial",
-			in:   "suq? mu pai? ho/",
-			want: "[ιH : ho(H)] suq∘(mu pai)(H).",
-		},
-	}
-	for _, test := range tests {
-		t.Run(test.name, test.run)
-	}
-}
-
 func TestSerialPredicate(t *testing.T) {
 	tests := []interpTest{
 		{
@@ -254,8 +221,8 @@ func TestSerialPredicate(t *testing.T) {
 		},
 		{
 			name: "mu",
-			in:   "gi? mu kui?",
-			want: "gi∘(mu kui)().",
+			in:   "gi? mu? kui?",
+			want: "gi∘mu∘kui().",
 		},
 		{
 			name: "mi",

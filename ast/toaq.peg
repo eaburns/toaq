@@ -16,8 +16,7 @@ prenex_spaces <- prenex _
 prenex <- terms _ end_prenex
 predicate <- serial_predicate
 predicate_1 <- afterthought_cop<predicate_2, predicate_1>/predicate_2
-predicate_2 <- forethought_cop_pred<predicate>/LU_predicate<verb_syllable>/MI_phrase<verb_syllable>/PO_phrase<verb_syllable>/MO_phrase<verb_syllable>/prefixed_predicate/predicate_3
-prefixed_predicate <- prefix _ predicate_2
+predicate_2 <- forethought_cop_pred<predicate>/LU_predicate<verb_syllable>/MI_phrase<verb_syllable>/PO_phrase<verb_syllable>/MO_phrase<verb_syllable>/predicate_3
 predicate_3 <- predicate_word<verb_syllable> _
 serial_predicate <- serial<predicate_1>/predicate_1
 serial<left> <- left _ serial_predicate
@@ -104,7 +103,6 @@ non_function_word <- initial_syllable compound_syllable+/!function_word initial_
 neutral_function_word <- !toned_function_word &function_word neutral_syllable
 toned_function_word <- !neutral_syllable (LU/MI/MO/PO)
 initial_syllable <- arg_syllable/relative_syllable/verb_syllable/content_syllable/preposition_syllable/adverb_syllable
-prefix <- &MU neutral_syllable
 focus <- &KU neutral_syllable
 end_quote <- &TEO neutral_syllable
 end_predicatizer <- &GA neutral_syllable
@@ -120,15 +118,15 @@ connective <- &RA neutral_syllable
 illocutionary <- &DA neutral_syllable/moq (questions?)
 moq <- &MOQ moq_syllable
 quantifier <- &TU neutral_syllable
-interjection <- &HA neutral_syllable
+interjection <- &BEI neutral_syllable
 forethought_marker <- &TO neutral_syllable
-function_word <- BI/DA/GA/GO/HA/HU/JU/KU/KI/KIO/KEO/LU/MU/MI/MO/MOQ/NA/PO/RA/TU/TO/TEO
+function_word <- BI/DA/GA/GO/BEI/HU/JU/KU/KI/KIO/KEO/LU/MI/MO/MOQ/NA/PO/RA/TU/TO/TEO
 BI <- (b I/p A) &(tone? boundary)
 DA <- (d A/k A/s O/b A) &(tone? boundary)
 MOQ <- m O q &((questions/tone)? boundary)
 GA <- g A &(tone? boundary)
 GO <- (g O/f I/c U/k E) &(tone? boundary)
-HA <- (h A/h U e/h I a/m) &(tone? boundary)
+BEI <- (b E i/m) &(tone? boundary)
 HU <- h U &(tone? boundary)
 JU <- j U &(tone? boundary)
 KU <- k U &(tone? boundary)
@@ -136,7 +134,6 @@ KI <- k I &(tone? boundary)
 KIO <- k I o &(tone? boundary)
 KEO <- (k E o/j E) &(tone? boundary)
 LU <- (l U/l I/l O/m A/t I o) &(tone? boundary)
-MU <- m U &(tone? boundary)
 MI <- (m I/s h U) &(tone? boundary)
 MO <- m O &(tone? boundary)
 NA <- n A &(tone? boundary)

@@ -335,16 +335,6 @@ func TestPredicate(t *testing.T) {
 			),
 		},
 		{
-			name: "prefixed predicate",
-			text: "mu hio?",
-			want: statement(
-				&PrefixedPredicate{
-					MU:        Word{T: "mu"},
-					Predicate: &WordPredicate{T: "hio?"},
-				},
-			),
-		},
-		{
 			name: "serial predicate",
 			text: "gi? gai? mai?",
 			want: statement(
@@ -1038,10 +1028,10 @@ func TestMod(t *testing.T) {
 	tests := []parserTest{
 		{
 			name: "interjection",
-			text: "hia",
+			text: "bei",
 			want: &Text{
 				Discourse: Discourse{
-					&Interjection{T: "hia"},
+					&Interjection{T: "bei"},
 				},
 			},
 		},

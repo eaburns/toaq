@@ -72,10 +72,6 @@ func endPredication(st Predication, s *Mod, na *Word) *Predication {
 	return &st
 }
 
-func prefixed(mu Word, s *Mod, p Predicate) *PrefixedPredicate {
-	return &PrefixedPredicate{MU: *mu.mod(s), Predicate: p}
-}
-
 func serial(left Predicate, s *Mod, right Predicate) *SerialPredicate {
 	return &SerialPredicate{Left: left.modPredicate(s), Right: right}
 }

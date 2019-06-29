@@ -157,7 +157,7 @@ preposition_syllable <- syllable<preposition_desinence, preposition_tone>
 adverb_syllable <- syllable<adverb_desinence, adverb_tone>
 boundary <- (initial/space/EOF)
 initial <- b/c h/c/d/f/g/h/j/k/l/m/n/p/r/s h/s/t
-desinence<ā, ū, ī, ō, ē> <- ā o/ā i/ā q/ā/ū a o/ū a i/ū e q/ū e/ū o i/ū o q/ū o/ū i/ū a q/ū a/ū q/ū/ī a o/ī a i/ī e q/ī e/ī o q/ī o/ī u/ī a q/ī a/ī q/ī/ō e q/ō e/ō i/ō a i/ō a q/ō a/ō q/ō/ē o q/ē o/ē i/ē a q/ē a/ē q/ē
+desinence<ā, ū, ī, ō, ē> <- ā q/ā i/ā o/ā/ū q/ū a q/ū a i/ū a o/ū a/ū i/ū o q/ū o i/ū o/ū e q/ū e/ū/ī q/ī a q/ī a i/ī a o/ī a/ī u q/ī u/ī o i/ī o q/ī o/ī e q/ī e/ī/ō q/ō a q/ō a i/ō a o/ō a/ō i/ō e q/ō e/ō/ē q/ē a q/ē a i/ē a o/ē a/ē i/ē o q/ē o/ē u/ē
 neutral_desinence <- desinence<a, u, i, o, e>
 compound_desinence <- desinence<ā, ū, ī, ō, ē>
 arg_desinence <- desinence<á, ú, í, ó, é>

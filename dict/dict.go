@@ -3,6 +3,7 @@ package dict
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"strings"
 
@@ -24,22 +25,27 @@ type Word struct {
 }
 
 // Load loads the words from a URL serving them as a list of JSON.
-func Load(url string) (map[string]Word, error) {
-	resp, err := http.Get(url)
+func Load(url string, query string) (map[string]Word, error) {
+	resp, err := http.Post(url, "application/json", strings.NewReader(query))
 	if err != nil {
 		return nil, err
 	}
 	defer resp.Body.Close()
 
-	var dict struct {
-		Entries []Word `json:"entries"`
+	var response struct {
+		Success bool    `json:"success"`
+		Entries *[]Word `json:"data"`
+		Error   *string `json:"error"`
 	}
-	if err := json.NewDecoder(resp.Body).Decode(&dict); err != nil {
+	if err := json.NewDecoder(resp.Body).Decode(&response); err != nil {
 		return nil, err
 	}
+	if !response.Success {
+		return nil, fmt.Errorf("Toadua returned error: %s", *response.Error)
+	}
+	entries := *response.Entries
 	ws := make(map[string]Word)
-	for i := range dict.Entries {
-		e := dict.Entries[i]
+	for _, e := range entries {
 		e.Word = strings.ToLower(tone.Strip(e.Word))
 		ws[e.Word] = e
 	}

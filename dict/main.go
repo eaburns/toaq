@@ -1,6 +1,6 @@
 // +build ignore
 
-// Main loads the words from https://uakci.pl/toadua/dict and
+// Main loads the words from Toadua and
 // writes a go source file of all the words in a variable called "Words".
 // This is intended to be used with go generate.
 package main
@@ -19,14 +19,17 @@ import (
 	"github.com/eaburns/toaq/dict"
 )
 
-const url = "https://uakci.pl/toadua/dict"
+const url = "https://uakci.pl/toadua/api"
+
+// That the star can be used to index the whole dictionary is a coincidence.
+const query = "{ \"action\": \"search\", \"query\": \"*\" }"
 
 var out = flag.String("o", "", "The output file.")
 
 func main() {
 	flag.Parse()
 
-	ws, err := dict.Load(url)
+	ws, err := dict.Load(url, query)
 	if err != nil {
 		fmt.Printf(err.Error())
 		os.Exit(1)

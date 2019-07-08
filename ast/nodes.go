@@ -132,5 +132,5 @@ func endParen(p Parenthetical, s *Mod, ki Word) *Parenthetical {
 func addTone(des, ton string) string {
 	t, _ := utf8.DecodeRuneInString(ton)
 	_, w := utf8.DecodeRuneInString(des)
-	return tone.Diacritic[t][des[:w]] + des[w:]
+	return tone.Diacritic[t][des[:w]][0] + des[w:]
 }

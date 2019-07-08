@@ -1138,9 +1138,11 @@ var oLetters, oTones = func() ([]rune, []rune) {
 			if ascii != "o" && ascii != "O" {
 				continue
 			}
-			r, _ := utf8.DecodeRuneInString(d)
-			o = append(o, r)
-			ot = append(ot, t)
+			for _, e := range d {
+				r, _ := utf8.DecodeRuneInString(e)
+				o = append(o, r)
+				ot = append(ot, t)
+			}
 		}
 	}
 	return o, ot

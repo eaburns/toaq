@@ -183,11 +183,11 @@ compound_tone <- [\-1]
 é <- [éÉ]/e (acute_combiner/arg_tone)
 acute_combiner "◌́" <- "\u0301"
 arg_tone <- [/2]
-ǎ <- [ǎǍ]/a (caron_combiner/breve_combiner/relative_tone)
-ǔ <- [ǔǓ]/u (caron_combiner/breve_combiner/relative_tone)
-ǐ <- [ǐǏ]/i (caron_combiner/breve_combiner/relative_tone)
-ǒ <- [ǒǑ]/o (caron_combiner/breve_combiner/relative_tone)
-ě <- [ěĚ]/e (caron_combiner/breve_combiner/relative_tone)
+ǎ <- [ǎǍăĂ]/a (caron_combiner/breve_combiner/relative_tone)
+ǔ <- [ǔǓŭŬ]/u (caron_combiner/breve_combiner/relative_tone)
+ǐ <- [ǐǏĭĬ]/i (caron_combiner/breve_combiner/relative_tone)
+ǒ <- [ǒǑŏŎ]/o (caron_combiner/breve_combiner/relative_tone)
+ě <- [ěĚĕĔ]/e (caron_combiner/breve_combiner/relative_tone)
 caron_combiner "◌̌" <- "\u030c"
 breve_combiner "◌̆" <- "\u0306"
 relative_tone <- [V3]

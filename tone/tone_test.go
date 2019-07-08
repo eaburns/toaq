@@ -14,6 +14,7 @@ func TestToASCII(t *testing.T) {
 		{"pójījī", "po/ji-ji-"},
 		{"rảı", "rai?"},
 		{"rảI", "raI?"},
+		{"hŏı", "hoiV"},
 	}
 	for _, test := range tests {
 		if got := ToASCII(test.in); got != test.want {
@@ -32,6 +33,7 @@ func TestStrip(t *testing.T) {
 		{"pójījī", "pojiji"},
 		{"rảı", "rai"},
 		{"rảI", "raI"},
+		{"hŏı", "hoi"},
 	}
 	for _, test := range tests {
 		if got := Strip(test.in); got != test.want {
@@ -53,6 +55,7 @@ func TestWithTone(t *testing.T) {
 		{"rảı", '^', "râı"},
 		{"rảı", '\\', "ràı"},
 		{"rảı", '~', "rãı"},
+		{"răı", '-', "rāı"},
 		{"rảırāı", '-', "rāırāı"},
 		{"rảırāı", '/', "ráırāı"},
 		{"rảırāı", 'V', "rǎırāı"},
@@ -63,6 +66,7 @@ func TestWithTone(t *testing.T) {
 		{"rẢırāı", '~', "rÃırāı"},
 		{"rẢı", None, "rAı"},
 		{"Hỉo", None, "Hıo"},
+		{"hŏı", None, "hoı"},
 		{"rkTk", 'V', "rkTk"},
 		{"do", '/', "dó"},
 	}

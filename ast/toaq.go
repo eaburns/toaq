@@ -36643,7 +36643,7 @@ func _āAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['-'][l])
+				return string(tone.Diacritic['-'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -36956,7 +36956,7 @@ func _ūAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['-'][l])
+				return string(tone.Diacritic['-'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -37269,7 +37269,7 @@ func _īAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['-'][l])
+				return string(tone.Diacritic['-'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -37582,7 +37582,7 @@ func _ōAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['-'][l])
+				return string(tone.Diacritic['-'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -37895,7 +37895,7 @@ func _ēAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['-'][l])
+				return string(tone.Diacritic['-'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -38404,7 +38404,7 @@ func _áAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['/'][l])
+				return string(tone.Diacritic['/'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -38717,7 +38717,7 @@ func _úAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['/'][l])
+				return string(tone.Diacritic['/'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -39030,7 +39030,7 @@ func _íAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['/'][l])
+				return string(tone.Diacritic['/'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -39343,7 +39343,7 @@ func _óAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['/'][l])
+				return string(tone.Diacritic['/'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -39656,7 +39656,7 @@ func _éAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['/'][l])
+				return string(tone.Diacritic['/'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -39876,11 +39876,11 @@ func _ǎAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ǎǍ]/l:a (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǎǍăĂ]/l:a (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
-		// [ǎǍ]
-		if r, w := _next(parser, pos); r != 'ǎ' && r != 'Ǎ' {
+		// [ǎǍăĂ]
+		if r, w := _next(parser, pos); r != 'ǎ' && r != 'Ǎ' && r != 'ă' && r != 'Ă' {
 			perr = _max(perr, pos)
 			goto fail4
 		} else {
@@ -39953,12 +39953,12 @@ func _ǎNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ǎ"}
-	// [ǎǍ]/l:a (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǎǍăĂ]/l:a (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
-		// [ǎǍ]
-		if r, w := _next(parser, pos); r != 'ǎ' && r != 'Ǎ' {
+		// [ǎǍăĂ]
+		if r, w := _next(parser, pos); r != 'ǎ' && r != 'Ǎ' && r != 'ă' && r != 'Ă' {
 			goto fail4
 		} else {
 			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
@@ -40043,15 +40043,15 @@ func _ǎFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ǎ}
-	// [ǎǍ]/l:a (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǎǍăĂ]/l:a (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
-		// [ǎǍ]
-		if r, w := _next(parser, pos); r != 'ǎ' && r != 'Ǎ' {
+		// [ǎǍăĂ]
+		if r, w := _next(parser, pos); r != 'ǎ' && r != 'Ǎ' && r != 'ă' && r != 'Ă' {
 			if pos >= errPos {
 				failure.Kids = append(failure.Kids, &peg.Fail{
 					Pos:  int(pos),
-					Want: "[ǎǍ]",
+					Want: "[ǎǍăĂ]",
 				})
 			}
 			goto fail4
@@ -40129,12 +40129,12 @@ func _ǎAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ǎǍ]/l:a (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǎǍăĂ]/l:a (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
 		var node2 string
-		// [ǎǍ]
-		if r, w := _next(parser, pos); r != 'ǎ' && r != 'Ǎ' {
+		// [ǎǍăĂ]
+		if r, w := _next(parser, pos); r != 'ǎ' && r != 'Ǎ' && r != 'ă' && r != 'Ă' {
 			goto fail4
 		} else {
 			node = parser.text[pos : pos+w]
@@ -40196,7 +40196,7 @@ func _ǎAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['V'][l])
+				return string(tone.Diacritic['V'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -40220,11 +40220,11 @@ func _ǔAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ǔǓ]/l:u (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǔǓŭŬ]/l:u (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
-		// [ǔǓ]
-		if r, w := _next(parser, pos); r != 'ǔ' && r != 'Ǔ' {
+		// [ǔǓŭŬ]
+		if r, w := _next(parser, pos); r != 'ǔ' && r != 'Ǔ' && r != 'ŭ' && r != 'Ŭ' {
 			perr = _max(perr, pos)
 			goto fail4
 		} else {
@@ -40297,12 +40297,12 @@ func _ǔNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ǔ"}
-	// [ǔǓ]/l:u (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǔǓŭŬ]/l:u (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
-		// [ǔǓ]
-		if r, w := _next(parser, pos); r != 'ǔ' && r != 'Ǔ' {
+		// [ǔǓŭŬ]
+		if r, w := _next(parser, pos); r != 'ǔ' && r != 'Ǔ' && r != 'ŭ' && r != 'Ŭ' {
 			goto fail4
 		} else {
 			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
@@ -40387,15 +40387,15 @@ func _ǔFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ǔ}
-	// [ǔǓ]/l:u (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǔǓŭŬ]/l:u (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
-		// [ǔǓ]
-		if r, w := _next(parser, pos); r != 'ǔ' && r != 'Ǔ' {
+		// [ǔǓŭŬ]
+		if r, w := _next(parser, pos); r != 'ǔ' && r != 'Ǔ' && r != 'ŭ' && r != 'Ŭ' {
 			if pos >= errPos {
 				failure.Kids = append(failure.Kids, &peg.Fail{
 					Pos:  int(pos),
-					Want: "[ǔǓ]",
+					Want: "[ǔǓŭŬ]",
 				})
 			}
 			goto fail4
@@ -40473,12 +40473,12 @@ func _ǔAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ǔǓ]/l:u (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǔǓŭŬ]/l:u (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
 		var node2 string
-		// [ǔǓ]
-		if r, w := _next(parser, pos); r != 'ǔ' && r != 'Ǔ' {
+		// [ǔǓŭŬ]
+		if r, w := _next(parser, pos); r != 'ǔ' && r != 'Ǔ' && r != 'ŭ' && r != 'Ŭ' {
 			goto fail4
 		} else {
 			node = parser.text[pos : pos+w]
@@ -40540,7 +40540,7 @@ func _ǔAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['V'][l])
+				return string(tone.Diacritic['V'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -40564,11 +40564,11 @@ func _ǐAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ǐǏ]/l:i (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǐǏĭĬ]/l:i (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
-		// [ǐǏ]
-		if r, w := _next(parser, pos); r != 'ǐ' && r != 'Ǐ' {
+		// [ǐǏĭĬ]
+		if r, w := _next(parser, pos); r != 'ǐ' && r != 'Ǐ' && r != 'ĭ' && r != 'Ĭ' {
 			perr = _max(perr, pos)
 			goto fail4
 		} else {
@@ -40641,12 +40641,12 @@ func _ǐNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ǐ"}
-	// [ǐǏ]/l:i (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǐǏĭĬ]/l:i (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
-		// [ǐǏ]
-		if r, w := _next(parser, pos); r != 'ǐ' && r != 'Ǐ' {
+		// [ǐǏĭĬ]
+		if r, w := _next(parser, pos); r != 'ǐ' && r != 'Ǐ' && r != 'ĭ' && r != 'Ĭ' {
 			goto fail4
 		} else {
 			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
@@ -40731,15 +40731,15 @@ func _ǐFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ǐ}
-	// [ǐǏ]/l:i (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǐǏĭĬ]/l:i (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
-		// [ǐǏ]
-		if r, w := _next(parser, pos); r != 'ǐ' && r != 'Ǐ' {
+		// [ǐǏĭĬ]
+		if r, w := _next(parser, pos); r != 'ǐ' && r != 'Ǐ' && r != 'ĭ' && r != 'Ĭ' {
 			if pos >= errPos {
 				failure.Kids = append(failure.Kids, &peg.Fail{
 					Pos:  int(pos),
-					Want: "[ǐǏ]",
+					Want: "[ǐǏĭĬ]",
 				})
 			}
 			goto fail4
@@ -40817,12 +40817,12 @@ func _ǐAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ǐǏ]/l:i (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǐǏĭĬ]/l:i (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
 		var node2 string
-		// [ǐǏ]
-		if r, w := _next(parser, pos); r != 'ǐ' && r != 'Ǐ' {
+		// [ǐǏĭĬ]
+		if r, w := _next(parser, pos); r != 'ǐ' && r != 'Ǐ' && r != 'ĭ' && r != 'Ĭ' {
 			goto fail4
 		} else {
 			node = parser.text[pos : pos+w]
@@ -40884,7 +40884,7 @@ func _ǐAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['V'][l])
+				return string(tone.Diacritic['V'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -40908,11 +40908,11 @@ func _ǒAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ǒǑ]/l:o (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǒǑŏŎ]/l:o (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
-		// [ǒǑ]
-		if r, w := _next(parser, pos); r != 'ǒ' && r != 'Ǒ' {
+		// [ǒǑŏŎ]
+		if r, w := _next(parser, pos); r != 'ǒ' && r != 'Ǒ' && r != 'ŏ' && r != 'Ŏ' {
 			perr = _max(perr, pos)
 			goto fail4
 		} else {
@@ -40985,12 +40985,12 @@ func _ǒNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ǒ"}
-	// [ǒǑ]/l:o (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǒǑŏŎ]/l:o (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
-		// [ǒǑ]
-		if r, w := _next(parser, pos); r != 'ǒ' && r != 'Ǒ' {
+		// [ǒǑŏŎ]
+		if r, w := _next(parser, pos); r != 'ǒ' && r != 'Ǒ' && r != 'ŏ' && r != 'Ŏ' {
 			goto fail4
 		} else {
 			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
@@ -41075,15 +41075,15 @@ func _ǒFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ǒ}
-	// [ǒǑ]/l:o (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǒǑŏŎ]/l:o (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
-		// [ǒǑ]
-		if r, w := _next(parser, pos); r != 'ǒ' && r != 'Ǒ' {
+		// [ǒǑŏŎ]
+		if r, w := _next(parser, pos); r != 'ǒ' && r != 'Ǒ' && r != 'ŏ' && r != 'Ŏ' {
 			if pos >= errPos {
 				failure.Kids = append(failure.Kids, &peg.Fail{
 					Pos:  int(pos),
-					Want: "[ǒǑ]",
+					Want: "[ǒǑŏŎ]",
 				})
 			}
 			goto fail4
@@ -41161,12 +41161,12 @@ func _ǒAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ǒǑ]/l:o (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ǒǑŏŎ]/l:o (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
 		var node2 string
-		// [ǒǑ]
-		if r, w := _next(parser, pos); r != 'ǒ' && r != 'Ǒ' {
+		// [ǒǑŏŎ]
+		if r, w := _next(parser, pos); r != 'ǒ' && r != 'Ǒ' && r != 'ŏ' && r != 'Ŏ' {
 			goto fail4
 		} else {
 			node = parser.text[pos : pos+w]
@@ -41228,7 +41228,7 @@ func _ǒAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['V'][l])
+				return string(tone.Diacritic['V'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -41252,11 +41252,11 @@ func _ěAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// [ěĚ]/l:e (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ěĚĕĔ]/l:e (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
-		// [ěĚ]
-		if r, w := _next(parser, pos); r != 'ě' && r != 'Ě' {
+		// [ěĚĕĔ]
+		if r, w := _next(parser, pos); r != 'ě' && r != 'Ě' && r != 'ĕ' && r != 'Ĕ' {
 			perr = _max(perr, pos)
 			goto fail4
 		} else {
@@ -41329,12 +41329,12 @@ func _ěNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "ě"}
-	// [ěĚ]/l:e (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ěĚĕĔ]/l:e (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
 		nkids1 := len(node.Kids)
-		// [ěĚ]
-		if r, w := _next(parser, pos); r != 'ě' && r != 'Ě' {
+		// [ěĚĕĔ]
+		if r, w := _next(parser, pos); r != 'ě' && r != 'Ě' && r != 'ĕ' && r != 'Ĕ' {
 			goto fail4
 		} else {
 			node.Kids = append(node.Kids, _leaf(parser, pos, pos+w))
@@ -41419,15 +41419,15 @@ func _ěFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _ě}
-	// [ěĚ]/l:e (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ěĚĕĔ]/l:e (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
-		// [ěĚ]
-		if r, w := _next(parser, pos); r != 'ě' && r != 'Ě' {
+		// [ěĚĕĔ]
+		if r, w := _next(parser, pos); r != 'ě' && r != 'Ě' && r != 'ĕ' && r != 'Ĕ' {
 			if pos >= errPos {
 				failure.Kids = append(failure.Kids, &peg.Fail{
 					Pos:  int(pos),
-					Want: "[ěĚ]",
+					Want: "[ěĚĕĔ]",
 				})
 			}
 			goto fail4
@@ -41505,12 +41505,12 @@ func _ěAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// [ěĚ]/l:e (caron_combiner/breve_combiner/relative_tone) {…}
+	// [ěĚĕĔ]/l:e (caron_combiner/breve_combiner/relative_tone) {…}
 	{
 		pos3 := pos
 		var node2 string
-		// [ěĚ]
-		if r, w := _next(parser, pos); r != 'ě' && r != 'Ě' {
+		// [ěĚĕĔ]
+		if r, w := _next(parser, pos); r != 'ě' && r != 'Ě' && r != 'ĕ' && r != 'Ĕ' {
 			goto fail4
 		} else {
 			node = parser.text[pos : pos+w]
@@ -41572,7 +41572,7 @@ func _ěAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['V'][l])
+				return string(tone.Diacritic['V'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -42179,7 +42179,7 @@ func _ảAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['?'][l])
+				return string(tone.Diacritic['?'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -42492,7 +42492,7 @@ func _ủAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['?'][l])
+				return string(tone.Diacritic['?'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -42805,7 +42805,7 @@ func _ỉAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['?'][l])
+				return string(tone.Diacritic['?'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -43118,7 +43118,7 @@ func _ỏAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['?'][l])
+				return string(tone.Diacritic['?'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -43431,7 +43431,7 @@ func _ẻAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['?'][l])
+				return string(tone.Diacritic['?'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -43940,7 +43940,7 @@ func _âAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['^'][l])
+				return string(tone.Diacritic['^'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -44253,7 +44253,7 @@ func _ûAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['^'][l])
+				return string(tone.Diacritic['^'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -44566,7 +44566,7 @@ func _îAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['^'][l])
+				return string(tone.Diacritic['^'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -44879,7 +44879,7 @@ func _ôAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['^'][l])
+				return string(tone.Diacritic['^'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -45192,7 +45192,7 @@ func _êAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['^'][l])
+				return string(tone.Diacritic['^'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -45701,7 +45701,7 @@ func _àAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['\\'][l])
+				return string(tone.Diacritic['\\'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -46014,7 +46014,7 @@ func _ùAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['\\'][l])
+				return string(tone.Diacritic['\\'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -46327,7 +46327,7 @@ func _ìAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['\\'][l])
+				return string(tone.Diacritic['\\'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -46640,7 +46640,7 @@ func _òAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['\\'][l])
+				return string(tone.Diacritic['\\'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -46953,7 +46953,7 @@ func _èAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['\\'][l])
+				return string(tone.Diacritic['\\'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -47462,7 +47462,7 @@ func _ãAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['~'][l])
+				return string(tone.Diacritic['~'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -47775,7 +47775,7 @@ func _ũAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['~'][l])
+				return string(tone.Diacritic['~'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -48088,7 +48088,7 @@ func _ĩAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['~'][l])
+				return string(tone.Diacritic['~'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -48401,7 +48401,7 @@ func _õAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['~'][l])
+				return string(tone.Diacritic['~'][l][0])
 			}(
 				start6, pos, label0)
 		}
@@ -48714,7 +48714,7 @@ func _ẽAction(parser *_Parser, start int) (int, *string) {
 			}
 			node = func(
 				start, end int, l string) string {
-				return string(tone.Diacritic['~'][l])
+				return string(tone.Diacritic['~'][l][0])
 			}(
 				start6, pos, label0)
 		}

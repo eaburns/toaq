@@ -6,98 +6,98 @@ import (
 )
 
 var (
-	// Diacritic is a mapping from tones and letters to the diacritic form of the letter.
-	Diacritic = map[rune]map[string]string{
+	// Diacritic is a mapping from tones and letters to the diacritic forms of the letter.
+	Diacritic = map[rune]map[string][]string{
 		'-': {
-			"a": "ā",
-			"A": "Ā",
-			"u": "ū",
-			"U": "Ū",
-			"i": "ī",
-			"ı": "ī",
-			"I": "Ī",
-			"o": "ō",
-			"O": "Ō",
-			"e": "ē",
-			"E": "Ē",
+			"a": {"ā"},
+			"A": {"Ā"},
+			"u": {"ū"},
+			"U": {"Ū"},
+			"i": {"ī"},
+			"ı": {"ī"},
+			"I": {"Ī"},
+			"o": {"ō"},
+			"O": {"Ō"},
+			"e": {"ē"},
+			"E": {"Ē"},
 		},
 		'/': {
-			"a": "á",
-			"A": "Á",
-			"u": "ú",
-			"U": "Ú",
-			"i": "í",
-			"ı": "í",
-			"I": "Í",
-			"o": "ó",
-			"O": "Ó",
-			"e": "é",
-			"E": "É",
+			"a": {"á"},
+			"A": {"Á"},
+			"u": {"ú"},
+			"U": {"Ú"},
+			"i": {"í"},
+			"ı": {"í"},
+			"I": {"Í"},
+			"o": {"ó"},
+			"O": {"Ó"},
+			"e": {"é"},
+			"E": {"É"},
 		},
 		'V': {
-			"a": "ǎ",
-			"A": "Ǎ",
-			"u": "ǔ",
-			"U": "Ǔ",
-			"i": "ǐ",
-			"ı": "ǐ",
-			"I": "Ǐ",
-			"o": "ǒ",
-			"O": "Ǒ",
-			"e": "ě",
-			"E": "Ě",
+			"a": {"ǎ", "ă"},
+			"A": {"Ǎ", "Ă"},
+			"u": {"ǔ", "ŭ"},
+			"U": {"Ǔ", "Ŭ"},
+			"i": {"ǐ", "ĭ"},
+			"ı": {"ǐ", "Ĭ"},
+			"I": {"Ǐ", "Ĭ"},
+			"o": {"ǒ", "ŏ"},
+			"O": {"Ǒ", "Ŏ"},
+			"e": {"ě", "ĕ"},
+			"E": {"Ě", "Ĕ"},
 		},
 		'?': {
-			"a": "ả",
-			"A": "Ả",
-			"u": "ủ",
-			"U": "Ủ",
-			"i": "ỉ",
-			"ı": "ỉ",
-			"I": "Ỉ",
-			"o": "ỏ",
-			"O": "Ỏ",
-			"e": "ẻ",
-			"E": "Ẻ",
+			"a": {"ả"},
+			"A": {"Ả"},
+			"u": {"ủ"},
+			"U": {"Ủ"},
+			"i": {"ỉ"},
+			"ı": {"ỉ"},
+			"I": {"Ỉ"},
+			"o": {"ỏ"},
+			"O": {"Ỏ"},
+			"e": {"ẻ"},
+			"E": {"Ẻ"},
 		},
 		'^': {
-			"a": "â",
-			"A": "Â",
-			"u": "û",
-			"U": "Û",
-			"i": "î",
-			"ı": "î",
-			"I": "Î",
-			"o": "ô",
-			"O": "Ô",
-			"e": "ê",
-			"E": "Ê",
+			"a": {"â"},
+			"A": {"Â"},
+			"u": {"û"},
+			"U": {"Û"},
+			"i": {"î"},
+			"ı": {"î"},
+			"I": {"Î"},
+			"o": {"ô"},
+			"O": {"Ô"},
+			"e": {"ê"},
+			"E": {"Ê"},
 		},
 		'\\': {
-			"a": "à",
-			"A": "À",
-			"u": "ù",
-			"U": "Ù",
-			"i": "ì",
-			"ı": "ì",
-			"I": "Ì",
-			"o": "ò",
-			"O": "Ò",
-			"e": "è",
-			"E": "È",
+			"a": {"à"},
+			"A": {"À"},
+			"u": {"ù"},
+			"U": {"Ù"},
+			"i": {"ì"},
+			"ı": {"ì"},
+			"I": {"Ì"},
+			"o": {"ò"},
+			"O": {"Ò"},
+			"e": {"è"},
+			"E": {"È"},
 		},
 		'~': {
-			"a": "ã",
-			"A": "Ã",
-			"u": "ũ",
-			"U": "Ũ",
-			"i": "ĩ",
-			"ı": "ĩ",
-			"I": "Ĩ",
-			"o": "õ",
-			"O": "Õ",
-			"e": "ẽ",
-			"E": "Ẽ",
+			"a": {"ã"},
+			"A": {"Ã"},
+			"u": {"ũ"},
+			"U": {"Ũ"},
+			"i": {"ĩ"},
+			"ı": {"ĩ"},
+			"I": {"Ĩ"},
+			"o": {"õ"},
+			"O": {"Õ"},
+			"e": {"ẽ"},
+			"E": {"Ẽ"},
 		},
 	}
 
@@ -106,9 +106,11 @@ var (
 	tone = func() map[rune]rune {
 		m := make(map[rune]rune)
 		for t, rs := range Diacritic {
-			for _, str := range rs {
-				r, _ := utf8.DecodeRuneInString(str)
-				m[r] = t
+			for _, arr := range rs {
+				for _, str := range arr {
+					r, _ := utf8.DecodeRuneInString(str)
+					m[r] = t
+				}
 			}
 		}
 		return m
@@ -117,13 +119,15 @@ var (
 	ascii = func() map[rune]rune {
 		m := make(map[rune]rune)
 		for _, rs := range Diacritic {
-			for ascii, unicode := range rs {
-				aR, _ := utf8.DecodeRuneInString(ascii)
-				if aR == 'ı' {
-					continue
+			for ascii, unicodes := range rs {
+				for _, unicode := range unicodes {
+					aR, _ := utf8.DecodeRuneInString(ascii)
+					if aR == 'ı' {
+						continue
+					}
+					uR, _ := utf8.DecodeRuneInString(unicode)
+					m[uR] = aR
 				}
-				uR, _ := utf8.DecodeRuneInString(unicode)
-				m[uR] = aR
 			}
 		}
 		return m
@@ -133,7 +137,9 @@ var (
 		var vs string
 		for _, rs := range Diacritic {
 			for _, d := range rs {
-				vs += d
+				for _, e := range d {
+					vs += e
+				}
 			}
 		}
 		return vs
@@ -200,7 +206,7 @@ func WithTone(str string, t rune) string {
 		R = string([]rune{r})
 	}
 	if t != None {
-		R = Diacritic[t][R]
+		R = Diacritic[t][R][0]
 	}
 	if R == "i" {
 		R = "ı"

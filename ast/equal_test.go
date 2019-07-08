@@ -503,7 +503,7 @@ func TestEq(t *testing.T) {
 				},
 				&PredicateArgument{
 					Focus:      &Word{T: "ku"},
-					Quantifier: &Word{T: "ta"},
+					Quantifier: &Word{T: "ke"},
 					Predicate:  p("mai/"),
 					Relative: &PredicationRelative{
 						Predication: Predication{Predicate: p("paiV")},

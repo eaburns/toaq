@@ -156,7 +156,7 @@ func TestVisit(t *testing.T) {
 		},
 		{
 			name: "terms",
-			text: "to ru go ji/ fi suq/ to cu ho/ ke maq/",
+			text: "to ru go ji/ fi suq/ to cu ho/ ta maq/",
 			counts: []typeCount{
 				{
 					typ:   reflect.TypeOf(&ast.LinkedTerm{}),
@@ -170,7 +170,7 @@ func TestVisit(t *testing.T) {
 		},
 		{
 			name: "arguments",
-			text: "ku sia rai/ maiV ru sia rai/ paiV",
+			text: "ku ke rai/ maiV ru ke rai/ paiV",
 			counts: []typeCount{
 				{
 					typ:   reflect.TypeOf(&ast.PredicateArgument{}),

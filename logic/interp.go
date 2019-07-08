@@ -382,7 +382,7 @@ func (interp *interpreter) predicate(n ast.Predicate) interface{} {
 		}
 	// Content clauses can be predicates when content argument
 	// is converted into variable form:
-	// **mai^** becomes **ta do/ maiX**,
+	// **mai^** becomes **ke do/ maiX**,
 	// where X is some non-existant tone denoting
 	// a relative predication that is a content clause.
 	// This is impossible in actual Toaq,
@@ -1044,7 +1044,7 @@ func miPred(w *ast.Word) Predicate {
 
 func quantifier(w *ast.Word) Quantifier {
 	switch {
-	case w == nil || hasText(*w, "ta"):
+	case w == nil || hasText(*w, "ke"):
 		return The
 	case hasText(*w, "ja"):
 		return Lambda
@@ -1076,10 +1076,14 @@ func connector(w ast.Word) Connector {
 
 func goPos(w ast.Word) int {
 	switch {
+	case hasText(w, "fi"):
+		return 1
 	case hasText(w, "go"):
 		return 2
 	case hasText(w, "cu"):
 		return 3
+	case hasText(w, "ta"):
+		return 4
 	}
 	panic("impossible: " + w.T)
 }

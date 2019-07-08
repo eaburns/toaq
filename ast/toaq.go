@@ -25494,9 +25494,9 @@ func _GOAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// (g O/f I/c U/k E) &(tone? boundary)
-	// (g O/f I/c U/k E)
-	// g O/f I/c U/k E
+	// (g O/f I/c U/t A) &(tone? boundary)
+	// (g O/f I/c U/t A)
+	// g O/f I/c U/t A
 	{
 		pos4 := pos
 		// g O
@@ -25535,13 +25535,13 @@ func _GOAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		goto ok1
 	fail9:
 		pos = pos4
-		// k E
-		// k
-		if !_accept(parser, _kAccepts, &pos, &perr) {
+		// t A
+		// t
+		if !_accept(parser, _tAccepts, &pos, &perr) {
 			goto fail11
 		}
-		// E
-		if !_accept(parser, _EAccepts, &pos, &perr) {
+		// A
+		if !_accept(parser, _AAccepts, &pos, &perr) {
 			goto fail11
 		}
 		goto ok1
@@ -25598,12 +25598,12 @@ func _GONode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "GO"}
-	// (g O/f I/c U/k E) &(tone? boundary)
-	// (g O/f I/c U/k E)
+	// (g O/f I/c U/t A) &(tone? boundary)
+	// (g O/f I/c U/t A)
 	{
 		nkids1 := len(node.Kids)
 		pos02 := pos
-		// g O/f I/c U/k E
+		// g O/f I/c U/t A
 		{
 			pos6 := pos
 			nkids4 := len(node.Kids)
@@ -25646,13 +25646,13 @@ func _GONode(parser *_Parser, start int) (int, *peg.Node) {
 		fail11:
 			node.Kids = node.Kids[:nkids4]
 			pos = pos6
-			// k E
-			// k
-			if !_node(parser, _kNode, node, &pos) {
+			// t A
+			// t
+			if !_node(parser, _tNode, node, &pos) {
 				goto fail13
 			}
-			// E
-			if !_node(parser, _ENode, node, &pos) {
+			// A
+			if !_node(parser, _ANode, node, &pos) {
 				goto fail13
 			}
 			goto ok3
@@ -25720,9 +25720,9 @@ func _GOFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _GO}
-	// (g O/f I/c U/k E) &(tone? boundary)
-	// (g O/f I/c U/k E)
-	// g O/f I/c U/k E
+	// (g O/f I/c U/t A) &(tone? boundary)
+	// (g O/f I/c U/t A)
+	// g O/f I/c U/t A
 	{
 		pos4 := pos
 		// g O
@@ -25761,13 +25761,13 @@ func _GOFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		goto ok1
 	fail9:
 		pos = pos4
-		// k E
-		// k
-		if !_fail(parser, _kFail, errPos, failure, &pos) {
+		// t A
+		// t
+		if !_fail(parser, _tFail, errPos, failure, &pos) {
 			goto fail11
 		}
-		// E
-		if !_fail(parser, _EFail, errPos, failure, &pos) {
+		// A
+		if !_fail(parser, _AFail, errPos, failure, &pos) {
 			goto fail11
 		}
 		goto ok1
@@ -25833,11 +25833,11 @@ func _GOAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// (g O/f I/c U/k E) &(tone? boundary)
+	// (g O/f I/c U/t A) &(tone? boundary)
 	{
 		var node0 string
-		// (g O/f I/c U/k E)
-		// g O/f I/c U/k E
+		// (g O/f I/c U/t A)
+		// g O/f I/c U/t A
 		{
 			pos4 := pos
 			var node3 string
@@ -25913,19 +25913,19 @@ func _GOAction(parser *_Parser, start int) (int, *string) {
 		fail9:
 			node0 = node3
 			pos = pos4
-			// k E
+			// t A
 			{
 				var node12 string
-				// k
-				if p, n := _kAction(parser, pos); n == nil {
+				// t
+				if p, n := _tAction(parser, pos); n == nil {
 					goto fail11
 				} else {
 					node12 = *n
 					pos = p
 				}
 				node0, node12 = node0+node12, ""
-				// E
-				if p, n := _EAction(parser, pos); n == nil {
+				// A
+				if p, n := _AAction(parser, pos); n == nil {
 					goto fail11
 				} else {
 					node12 = *n
@@ -30516,18 +30516,18 @@ func _TUAccepts(parser *_Parser, start int) (deltaPos, deltaErr int) {
 		return dp, de
 	}
 	pos, perr := start, -1
-	// (t A/t U/s I a/s A/h I/j A) &(tone? boundary)
-	// (t A/t U/s I a/s A/h I/j A)
-	// t A/t U/s I a/s A/h I/j A
+	// (k E/t U/s I a/s A/h I/j A) &(tone? boundary)
+	// (k E/t U/s I a/s A/h I/j A)
+	// k E/t U/s I a/s A/h I/j A
 	{
 		pos4 := pos
-		// t A
-		// t
-		if !_accept(parser, _tAccepts, &pos, &perr) {
+		// k E
+		// k
+		if !_accept(parser, _kAccepts, &pos, &perr) {
 			goto fail5
 		}
-		// A
-		if !_accept(parser, _AAccepts, &pos, &perr) {
+		// E
+		if !_accept(parser, _EAccepts, &pos, &perr) {
 			goto fail5
 		}
 		goto ok1
@@ -30648,22 +30648,22 @@ func _TUNode(parser *_Parser, start int) (int, *peg.Node) {
 	}
 	pos := start
 	node = &peg.Node{Name: "TU"}
-	// (t A/t U/s I a/s A/h I/j A) &(tone? boundary)
-	// (t A/t U/s I a/s A/h I/j A)
+	// (k E/t U/s I a/s A/h I/j A) &(tone? boundary)
+	// (k E/t U/s I a/s A/h I/j A)
 	{
 		nkids1 := len(node.Kids)
 		pos02 := pos
-		// t A/t U/s I a/s A/h I/j A
+		// k E/t U/s I a/s A/h I/j A
 		{
 			pos6 := pos
 			nkids4 := len(node.Kids)
-			// t A
-			// t
-			if !_node(parser, _tNode, node, &pos) {
+			// k E
+			// k
+			if !_node(parser, _kNode, node, &pos) {
 				goto fail7
 			}
-			// A
-			if !_node(parser, _ANode, node, &pos) {
+			// E
+			if !_node(parser, _ENode, node, &pos) {
 				goto fail7
 			}
 			goto ok3
@@ -30800,18 +30800,18 @@ func _TUFail(parser *_Parser, start, errPos int) (int, *peg.Fail) {
 		Pos:  int(start),
 	}
 	key := _key{start: start, rule: _TU}
-	// (t A/t U/s I a/s A/h I/j A) &(tone? boundary)
-	// (t A/t U/s I a/s A/h I/j A)
-	// t A/t U/s I a/s A/h I/j A
+	// (k E/t U/s I a/s A/h I/j A) &(tone? boundary)
+	// (k E/t U/s I a/s A/h I/j A)
+	// k E/t U/s I a/s A/h I/j A
 	{
 		pos4 := pos
-		// t A
-		// t
-		if !_fail(parser, _tFail, errPos, failure, &pos) {
+		// k E
+		// k
+		if !_fail(parser, _kFail, errPos, failure, &pos) {
 			goto fail5
 		}
-		// A
-		if !_fail(parser, _AFail, errPos, failure, &pos) {
+		// E
+		if !_fail(parser, _EFail, errPos, failure, &pos) {
 			goto fail5
 		}
 		goto ok1
@@ -30941,27 +30941,27 @@ func _TUAction(parser *_Parser, start int) (int, *string) {
 	}
 	var node string
 	pos := start
-	// (t A/t U/s I a/s A/h I/j A) &(tone? boundary)
+	// (k E/t U/s I a/s A/h I/j A) &(tone? boundary)
 	{
 		var node0 string
-		// (t A/t U/s I a/s A/h I/j A)
-		// t A/t U/s I a/s A/h I/j A
+		// (k E/t U/s I a/s A/h I/j A)
+		// k E/t U/s I a/s A/h I/j A
 		{
 			pos4 := pos
 			var node3 string
-			// t A
+			// k E
 			{
 				var node6 string
-				// t
-				if p, n := _tAction(parser, pos); n == nil {
+				// k
+				if p, n := _kAction(parser, pos); n == nil {
 					goto fail5
 				} else {
 					node6 = *n
 					pos = p
 				}
 				node0, node6 = node0+node6, ""
-				// A
-				if p, n := _AAction(parser, pos); n == nil {
+				// E
+				if p, n := _EAction(parser, pos); n == nil {
 					goto fail5
 				} else {
 					node6 = *n

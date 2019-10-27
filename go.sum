@@ -1,0 +1,10 @@
+github.com/eaburns/peggy v0.0.0-20180405011029-d685ddd3cbcb h1:VNtdhXiCNFtQkeRwcS8XW2+gyxollG4Kc4wnHbzGpP8=
+github.com/eaburns/peggy v0.0.0-20180405011029-d685ddd3cbcb/go.mod h1:5tfPwI6ukiK3W5vJzkj5MBQKHHY9Gcy2y6k1FC/23Xk=
+github.com/eaburns/pretty v0.0.0-20170305202417-362524b72369 h1:C/RhDONMNTxvyaQNWbxj2RAyHOGVYoq+kP5j9hdnYOk=
+github.com/eaburns/pretty v0.0.0-20170305202417-362524b72369/go.mod h1:iW/TU1T4mA4w2KzqNbBCjacPFdJ9PfGvNSxr8ajT/iM=
+github.com/google/go-cmp v0.3.1 h1:Xye71clBPdm5HgqGwUkwhbynsUJZhDbS20FvLhQ2izg=
+github.com/google/go-cmp v0.3.1/go.mod h1:8QqcDgzrUqlUb/G2PQTWiueGozuR1884gddMywk6iLU=
+github.com/gorilla/websocket v1.4.1 h1:q7AeDBpnBk8AogcD4DSag/Ukw/KV+YhzLj2bP5HvKCM=
+github.com/gorilla/websocket v1.4.1/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
+github.com/velour/chat v0.0.0-20180713122344-fd1d1606cb89 h1:3D3M900hEBJJAqyKl70QuRHi5weX9+ptlQI1v+FNcQ8=
+github.com/velour/chat v0.0.0-20180713122344-fd1d1606cb89/go.mod h1:ejwOYCjnDMyO5LXFXRARQJGBZ6xQJZ3rgAHE5drSuMM=

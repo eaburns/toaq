@@ -183,13 +183,14 @@ compound_tone <- [\-1]
 é <- [éÉ]/e (acute_combiner/arg_tone)
 acute_combiner "◌́" <- "\u0301"
 arg_tone <- [/2]
-ǎ <- [ǎǍăĂ]/a (caron_combiner/breve_combiner/relative_tone)
-ǔ <- [ǔǓŭŬ]/u (caron_combiner/breve_combiner/relative_tone)
-ǐ <- [ǐǏĭĬ]/i (caron_combiner/breve_combiner/relative_tone)
-ǒ <- [ǒǑŏŎ]/o (caron_combiner/breve_combiner/relative_tone)
-ě <- [ěĚĕĔ]/e (caron_combiner/breve_combiner/relative_tone)
+ǎ <- [ǎǍăĂäÄ]/a (caron_combiner/breve_combiner/diaeresis_combiner/relative_tone)
+ǔ <- [ǔǓŭŬüÜ]/u (caron_combiner/breve_combiner/diaeresis_combiner/relative_tone)
+ǐ <- [ǐǏĭĬïÏ]/i (caron_combiner/breve_combiner/diaeresis_combiner/relative_tone)
+ǒ <- [ǒǑŏŎöÖ]/o (caron_combiner/breve_combiner/diaeresis_combiner/relative_tone)
+ě <- [ěĚĕĔëË]/e (caron_combiner/breve_combiner/diaeresis_combiner/relative_tone)
 caron_combiner "◌̌" <- "\u030c"
 breve_combiner "◌̆" <- "\u0306"
+diaeresis_combiner "◌̈" <- "\u0308"
 relative_tone <- [V3]
 ả <- [ảẢ]/a (hook_combiner/verb_tone)
 ủ <- [ủỦ]/u (hook_combiner/verb_tone)
